@@ -1,20 +1,18 @@
 import io
-import os
 import shutil
 import zipfile
 from sys import platform as _platform
 from urllib.request import urlopen
-
 import win32api
 
-from lib.logger import *
+from libs.logger import *
 
 # Platform
 platform = ""
 if _platform == "win32":
-    os_platform = "windows"
+    platform = "windows"
 elif _platform == "linux" or _platform == "linux2":
-    os_platform = "linux"
+    platform = "linux"
 else:
     sys.exit("This script is only for Windows and Linux.")
 
@@ -137,6 +135,7 @@ def get_application_path():
 
 if __name__ == '__main__':
     # Computername
+    import os
     if platform == "windows":
         t_hostname = os.environ['COMPUTERNAME']
     else:

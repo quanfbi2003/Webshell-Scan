@@ -83,7 +83,7 @@ class Logger:
     FILE_LINE = 3
     SYSLOG_LINE = 4
 
-    log_file = "output.log"
+    log_file = ""
     hostname = "NOTSET"
     alerts = 0
     csv = True
@@ -92,7 +92,7 @@ class Logger:
     messagecount = 0
     linesep = "\n"
 
-    def __init__(self, hostname, platform,  caller, log_file, VERSION=""):
+    def __init__(self, hostname, platform,  caller, log_file="output.log", VERSION=""):
         self.hostname = hostname
         self.caller = caller
         self.log_file = "logs/".replace("/", os.sep) + log_file
