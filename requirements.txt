@@ -1,0 +1,11 @@
+colorama
+psutil
+netaddr
+requests
+beautifulsoup4
+simplejson
+IPy
+WMI
+bs4
+pywin32
+yara-python
