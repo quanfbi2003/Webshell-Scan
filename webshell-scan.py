@@ -199,12 +199,12 @@ class Scanner(object):
             self.startExcludes = self.LINUX_PATH_SKIPS_START | self.MOUNTED_DEVICES
 
         # Set IOC path
-        self.ioc_path = os.path.join(self.app_path, "signature-base/iocs/".replace("/", os.sep))
+        self.ioc_path = os.path.join(self.app_path, "libs/signature-base/iocs/".replace("/", os.sep))
 
         # Yara rule directories
-        self.yara_rule_directories.append(os.path.join(self.app_path, "signature-base/yara".replace("/", os.sep)))
-        self.yara_rule_directories.append(os.path.join(self.app_path, "signature-base/iocs/yara".replace("/", os.sep)))
-        self.yara_rule_directories.append(os.path.join(self.app_path, "signature-base/3rdparty".replace("/", os.sep)))
+        self.yara_rule_directories.append(os.path.join(self.app_path, "libs/signature-base/yara".replace("/", os.sep)))
+        self.yara_rule_directories.append(os.path.join(self.app_path, "libs/signature-base/iocs/yara".replace("/", os.sep)))
+        self.yara_rule_directories.append(os.path.join(self.app_path, "libs/signature-base/3rdparty".replace("/", os.sep)))
 
         # Read IOCs -------------------------------------------------------
         # File Name IOCs (all files in iocs that contain 'filename')
@@ -231,7 +231,7 @@ class Scanner(object):
         self.initialize_yara_rules()
 
         # Initialize File Type Magic signatures
-        self.initialize_filetype_magics(os.path.join(self.app_path, 'signature-base/misc/file-type-signatures.txt'
+        self.initialize_filetype_magics(os.path.join(self.app_path, 'libs/signature-base/misc/file-type-signatures.txt'
                                                      .replace("/", os.sep)))
 
         # Levenshtein Checker
