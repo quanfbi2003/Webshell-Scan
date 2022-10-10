@@ -2103,7 +2103,7 @@ ystem32\\lcsvsvc\.dll;80
 \\(g64\-|\\g32\-|\\gsecdump\.exe|gcx64\.|\\gcx32\.|\\gec\.|\\gse\.exe);60
 \\fgdump;60
 \\w32\.exe;50;(site-packages|python|Python|\\Root\\InventoryApplicationFile|/pip/|/pip-)
-\\w64\.exe;50;(\}\\Root|site-packages)
+\\w64\.exe;50;(site-packages|python|Python|\\Root\\InventoryApplicationFile|/pip/|/pip-)
 
 # Generic methodology - 1 character executable / script in short path
 #[a-zA-Z]:[.]{0,10}\\[.]\.(exe|dll|vbs|ps1|bat|sh)$;60;(?i)(\\cygwin\\|\\GnuWin32\\|Opera\\k\.(exe|bat)|\\R\\r-|\\Git\\usr|\\adobe after effects|\\perl)
@@ -3983,21 +3983,72 @@ Potato\.exe;65
 # Metador IOCs https://assets.sentinelone.com/sentinellabs22/metador
 C:\\Windows\\System32\\cdb\.exe;85
 C:\\Windows\\System32\\cdb\.ini;85
-C:\\Windows\\System32\\speech02.db;80
-C:\\Windows\\System32\\speech03.db;80
-C:\\Windows\\System32\\fcache11.db;80
-C:\\Windows\\System32\\fcache13.db;80
-C:\\Windows\\System32\\fcache11.db;80
-C:\\Windows\\System32\\fcache13.db;80
-C:\\Windows\\System32\\fcache14.db;80
+C:\\Windows\\System32\\speech02\.db;80
+C:\\Windows\\System32\\speech03\.db;80
+C:\\Windows\\System32\\fcache11\.db;80
+C:\\Windows\\System32\\fcache13\.db;80
+C:\\Windows\\System32\\fcache11\.db;80
+C:\\Windows\\System32\\fcache13\.db;80
+C:\\Windows\\System32\\fcache14\.db;80
 \\AppData\\Local\\fintcache\\cdb\.exe;85
 \\AppData\\Local\\fintcache\\cdb\.ini;85
-\\AppData\\Local\\fintcache\\speech02.db;80
-\\AppData\\Local\\fintcache\\speech03.db;80
-\\AppData\\Local\\fintcache\\fcache11.db;80
-\\AppData\\Local\\fintcache\\fcache13.db;80
-\\AppData\\Local\\fintcache\\fcache11.db;80
-\\AppData\\Local\\fintcache\\fcache13.db;80
-\\AppData\\Local\\fintcache\\fcache14.db;80
+\\AppData\\Local\\fintcache\\speech02\.db;80
+\\AppData\\Local\\fintcache\\speech03\.db;80
+\\AppData\\Local\\fintcache\\fcache11\.db;80
+\\AppData\\Local\\fintcache\\fcache13\.db;80
+\\AppData\\Local\\fintcache\\fcache11\.db;80
+\\AppData\\Local\\fintcache\\fcache13\.db;80
+\\AppData\\Local\\fintcache\\fcache14\.db;80
+
+# UNC3886 Report on malicious vSphere Installation Bundles (VIBs) https://www.mandiant.com/resources/blog/esxi-hypervisors-malware-persistence
+/lsu_lsi_\.v05$;75
+/etc/rc\.local\.d/vmware_local\.sh;75
+^/bin/rdt$;75
+/bin/vmsyslog\.py;75
+/payload1\.v00$;75
+/etc/rc\.local\.d/vmware_rhttpio\.sh;75
+/usr/lib/vmware/weasel/consoleui/rhttpproxy-io;80
+/usr/libexec/setconf/ksmd;75
+/usr/bin/ksmd;75
+C:\\Windows\\Temp\\avp\.exe;70
+C:\\Windows\\Temp\\Silverlight\\wmpd\.exe;75
+
+# Lazarus Report https://www.welivesecurity.com/2022/09/30/amazon-themed-campaigns-lazarus-netherlands-belgium/
+:\\ProgramData\\Adobe\\Adobe\.tmp;80
+C:\\ProgramData\\PTC\\colorcpl\.exe;80
+C:\\ProgramData\\PTC\\colorui\.dll;80
+C:\\Windows\\Vss\\WFS\.exe;80
+C:\\Windows\\Vss\\credui\.dll;80
+C:\\Windows\\security\\WFS\.exe;80
+C:\\Windows\\security\\credui\.dll;80
+C:\\ProgramData\\Caphyon\\wsmprovhost\.exe;80
+C:\\ProgramData\\Caphyon\\mi\.dll;80
+C:\\PublicCache\\msdxm\.ocx;80
+\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\OneNoteTray\.LNK;70
+# Lazarus FudModule Rootkit Indicators https://www.virusbulletin.com/uploads/pdf/conference/vb2022/VB2022-Kalnai-Havranek.pdf
+C:\\Windows\\windows\.ini;75
+C:\\WINDOWS\\System32\\drivers\\circlassmgr\.sys;75
+C:\\WINDOWS\\System32\\drivers\\dmvscmgr\.sys;75
+C:\\WINDOWS\\System32\\drivers\\hidirmgr\.sys;75
+C:\\WINDOWS\\System32\\drivers\\isapnpmgr\.sys;75
+C:\\WINDOWS\\System32\\drivers\\mspqmmgr\.sys;75
+C:\\WINDOWS\\System32\\drivers\\umpassmgr\.sys;75
+
+
+# Emperor Dragonfly report https://blog.sygnia.co/revealing-emperor-dragonfly-a-chinese-ransomware-group?hsLang=en
+C:\\Windows\\Help\\OEM\\ContentStore\\vlcplayer\.dat;85
+C:\\Windows\\Help\\utilsdll\.dll;85
+C:\\Windows\\debug\\LockDown\.dll;85
+C:\\Windows\\Help\\Corporate\\auth\.dat;85
+C:\\Windows\\debug\\debug\.dat;85
+C:\\Windows\\Help\\Corporate\\libvlc\.dll;85
+C:\\Windows\\Help\\Corporate\\auth\.dat;85
+C:\\Windows\\Help\\Corporate\\vlcplayer\.dat;85
+C:\\Windows\\Help\\mui\\0409\\WindowsUpdate\.exe;85
+C:\\Windows\\Help\\OEM\\ContentStore\.exe;85
+C:\\Windows\\Help\\Windows\\dec\.exe;85
+C:\\Windows\\debug\\mfeann\.exe;85
+C:\\Windows\\Help\\Corporate\\FCAuth\.exe;85
+C:\\Windows\\Help\\Corporate\\vlc\.exe;85
 
 # End

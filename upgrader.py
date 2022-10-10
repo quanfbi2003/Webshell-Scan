@@ -47,7 +47,7 @@ class Updater(object):
 
                 # Preparations
                 try:
-                    sigDir = os.path.join(self.application_path, os.path.abspath('lib/signature-base/'))
+                    sigDir = os.path.join(self.application_path, os.path.abspath('libs/signature-base/'))
                     if clean:
                         self.logger.log("INFO", "Upgrader", "Cleaning directory '%s'" % sigDir)
                         shutil.rmtree(sigDir)
