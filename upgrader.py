@@ -12,11 +12,11 @@ from lib.logger import *
 # Platform
 platform = ""
 if _platform == "win32":
-    platform = "windows"
+    os_platform = "windows"
+elif _platform == "linux" or _platform == "linux2":
+    os_platform = "linux"
 else:
-    sys.exit(
-        "This script is only for Windows.\n"
-        "Please use the 'webshell-scan-linux.py' script for Linux platforms.")
+    sys.exit("This script is only for Windows and Linux.")
 
 
 class Updater(object):
@@ -143,10 +143,9 @@ if __name__ == '__main__':
         t_hostname = os.uname()[1]
 
     # Logger
-    logger = Logger(t_hostname, platform="windows",
-                    caller='upgrader')
+    logger = Logger(t_hostname, platform=platform, caller='upgrader')
 
-    # Update LOKI
+    # Update
     updater = Updater(False, logger, get_application_path())
 
     logger.log("INFO", "Upgrader", "Updating Signatures ...")
