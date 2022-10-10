@@ -185,7 +185,7 @@ class Scanner(object):
         self.app_path = get_application_path()
 
         # Check if signature database is present
-        sig_dir = os.path.join(self.app_path, "signature-base")
+        sig_dir = os.path.join(self.app_path, "libs/signature-base".replace("/", os.sep))
         if not os.path.exists(sig_dir) or os.listdir(sig_dir) == []:
             logger.log("NOTICE", "Init", "The 'signature-base' subdirectory doesn't exist or is empty. "
                                          "Trying to retrieve the signature database automatically.")
