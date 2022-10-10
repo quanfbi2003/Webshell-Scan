@@ -4,8 +4,8 @@ netaddr
 requests
 beautifulsoup4
 simplejson
+yara-python
+bs4
 IPy
 WMI
-bs4
 pywin32
-yara-python
