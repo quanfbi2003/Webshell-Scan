@@ -7,9 +7,9 @@ from bisect import bisect_left
 from collections import Counter
 from sys import platform as _platform
 import yara  # install 'yara-python' module not the outdated 'yara' module
-from lib.helpers import *
-from lib.levenshtein import *
-from lib.logger import *
+from libs.helpers import *
+from libs.levenshtein import *
+from libs.logger import *
 
 # For Windows
 try:
