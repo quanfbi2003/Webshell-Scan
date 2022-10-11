@@ -715,8 +715,7 @@ class Scanner(object):
             if name == "lsm.exe" and priority != 8:
                 logger.log("NOTICE", "ProcessScan", "lsm.exe priority is not 8 %s" % process_info)
             if name == "lsm.exe" and not (
-                    owner.startswith("NT ") or owner.startswith("LO") or owner.startswith("SYSTEM")
-                    or owner.startswith(u"система")):
+                    owner.startswith("NT ") or owner.startswith("LO") or owner.startswith("SYSTEM")):
                 logger.log(u"WARNING", "ProcessScan", "lsm.exe process owner is suspicious %s" % process_info)
             if wininit_pid > 0:
                 if name == "lsm.exe" and not parent_pid == wininit_pid:
