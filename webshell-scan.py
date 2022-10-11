@@ -448,7 +448,8 @@ class Scanner(object):
                         logger.log("ERROR", "FileScan", "Cannot YARA scan file: %s" % filePathCleaned)
 
                     # Info Line -----------------------------------------------------------------------
-                    fileInfo = "FILE: %s\n SCORE: %s%s\n " % (
+                    fileInfo = "===========================================================\n" \
+                               "FILE: %s\n SCORE: %s%s\n " % (
                         filePath, total_score, getAgeString(filePath))
                     message_type = "INFO"
                     # Now print the total result
@@ -465,7 +466,7 @@ class Scanner(object):
                     # Reasons to message body
                     message_body = fileInfo
                     for i, r in enumerate(reasons):
-                        message_body += "REASON_{0}: {1}\n ".format(i + 1, r)
+                        message_body += "\tREASON_{0}: {1}\n ".format(i + 1, r)
                     if args.quarantine and "Yara Rule" in message_body:
                         src = filePath
                         filename = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time()))
