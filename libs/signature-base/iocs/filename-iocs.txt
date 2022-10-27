@@ -4053,4 +4053,37 @@ C:\\Windows\\Help\\Corporate\\vlc\.exe;85
 # ProxyNotShell exploitation IOC https://twitter.com/gossithedog/status/1578772856204578819?s=12&t=YYVa81RCA4W71JSygT16hw
 \\FrontEnd\\HttpProxy\\owa\\auth\\owafonts\.aspx;85
 
+
+# Suspicious File Name - obfuscation indicators 
+obfuscated[0-9_]{0,7}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|EXE|DLL|BAT|js|JS)$;70
+obfusc[0-9_]{0,7}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|EXE|DLL|BAT|js|JS)$;70
+\\[Oo]bfusc[a-zA-Z0-9_-]{0,20}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|EXE|DLL|BAT|js|JS)$;70
+
+# POLONIUM IOCs https://www.welivesecurity.com/2022/10/11/polonium-targets-israel-creepy-malware/
+\\svchostdp\.exe;80
+\\4kyro3fs\.dll;85
+\\Microsoft Malware Protection\.exe;85
+\\WindowsSartup22\.exe;90
+\\WinUpdate\.dll;80
+\\Regestries\.exe;80
+\\Mega\.exe;70
+
+# AhnLabs report on Exchange exploitation and Lockbit 3 deployment https://web.archive.org/web/20221011020440/https://asec.ahnlab.com/ko/39682/
+\\owa\\auth\\HttpRedirService\.aspx;85
+C:\\Users\\ExchService\\Desktop\\mi\.exe;75
+C:\\Windows\\System32\\0409\\mi\.exe;85
+C:\\Temp\\AUtempR\\p64\.exe;80
+C:\\Windows\\System32\\0409\\TeamViewer;95
+C:\\Windows\\System32\\0409\\netscan;95
+C:\\Windows\\System32\\0409\\H1\.exe;95
+C:\\Windows\\System32\\0409\\H2\.exe;95
+C:\\Windows\\System32\\0409\\H2\.dll;95
+C:\\Windows\\System32\\0409\\[^\\]{1,8}\.(ps1|bat);75
+C:\\windows\\H2\.ps1;85
+\\S2-PS\.bat;75
+\\S2_ps\.bat;75
+\\LBP\.ps1;70
+\\Lb\.ps1;70
+\\H2\.ps1;70
+
 # End
