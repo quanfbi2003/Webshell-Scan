@@ -3126,19 +3126,25 @@ C:\\Windows\\[^\\"]{1,20}\.(js|ps1|vbs);50
 \\msptermsizes\\msptermsizes\.exe;90
 :\\Users\\[^\\"]{1,16}\\[0-9]{1,4}\.exe;65
 
-# Looks like an LSASS process memory dump (often contains credentials)
-\\lsass\.dmp;80
+# LSASS process memory dump names
+\\lsass\.(dmp|DMP);80
 \\lsass\.zip;80
 \\lsass\.7z;80
 \\lsass\.rar;80
-\\lsass\.exe[_0-9]{0,15}\.(dmp|zip|rar);80
+\\lsass[_0-9\-\.]{1,2}\.(dmp|DMP);80
+\\lsass[_0-9\-\.]{1,2}\.zip;80
+\\lsass[_0-9\-\.]{1,2}\.7z;80
+\\lsass[_0-9\-\.]{1,2}\.rar;80
+\\lsass\.exe[_0-9]{0,15}\.(dmp|zip|rar|DMP);80
 \\dumpert\.dmp;80
 \\Andrew\.dmp;80
 \\Coredump\.dmp;80
-\\lsass_2;65
 \\lsassdump;65
 \\lsassdmp;65
-\\lsass[a-zA-Z_\-\.]{1,16}\.(dmp|zip|rar);70
+\\lsass_2;65
+
+# Procdump Default Output File Suffix
+\\[^\\]{3,30}_[123][0-9][01][0-9][0-3][0-9]_[0-2][0-9][0-5][0-9][0-5][0-9]\.dmp$;60
 
 # Suspicious Extension in AppPatch folder
 c:\\windows\\AppPatch\\[^\\"]{1,20}\.(exe|vbs|ps1|bat);70
@@ -3861,7 +3867,7 @@ application-2eaf7e76aa55726cc0419f604e58ee73c5578c02c9e21fdbe7ae887925ea92ae\.cs
 /PwnKit;90
 /PwnKit\.sh;90
 
-# Winpeas Filename IOCs https://github.com/carlospolop/PEASS-ng
+# WinPeas / LinPeas Filename IOCs https://github.com/carlospolop/PEASS-ng
 \\winPEASx64;80
 \\winPEASx86;80
 \\winPEASxany;80
@@ -3871,6 +3877,8 @@ application-2eaf7e76aa55726cc0419f604e58ee73c5578c02c9e21fdbe7ae887925ea92ae\.cs
 \\winPEASxany\.bat;80
 /linpeas_linux_;80
 /linpeas\.sh;80
+\\linpeas_linux_;80
+linpeas\.log;75
 
 # Gopher Filename IOCs https://github.com/EncodeGroup/Gopher
 \\Gopher\.exe\.log;80
@@ -4053,7 +4061,6 @@ C:\\Windows\\Help\\Corporate\\vlc\.exe;85
 # ProxyNotShell exploitation IOC https://twitter.com/gossithedog/status/1578772856204578819?s=12&t=YYVa81RCA4W71JSygT16hw
 \\FrontEnd\\HttpProxy\\owa\\auth\\owafonts\.aspx;85
 
-
 # Suspicious File Name - obfuscation indicators 
 obfuscated[0-9_]{0,7}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|EXE|DLL|BAT|js|JS)$;70
 obfusc[0-9_]{0,7}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|EXE|DLL|BAT|js|JS)$;70
@@ -4085,5 +4092,122 @@ C:\\windows\\H2\.ps1;85
 \\LBP\.ps1;70
 \\Lb\.ps1;70
 \\H2\.ps1;70
+
+# Procdump - process dump tool used in SysInternals suite https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+(?i)\\procdump(64)?(a)?\.(exe|zip);50;(?i)(SysInternals\\)
+# Suspicious file that starts with procdump, a process dumping tool often used by adversaries https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+(?i)\\procdump[^\\]{0,30}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|js|7z|rar);70;(?i)(\\procdump(64)?\.exe)
+(?i)\\[^\\]{1,30}procdump\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|js|7z|rar);70
+
+# Adfind - often used by AD administrators but also by threat actors http://www.joeware.net/freetools/
+\\Adfind\.exe;50
+\\Adfind\.(7z|rar);65
+
+# FRP Binaries https://github.com/fatedier/frp
+\\frpc\.exe;70
+\\frps\.exe;70
+\\frpc$;70
+\\frps$;70
+\\frpc.ini;70
+\\frps.ini;70
+\\frpc_full.ini;70
+\\frps_full.ini;70
+
+# Impacket default file name used for tools in the examples folder of the project https://github.com/SecureAuthCorp/impacket
+\\atexec\.py;75
+\\wmiquery\.py;70
+\\wmipersist\.py;70
+\\wmiexec\.py;70
+\\tstool\.py;70
+\\ticketer\.py;70
+\\ticketConverter\.py;70
+\\sniffer\.py;70
+\\sniff\.py;70
+\\smbrelayx\.py;70
+\\smbpasswd\.py;70
+\\smbexec\.py;70
+\\secretsdump\.py;70
+\\samrdump\.py;70
+\\rpcmap\.py;70
+\\rpcdump\.py;70
+\\rdp_check\.py;70
+\\psexec\.py;70
+\\ntlmrelayx\.py;70
+\\nmapAnswerMachine\.py;70
+\\netview\.py;70
+\\mimikatz\.py;70
+\\lookupsid\.py;70
+\\kintercept\.py;70
+\\keylistattack\.py;70
+\\karmaSMB\.py;70
+\\goldenPac\.py;70
+\\getTGT\.py;70
+\\GetNPUsers\.py;70
+\\GetADUsers\.py;70
+\\Get\-GPPPassword\.py;70
+\\exchanger\.py;70
+\\esentutl\.py;70
+\\dcomexec\.py;70
+\\atexec\.py;70
+
+# Forkatz filename IOCs https://github.com/Barbarisch/forkatz
+c:\\users\\public\\temp\.bin;75
+c:\\users\\public\\example\.bin;75
+\\forkatz\.exe;75
+
+# PPLKiller tool exploiting CVE-2019-16098 https://github.com/Barakat/CVE-2019-16098
+\\PPLKiller\.exe;85
+
+# Typical ASPX Shell Locations https://vimeo.com/770087063
+\\aspnet_client\\system_web\\[a-zA-Z0-9_\-]{1,16}\.asp[x]?$;65
+
+# Somnia Ransomware https://cert.gov.ua/article/2724253
+\\Temp\\text\.exe;70
+C:\\ProgramData\\VMware\\VMware Tools\\1\.exe;85
+C:\\ProgramData\\pe_https_x64_360_1\.exe;90
+\\Downloads\\Ip_scanner\.zip;70
+\\Downloads\\Ip_scanner\\Ip_scanner\.exe;70
+l\\Desktop\\netscan_portable\\64-bit\\netscan\.exe;75
+\\Downloads\\1\.jpeg;60
+\\Somnia_07_08_22_with_FunnySomnia\.exe;95
+\\netscan_portable\.7z;65
+\\FunnySomnia\.exe;85
+
+# Rubeus Filename IOCs https://github.com/GhostPack/Rubeus/ and https://phackt.com/en-kerberos-constrained-delegation-with-protocol-transition and https://m0chan.github.io/2019/07/31/How-To-Attack-Kerberos-101.html and https://www.hackingarticles.in/a-detailed-guide-on-rubeus/
+C:\\temp\\spns\.txt;85
+\\[\w]{1,20}_[0-9]{4}_[0-9]{2}_[0-9]{2}_[0-9]{2}_[0-9]{2}_[0-9]{2}_[a-z]{2,16}_to_[a-z\.\-]{2,24}@;65
+\\srv\.tgt;70
+\\TotallyNotHashes\.txt;80
+\\hashes\.asreproast;85
+\\brutepasswords\.txt;75
+C:\\Temp\\payload\.exe;75
+\\ticket\.kirbi;85
+\\silver\.kirbi;85
+\\Users\\Public\\type\.hash;70
+\\Users\\Public\\type2\.hash;70
+\\Rubeus\.exe;85
+
+# Hive Ransomware IOCs CISA Alert AA22-321A https://www.cisa.gov/uscert/ncas/alerts/aa22-321a
+\\hive\.bat;65
+\\shadow\.bat;65
+\\Windows_x64_encrypt\.dll;75
+\\Windows_x64_encrypt\.exe;75
+\\Windows_x32_encrypt\.dll;75
+\\Windows_x32_encrypt\.exe;75
+\\Windows_x32_encrypt\.rar;75
+\\Linux_encrypt$;70
+\\Esxi_encrypt$;70
+
+# RansomBoggs IOCs https://twitter.com/ESETresearch/status/1596181925663760386?s=20&t=lhE6eIEW1dl2k_HvZsr69g
+\\Desktop\\aes\.bin$;70
+C:\\Windows\\Sullivan.1;75
+
+# SysmonEOP Filename IOCs - PoC for CVE-2022-41120 https://github.com/Wh04m1001/SysmonEoP
+\\SysmonEOP\.exe;90
+\\SysmonEOPv2\.exe;90
+\\SysmonEOP_v2\.exe;90
+Global\\GLOBALROOT\\RPC Control\\CLIP-876BEE15B64B610D2505A44596ED92FBA9624DB923F9D608698BD8C8E64E4F1A;90
+
+
 
 # End
