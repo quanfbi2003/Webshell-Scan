@@ -53,6 +53,9 @@ SCRIPT_TYPES = ["VBS", "PHP", "JSP", "ASP", "BATCH"]
 # Mode
 FULL_SCAN = False
 
+# CSV file
+fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": []}
+
 
 def ioc_contains(sorted_list, value):
     # returns true if sorted_list contains value
@@ -203,8 +206,10 @@ class Scanner(object):
 
         # Yara rule directories
         self.yara_rule_directories.append(os.path.join(self.app_path, "libs/signature-base/yara".replace("/", os.sep)))
-        self.yara_rule_directories.append(os.path.join(self.app_path, "libs/signature-base/iocs/yara".replace("/", os.sep)))
-        self.yara_rule_directories.append(os.path.join(self.app_path, "libs/signature-base/3rdparty".replace("/", os.sep)))
+        self.yara_rule_directories.append(
+            os.path.join(self.app_path, "libs/signature-base/iocs/yara".replace("/", os.sep)))
+        self.yara_rule_directories.append(
+            os.path.join(self.app_path, "libs/signature-base/3rdparty".replace("/", os.sep)))
 
         # Read IOCs -------------------------------------------------------
         # File Name IOCs (all files in iocs that contain 'filename')
@@ -450,7 +455,8 @@ class Scanner(object):
                     # Info Line -----------------------------------------------------------------------
                     fileInfo = "===========================================================\n" \
                                "FILE: %s\n SCORE: %s%s\n " % (
-                        filePath, total_score, getAgeString(filePath))
+                                   filePath, total_score, getAgeString(filePath))
+                    message_csv = ""
                     message_type = "INFO"
                     # Now print the total result
                     if total_score >= 100:
@@ -467,6 +473,7 @@ class Scanner(object):
                     message_body = fileInfo
                     for i, r in enumerate(reasons):
                         message_body += "\tREASON_{0}: {1}\n ".format(i + 1, r)
+                        message_csv += "REASON_{0}: {1}\n ".format(i + 1, r)
                     if args.quarantine and "Yara Rule" in message_body:
                         src = filePath
                         filename = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time()))
@@ -477,6 +484,10 @@ class Scanner(object):
                         except Exception:
                             message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n "
                     MESSAGE.append([total_score, message_type, message_body])
+                    fileInfo_csv["FILE"].append(filePath)
+                    fileInfo_csv["SCORE"].append(total_score)
+                    fileInfo_csv["TIME"].append(getAgeString(filePath))
+                    fileInfo_csv["DESCRIPTION"].append(message_csv)
                 except Exception:
                     pass
         MESSAGE.sort(key=lambda x: x[0], reverse=True)
@@ -1405,6 +1416,8 @@ if __name__ == '__main__':
     scanner.scan_path(defaultPath)
 
     # Result ----------------------------------------------------------
+    logger.log_to_csv_file(fileInfo_csv)
+
     logger.log("NOTICE", "Results",
                "Results: {0} alerts, {1} warnings, {2} notices".format(logger.alerts, logger.warnings, logger.notices))
     if logger.alerts:

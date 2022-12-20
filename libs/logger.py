@@ -4,7 +4,7 @@ import os
 import re
 import sys
 import traceback
-
+import pandas as pd
 from colorama import Fore, Back, Style
 from colorama import init
 
@@ -123,6 +123,10 @@ class Logger:
         except Exception:
             print("Cannot print certain characters to command line - see log file for full unicode encoded log line")
             log_to_stdout(message, mes_type)
+
+    def log_to_csv_file(self, message):
+        df = pd.DataFrame(message)
+        df.to_excel(self.log_file + ".xlsx", index=True)
 
     def log_to_file(self, message, mes_type, module):
         if mes_type == "INFO":
