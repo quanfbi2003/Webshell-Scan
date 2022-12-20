@@ -1,12 +1,3 @@
-/*
-    Yara Rule Set
-    Author: Florian Roth
-    Date: 2015-06-13
-    Identifier: CN-Tools Webshells
-    Reference: Diclosed hacktool set at http://w2op.us/ (Mirror: http://tools.zjqhr.com)
-*/
-
-
 rule Tools_cmd {
     meta:
         description = "Chinese Hacktool Set - file cmd.jSp"
