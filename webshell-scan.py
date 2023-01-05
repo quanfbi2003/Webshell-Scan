@@ -8,7 +8,6 @@ from collections import Counter
 from sys import platform as _platform
 import yara  # install 'yara-python' module not the outdated 'yara' module
 from libs.helpers import *
-from libs.levenshtein import *
 from libs.logger import *
 
 # For Windows
@@ -19,7 +18,7 @@ except:
     pass
 
 # Version
-VERSION = "v1.5"
+VERSION = "v1.6"
 
 # Platform
 os_platform = ""
@@ -30,28 +29,6 @@ elif _platform == "linux" or _platform == "linux2":
     os_platform = "linux"
 else:
     sys.exit("This script is only for Windows and Linux.")
-
-# Predefined Evil Extensions
-EVIL_EXTENSIONS = [".vbs", ".ps", ".ps1", ".rar", ".tmp", ".bas", ".bat", ".chm", ".cmd", ".com", ".cpl",
-                   ".crt", ".dll", ".exe", ".hta", ".js", ".lnk", ".msc", ".ocx", ".pcd", ".pif", ".pot", ".pdf",
-                   ".reg", ".scr", ".sct", ".sys", ".url", ".vb", ".vbe", ".wsc", ".wsf", ".wsh", ".ct", ".t",
-                   ".input", ".war", ".jsp", ".jspx", ".php", ".asp", ".aspx", ".doc", ".docx", ".pdf", ".xls", ".xlsx",
-                   ".ppt",
-                   ".pptx", ".tmp", ".log", ".dump", ".pwd", ".w", ".txt", ".conf", ".cfg", ".conf", ".config", ".psd1",
-                   ".psm1", ".ps1xml", ".clixml", ".psc1", ".pssc", ".pl", ".www", ".rdp", ".jar", ".docm", ".sys"]
-
-ALLOW_EXTENTIONS = [".asp", ".vbs", ".ps1", ".bas", ".bat", ".vb", ".vbe", ".wsc", ".wsf",
-                    ".wsh", ".jsp", ".jspx", ".php", ".asp", ".aspx", ".psd1", ".psm1", ".ps1xml", ".clixml", ".psc1",
-                    ".pssc", ".pl"]
-
-SCRIPT_EXTENSIONS = [".asp", ".vbs", ".ps1", ".bas", ".bat", ".js", ".vb", ".vbe", ".wsc", ".wsf",
-                     ".wsh", ".jsp", ".jspx", ".php", ".asp", ".aspx", ".psd1", ".psm1", ".ps1xml", ".clixml", ".psc1",
-                     ".pssc", ".pl"]
-
-SCRIPT_TYPES = ["VBS", "PHP", "JSP", "ASP", "BATCH"]
-
-# Mode
-FULL_SCAN = False
 
 # CSV file
 fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": []}
@@ -100,61 +77,6 @@ def get_file_data(filePath):
         return fileData
 
 
-def script_stats_analysis(data):
-    """
-    Only in Full Scan!!!
-    Doing a statistical analysis for scripts like PHP, JavaScript or PowerShell to
-    detect obfuscated code
-    :param data:
-    :return: message, score
-    """
-
-    anomal_chars = [r'^', r'{', r'}', r'"', r',', r'<', r'>', ';']
-    anomal_char_stats = {}
-    char_stats = {"upper": 0, "lower": 0, "numbers": 0, "symbols": 0, "spaces": 0}
-    anomalies = []
-    c = Counter(data)
-    anomaly_score = 0
-
-    # Check the characters
-    for char in c.most_common():
-        if chr(char[0]) in anomal_chars:
-            anomal_char_stats[char[0]] = char[1]
-        if chr(char[0]).isupper():
-            char_stats["upper"] += char[1]
-        elif chr(char[0]).islower():
-            char_stats["lower"] += char[1]
-        elif chr(char[0]).isdigit():
-            char_stats["numbers"] += char[1]
-        elif chr(char[0]).isspace():
-            char_stats["spaces"] += char[1]
-        else:
-            char_stats["symbols"] += char[1]
-
-    # Totals
-    char_stats["total"] = len(data)
-    char_stats["alpha"] = char_stats["upper"] + char_stats["lower"]
-
-    # Detect Anomalies
-    if char_stats["alpha"] > 40 and char_stats["upper"] > (char_stats["lower"] * 0.9):
-        anomalies.append("upper to lower ratio")
-        anomaly_score += 20
-    if char_stats["symbols"] > char_stats["alpha"]:
-        anomalies.append("more symbols than alphanum chars")
-        anomaly_score += 40
-    for ac, count in iter(anomal_char_stats.items()):
-        if (count / char_stats["alpha"]) > 0.05:
-            anomalies.append("symbol count of '%s' very high" % ac)
-            anomaly_score += 40
-
-    # Generate message
-    message = "Anomaly detected ANOMALIES: '{0}'".format("', '".join(anomalies))
-    if anomaly_score >= 40:
-        return message, anomaly_score
-
-    return "", 0
-
-
 class Scanner(object):
     # Signatures
     yara_rules = []
@@ -198,7 +120,7 @@ class Scanner(object):
         self.initialize_excludes(os.path.join(self.app_path, "config/excludes.cfg".replace("/", os.sep)))
 
         # Linux static excludes
-        if not args.force and os_platform == "linux":
+        if os_platform == "linux":
             self.startExcludes = self.LINUX_PATH_SKIPS_START | self.MOUNTED_DEVICES
 
         # Set IOC path
@@ -217,10 +139,6 @@ class Scanner(object):
         logger.log("INFO", "Init",
                    "File Name Characteristics initialized with %s regex patterns" % len(self.filename_iocs))
 
-        # C2 based IOCs (all files in iocs that contain 'c2')
-        self.initialize_c2_iocs(self.ioc_path)
-        logger.log("INFO", "Init", "C2 server indicators initialized with %s elements" % len(self.c2_server.keys()))
-
         ## Hash based IOCs (all files in iocs that contain 'hash')
         self.initialize_hash_iocs(self.ioc_path)
         logger.log("INFO", "Init", "Malicious MD5 Hashes initialized with %s hashes" % len(self.hashes_md5.keys()))
@@ -238,9 +156,6 @@ class Scanner(object):
         # Initialize File Type Magic signatures
         self.initialize_filetype_magics(os.path.join(self.app_path, 'libs/signature-base/misc/file-type-signatures.txt'
                                                      .replace("/", os.sep)))
-
-        # Levenshtein Checker
-        self.LevCheck = LevCheck()
 
     def scan_path(self, path):
         global MESSAGE
@@ -302,15 +217,12 @@ class Scanner(object):
 
                     # Get Extension
                     extension = os.path.splitext(filePath)[1].lower()
-                    # if not any(x for x in ALLOW_EXTENTIONS if extension == x):
-                    #     continue
-                    #     pass
-                    # Skip marker
+
                     skipIt = False
 
-                    # Unicode error test
-                    # if 1 > 0:
-                    #    walk_error(OSError("[Error 3] No such file or directory"))
+                    # File size check
+                    # if os.stat(filePath).st_size > 100*(1024*1024):
+                    #     skipIt = True
 
                     # User defined excludes
                     for skip in self.fullExcludes:
@@ -341,7 +253,8 @@ class Scanner(object):
                     c += 1
 
                     print_progress(c, total)
-
+                    print(filePath + "\t Size: {0} MB\t CSV: {1} bytes".format(os.stat(filePath).st_size/1024/1024,
+                          sys.getsizeof(fileInfo_csv)), end="\t")
                     # Skip program directory
                     # print appPath.lower() +" - "+ filePath.lower()
                     if self.app_path.lower() in filePath.lower():
@@ -361,13 +274,6 @@ class Scanner(object):
                                 fioc['regex'].pattern, fioc['score'], fioc['description']))
                             total_score += int(fioc['score'])
 
-                    # Levenshtein Check
-                    result = check(filename)
-                    if result:
-                        reasons.append("Levenshtein check - filename looks much like a well-known system file "
-                                       "SUBSCORE: 40 ORIGINAL: %s" % result)
-                        total_score += 60
-
                     # Evaluate Type
                     fileType = get_file_type(filePath, self.filetype_magics, self.max_filetype_magics, logger)
 
@@ -378,9 +284,6 @@ class Scanner(object):
                     fileData = ""
 
                     fileData = get_file_data(filePath)
-
-                    # First bytes
-                    firstBytesString = "%s / %s" % (fileData[:20].hex(), removeNonAsciiDrop(fileData[:20]))
 
                     # Hash Eval
                     matchType = None
@@ -419,13 +322,6 @@ class Scanner(object):
                         reasons.append("Malware Hash TYPE: %s HASH: %s SUBSCORE: 100 DESC: %s" % (
                             matchType, matchHash, matchDesc))
                         total_score += 100
-
-                    # Script Anomalies Check
-                    if FULL_SCAN and (extension in SCRIPT_EXTENSIONS or type in SCRIPT_TYPES):
-                        message, score = script_stats_analysis(fileData)
-                        if message:
-                            reasons.append("%s SCORE: %s" % (message, score))
-                            total_score += score
 
                     # Yara Check -------------------------------------------------------
 
@@ -550,502 +446,6 @@ class Scanner(object):
 
         except Exception:
             pass
-
-    def scan_win_processes(self):
-        logger.log("INFO", "Init", "Initializing process scan")
-        # WMI Handler
-        c = wmi.WMI()
-        processes = c.Win32_Process()
-        t_systemroot = os.environ['SYSTEMROOT']
-
-        # WinInit PID
-        wininit_pid = 0
-        # LSASS Counter
-        lsass_count = 0
-
-        # App's processes
-        app_pid = os.getpid()
-        app_ppid = psutil.Process(os.getpid()).ppid()  # safer way to do this - os.ppid() fails in some envs
-
-        for process in processes:
-            try:
-                # Gather Process Information --------------------------------------
-                process_id = process.ProcessId
-                name = process.Name
-                cmd = process.CommandLine
-                if not cmd:
-                    cmd = "N/A"
-                if not name:
-                    name = "N/A"
-                path = "none"
-                parent_pid = process.ParentProcessId
-                priority = process.Priority
-                if process.ExecutablePath:
-                    path = process.ExecutablePath
-                # Owner
-                try:
-                    owner_raw = process.GetOwner()
-                    owner = owner_raw[2]
-                except Exception:
-                    owner = "unknown"
-                if not owner:
-                    owner = "unknown"
-
-            except Exception:
-                logger.log("ALERT", "ProcessScan",
-                           "Error getting all process information. Did you run the scanner 'As Administrator'?")
-                continue
-
-            # Is parent to other processes - save PID
-            if name == "wininit.exe":
-                wininit_pid = process_id
-
-            # Special Checks ------------------------------------------------------
-            # better executable path
-            if not "\\" in cmd and path != "none":
-                cmd = path
-
-            # Process Info
-            process_info = "PID: %s NAME: %s OWNER: %s\n CMD: %s\n PATH: %s\n" % (
-                str(process_id), name, owner, cmd, path)
-
-            # Skip some PIDs ------------------------------------------------------
-            if process_id == 0 or process_id == 4:
-                continue
-
-            # Skip own process ----------------------------------------------------
-            if app_pid == process_id or app_ppid == process_id:
-                continue
-
-            # Skeleton Key Malware Process
-            if re.search(r"psexec .* [a-fA-F0-9]{32}", cmd, re.IGNORECASE):
-                logger.log("WARNING", "ProcessScan",
-                           "Process that looks like SKELETON KEY psexec execution detected %s" % process_info)
-
-            # File Name Checks -------------------------------------------------
-            for fioc in self.filename_iocs:
-                match = fioc['regex'].search(cmd)
-                if match:
-                    if fioc['score'] >= 70:
-                        logger.log("ALERT", "ProcessScan",
-                                   "File Name IOC matched PATTERN: %s\n DESC: %s\n MATCH: %s\n" % (
-                                       fioc['regex'].pattern, fioc['description'], cmd))
-                    elif fioc['score'] > 40:
-                        logger.log("WARNING", "ProcessScan",
-                                   "File Name Suspicious IOC matched PATTERN: %s\n DESC: %s\n MATCH: %s\n" % (
-                                       fioc['regex'].pattern, fioc['description'], cmd))
-
-            # Suspicious waitfor - possible backdoor https://twitter.com/subTee/status/872274262769500160
-            if name == "waitfor.exe":
-                logger.log("WARNING", "ProcessScan",
-                           "Suspicious waitfor.exe process https://twitter.com/subTee/status/872274262769500160 %s"
-                           % process_info)
-
-            ###############################################################
-            # THOR Process Connection Checks
-            self.check_win_process_connections(process)
-
-            ###############################################################
-            # THOR Process Anomaly Checks
-            # Source: Sysforensics http://goo.gl/P99QZQ
-
-            # Process: System
-            if name == "System" and not process_id == 4:
-                logger.log("WARNING", "ProcessScan", "System process without PID=4 %s" % process_info)
-
-            # Process: smss.exe
-            if name == "smss.exe" and not parent_pid == 4:
-                logger.log("WARNING", "ProcessScan", "smss.exe parent PID is != 4 %s" % process_info)
-            if path != "none":
-                if name == "smss.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "smss.exe path is not System32 %s" % process_info)
-            if name == "smss.exe" and priority != 11:
-                logger.log("WARNING", "ProcessScan", "smss.exe priority is not 11 %s" % process_info)
-
-            # Process: csrss.exe
-            if path != "none":
-                if name == "csrss.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "csrss.exe path is not System32 %s" % process_info)
-            if name == "csrss.exe" and priority != 13:
-                logger.log("WARNING", "ProcessScan", "csrss.exe priority is not 13 %s" % process_info)
-
-            # Process: wininit.exe
-            if path != "none":
-                if name == "wininit.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "wininit.exe path is not System32 %s" % process_info)
-            if name == "wininit.exe" and priority != 13:
-                logger.log("NOTICE", "ProcessScan", "wininit.exe priority is not 13 %s" % process_info)
-            # Is parent to other processes - save PID
-            if name == "wininit.exe":
-                wininit_pid = process_id
-
-            # Process: services.exe
-            if path != "none":
-                if name == "services.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "services.exe path is not System32 %s" % process_info)
-            if name == "services.exe" and priority != 9:
-                logger.log("WARNING", "ProcessScan", "services.exe priority is not 9 %s" % process_info)
-            if wininit_pid > 0:
-                if name == "services.exe" and not parent_pid == wininit_pid:
-                    logger.log("WARNING", "ProcessScan",
-                               "services.exe parent PID is not the one of wininit.exe %s" % process_info)
-
-            # Process: lsass.exe
-            if path != "none":
-                if name == "lsass.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "lsass.exe path is not System32 %s" % process_info)
-            if name == "lsass.exe" and priority != 9:
-                logger.log("WARNING", "ProcessScan", "lsass.exe priority is not 9 %s" % process_info)
-            if wininit_pid > 0:
-                if name == "lsass.exe" and not parent_pid == wininit_pid:
-                    logger.log("WARNING", "ProcessScan",
-                               "lsass.exe parent PID is not the one of wininit.exe %s" % process_info)
-            # Only a single lsass process is valid - count occurrences
-            if name == "lsass.exe":
-                lsass_count += 1
-                if lsass_count > 1:
-                    logger.log("WARNING", "ProcessScan", "lsass.exe count is higher than 1 %s" % process_info)
-
-            # Process: svchost.exe
-            if path != "none":
-                if name == "svchost.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "svchost.exe path is not System32 %s" % process_info)
-            if name == "svchost.exe" and priority != 8:
-                logger.log("NOTICE", "ProcessScan", "svchost.exe priority is not 8 %s" % process_info)
-            # Windows 10 FP
-            # if name == "svchost.exe" and not ( self.check_svchost_owner(owner) or "unistacksvcgroup" in cmd.lower()):
-            #    logger.log("WARNING", "ProcessScan", "svchost.exe process owner is suspicious %s" % process_info)
-
-            if name == "svchost.exe" and not " -k " in cmd and cmd != "N/A":
-                logger.log("WARNING", "ProcessScan",
-                           "svchost.exe process does not contain a -k in its command line %s" % process_info)
-
-            # Process: lsm.exe
-            if path != "none":
-                if name == "lsm.exe" and not ("system32" in path.lower() or "system32" in cmd.lower()):
-                    logger.log("WARNING", "ProcessScan", "lsm.exe path is not System32 %s" % process_info)
-            if name == "lsm.exe" and priority != 8:
-                logger.log("NOTICE", "ProcessScan", "lsm.exe priority is not 8 %s" % process_info)
-            if name == "lsm.exe" and not (
-                    owner.startswith("NT ") or owner.startswith("LO") or owner.startswith("SYSTEM")):
-                logger.log(u"WARNING", "ProcessScan", "lsm.exe process owner is suspicious %s" % process_info)
-            if wininit_pid > 0:
-                if name == "lsm.exe" and not parent_pid == wininit_pid:
-                    logger.log("WARNING", "ProcessScan",
-                               "lsm.exe parent PID is not the one of wininit.exe %s" % process_info)
-
-            # Process: winlogon.exe
-            if name == "winlogon.exe" and priority != 13:
-                logger.log("WARNING", "ProcessScan", "winlogon.exe priority is not 13 %s" % process_info)
-            if re.search("(Windows 7|Windows Vista)", getPlatformFull()):
-                if name == "winlogon.exe" and parent_pid > 0:
-                    for proc in processes:
-                        if parent_pid == proc.ProcessId:
-                            logger.log("WARNING", "ProcessScan",
-                                       "winlogon.exe has a parent ID but should have none %s PARENTID: %s"
-                                       % (process_info, str(parent_pid)))
-
-            # Process: explorer.exe
-            if path != "none":
-                if name == "explorer.exe" and not t_systemroot.lower() in path.lower():
-                    logger.log("WARNING", "ProcessScan", "explorer.exe path is not %%SYSTEMROOT%% %s" % process_info)
-            if name == "explorer.exe" and parent_pid > 0:
-                for proc in processes:
-                    if parent_pid == proc.ProcessId:
-                        logger.log("NOTICE", "ProcessScan",
-                                   "explorer.exe has a parent ID but should have none %s" % process_info)
-
-    def check_win_process_connections(self, process):
-        pid = 0
-        try:
-
-            # Limits
-            MAXIMUM_CONNECTIONS = 20
-
-            # Counter
-            connection_count = 0
-
-            # Pid from process
-            pid = process.ProcessId
-            name = process.Name
-
-            # Get psutil info about the process
-            try:
-                p = psutil.Process(pid)
-            except Exception:
-                return
-
-            # print "Checking connections of %s" % process.Name
-            for x in p.connections():
-
-                # Evaluate a usable command line to check
-                try:
-                    command = process.CommandLine
-                except Exception:
-                    command = p.cmdline()
-
-                if x.status == 'LISTEN':
-                    connection_count += 1
-                    # logger.log("NOTICE", "ProcessScan",
-                    #            "Listening process PID: %s NAME: %s COMMAND: %s IP: %s PORT: %s" % (
-                    #                str(pid), name, command, str(x.laddr[0]), str(x.laddr[1])))
-                    if str(x.laddr[1]) == "0":
-                        logger.log("WARNING", "ProcessScan",
-                                   "Listening on Port 0 PID: %s NAME: %s IP: %s PORT: %s\n COMMAND: %s\n" % (
-                                       str(pid), name, command, str(x.laddr[0]), str(x.laddr[1])))
-
-                if x.status == 'ESTABLISHED' or x.status == 'SYN_SENT':
-
-                    # Lookup Remote IP
-                    # Geo IP Lookup removed
-
-                    # Check keyword in remote address
-                    is_match, description = self.check_c2(str(x.raddr[0]))
-                    if is_match:
-                        logger.log("ALERT", "ProcessScan",
-                                   "Malware Domain/IP match in remote address PID: %s NAME: %s "
-                                   "IP: %s PORT: %s\n DESC: %s\n COMMAND: %s\n" % (
-                                       str(pid), name, str(x.raddr[0]), str(x.raddr[1]), description, command))
-
-                    # Full list
-                    connection_count += 1
-                    exclude_ip = "127.0.0.1 ::1"
-                    if str(x.laddr[0]) in exclude_ip and str(x.raddr[0]) in exclude_ip:
-                        continue
-                    else:
-                        logger.log("NOTICE", "ProcessScan",
-                                   x.status + " connection PID: %s NAME: %s LIP: %s "
-                                              "LPORT: %s RIP: %s RPORT: %s\n COMMAND: %s" % (str(pid), name,
-                                                                                             str(x.laddr[0]),
-                                                                                             str(x.laddr[1]),
-                                                                                             str(x.raddr[0]),
-                                                                                             str(x.raddr[1]),
-                                                                                             command))
-
-                # Maximum connection output
-                if connection_count > MAXIMUM_CONNECTIONS:
-                    # logger.log("NOTICE", "ProcessScan", "Connection output threshold reached. Output truncated.")
-                    return
-
-        except Exception:
-            logger.log("INFO", "ProcessScan",
-                       "Process %s does not exist anymore or cannot be accessed" % str(pid))
-            sys.exit(1)
-
-    def scan_linux_processes(self):
-        logger.log("INFO", "Init", "Initializing process scan")
-        processes = psutil.process_iter()
-
-        # App's processes
-        app_pid = os.getpid()
-        app_ppid = psutil.Process(os.getpid()).ppid()  # safer way to do this - os.ppid() fails in some envs
-
-        # Counter
-        c = 0
-        total = sum(1 for _ in psutil.process_iter())
-        for process in processes:
-            try:
-                # Counter
-                c += 1
-
-                print_progress(c, total)
-                # Gather Process Information --------------------------------------
-                process_id = process.pid
-                name = process.name()
-                cmd = process.cmdline()
-                if len(cmd) == 0:
-                    cmd = ["N/A"]
-                if not name:
-                    name = "N/A"
-                # Process Info
-                process_info = "PID: %s NAME: %s\n CMD: %s" % (str(process_id), name, cmd)
-
-            except Exception:
-                logger.log("ALERT", "ProcessScan",
-                           "Error getting all process information. Did you run the scanner 'As Root'?")
-                continue
-
-            # Skip own process ----------------------------------------------------
-            if app_pid == process_id or app_ppid == process_id:
-                continue
-
-            # Skeleton Key Malware Process
-            for command in cmd:
-                if re.search(r'psexec .* [a-fA-F0-9]{32}', command, re.IGNORECASE):
-                    logger.log("WARNING", "ProcessScan",
-                               "Process that looks like SKELETON KEY psexec execution detected %s" % process_info)
-
-            # Yara rule match
-            # only on processes with a small working set size
-            if process_exists(process_id):
-                try:
-                    alerts = []
-                    for rules in self.yara_rules:
-                        # continue - fast switch
-                        matches = rules.match(pid=process_id)
-                        if matches:
-                            for match in matches:
-
-                                # Preset memory_rule
-                                memory_rule = 1
-
-                                # Built-in rules have meta fields (cannot be expected from custom rules)
-                                if hasattr(match, 'meta'):
-
-                                    # If a score is given
-                                    if 'memory' in match.meta:
-                                        memory_rule = int(match.meta['memory'])
-
-                                # If rule is meant to be applied to process memory as well
-                                if memory_rule == 1:
-                                    # print match.rule
-                                    alerts.append("Yara Rule MATCH: %s %s" % (match.rule, process_info))
-
-                    if len(alerts) > 5:
-                        logger.log("WARNING", "ProcessScan",
-                                   "Too many matches on process memory - most likely a false positive %s"
-                                   % process_info)
-                    elif len(alerts) > 0:
-                        for alert in alerts:
-                            logger.log("ALERT", "ProcessScan", alert)
-                except Exception:
-                    pass
-            ###############################################################
-            # THOR Process Connection Checks
-            self.check_linux_process_connections(process)
-        print("")
-        logger.log("INFO", "Init", "Process scan finish.")
-
-    def check_linux_process_connections(self, process):
-        process_id = None
-        try:
-            # Limits
-            MAXIMUM_CONNECTIONS = 20
-
-            # Counter
-            connection_count = 0
-
-            # Pid from process
-            process_id = process.pid
-            name = process.name()
-
-            # print "Checking connections of %s" % process.Name
-            for x in process.connections():
-
-                # Evaluate a usable command line to check
-                try:
-                    command = process.cmdline()
-                except Exception:
-                    command = "N/A"
-
-                if x.status == 'LISTEN':
-                    connection_count += 1
-
-                    if str(x.laddr[1]) == "0":
-                        logger.log("WARNING", "ProcessScan",
-                                   "Listening on Port 0 PID: %s NAME: %s  IP: %s PORT: %s\n COMMAND: %s\n" % (
-                                       str(process_id), name, str(x.laddr[0]), str(x.laddr[1]), command))
-
-                if x.status == 'ESTABLISHED' or x.status == 'SYN_SENT':
-
-                    # Lookup Remote IP
-                    # Geo IP Lookup removed
-
-                    # Check keyword in remote address
-                    is_match, description = self.check_c2(str(x.raddr[0]))
-                    if is_match:
-                        logger.log("ALERT", "ProcessScan",
-                                   "Malware Domain/IP match in remote address PID: %s NAME: %s "
-                                   "IP: %s PORT: %s DESC: %s\n COMMAND: %s" % (
-                                       str(process_id), name, str(x.raddr[0]), str(x.raddr[1]), description, command))
-
-                    # Full list
-                    connection_count += 1
-                    if str(x.raddr[0]) not in "127.0.0.1" and command is not None:
-                        print("")
-                        logger.log("NOTICE", "ProcessScan",
-                                   "Established connection PID: %s NAME: %s LIP: %s "
-                                   "LPORT: %s RIP: %s RPORT: %s\n COMMAND: %s" % (
-                                       str(process_id), name, str(x.laddr[0]), str(x.laddr[1]),
-                                       str(x.raddr[0]), str(x.raddr[1]), command))
-
-                # Maximum connection output
-                if connection_count > MAXIMUM_CONNECTIONS:
-                    logger.log("NOTICE", "ProcessScan", "Connection output threshold reached. Output truncated.")
-                    return
-
-        except Exception:
-            traceback.print_exc()
-            logger.log("INFO", "ProcessScan",
-                       "Process %s does not exist anymore or cannot be accessed" % str(process_id))
-            sys.exit(1)
-
-    def check_c2(self, remote_system):
-        # IP - exact match
-        if is_ip(remote_system):
-            for c2 in self.c2_server:
-                # if C2 definition is CIDR network
-                if is_cidr(c2):
-                    if ip_in_net(remote_system, c2):
-                        return True, self.c2_server[c2]
-                # if C2 is ip or else
-                if c2 == remote_system:
-                    return True, self.c2_server[c2]
-        # Domain - remote system contains c2
-        else:
-            for c2 in self.c2_server:
-                if c2 in remote_system:
-                    return True, self.c2_server[c2]
-
-        return False, ""
-
-    def initialize_c2_iocs(self, ioc_directory):
-        ioc_filenames = None
-        try:
-            for ioc_filenames in os.listdir(ioc_directory):
-                try:
-                    if 'c2' in ioc_filenames:
-                        with codecs.open(os.path.join(ioc_directory, ioc_filenames), 'r', encoding='utf-8') as file:
-                            lines = file.readlines()
-
-                            # Last Comment Line
-                            last_comment = ""
-
-                            for line in lines:
-                                try:
-                                    # Comments and empty lines
-                                    if re.search(r'^#', line) or re.search(r'^[\s]*$', line):
-                                        last_comment = line.lstrip("#").lstrip(" ").rstrip("\n")
-                                        continue
-
-                                    # Split the IOC line
-                                    if ";" in line:
-                                        line = line.rstrip(" ").rstrip("\n\r")
-                                        row = line.split(';')
-                                        c2 = row[0]
-                                        # LOKI doesn't use the C2 score (only THOR Lite)
-                                        # score = row[1]
-
-                                        # Elements without description
-                                    else:
-                                        c2 = line
-
-                                    # Check length
-                                    if len(c2) < 4:
-                                        logger.log("NOTICE", "Init",
-                                                   "C2 server definition is suspiciously short - will not add %s" % c2)
-                                        continue
-
-                                    # Add to the LOKI iocs
-                                    self.c2_server[c2.lower()] = last_comment
-
-                                except Exception:
-                                    logger.log("ERROR", "Init", "Cannot read line: %s" % line)
-                                    sys.exit(1)
-                except OSError:
-                    logger.log("ERROR", "Init", "No such file or directory")
-        except Exception:
-            logger.log("ERROR", "Init", "Error reading Hash file: %s" % ioc_filenames)
 
     def initialize_filename_iocs(self, ioc_directory):
         return
@@ -1342,14 +742,9 @@ def main():
     # Parse Arguments
     parser = argparse.ArgumentParser(description='WebShell Scanner')
     parser.add_argument('-p', '--path', help='Path to scan', required=True)
-    parser.add_argument('-f', '--full_scan', help='Full scan', default=False, action='store_true')
-    parser.add_argument('-sp', '--scan_process', help='Scan process', default=False, action='store_true')
     parser.add_argument('-o', '--out_file', help='Write to file', default="output.log")
     parser.add_argument('-q', '--quarantine', help='Rename and move to quarantine areas', default=False,
                         action='store_true')
-    parser.add_argument('--force', action='store_true',
-                        help='Force the scan on a certain folder (use with caution)', default=False)
-
     args = parser.parse_args()
 
     return args
@@ -1394,20 +789,10 @@ if __name__ == '__main__':
         logger.log("NOTICE", "Init", "This system is not supported by this program")
         sys.exit(1)
 
-    FULL_SCAN = args.full_scan
-
     # Set process to nice priority ------------------------------------
     if os_platform == "windows":
         setNice(logger)
 
-    # Scan Processes --------------------------------------------------
-    if isRoot:
-        if args.scan_process and os_platform == "windows":
-            scanner.scan_win_processes()
-        elif args.scan_process and os_platform == "linux":
-            scanner.scan_linux_processes()
-    else:
-        logger.log("NOTICE", "Init", "Skipping process memory check. User has no root rights.")
     # Scan Path -------------------------------------------------------
     # Set default
     defaultPath = args.path

@@ -1,12 +1,6 @@
-wheel
 colorama
 psutil
 netaddr
-requests
-beautifulsoup4
-simplejson
-yara-python
-bs4
-IPy
 WMI
 pywin32
+pandas

@@ -117,18 +117,19 @@ def removeBinaryZero(string):
 
 
 def print_progress(i, total):
+    sys_inf = "\tRAM: {}%".format(str(psutil.virtual_memory()[2]))
     if (i % 4) == 0:
         print("", end="\r")
-        print(str(i) + "/" + str(total) + " /", end="\t")
+        print(str(i) + "/" + str(total) + " /" + sys_inf, end="\t")
     elif (i % 4) == 1:
         print("", end="\r")
-        print(str(i) + "/" + str(total) + " -", end="\t")
+        print(str(i) + "/" + str(total) + " -" + sys_inf, end="\t")
     elif (i % 4) == 2:
         print("", end="\r")
-        print(str(i) + "/" + str(total) + " |", end="\t")
+        print(str(i) + "/" + str(total) + " |" + sys_inf, end="\t")
     elif (i % 4) == 3:
         print("", end="\r")
-        print(str(i) + "/" + str(total) + " \\", end="\t")
+        print(str(i) + "/" + str(total) + " \\" + sys_inf, end="\t")
 
 
 def transformOS(regex, platform):
