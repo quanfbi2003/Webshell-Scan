@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
 import argparse
 import shutil
 import signal as signal_module
 import stat
 from bisect import bisect_left
-from collections import Counter
+
 from sys import platform as _platform
 import yara  # install 'yara-python' module not the outdated 'yara' module
 from libs.helpers import *
@@ -18,7 +19,7 @@ except:
     pass
 
 # Version
-VERSION = "v1.6"
+VERSION = "v1.7"
 
 # Platform
 os_platform = ""
@@ -32,49 +33,6 @@ else:
 
 # CSV file
 fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": []}
-
-
-def ioc_contains(sorted_list, value):
-    # returns true if sorted_list contains value
-    index = bisect_left(sorted_list, value)
-    return index != len(sorted_list) and sorted_list[index] == value
-
-
-def get_string_matches(strings):
-    try:
-        string_matches = []
-        matching_strings = ""
-        for estring in strings:
-            # print string
-            extract = estring[2]
-            if not extract in string_matches:
-                string_matches.append(extract)
-
-        string_num = 1
-        for estring in string_matches:
-            matching_strings += " Str" + str(string_num) + ": " + removeNonAscii(estring)
-            string_num += 1
-
-        # Limit string
-        if len(matching_strings) > 140:
-            matching_strings = matching_strings[:140] + " ... (truncated)"
-
-        return matching_strings.lstrip(" ")
-    except Exception:
-        traceback.print_exc()
-
-
-def get_file_data(filePath):
-    fileData = b''
-    try:
-        # Read file complete
-        with open(filePath, 'rb') as f:
-            fileData = f.read()
-    except Exception:
-        # logger.log("ERROR", "FileScan", "Cannot open file %s (access denied)" % filePath)
-        pass
-    finally:
-        return fileData
 
 
 class Scanner(object):
@@ -105,9 +63,9 @@ class Scanner(object):
     MOUNTED_DEVICES = {"/media", "/volumes"}
     LINUX_PATH_SKIPS_END = {"/initctl"}
 
-    def __init__(self, ):
+    def __init__(self):
         # Get application path
-        self.app_path = get_application_path()
+        self.app_path = self.get_application_path()
 
         # Check if signature database is present
         sig_dir = os.path.join(self.app_path, "libs/signature-base".replace("/", os.sep))
@@ -157,6 +115,49 @@ class Scanner(object):
         self.initialize_filetype_magics(os.path.join(self.app_path, 'libs/signature-base/misc/file-type-signatures.txt'
                                                      .replace("/", os.sep)))
 
+    @staticmethod
+    def get_string_matches(strings):
+        try:
+            string_matches = []
+            matching_strings = ""
+            for estring in strings:
+                # print string
+                extract = estring[2]
+                if not extract in string_matches:
+                    string_matches.append(extract)
+
+            string_num = 1
+            for estring in string_matches:
+                matching_strings += " Str" + str(string_num) + ": " + removeNonAscii(estring)
+                string_num += 1
+
+            # Limit string
+            if len(matching_strings) > 140:
+                matching_strings = matching_strings[:140] + " ... (truncated)"
+
+            return matching_strings.lstrip(" ")
+        except Exception:
+            traceback.print_exc()
+
+    @staticmethod
+    def ioc_contains(self, sorted_list, value):
+        # returns true if sorted_list contains value
+        index = bisect_left(sorted_list, value)
+        return index != len(sorted_list) and sorted_list[index] == value
+
+    @staticmethod
+    def get_file_data(filePath):
+        fileData = b''
+        try:
+            # Read file complete
+            with open(filePath, 'rb') as f:
+                fileData = f.read()
+        except Exception:
+            # logger.log("ERROR", "FileScan", "Cannot open file %s (access denied)" % filePath)
+            pass
+        finally:
+            return fileData
+
     def scan_path(self, path):
         global MESSAGE
         MESSAGE = []
@@ -178,7 +179,7 @@ class Scanner(object):
         c = 0
         total = 0
 
-        for root, directories, files in os.walk(path, onerror=walk_error, followlinks=False):
+        for root, directories, files in os.walk(path, onerror=self.walk_error, followlinks=False):
             # Skip paths that start with ..
             newDirectories = []
             for directory in directories:
@@ -253,8 +254,8 @@ class Scanner(object):
                     c += 1
 
                     print_progress(c, total)
-                    print(filePath + "\t Size: {0} MB\t CSV: {1} bytes".format(os.stat(filePath).st_size/1024/1024,
-                          sys.getsizeof(fileInfo_csv)), end="\t")
+                    print(filePath + "\t Size: {0} MB\t CSV: {1} bytes".format(os.stat(filePath).st_size / 1024 / 1024,
+                                                                               sys.getsizeof(fileInfo_csv)))
                     # Skip program directory
                     # print appPath.lower() +" - "+ filePath.lower()
                     if self.app_path.lower() in filePath.lower():
@@ -283,7 +284,7 @@ class Scanner(object):
                     # Set fileData to an empty value
                     fileData = ""
 
-                    fileData = get_file_data(filePath)
+                    fileData = self.get_file_data(filePath)
 
                     # Hash Eval
                     matchType = None
@@ -304,15 +305,15 @@ class Scanner(object):
                         continue
 
                     # Malware Hash
-                    if ioc_contains(self.hashes_md5_list, md5_num):
+                    if self.ioc_contains(self.hashes_md5_list, md5_num):
                         matchType = "MD5"
                         matchDesc = self.hashes_md5[md5_num]
                         matchHash = md5
-                    if ioc_contains(self.hashes_sha1_list, sha1_num):
+                    if self.ioc_contains(self.hashes_sha1_list, sha1_num):
                         matchType = "SHA1"
                         matchDesc = self.hashes_sha1[sha1_num]
                         matchHash = sha1
-                    if ioc_contains(self.hashes_sha256_list, sha256_num):
+                    if self.ioc_contains(self.hashes_sha256_list, sha256_num):
                         matchType = "SHA256"
                         matchDesc = self.hashes_sha256[sha256_num]
                         matchHash = sha256
@@ -440,7 +441,7 @@ class Scanner(object):
                         matched_strings = ""
                         if hasattr(match, 'strings'):
                             # Get matching strings
-                            matched_strings = get_string_matches(match.strings)
+                            matched_strings = self.get_string_matches(match.strings)
 
                         yield score, match.rule, description, reference, matched_strings, author
 
@@ -466,7 +467,7 @@ class Scanner(object):
                         for line in lines:
                             try:
                                 # Empty
-                                if re.search(r'^[\s]*$', line):
+                                if re.search(r'^\s*$', line):
                                     continue
 
                                 # Comments
@@ -527,7 +528,8 @@ class Scanner(object):
                 if not os.path.exists(yara_rule_directory):
                     continue
                 # logger.log("INFO", "Init", "Processing YARA rules folder {0}".format(yara_rule_directory))
-                for root, directories, files in os.walk(yara_rule_directory, onerror=walk_error, followlinks=False):
+                for root, directories, files in os.walk(yara_rule_directory, onerror=self.walk_error,
+                                                        followlinks=False):
                     for file in files:
                         try:
                             # Full Path
@@ -613,7 +615,7 @@ class Scanner(object):
 
                         for line in lines:
                             try:
-                                if re.search(r'^#', line) or re.search(r'^[\s]*$', line):
+                                if re.search(r'^#', line) or re.search(r'^\s*$', line):
                                     continue
                                 row = line.split(';')
                                 file_hash = row[0].lower()
@@ -651,7 +653,7 @@ class Scanner(object):
 
             for line in lines:
                 try:
-                    if re.search(r'^#', line) or re.search(r'^[\s]*$', line) or ";" not in line:
+                    if re.search(r'^#', line) or re.search(r'^\s*$', line) or ";" not in line:
                         continue
 
                     (sig_raw, description) = line.rstrip("\n").split(";")
@@ -678,7 +680,7 @@ class Scanner(object):
                 lines = config.read().splitlines()
 
             for line in lines:
-                if re.search(r'^[\s]*#', line):
+                if re.search(r'^\s*#', line):
                     continue
                 try:
                     # If the line contains something
@@ -693,40 +695,40 @@ class Scanner(object):
         except Exception:
             logger.log("NOTICE", "Init", "Error reading excludes file: %s" % excludes_file)
 
+    @staticmethod
+    def get_application_path():
+        try:
+            if getattr(sys, 'frozen', False):
+                application_path = os.path.dirname(os.path.realpath(sys.executable))
+            else:
+                application_path = os.path.dirname(os.path.realpath(__file__))
+            return application_path
+        except Exception:
+            print("Error while evaluation of application path")
+            traceback.print_exc()
+            sys.exit(1)
 
-def get_application_path():
-    try:
-        if getattr(sys, 'frozen', False):
-            application_path = os.path.dirname(os.path.realpath(sys.executable))
-        else:
-            application_path = os.path.dirname(os.path.realpath(__file__))
-        return application_path
-    except Exception:
-        print("Error while evaluation of application path")
-        traceback.print_exc()
-        sys.exit(1)
+    @staticmethod
+    def is64bit():
+        """
+        Checks if the system has a 64bit processor architecture
+        :return arch:
+        """
+        return platform.machine().endswith('64')
 
+    @staticmethod
+    def process_exists(pid):
+        """
+        Checks if a given process is running
+        :param pid:
+        :return:
+        """
+        return psutil.pid_exists(pid)
 
-def is64bit():
-    """
-    Checks if the system has a 64bit processor architecture
-    :return arch:
-    """
-    return platform.machine().endswith('64')
-
-
-def process_exists(pid):
-    """
-    Checks if a given process is running
-    :param pid:
-    :return:
-    """
-    return psutil.pid_exists(pid)
-
-
-def walk_error(err):
-    if "Error 3" in str(err):
-        print("Directory walk error")
+    @staticmethod
+    def walk_error(err):
+        if "Error 3" in str(err):
+            print("Directory walk error")
 
 
 # CTRL+C Handler --------------------------------------------------------------
@@ -813,7 +815,7 @@ if __name__ == '__main__':
         logger.log("RESULT", "Results", "SYSTEM SEEMS TO BE CLEAN.")
 
     logger.log("NOTICE", "Results",
-               "Log file is stored in: {0}{1}{2}".format(get_application_path(), "/logs/".replace("/", os.sep),
+               "Log file is stored in: {0}{1}{2}".format(scanner.get_application_path(), "/logs/".replace("/", os.sep),
                                                          args.out_file))
     logger.log("NOTICE", "Results",
                "Finished Webshell Scan SYSTEM: %s TIME: %s" % (getHostname(os_platform), getSyslogTimestamp()))
