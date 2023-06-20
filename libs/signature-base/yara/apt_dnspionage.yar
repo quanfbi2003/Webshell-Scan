@@ -2,16 +2,17 @@
 rule MAL_DNSPIONAGE_Malware_Nov18 {
    meta:
       description = "Detects DNSpionage Malware"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html"
       date = "2018-11-30"
+      modified = "2023-01-06"
       hash1 = "2010f38ef300be4349e7bc287e720b1ecec678cacbf0ea0556bcf765f6e073ec"
       hash2 = "45a9edb24d4174592c69d9d37a534a518fbe2a88d3817fc0cc739e455883b8ff"
    strings:
-      $x1 = ".0ffice36o.com" fullword ascii
+      $x1 = ".0ffice36o.com" ascii
 
-      $s1 = "/Client/Login?id=" fullword ascii
-      $s2 = ".\\Configure.txt" fullword ascii
+      $s1 = "/Client/Login?id=" ascii
+      $s2 = ".\\Configure.txt" ascii
       $s5 = "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko" fullword ascii
       $s6 = "Content-Disposition: form-data; name=\"txts\"" fullword ascii
    condition:
@@ -21,7 +22,7 @@ rule MAL_DNSPIONAGE_Malware_Nov18 {
 rule APT_DNSpionage_Karkoff_Malware_Apr19_1 {
    meta:
       description = "Detects DNSpionage Karkoff malware"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://blog.talosintelligence.com/2019/04/dnspionage-brings-out-karkoff.html"
       date = "2019-04-24"
       hash1 = "6a251ed6a2c6a0a2be11f2a945ec68c814d27e2b6ef445f4b2c7a779620baa11"

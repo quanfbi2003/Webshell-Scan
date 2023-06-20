@@ -11,7 +11,7 @@ rule Turla_APT_srsvc {
 	meta:
 		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		family = "Turla"
 		reference = "https://www.govcert.admin.ch/blog/22/technical-report-about-the-ruag-espionage-case"
 		date = "2016-06-09"
@@ -33,7 +33,7 @@ rule Turla_APT_Malware_Gen1 {
 	meta:
 		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		family = "Turla"
 		reference = "https://www.govcert.admin.ch/blog/22/technical-report-about-the-ruag-espionage-case"
 		date = "2016-06-09"
@@ -68,47 +68,47 @@ rule Turla_APT_Malware_Gen1 {
 		or ( 12 of them )
 }
 
-rule Turla_APT_Malware_Gen2 {
-	meta:
-		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
-		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
-		family = "Turla"
-		reference = "https://www.govcert.admin.ch/blog/22/technical-report-about-the-ruag-espionage-case"
-		date = "2016-06-09"
-		hash1 = "0e1bf347c37fb199886f1e675e372ba55ac4627e8be2f05a76c2c64f9b6ed0e4"
-		hash2 = "7206075cd8f1004e8f1f759d46e98bfad4098b8642412811a214c0155a1f08b9"
-		hash3 = "fe3ffd7438c0d38484bf02a78a19ea81a6f51b4b3f2b2228bd21974c2538bbcd"
-		hash4 = "c49111af049dd9746c6b1980db6e150b2a79ca1569b23ed2cba81c85c00d82b4"
-	strings:
-		$x1 = "Internal command not support =((" fullword ascii
-		$x2 = "L|-1|AS_CUR_USER:OpenProcessToken():%d, %s|" fullword ascii
-		$x3 = "L|-1|CreateProcessAsUser():%d, %s|" fullword ascii
-		$x4 = "AS_CUR_USER:OpenProcessToken():%d" fullword ascii
-		$x5 = "L|-1|AS_CUR_USER:LogonUser():%d, %s|" fullword ascii
-		$x6 = "L|-1|try to run dll %s with user priv|" fullword ascii
-		$x7 = "\\\\.\\Global\\PIPE\\sdlrpc" fullword ascii
-		$x8 = "\\\\%s\\pipe\\comnode" fullword ascii
-		$x9 = "Plugin dll stop failed." fullword ascii
-		$x10 = "AS_USER:LogonUser():%d" fullword ascii
+rule RUAG_APT_Malware_Gen2 {
+   meta:
+      description = "Detects malware used in the RUAG APT case"
+      author = "Florian Roth (Nextron Systems)"
+      reference = "https://www.govcert.admin.ch/blog/22/technical-report-about-the-ruag-espionage-case"
+      date = "2016-06-09"
+      modified = "2023-01-06"
+      score = 90
+      hash1 = "0e1bf347c37fb199886f1e675e372ba55ac4627e8be2f05a76c2c64f9b6ed0e4"
+      hash2 = "7206075cd8f1004e8f1f759d46e98bfad4098b8642412811a214c0155a1f08b9"
+      hash3 = "fe3ffd7438c0d38484bf02a78a19ea81a6f51b4b3f2b2228bd21974c2538bbcd"
+      hash4 = "c49111af049dd9746c6b1980db6e150b2a79ca1569b23ed2cba81c85c00d82b4"
+   strings:
+      $x1 = "Internal command not support =((" ascii
+      $x2 = "L|-1|AS_CUR_USER:OpenProcessToken():%d, %s|" fullword ascii
+      $x3 = "L|-1|CreateProcessAsUser():%d, %s|" fullword ascii
+      $x4 = "AS_CUR_USER:OpenProcessToken():%d" fullword ascii
+      $x5 = "L|-1|AS_CUR_USER:LogonUser():%d, %s|" fullword ascii
+      $x6 = "L|-1|try to run dll %s with user priv|" fullword ascii
+      $x7 = "\\\\.\\Global\\PIPE\\sdlrpc" fullword ascii
+      $x8 = "\\\\%s\\pipe\\comnode" fullword ascii
+      $x9 = "Plugin dll stop failed." fullword ascii
+      $x10 = "AS_USER:LogonUser():%d" fullword ascii
 
-		$s1 = "MSIMGHLP.DLL" fullword wide
-		$s2 = "msimghlp.dll" fullword ascii
-		$s3 = "ximarsh.dll" fullword ascii
-		$s4 = "msximl.dll" fullword ascii
-		$s5 = "INTERNAL.dll" fullword ascii
-		$s6 = "\\\\.\\Global\\PIPE\\" fullword ascii
-		$s7 = "ieuser.exe" fullword ascii
-	condition:
-		( uint16(0) == 0x5a4d and filesize < 2000KB and ( 1 of ($x*) or 5 of ($s*) ) )
-		or ( 10 of them )
+      $s1 = "MSIMGHLP.DLL" fullword wide
+      $s2 = "msimghlp.dll" fullword ascii
+      $s3 = "ximarsh.dll" fullword ascii
+      $s4 = "msximl.dll" fullword ascii
+      $s5 = "INTERNAL.dll" fullword ascii
+      $s6 = "\\\\.\\Global\\PIPE\\" ascii
+      $s7 = "ieuser.exe" fullword ascii
+   condition:
+      ( uint16(0) == 0x5a4d and filesize < 2000KB and ( 1 of ($x*) or 5 of ($s*) ) )
+      or ( 10 of them )
 }
 
 rule Turla_APT_Malware_Gen3 {
 	meta:
 		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		family = "Turla"
 		reference = "https://www.govcert.admin.ch/blog/22/technical-report-about-the-ruag-espionage-case"
 		date = "2016-06-09"
@@ -149,7 +149,7 @@ rule Turla_Mal_Script_Jan18_1 {
    meta:
       description = "Detects Turla malicious script"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://ghostbin.com/paste/jsph7"
       date = "2018-01-19"
       hash1 = "180b920e9cea712d124ff41cd1060683a14a79285d960e17f0f49b969f15bfcc"
@@ -183,16 +183,17 @@ rule Turla_KazuarRAT {
       uint16(0) == 0x5a4d and  filesize < 20KB and (
          pe.imphash() == "682156c4380c216ff8cb766a2f2e8817" or
          2 of them )
-      }
+}
+
 
 rule MAL_Turla_Agent_BTZ {
    meta:
       description = "Detects Turla Agent.BTZ"
-      license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://www.gdatasoftware.com/blog/2014/11/23937-the-uroburos-case-new-sophisticated-rat-identified"
       date = "2018-04-12"
-		modified = "2022-12-21"
+      modified = "2023-01-06"
+      score = 90
       hash1 = "c4a1cd6916646aa502413d42e6e7441c6e7268926484f19d9acbf5113fc52fc8"
    strings:
       $x1 = "1dM3uu4j7Fw4sjnbcwlDqet4F7JyuUi4m5Imnxl1pzxI6as80cbLnmz54cs5Ldn4ri3do5L6gs923HL34x2f5cvd0fk6c1a0s" fullword ascii
@@ -204,12 +205,12 @@ rule MAL_Turla_Agent_BTZ {
       $s1 = "%s\\1.txt" fullword ascii
       $s2 = "%windows%" fullword ascii
       $s3 = "%s\\system32" fullword ascii
-      $s4 = "\\Help\\SYSTEM32\\" fullword ascii
+      $s4 = "\\Help\\SYSTEM32\\" ascii
       $s5 = "%windows%\\mfc42l00.pdb" ascii
       $s6 = "Size of log(%dB) is too big, stop write." fullword ascii
       $s7 = "Log: Size of log(%dB) is too big, stop write." fullword ascii
       $s8 = "%02d.%02d.%04d Log begin:" fullword ascii
-      $s9 = "\\system32\\win.com" fullword ascii
+      $s9 = "\\system32\\win.com" ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and (
          1 of ($x*) or
@@ -221,7 +222,7 @@ rule MAL_Turla_Sample_May18_1 {
    meta:
       description = "Detects Turla samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://twitter.com/omri9741/status/991942007701598208"
       date = "2018-05-03"
       hash1 = "4c49c9d601ebf16534d24d2dd1cab53fde6e03902758ef6cff86be740b720038"
@@ -243,7 +244,7 @@ rule MAL_Turla_Sample_May18_1 {
 rule APT_MAL_LNX_Turla_Apr20_1 {
    meta:
       description = "Detects Turla Linux malware"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://twitter.com/Int2e_/status/1246115636331319309"
       date = "2020-04-05"
       hash1 = "67d9556c695ef6c51abf6fbab17acb3466e3149cf4d20cb64d6d34dc969b6502"

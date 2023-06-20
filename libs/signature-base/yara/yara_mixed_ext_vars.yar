@@ -1,15 +1,18 @@
 /*
-	This is a collection of rules that use external vriables
-	They work with scanners that support the use of external variabls, like
+	This is a collection of rules that use external variables
+	They work with scanners that support the use of external variables, like
 	THOR, LOKI or SPARK
 	https://www.nextron-systems.com/compare-our-scanners/
 */
+
+import "pe"
+import "math" 
 
 rule Acrotray_Anomaly {
 	meta:
 		description = "Detects an acrotray.exe that does not contain the usual strings"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 75
 	strings:
 		$s1 = "PDF/X-3:2002" fullword wide
@@ -26,7 +29,7 @@ rule COZY_FANCY_BEAR_modified_VmUpgradeHelper {
 	meta:
 		description = "Detects a malicious VmUpgradeHelper.exe as mentioned in the CrowdStrike report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
 		date = "2016-06-14"
 	strings:
@@ -59,7 +62,7 @@ rule OpCloudHopper_Cloaked_PSCP {
    meta:
       description = "Tool used in Operation Cloud Hopper - pscp.exe cloaked as rundll32.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://www.pwc.co.uk/cyber-security/pdf/cloud-hopper-annex-b-final.pdf"
       date = "2017-04-07"
       score = 90
@@ -74,7 +77,7 @@ rule msi_dll_Anomaly {
    meta:
       description = "Detetcs very small and supicious msi.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://blog.cylance.com/shell-crew-variants-continue-to-fly-under-big-avs-radar"
       date = "2017-02-10"
       hash1 = "8c9048e2f5ea2ef9516cac06dc0fba8a7e97754468c0d9dc1e5f7bce6dbda2cc"
@@ -88,7 +91,7 @@ rule PoS_Malware_MalumPOS_Config
 {
     meta:
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         date = "2015-06-25"
         description = "MalumPOS Config File"
         reference = "http://blog.trendmicro.com/trendlabs-security-intelligence/trend-micro-discovers-malumpos-targets-hotels-and-other-us-industries/"
@@ -105,7 +108,7 @@ rule Malware_QA_update_test {
 	meta:
 		description = "VT Research QA uploaded malware - file update_.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "VT Research QA"
 		date = "2016-08-29"
 		score = 80
@@ -125,7 +128,7 @@ rule SysInterals_PipeList_NameChanged {
 	meta:
 		description = "Detects NirSoft PipeList"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/Mr6M2J"
 		date = "2016-06-04"
 		score = 90
@@ -152,7 +155,7 @@ rule SCT_Scriptlet_in_Temp_Inet_Files {
 	meta:
 		description = "Detects a scriptlet file in the temporary Internet files (see regsvr32 AppLocker bypass)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/KAB8Jw"
 		date = "2016-04-26"
 	strings:
@@ -169,7 +172,7 @@ rule GIFCloaked_Webshell_A {
    meta:
       description = "Looks like a webshell cloaked as GIF"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       hash = "f1c95b13a71ca3629a0bb79601fcacf57cdfcf768806a71b26f2448f8c1d5d24"
       score = 60
    strings:
@@ -258,7 +261,7 @@ rule Exe_Cloaked_as_ThumbsDb
         description = "Detects an executable cloaked as thumbs.db - Malware"
         date = "2014-07-18"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         score = 50
     condition:
         uint16(0) == 0x5a4d and filename matches /[Tt]humbs\.db/
@@ -269,7 +272,7 @@ rule Fake_AdobeReader_EXE
     meta:
       description = "Detects an fake AdobeReader executable based on filesize OR missing strings in file"
       date = "2014-09-11"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 50
       nodeepdive = 1
       nodeepdive = 1
@@ -328,7 +331,7 @@ rule lsadump {
 rule SUSP_ServU_SSH_Error_Pattern_Jul21_1 {
    meta:
       description = "Detects suspicious SSH component exceptions that could be an indicator of exploitation attempts as described in advisory addressing CVE-2021-35211 in ServU services"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://www.solarwinds.com/trust-center/security-advisories/cve-2021-35211#FAQ"
       date = "2021-07-12"
       score = 60
@@ -343,7 +346,7 @@ rule SUSP_ServU_SSH_Error_Pattern_Jul21_1 {
 rule SUSP_ServU_Known_Mal_IP_Jul21_1 {
    meta:
       description = "Detects suspicious IP addresses used in exploitation of ServU services CVE-2021-35211 and reported by Solarwinds"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://www.solarwinds.com/trust-center/security-advisories/cve-2021-35211#FAQ"
       date = "2021-07-12"
       score = 60
@@ -361,7 +364,7 @@ rule SUSP_ServU_Known_Mal_IP_Jul21_1 {
 rule SUSP_EXPL_Confluence_RCE_CVE_2021_26084_Indicators_Sep21 {
    meta:
       description = "Detects ELF binaries owner by the confluence user but outside usual confluence directories"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://attackerkb.com/topics/Eu74wdMbEL/cve-2021-26084-confluence-server-ognl-injection/rapid7-analysis"
       date = "2021-09-01"
       score = 55
@@ -369,4 +372,110 @@ rule SUSP_EXPL_Confluence_RCE_CVE_2021_26084_Indicators_Sep21 {
       uint32be(0) == 0x7f454c46 /* ELF binary */
       and owner == "confluence"
       and not filepath contains "/confluence/"
+}
+
+rule SUSP_Blocked_Download_Proxy_Replacement_Jan23_1 {
+   meta:
+      description = "Detects a file that has been replaced with a note by a security solution like an Antivirus or a filtering proxy server"
+      author = "Florian Roth (Nextron Systems)"
+      reference = "https://www.virustotal.com/gui/search/filename%253A*.exe%2520tag%253Ahtml%2520size%253A10kb-%2520size%253A2kb%252B/files"
+      date = "2023-01-28"
+      score = 60
+   strings:
+      $x01 = "Web Filter Violation"
+      $x02 = "Google Drive can't scan this file for viruses."
+      $x03 = " target=\"_blank\">Cloudflare <img "
+      $x04 = "Sorry, this file is infected with a virus.</p>"
+      $x05 = "-- Sophos Warn FileType Page -->"
+      $x06 = "<p>Certain Sophos products may not be exported for use by government end-users" // accept EULA 
+      $x07 = "<p class=\"content-list\">Bitly displays this warning when a link has been flagged as suspect. There are many"
+      $x08 = "Something went wrong. Don't worry, your files are still safe and the Dropbox team has been notified."
+      $x09 = "<p>sinkhole</p>"
+      $x10 = "The requested short link is blocked by website administration due to violation of the website policy terms."
+      $x11 = "<img src=\"https://www.malwarebytes.com/images/"
+      $x12 = "<title>Malwarebytes</title>"
+      $x13 = "<title>Blocked by VIPRE</title>"
+      $x14 = "<title>Your request appears to be from an automated process</title>"
+      $x15 = "<p>Advanced Security blocked access to"
+      $x16 = "<title>Suspected phishing site | Cloudflare</title>"
+      $x17 = ">This link has been flagged "
+      $x18 = "<h1>Trend Micro Apex One</h1>"
+      $x19 = "Hitachi ID Identity and Access Management Suite"
+      $x20 = ">http://www.fortinet.com/ve?vn="
+      $x21 = "access to URL with fixed IP not allowed" // FritzBox
+      $x23 = "<title>Web Page Blocked</title>"
+      $x24 = "<title>Malicious Website Blocked</title>"
+      $x25 = "<h2>STOPzilla has detected"
+      $x26 = ">Seqrite Endpoint Security</span>"
+      $x27 = "<TITLE>K7 Safe Surf</TITLE>"
+      $x28 = "<title>Blocked by VIPRE</title>"
+
+      $g01 = "blocked access" fullword
+      $g02 = "policy violation" fullword
+      $g03 = "violation of " 
+      $g04 = "blocked by" fullword
+      $g05 = "Blocked by" fullword
+      $g07 = "Suspected Phishing"
+      $g08 = "ile quarantined"
+      $g09 = " is infected "
+      $g10 = "Blocked</title>"
+      $g11 = "site blocked" fullword
+      $g12 = "Site Blocked" fullword
+      $g13 = "blocked for" fullword
+      $g14 = "is blocked" fullword
+      $g15 = "potentially harmful"
+      $g16 = "Page Blocked" fullword
+      $g17 = "page blocked" fullword
+   condition:
+      extension == ".exe" and not uint16(0) == 0x5a4d and 1 of them
+      or (
+         extension == ".rar" or 
+         extension == ".ps1" or 
+         extension == ".vbs" or
+         extension == ".bat"
+      )
+      and 1 of ($x*)
+}
+
+/* too many FPs
+rule APT_MAL_RU_WIN_Snake_Malware_PeIconSizes_May23_1 {
+   meta:
+      description = "Detects Comadmin file that houses Snake's kernel driver and the driver's loader"
+      author = "CSA"
+      reference = "https://media.defense.gov/2023/May/09/2003218554/-1/-1/0/JOINT_CSA_HUNTING_RU_INTEL_SNAKE_MALWARE_20230509.PDF"
+      date = "2023-05-10"
+      score = 75
+   condition:
+      uint16(0) == 0x5a4d
+      and ( 
+         filename == "WerFault.exe"
+         or filename == "werfault.exe"
+      )
+      and filepath contains "\\WinSxS\\"
+      and for any rsrc in pe.resources: (
+         rsrc.type == pe.RESOURCE_TYPE_ICON and rsrc.length == 3240
+      ) 
+      and for any rsrc in pe.resources: (
+         rsrc.type == pe.RESOURCE_TYPE_ICON and rsrc.length == 1384 
+      ) 
+      and for any rsrc in pe.resources: (
+         rsrc.type == pe.RESOURCE_TYPE_ICON and rsrc.length == 7336
+      )
+}
+*/
+
+rule APT_MAL_RU_Snake_Malware_Queue_File_May23_1 {
+   meta:
+      description = "Detects Queue files used by Snake malware"
+      author = "Florian Roth"
+      reference = "https://media.defense.gov/2023/May/09/2003218554/-1/-1/0/JOINT_CSA_HUNTING_RU_INTEL_SNAKE_MALWARE_20230509.PDF"
+      date = "2023-05-10"
+      score = 80
+   condition:
+      filename matches /(\{[0-9A-Fa-f]{8}\-([0-9A-Fa-f]{4}\-){3}[0-9A-Fa-f]{12}\}\.){2}crmlog/
+      /* and filepath contains "\\Registration\\" // not needed - already specific enough */
+      // we reduce the range for the entropy calculation to the first 1024 for performance
+      // reasons. In a fully encrypted file - as used by Snake - this should already be specific enough
+      //and math.entropy(0, filesize) >= 7.0
+      and math.entropy(0, 1024) >= 7.0
 }

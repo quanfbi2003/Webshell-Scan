@@ -12,7 +12,7 @@ rule WinAgent_BadPatch_1 {
    meta:
       description = "Detects samples mentioned in BadPatch report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/RvDwwA"
       date = "2017-10-20"
       hash1 = "285998bce9692e46652529685775aa05e3a5cb93ee4e65d021d2231256e92813"
@@ -20,9 +20,9 @@ rule WinAgent_BadPatch_1 {
       $x1 = "J:\\newPatch\\downloader\\" wide
       $x2 = "L:\\rashed\\New code\\" wide
       $x3 = ":\\newPatch\\last version\\" wide
-      $x4 = "\\Microsoft\\Microsoft\\Microsoft1.log" fullword wide
-      $x5 = "\\Microsoft\\Microsoft\\Microsoft.log" fullword wide
-      $x6 = "\\Microsoft\\newPP.exe" fullword wide
+      $x4 = "\\Microsoft\\Microsoft\\Microsoft1.log" wide
+      $x5 = "\\Microsoft\\Microsoft\\Microsoft.log" wide
+      $x6 = "\\Microsoft\\newPP.exe" wide
       $x7 = " (this is probably a proxy server error)." fullword wide
       $x8 = " :Old - update patch and check anti-virus.. " fullword wide
       $x9 = "PatchNotExit-- download now.. " fullword wide
@@ -41,7 +41,7 @@ rule WinAgent_BadPatch_2 {
    meta:
       description = "Detects samples mentioned in BadPatch report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/RvDwwA"
       date = "2017-10-20"
       hash1 = "106deff16a93c4a4624fe96e3274e1432921c56d5a430834775e5b98861c00ea"
@@ -55,14 +55,14 @@ rule WinAgent_BadPatch_2 {
       hash9 = "050610cfb3d3100841685826273546c829335a5f4e2e4260461b88367ad9502c"
    strings:
       $s1 = "myAction=shell_result&serialNumber=" fullword wide
-      $s2 = "\\Appdata\\Local\\Google\\Chrome\\User Data\\Default\\Login Data.*" fullword wide
-      $s3 = "\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles" fullword wide
-      $s4 = "\\Appdata\\Local\\Google\\Chrome\\User Data\\Default\\Cookies.*" fullword wide
+      $s2 = "\\Appdata\\Local\\Google\\Chrome\\User Data\\Default\\Login Data.*" wide
+      $s3 = "\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles" wide
+      $s4 = "\\Appdata\\Local\\Google\\Chrome\\User Data\\Default\\Cookies.*" wide
       $s5 = "newSHELL[" fullword wide
-      $s6 = "\\file1.txt" fullword wide
+      $s6 = "\\file1.txt" wide
       $s7 = "myAction=newGIF&serialNumber=" fullword wide
-      $s8 = "\\Storege1" fullword wide
-      $s9 = "\\Microsoft\\mac.txt" fullword wide
+      $s8 = "\\Storege1" wide
+      $s9 = "\\Microsoft\\mac.txt" wide
       $s10 = "spytube____:" fullword ascii
       $s11 = "0D0700045F5C5B0312045A04041F40014B1D11004A1F19074A141100011200154B031C04" fullword wide
       $s12 = "16161A1000012B162503151851065A1A0007" fullword wide

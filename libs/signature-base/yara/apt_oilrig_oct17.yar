@@ -12,7 +12,7 @@ rule OilRig_Strings_Oct17 {
    meta:
       description = "Detects strings from OilRig malware and malicious scripts"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://researchcenter.paloaltonetworks.com/2017/10/unit42-oilrig-group-steps-attacks-new-delivery-documents-new-injector-trojan/"
       date = "2017-10-18"
       modified = "2022-12-21"
@@ -42,7 +42,7 @@ rule OilRig_ISMAgent_Campaign_Samples1 {
    meta:
       description = "Detects OilRig malware from Unit 42 report in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/JQVfFP"
       date = "2017-10-18"
       hash1 = "119c64a8b35bd626b3ea5f630d533b2e0e7852a4c59694125ff08f9965b5f9cc"
@@ -52,7 +52,7 @@ rule OilRig_ISMAgent_Campaign_Samples1 {
       $s2 = "C:\\Users\\J-Win-7-32-Vm\\Desktop\\error.jpg" fullword wide
       $s3 = "$DATA = [System.Convert]::FromBase64String([IO.File]::ReadAllText('%Base%'));[io.file]::WriteAllBytes(" ascii
       $s4 = " /c echo powershell > " fullword wide ascii
-      $s5 = "\\Libraries\\servicereset.exe" fullword wide
+      $s5 = "\\Libraries\\servicereset.exe" wide
       $s6 = "%DestFolder%" fullword wide ascii
    condition:
       uint16(0) == 0xcfd0 and filesize < 3000KB and 2 of them
@@ -62,7 +62,7 @@ rule OilRig_ISMAgent_Campaign_Samples2 {
    meta:
       description = "Detects OilRig malware from Unit 42 report in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/JQVfFP"
       date = "2017-10-18"
       hash1 = "fcad263d0fe2b418db05f47d4036f0b42aaf201c9b91281dfdcb3201b298e4f4"
@@ -82,7 +82,7 @@ rule OilRig_ISMAgent_Campaign_Samples3 {
    meta:
       description = "Detects OilRig malware from Unit 42 report in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/JQVfFP"
       date = "2017-10-18"
       hash1 = "a9f1375da973b229eb649dc3c07484ae7513032b79665efe78c0e55a6e716821"
@@ -95,10 +95,10 @@ rule OilRig_ISMAgent_Campaign_Samples3 {
 
       $s1 = "out.exe" fullword ascii
       $s2 = "\\Win32Project1\\Release\\Win32Project1.pdb" ascii
-      $s3 = "C:\\windows\\system32\\cmd.exe /c (" fullword ascii
+      $s3 = "C:\\windows\\system32\\cmd.exe /c (" ascii
       $s4 = "Content-Disposition: form-data; name=\"file\"; filename=\"a.a\"" fullword ascii
       $s5 = "Agent configured successfully" fullword ascii
-      $s6 = "\\runlog*" fullword ascii
+      $s6 = "\\runlog*" ascii
       $s7 = "can not specify username!!" fullword ascii
       $s8 = "Agent can not be configured" fullword ascii
       $s9 = "%08lX%04hX%04hX%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX%02hhX" fullword ascii

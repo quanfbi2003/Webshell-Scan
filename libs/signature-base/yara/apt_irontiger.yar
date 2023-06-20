@@ -11,7 +11,7 @@ rule IronPanda_DNSTunClient {
 	meta:
 		description = "Iron Panda malware DnsTunClient - file named.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		score = 80
@@ -22,7 +22,7 @@ rule IronPanda_DNSTunClient {
 		$s3 = "C:\\Windows\\System32\\cmd.exe /C schtasks /create /tn \"\\Microsoft\\Windows\\PLA\\System\\Microsoft Windows\" /tr " fullword ascii
 		$s4 = "C:\\Windows\\System32\\cmd.exe /C schtasks /create /tn \"Microsoft Windows\" /tr " fullword ascii
 		$s5 = "taskkill /im conime.exe" fullword ascii
-		$s6 = "\\dns control\\t-DNSTunnel\\DnsTunClient\\DnsTunClient.cpp" fullword ascii
+		$s6 = "\\dns control\\t-DNSTunnel\\DnsTunClient\\DnsTunClient.cpp" ascii
 		$s7 = "UDP error:can not bing the port(if there is unclosed the bind process?)" fullword ascii
 		$s8 = "use error domain,set domain pls use -d or -domain mark(Current: %s,recv %s)" fullword ascii
 		$s9 = "error: packet num error.the connection have condurt,pls try later" fullword ascii
@@ -38,7 +38,7 @@ rule IronPanda_Malware1 {
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		hash = "a0cee5822ddf254c254a5a0b7372c9d2b46b088a254a1208cb32f5fe7eca848a"
@@ -56,7 +56,7 @@ rule IronPanda_Webshell_JSP {
 	meta:
 		description = "Iron Panda Malware JSP"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		hash = "3be95477e1d9f3877b4355cff3fbcdd3589bb7f6349fd4ba6451e1e9d32b7fa6"
@@ -72,7 +72,7 @@ rule IronPanda_Malware_Htran {
 	meta:
 		description = "Iron Panda Malware Htran"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		hash = "7903f94730a8508e9b272b3b56899b49736740cea5037ea7dbb4e690bcaf00e7"
@@ -87,7 +87,7 @@ rule IronPanda_Malware_Htran {
 		$s8 = "[+] Accept a Client on port %d from %s" fullword ascii
 		$s9 = "[+] Make a Connection to %s:%d ......" fullword ascii
 		$s10 = "cmshared_get_ptr_from_atom" fullword ascii
-		$s11 = "_cmshared_get_ptr_from_atom" fullword ascii
+		$s11 = "_cmshared_get_ptr_from_atom" ascii
 		$s12 = "[+] OK! I Closed The Two Socket." fullword ascii
 		$s13 = "[-] TransmitPort invalid." fullword ascii
 		$s14 = "[+] Waiting for Client on port:%d ......" fullword ascii
@@ -101,12 +101,12 @@ rule IronPanda_Malware2 {
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		hash = "a89c21dd608c51c4bf0323d640f816e464578510389f9edcf04cd34090decc91"
 	strings:
-		$s0 = "\\setup.exe" fullword ascii
+		$s0 = "\\setup.exe" ascii
 		$s1 = "msi.dll.urlUT" fullword ascii
 		$s2 = "msi.dllUT" fullword ascii
 		$s3 = "setup.exeUT" fullword ascii
@@ -119,7 +119,7 @@ rule IronPanda_Malware3 {
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		hash = "5cd2af844e718570ae7ba9773a9075738c0b3b75c65909437c43201ce596a742"
@@ -138,7 +138,7 @@ rule IronPanda_Malware4 {
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/E4qia9"
 		date = "2015-09-16"
 		hash = "0d6da946026154416f49df2283252d01ecfb0c41c27ef3bc79029483adc2240c"

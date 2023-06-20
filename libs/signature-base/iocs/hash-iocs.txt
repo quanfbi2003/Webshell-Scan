@@ -10710,3 +10710,703 @@ e518b80316bf1c349943040e4d26401958846c2596e58f1c98be835ecf29b381;NATBypass Cabin
 806761850d19f0cc9f41618e74db471e85c494e952f900f827c1779f2d1c4d31;MiPing (p.exe) https://medium.com/@DCSO_CyTec/apt41-the-spy-who-failed-to-encrypt-me-24fc0f49cad1
 bc20f4c28cbdf38eba69eb144a89c20c162481955d4cff8bdf02ba9644865523;Discovery batch-script (cmd-webshell.txt) https://medium.com/@DCSO_CyTec/apt41-the-spy-who-failed-to-encrypt-me-24fc0f49cad1
 367b8052db12cb9ddce01275fc213480831dc5fe9aa3da64fecc2360267905a0;China Chopper Web Shell (supp0rt.aspx) https://medium.com/@DCSO_CyTec/apt41-the-spy-who-failed-to-encrypt-me-24fc0f49cad1
+
+bc76bd7b332aa8f6aedbb8e11b7ba9b6;Turla Report - ANDROMEDA: TrustedInstaller.exe - https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+b3657bcfe8240bc0985093a0f8682703;Turla Report - ANDROMEDA: mskmde.com - https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+2eb6df8795f513c324746646b594c019;Turla Report - KOPILUWAK WinRAR SFX - https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+d8233448a3400c5677708a8500e3b2a0;Turla Report - KOPILUWAK xpexplore.js - https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+403876977dfb4ab2e2c15ad4b29423ff;Turla Report - QUIETCANARY 00c3df3b.exe - https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+8954caa2017950e0f6269d6f6168b796;Turla Report - QUIETCANARY file.exe16 - https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+
+9976625b5a3035dc68e878ad5ac3682ccb74ef2007c501c8023291548e11301a;Dark Pink Malware IOCs https://blog.group-ib.com/dark-pink-apt
+c60f778641942b7b0c00f3214211b137b683e8296abb1905d2557bfb245bf775;Dark Pink Malware IOCs https://blog.group-ib.com/dark-pink-apt
+e3181ee97d3ffd31c22c2c303c6e75d0196912083d0c21536e5833ee7d108736;Dark Pink Malware IOCs https://blog.group-ib.com/dark-pink-apt
+e45df7418ca47a9a4c4803697f4b28c618469c6e5a5678213ab81df9fcc9fd51;Dark Pink Malware IOCs https://blog.group-ib.com/dark-pink-apt
+
+6793e9299cab4cd07d4ddf35e03b32a05b0e965b3691d258ec2568402cf8d28f;ChamelGang IOCs - https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+e8ee5b0d6b683407aa9cb091bf92273af0e287d4e7daa94ca93cd230e94df37a;ChamelGang IOCs - https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+d4e3747658e1a9e6587da411dc944597af95dd49b07126b8b090c7677ee30674;ChamelGang IOCs - https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+16b54dc11dbe2948467a10d68728811b03c12b12f7b29e53d0985fa07e29f9b7;ChamelGang IOCs .vim https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+ba867705eb986d1975abcf2f2b90ee2c7fdd09255076823cdd85c0feeea15a1b;ChamelGang IOCs avp.exe https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+f1afce3be297fa6185903274b3b44cd263b4c1ea89e8282334bc5771c53af1c5;ChamelGang IOCs curlt.exe https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+8e0e5ec7ed16e5fb1e8980a3ec6e3c5982fd8fa4cfc31428a6638950bbe5607a;ChamelGang IOCs dlang.dat https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+b9a231496682cd6bed978fb1b2b15986211e5c38a13cbb246de3dcf1d8db41f4;ChamelGang IOCs dlang.dat https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+d831a87c6abd1bbb5a9ac9e1aac06a3d9b81b6e474bdc0c78e1908e26a6166b3;ChamelGang IOCs dlang.dat https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+538d423e3a8a884aac2d80b248d194388d3520cc508990da14c0a1384e7eddbd;ChamelGang IOCs iis64.dll, iisfcgix64.dll, modrpflt.dll, httpsrfm64.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+73e9f7b9d22159f485b1c733981261ddc26fe7fcd104babfcc60369b354ccbe7;ChamelGang IOCs modrpflt.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+27b64e64b6787ad0682eac8aa42f9cd423518a92c4f6ce98596339363eeeebcc;ChamelGang IOCs modrpflt.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+be147fe9110e32b4c4558900f63888756941bf0d0519dc25c075509457748c25;ChamelGang IOCs MpCmdRun.log.1 https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+21d41a206cd12784473bec587a0b014b7cfd29c8da958531c773547402a16908;ChamelGang IOCs nfsd https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+9dd08351c1094e29f279e66731bea55f546e534fdff8688b16b44b86f67df6cb;ChamelGang IOCs o.r https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+60758fd51c29c09b989be480107f36e7c5552e99a283588ad31c0f87a9353f69;ChamelGang IOCs oci.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+8f349ea483b4986b90384bcdde30666669303ede91f9261f40213bac9e44f286;ChamelGang IOCs oci.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+9f0fc02c4cc5d77f28f3828a361afc93459c888acb1a186e874a60ead3c68ba6;ChamelGang IOCs oci.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+3b3d097873899e1a1d99c2ba5aedfc68b67f30acfeefc74e30eb02647729602f;ChamelGang IOCs oci.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+e18546ad747fa063285f24264f9dc3d452c9eb94dc7f1e87b5a8b0677bbf78d7;ChamelGang IOCs ocilib.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+21d41a206cd12784473bec587a0b014b7cfd29c8da958531c773547402a16908;ChamelGang IOCs old.awk https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+f1afce3be297fa6185903274b3b44cd263b4c1ea89e8282334bc5771c53af1c5;ChamelGang IOCs p.exe, proxyT.exe https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+be34984240e19e64eebcf7f31be9d1dee3defdefb7c9c5de77693527cfb89333;ChamelGang IOCs protsdown.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+c6b0ea8e61dffe61737911cceafdf281c9e656e87365e9119184e4f42bd42c11;ChamelGang IOCs RunCheckConfig.class https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+5c61d82b42c91c387d5ea6e245056b7a8aa213fcafe08c3a72e1866554931290;ChamelGang IOCs siiHost.exe https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+eb4a359c73c31e262e17a6bc2ccefa20429c3f5e2f6e9c521b9ad0ff96fd6ce0;ChamelGang IOCs siihost.exe https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+e3af2ef75033f3ececfd102ca116476397bac6244a8baafb1adebbe8d79c292e;ChamelGang IOCs ssconf https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+ba867705eb986d1975abcf2f2b90ee2c7fdd09255076823cdd85c0feeea15a1b;ChamelGang IOCs sshost.exe https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+dbf16553507202fbd1aed5057df92d11b88563585ae9bcc517f584826fe4819d;ChamelGang IOCs tcs.jsp https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+8491a786a3a00549f35302160c70e6b8cca6e9792be82e0092e7444850ebdfe9;ChamelGang IOCs tunnel.jsp https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+23403a06e470420b8f02d3c352f08446146920412d02444771b42c561d69ba83;ChamelGang IOCs wl https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+132688d482129c3935577e73de15f4cc5f382bd511c249d19adbb78b9f1d16c3;ChamelGang IOCs wl.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+373974f2e7933ec8b6eb7afbc98d2d4e0cfc348321864aaf1bbaf66d4d9ef83b;ChamelGang IOCs wlbsctrl.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+4b9701472ab1aabe7ea5a15146d21a9ebff60fe8077efb013d54969ff2b67b39;ChamelGang IOCs wlbsctrl.dll https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/
+
+00782ccd65a1e03e3e74ce1e59e752926e0a050818fa195bd7e5a5b359500758;CERT-UA#5850 - 23.12.22 02:10:52 new.exe (CaddyWiper v3) https://cert.gov.ua/article/3718487
+e3bc3689f01fd431cd2ed368ae91eceaa7c465c2781fa7b7dc2ec9143a404f79;CERT-UA#5850 - 02.10.22 09:53:56 upd.exe (ZeroWipe) https://cert.gov.ua/article/3718487
+301b248a8291df6c7f3565a3dac17ee69609f36ef474b4f20eebe134746a9cac;CERT-UA#5850 - news.bat https://cert.gov.ua/article/3718487
+246607235d560e90590dcf1b0507ab18de74afcc4429d8d5f3ba97eacc92d73f;CERT-UA#5850 - r.sh (AwfulShred) https://cert.gov.ua/article/3718487
+66548ba6ca6d34b7d17e42ab2e1405db1c581a516e0b1a4942d373d6d5396ba4;CERT-UA#5850 - audit.sh (BidSwipe) https://cert.gov.ua/article/3718487
+
+11be1803e2e307b647a8a7e02d128335c448ff741bf06bf52b332e0bbf423b03;3CX Compromise - 11be1803e2e307b647a8a7e02d128335c448ff741bf06bf52b332e0bbf423b03
+253f3a53796f1b0fbe64f7b05ae1d66bc2b0773588d00c3d2bf08572a497fa59;3CX Compromise - ffmpeg_dlls/253f3a53796f1b0fbe64f7b05ae1d66bc2b0773588d00c3d2bf08572a497fa59
+29ce6bca0ffcf5891ac6a554fdd0355dddd71fe8f6e8e3f833b5753d7bbc73d9;3CX Compromise - 3CXDesktopApp-18.12.402.dmg
+2a22798543bd1f97dd5cd626ba9ac6de6d0a744f3cab01faf9dfc238b24e178b;3CX Compromise - second-stage - Copy.dll
+2b5c2975a87c3e8c3cbad3b154a9f0fd772019fecb7c5da1c80cce227060fb84;3CX Compromise - ffmpeg.dll
+396350b12b7626d40d76b0c8814920e5692f5a396a3110432a4f361e93a2d881;3CX Compromise
+5009c7d1590c1f8c05827122172583ddf924c53b55a46826abf66da46725505a;3CX Compromise 
+51079c7e549cbad25429ff98b6d6ca02dc9234e466dd9b75a5e05b9d7b95af72;3CX Compromise - 3CX Desktop App
+5407cda7d3a75e7b1e030b1f33337a56f293578ffa8b3ae19c671051ed314290;3CX Compromise - 3CXDesktopApp-18.11.1213.dmg https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+59e1edf4d82fae4978e97512b0331b7eb21dd4b838b850ba46794d9c7a2c0983;3CX Compromise - 3cxdesktopapp-18.12.416.msi https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+6285ffb5f98d35cd98e78d48b63a05af6e4e4dea;3CX Compromise - Windows binary https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+693f96516f43561ba4ae10f2a08758b42cbf9c75cdafe3263169ff7f26dfd206;3CX Compromise - third-stage.dll
+6a0f637546684c90809cf264c22a861c9a07b1ca3b2ef6a359a14d612e392c1a;3CX Compromise
+7667d1b8fcc4f712084e3e3f8b4ab505ab150c52aea7b219249ec508b4b0e224;3CX Compromise
+7986bbaee8940da11ce089383521ab420c443ab7b15ed42aed91fd31ce833896;3CX Compromise - ffmpeg_dlls/7986bbaee8940da11ce089383521ab420c443ab7b15ed42aed91fd31ce833896
+7c55c3dfa373b6b342390938029cb76ef31f609d9a07780772c6010a4297e321;3CX Compromise - 3CXDesktopApp-18.12.416-full.nupkg
+7d0200959c1c9742cb0dbca92dcfe4b5e61c48476dcfdfc177d0413ed88757c3;3CX Compromise - 3CXDesktopApp-18.12.407.dmg
+82a2dafd6ce594f2cf8588f32585c71be2180fc4cf9a144e300b1692f3de5807;3CX Compromise - 82a2dafd6ce594f2cf8588f32585c71be2180fc4cf9a144e300b1692f3de5807.exe, third-stage - mapped.dll
+8433a94aedb6380ac8d4610af643fb0e5220c5cb;3CX Compromise - Windows binary https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+851c2c99ebafd4e5e9e140cfe3f2d03533846ca16f8151ae8ee0e83c692884b7;3CX Compromise - 851c2c99ebafd4e5e9e140cfe3f2d03533846ca16f8151ae8ee0e83c692884b7.exe, 164e9b60000.dll
+87c5d0c93b80acf61d24e7aaf0faae231ab507ca45483ad3d441b5d1acebc43c;3CX Compromise
+8ab3a5eaaf8c296080fadf56b265194681d7da5da7c02562953a4cb60e147423;3CX Compromise - payload
+92005051ae314d61074ed94a52e76b1c3e21e7f0e8c1d1fdd497a006ce45fa61;3CX Compromise - macOS binary https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+99dbc6fe3c3e465052fcefa1642861747dc9e069eeb244589b605bd710b1e0d1;3CX Compromise
+a64fa9f1c76457ecc58402142a8728ce34ccba378c17318b3340083eeb7acc67;3CX Compromise - dylib/a64fa9f1c76457ecc58402142a8728ce34ccba378c17318b3340083eeb7acc67
+aa124a4b4df12b34e74ee7f6c683b2ebec4ce9a8edcf9be345823b4fdcf5d868;3CX Compromise - 3cxdesktopapp-18.12.407.msi https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+aa4e398b3bd8645016d8090ffc77d15f926a8e69258642191deb4e68688ff973;3CX Compromise - trololo.dll
+ac99602999bf9823f221372378f95baa4fc68929bac3a10e8d9a107ec8074eca;3CX Compromise - macos/ac99602999bf9823f221372378f95baa4fc68929bac3a10e8d9a107ec8074eca
+b56279136d816a11cf4db9fc1b249da04b3fa3aef4ba709b20cdfbe572394812;3CX Compromise - 11be1803e2e307b647a8a7e02d128335c448ff741bf06bf52b332e0bbf423b03_shellcode
+b86c695822013483fa4e2dfdf712c5ee777d7b99cbad8c2fa2274b133481eadb;3CX Compromise - macOS binary https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+c485674ee63ec8d4e8fde9800788175a8b02d3f9416d0e763360fff7f8eb4e02;3CX Compromise - 3CXDesktopApp ffmpeg.dll
+d67e6ba9be2ae522e05838285acefc2513b61f6ccae159027914a5813fb5f80f;3CX Compromise - authenticodepadding_trimmed_decrypted_trimmed.bin
+dde03348075512796241389dfea5560c20a3d2a2eac95c894e7bbed5e85a0acc;3CX Compromise - Windows binary https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+e4dac5422cc1b7f6df6017d2568502fb02756694eeae7c10916314d66898c811;3CX Compromise - sam.dll.bin
+e6bbc33815b9f20b0cf832d7401dd893fbc467c800728b5891336706da0dbcec;3CX Compromise - 3cxdesktopapp-latest.dmg https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+f5fdefaa5321e2cea02ef8b479de8ec3c5505e956ea1484c84a7abb17231fe24;3CX Compromise - suddenicon
+f7ba7f9bf608128894196cf7314f68b78d2a6df10718c8e0cd64dbe3b86bc730;3CX Compromise - com.electron.3cx-desktop-app
+fad482ded2e25ce9e1dd3d3ecc3227af714bdfbbde04347dbc1b21d6a3670405;3CX Compromise - Windows binary https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+fee4f9dabc094df24d83ec1a8c4e4ff573e5d9973caa676f58086c99561382d7;3CX Compromise - libffmpeg.dylib
+ffde718e6839ef7123b6e7347969c50652e07877f245450f29133f062f3275ec;3CX Compromise - 3CXDesktopApp-memory.exe
+6c121f2b2efa6592c2c22b29218157ec9e63f385e7a1d7425857d603ddef8c59;3CX macOS Update agent https://objective-see.org/blog/blog_0x74.html
+
+9f85a07d4b4abff82ca18d990f062a84;Gopuram IOC (3CX related activity) https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/
+96d3bbf4d2cf6bc452b53c67b3f2516a;Gopuram IOC (3CX related activity) https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/
+6ce5b6b4cdd6290d396465a1624d489c7afd2259a4d69b73c6b0ba0e5ad4e4ad;Gopuram shellcode loaders https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/
+b56279136d816a11cf4db9fc1b249da04b3fa3aef4ba709b20cdfbe572394812;Gopuram shellcode loaders https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/
+
+882d95bdbca75ab9d13486e477ab76b3978e14d6fca30c11ec368f7e5fa1d0cb;eFile infected extensions https://twitter.com/malwrhunterteam/status/1642994177095942146?s=20
+095fbb7685f5ad054bab28346d744e137564beabc33c13a25818936ddc739f5b;eFile infected extensions https://twitter.com/malwrhunterteam/status/1642994177095942146?s=20
+
+d9d19abffc2c7dac11a16745f4aea44f;SIMPLESEA malware mentioned in Mandiant report on 3CX https://www.3cx.com/blog/news/mandiant-initial-results/
+
+404b09def6054a281b41d309d809a428;NK UNC4736 VEILEDSIGNAL malware https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise
+c6441c961dcad0fe127514a918eaabd4;NK UNC4736 VEILEDSIGNAL malware https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise
+6727284586ecf528240be21bb6e97f88;NK UNC4736 VEILEDSIGNAL malware https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise
+00a43d64f9b5187a1e1f922b99b09b77;NK UNC4736 VEILEDSIGNAL malware https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise
+451c23709ecd5a8461ad060f6346930c;NK UNC4736 POOLRAT malware https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise
+900b63ff9b06e0890bf642bdfcbfcc6ab7887c7a3c057c8e3fd6fba5ffc8e5d6;NK UNC4736 Installer that drops VEILEDSIGNAL malware https://twitter.com/cyb3rops/status/1649054604620075022?s=20
+aa318070ad1bf90ed459ac34dc5254acc178baff3202d2ea7f49aaf5a055dd43;NK UNC4736 VEILEDSIGNAL malware https://twitter.com/cyb3rops/status/1649068018754830336?s=20
+
+00a442a4305c62cefa8105c0b4c4a9a5f4d1e93b;60;asmmap64.sys - Memory mapping Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+00b4e8b7644d1bf93f5ddb5740b444b445e81b02;60;driver7-x86.sys - The driver for the ECtool driver-based tools - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+012db3a80faf1f7f727b538cbe5d94064e7159de;60;WinRing0.sys - WinRing0 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+01779ee53f999464465ed690d823d160f73f10e7;60;WinIO32A.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+01a578a3a39697c4de8e3dab04dba55a4c35163e;60;NTIOLib.sys - NTIOLib For MSIRatio_CC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0291d0457acaf0fe8ed5c3137302390469ce8b35;75;7.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+0307d76750dd98d707c699aee3b626643afb6936;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0466e90bf0e83b776ca8716e01d35a8a2e5f96d3;60;mhyprot.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0466e90bf0e83b776ca8716e01d35a8a2e5f96d3;60;Mhyprot2.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+054a50293c7b4eea064c91ef59cf120d8100f237;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+05ac1c64ca16ab0517fe85d4499d08199e63df26;60;81.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+05c0c49e8bcf11b883d41441ce87a2ee7a3aba1d;60;viraglt64.sys - VirIT Agent System - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+05c0c49e8bcf11b883d41441ce87a2ee7a3aba1d;60;viragt64.sys - VirIT Agent System - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+064de88dbbea67c149e779aac05228e5405985c7;75;ntbios_2.sys - ntbios driver - malicious - https://github.com/magicsword-io/LOLDrivers
+078ae07dec258db4376d5a2a05b9b508d68c0123;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+08596732304351b311970ff96b21f451f23b1e25;60;fidpcidrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0b6ec2aedc518849a1c61a70b1f9fb068ede2bc3;60;AsrSetupDrv103.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0b8b83f245d94107cb802a285e6529161d9a834d;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0c26ab1299adcd9a385b541ef1653728270aa23e;60;VProEventMonitor.sys - VProEventMonitor.Sys - Event Monitoring driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0c74d09da7baf7c05360346e4c3512d0cd433d59;60;WinIo64A.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0de4247e72d378713bcf22d5c5d3874d079203bb4364e25f67a90d5570bdcce8;60;TestBone.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0ebaef662b14410c198395b13347e1d175334ec67919709ad37d65eba013adff;60;bw.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0f780b7ada5dd8464d9f2cc537d973f5ac804e9c;60;bandai.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+0fd2df82341bf5ebb8a53682e60d08978100c01acb0bed7b6ce2876ada80f670;60;Lurker.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+10115219e3595b93204c70eec6db3e68a93f3144;75;2.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+10e15ba8ff8ed926ddd3636cec66a0f08c9860a4;60;fiddrv64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1292c7dd60214d96a71e7705e519006b9de7968f;60;elrawdsk.sys - RawDisk Driver. Allows write access to files and raw disk sectors for user mode applications in Windows 2000 and later. - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+12d38abbc5391369a4c14f3431715b5b76ac5a2a;60;PanMonFltX64.sys - PanCafe Manager File Monitor - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+146d77e80ca70ea5cb17bfc9a5cea92334f809cbdc87a51c2d10b8579a4b9c88;60;t.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+14bf0eaa90e012169745b3e30c281a327751e316;60;NTIOLib.sys - NTIOLib_X64 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+152b6bb9ffd2ffec00cc46f5c6e29362d0e66e67;60;NTIOLib.sys - NTIOLib for DebugLED - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+15c53eb3a0ea44bbd2901a45a6ebeae29bb123f9c1115c38dfb2cdbec0642229;60;nt6.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+15d1a6a904c8409fb47a82aefa42f8c3c7d8c370;60;AsrDrv103.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+15df139494d2c40a645fb010908551185c27f3c5;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+160c96b5e5db8c96b821895582b501e3c2d5d6e7;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+166759fd511613414d3213942fe2575b926a6226;60;rtkio.sys - Realtek IODriver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+16d7ecf09fc98798a6170e4cef2745e0bee3f5c7;60;zam64.sys - ZAM - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+16d7ecf09fc98798a6170e4cef2745e0bee3f5c7;60;zamguard64.sys - ZAM - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+17fa047c1f979b180644906fe9265f21af5b0509;75;0x3440_blacklotus_v2_driver.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+19bd488fe54b011f387e8c5d202a70019a204adf;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+19f3343bfad0ef3595f41d60272d21746c92ffca;60;DirectIo.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1acc7a486b52c5ee6619dbdc3b4210b5f48b936f;60;ASIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1d0df45ee3fa758f0470e055915004e6eae54c95;60;AsrSmartConnectDrv.sys - RW-Everything Read & Write Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1e7c241b9a9ea79061b50fb19b3d141dee175c27;60;ASIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1f25f54e9b289f76604e81e98483309612c5a471;75;wantd_3.sys - WAN Transport Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+1f3799fed3cf43254fe30dcdfdb8dc02d82e662b;75;0x3040_blacklotus_beta_driver.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+1f3799fed3cf43254fe30dcdfdb8dc02d82e662b;75;0x3040_blacklotus_beta_driver.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+1f3a9265963b660392c4053329eb9436deeed339;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1f7501e01d84a2297c85cb39880ec4e40ac3fe8a;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+1fd7f881ea4a1dbb5c9aeb9e7ad659a85421745b;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+205c69f078a563f54f4c0da2d02a25e284370251;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+213ba055863d4226da26a759e8a254062ea77814;60;BS_RCIO.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+21e6c104fe9731c874fab5c9560c929b2857b918;60;Agent64.sys - DriverAgent Direct I/O for 64-bit Windows - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+21edff2937eb5cd6f6b0acb7ee5247681f624260;60;smep_capcom.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+221dfbc74bbb255b0879360ccc71a74b756b2e0f16e9386b38a9ce9d4e2e34f9;60;bwrs.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2261198385d62d2117f50f631652eded0ecc71db;60;ADV64DRV.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+258359a7fa3d975620c9810dab3a6493972876a024135feaf3ac8482179b2e79;60;t8.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+25bf4e30a94df9b8f8ab900d1a43fd056d285c9d;75;wantd_5.sys - WAN Transport Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+25d812a5ece19ea375178ef9d60415841087726e;60;libnicm.sys - XTier COM Services Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+26c4a7b392d7e7bd7f0a2a758534e45c0d9a56ab;60;HwOs2Ec7x64.sys - HwOs2Ec - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+27d3ebea7655a72e6e8b95053753a25db944ec0f;60;Agent64.sys - DriverAgent Direct I/O for 64-bit Windows - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+27eab595ec403580236e04101172247c4f5d5426;60;NTIOLib.sys - MSI ComCenService Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+282bb241bda5c4c1b8eb9bf56d018896649ca0e1;60;fiddrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+28b1c0b91eb6afd2d26b239c9f93beb053867a1a;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+291b4a88ffd2ac1d6bf812ecaedc2d934dc503cb;60;PanIO.sys - Temperature and system information driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+29a190727140f40cea9514a6420f5a195e36386b;60;mtcBSv64.sys - MiTAC System Service Provider - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2a6e6bd51c7062ad24c02a4d2c1b5e948908d131;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2b0bb408ff0e66bcdf6574f1ca52cbf4015b257b;60;HwRwDrv.sys - Hardware read & write driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2b4d0dead4c1a7cc95543748b3565cfa802e5256;60;asrdrv104.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2c27abbbbcf10dfb75ad79557e30ace5ed314df8;60;netfilterdrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2c5ff272bd345962ed41ab8869aef41da0dfe697;60;Bs_Def.sys - Default BIOS Flash Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2d503a2457a787014a1fdd48a2ece2e6cbe98ea7;60;AsrIbDrv.sys - RW-Everything Read & Write Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2dfcb799b3c42ecb0472e27c19b24ac7532775ce;60;GLCKIO2.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2e3de9bff43d7712707ef8a0b10f7e4ad8427fd8;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2f991435a6f58e25c103a657d24ed892b99690b8;60;ALSysIO64.sys - ALSysIO - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+2fc6845047abcf2a918fce89ab99e4955d08e72c;60;IOMap64.sys - ASUS Kernel Mode Driver for NT  - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+30a224b22592d952fbe2e6ad97eda4a8f2c734e0;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+312e31851e0fc2072dbf9a128557d6ef;60;goad.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+31fac347aa26e92db4d8c9e1ba37a7c7a2234f08;75;POORTRY1.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+3270720a066492b046d7180ca6e60602c764cac7;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+33285b2e97a0aeb317166cce91f6733cf9c1ad53;60;Se64a.sys - EnTech softEngine x64 kernel-mode driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3390919bb28d5c36cc348f9ef23be5fa49bfd81263eb7740826e4437cbe904cd;60;nstrwsk.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+33cdab3bbc8b3adce4067a1b042778607dce2acd;60;Agent64.sys - DriverAgent Direct I/O for 64-bit Windows - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+34c85afe6d84cd3deec02c0a72e5abfa7a2886c3;60;aswVmm.sys - avast! VM Monitor - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+351cbd352b3ec0d5f4f58c84af732a0bf41b4463;60;Lv561av.sys - Logitech Video Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+35829e096a15e559fcbabf3441d99e580ca3b26e;60;NBIOLib_X64.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+35829e096a15e559fcbabf3441d99e580ca3b26e;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3599ea2ac1fa78f423423a4cf90106ea0938dde8;60;elbycdio.sys - ElbyCD Windows NT/2000/XP I/O driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+35f1ba60ba0da8512a0b1b15ee8e30fe240d77cd;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+36875562e747136313ec5db58174e5fab870997a054ca8d3987d181599c7db6a;60;d3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+37364cb5f5cefd68e5eca56f95c0ab4aff43afcc;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+37dde6bd8a7a36111c3ac57e0ac20bbb93ce3374d0852bcacc9a2c8c8c30079e;60;bwrsh.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+37e6450c7cd6999d080da94b867ba23faa8c32fe;75;wantd_6.sys - WAN Transport Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+3805e4e08ad342d224973ecdade8b00c40ed31be;60;NTIOLib_X64.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3805e4e08ad342d224973ecdade8b00c40ed31be;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3a95cc82173032b82a0ffc7d2e438df64c13bc16b4574214c9fe3be37250925e;60;TGSafe.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3abb9d0a9d600200ae19c706e570465ef0a15643;60;NTIOLib.sys - NTIOLib For MSISimple_OC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3ae56ab63230d6d9552360845b4a37b5801cc5ea;60;gameink.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3b6b35bca1b05fafbfc883a844df6d52af44ccdc;75;wantd_2.sys - WAN Transport Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+3e9b62d2ea2be50a2da670746c4dbe807db9601980af3a1014bcd72d0248d84c;60;GameTerSafe.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3ee2fd08137e9262d2e911158090e4a7c7427ea0;60;BlackBoneDrv10.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+3ef30c95e40a854cc4ded94fc503d0c3dc3e620e;75;NodeDriver.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+3f223581409492172a1e875f130f3485b90fbe5f;60;amp.sys - AMP Minifilter - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+400f833dcc2ef0a122dd0e0b1ec4ec929340d90e;60;AsrOmgDrv.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+414cd15d6c991d19fb5be02e3b9fb0e6c5ce731c;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4243dbbf6e5719d723f24d0f862afd0fcb40bc35;60;driver7-x86-withoutdbg.sys - The driver for the ECtool driver-based tools - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4268f30b79ce125a81d0d588bef0d4e2ad409bbb;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+43419df1f9a07430a18c5f3b3cc74de621be0f8e;60;WINIODrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+455bc98ba32adab8b47d2d89bdbadca4910f91c182ab2fc3211ba07d3784537b;60;nstr.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+460008b1ffd31792a6deadfa6280fb2a30c8a5d2;60;WINIODrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+461882bd59887617cadc1c7b2b22d0a45458c070;60;AsrSetupDrv103.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+468e2e5505a3d924b14fedee4ddf240d09393776;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+471ca4b5bb5fe68543264dd52acb99fddd7b3c6d;60;LgCoreTemp.sys - CPU Core Temperature Monitor - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4789b910023a667bee70ff1f1a8f369cffb10fe8;60;fidpcidrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+485c0b9710a196c7177b99ee95e5ddb35b26ddd1;60;dbutil.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+490109fa6739f114651f4199196c5121d1c6bdf2;60;ATSZIO.sys - ATSZIO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+490109fa6739f114651f4199196c5121d1c6bdf2;60;ATSZIO64.sys - ATSZIO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4941c4298f4560fc1e59d0f16f84bab5c060793700b82be2fd7c63735f1657a8;60;windows7-32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+49ed27460730b62403c1d2e4930573121ab0c86c442854bc0a62415ca445a810;60;Proxy32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4a235f0b84ff615e2879fa9e0ec0d745fcfdaa5c;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4a705af959af61bad48ef7579f839cb5ebd654d2;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4a7d66874a0472a47087fabaa033a85d47413379;60;asrdrv104.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4a9093e8dbcb867e1b97a0a67ce99a8511900658f5201c34ffb8035881f2dbbe;60;ProtectS.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4b009e91bae8d27b160dc195f10c095f8a2441e1;60;iomem64.sys - DTR Kernel mode driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4B882748FAF2C6C360884C6812DD5BCBCE75EBFF;75;blacklotus_beta_driver.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+4b8c0445075f09aeef542ab1c86e5de6b06e91a3;60;full.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4c18754dca481f107f0923fb8ef5e149d128525d;60;vmdrv.sys - Voicemod Virtual Audio Device (WDM) - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4cff6e53430b81ecc4fae453e59a0353bcfe73dd5780abfc35f299c16a97998e;60;t3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4d41248078181c7f61e6e4906aa96bbdea320dc2;60;cpuz.sys - CPUID Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4e56e0b1d12664c05615c69697a2f5c5d893058a;60;HW.sys - HW - Windows NT-8 (32/64 bit) kernel mode driver for PC ports/memory/PCI access - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4e826430a1389032f3fe06e2cc292f643fb0c417;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4f7a8e26a97980544be634b26899afbefb0a833c;60;AMDRyzenMasterDriver.sys - AMD Ryzen Master Service Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+4fe873544c34243826489997a5ff14ed39dd090d;40;RTCore64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+50e2bc41f0186fdce970b80e2a2cb296353af586;60;dbutil.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+51b60eaa228458dee605430aae1bc26f3fc62325;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+53acd4d9e7ba0b1056cf52af0d191f226eddf312;60;NTIOLib.sys - NTIOLib_X64 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+53f776d9a183c42b93960b270dddeafba74eb3fb;75;daxin_blank5.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+5520ac25d81550a255dc16a0bb89d4b275f6f809;60;inpoutx64.sys - Kernel level port access driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+558aad879b6a47d94a968f39d0a4e3a3aaef1ef1;60;WinRing0.sys - WinRing0 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+55ab7e27412eca433d76513edc7e6e03bcdd7eda;60;ASIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5711c88e9e64e45b8fc4b90ab6f2dd6437dc5a8a;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+57511ef5ff8162a9d793071b5bf7ebe8371759de;60;AsrDrv101.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+589a7d4df869395601ba7538a65afae8c4616385;60;physmem.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5a7dd0da0aee0bdedc14c1b7831b9ce9178a0346;60;ASIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5b9623da9ba8e5c80c49473f40ffe7ad315dcadffc3230afdc9d9226d60a715a;60;windows8-10-32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5d6b9e80e12bfc595d4d26f6afb099b3cb471dd4;60;aswArPot.sys - Avast Anti Rootkit - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5db61d00a001fd493591dc919f69b14713889fc5;60;BS_RCIO64.sys - I/O Interface driver file - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5dd2c31c4357a8b76db095364952b3d0e3935e1d;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5e6ddd2b39a3de0016385cbd7aa50e49451e376d;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5f8356ffa8201f338dd2ea979eb47881a6db9f03;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+5fb9421be8a8b08ec395d05e00fd45eb753b593a;60;CorsairLLAccess64.sys - Corsair LL Access - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6003184788cd3d2fc624ca801df291ccc4e225ee;60;iomem64.sys - DTR Kernel mode driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6053d258096bccb07cb0057d700fe05233ab1fbb;60;dbk64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+609fa1efcf61e26d64a5ceb13b044175ab2b3a13;60;BS_Def64.sys - Default BIOS Flash Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6100eb82a25d64a7a7702e94c2b21333bc15bd08;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+623cd2abef6c92255f79cbbd3309cb59176771da;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+643383938d5e0d4fd30d302af3e9293a4798e392;60;semav6msr.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+643383938d5e0d4fd30d302af3e9293a4798e392;60;semav6msr64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+64e4ac8b9ea2f050933b7ec76a55dd04e97773b4;60;nscm.sys - Novell XTier Session Manager - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+64f9e664bc6d4b8f5f68616dd50ae819c3e60452efd5e589d6604b9356841b57;60;1.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6523b3fd87de39eb5db1332e4523ce99556077dc;60;AsrAutoChkUpdDrv.sys - AsrAutoChkUpdDrv Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+65d8a7c2e867b22d1c14592b020c548dd0665646;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6714380bc0b8ab09b9a0d2fa66d1b025b646b946;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+684786de4b3b3f53816eae9df5f943a22c89601f;60;rzpnk.sys - Razer Overlay Support - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+696d68bdbe1d684029aaad2861c49af56694473a;60;vboxdrv.sys - VirtualBox Support Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6a3d3b9ab3d201cd6b0316a7f9c3fb4d34d0f403;60;rtkiow8x64.sys - Realtek IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6abbc3003c7aa69ce79cbbcd2e3210b07f21d202;75;wantd.sys - WAN Transport Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+6afc6b04cf73dd461e4a4956365f25c1f1162387;60;inpoutx64.sys - Kernel level port access driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6b54f8f137778c1391285fee6150dfa58a8120b1;60;MsIo64.sys - MICSYS driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6c1bb3a72ebfb5359b9e22ca44d0a1ff825a68f2;60;asrdrv104.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+6debce728bcff73d9d1d334df0c6b1c3735e295c;75;4.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+708016fbe22c813a251098f8f992b177b476bd1bbc48c2ed4a122ff74910a965;60;b3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+71469dce9c2f38d0e0243a289f915131bf6dd2a8;75;ntbios.sys - ntbios driver - malicious - https://github.com/magicsword-io/LOLDrivers
+72966ca845759d239d09da0de7eebe3abe86fee3;60;AsrDrv10.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+729a8675665c61824f22f06c7b954be4d14b52c4;60;asrdrv104.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+72b99147839bcfb062d29014ec09fe20a8f261748b5925b00171ef3cb849a4c1;60;kbdcap64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+738b7918d85e5cb4395df9e3f6fc94ddad90e939;60;WINIODrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+73bac306292b4e9107147db94d0d836fdb071e33;75;daxin_blank3.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+745335bcdf02fb42df7d890a24858e16094f48fd;75;PcieCubed.sys - PCIe Video Capture - malicious - https://github.com/magicsword-io/LOLDrivers
+745bad097052134548fe159f158c04be5616afc2;60;Dh_Kernel.sys - dianhu - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+74e4e3006b644392f5fcea4a9bae1d9d84714b57;60;hw.sys - HW - Windows NT-10 (32/64 bit) kernel mode driver for PC ports/memory/PCI access - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7667b72471689151e176baeba4e1cd9cd006a09a;60;nvflsh64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7838fb56fdab816bc1900a4720eea2fc9972ef7a;60;fidpcidrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7859e75580570e23a1ef7208b9a76f81738043d5;60;mydrivers.sys - DriverGenius Hardware monitor - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+78b9481607ca6f3a80b4515c432ddfe6550b18a8;60;NTIOLib.sys - NTIOLib for MSIFrequency_CC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7ab4565ba24268f0adadb03a5506d4eb1dc7c181;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7ba19a701c8af76988006d616a5f77484c13cb0a;60;driver7-x64.sys - The driver for the ECtool driver-based tools - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7c1b25518dee1e30b5a6eaa1ea8e4a3780c24d0c;60;vboxdrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7c6cad6a268230f6e08417d278dda4d66bb00d13;60;IObitUnlocker.sys - Unlocker Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7d7c03e22049a725ace2a9812c72b53a66c2548b;60;BS_Def64.sys - Default BIOS Flash Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7d8937c18d6e11a0952e53970a0934cf0e65515637ac24d6ca52ccf4b93d385f;60;nt3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7e836dadc2e149a0b758c7e22c989cbfcce18684;75;POORTRY2.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+7eec3a1edf3b021883a4b5da450db63f7c0afeeb;60;asrdrv104.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+7fb52290883a6b69a96d480f2867643396727e83;60;WinRing0.sys - WinRing0 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+806832983bb8cb1e26001e60ea3b7c3ade4d3471;60;LgDCatcher.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+80fa962bdfb76dfcb9e5d13efc38bb3d392f2e77;60;ASIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8111085022bda87e5f6aa4c195e743cc6dd6a3a6d41add475d267dc6b105a69f;60;NetProxyDriver.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+814200191551faec65b21f5f6819b46c8fc227a3;60;PanIOx64.sys - Temperature and system information driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8183a341ba6c3ce1948bf9be49ab5320e0ee324d;60;WinFlash64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+823da894b2c73ffcd39e77366b6f1abf0ae9604d9b20140a54e6d55053aadeba;60;d4.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+82ba5513c33e056c3f54152c8555abf555f3e745;60;sandra.sys - Sandra Device Driver (Win64 x64)(Unicode) - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8302802b709ad242a81b939b6c90b3230e1a1f1e;75;daxin_blank.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+84df20b1d9d87e305c92e5ffae21b10b325609d59d835a954dbd8750ef5dabf4;60;b.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8626ab1da6bfbdf61bd327eb944b39fd9df33d1d;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8692274681e8d10c26ddf2b993f31974b04f5bf0;75;daxin_blank4.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+877c6c36a155109888fe1f9797b93cb30b4957ef;60;piddrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+879fcc6795cebe67718388228e715c470de87dca;60;NTIOLib.sys - NTIOLib for MSIDDR_CC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+89909fa481ff67d7449ee90d24c167b17b0612f1;60;msrhook.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+89cd760e8cb19d29ee08c430fb17a5fd4455c741;60;AsrRapidStartDrv.sys - RW-Everything Read & Write Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8b6aa5b2bff44766ef7afbe095966a71bc4183fa;60;AsIO.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8b6aa5b2bff44766ef7afbe095966a71bc4183fa;60;AsUpIO64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8c377ab4eebc5f4d8dd7bb3f90c0187dfdd3349f;60;HpPortIox64.sys - HpPortIo - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8cc8974a05e81678e3d28acfe434e7804abd019c;60;fiddrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8d59fd14a445c8f3f0f7991fa6cd717d466b3754;60;gdrv.sys - GIGA-BYTE NonPNP Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8db869c0674221a2d3280143cbb0807fac08e0cc;60;Agent64.sys - DriverAgent Direct I/O for 64-bit Windows - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8f5cd4a56e6e15935491aa40adb1ecad61eafe7c;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+8fb149fc476cf5bf18dc575334edad7caf210996;60;WinIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+90a76945fd2fa45fab2b7bcfdaf6563595f94891;60;DBUtilDrv2.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+910cb12aa49e9f35ecc4907e8304adf0dcca8cf1;60;superbmc.sys - superbmc - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+91F832F46E4C38ECC9335460D46F6F71352CFFED;75;blacklotus_beta_driver_2.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+92f251358b3fe86fd5e7aa9b17330afa0d64a705;60;AsIO.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+93aa3bb934b74160446df3a47fa085fd7f3a6be9;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+943593e880b4d340f2548548e6e673ef6f61eed3;60;winio64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+947db58d6f36a8df9fa2a1057f3a7f653ccbc42e;60;rtkiow10x64.sys - Realtek IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+976777d39d73034df6b113dfce1aa6e1d00ffcfd;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+99201c9555e5faf6e8d82da793b148311f8aa4b8;60;rtkio64.sys - Realtek IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9923c8f1e565a05b3c738d283cf5c0ed61a0b90f;60;AsrDrv102.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+994DC79255AEB662A672A1814280DE73D405617A;75;blacklotus_beta_driver_3.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+9a35ae9a1f95ce4be64adc604c80079173e4a676;60;BSMI.sys - SMI Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9a35ae9a1f95ce4be64adc604c80079173e4a676;60;BSMIXP64.sys - SMI Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9c24dd75e4074041dbe03bf21f050c77d748b8e9;60;BS_HWMIo64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9c256edd10823ca76c0443a330e523027b70522d;60;NTIOLib.sys - NTIOLib For NTIOLib_ECO - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9c6749fc6c1127f8788bff70e0ce9062959637c9;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9d07df024ec457168bf0be7e0009619f6ac4f13c;60;BSMEMx64.sys - I/O Interface driver file - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+9d58f640c7295952b71bdcb456cae37213baccdcd3032c1e3aeb54e79081f395;60;ProtectS.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a00e444120449e35641d58e62ed64bb9c9f518d2;60;TmComm.sys - TrendMicro Common Module - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a197a02025946aca96d6e74746f84774df31249e;60;mhyprot3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a21c84c6bf2e21d69fa06daaf19b4cc34b589347;60;kprocesshacker.sys - KProcessHacker - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a2e0b3162cfa336cd4ab40a2acc95abe7dc53843;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a3636986cdcd1d1cb8ab540f3d5c29dcc90bb8f0;60;d.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a3e507e713f11901017fc328186ae98e23de7cea5594687480229f77d45848d8;60;b1.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a3ed5cbfbc17b58243289f3cf575bf04be49591d;75;POORTRY.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+a48aa80942fc8e0699f518de4fd6512e341d4196;75;daxin_blank2.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+a4b2c56c12799855162ca3b004b4b2078c6ecf77;60;nvflash.sys - NVIDIA Flash Driver, Version 1.8.0 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a64354aac2d68b4fa74b5829a9d42d90d83b040c;60;PCHunter.sys - Epoolsoft Windows Information View Tools - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a65fabaf64aa1934314aae23f25cdf215cbaa4b6;60;WinIo64C.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a6816949cd469b6e5c35858d19273936fab1bef6;60;PanMonFlt.sys - PanCafe Manager File Monitor - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a6fe4f30ca7cb94d74bc6d42cdd09a136056952e;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a7948a4e9a3a1a9ed0e4e41350e422464d8313cd;60;AsrSetupDrv103.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a7bd05de737f8ea57857f1e0845a25677df01872;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a7d827a41b2c4b7638495cd1d77926f1ba902978;60;piddrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+a804ebec7e341b4d98d9e94f6e4860a55ea1638d;75;gftkyj64.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+a87d6eac2d70a3fbc04e59412326b28001c179de;60;EneTechIo64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ac13941f436139b909d105ad55637e1308f49d9a;60;HOSTNT.sys - Hostnt 64-bit driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ac600a2bc06b312d92e649b7b55e3e91e9d63451;60;OpenLibSys.sys - OpenLibSys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+aca8e53483b40a06dfdee81bb364b1622f9156fe;60;81.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ace6b9e34e3e2e73fe584f3bbdb4e4ec106e0a7d;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ae79e760c739d6214c1e314728a78a6cb6060cce206fde2440a69735d639a0a2;60;ni.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+af50109b112995f8c82be8ef3a88be404510cdde;40;RTCore64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+af6e1f2cfb230907476e8b2d676129b6d6657124;60;AsIO.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b0032b8d8e6f4bd19a31619ce38d8e010f29a816;60;AsrDrv106.sys - ASRock IO Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b03b1996a40bfea72e4584b82f6b845c503a9748;60;DBUtilDrv2.sys - DBUtil - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b242b0332b9c9e8e17ec27ef10d75503d20d97b6;60;WinIo64C.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b25170e09c9fb7c0599bfba3cf617187f6a733ac;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b2f955b3e6107f831ebe67997f8586d4fe9f3e98;75;LcTkA.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+b480c54391a2a2f917a44f91a5e9e4590648b332;60;AMDPowerProfiler.sys - AMD Power Profiling Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b49ac8fefc6d1274d84fef44c1e5183cc7accba1;60;dcr.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b4d014b5edd6e19ce0e8395a64faedf49688ecb5;60;EneIo64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b4d014b5edd6e19ce0e8395a64faedf49688ecb5;60;winio64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b4d1554ec19504215d27de0758e13c35ddd6db3e;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b4dcdbd97f38b24d729b986f84a9cdb3fc34d59f;60;FairplayKD.sys - Multi Theft Auto patch driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b89a8eef5aeae806af5ba212a8068845cafdab6f;60;LenovoDiagnosticsDriver.sys - Lenovo Diagnostics Driver for Windows 10 and later. - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b8de3a1aeeda9deea43e3f768071125851c85bd0;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b97a8d506be2e7eaa4385f70c009b22adbd071ba;60;AsIO.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+b9807b8840327c6d7fbdde45fc27de921f1f1a82;60;WiseUnlo.sys - WiseUnlo - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bb962c9a8dda93e94fef504c4159de881e4706fe;60;amifldrv64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bbc0b9fd67c8f4cefa3d76fcb29ff3cef996b825;60;UCOREW64.SYS - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bbc1e5fd826961d93b76abd161314cb3592c4436;60;ncpl.sys - Novell Client Portability Layer - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bc2f3850c7b858340d7ed27b90e63b036881fd6c;60;80.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bc47e15537fa7c32dfefd23168d7e1741f8477ed;60;procexp.Sys - Process Explorer - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+be03e9541f56ac6ed1e81407dcd7cc85c0ffc538c3c2c2c8a9c747edbcf13100;60;t7.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bf87e32a651bdfd9b9244a8cf24fca0e459eb614;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+bfe55cacc7c56c9f7bd75bdb4b352c0b745d071b;60;speedfan.sys - SpeedFan Device Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c1d5cf8c43e7679b782630e93f5e6420ca1749a7;60;capcom.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c23eeb6f18f626ce1fd840227f351fa7543bb167;75;Air_SYSTEM10.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+c257aa4094539719a3c7b7950598ef872dbf9518;75;daxin_blank6.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+c4d7fb9db3c3459f7e8c0e3d48c95c7c9c4cff60;60;NTIOLib.sys - NTIOLib For MSISimple_OC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c4ed28fdfba7b8a8dfe39e591006f25d39990f07;60;piddrv64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c52cef5b9e1d4a78431b7af56a6fdb6aa1bcad65;60;atillk64.sys - ATI Diagnostics Hardware Abstraction Sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c60fcff9c8e5243bbb22ec94618b9dcb02c59bb49b90c04d7d6ab3ebbd58dc3a;60;Proxy64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c6bd965300f07012d1b651a9b8776028c45b149a;60;BSMIx64.sys - SMI Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c6d349823bbb1f5b44bae91357895dba653c5861;60;PhlashNT.sys - SWinFlash Driver for Windows NT - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c834c4931b074665d56ccab437dfcc326649d612;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c8d87f3cd34c572870e63a696cf771580e6ea81b;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c948ae14761095e4d76b55d9de86412258be7afd;60;dbutil_2_3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c948ae14761095e4d76b55d9de86412258be7afd;60;dbutil_2_3.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c95db1e82619fb16f8eec9a8209b7b0e853a4ebe;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c969f1f73922fd95db1992a5b552fbc488366a40;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+c9cbfdd0be7b35751a017ec59ff7237ffdc4df1f;60;CITMDRV_AMD64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cb22723faa5ae2809476e5c5e9b9a597b26cab9b;60;viragt.sys - VirIT Agent System - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cb3de54667548a5c9abf5d8fa47db4097fcee9f1;60;BS_HWMIO64_W10.sys - I/O Interface driver file - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cb3f30809b05cf02bc29d4a7796fb0650271e542;75;daxin_blank1.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+cb57f3a7fe9e1f8e63332c563b0a319b26c944be839eabc03e9a3277756ba612;60;d2.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cb9890d4e303a4c03095d7bc176c42dee1b47d8aa58e2f442ec1514c8f9e3cec;60;nt2.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cc0e0440adc058615e31e8a52372abadf658e6b1;60;inpoutx64.sys - Kernel level port access driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cc383ad11e9d06047a1558ed343f389492da3ac2b84b71462aee502a2fa616c8;60;c.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cc51be79ae56bc97211f6b73cc905c3492da8f9d;60;GLCKIO2.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ccd547ef957189eddb6ee213e5e0136e980186f9;60;SSPORT.sys - Port Contention Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ccdd3a1ebe9a1c8f8a72af20a05a10f11da1d308;60;otipcibus.sys - Hardware Access Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+cce9b82f01ec68f450f5fe4312f40d929c6a506e;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ce549714a11bd43b52be709581c6e144957136ec;60;elrawdsk.sys - RawDisk Driver. Allows write access to files and raw disk sectors for user mode applications in Windows 2000 and later. - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d02403f85be6f243054395a873b41ef8a17ea279;75;wantd_4.sys - WAN Transport Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+d04e5db5b6c848a29732bfd52029001f23c3da75;60;iqvw64e.sys - Intel(R) Network Adapter Diagnostic Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d04e5db5b6c848a29732bfd52029001f23c3da75;60;NalDrv.sys - Intel(R) Network Adapter Diagnostic Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d098600152e5ee6a8238d414d2a77a34da8afaaa;60;nicm.sys - Novell XTCOM Services Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d0d39e1061f30946141b6ecfa0957f8cc3ddeb63;60;NCHGBIOS2x64.SYS - BIOS Update Driver For Windows x64 Edition - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d25340ae8e92a6d29f599fef426a2bc1b5217299;60;WinRing0x64.sys - WinRing0 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d25904fbf907e19f366d54962ff543d9f53b8fdfd2416c8b9796b6a8dd430e26;60;My.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d2e6fc9259420f0c9b6b1769be3b1f63eb36dc57;60;cpuz_x64.sys - CPUID Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d34a7c497c603f3f7fcad546dc4097c2da17c430;60;NTIOLib.sys - NTIOLib for MSICPU_CC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d417c0be261b0c6f44afdec3d5432100e420c3ed;75;ndislan.sys - MS LAN Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+d5562fb90b0b3deb633ab335bcbd82ce10953466a428b3f27cb5b226b453eaf3;60;Black.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d569d4bab86e70efbcdfdac9d822139d6f477b7c;60;ASIO32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d5fd9fe10405c4f90235e583526164cd0902ed86;60;AsUpIO.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d62fa51e520022483bdc5847141658de689c0c29;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d702d88b12233be9413446c445f22fda4a92a1d9;60;segwindrvx64.sys - SEG Windows Driver x64 - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d7bc7306cb489fe4c285bbeddc6d1a09e814ef55cf30bd5b8daf87a52396f102;60;nt4.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d7e8aef8c8feb87ce722c0b9abf34a7e6bab6eb4;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d7f7594ff084201c0d9fa2f4ef1626635b67bce5;60;phymem64.sys - phymem Application - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d8498707f295082f6a95fd9d32c9782951f5a082;60;krpocesshacker.sys - KProcessHacker - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d94f2fb3198e14bfe69b44fb9f00f2551f7248b2;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d979353d04bf65cc92ad3412605bc81edbb75ec2;60;Agent64.sys - DriverAgent Direct I/O for 64-bit Windows - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+d9c09dd725bc7bc3c19b4db37866015817a516ef;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+da9cea92f996f938f699902482ac5313d5e8b28e;60;OpenLibSys.sys - OpenLibSys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+dc0e97adb756c0f30b41840a59b85218cbdd198f;60;HwOs2Ec10x64.sys - HwOs2Ec - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+dc55217b6043d819eadebd423ff07704ee103231;60;BS_I2c64.sys - I/O Interface driver file - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+dc55217b6043d819eadebd423ff07704ee103231;60;BS_I2cIo.sys - I/O Interface driver file - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+dc7b022f8bd149efbcb2204a48dce75c72633526;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ddbe809b731a0962e404a045ab9e65a0b64917ad;60;Dh_Kernel_10.sys - dianhu - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+de6bf572d39e2611773e7a01f0388f84fb25da6cba2f1f8b9b36ffba467de6fa;60;WYProxy32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+dec8a933dba04463ed9bb7d53338ff87f2c23cfb79e0e988449fc631252c9dcc;60;b4.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+dfaefd06b680f9ea837e7815fc1cc7d1f4cc375641ac850667ab20739f46ad22;60;windows-xp-64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e039c9dd21494dbd073b4823fc3a17fbb951ec6c;60;asrdrv104.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e09b5e80805b8fe853ea27d8773e31bff262e3f7;60;dbutil.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e22495d92ac3dcae5eeb1980549a9ead8155f98a;60;magdrvamd64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e35a2b009d54e1a0b231d8a276251f64231b66a3;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e3c1dd569aa4758552566b0213ee4d1fe6382c4b;60;dbutil.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e4436c8c42ba5ffabd58a3b2256f6e86ccc907ab;60;fiddrv64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e5021a98e55d514e2376aa573d143631e5ee1c13;60;asrdrv104.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e6305dddd06490d7f87e3b06d09e9d4c1c643af0;60;MsIo32.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e6765d8866cad6193df1507c18f31fa7f723ca3e;75;Sense5Ext.sys - Sense5 Driver - malicious - https://github.com/magicsword-io/LOLDrivers
+e74b6dda8bc53bc687fc21218bd34062a78d8467;60;netfilterdrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e83458c4a6383223759cd8024e60c17be4e7c85f;60;BS_Flash64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+e92817a8744ebc4e4fa5383cdce2b2977f01ecd4;60;GVCIDrv64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ea360a9f23bb7cf67f08b88e6a185a699f0c5410;60;bandai.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ea877092d57373cb466b44e7dbcad4ce9a547344;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+eb93d2f564fea9b3dc350f386b45de2cd9a3e001;60;fidpcidrv64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ec4cc6de4c779bb1ca1dd32ee3a03f7e8d633a9b;60;NTIOLib.sys - NTIOLib for MSIClock_CC - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ecb4d096a9c58643b02f328d2c7742a38e017cf0;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+eeff4ec4ebc12c6acd2c930dc2eaaf877cfec7ec;60;fidpcidrv.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+ef80da613442047697bec35ea228cde477c09a3d;60;Monitor_win10_x64.sys - IObit Temperature Monitor - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f02af84393e9627ba808d4159841854a6601cf80;60;ALSysIO64.sys - ALSysIO - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f052dc35b74a1a6246842fbb35eb481577537826;60;smep_namco.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f0c463d29a5914b01e4607889094f1b7d95e7aaf;60;SysInfo.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f18e669127c041431cde8f2d03b15cfc20696056;60;WinIo64B.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f1c8c3926d0370459a1b7f0cf3d17b22ff9d0c7f;60;WinIO32B.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f36a47edfacd85e0c6d4d22133dd386aee4eec15;60;WCPU.sys - ASUS TDE CPU Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f3cce7e79ab5bd055f311bb3ac44a838779270b6;60;AsrSetupDrv103.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f3db629cfe37a73144d5258e64d9dd8b38084cf4;60;kEvP64.sys - PowerTool - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f42f28d164205d9f6dab9317c9fecad54c38d5d2;60;Phymemx64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f50c6b84dfb8f2d53ba3bce000a55f0a486c0e79;60;NTIOLib.sys - NTIOLib - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f5696fb352a3fbd14fb1a89ad21a71776027f9ab;60;cpuz141.sys - CPUID Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f6f11ad2cd2b0cf95ed42324876bee1d83e01775;40;RTCore64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f8886a9c759e0426e08d55e410b02c5b05af3c287b15970175e4874316ffaf13;60;NetFlt.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f9519d033d75e1ab6b82b2e156eafe9607edbcfb;60;BS_Def64.sys - Default BIOS Flash Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+f9feb60b23ca69072ce42264cd821fe588a186a6;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+faa870b0cb15c9ac2b9bba5d0470bd501ccd4326;60;81.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fafa1bb36f0ac34b762a10e9f327dcab2152a6d0b16a19697362d49a31e7f566;60;WYProxy64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fbf8b0613a2f7039aeb9fa09bd3b40c8ff49ded2;60;rwdrv.sys - RwDrv Driver - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fcd615df88645d1f57ff5702bd6758b77efea6d0;60;LHA.sys - LHA - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fcde5275ee1913509927ce5f0f85e6681064c9d2;60;AsIO64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fcdfe570e6dc6e768ef75138033d9961f78045adca53beb6fdb520f6417e0df1;60;cpupress.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fd33fb2735cc5ef466a54807d3436622407287e325276fcd3ed1290c98bd0533;60;nt5.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fe10018af723986db50701c8532df5ed98b17c39;60;gdrv.sys - GIGABYTE Tools - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+fe1d909ab38de1389a2a48352fd1c8415fd2eab0;60;CITMDRV_IA64.sys - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+FFF4F28287677CAABC60C8AB36786C370226588D;75;blacklotus_beta_driver_4.sys - malicious - https://github.com/magicsword-io/LOLDrivers
+fff7ee0febb8c93539220ca49d4206616e15c666;60;BEDAISY.SYS - vulnerable driver - https://github.com/magicsword-io/LOLDrivers
+
+03c8c9956938147bcc81a19e580ca8b5214e82829ec0494c22b0f59013ca22b2;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+06edb9f17a9007c8b6db6ee2fc240e88e238f06c7c983f987cd9be1b80010d04;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+09f2e41661cbbd714d22986fbb36a2b5764a5544c85f9875d227f6a26e1c8c8b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+0ac2943abf5ef953b939247b74331fb2c437e405a81dd5569d9cff1d6183d53a;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+0dd832075d552da3d29b1ef471fc23b47c0d54b9fd1541935b23f1c5813da08c;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+0e5eb8d0bebf089a974bc0ca85d33d73f9a0bf72ed2a5e3a62a0387b51d509ce;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+0e99607b20d537497169c506c6893243d3f1bd5960505c1566bd97c0a741adfb;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+0ed1b0fae1a6e705d1b116d08b7184e0a2ee2a0e6b0c372ce69b40e9ef34579f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+17864e719e9c61d84e29a3cedf2b63aeaecfc10867211efc3077dd216b0a4965;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+1e918f170a796b4b0b1400bb9bdae75be1cf86705c2d0fc8fb9dd0c5016b933b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+24558c1cb417b6387e2406c70ff13f5438506e8d7560dd7b226499c872c8076f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+24d6b301a1268ba8b373275981538855205eb0115609800f2b5b95377483b108;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+2df05c41acc56d0f4c9371da62ec6cb311c9afb84b4a4d8c3738583ccc874d38;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+2f871712447dde7c3552f5aa90a2292821c6f32d92788e00dee8566f8d4de209;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+338b89190177e950151a198823fd9d5f4ea25c1faf73e56ca5d9cf69d373fd66;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+3c430c719c9053a74d74dcc5e52b40d10f109db1dc9458a05a7a413b86a93467;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+3d23947c39680b9fcf22b092b97c9d38edcc02f7ad13d3a925d1ee0b62797e73;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+3f8f266488f3b888eb77b8df43582fa8124366b7d0670ed78926410f9c9f411f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+45ec69179be0f20088f10be909fc8b6104f85607db0a556482fee9384eb4d52b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+475552c7476ad45e42344eee8b30d44c264d200ac2468428aa86fc8795fb6e34;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+4b2bd93b32de4be7235c95c97af98e12bed5f0602b7b428700f9a1348cb2f731;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+4e371dd0448f1de869ee087b59ff88d11865463715272bcc6c29b0d5e21dbd82;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+50484376441815f7f85aa294290a9b6072a6a9e8feae79447c5c4de855c5a3d3;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+5156a8ae596c06692aef13ac6524c7f1e20d52e4ea0f5a5ad43a6874edcc5e1f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+52febd655c84f4557de0ca35a236d468c03fa3bd0f51f54c31b37db29673da3f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+537b428a0ad622765010c4405c1603ff464fcbb24ae4c2fbf559a10b8ea4593d;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+561d28e0888cdb0a8fce41754742aa8eb1bf5c8dd4eacbf9af0f40e0d36013c2;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+56f9e50da4817b1de9d9291eb5f2bc63703ca3e6f4a8571bde28cf756e2c80ba;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+599a102b6445fa88392b8c85a31d80ece950624219d846affbfb7131d4bf550b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+62c6affbee1ba9a0435562db6e092a5018effeed0bd0f1d0494f34ce6cd403e9;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+67fe6b4b726451375e2dc3f87a0954cd01083fb4d8f4fb074bf699536450af04;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+6a6f1c13eefcba07c0fc8aa0b70ab6fe2bc709a9eaf83090b735fec8e0dd576b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+6b6e59284750fc0e6fac4d6c2a46100e9b0dde54e000b7327edd4a4dced9e9a0;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+6e79e3d0580d244c2fc2179a4f08cb80f945ad33d8c4c325de4e35e0d41584c5;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+702a10fa1541869f455143ed00425e4e9b2d533c3b639259bde6aac97eca15ed;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+754952ff4187789c0269982d056f6a863409963f46d870c0a8d054e0fe69857b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+777adc7e8a3e1422b3fc9c10ce31e996c057fe801a5292f0902bd5c5365e7287;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+7b5dfe4f9e4ee68e3cdd9c91bcae26db334d49ae4c1f9525cecd834de48df110;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+8310f47ba34eb1aca146a5bdb8b59138173e659fbeb57a4c89355d8c54930b6b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+84e680f95cd31db85663a5482a68778dd236503d88e8a6d8e3c4a6c9ba201102;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+8844d9b3aea1568a7ff298e6dc12564c422dafae6510db377454ca6072861dde;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+899afe09e356003605b30dc209a5ba4ef6910baef23fac268bcac6db3cfee98d;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+8e8addb29426d845a0101c2c1f26c2e7fe8c78128ab04f16cfcb4e06461b0101;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+953a7719b50073e701730fcff79b2fee7054c72c54d1f0b0f2571d3ce7fdb925;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+98acba206e9f3843a4a7e07c66ead4366fbe7976653b65ed0c311d4efae878ab;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+9be93e365a8240a03b05db26684b708b46d7585be325a3e22170cd5b324e0cb0;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+9d61099de8327efeff7e4aea81d9f3396a2218e6b22e15d05032a765897c0eba;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+a1111555bfde8807746c8af73deceb4bdadc52dee87004e2ad7239c038687985;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+a120f42de7b5bfcb55c40afc857b6baf4d1ac60725500c27a5b2942bda970ccf;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+a80b37c9749d6f2c2fdf64922a3142eb0fd63c72fd2989d7e75dcb4be367299a;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+a9f6c38c2608d6f36f246e74a9fd17e915c89e54eafa2281b8ace86133df22b3;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+aa6f27b8b2ca5826f497362042c003b5e1d7ca22383d82730fbc5c45e048d839;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+aef3e0a113345c1adca2d627c5853a11ddfc4e0e07fd28c10049a9b766c0fbc5;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+b06dc8f3de1e7e5a53dc7ad0f8028f78a843df54884b4a92bcec21071f0e649b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+c3d65e174d47d3772cb431ea599bba76b8670bfaa51081895796432e2ef6461f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+c4b5797189521611b809720ed9c4734f1dec8a2ee2597781ffe438f652a58ce5;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+c7d9dab91b726dea5abaa893d8f60bd4795f489894044dc56a9d3aad9cc49740;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+cc5c7db3068d99d6271fb38ab15b78c633c92249c4d783db0cdae2b918e97969;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+d0eb15fe822c6239a8bb2b42fbc035d0956c72ac6fbd1429c1ab7f7e348b8f94;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+d57f40a0e9018765cd79393a0d57d8e6d6d880d93b95fa57cedbda5a0b4a1ae3;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+d809eddc88a14239e8a069fa71f81f3e4af4dc293f7575d71d597c80f8767816;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+d92b8ac828b827e4e5b9e9aeb02676783cdb1884f42194823769ccf033a7b9c5;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+df4e1cf6eaf602f99849ddb6802bd91fb13cd5c3f9fb420250d8a3d750642efa;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+e352109145416e3b61dcf5e09492d24410828121e7d74c08ce0d3157b45a0831;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+e50f1f1e9fb9198e5b094773d1d0068cc1cb1987d06583abaca20adc1f8932a9;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+e6cb6a3dcbd85954e5123759461198af67658aa425a6186ffc9b57b772f9158f;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+ee39a9a3fbde8b15ce4ac34519e248ea746a52ae0ae680da5b0c7ef919e583a3;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+ef43b4b4a755494b10b7431527aead697feab6fa48cf4684cca4fb5b8cd09035;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+f88e92940985413acd440daa20c08df99c54613636826d9d95b898d39c44b19b;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+f8e2a41c0444d7da76fc1682f3eb7e2a90140e1b68b413f4426bac357cbe14bb;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+fb5eebcd4100593a1b2890267037b7701c83f32c284b99908ff1c34d5693bfc2;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+ff9f39869baafa17592820f7f5cf101b15a8423831abfa97c89cf193cdd98e89;UEFI BIOS revocation list - https://twitter.com/m_haggis/status/1654570708029288449
+
+2413b5d0750c23b07999ec33a5b4930be224b661aaf290a0118db803f31acbc5;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+48367d94ccb4411f15d7ef9c455c92125f3ad812f2363c4d2e949ce1b615429a;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+6015fed13c5510bbb89b0a5302c8b95a5b811982ff6de9930725c4630ec4011d;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+702421bcee1785d93271d311f0203da34cc936317e299575b06503945a6ea1e0;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+9d1723777de67bc7e11678db800d2a32de3bcd6c40a629cd165e3f7bbace8ead;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+9e89d9f045664996067a05610ea2b0ad4f7f502f73d84321fb07861348fdc24a;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+b1c299a9fe6076f370178de7b808f36135df16c4e438ef6453a39565ff2ec272;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+c56bcb513248885673645ff1df44d3661a75cfacdce485535da898aa9ba320d4;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+d49cf23d83b2743c573ba383bf6f3c28da41ac5f745cde41ef8cd1344528c195;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+e8012a15b6f6b404a33f293205b602ece486d01337b8b3ec331cd99ccadb562e;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+fe5f8388ccea7c548d587d1e2843921c038a9f4ddad3cb03f3aa8a45c29c6a2f;MOVEit Transfer exploitation - dropped ASPX web shell https://www.trustedsec.com/blog/critical-vulnerability-in-progress-moveit-transfer-technical-analysis-and-recommendations/?utm_content=251159938&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306
+0b3220b11698b1436d1d866ac07cc90018e59884e91a8cb71ef8924309f1e0e9;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+110e301d3b5019177728010202c8096824829c0b11bb0dc0bff55547ead18286;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+1826268249e1ea58275328102a5a8d158d36b4fd312009e4a2526f0bfbc30de2;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+2ccf7e42afd3f6bf845865c74b2e01e2046e541bb633d037b05bd1cdb296fa59;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+58ccfb603cdc4d305fddd52b84ad3f58ff554f1af4d7ef164007cb8438976166;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+98a30c7251cf622bd4abce92ab527c3f233b817a57519c2dd2bf8e3d3ccb7db8;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+a8f6c1ccba662a908ef7b0cb3cc59c2d1c9e2cbbe1866937da81c4c616e68986;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+b5ef11d04604c9145e4fe1bedaeb52f2c2345703d52115a5bf11ea56d7fb6b03;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+cec425b3383890b63f5022054c396f6d510fae436041add935cd6ce42033f621;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+ed0c3e75b7ac2587a5892ca951707b4e0dd9c8b18aaf8590c24720d73aa6b90c;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+0b3220b11698b1436d1d866ac07cc90018e59884e91a8cb71ef8924309f1e0e9;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+110e301d3b5019177728010202c8096824829c0b11bb0dc0bff55547ead18286;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+1826268249e1ea58275328102a5a8d158d36b4fd312009e4a2526f0bfbc30de2;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+2ccf7e42afd3f6bf845865c74b2e01e2046e541bb633d037b05bd1cdb296fa59;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+58ccfb603cdc4d305fddd52b84ad3f58ff554f1af4d7ef164007cb8438976166;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+98a30c7251cf622bd4abce92ab527c3f233b817a57519c2dd2bf8e3d3ccb7db8;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+a8f6c1ccba662a908ef7b0cb3cc59c2d1c9e2cbbe1866937da81c4c616e68986;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+b5ef11d04604c9145e4fe1bedaeb52f2c2345703d52115a5bf11ea56d7fb6b03;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+cec425b3383890b63f5022054c396f6d510fae436041add935cd6ce42033f621;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+ed0c3e75b7ac2587a5892ca951707b4e0dd9c8b18aaf8590c24720d73aa6b90c;MOVEit Transfer exploitation - https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023
+
+827d507aa3bde0ef903ca5dec60cdec8;Barracuda ESG exploitation - CVE-2023-2868 - mod_udp.so SALTWATER Variant https://www.barracuda.com/company/legal/esg-vulnerability
+2ccb9759800154de817bf779a52d48f8;Barracuda ESG exploitation - CVE-2023-2868 - install_helo.tar TAR Package https://www.barracuda.com/company/legal/esg-vulnerability
+f5ab04a920302931a8bd063f27b745cc;Barracuda ESG exploitation - CVE-2023-2868 - intent_helo Bash script https://www.barracuda.com/company/legal/esg-vulnerability
+177add288b289d43236d2dba33e65956;Barracuda ESG exploitation - CVE-2023-2868 - pd Reverse Shell https://www.barracuda.com/company/legal/esg-vulnerability
+881b7846f8384c12c7481b23011d8e45;Barracuda ESG exploitation - CVE-2023-2868 - update_v31.sh Bash script https://www.barracuda.com/company/legal/esg-vulnerability
+cd2813f0260d63ad5adf0446253c2172;Barracuda ESG exploitation - CVE-2023-2868 - mod_require_helo.lua SEASIDE https://www.barracuda.com/company/legal/esg-vulnerability
+82eaf69de710abdc5dea7cd5cb56cf04;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+e80a85250263d58cc1a1dc39d6cf3942;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+5d6cba7909980a7b424b133fbac634ac;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+1bbb32610599d70397adfdaf56109ff3;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+4b511567cfa8dbaa32e11baf3268f074;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+a08a99e5224e1baf569fda816c991045;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+19ebfe05040a8508467f9415c8378f32;Barracuda ESG exploitation - CVE-2023-2868 - BarracudaMailService SEASPY https://www.barracuda.com/company/legal/esg-vulnerability
+1fea55b7c9d13d822a64b2370d015da7;Barracuda ESG exploitation - CVE-2023-2868 - mod_udp.so SALTWATER Variant https://www.barracuda.com/company/legal/esg-vulnerability
+64c690f175a2d2fe38d3d7c0d0ddbb6e;Barracuda ESG exploitation - CVE-2023-2868 - mod_udp.so SALTWATER Variant https://www.barracuda.com/company/legal/esg-vulnerability
+4cd0f3219e98ac2e9021b06af70ed643;Barracuda ESG exploitation - CVE-2023-2868 - mod_udp.so SALTWATER Variant https://www.barracuda.com/company/legal/esg-vulnerability
+
+0245e7f9105253ecb30de301842e28e4;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+0805b523120cc2da3f71e5606255d29c;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+0c227990210e7e9d704c165abd76ebe2;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+0d67f50a0bf7a3a017784146ac41ada0;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+132a342273cd469a34938044e8f62482;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+17696a438387248a12cc911fbae8620e;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+177add288b289d43236d2dba33e65956;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+19e373b13297de1783cecf856dc48eb0;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+19ebfe05040a8508467f9415c8378f32;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+1b1830abaf95bd5a44aa3873df901f28;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+1bbb32610599d70397adfdaf56109ff3;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+1bc5212a856f028747c062b66c3a722a;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+1c042d39ca093b0e7f1412453b132076;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+1fea55b7c9d13d822a64b2370d015da7;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+23f4f604f1a05c4abf2ac02f976b746b;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+2ccb9759800154de817bf779a52d48f8;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+2d841cb153bebcfdee5c54472b017af2;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+2e30520f8536a27dd59eabbcb8e3532a;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+349ca242bc6d2652d84146f5f91c3dbb;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+35cf6faf442d325961935f660e2ab5a0;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+3b93b524db66f8bb3df8279a141734bb;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+3c20617f089fe5cc9ba12c43c6c072f5;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+3e3f72f99062255d6320d5e686f0e212;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+407738e565b4e9dafb07b782ebcf46b0;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+42722b7d04f58dcb8bd80fe41c7ea09e;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+436587bad5e061a7e594f9971d89c468;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+446f3d71591afa37bbd604e2e400ae8b;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+45b79949276c9cb9cf5dc72597dc1006;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+4b511567cfa8dbaa32e11baf3268f074;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+4c1c2db989e0e881232c7748593d291e;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+4ca4f582418b2cc0626700511a6315c0;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+4cd0f3219e98ac2e9021b06af70ed643;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+4ec4ceda84c580054f191caa09916c68;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+5392fb400bd671d4b185fb35a9b23fd3;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+5d6cba7909980a7b424b133fbac634ac;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+5fdee67c82f5480edfa54afc5a9dc834;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+64c690f175a2d2fe38d3d7c0d0ddbb6e;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+666da297066a2596cacb13b3da9572bf;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+683acdb559bbc7fb64431d1f579a8104;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+694cdb49879f1321abb4605adf634935;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+69ef9a9e8d0506d957248e983d22b0d5;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+6f79ef58b354fd33824c96625590c244;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+76811232ede58de2faf6aca8395f8427;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+7d7fd05b262342a9e8237ce14ec41c3b;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+827d507aa3bde0ef903ca5dec60cdec8;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+82eaf69de710abdc5dea7cd5cb56cf04;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+831d41ba2a0036540536c2f884d089f9;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+85c5b6c408e4bdb87da6764a75008adf;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+87847445f9524671022d70f2a812728f;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+878cf1de91f3ae543fd290c31adcbda4;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+881b7846f8384c12c7481b23011d8e45;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+8fc03800c1179a18fbd58d746596fa7d;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+8fdf3b7dc6d88594b8b5173c1aa2bc82;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+9033dc5bac76542b9b752064a56c6ee4;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+a08a99e5224e1baf569fda816c991045;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+a45ca19435c2976a29300128dc410fd4;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+ac4fb6d0bfc871be6f68bfa647fc0125;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+ad1dc51a66201689d442499f70b78dea;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+b601fce4181b275954e3f35b18996c92;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+ba7af4f98d85e5847c08cf6cefdf35dc;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+be5b6b52780d35f1392f45d96beb868c;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+bef722484288e24258dd33922b1a7148;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+c528b6398c86f8bdcfa3f9de7837ebfe;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+c56d7b86e59c5c737ee7537d7cf13df1;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+c7a89a215e74104682880def469d4758;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+c979e8651c1f40d685be2f66e8c2c610;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+cb0f7f216e8965f40a724bc15db7510b;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+cd2813f0260d63ad5adf0446253c2172;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+ce67bb99bc1e26f6cb1f968bc1b1ec21;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+d098fe9674b6b4cb540699c5eb452cb5;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+db4c48921537d67635bb210a9cb5bb52;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+e4e86c273a2b67a605f5d4686783e0cc;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+e52871d82de01b7e7f134c776703f696;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+e80a85250263d58cc1a1dc39d6cf3942;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+f5ab04a920302931a8bd063f27b745cc;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally
+f6857841a255b3b4e4eded7a66438696;Barracuda ESG exploitation - UNC4841 IOCs https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally

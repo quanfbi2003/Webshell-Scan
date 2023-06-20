@@ -9,7 +9,7 @@ rule BlackEnergy_BE_2 {
    meta:
       description = "Detects BlackEnergy 2 Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/DThzLz"
       date = "2015/02/19"
       hash = "983cfcf3aaaeff1ad82eb70f77088ad6ccedee77"
@@ -34,7 +34,7 @@ rule BlackEnergy_VBS_Agent {
 	meta:
 		description = "Detects VBS Agent from BlackEnergy Report - file Dropbearrun.vbs"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://feedproxy.google.com/~r/eset/blog/~3/BXJbnGSvEFc/"
 		date = "2016-01-03"
 		hash = "b90f268b5e7f70af1687d9825c09df15908ad3a6978b328dc88f96143a64af0f"
@@ -50,7 +50,7 @@ rule DropBear_SSH_Server {
 	meta:
 		description = "Detects DropBear SSH Server (not a threat but used to maintain access)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://feedproxy.google.com/~r/eset/blog/~3/BXJbnGSvEFc/"
 		date = "2016-01-03"
 		score = 50
@@ -69,7 +69,7 @@ rule BlackEnergy_BackdoorPass_DropBear_SSH {
 	meta:
 		description = "Detects the password of the backdoored DropBear SSH Server - BlackEnergy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://feedproxy.google.com/~r/eset/blog/~3/BXJbnGSvEFc/"
 		date = "2016-01-03"
 		hash = "0969daac4adc84ab7b50d4f9ffb16c4e1a07c6dbfc968bd6649497c794a161cd"
@@ -85,7 +85,7 @@ rule BlackEnergy_KillDisk_1 {
 	meta:
 		description = "Detects KillDisk malware from BlackEnergy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://feedproxy.google.com/~r/eset/blog/~3/BXJbnGSvEFc/"
 		date = "2016-01-03"
 		score = 80
@@ -113,9 +113,10 @@ rule BlackEnergy_KillDisk_2 {
 	meta:
 		description = "Detects KillDisk malware from BlackEnergy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://feedproxy.google.com/~r/eset/blog/~3/BXJbnGSvEFc/"
 		date = "2016-01-03"
+		modified = "2023-01-06"
 		score = 80
 		super_rule = 1
 		hash1 = "11b7b8a7965b52ebb213b023b6772dd2c76c66893fc96a18a9a33c8cf125af80"
@@ -124,7 +125,7 @@ rule BlackEnergy_KillDisk_2 {
 	strings:
 		$s0 = "%c:\\~tmp%08X.tmp" fullword ascii
 		$s1 = "%s%08X.tmp" fullword ascii
-		$s2 = ".exe.sys.drv.doc.docx.xls.xlsx.mdb.ppt.pptx.xml.jpg.jpeg.ini.inf.ttf" fullword wide
+		$s2 = ".exe.sys.drv.doc.docx.xls.xlsx.mdb.ppt.pptx.xml.jpg.jpeg.ini.inf.ttf" wide
 		$s3 = "%ls_%ls_%ls_%d.~tmp" fullword wide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and 3 of them
@@ -134,7 +135,7 @@ rule BlackEnergy_Driver_USBMDM {
 	meta:
 		description = "Black Energy Driver"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://www.welivesecurity.com/2016/01/03/blackenergy-sshbeardoor-details-2015-attacks-ukrainian-news-media-electric-industry/"
 		date = "2016-01-04"
 		super_rule = 1
@@ -158,7 +159,7 @@ rule BlackEnergy_Driver_AMDIDE {
 	meta:
 		description = "Black Energy Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://www.welivesecurity.com/2016/01/03/blackenergy-sshbeardoor-details-2015-attacks-ukrainian-news-media-electric-industry/"
 		date = "2016-01-04"
 		super_rule = 1

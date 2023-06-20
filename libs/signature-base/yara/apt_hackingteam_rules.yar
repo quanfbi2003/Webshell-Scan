@@ -11,7 +11,7 @@ rule bin_ndisk {
 	meta:
 		description = "Hacking Team Disclosure Sample - file ndisk.sys"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www.virustotal.com/en/file/a03a6ed90b89945a992a8c69f716ec3c743fa1d958426f4c50378cca5bef0a01/analysis/1436184181/"
 		date = "2015-07-07"
 		score = 100
@@ -19,11 +19,11 @@ rule bin_ndisk {
 	strings:
 		$s1 = "\\Registry\\Machine\\System\\ControlSet00%d\\services\\ndisk.sys" fullword wide 
 		$s2 = "\\Registry\\Machine\\System\\ControlSet00%d\\Enum\\Root\\LEGACY_NDISK.SYS" fullword wide 
-		$s3 = "\\Driver\\DeepFrz" fullword wide
+		$s3 = "\\Driver\\DeepFrz" wide
 		$s4 = "Microsoft Kernel Disk Manager" fullword wide 
 		$s5 = "ndisk.sys" fullword wide
-		$s6 = "\\Device\\MSH4DEV1" fullword wide
-		$s7 = "\\DosDevices\\MSH4DEV1" fullword wide
+		$s6 = "\\Device\\MSH4DEV1" wide
+		$s7 = "\\DosDevices\\MSH4DEV1" wide
 		$s8 = "built by: WinDDK" fullword wide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 30KB and 6 of them
@@ -33,16 +33,16 @@ rule Hackingteam_Elevator_DLL {
 	meta:
 		description = "Hacking Team Disclosure Sample - file elevator.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://t.co/EG0qtVcKLh"
 		date = "2015-07-07"
 		score = 70
 		hash = "b7ec5d36ca702cc9690ac7279fd4fea28d8bd060"
 	strings:
-		$s1 = "\\sysnative\\CI.dll" fullword ascii 
+		$s1 = "\\sysnative\\CI.dll" ascii 
 		$s2 = "setx TOR_CONTROL_PASSWORD" fullword ascii 
 		$s3 = "mitmproxy0" fullword ascii 
-		$s4 = "\\insert_cert.exe" fullword ascii
+		$s4 = "\\insert_cert.exe" ascii
 		$s5 = "elevator.dll" fullword ascii
 		$s6 = "CRTDLL.DLL" fullword ascii
 		$s7 = "fail adding cert" fullword ascii
@@ -57,7 +57,7 @@ rule HackingTeam_Elevator_EXE {
 	meta:
 		description = "Hacking Team Disclosure Sample - file elevator.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "Hacking Team Disclosure elevator.c"
 		date = "2015-07-07"
 		score = 70
@@ -66,8 +66,8 @@ rule HackingTeam_Elevator_EXE {
 		hash = "9261693b67b6e379ad0e57598602712b8508998c0cb012ca23139212ae0009a1"
 	strings:
 		$x1 = "CRTDLL.DLL" fullword ascii
-		$x2 = "\\sysnative\\CI.dll" fullword ascii
-		$x3 = "\\SystemRoot\\system32\\CI.dll" fullword ascii
+		$x2 = "\\sysnative\\CI.dll" ascii
+		$x3 = "\\SystemRoot\\system32\\CI.dll" ascii
 		$x4 = "C:\\\\Windows\\\\Sysnative\\\\ntoskrnl.exe" fullword ascii /* PEStudio Blacklist: strings */
 
 		$s1 = "[*] traversing processes" fullword ascii /* PEStudio Blacklist: strings */

@@ -12,7 +12,7 @@ rule Apolmy_Privesc_Trojan {
 	meta:
 		description = "Apolmy Privilege Escalation Trojan used in APT Terracotta"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://blogs.rsa.com/terracotta-vpn-enabler-of-advanced-threat-anonymity/"
 		date = "2015-08-04"
 		score = 80
@@ -29,7 +29,7 @@ rule Mithozhan_Trojan {
 	meta:
 		description = "Mitozhan Trojan used in APT Terracotta"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://blogs.rsa.com/terracotta-vpn-enabler-of-advanced-threat-anonymity/"
 		date = "2015-08-04"
 		score = 70
@@ -46,7 +46,7 @@ rule RemoteExec_Tool {
 	meta:
 		description = "Remote Access Tool used in APT Terracotta"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://blogs.rsa.com/terracotta-vpn-enabler-of-advanced-threat-anonymity/"
 		date = "2015-08-04"
 		hash = "a550131e106ff3c703666f15d55d9bc8c816d1cb9ac1b73c2e29f8aa01e53b78"
@@ -67,7 +67,7 @@ rule LiuDoor_Malware_1 {
 	meta:
 		description = "Liudoor Trojan used in Terracotta APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://blogs.rsa.com/terracotta-vpn-enabler-of-advanced-threat-anonymity/"
 		date = "2015-08-04"
 		score = 70
@@ -78,7 +78,7 @@ rule LiuDoor_Malware_1 {
 	strings:
 		$s1 = "svchostdllserver.dll" fullword ascii 
 		$s2 = "SvcHostDLL: RegisterServiceCtrlHandler %S failed" fullword ascii 
-		$s3 = "\\nbtstat.exe" fullword ascii
+		$s3 = "\\nbtstat.exe" ascii
 		$s4 = "DataVersionEx" fullword ascii
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and all of them
@@ -88,7 +88,7 @@ rule LiuDoor_Malware_2 {
 	meta:
 		description = "Liudoor Trojan used in Terracotta APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://blogs.rsa.com/terracotta-vpn-enabler-of-advanced-threat-anonymity/"
 		date = "2015-08-04"
 		score = 70

@@ -45,7 +45,7 @@ rule GlassRAT_Generic {
 	meta:
 		description = "Detects GlassRAT Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://blogs.rsa.com/peering-into-glassrat/"
 		date = "2015-11-23"
 		score = 80
@@ -61,7 +61,7 @@ rule GlassRAT_Generic {
 		$s2 = "update.dll" fullword ascii
 		$s3 = "SYSTEM\\CurrentControlSet\\Services\\RasAuto\\Parameters" fullword ascii
 		$s4 = "%%temp%%\\%u" fullword ascii
-		$s5 = "\\off.dat" fullword ascii
+		$s5 = "\\off.dat" ascii
 		$s6 = "rundll32 \"%s\",AddNum" fullword ascii
 		$s7 = "cmd.exe /c erase /F \"%s\"" fullword ascii
 		$s8 = "SYSTEM\\ControlSet00%d\\Services\\RasAuto" fullword ascii

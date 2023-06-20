@@ -12,7 +12,7 @@ rule Quasar_RAT_Jan18_1 {
    meta:
       description = "Detects Quasar RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://researchcenter.paloaltonetworks.com/2018/01/unit42-vermin-quasar-rat-custom-malware-used-ukraine/"
       date = "2018-01-29"
       hash1 = "0157b43eb3c20928b77f8700ad8eb279a0aa348921df074cd22ebaff01edaae6"
@@ -35,7 +35,7 @@ rule Vermin_Keylogger_Jan18_1 {
    meta:
       description = "Detects Vermin Keylogger"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://researchcenter.paloaltonetworks.com/2018/01/unit42-vermin-quasar-rat-custom-malware-used-ukraine/"
       date = "2018-01-29"
       hash1 = "74ba162eef84bf13d1d79cb26192a4692c09fed57f321230ddb7668a88e3935d"
@@ -45,8 +45,8 @@ rule Vermin_Keylogger_Jan18_1 {
       hash5 = "24956d8edcf2a1fd26805ec58cfd1ee7498e1a59af8cc2f4b832a7ab34948c18"
       hash6 = "2963c5eacaad13ace807edd634a4a5896cb5536f961f43afcf8c1f25c08a5eef"
    strings:
-      $x1 = "_keyloggerTaskDescription" fullword ascii
-      $x2 = "_keyloggerTaskAuthor" fullword ascii
+      $x1 = "_keyloggerTaskDescription" ascii
+      $x2 = "_keyloggerTaskAuthor" ascii
       $x3 = "GetKeyloggerLogsResponse" fullword ascii
       $x4 = "GetKeyloggerLogs" fullword ascii
       $x5 = "ExecuteUninstallKeyLoggerTask" fullword ascii

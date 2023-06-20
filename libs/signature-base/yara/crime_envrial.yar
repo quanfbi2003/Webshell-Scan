@@ -12,7 +12,7 @@ rule MAL_Envrial_Jan18_1 {
    meta:
       description = "Detects Encrial credential stealer malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://twitter.com/malwrhunterteam/status/953313514629853184"
       date = "2018-01-21"
       hash1 = "9ae3aa2c61f7895ba6b1a3f85fbe36c8697287dc7477c5a03d32cf994fdbce85"
@@ -20,14 +20,14 @@ rule MAL_Envrial_Jan18_1 {
    strings:
       $x1 = "/Evrial/master/domen" wide
 
-      $a1 = "\\Opera Software\\Opera Stable\\Login Data" fullword wide
-      $a2 = "\\Comodo\\Dragon\\User Data\\Default\\Login Data" fullword wide
-      $a3 = "\\Google\\Chrome\\User Data\\Default\\Login Data" fullword wide
-      $a4 = "\\Orbitum\\User Data\\Default\\Login Data" fullword wide
-      $a5 = "\\Kometa\\User Data\\Default\\Login Data" fullword wide
+      $a1 = "\\Opera Software\\Opera Stable\\Login Data" wide
+      $a2 = "\\Comodo\\Dragon\\User Data\\Default\\Login Data" wide
+      $a3 = "\\Google\\Chrome\\User Data\\Default\\Login Data" wide
+      $a4 = "\\Orbitum\\User Data\\Default\\Login Data" wide
+      $a5 = "\\Kometa\\User Data\\Default\\Login Data" wide
 
       $s1 = "dlhosta.exe" fullword wide
-      $s2 = "\\passwords.log" fullword wide
+      $s2 = "\\passwords.log" wide
       $s3 = "{{ <>h__TransparentIdentifier1 = {0}, Password = {1} }}" fullword wide
       $s4 = "files/upload.php?user={0}&hwid={1}" fullword wide
    condition:

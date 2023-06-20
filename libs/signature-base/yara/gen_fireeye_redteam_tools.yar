@@ -1148,6 +1148,8 @@ rule HackTool_MSIL_SEATBELT_1
         md5 = "848837b83865f3854801be1f25cb9f4d"
         reference = "https://www.fireeye.com/blog/products-and-services/2020/12/fireeye-shares-details-of-recent-cyber-attack-actions-to-protect-community.html"
         author = "FireEye"
+        date = "2020-12-08"
+        modified = "2023-01-27"
     strings:
         $msil = "_CorExeMain" ascii wide
         $str1 = "{ Process = {0}, Path = {1}, CommandLine = {2} }" ascii nocase wide
@@ -1158,7 +1160,6 @@ rule HackTool_MSIL_SEATBELT_1
         $str6 = "*[System/EventID={0}]" ascii nocase wide
         $str7 = "*[System[TimeCreated[@SystemTime >= '{" ascii nocase wide
         $str8 = "(http|ftp|https|file)://([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])?" ascii nocase wide
-        $str9 = "{0}" ascii nocase wide
         $str10 = "{0,-23}" ascii nocase wide
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $msil and all of ($str*)
@@ -1625,10 +1626,8 @@ rule APT_Backdoor_Win_GORAT_4
         md5 = "f59095f0ab15f26a1ead7eed8cdb4902"
         reference = "https://www.fireeye.com/blog/products-and-services/2020/12/fireeye-shares-details-of-recent-cyber-attack-actions-to-protect-community.html"
         author = "FireEye"
-    strings:
-        $mz = "MZ"
     condition:
-        $mz at 0 and uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10MB and pe.exports("MemoryCallEntryPoint") and pe.exports("MemoryDefaultAlloc") and pe.exports("MemoryDefaultFree") and pe.exports("MemoryDefaultFreeLibrary") and pe.exports("MemoryDefaultGetProcAddress") and pe.exports("MemoryDefaultLoadLibrary") and pe.exports("MemoryFindResource") and pe.exports("MemoryFindResourceEx") and pe.exports("MemoryFreeLibrary") and pe.exports("MemoryGetProcAddress") and pe.exports("MemoryLoadLibrary") and pe.exports("MemoryLoadLibraryEx") and pe.exports("MemoryLoadResource") and pe.exports("MemoryLoadString") and pe.exports("MemoryLoadStringEx") and pe.exports("MemorySizeofResource") and pe.exports("callback") and pe.exports("crosscall2") and pe.exports("crosscall_386")
+        uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10MB and pe.exports("MemoryCallEntryPoint") and pe.exports("MemoryDefaultAlloc") and pe.exports("MemoryDefaultFree") and pe.exports("MemoryDefaultFreeLibrary") and pe.exports("MemoryDefaultGetProcAddress") and pe.exports("MemoryDefaultLoadLibrary") and pe.exports("MemoryFindResource") and pe.exports("MemoryFindResourceEx") and pe.exports("MemoryFreeLibrary") and pe.exports("MemoryGetProcAddress") and pe.exports("MemoryLoadLibrary") and pe.exports("MemoryLoadLibraryEx") and pe.exports("MemoryLoadResource") and pe.exports("MemoryLoadString") and pe.exports("MemoryLoadStringEx") and pe.exports("MemorySizeofResource") and pe.exports("callback") and pe.exports("crosscall2") and pe.exports("crosscall_386")
 }
 rule APT_HackTool_MSIL_SHARPNFS_1
 {
@@ -1964,19 +1963,7 @@ rule APT_Loader_Win32_PGF_5
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and any of them
 }
-rule APT_HackTool_MSIL_DNSOVERHTTPS_C2_1
-{
-    meta:
-        description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public 'DoHC2' External C2 project."
-        md5 = "dd8805d0e470e59b829d98397507d8c2"
-        reference = "https://www.fireeye.com/blog/products-and-services/2020/12/fireeye-shares-details-of-recent-cyber-attack-actions-to-protect-community.html"
-        author = "FireEye"
-    strings:
-        $typelibguid0 = "5d9515d0-df67-40ed-a6b2-6619620ef0ef" ascii nocase wide
-        $typelibguid1 = "7266acbb-b10d-4873-9b99-12d2043b1d4e" ascii nocase wide
-    condition:
-        (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
-}
+
 rule APT_HackTool_MSIL_LUALOADER_1
 {
     meta:
@@ -1996,9 +1983,10 @@ rule HackTool_MSIL_PXELOOT_2
         md5 = "d93100fe60c342e9e3b13150fd91c7d8"
         reference = "https://www.fireeye.com/blog/products-and-services/2020/12/fireeye-shares-details-of-recent-cyber-attack-actions-to-protect-community.html"
         author = "FireEye"
+        date = "2020-12-08"
+        modified = "2023-01-27"
     strings:
         $msil = "_CorExeMain" ascii wide
-        $str1 = "PXE" ascii nocase wide
         $str2 = "InvestigateRPC" ascii nocase wide
         $str3 = "DhcpRecon" ascii nocase wide
         $str4 = "UnMountWim" ascii nocase wide

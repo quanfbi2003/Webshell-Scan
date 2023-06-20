@@ -11,7 +11,7 @@ rule Dubnium_Sample_1 {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		hash1 = "839baf85de657b6d6503b6f94054efa8841f667987a9c805eab94a85a859e1ba"
@@ -26,7 +26,7 @@ rule Dubnium_Sample_2 {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		hash1 = "5246899b8c74a681e385cbc1dd556f9c73cf55f2a0074c389b3bf823bfc6ce4b"
@@ -41,7 +41,7 @@ rule Dubnium_Sample_3 {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		hash1 = "caefcdf2b4e5a928cdf9360b70960337f751ec4a5ab8c0b75851fc9a1ab507a8"
@@ -52,7 +52,7 @@ rule Dubnium_Sample_3 {
 		$x2 = "del /f \"%s\" " fullword ascii
 		$s1 = "del /f /ah \"%s\" " fullword ascii
 		$s2 = "if exist \"%s\" goto Rept " fullword ascii
-		$s3 = "\\*.*.lnk" fullword ascii
+		$s3 = "\\*.*.lnk" ascii
 		$s4 = "Dropped" fullword ascii
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2000KB and 5 of them
@@ -62,7 +62,7 @@ rule Dubnium_Sample_5 {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		super_rule = 1
@@ -86,7 +86,7 @@ rule Dubnium_Sample_6 {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		super_rule = 1
@@ -105,7 +105,7 @@ rule Dubnium_Sample_7 {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		super_rule = 1
@@ -128,7 +128,7 @@ rule Dubnium_Sample_SSHOpenSSL {
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://goo.gl/AW9Cuu"
 		date = "2016-06-10"
 		hash1 = "6f0b05d5e8546ab1504b07b0eaa0e8de14bca7c1555fd114c4c1c51d5a4c06b"

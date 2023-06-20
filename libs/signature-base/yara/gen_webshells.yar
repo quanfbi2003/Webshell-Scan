@@ -658,8 +658,7 @@ rule webshell_php_generic_callback
 		)
 		)
 }
-rule WEBSHELL_php_base64_encoded_payloads
-{
+rule WEBSHELL_php_base64_encoded_payloads : FILE {
 	meta:
 		description = "php webshell containing base64 encoded payload"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -667,8 +666,6 @@ rule WEBSHELL_php_base64_encoded_payloads
 		date = "2021/01/07"
     modified = "2022-09-19"
 		hash = "88d0d4696c9cb2d37d16e330e236cb37cfaec4cd"
-    type = "file"
-
 	strings:
 		$decode1 = "base64_decode" fullword nocase wide ascii
 		$decode2 = "openssl_decrypt" fullword nocase wide ascii
@@ -1988,34 +1985,8 @@ rule webshell_php_dynamic_big
 			any of ( $dynamic* )
 		)
 		and
-		( (
-			// file shouldn't be too small to have big enough data for math.entropy
-			filesize > 2KB and
-        (
-            // base64 :
-            // ignore first and last 500bytes because they usually contain code for decoding and executing
-            math.entropy(500, filesize-500) >= 5.7 and
-            // encoded text has a higher mean than text or code because it's missing the spaces and special chars with the low numbers
-            math.mean(500, filesize-500) > 80 and
-            // deviation of base64 is ~20 according to CyberChef_v9.21.0.html#recipe=Generate_Lorem_Ipsum(3,'Paragraphs')To_Base64('A-Za-z0-9%2B/%3D')To_Charcode('Space',10)Standard_Deviation('Space')
-            // lets take a bit more because it might not be pure base64 also include some xor, shift, replacement, ...
-            // 89 is the mean of the base64 chars
-            math.deviation(500, filesize-500, 89.0) < 23
-        ) or (
-            // gzinflated binary sometimes used in php webshells
-            // ignore first and last 500bytes because they usually contain code for decoding and executing
-            math.entropy(500, filesize-500) >= 7.7 and
-            // encoded text has a higher mean than text or code because it's missing the spaces and special chars with the low numbers
-            math.mean(500, filesize-500) > 120 and
-            math.mean(500, filesize-500) < 136 and
-            // deviation of base64 is ~20 according to CyberChef_v9.21.0.html#recipe=Generate_Lorem_Ipsum(3,'Paragraphs')To_Base64('A-Za-z0-9%2B/%3D')To_Charcode('Space',10)Standard_Deviation('Space')
-            // lets take a bit more because it might not be pure base64 also include some xor, shift, replacement, ...
-            // 89 is the mean of the base64 chars
-            math.deviation(500, filesize-500, 89.0) > 65
-        )
-		)
-		or (
-        $gif at 0 or
+		( ( 
+		$gif at 0 or
         (
             filesize < 4KB and
             (
@@ -2052,6 +2023,31 @@ rule webshell_php_dynamic_big
                 4 of ( $gen_much_sus* ) or
                 8 of ( $gen_bit_sus* )
             )
+        )
+		) or (
+			// file shouldn't be too small to have big enough data for math.entropy
+			filesize > 2KB and
+        (
+            // base64 :
+            // ignore first and last 500bytes because they usually contain code for decoding and executing
+            math.entropy(500, filesize-500) >= 5.7 and
+            // encoded text has a higher mean than text or code because it's missing the spaces and special chars with the low numbers
+            math.mean(500, filesize-500) > 80 and
+            // deviation of base64 is ~20 according to CyberChef_v9.21.0.html#recipe=Generate_Lorem_Ipsum(3,'Paragraphs')To_Base64('A-Za-z0-9%2B/%3D')To_Charcode('Space',10)Standard_Deviation('Space')
+            // lets take a bit more because it might not be pure base64 also include some xor, shift, replacement, ...
+            // 89 is the mean of the base64 chars
+            math.deviation(500, filesize-500, 89.0) < 23
+        ) or (
+            // gzinflated binary sometimes used in php webshells
+            // ignore first and last 500bytes because they usually contain code for decoding and executing
+            math.entropy(500, filesize-500) >= 7.7 and
+            // encoded text has a higher mean than text or code because it's missing the spaces and special chars with the low numbers
+            math.mean(500, filesize-500) > 120 and
+            math.mean(500, filesize-500) < 136 and
+            // deviation of base64 is ~20 according to CyberChef_v9.21.0.html#recipe=Generate_Lorem_Ipsum(3,'Paragraphs')To_Base64('A-Za-z0-9%2B/%3D')To_Charcode('Space',10)Standard_Deviation('Space')
+            // lets take a bit more because it might not be pure base64 also include some xor, shift, replacement, ...
+            // 89 is the mean of the base64 chars
+            math.deviation(500, filesize-500, 89.0) > 65
         )
 		)
 		)
@@ -2626,8 +2622,8 @@ rule webshell_asp_writer
 		//$asp_write_way_one1 = /\.open\b/ nocase wide ascii
 		$asp_write_way_one2 = "SaveToFile" fullword nocase wide ascii
 		$asp_write_way_one3 = "CREAtEtExtFiLE" fullword nocase wide ascii
-		$asp_cr_write1 = "CreateObject(" fullword nocase wide ascii
-		$asp_cr_write2 = "CreateObject (" fullword nocase wide ascii
+		$asp_cr_write1 = "CreateObject(" nocase wide ascii
+		$asp_cr_write2 = "CreateObject (" nocase wide ascii
 		$asp_streamwriter1 = "streamwriter" fullword nocase wide ascii
 		$asp_streamwriter2 = "filestream" fullword nocase wide ascii
 	
@@ -2689,6 +2685,7 @@ rule webshell_asp_obfuscated
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Arnim Rupp"
 		date = "2021/01/12"
+		modified = "2023-01-06"
 
 	strings:
         $asp_obf1 = "/*-/*-*/" wide ascii
@@ -2796,8 +2793,8 @@ rule webshell_asp_obfuscated
 		//$asp_write_way_one1 = /\.open\b/ nocase wide ascii
 		$asp_write_way_one2 = "SaveToFile" fullword nocase wide ascii
 		$asp_write_way_one3 = "CREAtEtExtFiLE" fullword nocase wide ascii
-		$asp_cr_write1 = "CreateObject(" fullword nocase wide ascii
-		$asp_cr_write2 = "CreateObject (" fullword nocase wide ascii
+		$asp_cr_write1 = "CreateObject(" nocase wide ascii
+		$asp_cr_write2 = "CreateObject (" nocase wide ascii
 		$asp_streamwriter1 = "streamwriter" fullword nocase wide ascii
 		$asp_streamwriter2 = "filestream" fullword nocase wide ascii
 	
@@ -3055,6 +3052,7 @@ rule webshell_asp_nano
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Arnim Rupp"
 		date = "2021/01/13"
+		modified = "2023-01-06"
 		hash = "3b7910a499c603715b083ddb6f881c1a0a3a924d"
 		hash = "990e3f129b8ba409a819705276f8fa845b95dad0"
 		hash = "22345e956bce23304f5e8e356c423cee60b0912c"
@@ -3174,8 +3172,8 @@ rule webshell_asp_nano
 		//$asp_write_way_one1 = /\.open\b/ nocase wide ascii
 		$asp_write_way_one2 = "SaveToFile" fullword nocase wide ascii
 		$asp_write_way_one3 = "CREAtEtExtFiLE" fullword nocase wide ascii
-		$asp_cr_write1 = "CreateObject(" fullword nocase wide ascii
-		$asp_cr_write2 = "CreateObject (" fullword nocase wide ascii
+		$asp_cr_write1 = "CreateObject(" nocase wide ascii
+		$asp_cr_write2 = "CreateObject (" nocase wide ascii
 		$asp_streamwriter1 = "streamwriter" fullword nocase wide ascii
 		$asp_streamwriter2 = "filestream" fullword nocase wide ascii
 	
@@ -3719,6 +3717,7 @@ rule webshell_asp_generic_tiny
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Arnim Rupp"
 		date = "2021/01/07"
+		modified = "2023-01-06"
 		hash = "990e3f129b8ba409a819705276f8fa845b95dad0"
 		hash = "52ce724580e533da983856c4ebe634336f5fd13a"
 
@@ -3844,8 +3843,8 @@ rule webshell_asp_generic_tiny
 		//$asp_write_way_one1 = /\.open\b/ nocase wide ascii
 		$asp_write_way_one2 = "SaveToFile" fullword nocase wide ascii
 		$asp_write_way_one3 = "CREAtEtExtFiLE" fullword nocase wide ascii
-		$asp_cr_write1 = "CreateObject(" fullword nocase wide ascii
-		$asp_cr_write2 = "CreateObject (" fullword nocase wide ascii
+		$asp_cr_write1 = "CreateObject(" nocase wide ascii
+		$asp_cr_write2 = "CreateObject (" nocase wide ascii
 		$asp_streamwriter1 = "streamwriter" fullword nocase wide ascii
 		$asp_streamwriter2 = "filestream" fullword nocase wide ascii
 	
@@ -3915,17 +3914,15 @@ rule webshell_asp_generic_tiny
 		) )
 }
 
-rule WEBSHELL_asp_generic
-{
+rule WEBSHELL_asp_generic : FILE {
 	meta:
 		description = "Generic ASP webshell which uses any eval/exec function indirectly on user input or writes a file"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Arnim Rupp"
 		date = "2021-03-07"
-    modified = "2022-09-17"
+		modified = "2023-01-06"
 		score = 60
 		hash = "a8c63c418609c1c291b3e731ca85ded4b3e0fba83f3489c21a3199173b176a75"
-    type = "file"
 	strings:
         $asp_much_sus7  = "Web Shell" nocase
         $asp_much_sus8  = "WebShell" nocase
@@ -4116,8 +4113,8 @@ rule WEBSHELL_asp_generic
 		//$asp_write_way_one1 = /\.open\b/ nocase wide ascii
 		$asp_write_way_one2 = "SaveToFile" fullword nocase wide ascii
 		$asp_write_way_one3 = "CREAtEtExtFiLE" fullword nocase wide ascii
-		$asp_cr_write1 = "CreateObject(" fullword nocase wide ascii
-		$asp_cr_write2 = "CreateObject (" fullword nocase wide ascii
+		$asp_cr_write1 = "CreateObject(" nocase wide ascii
+		$asp_cr_write2 = "CreateObject (" nocase wide ascii
 		$asp_streamwriter1 = "streamwriter" fullword nocase wide ascii
 		$asp_streamwriter2 = "filestream" fullword nocase wide ascii
 
@@ -4561,8 +4558,7 @@ rule webshell_csharp_generic
 		( $input_http or all of ( $input_form* ) ) and all of ( $exec_proc* ) and any of ( $exec_shell* )
 }
 
-rule webshell_asp_runtime_compile
-{
+rule webshell_asp_runtime_compile : FILE {
 	meta:
 		description = "ASP webshell compiling payload in memory at runtime, e.g. sharpyshell"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4572,8 +4568,6 @@ rule webshell_asp_runtime_compile
 		hash = "e826c4139282818d38dcccd35c7ae6857b1d1d01"
 		hash = "e20e078d9fcbb209e3733a06ad21847c5c5f0e52"
 		hash = "57f758137aa3a125e4af809789f3681d1b08ee5b"
-		type = "file"
-
 	strings:
 		$payload_reflection1 = "System.Reflection" nocase wide ascii
 		$payload_reflection2 = "Assembly" fullword nocase wide ascii
@@ -4586,7 +4580,7 @@ rule webshell_asp_runtime_compile
 		$payload_invoke2 = "CreateInstance" fullword nocase wide ascii
         $rc_fp1 = "Request.MapPath"
         $rc_fp2 = "<body><mono:MonoSamplesHeader runat=\"server\"/>" wide ascii
-	
+
 		//strings from private rule capa_asp_input
         // Request.BinaryRead
         // Request.Form
@@ -4605,9 +4599,9 @@ rule webshell_asp_runtime_compile
         $asp_asp   = "<asp:" wide ascii
         $asp_text1 = ".text" wide ascii
         $asp_text2 = ".Text" wide ascii
-	
+
 	condition:
-		filesize < 10KB and ( 
+		filesize < 10KB and (
 			any of ( $asp_input* ) or
         (
             $asp_xml_http and
@@ -4617,9 +4611,9 @@ rule webshell_asp_runtime_compile
             any of ( $asp_form* ) and
             any of ( $asp_text* ) and
             $asp_asp
-        ) 
+        )
 		)
-		and not any of ( $rc_fp* ) and 
+		and not any of ( $rc_fp* ) and
 		( ( all of ( $payload_reflection* ) and any of ( $payload_load_reflection* ) ) or all of ( $payload_compile* ) ) and any of ( $payload_invoke* )
 }
 
@@ -5659,21 +5653,19 @@ rule webshell_jsp_input_upload_write
 		and $upload and 1 of ( $write* )
 }
 
-rule WEBSHELL_generic_os_strings
-{
+rule WEBSHELL_generic_os_strings : FILE {
 	meta:
 		description = "typical webshell strings"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Arnim Rupp"
 		date = "2021/01/12"
-      modified = "2022-09-27"
+		modified = "2022-09-27"
 		score = 50
-      type = "file"
 	strings:
 		$fp1 = "http://evil.com/" wide ascii
 		$fp2 = "denormalize('/etc/shadow" wide ascii
       $fp3 = "vim.org>"
-	
+
 		//strings from private rule capa_asp
 		$tagasp_short1 = /<%[^"]/ wide ascii
         // also looking for %> to reduce fp (yeah, short atom but seldom since special chars)
@@ -5698,7 +5690,7 @@ rule WEBSHELL_generic_os_strings
         // <%@ WebService Language="C#" Class="Service" %>
 
         // <%@Page Language="Jscript"%>
-        // <%@ Page Language = Jscript %>           
+        // <%@ Page Language = Jscript %>
         // <%@PAGE LANGUAGE=JSCRIPT%>
         // <%@ Page Language="Jscript" validateRequest="false" %>
         // <%@ Page Language = Jscript %>
@@ -5727,8 +5719,7 @@ rule WEBSHELL_generic_os_strings
         $jsp7 = "getBytes" fullword wide ascii
 
         $perl1 = "PerlScript" fullword
-        
-	
+
 		//strings from private rule capa_php_old_safe
 		$php_short = "<?" wide ascii
 		// prevent xml and asp from hitting with the short tag
@@ -5736,14 +5727,14 @@ rule WEBSHELL_generic_os_strings
 		$no_xml2 = "<?xml-stylesheet" nocase wide ascii
 		$no_asp1 = "<%@LANGUAGE" nocase wide ascii
 		$no_asp2 = /<script language="(vb|jscript|c#)/ nocase wide ascii
-		$no_pdf = "<?xpacket" 
+		$no_pdf = "<?xpacket"
 
 		// of course the new tags should also match
         // already matched by "<?"
 		$php_new1 = /<\?=[^?]/ wide ascii
 		$php_new2 = "<?php" nocase wide ascii
 		$php_new3 = "<script language=\"php" nocase wide ascii
-	
+
 		//strings from private rule capa_jsp_safe
 		$cjsp_short1 = "<%" ascii wide
 		$cjsp_short2 = "%>" wide ascii
@@ -5755,7 +5746,7 @@ rule WEBSHELL_generic_os_strings
 		$cjsp_long5 = "<%@ " nocase ascii wide
 		$cjsp_long6 = "<% " ascii wide
 		$cjsp_long7 = "< %" ascii wide
-	
+
 		//strings from private rule capa_os_strings
 		// windows = nocase
 		$w1 = "net localgroup administrators" nocase wide ascii
@@ -5766,61 +5757,61 @@ rule WEBSHELL_generic_os_strings
 		$l2 = "/etc/ssh/sshd_config" wide ascii
 		$take_two1 = "net user" nocase wide ascii
 		$take_two2 = "/add" nocase wide ascii
-	
+
 	condition:
-		filesize < 70KB and 
-		( ( 
+		filesize < 70KB and
+		( (
         (
             any of ( $tagasp_long* ) or
             // TODO :  yara_push_private_rules.py doesn't do private rules in private rules yet
             any of ( $tagasp_classid* ) or
             (
                 $tagasp_short1 and
-                $tagasp_short2 in ( filesize-100..filesize ) 
+                $tagasp_short2 in ( filesize-100..filesize )
             ) or (
                 $tagasp_short2 and (
                     $tagasp_short1 in ( 0..1000 ) or
-                    $tagasp_short1 in ( filesize-1000..filesize ) 
+                    $tagasp_short1 in ( filesize-1000..filesize )
                 )
-            ) 
-        ) and not ( 
+            )
+        ) and not (
             (
                 any of ( $perl* ) or
                 $php1 at 0 or
-                $php2 at 0 
+                $php2 at 0
             ) or (
                 ( #jsp1 + #jsp2 + #jsp3 ) > 0 and ( #jsp4 + #jsp5 + #jsp6 + #jsp7 ) > 0
                 )
-        ) 
+        )
 		)
-		or ( 
+		or (
 			(
-				( 
-						$php_short in (0..100) or 
+				(
+						$php_short in (0..100) or
 						$php_short in (filesize-1000..filesize)
 				)
 				and not any of ( $no_* )
-			) 
-			or any of ( $php_new* ) 
+			)
+			or any of ( $php_new* )
 		)
-		or ( 
+		or (
         $cjsp_short1 at 0 or
 			any of ( $cjsp_long* ) or
 			$cjsp_short2 in ( filesize-100..filesize ) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
-                $cjsp_short1 in ( filesize-1000..filesize ) 
+                $cjsp_short1 in ( filesize-1000..filesize )
             )
-        ) 
+        )
 		)
-		) and ( 
-			filesize < 300KB and 
+		) and (
+			filesize < 300KB and
         not uint16(0) == 0x5a4d and (
             all of ( $w* ) or
             all of ( $l* ) or
-            2 of ( $take_two* ) 
-        ) 
+            2 of ( $take_two* )
+        )
 		)
 		and not any of ( $fp* )
 }
@@ -5833,6 +5824,7 @@ rule webshell_in_image
 		author = "Arnim Rupp"
 		hash = "d4fde4e691db3e70a6320e78657480e563a9f87935af873a99db72d6a9a83c78"
 		date = "2021/02/27"
+		modified = "2023-01-06"
 		score = 55
 
 	strings:
@@ -5996,8 +5988,8 @@ rule webshell_in_image
 		//$asp_write_way_one1 = /\.open\b/ nocase wide ascii
 		$asp_write_way_one2 = "SaveToFile" fullword nocase wide ascii
 		$asp_write_way_one3 = "CREAtEtExtFiLE" fullword nocase wide ascii
-		$asp_cr_write1 = "CreateObject(" fullword nocase wide ascii
-		$asp_cr_write2 = "CreateObject (" fullword nocase wide ascii
+		$asp_cr_write1 = "CreateObject(" nocase wide ascii
+		$asp_cr_write2 = "CreateObject (" nocase wide ascii
 		$asp_streamwriter1 = "streamwriter" fullword nocase wide ascii
 		$asp_streamwriter2 = "filestream" fullword nocase wide ascii
 	
@@ -6074,4 +6066,52 @@ rule webshell_in_image
         ) 
 		)
 		) ) )
+}
+
+rule WEBSHELL_Mixed_Obfuscations {
+   meta:
+      description = "Detects webshell with mixed obfuscation commands"
+      author = "Arnim Rupp"
+      reference = "https://github.com/Neo23x0/yarGen"
+      license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
+      date = "2023-01-28"
+      hash1 = "8c4e5c6bdfcc86fa27bdfb075a7c9a769423ec6d53b73c80cbc71a6f8dd5aace"
+      hash2 = "78f2086b6308315f5f0795aeaa75544128f14889a794205f5fc97d7ca639335b"
+      hash3 = "3bca764d44074820618e1c831449168f220121698a7c82e9909f8eab2e297cbd"
+      hash4 = "b26b5e5cba45482f486ff7c75b54c90b7d1957fd8e272ddb4b2488ec65a2936e"
+      hash5 = "e217be2c533bfddbbdb6dc6a628e0d8756a217c3ddc083894e07fd3a7408756c"
+      score = 50
+   strings:
+      $s1 = "rawurldecode/*" ascii
+      $s2 = "preg_replace/*" ascii 
+      $s3 = " __FILE__/*" ascii
+      $s4 = "strlen/*" ascii
+      $s5 = "str_repeat/*" ascii
+      $s6 = "basename/*" ascii
+   condition:
+      ( uint16(0) == 0x3f3c and filesize < 200KB and ( 4 of them ))
+}
+
+rule WEBSHELL_Cookie_Post_Obfuscation {
+    meta:
+        description = "Detects webshell using cookie POST"
+        author = "Arnim Rupp"
+        date = "2023-01-28"
+        license = "https://github.com/SigmaHQ/Detection-Rule-License/blob/main/LICENSE.Detection.Rules.md"
+        hash = "d08a00e56feb78b7f6599bad6b9b1d8626ce9a6ea1dfdc038358f4c74e6f65c9"
+        hash = "2ce5c4d31682a5a59b665905a6f698c280451117e4aa3aee11523472688edb31"
+        hash = "ff732d91a93dfd1612aed24bbb4d13edb0ab224d874f622943aaeeed4356c662"
+        hash = "a3b64e9e065602d2863fcab641c75f5d8ec67c8632db0f78ca33ded0f4cea257"
+        hash = "d41abce305b0dc9bd3a9feb0b6b35e8e39db9e75efb055d0b1205a9f0c89128e"
+        hash = "333560bdc876fb0186fae97a58c27dd68123be875d510f46098fc5a61615f124"
+        hash = "2efdb79cdde9396ff3dd567db8876607577718db692adf641f595626ef64d3a4"
+        hash = "e1bd3be0cf525a0d61bf8c18e3ffaf3330c1c27c861aede486fd0f1b6930f69a"
+        hash = "f8cdedd21b2cc29497896ec5b6e5863cd67cc1a798d929fd32cdbb654a69168a"
+
+    strings:
+        $s1 = "]($_COOKIE, $_POST) as $" 
+        $s2 = "function"                
+        $s3 = "Array"
+    condition:
+    ( uint16(0) == 0x3f3c and filesize < 100KB and ( all of them ))
 }

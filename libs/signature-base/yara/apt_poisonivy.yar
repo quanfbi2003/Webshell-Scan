@@ -3,7 +3,7 @@ rule PoisonIvy_Sample_APT {
 	meta:
 		description = "Detects a PoisonIvy APT malware group"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
@@ -24,7 +24,7 @@ rule PoisonIvy_Sample_APT_2 {
 	meta:
 		description = "Detects a PoisonIvy Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
@@ -50,7 +50,7 @@ rule PoisonIvy_Sample_APT_2 {
 		$s17 = "LegalTrademarks" fullword wide /* score: '-3518' */ /* Goodware String - occured 3523 times */
 		$s18 = "CreateThread" fullword ascii /* score: '-3909' */ /* Goodware String - occured 3914 times */
 		$s19 = "ntdll.dll" fullword ascii /* score: '-4675' */ /* Goodware String - occured 4680 times */
-		$s20 = "_adjust_fdiv" fullword ascii /* score: '-5450' */ /* Goodware String - occured 5455 times */
+		$s20 = "_adjust_fdiv" ascii /* score: '-5450' */ /* Goodware String - occured 5455 times */
 	condition:
 		uint16(0) == 0x5a4d and filesize < 47KB and all of them
 }
@@ -59,14 +59,14 @@ rule PoisonIvy_Sample_APT_3 {
 	meta:
 		description = "Detects a PoisonIvy Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
 		hash = "df3e1668ac20edecc12f2c1a873667ea1a6c3d6a"
 	strings:
-		$s0 = "\\notepad.exe" fullword ascii /* score: '11.025' */
-		$s1 = "\\RasAuto.dll" fullword ascii /* score: '11.025' */
+		$s0 = "\\notepad.exe" ascii /* score: '11.025' */
+		$s1 = "\\RasAuto.dll" ascii /* score: '11.025' */
 		$s3 = "winlogon.exe" fullword ascii /* PEStudio Blacklist: strings */ /* score: '5' */ /* Goodware String - occured 13 times */
 	condition:
 		uint16(0) == 0x5a4d and all of them
@@ -77,7 +77,7 @@ rule PoisonIvy_Sample_APT_4 {
 	meta:
 		description = "Detects a PoisonIvy Sample APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
@@ -100,7 +100,7 @@ rule PoisonIvy_Sample_5 {
 	meta:
 		description = "Detects PoisonIvy RAT sample set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
@@ -108,8 +108,8 @@ rule PoisonIvy_Sample_5 {
 	strings:
 		$s0 = "Microsoft Software installation Service" fullword wide /* PEStudio Blacklist: strings */ /* score: '15.04' */
 		$s2 = "pidll.dll" fullword ascii /* score: '11.02' */
-		$s3 = "\\mspmsnsv.dll" fullword ascii /* score: '11.005' */
-		$s4 = "\\sfc.exe" fullword ascii /* score: '11.005' */
+		$s3 = "\\mspmsnsv.dll" ascii /* score: '11.005' */
+		$s4 = "\\sfc.exe" ascii /* score: '11.005' */
 		$s13 = "ServiceMain" fullword ascii /* PEStudio Blacklist: strings */ /* score: '5' */ /* Goodware String - occured 322 times */
 		$s15 = "ZwSetInformationProcess" fullword ascii /* PEStudio Blacklist: strings */ /* score: '5' */ /* Goodware String - occured 31 times */
 		$s17 = "LookupPrivilegeValueA" fullword ascii /* PEStudio Blacklist: strings */ /* score: '5' */ /* Goodware String - occured 336 times */
@@ -122,7 +122,7 @@ rule PoisonIvy_Sample_6 {
 	meta:
 		description = "Detects PoisonIvy RAT sample set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
@@ -132,15 +132,15 @@ rule PoisonIvy_Sample_6 {
 		$x1 = "124.133.252.150" fullword ascii /* score: '9.5' */
 		$x3 = "http://124.133.254.171/up/up.asp?id=%08x&pcname=%s" fullword ascii /* score: '24.01' */
 
-		$z1 = "\\temp\\si.txt" fullword ascii /* PEStudio Blacklist: strings */ /* score: '27.01' */
+		$z1 = "\\temp\\si.txt" ascii /* PEStudio Blacklist: strings */ /* score: '27.01' */
 		$z2 = "Daemon Dynamic Link Library" fullword wide /* PEStudio Blacklist: strings */ /* score: '11.02' */
 		$z3 = "Microsoft Windows CTF Loader" fullword wide /* PEStudio Blacklist: strings */ /* score: '11.03' */
-		$z4 = "\\tappmgmts.dll" fullword ascii /* score: '11.005' */
-		$z5 = "\\appmgmts.dll" fullword ascii /* score: '11.0' */
+		$z4 = "\\tappmgmts.dll" ascii /* score: '11.005' */
+		$z5 = "\\appmgmts.dll" ascii /* score: '11.0' */
 
 		$s0 = "%USERPROFILE%\\AppData\\Local\\Temp\\Low\\ctfmon.log" fullword ascii /* PEStudio Blacklist: strings */ /* score: '43.015' */
 		$s1 = "%USERPROFILE%\\AppData\\Local\\Temp\\ctfmon.tmp" fullword ascii /* PEStudio Blacklist: strings */ /* score: '37.015' */
-		$s2 = "\\temp\\ctfmon.tmp" fullword ascii /* PEStudio Blacklist: strings */ /* score: '28.01' */
+		$s2 = "\\temp\\ctfmon.tmp" ascii /* PEStudio Blacklist: strings */ /* score: '28.01' */
 		$s3 = "SOFTWARE\\Classes\\http\\shell\\open\\commandV" fullword ascii /* PEStudio Blacklist: strings */ /* score: '27.025' */
 		$s4 = "CONNECT %s:%i HTTP/1.0" fullword ascii /* PEStudio Blacklist: strings */ /* score: '19.02' */
 		$s5 = "start read histry key" fullword ascii /* PEStudio Blacklist: strings */ /* score: '18.04' */
@@ -161,7 +161,7 @@ rule PoisonIvy_Sample_7 {
 	meta:
 		description = "Detects PoisonIvy RAT sample set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		score = 70
 		reference = "VT Analysis"
 		date = "2015-06-03"
@@ -189,7 +189,7 @@ rule PoisonIvy_Sample_7 {
 rule PoisonIvy_RAT_ssMUIDLL {
 	meta:
 		description = "Detects PoisonIvy RAT DLL mentioned in Palo Alto Blog in April 2016"
-		author = "Florian Roth (with the help of yarGen and Binarly)"
+		author = "Florian Roth (Nextron Systems) (with the help of yarGen and Binarly)"
 		reference = "http://goo.gl/WiwtYT"
 		date = "2016-04-22"
 		hash1 = "7a424ad3f3106b87e8e82c7125834d7d8af8730a2a97485a639928f66d5f6bf4"

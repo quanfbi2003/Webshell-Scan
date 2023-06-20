@@ -9,7 +9,7 @@ rule HttpBrowser_RAT_dropper_Gen1 {
 	meta:
 		description = "Threat Group 3390 APT Sample - HttpBrowser RAT Dropper"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 70
@@ -50,7 +50,7 @@ rule HttpBrowser_RAT_Sample1 {
 	meta:
 		description = "Threat Group 3390 APT Sample - HttpBrowser RAT Sample update.hancominc.com"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 80
@@ -66,7 +66,7 @@ rule HttpBrowser_RAT_Sample2 {
 	meta:
 		description = "Threat Group 3390 APT Sample - HttpBrowser RAT Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 80
@@ -84,7 +84,7 @@ rule HttpBrowser_RAT_Gen {
 	meta:
 		description = "Threat Group 3390 APT Sample - HttpBrowser RAT Generic"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 90
@@ -123,7 +123,7 @@ rule PlugX_NvSmartMax_Gen {
 	meta:
 		description = "Threat Group 3390 APT Sample - PlugX NvSmartMax Generic"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 70
@@ -152,7 +152,7 @@ rule HttpBrowser_RAT_dropper_Gen2 {
 	meta:
 		description = "Threat Group 3390 APT Sample - HttpBrowser RAT Dropper"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 70
@@ -162,9 +162,9 @@ rule HttpBrowser_RAT_dropper_Gen2 {
 		$s1 = "navlu.dll.urlUT" fullword ascii
 		$s2 = "VPDN_LU.exeUT" fullword ascii
 		$s3 = "pnipcn.dllUT" fullword ascii
-		$s4 = "\\ssonsvr.exe" fullword ascii
+		$s4 = "\\ssonsvr.exe" ascii
 		$s5 = "/c del /q %s" fullword ascii
-		$s6 = "\\setup.exe" fullword ascii 
+		$s6 = "\\setup.exe" ascii 
 		$s7 = "msi.dllUT" fullword ascii
 
 		$op0 = { 8b 45 0c 83 38 00 0f 84 98 } /* Opcode */
@@ -180,7 +180,7 @@ rule ThreatGroup3390_Strings {
 	meta:
 		description = "Threat Group 3390 APT - Strings"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 60
@@ -198,7 +198,7 @@ rule ThreatGroup3390_C2 {
 	meta:
 		description = "Threat Group 3390 APT - C2 Server"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://snip.ly/giNB"
 		date = "2015-08-06"
 		score = 60

@@ -4,10 +4,10 @@
 rule Casper_Backdoor_x86 {
    meta:
       description = "Casper French Espionage Malware - Win32/ProxyBot.B - x86 Payload http://goo.gl/VRJNLo"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/VRJNLo"
       date = "2015-03-05"
-      modified = "2020-12-18"
+      modified = "2023-01-27"
       hash = "f4c39eddef1c7d99283c7303c1835e99d8e498b0"
       score = 80
    strings:
@@ -15,17 +15,17 @@ rule Casper_Backdoor_x86 {
       $s2 = "firefox.exe" fullword ascii
       $s3 = "\"Host Process for Windows Services\"" fullword wide
 
-      $x1 = "\\Users\\*" fullword ascii
-      $x2 = "\\Roaming\\Mozilla\\Firefox\\Profiles\\*" fullword ascii
-      $x3 = "\\Mozilla\\Firefox\\Profiles\\*" fullword ascii
-      $x4 = "\\Documents and Settings\\*" fullword ascii
+      $x1 = "\\Users\\*" ascii
+      $x2 = "\\Roaming\\Mozilla\\Firefox\\Profiles\\*" ascii
+      $x3 = "\\Mozilla\\Firefox\\Profiles\\*" ascii
+      $x4 = "\\Documents and Settings\\*" ascii
 
       $y1 = "%s; %S=%S" fullword wide
       $y2 = "%s; %s=%s" fullword ascii
       $y3 = "Cookie: %s=%s" fullword ascii
       $y4 = "http://%S:%d" fullword wide
 
-      $z1 = "http://google.com/" fullword ascii
+      $z1 = "http://google.com/" ascii
       $z2 = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; MALC)" fullword ascii
       $z3 = "Operating System\"" fullword wide
    condition:
@@ -37,7 +37,7 @@ rule Casper_EXE_Dropper {
 	meta:
 		description = "Casper French Espionage Malware - Win32/ProxyBot.B - Dropper http://goo.gl/VRJNLo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/VRJNLo"
 		date = "2015/03/05"
 		hash = "e4cc35792a48123e71a2c7b6aa904006343a157a"
@@ -59,7 +59,7 @@ rule Casper_Included_Strings {
 	meta:
 		description = "Casper French Espionage Malware - String Match in File - http://goo.gl/VRJNLo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/VRJNLo"
 		date = "2015/03/06"
 		score = 50
@@ -83,7 +83,7 @@ rule Casper_SystemInformation_Output {
 	meta:
 		description = "Casper French Espionage Malware - System Info Output - http://goo.gl/VRJNLo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/VRJNLo"
 		date = "2015/03/06"
 		score = 70

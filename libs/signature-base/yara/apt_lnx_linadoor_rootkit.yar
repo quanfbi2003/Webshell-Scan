@@ -1,10 +1,11 @@
 
 rule MAL_LNX_LinaDoor_Rootkit_May22 {
    meta:
-      description = "Detects LinaDoor Linux Rootkit, which seems to be a modified Reptile rootkit often used by Bronze Union TA"
+      description = "Detects LinaDoor Linux Rootkit"
       author = "Florian Roth"
       reference = "Internal Research"
       date = "2022-05-19"
+      modified = "2023-05-16"
       score = 85
       hash1 = "25ff1efe36eb15f8e19411886217d4c9ec30b42dca072b1bf22f041a04049cd9"
       hash2 = "4792e22d4c9996af1cb58ed54fee921a7a9fdd19f7a5e7f268b6793cdd1ab4e7"
@@ -25,7 +26,11 @@ rule MAL_LNX_LinaDoor_Rootkit_May22 {
       $op2 = { e8 00 00 00 00 48 89 da 4c 29 e2 48 01 c2 31 c0 4c 39 f2 48 0f 46 c3 5b }
       $op3 = { 48 89 c3 74 2a 4c 89 ef e8 00 00 00 00 48 89 da 4c 29 e2 48 01 c2 31 c0 }
       $op4 = { 4c 29 e2 48 01 c2 31 c0 4c 39 f2 48 0f 46 c3 5b 41 5c 41 5d }
+
+      $fp1 = "/wgsyncdaemon.pid"
    condition:
       uint16(0) == 0x457f and
-      filesize < 2000KB and 2 of them or 4 of them
+      filesize < 2000KB and 2 of them 
+      and not 1 of ($fp*)
+      or 4 of them
 }

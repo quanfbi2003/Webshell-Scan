@@ -1801,8 +1801,6 @@ Temp\\rad[A-F0-9]{5}\.exe;70
 \\stoicsurgeon;80
 \\strifeworld;80
 \\implant;40
-\\suctionchar;60
-\\Suctionchar;80
 \\vs\.attack;80
 \\ys\.ratload;80
 
@@ -2071,8 +2069,8 @@ ystem32\\lcsvsvc\.dll;80
 \\tsclient\\[^\\"]{1,20}\.(exe|dll);40
 
 # Typical Malware Location - AppData / Local / Roaming
-(?i)\\AppData\\[^\\/"]{1,64}\.exe([^._"\\\]]|$);75;(?i)(C:\\SW\\[^\\"]{1,20}\\SWSETUP\\DRV\\|C:\\WINDOWS\\System32\\DriverStore\\|C:\\\$WINDOWS\.~BT\\NewOS\\Windows\\System32\\DriverStore\\FileRepository\\)
-(?i)\\AppData\\[^\\/]{1,64}\.(dll|bat|vbs|ps1|js|hta);80;(\.json|\\Program Files\\Win Movie Maker\\)
+(?i)\\AppData\\[^\\/"]{1,64}\.exe([^._"\\\]]|$);75;(?i)(C:\\SW\\[^\\]{1,20}\\SWSETUP\\DRV\\|C:\\WINDOWS\\System32\\DriverStore\\|C:\\\$WINDOWS\.~BT\\NewOS\\Windows\\System32\\DriverStore\\FileRepository\\|\\Utilities\\PROSet\\)
+(?i)\\AppData\\[^\\/"]{1,64}\.(dll|bat|vbs|vbe|ps1|psm1|js\b|hta);75;(\.json|\\Program Files\\Win Movie Maker\\|\\Program Files\\Windows Video Editor|\\Program Files\\HomeDev\\PatchCleaner\\AppData\\)
 (?i)\\AppData\\Local\\[^\\/]{1,64}\.exe([^._\\\]]|$);75;\[Update\.exe\]
 (?i)\\AppData\\Local\\[^\\/]{1,64}\.(dll|bat|vbs|ps1|hta);80
 (?i)\\AppData\\Roaming\\[^\\/]{1,64}\.exe$;75;\\JomCap\.dll
@@ -2951,6 +2949,7 @@ ystem32\\Microsoft\\Protect\\Windows\\svchost.exe;80
 \\psgetsys\.ps1;80
 \\PSReflect\.psm1;80
 \\SmashedPotato\.exe;80
+\\RemotePotato0\.exe;85
 
 # Comnie campaign https://goo.gl/jrjPzj
 \\AppData\\Local\\wscript.exe;100
@@ -2990,7 +2989,6 @@ ystem32\\Microsoft\\Protect\\Windows\\svchost.exe;80
 # File names found in Alina PoS malware https://goo.gl/xgFtwr
 \\icsicli\.exe;45
 \\zcopy\.exe;45
-\\mrc\.exe;45
 \\RcpPing\.exe;45
 \\sthc\.exe;45
 \\certutils\.exe;45
@@ -3107,7 +3105,7 @@ C:\\Windows\\[^\\"]{1,20}\.(js|ps1|vbs);50
 \\Get-LAPSP\.ps1;70
 
 # Suspicious Files in Root of Recycle.Bin
-:\\\$Recycle\.Bin\\[^\\"]{1,20}\.(exe|vbs|ps1|js|bat|dll);85
+:\\\$Recycle\.Bin\\[^\\"]{1,20}\.(exe|vbs|ps1|js\b|bat|dll);85
 
 # Stealth Falcon Filename IOC https://www.welivesecurity.com/2019/09/09/backdoor-stealth-falcon-group/
 \\ImageIndexer\.dll;80
@@ -3665,7 +3663,6 @@ C:\\Windows\\Temp\\Serv-U\.bat;90
 C:\\Windows\\Temp\\test\\current\.dmp;90
 
 # NSO Group Indicators https://github.com/AmnestyTech/investigations/tree/master/2021-07-18_nso
-/com\.apple\.CrashReporter\.plist;85
 /com\.apple\.softwareupdateservicesd\.plist;85
 /roleaccountd\.plist;85
 
@@ -3906,8 +3903,9 @@ linpeas\.log;75
 \\DripLoader\.exe;75
 \\passav\.exe;65
 
-# Exploit Code File Names 
-\\cve-20(20|19)-[0-9]{4,5}.{0,20}(\.py|\.exe|\.vbs|\.bat|\.ps1|\.dll|$);80
+# Exploit Code File Names
+\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);60;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok)
+\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}(\.py|\.exe|\.vbs|\.bat|\.ps1|\.dll);75;(\\share\\doc|CVE\-2017\-9800\-pre\-commit)
 
 # Possible Service Path Escalation Attempt http://www.commonexploits.com/unquoted-service-paths/ or simple malware
 :\\Program\.exe;75
@@ -3927,7 +3925,7 @@ Potato\.exe;65
 \\dll_hijack_detect_x64\.exe;70
 \\dll_hijack_detect_x86\.exe;70
 
-# LSASS Dump Names 
+# LSASS Dump Names
 \\lsass[a-zA-Z_\-\.]{1,16}\.(dmp|zip|rar|7z);70
 
 # Programs or scripts in C:\ProgramData folder (no sub folder)
@@ -4096,8 +4094,8 @@ C:\\windows\\H2\.ps1;85
 # Procdump - process dump tool used in SysInternals suite https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
 (?i)\\procdump(64)?(a)?\.(exe|zip);50;(?i)(SysInternals\\)
 # Suspicious file that starts with procdump, a process dumping tool often used by adversaries https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
-(?i)\\procdump[^\\]{0,30}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|js|7z|rar);70;(?i)(\\procdump(64)?\.exe)
-(?i)\\[^\\]{1,30}procdump\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|js|7z|rar);70
+(?i)\\procdump[^\\]{0,30}\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|js\b|7z|rar);70;(?i)(\\procdump(64)?\.exe)
+(?i)\\[^\\]{1,30}procdump\.(exe|dll|vbs|vbe|ps1|psm1|bat|vbs|vbe|js\b|7z|rar);70
 
 # Adfind - often used by AD administrators but also by threat actors http://www.joeware.net/freetools/
 \\Adfind\.exe;50
@@ -4226,5 +4224,98 @@ _lsass\.dmp;70
 \\doloraso\.x64\.exe;80
 \\nanodump\.x64;80
 \\load_ssp\.x86\.exe;80
+
+# Suspicious ADModule locations https://github.com/samratashok/ADModule
+\\Microsoft\.ActiveDirectory\.Management\.dll$;70;(C:\\Windows\\Microsoft\.NET\\assembly\\|C:\\Windows\\WinSxS\\(amd64|x86)_microsoft\.activedirectory\.management_)
+
+# Suspicious Web Shell file names https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/#id3-1
+\\[0-9]{8,20}\.(aspx|asp|jsp|jspx|php);60;(examples|tests|demo|htdocs)
+\\[0-9]\.(aspx|asp|jsp|jspx|php);60;(examples|tests|demo|htdocs|\\Debugger.{1}GeneratedFileExtensions.{1}\.)
+
+# Suspicious Rundll32.exe variations https://twitter.com/_JohnHammond/status/1618988736313966592
+\\rundll33\.exe;70
+\\rundII32\.exe;70
+\\rundlI32\.exe;70
+\\rundIl32\.exe;70
+
+# 3CX file name IOCs of malicious packages https://www.volexity.com/blog/2023/03/30/3cx-supply-chain-compromise-leads-to-iconic-incident/
+\\3CXDesktopApp-18\.12\.407\.msi;80
+\\3CXDesktopApp-18\.12\.416\.msi;80
+\\3CXDesktopApp-18\.11\.1213\.dmg;80
+\\3CXDesktopApp-18\.12\.416\.dmg;80
+\\3CXDesktopApp-18\.12\.402\.dmg;80
+\\3CXDesktopApp-18\.12\.407\.dmg;80
+
+# Gopuram IOCs (3CX related campaigns) https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/
+C:\\Windows\\system32\\catroot2\\edb\.chk\.log;80
+
+# 3CX IOCs from mandiant report https://www.3cx.com/blog/news/mandiant-initial-results/
+\\private\\etc\\apdl\.cf;75
+\\Library\\Graphics\\Quartz$;75
+
+# Gopuram Backdoor file name IOC 5131ae1d27739f56bba92852be3a0cc2 / da450236dc92a53c8476b0b0de9a88e2 https://valhalla.nextron-systems.com/info/rule/APT_MAL_Gopuram_Backdoor_Apr23
+C:\\Windows\\system32\\krwve\.jat;85
+
+# Lockbit IOCs https://objective-see.org/blog/blog_0x75.html
+\\tmp\\locker\.log;70
+
+# Mint Sandstorm IOCs https://www.microsoft.com/en-us/security/blog/2023/04/18/nation-state-threat-actor-mint-sandstorm-refines-tradecraft-to-attack-high-value-targets/
+\\DocTemplate\.dotm;70
+\\DntDocTemp\.dotm;85
+\\Drokbk\.exe;80
+
+# UNC4736 Filename IOCs - Trading Technologies International compromise https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise
+C:\\Windows\\System32\\MsMpEng\.exe;75
+\\X_TRADER_r7\.17\.90p608\.exe;75
+\\X_TRADER-ja\.mst;80
+C:\\ProgramData\\TPM\\;60
+C:\\ProgramData\\TPM\\TpmVscMgrSvr\.exe;85
+C:\\ProgramData\\TPM\\winscard\.dll;85
+
+# BPFDoor "mutex” https://www.deepinstinct.com/blog/bpfdoor-malware-evolves-stealthy-sniffing-backdoor-ups-its-game
+\\var\\run\\initd\.lock;80
+
+# AV/EDR Terminator IOCs https://twitter.com/S0ufi4n3/status/1663059373352943616?s=20
+\\terminator\.exe;70
+
+# Blackout AV/EDR killer tool https://github.com/ZeroMemoryEx/Blackout
+\\Blackout\.exe;70
+\\Blackout\.sys;75
+
+# Shellcode Loader filenames
+\\SvcHostDemo\.dll;50
+\\PELoader\.exe;60
+\\Moneta64\.exe;75
+
+# EDR Block POC https://github.com/S3cur3Th1sSh1t/Ruy-Lopez
+\\BlockDLL\.exe;75
+
+# GodPotato https://github.com/BeichenDream/GodPotato
+\\GodPotato-NET2\.exe;90
+\\GodPotato-NET35\.exe;90
+\\GodPotato-NET4\.exe;90
+
+# MOVEit vulnerability - possible indicators of a compromise https://www.bleepingcomputer.com/news/security/new-moveit-transfer-zero-day-mass-exploited-in-data-theft-attacks/
+\\MOVEitTransfer\\wwwroot\\[^\\]{1,40}\.(zip|rar|7z|exe|ps1|bat|dll|vbe|vbs);70
+\\MOVEitTransfer\\wwwroot\\human2\.aspx;90
+\\human2\.aspx\.lnk;90
+
+# Barracuda CVE-2023-2868 exploitation IOCs https://www.barracuda.com/company/legal/esg-vulnerability
+\\1\.sh;50
+\\mod_udp\.so;45
+\\install_helo\.tar;65
+\\intent_helo$;60
+\\update_v31\.sh;70
+\\mod_require_helo\.lua;65
+\\etc\\cron\.hourly\\core\.sh;75
+\\etc\\cron\.hourly\\aacore\.sh;75
+\\etc\\cron\.hourly\\appcheck\.sh;75
+\\etc\\cron\.daily\\core\.sh;75
+\\etc\\cron\.daily\\core_check\.sh;75
+\\install_bvp74_auth\.tar;75
+\\install_att_v2\.tar;75
+\\update_v35\.sh;75
+\\install_reuse\.tar;75
+\\update_v2\.sh;75
 
 # End

@@ -12,13 +12,13 @@ rule HDRoot_Sample_Jul17_1 {
    meta:
       description = "Detects HDRoot samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Winnti HDRoot VT"
       date = "2017-07-07"
       hash1 = "6d2ad82f455becc8c830d000633a370857928c584246a7f41fe722cc46c0d113"
    strings:
       $s1 = "gleupdate.dll" fullword ascii
-      $s2 = "\\DosDevices\\%ws\\system32\\%ws" fullword wide
+      $s2 = "\\DosDevices\\%ws\\system32\\%ws" wide
       $s3 = "l\\Driver\\nsiproxy" fullword wide
    condition:
       ( uint16(0) == 0x5a4d and filesize < 60KB and 3 of them )
@@ -28,7 +28,7 @@ rule HDRoot_Sample_Jul17_2 {
    meta:
       description = "Detects HDRoot samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Winnti HDRoot VT"
       date = "2017-07-07"
       super_rule = 1
@@ -47,7 +47,7 @@ rule HDRoot_Sample_Jul17_2 {
       $u2 = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Maxthon)" fullword ascii
       $u3 = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Maxthon; TERA:" fullword ascii
 
-      $s1 = "\\system32\\ntoskrnl.exe" fullword ascii
+      $s1 = "\\system32\\ntoskrnl.exe" ascii
       $s2 = "Schedsvc.dll" fullword wide
       $s3 = "dllserver64.dll" fullword ascii
       $s4 = "C:\\TERA_SR.txt" fullword ascii
@@ -65,7 +65,7 @@ rule Unspecified_Malware_Jul17_1A {
    meta:
       description = "Detects samples of an unspecified malware - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Winnti HDRoot VT"
       date = "2017-07-07"
       hash1 = "e1c38142b6194237a4cd4603829aa6edb6436e7bba15e3e6b0c9e8c6b629b42b"

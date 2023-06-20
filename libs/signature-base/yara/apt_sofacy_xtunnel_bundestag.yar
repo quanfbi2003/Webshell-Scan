@@ -25,7 +25,7 @@ rule apt_sofacy_xtunnel {
 rule Winexe_RemoteExec {
    meta:
       description = "Winexe tool for remote execution (also used by Sofacy group)"
-      author = "Florian Roth, Robert Simmons"
+      author = "Florian Roth (Nextron Systems), Robert Simmons"
       reference = "http://dokumente.linksfraktion.de/inhalt/report-orig.pdf"
       date = "2015-06-19"
       modified = "2021-02-11"
@@ -49,7 +49,7 @@ rule Sofacy_Mal2 {
     meta:
         description = "Sofacy Group Malware Sample 2"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         reference = "http://dokumente.linksfraktion.de/inhalt/report-orig.pdf"
         date = "2015-06-19"
         hash = "566ab945f61be016bfd9e83cc1b64f783b9b8deb891e6d504d3442bc8281b092"
@@ -67,9 +67,10 @@ rule Sofacy_Mal3 {
     meta:
         description = "Sofacy Group Malware Sample 3"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         reference = "http://dokumente.linksfraktion.de/inhalt/report-orig.pdf"
         date = "2015-06-19"
+        modified = "2023-01-06"
         hash = "5f6b2a0d1d966fc4f1ed292b46240767f4acb06c13512b0061b434ae2a692fa1"
         score = 70
     strings:
@@ -77,9 +78,9 @@ rule Sofacy_Mal3 {
         $s2 = ".?AVAgentModuleRemoteKeyLogger@@" fullword ascii
         $s3 = "<font size=4 color=red>process isn't exist</font>" fullword ascii
         $s4 = "<font size=4 color=red>process is exist</font>" fullword ascii
-        $s5 = ".winnt.check-fix.com" fullword ascii
-        $s6 = ".update.adobeincorp.com" fullword ascii
-        $s7 = ".microsoft.checkwinframe.com" fullword ascii
+        $s5 = ".winnt.check-fix.com" ascii
+        $s6 = ".update.adobeincorp.com" ascii
+        $s7 = ".microsoft.checkwinframe.com" ascii
         $s8 = "adobeincorp.com" fullword wide
         $s9 = "# EXC: HttpSender - Cannot create Get Channel!" fullword ascii
 
@@ -97,7 +98,7 @@ rule Sofacy_Bundestag_Batch {
     meta:
         description = "Sofacy Bundestags APT Batch Script"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         reference = "http://dokumente.linksfraktion.de/inhalt/report-orig.pdf"
         date = "2015-06-19"
         score = 70

@@ -14,7 +14,7 @@ rule Explosion_Sample_1 {
 	meta:
 		description = "Explosion/Explosive Malware - Volatile Cedar APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/5vYaNb"
 		date = "2015/04/03"
 		score = 70
@@ -24,9 +24,9 @@ rule Explosion_Sample_1 {
 		$s9 = "WinAutologon From Winlogon Reg" fullword ascii
 		$s10 = "82BD0E67-9FEA-4748-8672-D5EFE5B779B0" fullword ascii
 		$s11 = "IE:Password-Protected sites" fullword ascii
-		$s12 = "\\his.sys" fullword ascii
+		$s12 = "\\his.sys" ascii
 		$s13 = "HTTP Password" fullword ascii
-		$s14 = "\\data.sys" fullword ascii
+		$s14 = "\\data.sys" ascii
 		$s15 = "EL$_RasDefaultCredentials#0" fullword wide
 		$s17 = "Office Outlook HTTP" fullword ascii
 		$s20 = "Hist :<b> %ws</b>  :%s </br></br>" fullword ascii
@@ -39,7 +39,7 @@ rule Explosion_Sample_2 {
 	meta:
 		description = "Explosion/Explosive Malware - Volatile Cedar APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/5vYaNb"
 		date = "2015/04/03"
 		score = 70
@@ -57,7 +57,7 @@ rule Explosion_Generic_1 {
 	meta:
 		description = "Generic Rule for Explosion/Explosive Malware - Volatile Cedar APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "not set"
 		date = "2015/04/03"
 		score = 70
@@ -87,7 +87,7 @@ rule Explosive_UA {
 	meta:
 		description = "Explosive Malware Embedded User Agent - Volatile Cedar APT http://goo.gl/HQRCdw"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/HQRCdw"
 		date = "2015/04/03"
 		score = 60
@@ -102,7 +102,7 @@ rule Webshell_Caterpillar_ASPX {
 	meta:
 		description = "Volatile Cedar Webshell - from file caterpillar.aspx"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://goo.gl/emons5"
 		date = "2015/04/03"
 		super_rule = 1

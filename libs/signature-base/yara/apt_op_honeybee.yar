@@ -14,7 +14,7 @@ rule HoneyBee_Dropper_MalDoc {
    meta:
       description = "Detects samples from Operation Honeybee"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/JAHZVL"
       date = "2018-03-03"
       hash1 = "86981680172bbf0865e7693fe5a2bbe9b3ba12b3f1a1536ef67915daab78004c"
@@ -28,7 +28,7 @@ rule HoneyBee_Dropper_MalDoc {
       $s3 = "sTempPathP" fullword ascii
       $s4 = "sTempFile" fullword ascii
       $s5 = "GetObjectz" fullword ascii
-      $s6 = "\\setup.cab" fullword ascii
+      $s6 = "\\setup.cab" ascii
    condition:
       uint16(0) == 0xcfd0 and filesize < 400KB and ( 1 of ($x*) or 4 of them )
 }
@@ -37,7 +37,7 @@ rule OpHoneybee_Malware_1 {
    meta:
       description = "Detects malware from Operation Honeybee"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/JAHZVL"
       date = "2018-03-03"
       hash1 = "d31fe5cfa884e04ee26f323b8d104dcaa91146f5c7c216212fd3053afaade80f"
@@ -53,7 +53,7 @@ rule OpHoneybee_Malware_1 {
       $s1 = "[DLL_PROCESS_ATTACH]" fullword ascii
       $s2 = "cmd /c systeminfo >%s" fullword ascii
       $s3 = "post.txt" fullword ascii
-      $s4 = "\\temp.ini" fullword ascii
+      $s4 = "\\temp.ini" ascii
       $s5 = "[GetFTPAccountInfo_10001712]" fullword ascii
       $s6 = "ComSysAppMutex" fullword ascii
       $s7 = "From %s (%02d-%02d %02d-%02d-%02d).txt" fullword ascii
@@ -72,7 +72,7 @@ rule OpHoneybee_MaoCheng_Dropper {
    meta:
       description = "Detects MaoCheng dropper from Operation Honeybee"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/JAHZVL"
       date = "2018-03-03"
       hash1 = "35904f482d37f5ce6034d6042bae207418e450f4"

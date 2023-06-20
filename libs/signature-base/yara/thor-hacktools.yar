@@ -30,21 +30,27 @@ rule WindowsCredentialEditor
        all of them
 }
 
-rule Amplia_Security_Tool
+rule HKTL_Amplia_Security_Tool
 {
     meta:
-      description = "Amplia Security Tool"
+      description = "Detects Amplia Security Tool like Windows Credential Editor"
       score = 60
       nodeepdive = 1
+      author = "Florian Roth"
+      date = "2013-01-01"
+      modified = "2023-02-14"
     strings:
       $a = "Amplia Security"
       $c = "getlsasrvaddr.exe"
       $d = "Cannot get PID of LSASS.EXE"
       $e = "extract the TGT session key"
       $f = "PPWDUMP_DATA"
-    condition: 1 of them
+    condition:
+      uint16(0) == 0x5a4d and
+      filesize < 3000KB and (
+         2 of them
+      ) or 3 of them
 }
-
 /* pwdump/fgdump */
 
 rule PwDump
@@ -116,7 +122,7 @@ rule Fierce2
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       description = "This signature detects the Fierce2 domain scanner"
       date = "01.07.2014"
       score = 60
@@ -130,7 +136,7 @@ rule Ncrack
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       description = "This signature detects the Ncrack brute force tool"
       date = "01.07.2014"
       score = 60
@@ -144,7 +150,7 @@ rule SQLMap
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       description = "This signature detects the SQLMap SQL injection tool"
       date = "01.07.2014"
       score = 60
@@ -440,7 +446,7 @@ rule CN_GUI_Scanner {
    meta:
       description = "Detects an unknown GUI scanner tool - CN background"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       hash = "3c67bbb1911cdaef5e675c56145e1112"
       score = 65
       date = "04.10.2014"
@@ -448,7 +454,7 @@ rule CN_GUI_Scanner {
       $s1 = "good.txt" fullword ascii
       $s2 = "IP.txt" fullword ascii
       $s3 = "xiaoyuer" fullword ascii
-      $s0w = "ssh(" fullword wide
+      $s0w = "ssh(" wide
       $s1w = ").exe" fullword wide
    condition:
       all of them
@@ -458,7 +464,7 @@ rule CN_Packed_Scanner {
    meta:
       description = "Suspiciously packed executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       hash = "6323b51c116a77e3fba98f7bb7ff4ac6"
       score = 40
       date = "06.10.2014"
@@ -471,14 +477,13 @@ rule CN_Packed_Scanner {
       all of them and filesize < 180KB and filesize > 70KB
 }
 
-rule Tiny_Network_Tool_Generic {
+rule Tiny_Network_Tool_Generic : FILE {
    meta:
       description = "Tiny tool with suspicious function imports. (Rule based on WinEggDrop Scanner samples)"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "08.10.2014"
       score = 40
-      type = "file"
       hash0 = "9e1ab25a937f39ed8b031cd8cfbc4c07"
       hash1 = "cafc31d39c1e4721af3ba519759884b9"
       hash2 = "8e635b9a1e5aa5ef84bfa619bd2a1f92"
@@ -510,7 +515,7 @@ rule Beastdoor_Backdoor {
    meta:
       description = "Detects the backdoor Beastdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 55
       hash = "5ab10dda548cb821d7c15ebcd0a9f1ec6ef1a14abcc8ad4056944d060c49535a"
    strings:
@@ -531,7 +536,7 @@ rule Powershell_Netcat {
    meta:
       description = "Detects a Powershell version of the Netcat network hacking tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 60
       date = "10.10.2014"
    strings:
@@ -546,7 +551,7 @@ rule Chinese_Hacktool_1014 {
    meta:
       description = "Detects a chinese hacktool with unknown use"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 60
       date = "10.10.2014"
       hash = "98c07a62f7f0842bcdbf941170f34990"
@@ -564,7 +569,7 @@ rule CN_Hacktool_BAT_PortsOpen {
    meta:
       description = "Detects a chinese BAT hacktool for local port evaluation"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 60
       date = "12.10.2014"
    strings:
@@ -579,7 +584,7 @@ rule CN_Hacktool_SSPort_Portscanner {
    meta:
       description = "Detects a chinese Portscanner named SSPort"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 70
       date = "12.10.2014"
    strings:
@@ -594,7 +599,7 @@ rule CN_Hacktool_ScanPort_Portscanner {
    meta:
       description = "Detects a chinese Portscanner named ScanPort"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 70
       date = "12.10.2014"
    strings:
@@ -609,11 +614,11 @@ rule CN_Hacktool_S_EXE_Portscanner {
    meta:
       description = "Detects a chinese Portscanner named s.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 70
       date = "12.10.2014"
    strings:
-      $s0 = "\\Result.txt" fullword ascii
+      $s0 = "\\Result.txt" ascii
       $s1 = "By:ZT QQ:376789051" fullword ascii
       $s2 = "(http://www.eyuyan.com)" fullword wide
    condition:
@@ -624,7 +629,7 @@ rule CN_Hacktool_MilkT_BAT {
    meta:
       description = "Detects a chinese Portscanner named MilkT - shipped BAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 70
       date = "12.10.2014"
    strings:
@@ -638,7 +643,7 @@ rule CN_Hacktool_MilkT_Scanner {
    meta:
       description = "Detects a chinese Portscanner named MilkT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 60
       date = "12.10.2014"
    strings:
@@ -657,7 +662,7 @@ rule CN_Hacktool_1433_Scanner {
    meta:
       description = "Detects a chinese MSSQL scanner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 40
       date = "12.10.2014"
    strings:
@@ -665,7 +670,7 @@ rule CN_Hacktool_1433_Scanner {
       $s1 = "1433V" wide
       $s2 = "del Weak1.txt" ascii fullword
       $s3 = "del Attack.txt" ascii fullword
-      $s4 = "del /s /Q C:\\Windows\\system32\\doors\\" fullword ascii
+      $s4 = "del /s /Q C:\\Windows\\system32\\doors\\" ascii
       $s5 = "!&start iexplore http://www.crsky.com/soft/4818.html)" fullword ascii
    condition:
       uint16(0) == 0x5a4d and all of ($s*)
@@ -675,7 +680,7 @@ rule CN_Hacktool_1433_Scanner_Comp2 {
    meta:
       description = "Detects a chinese MSSQL scanner - component 2"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       score = 40
       date = "12.10.2014"
    strings:
@@ -690,7 +695,7 @@ rule WCE_Modified_1_1014 {
    meta:
       description = "Modified (packed) version of Windows Credential Editor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       hash = "09a412ac3c85cedce2642a19e99d8f903a2e0354"
       score = 70
    strings:
@@ -705,7 +710,7 @@ rule ReactOS_cmd_valid {
    meta:
       description = "ReactOS cmd.exe with correct file name - maybe packed with software or part of hacker toolset"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       reference = "http://www.elifulkerson.com/articles/suzy-sells-cmd-shells.php"
       score = 30
@@ -723,7 +728,7 @@ rule iKAT_wmi_rundll {
    meta:
       description = "This exe will attempt to use WMI to Call the Win32_Process event to spawn rundll - file wmi_rundll.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 65
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -745,7 +750,7 @@ rule iKAT_revelations {
    meta:
       description = "iKAT hack tool showing the content of password fields - file revelations.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 75
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -763,7 +768,7 @@ rule iKAT_priv_esc_tasksch {
    meta:
       description = "Task Schedulder Local Exploit - Windows local priv-esc using Task Scheduler, published by webDevil. Supports Windows 7 and Vista."
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 75
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -790,7 +795,7 @@ rule iKAT_command_lines_agent {
    meta:
       description = "iKAT hack tools set agent - file ikat.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 75
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -812,7 +817,7 @@ rule iKAT_cmd_as_dll {
    meta:
       description = "iKAT toolset file cmd.dll ReactOS file cloaked"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 65
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -831,7 +836,7 @@ rule iKAT_tools_nmap {
    meta:
       description = "Generic rule for NMAP - based on NMAP 4 standalone"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 50
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -849,7 +854,7 @@ rule iKAT_startbar {
    meta:
       description = "Tool to hide unhide the windows startbar from command line - iKAT hack tools - file startbar.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 50
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -870,7 +875,7 @@ rule iKAT_Tool_Generic {
    meta:
       description = "Generic Rule for hack tool iKAT files gpdisable.exe, kitrap0d.exe, uacpoc.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "05.11.14"
       score = 55
       reference = "http://ikat.ha.cked.net/Windows/functions/ikatfiles.html"
@@ -982,12 +987,12 @@ rule Tzddos_DDoS_Tool_CN {
    meta:
       description = "Disclosed hacktool set - file tzddos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "d4c517eda5458247edae59309453e0ae7d812f8e"
    strings:
-      $s0 = "for /f %%a in (host.txt) do (" fullword ascii
+      $s0 = "for /f %%a in (host.txt) do (" ascii
       $s1 = "for /f \"eol=S tokens=1 delims= \" %%i in (s2.txt) do echo %%i>>host.txt" fullword ascii
       $s2 = "del host.txt /q" fullword ascii
       $s3 = "for /f \"eol=- tokens=1 delims= \" %%i in (result.txt) do echo %%i>>s1.txt" fullword ascii
@@ -1002,7 +1007,7 @@ rule Ncat_Hacktools_CN {
    meta:
       description = "Disclosed hacktool set - file nc.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "001c0c01c96fa56216159f83f6f298755366e528"
@@ -1021,7 +1026,7 @@ rule MS08_067_Exploit_Hacktools_CN {
    meta:
       description = "Disclosed hacktool set - file cs.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "a3e9e0655447494253a1a60dbc763d9661181322"
@@ -1041,7 +1046,7 @@ rule Hacktools_CN_Burst_sql {
    meta:
       description = "Disclosed hacktool set - file sql.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "d5139b865e99b7a276af7ae11b14096adb928245"
@@ -1063,7 +1068,7 @@ rule Hacktools_CN_Panda_445TOOL {
    meta:
       description = "Disclosed hacktool set - file 445TOOL.rar"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "92050ba43029f914696289598cf3b18e34457a11"
@@ -1080,7 +1085,7 @@ rule Hacktools_CN_Panda_445 {
    meta:
       description = "Disclosed hacktool set - file 445.rar"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "a61316578bcbde66f39d88e7fc113c134b5b966b"
@@ -1101,7 +1106,7 @@ rule Hacktools_CN_WinEggDrop {
    meta:
       description = "Disclosed hacktool set - file s.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "7665011742ce01f57e8dc0a85d35ec556035145d"
@@ -1125,12 +1130,12 @@ rule Hacktools_CN_Scan_BAT {
    meta:
       description = "Disclosed hacktool set - file scan.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "6517d7c245f1300e42f7354b0fe5d9666e5ce52a"
    strings:
-      $s0 = "for /f %%a in (host.txt) do (" fullword ascii
+      $s0 = "for /f %%a in (host.txt) do (" ascii
       $s1 = "for /f \"eol=S tokens=1 delims= \" %%i in (s2.txt) do echo %%i>>host.txt" fullword ascii
       $s2 = "del host.txt /q" fullword ascii
       $s3 = "for /f \"eol=- tokens=1 delims= \" %%i in (result.txt) do echo %%i>>s1.txt" fullword ascii
@@ -1144,7 +1149,7 @@ rule Hacktools_CN_Panda_Burst {
    meta:
       description = "Disclosed hacktool set - file Burst.rar"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "ce8e3d95f89fb887d284015ff2953dbdb1f16776"
@@ -1158,7 +1163,7 @@ rule Hacktools_CN_445_cmd {
    meta:
       description = "Disclosed hacktool set - file cmd.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "69b105a3aec3234819868c1a913772c40c6b727a"
@@ -1174,7 +1179,7 @@ rule Hacktools_CN_GOGOGO_Bat {
    meta:
       description = "Disclosed hacktool set - file GOGOGO.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "4bd4f5b070acf7fe70460d7eefb3623366074bbd"
@@ -1200,7 +1205,7 @@ rule Hacktools_CN_Burst_pass {
    meta:
       description = "Disclosed hacktool set - file pass.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "55a05cf93dbd274355d798534be471dff26803f9"
@@ -1224,7 +1229,7 @@ rule Hacktools_CN_JoHor_Posts_Killer {
    meta:
       description = "Disclosed hacktool set - file JoHor_Posts_Killer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "d157f9a76f9d72dba020887d7b861a05f2e56b6a"
@@ -1246,7 +1251,7 @@ rule Hacktools_CN_Panda_tesksd {
    meta:
       description = "Disclosed hacktool set - file tesksd.jpg"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "922147b3e1e6cf1f5dd5f64a4e34d28bdc9128cb"
@@ -1262,7 +1267,7 @@ rule Hacktools_CN_Http {
    meta:
       description = "Disclosed hacktool set - file Http.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "788bf0fdb2f15e0c628da7056b4e7b1a66340338"
@@ -1279,12 +1284,13 @@ rule Hacktools_CN_Burst_Start {
    meta:
       description = "Disclosed hacktool set - file Start.bat - DoS tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
-      date = "17.11.14"
+      author = "Florian Roth (Nextron Systems)"
+      date = "2014-11-17"
+      modified = "2023-01-27"
       score = 60
       hash = "75d194d53ccc37a68286d246f2a84af6b070e30c"
    strings:
-      $s0 = "for /f \"eol= tokens=1,2 delims= \" %%i in (ip.txt) do (" fullword ascii
+      $s0 = "for /f \"eol= tokens=1,2 delims= \" %%i in (ip.txt) do (" ascii
       $s1 = "Blast.bat /r 600" fullword ascii
       $s2 = "Blast.bat /l Blast.bat" fullword ascii
       $s3 = "Blast.bat /c 600" fullword ascii
@@ -1301,7 +1307,7 @@ rule Hacktools_CN_Panda_tasksvr {
    meta:
       description = "Disclosed hacktool set - file tasksvr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "a73fc74086c8bb583b1e3dcfd326e7a383007dc0"
@@ -1316,7 +1322,7 @@ rule Hacktools_CN_Burst_Clear {
    meta:
       description = "Disclosed hacktool set - file Clear.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "148c574a4e6e661aeadaf3a4c9eafa92a00b68e4"
@@ -1338,7 +1344,7 @@ rule Hacktools_CN_Burst_Thecard {
    meta:
       description = "Disclosed hacktool set - file Thecard.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "50b01ea0bfa5ded855b19b024d39a3d632bacb4c"
@@ -1346,7 +1352,7 @@ rule Hacktools_CN_Burst_Thecard {
       $s0 = "tasklist |find \"Clear.bat\"||start Clear.bat" fullword ascii
       $s1 = "Http://www.coffeewl.com" fullword ascii
       $s2 = "ping -n 2 localhost 1>nul 2>nul" fullword ascii
-      $s3 = "for /L %%a in (" fullword ascii
+      $s3 = "for /L %%a in (" ascii
       $s4 = "MODE con: COLS=42 lines=5" fullword ascii
    condition:
       all of them
@@ -1356,7 +1362,7 @@ rule Hacktools_CN_Burst_Blast {
    meta:
       description = "Disclosed hacktool set - file Blast.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "17.11.14"
       score = 60
       hash = "b07702a381fa2eaee40b96ae2443918209674051"
@@ -1371,7 +1377,7 @@ rule VUBrute_VUBrute {
    meta:
       description = "PoS Scammer Toolbox - http://goo.gl/xiIphp - file VUBrute.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "22.11.14"
       score = 70
       hash = "166fa8c5a0ebb216c832ab61bf8872da556576a7"
@@ -1388,7 +1394,7 @@ rule DK_Brute {
    meta:
       description = "PoS Scammer Toolbox - http://goo.gl/xiIphp - file DK Brute.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "22.11.14"
       score = 70
       reference = "http://goo.gl/xiIphp"
@@ -1406,7 +1412,7 @@ rule VUBrute_config {
    meta:
       description = "PoS Scammer Toolbox - http://goo.gl/xiIphp - file config.ini"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "22.11.14"
       score = 70
       reference = "http://goo.gl/xiIphp"
@@ -1427,7 +1433,7 @@ rule sig_238_hunt {
    meta:
       description = "Disclosed hacktool set (old stuff) - file hunt.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "f9f059380d95c7f8d26152b1cb361d93492077ca"
@@ -1447,7 +1453,7 @@ rule sig_238_listip {
    meta:
       description = "Disclosed hacktool set (old stuff) - file listip.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "f32a0c5bf787c10eb494eb3b83d0c7a035e7172b"
@@ -1466,7 +1472,7 @@ rule ArtTrayHookDll {
    meta:
       description = "Disclosed hacktool set (old stuff) - file ArtTrayHookDll.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "4867214a3d96095d14aa8575f0adbb81a9381e6c"
@@ -1481,7 +1487,7 @@ rule sig_238_eee {
    meta:
       description = "Disclosed hacktool set (old stuff) - file eee.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "236916ce2980c359ff1d5001af6dacb99227d9cb"
@@ -1501,7 +1507,7 @@ rule aspbackdoor_asp4 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file asp4.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "faf991664fd82a8755feb65334e5130f791baa8c"
@@ -1522,7 +1528,7 @@ rule aspfile1 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file aspfile1.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "77b1e3a6e8f67bd6d16b7ace73dca383725ac0af"
@@ -1541,7 +1547,7 @@ rule EditServer {
    meta:
       description = "Disclosed hacktool set (old stuff) - file EditServer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "87b29c9121cac6ae780237f7e04ee3bc1a9777d3"
@@ -1564,7 +1570,7 @@ rule sig_238_letmein {
    meta:
       description = "Disclosed hacktool set (old stuff) - file letmein.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "74d223a56f97b223a640e4139bb9b94d8faa895d"
@@ -1581,7 +1587,7 @@ rule sig_238_token {
    meta:
       description = "Disclosed hacktool set (old stuff) - file token.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "c52bc6543d4281aa75a3e6e2da33cfb4b7c34b14"
@@ -1599,7 +1605,7 @@ rule sig_238_TELNET {
    meta:
       description = "Disclosed hacktool set (old stuff) - file TELNET.EXE from Windows ME"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "50d02d77dc6cc4dc2674f90762a2622e861d79b1"
@@ -1616,13 +1622,13 @@ rule snifferport {
    meta:
       description = "Disclosed hacktool set (old stuff) - file snifferport.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "d14133b5eaced9b7039048d0767c544419473144"
    strings:
       $s0 = "iphlpapi.DLL" fullword ascii
-      $s5 = "ystem\\CurrentCorolSet\\" fullword ascii
+      $s5 = "ystem\\CurrentCorolSet\\" ascii
       $s11 = "Port.TX" fullword ascii
       $s12 = "32Next" fullword ascii
       $s13 = "V1.2 B" fullword ascii
@@ -1634,7 +1640,7 @@ rule sig_238_webget {
    meta:
       description = "Disclosed hacktool set (old stuff) - file webget.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "36b5a5dee093aa846f906bbecf872a4e66989e42"
@@ -1651,7 +1657,7 @@ rule XYZCmd_zip_Folder_XYZCmd {
    meta:
       description = "Disclosed hacktool set (old stuff) - file XYZCmd.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "bbea5a94950b0e8aab4a12ad80e09b630dd98115"
@@ -1668,7 +1674,7 @@ rule ASPack_Chinese {
    meta:
       description = "Disclosed hacktool set (old stuff) - file ASPack Chinese.ini"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "02a9394bc2ec385876c4b4f61d72471ac8251a8e"
@@ -1686,7 +1692,7 @@ rule aspbackdoor_EDIR {
    meta:
       description = "Disclosed hacktool set (old stuff) - file EDIR.ASP"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "03367ad891b1580cfc864e8a03850368cbf3e0bb"
@@ -1704,7 +1710,7 @@ rule ByPassFireWall_zip_Folder_Ie {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Ie.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "d1b9058f16399e182c9b78314ad18b975d882131"
@@ -1721,7 +1727,7 @@ rule EditKeyLogReadMe {
    meta:
       description = "Disclosed hacktool set (old stuff) - file EditKeyLogReadMe.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "dfa90540b0e58346f4b6ea12e30c1404e15fbe5a"
@@ -1740,7 +1746,7 @@ rule PassSniffer_zip_Folder_readme {
    meta:
       description = "Disclosed hacktool set (old stuff) - file readme.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "a52545ae62ddb0ea52905cbb61d895a51bfe9bcd"
@@ -1756,7 +1762,7 @@ rule sig_238_gina {
    meta:
       description = "Disclosed hacktool set (old stuff) - file gina.reg"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "324acc52566baf4afdb0f3e4aaf76e42899e0cf6"
@@ -1772,7 +1778,7 @@ rule splitjoin {
    meta:
       description = "Disclosed hacktool set (old stuff) - file splitjoin.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "e4a9ef5d417038c4c76b72b5a636769a98bd2f8c"
@@ -1789,7 +1795,7 @@ rule EditKeyLog {
    meta:
       description = "Disclosed hacktool set (old stuff) - file EditKeyLog.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "a450c31f13c23426b24624f53873e4fc3777dc6b"
@@ -1806,7 +1812,7 @@ rule PassSniffer {
    meta:
       description = "Disclosed hacktool set (old stuff) - file PassSniffer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "dcce4c577728e8edf7ed38ac6ef6a1e68afb2c9f"
@@ -1815,7 +1821,7 @@ rule PassSniffer {
       $s3 = "GetLas" fullword ascii
       $s4 = "VersionExA" fullword ascii
       $s10 = " Only RuntUZ" fullword ascii
-      $s12 = "emcpysetprintf\\" fullword ascii
+      $s12 = "emcpysetprintf\\" ascii
       $s13 = "WSFtartup" fullword ascii
    condition:
       all of them
@@ -1825,7 +1831,7 @@ rule aspfile2 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file aspfile2.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "14efbc6cb01b809ad75a535d32b9da4df517ff29"
@@ -1842,7 +1848,7 @@ rule UnPack_rar_Folder_InjectT {
    meta:
       description = "Disclosed hacktool set (old stuff) - file InjectT.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "80f39e77d4a34ecc6621ae0f4d5be7563ab27ea6"
@@ -1853,7 +1859,7 @@ rule UnPack_rar_Folder_InjectT {
       $s3 = "%s -Stop                             -->To Stop The Service" fullword ascii
       $s4 = "The Port Is Out Of Range" fullword ascii
       $s7 = "Fail To Set The Port" fullword ascii
-      $s11 = "\\psapi.dll" fullword ascii
+      $s11 = "\\psapi.dll" ascii
       $s20 = "TInject.Dll" fullword ascii
 
       $x1 = "Software\\Microsoft\\Internet Explorer\\WinEggDropShell" fullword ascii
@@ -1866,7 +1872,7 @@ rule Jc_WinEggDrop_Shell {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Jc.WinEggDrop Shell.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "820674b59f32f2cf72df50ba4411d7132d863ad2"
@@ -1886,7 +1892,7 @@ rule aspbackdoor_asp1 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file asp1.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "9ef9f34392a673c64525fcd56449a9fb1d1f3c50"
@@ -1905,7 +1911,7 @@ rule QQ_zip_Folder_QQ {
    meta:
       description = "Disclosed hacktool set (old stuff) - file QQ.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "9f8e3f40f1ac8c1fa15a6621b49413d815f46cfb"
@@ -1915,9 +1921,9 @@ rule QQ_zip_Folder_QQ {
       $s4 = "QQ2000b.exe" fullword wide
       $s5 = "haoq@neusoft.com" fullword ascii
       $s9 = "QQ2000b.exe" fullword ascii
-      $s10 = "\\qq2000b.exe" fullword ascii
+      $s10 = "\\qq2000b.exe" ascii
       $s12 = "WINDSHELL STUDIO[WINDSHELL " fullword wide
-      $s17 = "SOFTWARE\\HAOQIANG\\" fullword ascii
+      $s17 = "SOFTWARE\\HAOQIANG\\" ascii
    condition:
       5 of them
 }
@@ -1926,7 +1932,7 @@ rule UnPack_rar_Folder_TBack {
    meta:
       description = "Disclosed hacktool set (old stuff) - file TBack.DLL"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "30fc9b00c093cec54fcbd753f96d0ca9e1b2660f"
@@ -1955,7 +1961,7 @@ rule sig_238_cmd_2 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file cmd.jsp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "be4073188879dacc6665b6532b03db9f87cfc2bb"
@@ -1973,7 +1979,7 @@ rule RangeScan {
    meta:
       description = "Disclosed hacktool set (old stuff) - file RangeScan.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "bace2c65ea67ac4725cb24aa9aee7c2bec6465d7"
@@ -1991,7 +1997,7 @@ rule XYZCmd_zip_Folder_Readme {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Readme.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "967cb87090acd000d22e337b8ce4d9bdb7c17f70"
@@ -2006,7 +2012,7 @@ rule ByPassFireWall_zip_Folder_Inject {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Inject.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "34f564301da528ce2b3e5907fd4b1acb7cb70728"
@@ -2022,12 +2028,12 @@ rule sig_238_sqlcmd {
    meta:
       description = "Disclosed hacktool set (old stuff) - file sqlcmd.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 40
       hash = "b6e356ce6ca5b3c932fa6028d206b1085a2e1a9a"
    strings:
-      $s0 = "Permission denial to EXEC command.:(" fullword ascii
+      $s0 = "Permission denial to EXEC command.:(" ascii
       $s3 = "by Eyas<cooleyas@21cn.com>" fullword ascii
       $s4 = "Connect to %s MSSQL server success.Enjoy the shell.^_^" fullword ascii
       $s5 = "Usage: %s <host> <uid> <pwd>" fullword ascii
@@ -2042,7 +2048,7 @@ rule ASPack_ASPACK {
    meta:
       description = "Disclosed hacktool set (old stuff) - file ASPACK.EXE"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "c589e6fd48cfca99d6335e720f516e163f6f3f42"
@@ -2058,7 +2064,7 @@ rule sig_238_2323 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file 2323.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "21812186a9e92ee7ddc6e91e4ec42991f0143763"
@@ -2077,7 +2083,7 @@ rule Jc_ALL_WinEggDropShell_rar_Folder_Install_2 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Install.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "95866e917f699ee74d4735300568640ea1a05afd"
@@ -2087,7 +2093,7 @@ rule Jc_ALL_WinEggDropShell_rar_Folder_Install_2 {
       $s3 = "Player.EXE" fullword wide
       $s4 = "mailto:sdemo@263.net" fullword ascii
       $s5 = "S-Player.exe" fullword ascii
-      $s9 = "http://www.BaiXue.net (" fullword wide
+      $s9 = "http://www.BaiXue.net (" wide
    condition:
       all of them
 }
@@ -2096,7 +2102,7 @@ rule sig_238_TFTPD32 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file TFTPD32.EXE"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "5c5f8c1a2fa8c26f015e37db7505f7c9e0431fe8"
@@ -2118,7 +2124,7 @@ rule sig_238_iecv {
    meta:
       description = "Disclosed hacktool set (old stuff) - file iecv.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "6e6e75350a33f799039e7a024722cde463328b6d"
@@ -2136,7 +2142,7 @@ rule Antiy_Ports_1_21 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Antiy Ports 1.21.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "ebf4bcc7b6b1c42df6048d198cbe7e11cb4ae3f0"
@@ -2152,7 +2158,7 @@ rule perlcmd_zip_Folder_cmd {
    meta:
       description = "Disclosed hacktool set (old stuff) - file cmd.cgi"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "21b5dc36e72be5aca5969e221abfbbdd54053dd8"
@@ -2173,7 +2179,7 @@ rule aspbackdoor_asp3 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file asp3.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "e5588665ca6d52259f7d9d0f13de6640c4e6439c"
@@ -2194,7 +2200,7 @@ rule sig_238_FPipe {
    meta:
       description = "Disclosed hacktool set (old stuff) - file FPipe.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "41d57d356098ff55fe0e1f0bcaa9317df5a2a45c"
@@ -2213,7 +2219,7 @@ rule sig_238_concon {
    meta:
       description = "Disclosed hacktool set (old stuff) - file concon.com"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "816b69eae66ba2dfe08a37fff077e79d02b95cc1"
@@ -2227,7 +2233,7 @@ rule aspbackdoor_regdll {
    meta:
       description = "Disclosed hacktool set (old stuff) - file regdll.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "5c5e16a00bcb1437bfe519b707e0f5c5f63a488d"
@@ -2244,7 +2250,7 @@ rule CleanIISLog {
    meta:
       description = "Disclosed hacktool set (old stuff) - file CleanIISLog.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "827cd898bfe8aa7e9aaefbe949d26298f9e24094"
@@ -2266,7 +2272,7 @@ rule sqlcheck {
    meta:
       description = "Disclosed hacktool set (old stuff) - file sqlcheck.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "5a5778ac200078b627db84fdc35bf5bcee232dc7"
@@ -2284,7 +2290,7 @@ rule sig_238_RunAsEx {
    meta:
       description = "Disclosed hacktool set (old stuff) - file RunAsEx.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "a22fa4e38d4bf82041d67b4ac5a6c655b2e98d35"
@@ -2303,7 +2309,7 @@ rule sig_238_nbtdump {
    meta:
       description = "Disclosed hacktool set (old stuff) - file nbtdump.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "cfe82aad5fc4d79cf3f551b9b12eaf9889ebafd8"
@@ -2323,7 +2329,7 @@ rule sig_238_Glass2k {
    meta:
       description = "Disclosed hacktool set (old stuff) - file Glass2k.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "b05455a1ecc6bc7fc8ddef312a670f2013704f1a"
@@ -2341,7 +2347,7 @@ rule SplitJoin_V1_3_3_rar_Folder_3 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file splitjoin.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "21409117b536664a913dcd159d6f4d8758f43435"
@@ -2357,7 +2363,7 @@ rule aspbackdoor_EDIT {
    meta:
       description = "Disclosed hacktool set (old stuff) - file EDIT.ASP"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "12196cf62931cde7b6cb979c07bb5cc6a7535cbb"
@@ -2377,7 +2383,7 @@ rule aspbackdoor_entice {
    meta:
       description = "Disclosed hacktool set (old stuff) - file entice.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "e273a1b9ef4a00ae4a5d435c3c9c99ee887cb183"
@@ -2395,7 +2401,7 @@ rule FPipe2_0 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file FPipe2.0.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "891609db7a6787575641154e7aab7757e74d837b"
@@ -2414,7 +2420,7 @@ rule InstGina {
    meta:
       description = "Disclosed hacktool set (old stuff) - file InstGina.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "5317fbc39508708534246ef4241e78da41a4f31c"
@@ -2430,7 +2436,7 @@ rule ArtTray_zip_Folder_ArtTray {
    meta:
       description = "Disclosed hacktool set (old stuff) - file ArtTray.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "ee1edc8c4458c71573b5f555d32043cbc600a120"
@@ -2447,7 +2453,7 @@ rule sig_238_findoor {
    meta:
       description = "Disclosed hacktool set (old stuff) - file findoor.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "cdb1ececceade0ecdd4479ecf55b0cc1cf11cdce"
@@ -2465,7 +2471,7 @@ rule aspbackdoor_ipclear {
    meta:
       description = "Disclosed hacktool set (old stuff) - file ipclear.vbs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "9f8fdfde4b729516330eaeb9141fb2a7ff7d0098"
@@ -2483,7 +2489,7 @@ rule WinEggDropShellFinal_zip_Folder_InjectT {
    meta:
       description = "Disclosed hacktool set (old stuff) - file InjectT.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "516e80e4a25660954de8c12313e2d7642bdb79dd"
@@ -2501,7 +2507,7 @@ rule gina_zip_Folder_gina {
    meta:
       description = "Disclosed hacktool set (old stuff) - file gina.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "e0429e1b59989cbab6646ba905ac312710f5ed30"
@@ -2522,19 +2528,19 @@ rule superscan3_0 {
    meta:
       description = "Disclosed hacktool set (old stuff) - file superscan3.0.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "a9a02a14ea4e78af30b8b4a7e1c6ed500a36bc4d"
    strings:
-      $s0 = "\\scanner.ini" fullword ascii
-      $s1 = "\\scanner.exe" fullword ascii
-      $s2 = "\\scanner.lst" fullword ascii
-      $s4 = "\\hensss.lst" fullword ascii
+      $s0 = "\\scanner.ini" ascii
+      $s1 = "\\scanner.exe" ascii
+      $s2 = "\\scanner.lst" ascii
+      $s4 = "\\hensss.lst" ascii
       $s5 = "STUB32.EXE" fullword wide
       $s6 = "STUB.EXE" fullword wide
-      $s8 = "\\ws2check.exe" fullword ascii
-      $s9 = "\\trojans.lst" fullword ascii
+      $s8 = "\\ws2check.exe" ascii
+      $s9 = "\\trojans.lst" ascii
       $s10 = "1996 InstallShield Software Corporation" fullword wide
    condition:
       all of them
@@ -2544,7 +2550,7 @@ rule sig_238_xsniff {
    meta:
       description = "Disclosed hacktool set (old stuff) - file xsniff.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "d61d7329ac74f66245a92c4505a327c85875c577"
@@ -2566,7 +2572,7 @@ rule sig_238_fscan {
    meta:
       description = "Disclosed hacktool set (old stuff) - file fscan.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       hash = "d5646e86b5257f9c83ea23eca3d86de336224e55"
@@ -2588,7 +2594,7 @@ rule _iissample_nesscan_twwwscan {
    meta:
       description = "Disclosed hacktool set (old stuff) - from files iissample.exe, nesscan.exe, twwwscan.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       super_rule = 1
@@ -2615,7 +2621,7 @@ rule _FsHttp_FsPop_FsSniffer {
    meta:
       description = "Disclosed hacktool set (old stuff) - from files FsHttp.exe, FsPop.exe, FsSniffer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "23.11.14"
       score = 60
       super_rule = 1
@@ -2642,7 +2648,7 @@ rule Ammyy_Admin_AA_v3 {
    meta:
       description = "Remote Admin Tool used by APT group Anunak (ru) - file AA_v3.4.exe and AA_v3.5.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/gkAg2E"
       date = "2014/12/22"
       score = 55
@@ -2669,7 +2675,7 @@ rule LinuxHacktool_eyes_scanssh {
    meta:
       description = "Linux hack tools - file scanssh"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "not set"
       date = "2015/01/19"
       hash = "467398a6994e2c1a66a3d39859cde41f090623ad"
@@ -2695,7 +2701,7 @@ rule LinuxHacktool_eyes_pscan2 {
    meta:
       description = "Linux hack tools - file pscan2"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "not set"
       date = "2015/01/19"
       hash = "56b476cba702a4423a2d805a412cae8ef4330905"
@@ -2714,7 +2720,7 @@ rule LinuxHacktool_eyes_a {
    meta:
       description = "Linux hack tools - file a"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "not set"
       date = "2015/01/19"
       hash = "458ada1e37b90569b0b36afebba5ade337ea8695"
@@ -2733,7 +2739,7 @@ rule LinuxHacktool_eyes_mass {
    meta:
       description = "Linux hack tools - file mass"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "not set"
       date = "2015/01/19"
       hash = "2054cb427daaca9e267b252307dad03830475f15"
@@ -2751,7 +2757,7 @@ rule LinuxHacktool_eyes_pscan2_2 {
    meta:
       description = "Linux hack tools - file pscan2.c"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "not set"
       date = "2015/01/19"
       hash = "eb024dfb441471af7520215807c34d105efa5fd8"
@@ -2770,7 +2776,7 @@ rule CN_Portscan : APT
     meta:
         description = "CN Port Scanner"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         date = "2013-11-29"
         confidential = false
       score = 70
@@ -2785,7 +2791,7 @@ rule WMI_vbs : APT
     meta:
         description = "WMI Tool - APT"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
         date = "2013-11-29"
         confidential = false
       score = 70
@@ -2799,7 +2805,7 @@ rule CN_Toolset__XScanLib_XScanLib_XScanLib {
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - from files XScanLib.dll, XScanLib.dll, XScanLib.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://qiannao.com/ls/905300366/33834c0c/"
       date = "2015/03/30"
       score = 70
@@ -2821,7 +2827,7 @@ rule CN_Toolset_NTscan_PipeCmd {
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - file PipeCmd.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://qiannao.com/ls/905300366/33834c0c/"
       date = "2015/03/30"
       score = 70
@@ -2846,7 +2852,7 @@ rule CN_Toolset_LScanPortss_2 {
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - file LScanPortss.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://qiannao.com/ls/905300366/33834c0c/"
       date = "2015/03/30"
       score = 70
@@ -2867,7 +2873,7 @@ rule CN_Toolset_sig_1433_135_sqlr {
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - file sqlr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://qiannao.com/ls/905300366/33834c0c/"
       date = "2015/03/30"
       score = 70
@@ -2885,7 +2891,7 @@ rule DarkComet_Keylogger_File
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       description = "Looks like a keylogger file created by DarkComet Malware"
       date = "25.07.14"
       score = 50
@@ -2900,7 +2906,7 @@ rule VSSown_VBS {
    meta:
       description = "Detects VSSown.vbs script - used to export shadow copy elements like NTDS to take away and crack elsewhere"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "2015-10-01"
       score = 75
    strings:
@@ -2918,7 +2924,7 @@ rule Netview_Hacktool {
    meta:
       description = "Network domain enumeration tool - often used by attackers - file Nv.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/mubix/netview"
       date = "2016-03-07"
       score = 60
@@ -2942,7 +2948,7 @@ rule Netview_Hacktool_Output {
    meta:
       description = "Network domain enumeration tool output - often used by attackers - file filename.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/mubix/netview"
       date = "2016-03-07"
       score = 60
@@ -2967,13 +2973,14 @@ rule PSAttack_EXE {
    meta:
       description = "PSAttack - Powershell attack tool - file PSAttack.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/gdssecurity/PSAttack/releases/"
       date = "2016-03-09"
+      modified = "2023-01-06"
       score = 100
       hash = "ad05d75640c850ee7eeee26422ba4f157be10a4e2d6dc6eaa19497d64cf23715"
    strings:
-      $x1 = "\\Release\\PSAttack.pdb" fullword
+      $x1 = "\\Release\\PSAttack.pdb"
 
       $s1 = "set-executionpolicy bypass -Scope process -Force" fullword wide
       $s2 = "PSAttack.Modules." ascii
@@ -2987,7 +2994,7 @@ rule Powershell_Attack_Scripts {
    meta:
       description = "Powershell Attack Scripts"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       date = "2016-03-09"
       score = 70
    strings:
@@ -3003,7 +3010,7 @@ rule PSAttack_ZIP {
    meta:
       description = "PSAttack - Powershell attack tool - file PSAttack.zip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/gdssecurity/PSAttack/releases/"
       date = "2016-03-09"
       score = 100
@@ -3027,7 +3034,7 @@ rule Linux_Portscan_Shark_1 {
    meta:
       description = "Detects Linux Port Scanner Shark"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Virustotal Research - see https://github.com/Neo23x0/Loki/issues/35"
       date = "2016-04-01"
       super_rule = 1
@@ -3045,7 +3052,7 @@ rule Linux_Portscan_Shark_2 {
    meta:
       description = "Detects Linux Port Scanner Shark"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Virustotal Research - see https://github.com/Neo23x0/Loki/issues/35"
       date = "2016-04-01"
       super_rule = 1
@@ -3070,7 +3077,7 @@ rule dnscat2_Hacktool {
    meta:
       description = "Detects dnscat2 - from files dnscat, dnscat2.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://downloads.skullsecurity.org/dnscat2/"
       date = "2016-05-15"
       super_rule = 1
@@ -3090,7 +3097,7 @@ rule WCE_in_memory {
    meta:
       description = "Detects Windows Credential Editor (WCE) in memory (and also on disk)"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       score = 80
       date = "2016-08-28"
@@ -3105,7 +3112,7 @@ rule pstgdump {
    meta:
       description = "Detects a tool used by APT groups - file pstgdump.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/igxLyF"
       date = "2016-09-08"
       hash1 = "65d48a2f868ff5757c10ed796e03621961954c523c71eac1c5e044862893a106"
@@ -3124,7 +3131,7 @@ rule lsremora {
    meta:
       description = "Detects a tool used by APT groups"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/igxLyF"
       date = "2016-09-08"
       hash1 = "efa66f6391ec471ca52cd053159c8a8778f11f921da14e6daf76387f8c9afcd5"
@@ -3147,7 +3154,7 @@ rule servpw {
    meta:
       description = "Detects a tool used by APT groups - file servpw.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/igxLyF"
       date = "2016-09-08"
       hash1 = "97b39ac28794a7610ed83ad65e28c605397ea7be878109c35228c126d43e2f46"
@@ -3167,7 +3174,7 @@ rule fgexec {
    meta:
       description = "Detects a tool used by APT groups - file fgexec.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/igxLyF"
       date = "2016-09-08"
       hash1 = "8697897bee415f213ce7bc24f22c14002d660b8aaffab807490ddbf4f3f20249"
@@ -3184,7 +3191,7 @@ rule cachedump {
    meta:
       description = "Detects a tool used by APT groups - from files cachedump.exe, cachedump64.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/igxLyF"
       date = "2016-09-08"
       super_rule = 1
@@ -3205,7 +3212,7 @@ rule PwDump_B {
    meta:
       description = "Detects a tool used by APT groups - file PwDump.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://goo.gl/igxLyF"
       date = "2016-09-08"
       hash1 = "3c796092f42a948018c3954f837b4047899105845019fce75a6e82bc99317982"
@@ -3235,7 +3242,7 @@ rule MSBuild_Mimikatz_Execution_via_XML {
    meta:
       description = "Detects an XML that executes Mimikatz on an endpoint via MSBuild"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://gist.github.com/subTee/c98f7d005683e616560bda3286b6a0d8#file-katz-xml"
       date = "2016-10-07"
    strings:
@@ -3264,7 +3271,7 @@ rule Fscan_Portscanner {
    meta:
       description = "Fscan port scanner scan output / strings"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://twitter.com/JamesHabben/status/817112447970480128"
       date = "2017-01-06"
    strings:
@@ -3289,7 +3296,7 @@ rule WPR_loader_EXE {
    meta:
       description = "Windows Password Recovery - file loader.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-15"
       hash1 = "e7d158d27d9c14a4f15a52ee5bf8aa411b35ad510b1b93f5e163ae7819c621e2"
@@ -3298,7 +3305,7 @@ rule WPR_loader_EXE {
       $s2 = "gLSASS.EXE" fullword wide
       $s3 = "WriteProcessMemory failed" fullword wide
       $s4 = "wow64 process NOT created" fullword wide
-      $s5 = "\\ast.exe" fullword wide
+      $s5 = "\\ast.exe" wide
       $s6 = "Exit code=%s, status=%d" fullword wide
       $s7 = "VirtualProtect failed" fullword wide
       $s8 = "nSeDebugPrivilege" fullword wide
@@ -3310,7 +3317,7 @@ rule WPR_loader_DLL {
    meta:
       description = "Windows Password Recovery - file loader64.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-15"
       hash1 = "7b074cb99d45fc258e0324759ee970467e0f325e5d72c0b046c4142edc6776f6"
@@ -3344,14 +3351,14 @@ rule WPR_Passscape_Loader {
    meta:
       description = "Windows Password Recovery - file ast.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-15"
       hash1 = "f6f2d4b9f19f9311ec419f05224a1c17cf2449f2027cb7738294479eea56e9cb"
    strings:
       $s1 = "SYSTEM\\CurrentControlSet\\Services\\PasscapeLoader64" fullword wide
       $s2 = "ast64.dll" fullword ascii
-      $s3 = "\\loader64.exe" fullword wide
+      $s3 = "\\loader64.exe" wide
       $s4 = "Passcape 64-bit Loader Service" fullword wide
       $s5 = "PasscapeLoader64" fullword wide
       $s6 = "ast64 {msg1GkjN7Sh8sg2Al7ker63f}" fullword wide
@@ -3363,7 +3370,7 @@ rule WPR_Asterisk_Hook_Library {
    meta:
       description = "Windows Password Recovery - file ast64.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-15"
       hash1 = "225071140e170a46da0e57ce51f0838f4be00c8f14e9922c6123bee4dffde743"
@@ -3386,7 +3393,7 @@ rule WPR_WindowsPasswordRecovery_EXE {
    meta:
       description = "Windows Password Recovery - file wpr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-15"
       hash1 = "c1c64cba5c8e14a1ab8e9dd28828d036581584e66ed111455d6b4737fb807783"
@@ -3416,7 +3423,7 @@ rule WPR_WindowsPasswordRecovery_EXE_64 {
    meta:
       description = "Windows Password Recovery - file ast64.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-15"
       hash1 = "4e1ea81443b34248c092b35708b9a19e43a1ecbdefe4b5180d347a6c8638d055"
@@ -3444,7 +3451,7 @@ rule BeyondExec_RemoteAccess_Tool {
    meta:
       description = "Detects BeyondExec Remote Access Tool - file rexesvr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/BvYurS"
       date = "2017-03-17"
       hash1 = "3d3e3f0708479d951ab72fa04ac63acc7e5a75a5723eb690b34301580747032c"
@@ -3463,7 +3470,7 @@ rule Mimikatz_Gen_Strings {
    meta:
       description = "Detects Mimikatz by using some special strings"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-06-19"
       super_rule = 1
@@ -3496,19 +3503,19 @@ rule Disclosed_0day_POCs_lpe {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       hash1 = "e10ee278f4c86d6ee1bd93a7ed71d4d59c0279381b00eb6153aedfb3a679c0b5"
       hash2 = "a5916cefa0f50622a30c800e7f21df481d7a3e1e12083fef734296a22714d088"
       hash3 = "5b701a5b5bbef7027711071cef2755e57984bfdff569fe99efec14a552d8ee43"
    strings:
-      $x1 = "msiexec /f c:\\users\\%username%\\downloads\\" fullword ascii
+      $x1 = "msiexec /f c:\\users\\%username%\\downloads\\" ascii
       $x2 = "c:\\users\\%username%\\downloads\\bat.bat" fullword ascii
       $x3 = "\\payload.msi /quiet" ascii
-      $x4 = "\\payload2\\WindowsTrustedRTProxy.sys" fullword wide
-      $x5 = "\\payload2" fullword wide
-      $x6 = "\\payload" fullword wide
+      $x4 = "\\payload2\\WindowsTrustedRTProxy.sys" wide
+      $x5 = "\\payload2" wide
+      $x6 = "\\payload" wide
       $x7 = "WindowsTrustedRTProxy.sys /grant:r administrators:RX" ascii
    condition:
       ( uint16(0) == 0x5a4d and filesize < 70KB and 1 of them )
@@ -3518,13 +3525,13 @@ rule Disclosed_0day_POCs_exploit {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       hash1 = "632d35a0bac27c9b2f3f485d43ebba818089cf72b3b8c4d2e87ce735b2e67d7e"
    strings:
       $x1 = "\\Release\\exploit.pdb" ascii
-      $x2 = "\\favorites\\stolendata.txt" fullword wide
+      $x2 = "\\favorites\\stolendata.txt" wide
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
@@ -3533,7 +3540,7 @@ rule Disclosed_0day_POCs_InjectDll {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       modified = "2022-12-21"
@@ -3552,7 +3559,7 @@ rule Disclosed_0day_POCs_payload_MSI {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       modified = "2022-12-21"
@@ -3569,7 +3576,7 @@ rule Disclosed_0day_POCs_injector {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       hash1 = "ba0e2119b2a6bad612e86662b643a404426a07444d476472a71452b7e9f94041"
@@ -3590,7 +3597,7 @@ rule Disclosed_0day_POCs_lpe_2 {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       hash1 = "b4f3787a19b71c47bc4357a5a77ffb456e2f71fd858079d93e694a6a79f66533"
@@ -3606,7 +3613,7 @@ rule Disclosed_0day_POCs_shellcodegenerator {
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Disclosed 0day Repos"
       date = "2017-07-07"
       hash1 = "55c4073bf8d38df7d392aebf9aed2304109d92229971ffac6e1c448986a87916"
@@ -3620,7 +3627,7 @@ rule SecurityXploded_Producer_String {
    meta:
       description = "Detects hacktools by SecurityXploded"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://securityxploded.com/browser-password-dump.php"
       date = "2017-07-13"
       score = 60
@@ -3645,7 +3652,7 @@ rule Kekeo_Hacktool {
    meta:
       description = "Detects Kekeo Hacktool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/gentilkiwi/kekeo/releases"
       date = "2017-07-21"
       hash1 = "ce92c0bcdf63347d84824a02b7a448cf49dd9f44db2d02722d01c72556a2b767"
@@ -3672,7 +3679,7 @@ rule AllTheThings {
    meta:
       description = "Detects AllTheThings"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/subTee/AllTheThings"
       date = "2017-07-27"
       modified = "2022-12-21"
@@ -3680,7 +3687,7 @@ rule AllTheThings {
    strings:
       $x1 = "\\obj\\Debug\\AllTheThings.pdb" ascii
       $x2 = "AllTheThings.exe" fullword wide
-      $x3 = "\\AllTheThings.dll" fullword ascii
+      $x3 = "\\AllTheThings.dll" ascii
       $x4 = "Hello From Main...I Don't Do Anything" fullword wide
       $x5 = "I am a basic COM Object" fullword wide
       $x6 = "I shouldn't really execute either." fullword wide
@@ -3692,16 +3699,16 @@ rule Impacket_Keyword {
    meta:
       description = "Detects Impacket Keyword in Executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-08-04"
       score = 60
       hash1 = "9388c78ea6a78dbea307470c94848ae2481481f593d878da7763e649eaab4068"
       hash2 = "2f6d95e0e15174cfe8e30aaa2c53c74fdd13f9231406b7103da1e099c08be409"
    strings:
-      $s1 = "impacket.smb(" fullword ascii
-      $s2 = "impacket.ntlm(" fullword ascii
-      $s3 = "impacket.nmb(" fullword ascii
+      $s1 = "impacket.smb(" ascii
+      $s2 = "impacket.ntlm(" ascii
+      $s3 = "impacket.nmb(" ascii
    condition:
       ( uint16(0) == 0x5a4d and filesize < 14000KB and 1 of them )
 }
@@ -3721,7 +3728,7 @@ rule PasswordsPro {
    meta:
       description = "Auto-generated rule - file PasswordsPro.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "PasswordPro"
       date = "2017-08-27"
       hash1 = "5b3d6654e6d9dc49ee1136c0c8e8122cb0d284562447abfdc05dfe38c79f95bf"
@@ -3740,7 +3747,7 @@ rule PasswordPro_NTLM_DLL {
    meta:
       description = "Auto-generated rule - file NTLM.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "PasswordPro"
       date = "2017-08-27"
       hash1 = "47d4755d31bb96147e6230d8ea1ecc3065da8e557e8176435ccbcaea16fe50de"
@@ -3769,7 +3776,7 @@ rule KeeThief_PS {
    meta:
       description = "Detects component of KeeTheft - KeePass dump tool - file KeeThief.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/HarmJ0y/KeeThief"
       date = "2017-08-29"
       hash1 = "a3b976279ded8e64b548c1d487212b46b03aaec02cb6e199ea620bd04b8de42f"
@@ -3787,7 +3794,7 @@ rule KeeTheft_EXE {
    meta:
       description = "Detects component of KeeTheft - KeePass dump tool - file KeeTheft.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/HarmJ0y/KeeThief"
       date = "2017-08-29"
       hash1 = "f06789c3e9fe93c165889799608e59dda6b10331b931601c2b5ae06ede41dc22"
@@ -3807,7 +3814,7 @@ rule KeeTheft_Out_Shellcode {
    meta:
       description = "Detects component of KeeTheft - KeePass dump tool - file Out-Shellcode.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/HarmJ0y/KeeThief"
       date = "2017-08-29"
       hash1 = "2afb1c8c82363a0ae43cad9d448dd20bb7d2762aa5ed3672cd8e14dee568e16b"
@@ -3830,7 +3837,7 @@ rule Sharpire {
    meta:
       description = "Auto-generated rule - file Sharpire.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/0xbadjuju/Sharpire"
       date = "2017-09-23"
       modified = "2022-12-21"
@@ -3862,7 +3869,7 @@ rule Invoke_Metasploit {
    meta:
       description = "Detects Invoke-Metasploit Payload"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/jaredhaight/Invoke-MetasploitPayload/blob/master/Invoke-MetasploitPayload.ps1"
       date = "2017-09-23"
       hash1 = "b36d3ca7073741c8a48c578edaa6d3b6a8c3c4413e961a83ad08ad128b843e0b"
@@ -3878,7 +3885,7 @@ rule PowerShell_Mal_HackTool_Gen {
    meta:
       description = "Detects PowerShell hack tool samples - generic PE loader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-11-02"
       hash1 = "d442304ca839d75b34e30e49a8b9437b5ab60b74d85ba9005642632ce7038b32"
@@ -3895,7 +3902,7 @@ rule Sig_RemoteAdmin_1 {
    meta:
       description = "Detects strings from well-known APT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-12-03"
       score = 45
@@ -3910,7 +3917,7 @@ rule RemCom_RemoteCommandExecution {
    meta:
       description = "Detects strings from RemCom tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/tezXZt"
       date = "2017-12-28"
       score = 50
@@ -3926,15 +3933,15 @@ rule Crackmapexec_EXE {
    meta:
       description = "Detects CrackMapExec hack tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2018-04-06"
       score = 85
       hash1 = "371f104b7876b9080c519510879235f36edb6668097de475949b84ab72ee9a9a"
    strings:
-      $s1 = "core.scripts.secretsdump(" fullword ascii
-      $s2 = "core.scripts.samrdump(" fullword ascii
-      $s3 = "core.uacdump(" fullword ascii
+      $s1 = "core.scripts.secretsdump(" ascii
+      $s2 = "core.scripts.samrdump(" ascii
+      $s3 = "core.uacdump(" ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 10000KB and 2 of them
 }
@@ -3942,7 +3949,7 @@ rule Crackmapexec_EXE {
 rule SUSP_Imphash_PassRevealer_PY_EXE {
    meta:
       description = "Detects an imphash used by password revealer and hack tools (some false positives with hardware driver installers)"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2018-04-06"
       modified = "2021-11-09"
@@ -3962,7 +3969,7 @@ rule MAL_Unknown_PWDumper_Apr18_3 {
    meta:
       description = "Detects sample from unknown sample set - IL origin"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2018-04-06"
       hash1 = "d435e7b6f040a186efeadb87dd6d9a14e038921dc8b8658026a90ae94b4c8b05"
@@ -3978,11 +3985,11 @@ rule MAL_Unknown_PWDumper_Apr18_3 {
       uint16(0) == 0x5a4d and filesize < 3000KB and all of them
 }
 
-rule ProcessInjector_Gen {
+rule ProcessInjector_Gen : HIGHVOL {
    meta:
       description = "Detects a process injection utility that can be used ofr good and bad purposes"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/cuckoosandbox/monitor/blob/master/bin/inject.c"
       date = "2018-04-23"
       score = 60
@@ -4204,7 +4211,7 @@ rule HKTL_beRootexe {
       date = "2018-07-25"
       hash1 = "865b3b8ec9d03d3475286c3030958d90fc72b21b0dca38e5bf8e236602136dd7"
    strings:
-      $s1 = "checks.webclient.secretsdump(" fullword ascii
+      $s1 = "checks.webclient.secretsdump(" ascii
       $s2 = "beroot.modules" fullword ascii
       $s3 = "beRoot.exe.manifest" fullword ascii
    condition:
@@ -4249,7 +4256,7 @@ rule HKTL_EmbeddedPDF {
 rule HTKL_BlackBone_DriverInjector {
    meta:
       description = "Detects BlackBone Driver injector"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/DarthTon/Blackbone"
       date = "2018-09-11"
       score = 60
@@ -4276,7 +4283,7 @@ rule HTKL_BlackBone_DriverInjector {
 rule HKTL_SqlMap {
    meta:
       description = "Detects sqlmap hacktool"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/sqlmapproject/sqlmap"
       date = "2018-10-09"
       hash1 = "9444478b03caf7af853a64696dd70083bfe67f76aa08a16a151c00aadb540fa8"
@@ -4290,7 +4297,7 @@ rule HKTL_SqlMap {
 rule HKTL_SqlMap_backdoor {
    meta:
       description = "Detects SqlMap backdoors"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/sqlmapproject/sqlmap"
       date = "2018-10-09"
    condition:
@@ -4307,7 +4314,7 @@ rule HKTL_SqlMap_backdoor {
 rule HKTL_Lazagne_PasswordDumper_Dec18_1 {
    meta:
       description = "Detects password dumper Lazagne often used by middle eastern threat groups"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
       reference = "https://www.symantec.com/blogs/threat-intelligence/seedworm-espionage-group"
       date = "2018-12-11"
@@ -4316,11 +4323,11 @@ rule HKTL_Lazagne_PasswordDumper_Dec18_1 {
       hash2 = "884e991d2066163e02472ea82d89b64e252537b28c58ad57d9d648b969de6a63"
       hash3 = "bf8f30031769aa880cdbe22bc0be32691d9f7913af75a5b68f8426d4f0c7be50"
    strings:
-      $s1 = "softwares.opera(" fullword ascii
-      $s2 = "softwares.mozilla(" fullword ascii
-      $s3 = "config.dico(" fullword ascii
-      $s4 = "softwares.chrome(" fullword ascii
-      $s5 = "softwares.outlook(" fullword ascii
+      $s1 = "softwares.opera(" ascii
+      $s2 = "softwares.mozilla(" ascii
+      $s3 = "config.dico(" ascii
+      $s4 = "softwares.chrome(" ascii
+      $s5 = "softwares.outlook(" ascii
    condition:
       uint16(0) == 0x5a4d and filesize < 17000KB and 1 of them
 }
@@ -4328,14 +4335,14 @@ rule HKTL_Lazagne_PasswordDumper_Dec18_1 {
 rule HKTL_Lazagne_Gen_18 {
    meta:
       description = "Detects Lazagne password extractor hacktool"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/AlessandroZ/LaZagne"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"
       date = "2018-12-11"
       score = 80
       hash1 = "51121dd5fbdfe8db7d3a5311e3e9c904d644ff7221b60284c03347938577eecf"
    strings:
-      $x1 = "lazagne.config.powershell_execute(" fullword ascii
+      $x1 = "lazagne.config.powershell_execute(" ascii
       $x2 = "creddump7.win32." ascii
       $x3 = "lazagne.softwares.windows.hashdump" ascii
       $x4 = ".softwares.memory.libkeepass.common(" ascii
@@ -4346,7 +4353,7 @@ rule HKTL_Lazagne_Gen_18 {
 rule HKTL_NoPowerShell {
    meta:
       description = "Detects NoPowerShell hack tool"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/bitsadmin/nopowershell"
       date = "2018-12-28"
       modified = "2022-12-21"
@@ -4377,7 +4384,7 @@ rule HKTL_htran_go {
 rule SUSP_Katz_PDB {
    meta:
       description = "Detects suspicious PDB in file"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2019-02-04"
       hash1 = "6888ce8116c721e7b2fc3d7d594666784cf38a942808f35e309a48e536d8e305"
@@ -4391,7 +4398,7 @@ rule SUSP_Katz_PDB {
 rule HKTL_LNX_Pnscan {
    meta:
       description = "Detects Pnscan port scanner"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://github.com/ptrrkssn/pnscan"
       date = "2019-05-27"
       score = 55
@@ -4405,7 +4412,7 @@ rule HKTL_LNX_Pnscan {
 rule PAExec {
    meta:
       description = "Detects remote access tool PAEXec (like PsExec) - file PAExec.exe"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://researchcenter.paloaltonetworks.com/2017/03/unit42-shamoon-2-delivering-disttrack/"
       date = "2017-03-27"
       score = 40
@@ -4422,3 +4429,48 @@ rule PAExec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 1 of ($x*) ) or ( 3 of them )
 }
+
+rule HKTL_DomainPasswordSpray {
+   meta:
+      description = "Detects the Powershell password spray tool DomainPasswordSpray"
+      author = "Arnim Rupp"
+      license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
+      reference = "https://github.com/dafthack/DomainPasswordSpray"
+      date = "2023-01-13"
+      score = 60
+      hash1 = "44d4c0ae5673d2a076f3b5acdc83063aca49d58e6dd7cf73d0b927f83d359247"
+   strings:
+      $s = "Invoke-DomainPasswordSpray" fullword ascii wide
+   condition:
+      filesize < 100KB and
+      all of them
+}
+
+rule HKTL_RustHound {
+   meta:
+        description = "Detect hacktool RustHound (Sharphound clone)"
+        author = "Arnim Rupp (https://github.com/ruppde)"
+        date = "2023-03-30"
+        reference = "https://github.com/OPENCYBER-FR/RustHound"
+        hash = "409f61a34d9771643246f401a9670f6f7dcced9df50cbd89a2e1a5c9ba8d03ab"
+        hash = "b1a58a9c94b1df97a243e6c3fc2d04ffd92bc802edc7d8e738573b394be331a9"
+        hash = "170f4a48911f3ebef674aade05184ea0a6b1f6b089bcffd658e95b9905423365"
+        hash = "e52f6496b863b08296bf602e92a090768e86abf498183aa5b6531a3a2d9c0bdb"
+        hash = "847e57a35df29d40858c248e5b278b09cfa89dd4201cb24262c6158395e2e585"
+        hash = "4edfed92b54d32a58b2cfc926f98a56637e89850410706abcc469a8bc846bc85"
+        hash = "feba0c16830ea0a13819a9ab8a221cc64d5a9b3cc73f3c66c405a171a2069cc1"
+        hash = "21d37c2393a6f748fe34c9d2f52693cb081b63c3a02ca0bebe4a584076f5886c"
+        hash = "874a1a186eb5808d456ce86295cd5f09d6c819375acb100573c2103608af0d84"
+        hash = "bf576bd229393010b2bb4ba17e49604109e294ca38cf19647fc7d9c325f7bcd1"
+   strings:
+        $rh1 = "rusthound" fullword ascii wide
+        $rh2 = "Making json/zip files finished!" ascii wide
+   condition:
+        (
+            // PE or elf
+            uint16(0) == 0x5A4D or
+            uint16(0) == 0x457f
+        ) and
+        1 of ( $rh* )
+}
+

@@ -11,15 +11,15 @@ rule APT30_Generic_H {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "2a4c8752f3e7fde0139421b8d5713b29c720685d"
 		hash2 = "4350e906d590dca5fcc90ed3215467524e0a4e3d"
 	strings:
-		$s0 = "\\Temp1020.txt" fullword ascii
+		$s0 = "\\Temp1020.txt" ascii
 		$s1 = "Xmd.Txe" fullword ascii
-		$s2 = "\\Internet Exp1orer" fullword ascii
+		$s2 = "\\Internet Exp1orer" ascii
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
@@ -28,7 +28,7 @@ rule APT30_Sample_2 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "0359ffbef6a752ee1a54447b26e272f4a5a35167"
@@ -46,7 +46,7 @@ rule APT30_Sample_3 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "d0320144e65c9af0052f8dee0419e8deed91b61b"
@@ -64,7 +64,7 @@ rule APT30_Generic_C {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "8667f635fe089c5e2c666b3fe22eaf3ff8590a69"
@@ -87,7 +87,7 @@ rule APT30_Sample_4 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "75367d8b506031df5923c2d8d7f1b9f643a123cd"
@@ -106,7 +106,7 @@ rule APT30_Sample_5 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "1a2dd2a0555dc746333e7c956c58f7c4cdbabd4b"
@@ -124,7 +124,7 @@ rule APT30_Sample_6 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "00e69b059ad6b51b76bc476a115325449d10b4c0"
@@ -139,7 +139,7 @@ rule APT30_Sample_7 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "868d1f4c106a08bd2e5af4f23139f0e0cd798fba"
@@ -158,7 +158,7 @@ rule APT30_Generic_E {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "1dbb584e19499e26398fb0a7aa2a01b7"
@@ -177,7 +177,7 @@ rule APT30_Sample_8 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "9531e21652143b8b129ab8c023dc05fef2a17cc3"
@@ -194,7 +194,7 @@ rule APT30_Generic_B {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "0fcb4ffe2eb391421ec876286c9ddb6c"
@@ -214,7 +214,7 @@ rule APT30_Generic_I {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "fe211c7a081c1dac46e3935f7c614549"
@@ -231,7 +231,7 @@ rule APT30_Sample_9 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "442bf8690401a2087a340ce4a48151c39101652f"
@@ -252,7 +252,7 @@ rule APT30_Sample_10 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "eb518cda3c4f4e6938aaaee07f1f7db8ee91c901"
@@ -272,7 +272,7 @@ rule APT30_Sample_11 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "59066d5d1ee3ad918111ed6fcaf8513537ff49a6"
@@ -300,7 +300,7 @@ rule APT30_Sample_12 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "b02b5720ff0f73f01eb2ba029a58b645c987c4bc"
@@ -316,7 +316,7 @@ rule APT30_Sample_13 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "a359f705a833c4a4254443b87645fd579aa94bcf"
@@ -335,7 +335,7 @@ rule APT30_Sample_14 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "b0740175d20eab79a5d62cdbe0ee1a89212a8472"
@@ -352,7 +352,7 @@ rule APT30_Sample_15 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "7a8576804a2bbe4e5d05d1718f90b6a4332df027"
@@ -371,12 +371,12 @@ rule APT30_Sample_16 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "066d06ac08b48d3382d46bbeda6ad411b6d6130e"
 	strings:
-		$s0 = "\\Temp1020.txt" fullword ascii
+		$s0 = "\\Temp1020.txt" ascii
 		$s1 = "cmcbqyjs" fullword ascii
 		$s2 = "SPVSWh\\" fullword ascii
 		$s4 = "PSShxw@" fullword ascii
@@ -390,7 +390,7 @@ rule APT30_Generic_A {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "9f49aa1090fa478b9857e15695be4a89f8f3e594"
@@ -411,7 +411,7 @@ rule APT30_Sample_17 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "c3aa52ff1d19e8fc6704777caf7c5bd120056845"
@@ -425,7 +425,7 @@ rule APT30_Sample_18 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "355436a16d7a2eba8a284b63bb252a8bb1644751"
@@ -446,7 +446,7 @@ rule APT30_Generic_G {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "1612b392d6145bfb0c43f8a48d78c75f"
@@ -465,36 +465,37 @@ rule APT30_Generic_G {
 }
 
 rule APT30_Sample_19 {
-	meta:
-		description = "FireEye APT30 Report Sample"
-		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
-		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
-		date = "2015/04/13"
-		hash = "cfa438449715b61bffa20130df8af778ef011e15"
-	strings:
-		$s0 = "C:\\Program Files\\Common Files\\System\\wab32" fullword ascii
-		$s1 = "%s,Volume:%s,Type:%s,TotalSize:%uMB,FreeSize:%uMB" fullword ascii
-		$s2 = "\\TEMP\\" fullword ascii
-		$s3 = "\\Temporary Internet Files\\" fullword ascii
-		$s5 = "%s TotalSize:%u Bytes" fullword ascii
-		$s6 = "This Disk Maybe a Encrypted Flash Disk!" fullword ascii
-		$s7 = "User:%-32s" fullword ascii
-		$s8 = "\\Desktop\\" fullword ascii
-		$s9 = "%s.%u_%u" fullword ascii
-		$s10 = "Nick:%-32s" fullword ascii
-		$s11 = "E-mail:%-32s" fullword ascii
-		$s13 = "%04u-%02u-%02u %02u:%02u:%02u" fullword ascii
-		$s14 = "Type:%-8s" fullword ascii
-	condition:
-		filesize < 100KB and uint16(0) == 0x5A4D and 8 of them
+   meta:
+      description = "FireEye APT30 Report Sample"
+      author = "Florian Roth (Nextron Systems)"
+      reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
+      date = "2015/04/03"
+      modified = "2023-01-06"
+      score = 75
+      hash = "cfa438449715b61bffa20130df8af778ef011e15"
+   strings:
+      $s0 = "C:\\Program Files\\Common Files\\System\\wab32" fullword ascii
+      $s1 = "%s,Volume:%s,Type:%s,TotalSize:%uMB,FreeSize:%uMB" fullword ascii
+      $s2 = "\\TEMP\\" ascii
+      $s3 = "\\Temporary Internet Files\\" ascii
+      $s5 = "%s TotalSize:%u Bytes" fullword ascii
+      $s6 = "This Disk Maybe a Encrypted Flash Disk!" fullword ascii
+      $s7 = "User:%-32s" fullword ascii
+      $s8 = "\\Desktop\\" ascii
+      $s9 = "%s.%u_%u" fullword ascii
+      $s10 = "Nick:%-32s" fullword ascii
+      $s11 = "E-mail:%-32s" fullword ascii
+      $s13 = "%04u-%02u-%02u %02u:%02u:%02u" fullword ascii
+      $s14 = "Type:%-8s" fullword ascii
+   condition:
+      filesize < 100KB and uint16(0) == 0x5A4D and 8 of them
 }
 
 rule APT30_Generic_E_v2 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "eca53a9f6251ddf438508b28d8a483f91b99a3fd"
@@ -511,7 +512,7 @@ rule APT30_Sample_20 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "b1c37632e604a5d1f430c9351f87eb9e8ea911c0"
@@ -532,7 +533,7 @@ rule APT30_Sample_21 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "d315daa61126616a79a8582145777d8a1565c615"
@@ -549,7 +550,7 @@ rule APT30_Sample_22 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "0d17a58c24753e5f8fd5276f62c8c7394d8e1481"
@@ -568,7 +569,7 @@ rule APT30_Generic_F {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "09010917cd00dc8ddd21aeb066877aa2"
@@ -576,8 +577,8 @@ rule APT30_Generic_F {
 		hash3 = "b7b282c9e3eca888cbdb5a856e07e8bd"
 		hash4 = "df1799845b51300b03072c6569ab96d5"
 	strings:
-		$s0 = "\\~zlzl.exe" fullword ascii
-		$s2 = "\\Internet Exp1orer" fullword ascii
+		$s0 = "\\~zlzl.exe" ascii
+		$s2 = "\\Internet Exp1orer" ascii
 		$s3 = "NodAndKabIsExcellent" fullword ascii
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
@@ -587,7 +588,7 @@ rule APT30_Sample_23 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "9865e24aadb4480bd3c182e50e0e53316546fc01"
@@ -608,7 +609,7 @@ rule APT30_Sample_24 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "572caa09f2b600daa941c60db1fc410bef8d1771"
@@ -628,14 +629,14 @@ rule APT30_Sample_25 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "44a21c8b3147fabc668fee968b62783aa9d90351"
 	strings:
 		$s1 = "C:\\WINDOWS" fullword ascii
 		$s2 = "aragua" fullword ascii
-		$s4 = "\\driver32\\7$" fullword ascii
+		$s4 = "\\driver32\\7$" ascii
 		$s8 = "System V" fullword ascii
 		$s9 = "Compu~r" fullword ascii
 		$s10 = "PROGRAM L" fullword ascii
@@ -648,7 +649,7 @@ rule APT30_Sample_26 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "e26588113417bf68cb0c479638c9cd99a48e846d"
@@ -668,7 +669,7 @@ rule APT30_Generic_D {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "35dfb55f419f476a54241f46e624a1a4"
@@ -680,7 +681,7 @@ rule APT30_Generic_D {
 	strings:
 		$s0 = "Windows Security Service Feedback" fullword wide
 		$s1 = "wssfmgr.exe" fullword wide
-		$s2 = "\\rb.htm" fullword ascii
+		$s2 = "\\rb.htm" ascii
 		$s3 = "rb.htm" fullword ascii
 		$s4 = "cook5" ascii
 		$s5 = "5, 4, 2600, 0" fullword wide
@@ -692,7 +693,7 @@ rule APT30_Sample_27 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "959573261ca1d7e5ddcd19447475b2139ca24fe1"
@@ -702,7 +703,7 @@ rule APT30_Sample_27 {
 		$s5 = "oftHaveAck+" ascii
 		$s10 = "HlobalAl" fullword ascii
 		$s13 = "$NtRND1$" fullword ascii
-		$s14 = "_NStartup" fullword ascii
+		$s14 = "_NStartup" ascii
 		$s16 = "GXSYSTEM" fullword ascii
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
@@ -712,7 +713,7 @@ rule APT30_Sample_28 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "e62a63307deead5c9fcca6b9a2d51fb0"
@@ -727,9 +728,9 @@ rule APT30_Sample_28 {
 		$s6 = "/connect.gif" ascii
 		$s7 = "USBTest.sys" fullword ascii
 		$s8 = "/ver.htm" fullword ascii
-		$s11 = "\\netscv.exe" fullword ascii
+		$s11 = "\\netscv.exe" ascii
 		$s12 = "/app.htm" fullword ascii
-		$s13 = "\\netsvc.exe" fullword ascii
+		$s13 = "\\netsvc.exe" ascii
 		$s14 = "/exe.htm" fullword ascii
 		$s18 = "MicrosoftHaveAck" fullword ascii
 		$s19 = "MicrosoftHaveExit" fullword ascii
@@ -741,7 +742,7 @@ rule APT30_Sample_29 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "44492c53715d7c79895904543843a321491cb23a"
@@ -752,7 +753,7 @@ rule APT30_Sample_29 {
 		$s3 = "MicrosoftFlashExit" fullword ascii
 		$s4 = "MicrosoftFlashHaveExit" fullword ascii
 		$s5 = "MicrosoftFlashHaveAck" fullword ascii
-		$s6 = "\\driver32" fullword ascii
+		$s6 = "\\driver32" ascii
 		$s7 = "MicrosoftFlashZJ" fullword ascii
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
@@ -762,7 +763,7 @@ rule APT30_Sample_30 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "3b684fa40b4f096e99fbf535962c7da5cf0b4528"
@@ -780,14 +781,14 @@ rule APT30_Sample_31 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "8b4271167655787be1988574446125eae5043aca"
 	strings:
-		$s0 = "\\ZJRsv.tem" fullword ascii
+		$s0 = "\\ZJRsv.tem" ascii
 		$s1 = "forceguest" fullword ascii
-		$s4 = "\\$NtUninstallKB570317$" fullword ascii
+		$s4 = "\\$NtUninstallKB570317$" ascii
 		$s8 = "[Can'tGetIP]" fullword ascii
 		$s14 = "QWERTY:,`/" fullword ascii
 	condition:
@@ -798,7 +799,7 @@ rule APT30_Generic_J {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash1 = "49aca228674651cba776be727bdb7e60"
@@ -810,18 +811,18 @@ rule APT30_Generic_J {
 	strings:
 		$s0 = "Launcher.EXE" fullword wide
 		$s1 = "Symantec Security Technologies" fullword wide
-		$s2 = "\\Symantec LiveUpdate.lnk" fullword ascii
+		$s2 = "\\Symantec LiveUpdate.lnk" ascii
 		$s3 = "Symantec Service Framework" fullword wide
-		$s4 = "\\ccSvcHst.exe" fullword ascii
-		$s5 = "\\wssfmgr.exe" fullword ascii
+		$s4 = "\\ccSvcHst.exe" ascii
+		$s5 = "\\wssfmgr.exe" ascii
 		$s6 = "Symantec Corporation" fullword wide
-		$s7 = "\\5.1.0.29" fullword ascii
-		$s8 = "\\Engine" fullword ascii
+		$s7 = "\\5.1.0.29" ascii
+		$s8 = "\\Engine" ascii
 		$s9 = "Copyright (C) 2000-2010 Symantec Corporation. All rights reserved." fullword wide
 		$s10 = "Symantec LiveUpdate" fullword ascii
-		$s11 = "\\Norton360" fullword ascii
+		$s11 = "\\Norton360" ascii
 		$s15 = "BinRes" fullword ascii
-		$s16 = "\\readme.lz" fullword ascii
+		$s16 = "\\readme.lz" ascii
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
@@ -830,7 +831,7 @@ rule APT30_Microfost {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "57169cb4b8ef7a0d7ebd7aa039d1a1efd6eb639e"
@@ -842,40 +843,41 @@ rule APT30_Microfost {
 }
 
 rule APT30_Generic_K {
-	meta:
-		description = "FireEye APT30 Report Sample"
-		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
-		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
-		date = "2015/04/13"
-		hash = "142bc01ad412799a7f9ffed994069fecbd5a2f93"
-	strings:
-		$x1 = "Maybe a Encrypted Flash" fullword ascii
+   meta:
+      description = "FireEye APT30 Report Sample"
+      author = "Florian Roth (Nextron Systems)"
+      reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
+      date = "2015/04/03"
+      modified = "2023-01-06"
+      score = 75
+      hash = "142bc01ad412799a7f9ffed994069fecbd5a2f93"
+   strings:
+      $x1 = "Maybe a Encrypted Flash" fullword ascii
 
-		$s0 = "C:\\Program Files\\Common Files\\System\\wab32" fullword ascii
-		$s1 = "\\TEMP\\" fullword ascii
-		$s2 = "\\Temporary Internet Files\\" fullword ascii
-		$s5 = "%s Size:%u Bytes" fullword ascii
-		$s7 = "$.DATA$" fullword ascii
-		$s10 = "? Size:%u By s" fullword ascii
-		$s12 = "Maybe a Encrypted Flash" fullword ascii
-		$s14 = "Name:%-32s" fullword ascii
-		$s15 = "NickName:%-32s" fullword ascii
-		$s19 = "Email:%-32s" fullword ascii
-		$s21 = "C:\\Prog" ascii
-		$s22 = "$LDDATA$" ascii
-		$s31 = "Copy File %s OK!" fullword ascii
-		$s32 = "%s Space:%uM,FreeSpace:%uM" fullword ascii
-		$s34 = "open=%s" fullword ascii
-	condition:
-		filesize < 100KB and uint16(0) == 0x5A4D and ( all of ($x*) and 3 of ($s*) )
+      $s0 = "C:\\Program Files\\Common Files\\System\\wab32" fullword ascii
+      $s1 = "\\TEMP\\" ascii
+      $s2 = "\\Temporary Internet Files\\" ascii
+      $s5 = "%s Size:%u Bytes" fullword ascii
+      $s7 = "$.DATA$" fullword ascii
+      $s10 = "? Size:%u By s" fullword ascii
+      $s12 = "Maybe a Encrypted Flash" fullword ascii
+      $s14 = "Name:%-32s" fullword ascii
+      $s15 = "NickName:%-32s" fullword ascii
+      $s19 = "Email:%-32s" fullword ascii
+      $s21 = "C:\\Prog" ascii
+      $s22 = "$LDDATA$" ascii
+      $s31 = "Copy File %s OK!" fullword ascii
+      $s32 = "%s Space:%uM,FreeSpace:%uM" fullword ascii
+      $s34 = "open=%s" fullword ascii
+   condition:
+      filesize < 100KB and uint16(0) == 0x5A4D and ( all of ($x*) and 3 of ($s*) )
 }
 
 rule APT30_Sample_33 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "72c568ee2dd75406858c0294ccfcf86ad0e390e4"
@@ -896,7 +898,7 @@ rule APT30_Sample_34 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "216868edbcdd067bd2a9cce4f132d33ba9c0d818"
@@ -916,7 +918,7 @@ rule APT30_Sample_35 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "df48a7cd6c4a8f78f5847bad3776abc0458499a6"
@@ -932,7 +934,7 @@ rule APT30_Sample_1 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		hash = "8cea83299af8f5ec6c278247e649c9d91d4cf3bc"
@@ -950,7 +952,7 @@ rule APT30_Generic_1 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -963,7 +965,7 @@ rule APT30_Generic_1 {
 		hash6 = "843997b36ed80d3aeea3c822cb5dc446b6bfa7b9"
 	strings:
 		$s0 = "%s\\%s.txt" fullword
-		$s1 = "\\ldsysinfo.txt" fullword
+		$s1 = "\\ldsysinfo.txt"
 		$s4 = "(Extended Wansung)" fullword
 		$s6 = "Computer Name:" fullword
 		$s7 = "%s %uKB %04u-%02u-%02u %02u:%02u" fullword
@@ -983,7 +985,7 @@ rule APT30_Generic_2 {
 	meta:
 		description = "FireEye APT30 Report Sample - from many files"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1024,7 +1026,7 @@ rule APT30_Generic_2 {
 		$s3 = "%s:All online success on %u!" fullword
 		$s4 = "%s:list online success on %u!" fullword
 		$s5 = "%s:All online fail!" fullword
-		$s6 = "Copyright Opera Software 1995-" fullword wide
+		$s6 = "Copyright Opera Software 1995-" wide
 		$s7 = "%s:list online fail!" fullword
 		$s8 = "OnlineTmp.txt" fullword
 		$s9 = "Opera Internet Browser" fullword wide
@@ -1040,7 +1042,7 @@ rule APT30_Generic_3 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1060,7 +1062,7 @@ rule APT30_Generic_4 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1071,10 +1073,10 @@ rule APT30_Generic_4 {
 	strings:
 		$s0 = "del NetEagle_Scout.bat" fullword
 		$s1 = "NetEagle_Scout.bat" fullword
-		$s2 = "\\visit.exe" fullword
-		$s3 = "\\System.exe" fullword
-		$s4 = "\\System.dat" fullword
-		$s5 = "\\ieupdate.exe" fullword
+		$s2 = "\\visit.exe"
+		$s3 = "\\System.exe"
+		$s4 = "\\System.dat"
+		$s5 = "\\ieupdate.exe"
 		$s6 = "GOTO ERROR" fullword
 		$s7 = ":ERROR" fullword
 		$s9 = "IF EXIST " fullword
@@ -1091,7 +1093,7 @@ rule APT30_Generic_5 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1103,7 +1105,7 @@ rule APT30_Generic_5 {
 		$s1 = "name=\"ftpserver.exe\"/>" fullword
 		$s2 = "LiveUpdate.EXE" fullword wide
 		$s3 = "<description>FTP Explorer</description>" fullword
-		$s4 = "\\ashelper.dll" fullword
+		$s4 = "\\ashelper.dll"
 		$s5 = "LiveUpdate" fullword wide
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
@@ -1113,7 +1115,7 @@ rule APT30_Generic_6 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1135,7 +1137,7 @@ rule APT30_Generic_7 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1153,7 +1155,7 @@ rule APT30_Generic_8 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1
@@ -1179,7 +1181,7 @@ rule APT30_Generic_9 {
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
 		date = "2015/04/13"
 		super_rule = 1

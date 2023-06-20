@@ -10,7 +10,7 @@ rule Powerkatz_DLL_Generic {
 	meta:
 		description = "Detects Powerkatz - a Mimikatz version prepared to run in memory via Powershell (overlap with other Mimikatz versions is possible)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "PowerKatz Analysis"
 		date = "2016-02-05"
 		super_rule = 1
@@ -22,7 +22,7 @@ rule Powerkatz_DLL_Generic {
 		$s1 = "%3u - Directory '%s' (*.kirbi)" fullword wide
 		$s2 = "%*s  pPublicKey         : " fullword wide
 		$s4 = "<3 eo.oe ~ ANSSI E>" fullword wide
-		$s5 = "\\*.kirbi" fullword wide
+		$s5 = "\\*.kirbi" wide
 
 		$c1 = "kuhl_m_lsadump_getUsersAndSamKey ; kull_m_registry_RegOpenKeyEx SAM Accounts (0x%08x)" fullword wide
 		$c2 = "kuhl_m_lsadump_getComputerAndSyskey ; kuhl_m_lsadump_getSyskey KO" fullword wide

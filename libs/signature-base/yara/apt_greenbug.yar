@@ -13,7 +13,7 @@ rule Greenbug_Malware_1 {
    meta:
       description = "Detects Malware from Greenbug Incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/urp4CD"
       date = "2017-01-25"
       hash1 = "dab460a0b73e79299fbff2fa301420c1d97a36da7426acc0e903c70495db2b76"
@@ -28,7 +28,7 @@ rule Greenbug_Malware_2 {
    meta:
       description = "Detects Backdoor from Greenbug Incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/urp4CD"
       date = "2017-01-25"
       hash1 = "6b28a43eda5b6f828a65574e3f08a6d00e0acf84cbb94aac5cec5cd448a4649d"
@@ -55,7 +55,7 @@ rule Greenbug_Malware_3 {
    meta:
       description = "Detects Backdoor from Greenbug Incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/urp4CD"
       date = "2017-01-25"
       super_rule = 1
@@ -64,7 +64,7 @@ rule Greenbug_Malware_3 {
    strings:
       $x1 = "F:\\Projects\\Bot\\Bot\\Release\\Ism.pdb" fullword ascii
       $x2 = "C:\\ddd\\wer2.txt" fullword wide
-      $x3 = "\\Microsoft\\Windows\\tmp43hh11.txt" fullword wide
+      $x3 = "\\Microsoft\\Windows\\tmp43hh11.txt" wide
    condition:
       1 of them
 }
@@ -73,7 +73,7 @@ rule Greenbug_Malware_4 {
    meta:
       description = "Detects ISMDoor Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/urp4CD"
       date = "2017-01-25"
       super_rule = 1
@@ -100,9 +100,10 @@ rule Greenbug_Malware_5 {
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "https://goo.gl/urp4CD"
       date = "2017-01-25"
+      modified = "2023-01-27"
       super_rule = 1
       hash1 = "308a646f57c8be78e6a63ffea551a84b0ae877b23f28a660920c9ba82d57748f"
       hash2 = "44bdf5266b45185b6824898664fd0c0f2039cdcb48b390f150e71345cd867c49"
@@ -111,7 +112,7 @@ rule Greenbug_Malware_5 {
    strings:
       $x1 = "cmd /u /c WMIC /Node:localhost /Namespace:\\\\root\\SecurityCenter" fullword ascii
       $x2 = "cmd /a /c net user administrator /domain >>" fullword ascii
-      $x3 = "cmd /a /c netstat -ant >>\"%localappdata%\\Microsoft\\" fullword ascii
+      $x3 = "cmd /a /c netstat -ant >>\"%localappdata%\\Microsoft\\" ascii
 
       $o1 = "========================== (Net User) ==========================" ascii fullword
    condition:
@@ -136,7 +137,7 @@ rule Greenbug_Malware_Nov17_1 {
    meta:
       description = "Detects Greenbug Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "http://www.clearskysec.com/greenbug/"
       date = "2017-11-26"
       hash1 = "6e55e161dc9ace3076640a36ef4a8819bb85c6d5e88d8e852088478f79cf3b7c"
@@ -149,7 +150,7 @@ rule Greenbug_Malware_Nov17_1 {
       $x5 = "a67d0db8a2a173347654432503702aa3" fullword ascii
       $x6 = "!!! can not create output file !!!" fullword ascii
 
-      $s1 = "\\runlog*" fullword ascii
+      $s1 = "\\runlog*" ascii
       $s2 = "can not specify username!!" fullword ascii
       $s3 = "Agent can not be configured" fullword ascii
    condition:

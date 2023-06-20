@@ -47,7 +47,7 @@ rule Derusbi_Kernel_Driver_WD_UDFS {
 	meta:
 		description = "Detects Derusbi Kernel Driver"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://blog.airbuscybersecurity.com/post/2015/11/Newcomers-in-the-Derusbi-family"
 		date = "2015-12-15"
 		score = 80
@@ -63,10 +63,10 @@ rule Derusbi_Kernel_Driver_WD_UDFS {
       $x5 = "$$$--Hello" fullword ascii
       $x6 = "Wrod--$$$" fullword ascii
 
-		$s1 = "\\Registry\\User\\%s\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings" fullword wide
+		$s1 = "\\Registry\\User\\%s\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings" wide
 		$s2 = "Update.dll" fullword ascii
-		$s3 = "\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\WMI" fullword wide
-		$s4 = "\\Driver\\nsiproxy" fullword wide
+		$s3 = "\\Registry\\Machine\\SYSTEM\\CurrentControlSet\\Control\\WMI" wide
+		$s4 = "\\Driver\\nsiproxy" wide
 		$s5 = "HOST: %s" fullword ascii
 	condition:
 		uint16(0) == 0x5a4d and filesize < 800KB and
@@ -79,7 +79,7 @@ rule Derusbi_Code_Signing_Cert {
 	meta:
 		description = "Detects an executable signed with a certificate also used for Derusbi Trojan - suspicious"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://blog.airbuscybersecurity.com/post/2015/11/Newcomers-in-the-Derusbi-family"
 		date = "2015-12-15"
 		score = 60
@@ -95,7 +95,7 @@ rule XOR_4byte_Key {
 	meta:
 		description = "Detects an executable encrypted with a 4 byte XOR (also used for Derusbi Trojan)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth"
+		author = "Florian Roth (Nextron Systems)"
 		reference = "http://blog.airbuscybersecurity.com/post/2015/11/Newcomers-in-the-Derusbi-family"
 		date = "2015-12-15"
 		score = 60
@@ -119,7 +119,7 @@ rule Derusbi_Backdoor_Mar17_1 {
    meta:
       description = "Detects a variant of the Derusbi backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-      author = "Florian Roth"
+      author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2017-03-03"
       hash1 = "f87915f21dcc527981ebb6db3d332b5b341129b4af83524f59d7178e9d2a3a32"
@@ -131,7 +131,7 @@ rule Derusbi_Backdoor_Mar17_1 {
       $x5 = "OfficeUt32.dll" fullword ascii
       $x6 = "\\\\.\\pipe\\usb%so" fullword wide
       $x7 = "\\\\.\\pipe\\usb%si" fullword wide
-      $x8 = "\\tmp1.dat" fullword wide
+      $x8 = "\\tmp1.dat" wide
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 1 of them )
 }
