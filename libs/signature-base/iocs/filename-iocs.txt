@@ -3904,7 +3904,7 @@ linpeas\.log;75
 \\passav\.exe;65
 
 # Exploit Code File Names
-\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);60;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok)
+\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);60;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok|\\sigma\\|\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}\\n )
 \\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}(\.py|\.exe|\.vbs|\.bat|\.ps1|\.dll);75;(\\share\\doc|CVE\-2017\-9800\-pre\-commit)
 
 # Possible Service Path Escalation Attempt http://www.commonexploits.com/unquoted-service-paths/ or simple malware
@@ -3929,7 +3929,7 @@ Potato\.exe;65
 \\lsass[a-zA-Z_\-\.]{1,16}\.(dmp|zip|rar|7z);70
 
 # Programs or scripts in C:\ProgramData folder (no sub folder)
-\\ProgramData\\[^\\"]{1,40}\.(EXE|DLL|exe|dll|bat|BAT|vbs|VBS|ps1|jar)([^._\\\]]|$);70;(\[Discord\.exe\]|UserProfileMigrationService\.exe|\.exe\.textpad|\\\$WINDOWS\.~BT\\)
+\\[Pp]rogram[Dd]ata\\[^\\"/:]{1,40}\.(EXE|DLL|exe|dll|bat|BAT|vbs|vbe|VBS|ps1|psm1)([^._\\\]A-Za-z]|$);70;(\[Discord\.exe\]|UserProfileMigrationService\.exe|\.exe\.textpad|\\\$WINDOWS\.~BT\\|Found legacy CopyFiles operation)
 
 # PostDump artefacts https://github.com/post-cyberlabs/Offensive_tools/tree/main/PostDump
 :\\Temp\\yolo\.log;75
@@ -4317,5 +4317,36 @@ C:\\ProgramData\\TPM\\winscard\.dll;85
 \\update_v35\.sh;75
 \\install_reuse\.tar;75
 \\update_v2\.sh;75
+
+# CISA report Citrix NetScaler IOCs https://www.cisa.gov/sites/default/files/2023-07/aa23-201a_csa_threat_actors_exploiting_citrix-cve-2023-3519_to_implant_webshells.pdf
+\\netscaler\\ns_gui\\vpn\\medialogininit\.png;85
+\\var\\tmp\\test\.tar\.gz;45
+
+# ESXiArgs IOCs https://www.trustedsec.com/blog/esxiargs-what-you-need-to-know-and-how-to-protect-your-data/
+\\encrypt\.sh;50
+\\tmp\tmpy_8th_nb;70
+\\tmp\\encrypt$;50
+\\tmp\\nohup\.out;65
+\\tmp\\index\.html;40
+\\tmp\\motd;50
+\\tmp\\public\.pem;60
+\\tmp\\archieve\.zip;65
+
+# WER Exploit POC CVE-2023-36874 https://github.com/Wh04m1001/CVE-2023-36874
+\\WerExpl\.exe;75
+\\System32\\wermgr\.exe;70;(?i)(:\\Windows\\|%windir%|\$env:windir|%SystemRoot%|$env:systemroot)
+
+# PPLFault https://github.com/gabriellandau/PPLFault
+C:\\PPLFaultTemp\\;90
+C:\\GodFaultTemp\\;90
+\\GodFaultPayload\.dll;90
+\\PPLFaultPayload\.dll;90
+
+# APT34 malware indicator https://nsfocusglobal.com/apt34-unleashes-new-wave-of-phishing-attack-with-variant-of-sidetwist-trojan/
+\\SystemFailureReporter\\update\.xml;85
+
+# PPLBlade LSASS dumper tool https://github.com/tastypepperoni/PPLBlade
+\\PPLBlade\.dmp;85
+\\PPLBlade\.exe;85
 
 # End
