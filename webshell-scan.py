@@ -5,9 +5,10 @@ import shutil
 import signal as signal_module
 import stat
 from bisect import bisect_left
-
 from sys import platform as _platform
+
 import yara  # install 'yara-python' module not the outdated 'yara' module
+
 from libs.helpers import *
 from libs.logger import *
 
@@ -50,9 +51,16 @@ class Scanner(object):
 
     # Excludes (list of regex that match within the whole path) (user-defined via excludes.cfg)
     fullExcludes = []
+    fullExcludeYaraRules = []
     # Platform specific excludes (match the beginning of the full path) (not user-defined)
     startExcludes = []
-
+    fullFileInclude = [".php", ".php2", ".php3", ".php4", ".php5", ".php6", ".php7", ".phps", ".phps", ".pht", ".phtm",
+                       ".phtml", ".pgif", ".shtml", ".htaccess", ".phar", ".inc", ".hphp", ".ctp", ".module",
+                       ".module", ".inc", ".hphp", ".ctp", ".asp", ".aspx", ".config",
+                       ".ashx", ".asmx", ".aspq", ".axd", ".cshtm", ".cshtml", ".rem", ".soap", ".vbhtm", ".vbhtml",
+                       ".asa", ".cer", ".shtml", ".pl", ".pm", ".cgi", ".lib", ".jsp", ".jspx", ".jsw", ".jsv", ".jspf",
+                       ".wss", ".do", ".action", ".cfm", ".cfml", ".cfc", ".dbm", ".swf", ".yaws", ".ccc", ".vbs",
+                       ".ps1", ".jar", ".war", ".aar", ".ear"]
     # File type magics
     filetype_magics = {}
     max_filetype_magics = 0
@@ -76,6 +84,9 @@ class Scanner(object):
 
         # Excludes
         self.initialize_excludes(os.path.join(self.app_path, "config/excludes.cfg".replace("/", os.sep)))
+
+        self.initialize_exclude_yara_rules(
+            os.path.join(self.app_path, "config/exclude_yara_rules.cfg".replace("/", os.sep)))
 
         # Linux static excludes
         if os_platform == "linux":
@@ -122,13 +133,13 @@ class Scanner(object):
             matching_strings = ""
             for estring in strings:
                 # print string
-                extract = estring[2]
+                extract = estring
                 if not extract in string_matches:
                     string_matches.append(extract)
 
             string_num = 1
             for estring in string_matches:
-                matching_strings += " Str" + str(string_num) + ": " + removeNonAscii(estring)
+                matching_strings += " Str" + str(string_num) + ": " + str(estring)
                 string_num += 1
 
             # Limit string
@@ -222,8 +233,8 @@ class Scanner(object):
                     skipIt = False
 
                     # File size check
-                    # if os.stat(filePath).st_size > 100*(1024*1024):
-                    #     skipIt = True
+                    if os.stat(filePath).st_size > 20 * (1024 * 1024):
+                        skipIt = True
 
                     # User defined excludes
                     for skip in self.fullExcludes:
@@ -305,15 +316,15 @@ class Scanner(object):
                         continue
 
                     # Malware Hash
-                    if self.ioc_contains(self.hashes_md5_list, md5_num):
+                    if self.ioc_contains(self, self.hashes_md5_list, md5_num):
                         matchType = "MD5"
                         matchDesc = self.hashes_md5[md5_num]
                         matchHash = md5
-                    if self.ioc_contains(self.hashes_sha1_list, sha1_num):
+                    if self.ioc_contains(self, self.hashes_sha1_list, sha1_num):
                         matchType = "SHA1"
                         matchDesc = self.hashes_sha1[sha1_num]
                         matchHash = sha1
-                    if self.ioc_contains(self.hashes_sha256_list, sha256_num):
+                    if self.ioc_contains(self, self.hashes_sha256_list, sha256_num):
                         matchType = "SHA256"
                         matchDesc = self.hashes_sha256[sha256_num]
                         matchHash = sha256
@@ -339,6 +350,7 @@ class Scanner(object):
                             # Message
                             message = "Yara Rule MATCH: %s SUBSCORE: %s DESCRIPTION: %s REF: %s AUTHOR: %s" % \
                                       (rule, score, description, reference, author)
+
                             # Matches
                             if matched_strings:
                                 message += " MATCHES: %s" % matched_strings
@@ -348,6 +360,14 @@ class Scanner(object):
 
                     except Exception:
                         logger.log("ERROR", "FileScan", "Cannot YARA scan file: %s" % filePathCleaned)
+
+                    if extension not in self.fullFileInclude:
+                        if total_score >= 100:
+                            total_score = 99
+                        elif total_score >= 60:
+                            total_score = 59
+                        elif total_score >= 40:
+                            total_score = 40
 
                     # Info Line -----------------------------------------------------------------------
                     fileInfo = "===========================================================\n" \
@@ -371,7 +391,7 @@ class Scanner(object):
                     for i, r in enumerate(reasons):
                         message_body += "\tREASON_{0}: {1}\n ".format(i + 1, r)
                         message_csv += "REASON_{0}: {1}\n ".format(i + 1, r)
-                    if args.quarantine and "Yara Rule" in message_body:
+                    if args.quarantine and "===========================================================" in message_body:
                         src = filePath
                         filename = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time()))
                         dst = os.path.join(self.app_path, ("quarantine/" + filename).replace("/", os.sep))
@@ -386,7 +406,7 @@ class Scanner(object):
                     fileInfo_csv["TIME"].append(getAgeString(filePath))
                     fileInfo_csv["DESCRIPTION"].append(message_csv)
                 except Exception:
-                    pass
+                    traceback.print_exc()
         MESSAGE.sort(key=lambda x: x[0], reverse=True)
         for i in MESSAGE:
             logger.log(i[1], "FileScan", i[2])
@@ -417,7 +437,8 @@ class Scanner(object):
                         description = "not set"
                         reference = "-"
                         author = "-"
-
+                        if match.rule in self.fullExcludeYaraRules:
+                            continue
                         # Built-in rules have meta fields (cannot be expected from custom rules)
                         if hasattr(match, 'meta'):
 
@@ -557,8 +578,11 @@ class Scanner(object):
                                            % (file, sys.exc_info()[1]))
                                 continue
 
-                            # Add the rule
-                            yaraRules += yara_rule_data
+                            if ("webshell" in str(yara_rule_data).lower() or "jsp" in str(yara_rule_data).lower()
+                                    or "asp" in str(yara_rule_data).lower() or "php" in str(yara_rule_data).lower()
+                                    or "web" in str(yara_rule_data).lower() or "shell" in str(yara_rule_data).lower()
+                                    or "cmd" in str(yara_rule_data).lower()):
+                                yaraRules += yara_rule_data
 
                         except Exception:
                             logger.log("ERROR", "Init",
@@ -694,6 +718,19 @@ class Scanner(object):
 
         except Exception:
             logger.log("NOTICE", "Init", "Error reading excludes file: %s" % excludes_file)
+
+    def initialize_exclude_yara_rules(self, exclude_yara_rule_file):
+        try:
+            excludes = []
+            with open(exclude_yara_rule_file, 'r') as config:
+                lines = config.read().splitlines()
+
+            for line in lines:
+                excludes.append(line)
+            self.fullExcludeYaraRules = excludes
+
+        except Exception:
+            logger.log("NOTICE", "Init", "Error reading excludes file: %s" % exclude_yara_rule_file)
 
     @staticmethod
     def get_application_path():

@@ -3,7 +3,12 @@ import shutil
 import zipfile
 from sys import platform as _platform
 from urllib.request import urlopen
-import win32api
+
+try:
+    import win32api
+except:
+    pass
+import yara
 
 from libs.logger import *
 
@@ -16,6 +21,41 @@ elif _platform == "linux" or _platform == "linux2":
 else:
     sys.exit("This script is only for Windows and Linux.")
 
+dummy = ""
+
+
+def check_yara_rule(rule_text):
+    try:
+        yara.compile(source=rule_text, externals={
+            'filename': dummy,
+            'filepath': dummy,
+            'extension': dummy,
+            'filetype': dummy,
+            'md5': dummy,
+            'owner': dummy,
+        })
+        return True
+    except yara.SyntaxError as e:
+        print(f"Syntax error in rule: {e}")
+        return False
+
+
+def is_valid_yara_rule(rule_text):
+    yara_imports = "\n".join(re.findall(r'import\s+".+?"$', rule_text, re.MULTILINE))
+    yara_rules = re.split(r'#########split#########', rule_text.replace(r'import\s+".+?"$', ""))[1:]
+    addition_part = re.split(r'#########split#########', rule_text.replace(r'import\s+".+?"$', ""))[0]
+    cut_index = addition_part.rfind('}')
+    res = ""
+    for rule in yara_rules:
+        # Tìm vị trí cuối cùng của dấu '}'
+        end_brace_index = rule.rfind('}')
+
+        # Loại bỏ các ký tự cuối cùng
+        fixed_rule = rule[:end_brace_index + 1]
+        if check_yara_rule(f"{yara_imports}\n{addition_part}\n{res}\n{fixed_rule}"):
+            res += fixed_rule + "\n"
+    return f"{yara_imports}\n{res}" if res != "" else ""
+
 
 class Updater(object):
     # Incompatible signatures
@@ -23,7 +63,9 @@ class Updater(object):
 
     UPDATE_URL_SIGS = [
         "https://github.com/Neo23x0/signature-base/archive/master.zip",
-        "https://github.com/reversinglabs/reversinglabs-yara-rules/archive/develop.zip"
+        "https://github.com/reversinglabs/reversinglabs-yara-rules/archive/develop.zip",
+        "https://github.com/DarkenCode/yara-rules/archive/refs/heads/master.zip",
+        "https://github.com/nsacyber/Mitigating-Web-Shells/archive/refs/heads/master.zip"
     ]
 
     def __init__(self, debug, logger, application_path):
@@ -34,6 +76,7 @@ class Updater(object):
     def update_signatures(self, clean=False):
         try:
             for sig_url in self.UPDATE_URL_SIGS:
+                sig_author = sig_url.split('/')[3]
                 # Downloading current repository
                 try:
                     self.logger.log("INFO", "Upgrader", "Downloading %s ..." % sig_url)
@@ -86,6 +129,8 @@ class Updater(object):
                             targetFile = os.path.join(sigDir, "misc", sigName)
                         elif zipFilePath.endswith(".yara"):
                             targetFile = os.path.join(sigDir, "yara", sigName)
+                        elif zipFilePath.endswith(".yar"):
+                            targetFile = os.path.join(sigDir, "yara", sigName)
                         else:
                             continue
 
@@ -100,6 +145,22 @@ class Updater(object):
                             shutil.copyfileobj(source, target)
                         target.close()
                         source.close()
+                        if zipFilePath.endswith(".yara") or zipFilePath.endswith(".yar"):
+                            with open(targetFile, 'r') as f:
+                                content = f.read()
+                                # Tìm tên luật trong tệp
+                                for line in content.split('\n'):
+                                    if line.strip().startswith('rule '):
+                                        rule_name = line.strip()[5:].split('(')[0].strip()
+                                        content = content.replace(f'rule {rule_name}',
+                                                                  f'#########split#########\nrule {sig_author.replace(" ", "")}_{sigName[:3]}_{rule_name}')
+
+                            # Lưu lại nội dung tệp sau khi đã đổi tên
+                            with open(targetFile, 'w') as f:
+                                res = is_valid_yara_rule(content)
+                                while not check_yara_rule(res):
+                                    res = is_valid_yara_rule(res)
+                                f.write(res)
 
                 except Exception as e:
                     if self.debug:
@@ -136,6 +197,7 @@ def get_application_path():
 if __name__ == '__main__':
     # Computername
     import os
+
     if platform == "windows":
         t_hostname = os.environ['COMPUTERNAME']
     else:
