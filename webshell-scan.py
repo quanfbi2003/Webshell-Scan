@@ -33,7 +33,7 @@ else:
     sys.exit("This script is only for Windows and Linux.")
 
 # CSV file
-fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": []}
+fileInfo_csv = {"FILE": [], "SCORE": [], "DESCRIPTION": [], "EXTENSION": [], "TIME": []}
 
 
 class Scanner(object):
@@ -54,13 +54,7 @@ class Scanner(object):
     fullExcludeYaraRules = []
     # Platform specific excludes (match the beginning of the full path) (not user-defined)
     startExcludes = []
-    fullFileInclude = [".php", ".php2", ".php3", ".php4", ".php5", ".php6", ".php7", ".phps", ".phps", ".pht", ".phtm",
-                       ".phtml", ".pgif", ".shtml", ".htaccess", ".phar", ".inc", ".hphp", ".ctp", ".module",
-                       ".module", ".inc", ".hphp", ".ctp", ".asp", ".aspx", ".config",
-                       ".ashx", ".asmx", ".aspq", ".axd", ".cshtm", ".cshtml", ".rem", ".soap", ".vbhtm", ".vbhtml",
-                       ".asa", ".cer", ".shtml", ".pl", ".pm", ".cgi", ".lib", ".jsp", ".jspx", ".jsw", ".jsv", ".jspf",
-                       ".wss", ".do", ".action", ".cfm", ".cfml", ".cfc", ".dbm", ".swf", ".yaws", ".ccc", ".vbs",
-                       ".ps1", ".jar", ".war", ".aar", ".ear"]
+
     # File type magics
     filetype_magics = {}
     max_filetype_magics = 0
@@ -361,14 +355,6 @@ class Scanner(object):
                     except Exception:
                         logger.log("ERROR", "FileScan", "Cannot YARA scan file: %s" % filePathCleaned)
 
-                    if extension not in self.fullFileInclude:
-                        if total_score >= 100:
-                            total_score = 99
-                        elif total_score >= 60:
-                            total_score = 59
-                        elif total_score >= 40:
-                            total_score = 40
-
                     # Info Line -----------------------------------------------------------------------
                     fileInfo = "===========================================================\n" \
                                "FILE: %s\n SCORE: %s%s\n " % (
@@ -405,6 +391,7 @@ class Scanner(object):
                     fileInfo_csv["SCORE"].append(total_score)
                     fileInfo_csv["TIME"].append(getAgeString(filePath))
                     fileInfo_csv["DESCRIPTION"].append(message_csv)
+                    fileInfo_csv["EXTENSION"].append(extension)
                 except Exception:
                     traceback.print_exc()
         MESSAGE.sort(key=lambda x: x[0], reverse=True)
