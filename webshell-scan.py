@@ -158,7 +158,7 @@ class Scanner(object):
             with open(filePath, 'rb') as f:
                 fileData = f.read()
         except Exception:
-            # logger.log("ERROR", "FileScan", "Cannot open file %s (access denied)" % filePath)
+            logger.log("ERROR", "FileScan", "Cannot open file %s (access denied)" % filePath)
             pass
         finally:
             return fileData
@@ -453,7 +453,8 @@ class Scanner(object):
 
                         yield score, match.rule, description, reference, matched_strings, author
 
-        except Exception:
+        except Exception as e:
+            print(e)
             pass
 
     def initialize_filename_iocs(self, ioc_directory):

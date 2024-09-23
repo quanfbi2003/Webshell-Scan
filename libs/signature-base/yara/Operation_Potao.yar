@@ -1,5 +1,19 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rule DarkenCode_Ope_PotaoDecoy
 {
     strings:
@@ -14,6 +28,31 @@ rule DarkenCode_Ope_PotaoDecoy
     condition:
         ($mz at 0) and ( (all of ($str*)) or any of ($old_ver*) or $wiki_str )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 rule DarkenCode_Ope_PotaoDll
 {
@@ -41,6 +80,16 @@ rule DarkenCode_Ope_PotaoDll
         ($mz at 0) and (any of ($dllstr*) and any of ($dllname*))
 }
 
+
+
+
+
+
+
+
+
+
+
 rule DarkenCode_Ope_PotaoUSB
 {
     strings:
@@ -51,6 +100,21 @@ rule DarkenCode_Ope_PotaoUSB
     condition:
         ($mz at 0) and any of ($binary*)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 rule DarkenCode_Ope_PotaoSecondStage
 {

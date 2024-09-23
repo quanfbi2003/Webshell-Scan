@@ -1,4 +1,5 @@
 import io
+import re
 import shutil
 import zipfile
 from sys import platform as _platform
@@ -154,6 +155,11 @@ class Updater(object):
                                         rule_name = line.strip()[5:].split('(')[0].strip()
                                         content = content.replace(f'rule {rule_name}',
                                                                   f'#########split#########\nrule {sig_author.replace(" ", "")}_{sigName[:3]}_{rule_name}')
+                                    if line.strip().startswith('private rule '):
+                                        rule_name = line.strip()[13:].split('(')[0].strip()
+                                    if f"private rule {rule_name}" in content:
+                                        content = content.replace(f'private rule {rule_name}',
+                                                                  f'#########split#########\nprivate rule {rule_name}')
 
                             # Lưu lại nội dung tệp sau khi đã đổi tên
                             with open(targetFile, 'w') as f:

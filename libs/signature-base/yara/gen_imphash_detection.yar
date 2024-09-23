@@ -1,7 +1,7 @@
 import "pe"
 import "hash"
 
-rule Neo23x0_gen_MAL_Malware_Imphash_Mar23_1 {
+rule Neo23x0_gen_MAL_Malware_Imphash_Mar23_1 : HIGHVOL {
     meta:
         description = "Detects malware by known bad imphash or rich_pe_header_hash"
         reference = "https://yaraify.abuse.ch/statistics/"

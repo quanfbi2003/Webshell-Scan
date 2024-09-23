@@ -1,5 +1,23 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rule Neo23x0_apt_PrikormkaDropper
 {
     strings:
@@ -17,6 +35,63 @@ rule Neo23x0_apt_PrikormkaDropper
     condition:
         uint16(0) == 0x5a4d and ((any of ($bin*)) or (3 of ($kd*)) or (all of ($inj*)))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 rule Neo23x0_apt_PrikormkaModule
 {
@@ -74,6 +149,22 @@ rule Neo23x0_apt_PrikormkaModule
     condition:
         uint16(0) == 0x5a4d and (any of ($str*))
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 rule Neo23x0_apt_PrikormkaEarlyVersion
 {
