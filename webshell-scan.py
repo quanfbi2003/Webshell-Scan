@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-# !/usr/bin/env python3
+# !/usr/bin/env python2
 import argparse
+import ctypes
 import shutil
 import signal as signal_module
 import stat
@@ -12,15 +13,8 @@ import yara  # install 'yara-python' module not the outdated 'yara' module
 from libs.helpers import *
 from libs.logger import *
 
-# For Windows
-try:
-    import wmi
-    from win32comext.shell import shell
-except:
-    pass
-
 # Version
-VERSION = "v1.7"
+VERSION = "v1.8"
 
 # Platform
 os_platform = ""
@@ -226,8 +220,12 @@ class Scanner(object):
 
                     skipIt = False
 
-                    # File size check
-                    if os.stat(filePath).st_size > 20 * (1024 * 1024):
+                    try:
+                        # File size check
+                        if os.stat(filePath).st_size > 20 * (1024 * 1024):
+                            skipIt = True
+                    except Exception as e:
+                        logger.log("ERROR", "FileScan", str(e.args[1]) + ": " + filePath)
                         skipIt = True
 
                     # User defined excludes
@@ -259,10 +257,8 @@ class Scanner(object):
                     c += 1
 
                     print_progress(c, total)
-                    print(filePath + "\t Size: {0} MB\t CSV: {1} bytes".format(os.stat(filePath).st_size / 1024 / 1024,
-                                                                               sys.getsizeof(fileInfo_csv)))
+                    print filePath + "\t Size: {0} MB\t CSV: {1} bytes".format(os.stat(filePath).st_size / 1024.0 / 1024, sys.getsizeof(fileInfo_csv))
                     # Skip program directory
-                    # print appPath.lower() +" - "+ filePath.lower()
                     if self.app_path.lower() in filePath.lower():
                         continue
 
@@ -378,14 +374,16 @@ class Scanner(object):
                         message_body += "\tREASON_{0}: {1}\n ".format(i + 1, r)
                         message_csv += "REASON_{0}: {1}\n ".format(i + 1, r)
                     if args.quarantine and "===========================================================" in message_body:
+                        if not os.path.exists(self.app_path + "/quarantine".replace("/", os.sep)):
+                            os.makedirs(self.app_path + "/quarantine".replace("/", os.sep))
                         src = filePath
                         filename = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time()))
                         dst = os.path.join(self.app_path, ("quarantine/" + filename).replace("/", os.sep))
                         try:
                             shutil.move(src, dst)
                             message_body += "FILE MOVED TO QUARANTINE: %s\n " % dst
-                        except Exception:
-                            message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n "
+                        except Exception as e:
+                            message_body += "FILE CAN NOT MOVED TO QUARANTINE - %s!!!\n " % e.args[1]
                     MESSAGE.append([total_score, message_type, message_body])
                     fileInfo_csv["FILE"].append(filePath)
                     fileInfo_csv["SCORE"].append(total_score)
@@ -454,7 +452,7 @@ class Scanner(object):
                         yield score, match.rule, description, reference, matched_strings, author
 
         except Exception as e:
-            print(e)
+            print e
             pass
 
     def initialize_filename_iocs(self, ioc_directory):
@@ -508,8 +506,7 @@ class Scanner(object):
                                 if 'regex_fp' in locals():
                                     # Replacements
                                     regex_fp = replaceEnvVars(regex_fp)
-                                    regex_fp = transformOS(regex_fp, os_platform)
-                                    # String regex as key - value is compiled regex of false positive values
+                                    regex_fp = transformOS
                                     regex_fp_comp = re.compile(regex_fp)
 
                                 # Create dictionary with IOC data
@@ -729,7 +726,7 @@ class Scanner(object):
                 application_path = os.path.dirname(os.path.realpath(__file__))
             return application_path
         except Exception:
-            print("Error while evaluation of application path")
+            print "Error while evaluation of application path"
             traceback.print_exc()
             sys.exit(1)
 
@@ -753,13 +750,13 @@ class Scanner(object):
     @staticmethod
     def walk_error(err):
         if "Error 3" in str(err):
-            print("Directory walk error")
+            print "Directory walk error"
 
 
 # CTRL+C Handler --------------------------------------------------------------
 def signal_handler(signal_name, frame):
     try:
-        print("------------------------------------------------------------------------------\n")
+        print "------------------------------------------------------------------------------\n"
     except Exception:
         pass
     sys.exit(0)
@@ -799,7 +796,7 @@ if __name__ == '__main__':
     # Check if admin
     isRoot = False
     if os_platform == "windows":
-        if shell.IsUserAnAdmin():
+        if ctypes.windll.shell32.IsUserAnAdmin():
             isRoot = True
             logger.log("INFO", "Init", "Current user has Administrator rights - very good")
         else:

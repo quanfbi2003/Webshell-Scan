@@ -1,6 +1,8 @@
-colorama
-psutil
-netaddr
-WMI
-pywin32
-pandas
+colorama~=0.4.6
+psutil~=5.9.5
+netaddr~=0.8.0
+WMI~=1.5.1
+pywin32==224
+pandas~=0.24.2
+yara-python==3.11.0
+pyinstaller==3.6

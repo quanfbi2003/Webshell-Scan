@@ -2,8 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 # -*- coding: utf-8 -*-
 #
-#
-#  Simple IOC Scanner
+# Simple IOC Scanner
 
 import hashlib
 import os
@@ -14,9 +13,9 @@ import sys
 import psutil
 
 try:
-    from StringIO import StringIO
+    from StringIO import StringIO  # Python 2
 except ImportError:
-    from io import StringIO
+    from io import StringIO  # Python 3
 import netaddr
 import platform
 import time
@@ -119,17 +118,17 @@ def removeBinaryZero(string):
 def print_progress(i, total):
     sys_inf = "\tRAM: {}%".format(str(psutil.virtual_memory()[2]))
     if (i % 4) == 0:
-        print("", end="\r")
-        print(str(i) + "/" + str(total) + " /" + sys_inf, end="\t")
+        sys.stdout.write("\r{} /{} {}".format(str(i), str(total), sys_inf))
+        sys.stdout.flush()
     elif (i % 4) == 1:
-        print("", end="\r")
-        print(str(i) + "/" + str(total) + " -" + sys_inf, end="\t")
+        sys.stdout.write("\r{} -{} {}".format(str(i), str(total), sys_inf))
+        sys.stdout.flush()
     elif (i % 4) == 2:
-        print("", end="\r")
-        print(str(i) + "/" + str(total) + " |" + sys_inf, end="\t")
+        sys.stdout.write("\r{} |{} {}".format(str(i), str(total), sys_inf))
+        sys.stdout.flush()
     elif (i % 4) == 3:
-        print("", end="\r")
-        print(str(i) + "/" + str(total) + " \\" + sys_inf, end="\t")
+        sys.stdout.write("\r{} \\{} {}".format(str(i), str(total), sys_inf))
+        sys.stdout.flush()
 
 
 def transformOS(regex, platform):
@@ -163,20 +162,19 @@ def replaceEnvVars(path):
     if path[:8].lower() == "system32":
         new_path = path.replace("system32", "%s\\System32" % os.environ["SystemRoot"])
 
-    # if path != new_path:
-    #    print "OLD: %s NEW: %s" % (path, new_path)
     return new_path
 
 
 def get_file_type(filePath, filetype_sigs, max_filetype_magics, logger):
     try:
         # Reading bytes from file
-        res_full = open(filePath, 'rb', os.O_RDONLY).read(max_filetype_magics)
+        with open(filePath, 'rb', os.O_RDONLY) as f:
+            res_full = f.read(max_filetype_magics)
         # Checking sigs
         for sig in filetype_sigs:
             bytes_to_read = int(len(str(sig)) / 2)
             res = res_full[:bytes_to_read]
-            if res == bytes.fromhex(sig):
+            if res == sig.decode("hex"):
                 return filetype_sigs[sig]
         return "UNKNOWN"
     except Exception:
@@ -184,31 +182,13 @@ def get_file_type(filePath, filetype_sigs, max_filetype_magics, logger):
 
 
 def removeNonAscii(s, stripit=False):
-    nonascii = "error"
     try:
-        try:
-            printable = set(string.printable)
-            filtered_string = filter(lambda x: x in printable, s.decode('utf-8'))
-            nonascii = ''.join(filtered_string)
-        except Exception:
-            # traceback.print_exc()
-            nonascii = s.hex()
+        printable = set(string.printable)
+        filtered_string = filter(lambda x: x in printable, s)
+        return ''.join(filtered_string)
     except Exception:
         # traceback.print_exc()
-        pass
-
-    return nonascii
-
-
-def removeNonAsciiDrop(s):
-    nonascii = "error"
-    try:
-        # Generate a new string without disturbing characters
-        printable = set(string.printable)
-        nonascii = filter(lambda x: x in printable, s)
-    except Exception:
-        pass
-    return nonascii
+        return s.encode('hex')
 
 
 def getAge(filePath):
@@ -226,13 +206,11 @@ def getAge(filePath):
         # traceback.print_exc()
         return (0, 0, 0)
 
-    # print "%s %s %s" % ( ctime, mtime, atime )
     return (ctime, mtime, atime)
 
 
 def getAgeString(filePath):
     (ctime, mtime, atime) = getAge(filePath)
-    timestring = ""
     try:
         timestring = "\n CREATED: %s MODIFIED: %s ACCESSED: %s" % (time.ctime(ctime), time.ctime(mtime), time.ctime(atime))
     except Exception:
@@ -242,14 +220,13 @@ def getAgeString(filePath):
 
 def runProcess(command, timeout=10):
     """
-    Run a process and check it's output
+    Run a process and check its output
     :param command:
     :return output:
     """
     output = ""
     returnCode = 0
 
-    # Kill check
     try:
         kill_check = threading.Event()
 
@@ -265,12 +242,12 @@ def runProcess(command, timeout=10):
         except subprocess.CalledProcessError as e:
             returnCode = e.returncode
             # traceback.print_exc()
-        # print p.communicate()[0]
+
         pid = p.pid
         watchdog = threading.Timer(timeout, _kill_process_after_a_timeout, args=(pid,))
         watchdog.start()
-        (stdout, stderr) = p.communicate()
-        output = "{0}{1}".format(stdout.decode('utf-8'), stderr.decode('utf-8'))
+        stdout, stderr = p.communicate()
+        output = "{}{}".format(stdout, stderr)
         watchdog.cancel()  # if it's still waiting to run
         success = not kill_check.isSet()
         kill_check.clear()
@@ -286,7 +263,6 @@ def getHostname(os_platform):
     Generate and return a hostname
     :return:
     """
-    # Computername
     if os_platform == "linux" or os_platform == "macos":
         return os.uname()[1]
     else:
