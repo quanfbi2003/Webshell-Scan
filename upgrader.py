@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+import csv
+import ctypes
 import io
+import json
 import os
 import platform
 import re
@@ -34,11 +36,12 @@ else:
 
 dummy = ""
 
+
 def check_yara_rule(rule_text, new_rule):
     try:
         yara.compile(source=rule_text, externals={
             'filename': dummy,
-            'filepath': dummy,
+            'file_path': dummy,
             'extension': dummy,
             'filetype': dummy,
             'md5': dummy,
@@ -50,6 +53,7 @@ def check_yara_rule(rule_text, new_rule):
         if "undefined identifier" in str(e):
             print(new_rule)
         return False
+
 
 def separate_rule(text):
     count = 0
@@ -63,9 +67,10 @@ def separate_rule(text):
 
     return res
 
+
 class Updater(object):
     # Incompatible signatures
-    INCOMPATIBLE_RULES = ["Ransomeware", "Ransom"]
+    INCOMPATIBLE_RULES = []
 
     UPDATE_URL_SIGS = [
         "https://github.com/Neo23x0/signature-base/archive/master.zip",
@@ -82,6 +87,7 @@ class Updater(object):
         self.application_path = application_path
 
     def update_signatures(self):
+        # self.clean_dir("yara/".replace("/", os.sep))
         try:
             for sig_url in self.UPDATE_URL_SIGS:
                 try:
@@ -95,11 +101,12 @@ class Updater(object):
 
                 # Read ZIP file
                 try:
-                    sigDir = os.path.join(self.application_path, os.path.abspath('libs/signature-base/'.replace("/", os.sep)))
+                    sigDir = os.path.join(self.application_path,
+                                          os.path.abspath('libs/signature-base/'.replace("/", os.sep)))
                     zipUpdate = zipfile.ZipFile(io.BytesIO(response.read()))
-                    for zipFilePath in zipUpdate.namelist():
-                        sigName = os.path.basename(zipFilePath)
-                        if zipFilePath.endswith("/".replace("/", os.sep)):
+                    for zipfile_path in zipUpdate.namelist():
+                        sigName = os.path.basename(zipfile_path)
+                        if zipfile_path.endswith("/".replace("/", os.sep)):
                             continue
                         # Skip incompatible rules
                         skip = False
@@ -111,14 +118,14 @@ class Updater(object):
                         if skip:
                             continue
                         # Extract the rules
-                        self.logger.log("DEBUG", "Upgrader", "Extracting %s ..." % zipFilePath)
-                        if "/iocs/" in zipFilePath and zipFilePath.endswith(".txt"):
+                        self.logger.log("DEBUG", "Upgrader", "Extracting %s ..." % zipfile_path)
+                        if "/iocs/" in zipfile_path and zipfile_path.endswith(".txt"):
                             targetFile = os.path.join(sigDir, "iocs", sigName)
-                        elif "/yara/" in zipFilePath and zipFilePath.endswith(".yar"):
+                        elif "/yara/" in zipfile_path and zipfile_path.endswith(".yar"):
                             targetFile = os.path.join(sigDir, "yara", sigName)
-                        elif "/misc/" in zipFilePath and zipFilePath.endswith(".txt"):
+                        elif "/misc/" in zipfile_path and zipfile_path.endswith(".txt"):
                             targetFile = os.path.join(sigDir, "misc", sigName)
-                        elif zipFilePath.endswith(".yara"):
+                        elif zipfile_path.endswith(".yara"):
                             targetFile = os.path.join(sigDir, "yara", sigName)
                         else:
                             continue
@@ -131,7 +138,7 @@ class Updater(object):
                         dir_name = os.path.dirname(targetFile)
                         if not os.path.exists(dir_name):
                             os.makedirs(dir_name)
-                        source = zipUpdate.open(zipFilePath)
+                        source = zipUpdate.open(zipfile_path)
                         target = open(targetFile, "wb")
                         with source, target:
                             shutil.copyfileobj(source, target)
@@ -141,7 +148,7 @@ class Updater(object):
                     self.logger.log("ERROR", "Upgrader", "Error while extracting the signature files from the download "
                                                          "package")
                     sys.exit(1)
-            self.combine_yara_rules()
+            # self.combine_yara_rules()
         except Exception:
             traceback.print_exc()
             return False
@@ -152,10 +159,13 @@ class Updater(object):
         yara_imports = ""
         yara_rules = ""
         org_rules = ""
+        res = []
         for root, dirs, files in os.walk(sigDir):
             for file in files:
                 file_path = os.path.join(root, file)
                 self.logger.log("INFO", "Upgrader", "Processing file: {}".format(file_path))
+                # Ghi tiêu đề cột
+
                 with open(file_path, 'r') as f:
                     rules = f.read()
                     org_rules += f"{rules}\n"
@@ -164,18 +174,26 @@ class Updater(object):
                         if imp not in yara_imports and check_yara_rule(imp, imp):
                             yara_imports += imp + "\n"
                     yara_rule = re.findall(r'rule\s.*?{.*?condition:.*?}', rules, re.DOTALL)
+
+                    res.append({
+                        "original_rules": rules,
+                        "extracted_yara_rule": yara_rule
+                    })
                     for rule in yara_rule:
                         separate = separate_rule(rule)
                         for ru in separate:
                             temp_combined = yara_rules + ru + "\n"
                             if check_yara_rule(yara_imports + temp_combined, ru):
                                 yara_rules = temp_combined
+        with open("rules_comparison.json", "w") as json_file:
+            json.dump(res, json_file, indent=4)
         self.clean_dir("yara/".replace("/", os.sep))
         with open(sigDir + "/webshell_scan.yar".replace("/", os.sep), 'w') as f:
             f.write(yara_imports + yara_rules)
-        with open(sigDir + "/webshell_scan_org.yar".replace("/", os.sep), 'w') as f:
-            f.write(org_rules)
-            self.logger.log("INFO", "Upgrader", "Valid YARA rules saved to " + sigDir + "/webshell_scan.yar".replace("/", os.sep))
+        # with open(sigDir + "/webshell_scan_org.yar".replace("/", os.sep), 'w') as f:
+        #     f.write(org_rules)
+            self.logger.log("INFO", "Upgrader",
+                            "Valid YARA rules saved to " + sigDir + "/webshell_scan.yar".replace("/", os.sep))
 
     def clean_dir(self, target):
         try:
@@ -190,6 +208,7 @@ class Updater(object):
             self.logger.log("ERROR", "Upgrader", "Error while creating the signature-base directories")
             sys.exit(1)
 
+
 def get_application_path():
     try:
         if getattr(sys, 'frozen', False):
@@ -197,11 +216,14 @@ def get_application_path():
         else:
             application_path = os.path.dirname(os.path.realpath(__file__))
         if "~" in application_path and platform == "windows":
-            application_path = win32api.GetLongPathName(application_path)
+            long_path = ctypes.create_unicode_buffer(260); ctypes.windll.kernel32.GetLongPathNameW(application_path, long_path, 260) and long_path.value or None
+            application_path = long_path
+
         return application_path
     except Exception:
         print("Error while evaluation of application path")
         traceback.print_exc()
+
 
 if __name__ == '__main__':
     if platform == "windows":

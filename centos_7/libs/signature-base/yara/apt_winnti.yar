@@ -159,6 +159,7 @@ rule Neo23x0_apt_APT_Winnti_MAL_Dec19_1 {
       author = "Unknown"
       reference = "https://www.verfassungsschutz.de/download/broschuere-2019-12-bfv-cyber-brief-2019-01.pdf"
       date = "2019-12-06"
+      modified = "2025-06-03"
       score = 75
       id = "322e9362-bfb6-55e3-9a93-d54246311d11"
    strings:
@@ -167,8 +168,12 @@ rule Neo23x0_apt_APT_Winnti_MAL_Dec19_1 {
       $e3 = "Global\\BFE_Notify_Event_{65a097fe-6102-446a-9f9c-55dfc3f411016}" ascii nocase
       $e4 = "\\BaseNamedObjects\\{B2B87CCA-66BC-4C24-89B2-C23C9EAC2A66}" wide
       $e5 = "BFE_Notify_Event_{7D00FA3C-FBDC-4A8D-AEEB-3F55A4890D2A}" nocase
+
+      $fp1 = "also increase possible memory usage of THOR."
    condition:
-      uint16(0) == 0x5a4d and filesize < 3000KB and (any of ($e*))
+      uint16(0) == 0x5a4d and filesize < 3000KB and
+      1 of ($e*) and not 1 of ($fp*)
+
 }
 
 rule Neo23x0_apt_APT_Winnti_MAL_Dec19_2 {
@@ -205,7 +210,7 @@ rule Neo23x0_apt_APT_Winnti_MAL_Dec19_3 {
       score = 75
       id = "2e001c91-0794-5940-ad8c-8e58a01e100c"
    strings:
-      $b1 = { 0F B7 ?? 16 [0-1] (81 E? | 25) 00 20 [0-2] [8] 8B ?? 50 41 B9 40 00 00 00 41 B8 00 10 00 00 }
+      $b1 = { 0F B7 ?? 16 [0-1] (81 E? | 25) 00 20 [8-10] 8B ?? 50 41 B9 40 00 00 00 41 B8 00 10 00 00 }
       $b2 = { 8B 40 28 [5-8] 48 03 C8 48 8B C1 [5-8] 48 89 41 28 }
       $b3 = { 48 6B ?? 28 [5-8] 8B ?? ?? 10 [5-8] 48 6B ?? 28 [5-8] 8B ?? ?? 14 }
       $b4 = { 83 B? 90 00 00 00 00 0F 84 [9-12] 83 B? 94 00 00 00 00 0F 84 }

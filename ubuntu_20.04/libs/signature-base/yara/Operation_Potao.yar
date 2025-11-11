@@ -36,7 +36,7 @@ rule DarkenCode_Ope_PotaoDll
         $dllname7 = "PasswordStealer.dll"
         $dllname8 = "KeyLog2Runner.dll" 
         $dllname9 = "GetAllSystemInfo.dll"          
-        $dllname10 = "FilePathStealer.dll"          
+        $dllname10 = "file_pathStealer.dll"
     condition:
         ($mz at 0) and (any of ($dllstr*) and any of ($dllname*))
 }

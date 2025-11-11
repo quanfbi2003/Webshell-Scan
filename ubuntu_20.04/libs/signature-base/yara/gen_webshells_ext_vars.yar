@@ -92,10 +92,10 @@ rule Neo23x0_gen_webshell_php_by_string_obfuscation : FILE {
 		)
 		and any of ( $opbs* )
 		and not 1 of ($fp*)
-      and not filepath contains "\\Cache\\" /* generic cache e.g. for Chrome: \User Data\Default\Cache\ */
-      and not filepath contains "\\User Data\\Default\\Extensions\\" // chrome extensions
-      and not filepath contains "\\cache2\\" // FF cache
-      and not filepath contains "\\Microsoft\\Windows\\INetCache\\IE\\" // old IE
-      and not filepath contains "/com.apple.Safari/WebKitCache/"
-      and not filepath contains "\\Edge\\User Data\\" // some uncommon Edge path
+      and not file_path contains "\\Cache\\" /* generic cache e.g. for Chrome: \User Data\Default\Cache\ */
+      and not file_path contains "\\User Data\\Default\\Extensions\\" // chrome extensions
+      and not file_path contains "\\cache2\\" // FF cache
+      and not file_path contains "\\Microsoft\\Windows\\INetCache\\IE\\" // old IE
+      and not file_path contains "/com.apple.Safari/WebKitCache/"
+      and not file_path contains "\\Edge\\User Data\\" // some uncommon Edge path
 }

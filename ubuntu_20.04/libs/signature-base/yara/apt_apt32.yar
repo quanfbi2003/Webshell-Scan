@@ -31,7 +31,7 @@ rule Neo23x0_apt_EXT_APT32_osx_backdoor_loader {
     $a2 = { 41 0F 10 04 07 0F 57 84 05 A0 FE FF FF 41 0F 11 04 07 48 83 C0 10 48 83 F8 10 75 }
 
     // Encrypted data
-    $e1 = { CA CF 3E F2 DA 43 E6 D1  D5 6C D4 23 3A AE F1 B2 } // Decoded to drop filepath: '/tmp/panels'
+    $e1 = { CA CF 3E F2 DA 43 E6 D1  D5 6C D4 23 3A AE F1 B2 } // Decoded to drop file_path: '/tmp/panels'
     $e2 = "MlkHVdRbOkra9s+G65MAoLga340t3+zj/u8LPfP3hig=" // Decoded to export API name 'ArchaeologistCodeine'
     $e3 = { 5A 69 98 0E 6C 4B 5C 69  7E 19 34 3B C3 07 CA 13 } // Decoded to 'ifconfig -l'
     $e4 = "1Sib4HfPuRQjpxIpECnxxTPiu3FXOFAHMx/+9MEVv9M+h1ngV7T5WUP3b0zsg0Qd" // Decoded to export API 'PlayerAberadurtheIncomprehensible'

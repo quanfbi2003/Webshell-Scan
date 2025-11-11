@@ -10,7 +10,7 @@ rule Neo23x0_apt_HvS_APT37_smb_scanner {
       reference2 = "https://www.hybrid-analysis.com/sample/d16163526242508d6961f061aaffe3ae5321bd64d8ceb6b2788f1570757595fc?environmentId=2"
       id = "89a5cc32-f151-583d-823d-692de2c2b084"
    strings:
-      $s1 = "Scan.exe StartIP EndIP ThreadCount logfilePath [Username Password Deep]" fullword ascii
+      $s1 = "Scan.exe StartIP EndIP ThreadCount logfile_path [Username Password Deep]" fullword ascii
       $s2 = "%s - %s:(Username - %s / Password - %s" fullword ascii
       $s3 = "Load mpr.dll Error " fullword ascii
       $s4 = "Load Netapi32.dll Error " fullword ascii

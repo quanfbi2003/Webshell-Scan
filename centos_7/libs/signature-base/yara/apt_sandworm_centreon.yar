@@ -105,7 +105,7 @@ rule Neo23x0_apt_APT_MAL_Sandworm_Exaramel_Configuration_File_Plaintext {
       score = 80
       id = "6f0d834b-e6c8-59e6-bf9a-b4fd9c0b2297"
    strings:
-      $ = /{"Hosts":\[".{10,512}"\],"Proxy":".{0,512}","Version":".{1,32}","Guid":"/
+      $ = /\{"Hosts":\[".{10,512}"\],"Proxy":".{0,512}","Version":".{1,32}","Guid":"/
    condition:
       all of them
 }

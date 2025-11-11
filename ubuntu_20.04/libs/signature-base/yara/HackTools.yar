@@ -473,7 +473,7 @@ rule DarkenCode_Hac_CGISscan_CGIScan {
 		$s2 = "WSocketResolveHost: Cannot convert host address '%s'"
 		$s3 = "tcp is the only protocol supported thru socks server"
 		
-		$path1 = /filepath: .{,70}EPO.{,70}\n/
+		$path1 = /file_path: .{,70}EPO.{,70}\n/
 	condition:
 		$s2 and $s3 and not $path1
 }

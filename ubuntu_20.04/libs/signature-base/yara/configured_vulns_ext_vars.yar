@@ -31,7 +31,7 @@ rule Neo23x0_con_VULN_Linux_Sudoers_Commands {
 		/* $command18 = "/mount " ascii prone to FPs */ 
 
 	condition:
-		( filename == "sudoers" or filepath contains "/etc/sudoers.d" ) and 
+		( filename == "sudoers" or file_path contains "/etc/sudoers.d" ) and
 		any of ($command*)
 }
 
@@ -51,7 +51,7 @@ rule Neo23x0_con_VULN_Linux_NFS_Exports {
 
 	condition:
 		filename == "exports" and 
-		filepath contains "/etc" and 
+		file_path contains "/etc" and
 		any of ($conf*)
 }
 
@@ -136,9 +136,9 @@ rule Neo23x0_con_VULN_Unencrypted_SSH_Private_Key : T1552_004 {
             movement => bad signal noise ratio
         */
         (
-            filepath contains "ssh" or
-            filepath contains "SSH" or
-            filepath contains "utty" or
+            file_path contains "ssh" or
+            file_path contains "SSH" or
+            file_path contains "utty" or
             filename contains "ssh" or
             filename contains "SSH" or
             filename contains "id_" or
@@ -158,7 +158,7 @@ rule Neo23x0_con_VULN_Unencrypted_SSH_Private_Key : T1552_004 {
                 $putty_noenc
             )
         )
-        and not filepath contains "/root/"
+        and not file_path contains "/root/"
         and not filename contains "ssh_host_"
 }
 
@@ -208,9 +208,9 @@ rule Neo23x0_con_VULN_Unencrypted_SSH_Private_Key_Root_Folder : T1552_004 {
             movement => bad signal noise ratio
         */
         (
-            filepath contains "ssh" or
-            filepath contains "SSH" or
-            filepath contains "utty" or
+            file_path contains "ssh" or
+            file_path contains "SSH" or
+            file_path contains "utty" or
             filename contains "ssh" or
             filename contains "SSH" or
             filename contains "id_" or
@@ -230,6 +230,6 @@ rule Neo23x0_con_VULN_Unencrypted_SSH_Private_Key_Root_Folder : T1552_004 {
                 $putty_noenc
             )
         )
-        and filepath contains "/root/"
+        and file_path contains "/root/"
         and not filename contains "ssh_host_"
 }

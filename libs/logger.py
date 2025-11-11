@@ -7,9 +7,14 @@ import traceback
 import pandas as pd
 from colorama import Fore, Back, Style
 from colorama import init
-
+import socket
 
 # Logger Class -----------------------------------------------------------------
+def get_server_ip():
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+    return f"{hostname}_{ip_address}"
+
 def log_to_stdout(message, mes_type):
     try:
         reset_all = Style.NORMAL + Fore.RESET
@@ -54,7 +59,7 @@ def log_to_stdout(message, mes_type):
                                  re.VERBOSE)
         message = linebreaker.sub(r'\n\1', message)
         # Colorize Key Words
-        colorer = re.compile('([A-Z_0-9]{2,}:)\s', re.VERBOSE)
+        colorer = re.compile(r'([A-Z_0-9]{2,}:)\s', re.VERBOSE)
         message = colorer.sub(key_color + Style.BRIGHT + r'\1 ' + base_color + Style.NORMAL, message)
 
         # Print to console
@@ -92,10 +97,10 @@ class Logger:
     messagecount = 0
     linesep = "\n"
 
-    def __init__(self, hostname, platform,  caller, log_file="output.log", VERSION=""):
+    def __init__(self, hostname, platform,  caller, VERSION=""):
         self.hostname = hostname
         self.caller = caller
-        self.log_file = "logs/".replace("/", os.sep) + log_file
+        self.log_file = "logs/".replace("/", os.sep) + get_server_ip()
         if "windows" in platform.lower():
             self.linesep = "\r\n"
 
@@ -129,20 +134,18 @@ class Logger:
         df.to_excel(self.log_file + ".xlsx", index=True)
 
     def log_to_file(self, message, mes_type, module):
-        if mes_type == "INFO":
-            return # no logging for INFO messages
         try:
             # Write to file - Pending
-            with codecs.open(self.log_file, "a", encoding='utf-8') as logfile:
-                logfile.write(Format(u"{0}{1}\n", message, self.linesep))
+            with codecs.open(f"{self.log_file}.log", "a", encoding='utf-8') as logfile:
+                logfile.write(Format(f"[{mes_type}]{message}{self.linesep}"))
         except Exception:
             traceback.print_exc()
-            print("Cannot print line to log file {0}".format(self.log_file))
+            print(f"Cannot print line to log file {0}".format(f"{self.log_file}.log"))
             exit(1)
 
     def print_welcome(self, VERSION):
         if self.caller == 'main':
-            with codecs.open(self.log_file, "w", encoding='utf-8') as logfile:
+            with codecs.open(f"{self.log_file}.log", "w", encoding='utf-8') as logfile:
                 pass
             print(str(Back.WHITE))
             print(" ".ljust(79) + Back.BLACK + Style.BRIGHT)

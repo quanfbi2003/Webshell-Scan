@@ -25,7 +25,7 @@ rule DarkenCode_gen_Cloaked_RAR_File {
 	condition:
 		uint32be(0) == 0x52617221							// RAR File Magic Header
 		and not filename matches /(rarnew.dat|\.rar)$/is	// not the .RAR extension
-		and not filepath contains "Recycle" 				// not a deleted RAR file in recycler
+		and not file_path contains "Recycle" 				// not a deleted RAR file in recycler
 }
 
 rule DarkenCode_gen_Base64_encoded_Executable {
@@ -41,7 +41,7 @@ rule DarkenCode_gen_Base64_encoded_Executable {
 		$s4 = "TVpQAAIAAAAEAA8A//8AALgAAAA" // 168 samples in goodware archive
 		$s5 = "TVqQAAMAAAAEAAAA//8AALgAAAA" // 28,529 samples in goodware archive
 	condition:
-		1 of them and not filepath contains "Thunderbird"
+		1 of them and not file_path contains "Thunderbird"
 }
 
 rule DarkenCode_gen_Binary_Drop_Certutil {

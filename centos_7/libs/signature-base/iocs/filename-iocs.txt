@@ -4,14 +4,14 @@
 #
 # APPLICATION ------------------------------------------------------------------
 #
-# Every line is treated as REGEX case sensitive.
+# Every line is treated as REGEX case sensitive. Prepend (?i) to make it case insensitive, e.g. (?i)C:\\TEMP\\MKATZ.EXE;80
 # Every line includes a description that gives information about the file name
 # based IOC
 #
 # FORMAT -----------------------------------------------------------------------
 #
 # # COMMENT
-# REGEX;SCORE
+# REGEX;SCORE[;EXCLUDE FALSE POSITIVE REGEX]
 #
 # EXAMPLES ---------------------------------------------------------------------
 #
@@ -22,6 +22,9 @@
 # (Anwendungsdaten|Application Data|APPDATA)\\sydmain\.dll;80
 # (TEMP|Temp)\\[^\\"]+\.(xmd|yls)$;80
 # (LOCAL SETTINGS\\Temp|Local Settings\\Temp|Local\\Temp)\\(word\.exe|winword\.exe)[^\.];80
+#
+# examples with false positive exclusion, if "SysInternals\" is contained in the path
+# (?i)\\procdump(64)?(a)?\.(exe|zip);50;(?i)(SysInternals\\)
 #
 
 # Ncat Example
@@ -359,7 +362,6 @@ Temp\\dllhost\.exe;80
 Temp\\sechost\.exe;80
 AppData\\chkdbg.log;60
 AppData\\svchost\.exe;80
-temp\\svchost\.exe;80
 AppData\\conhost\.dll;80
 Temp\\conhost\.dll;80
 
@@ -2048,7 +2050,7 @@ ystem32\\lcsvsvc\.dll;80
 \\svchots\.exe;76
 \\suchost\.exe;76
 \\svchost\.\.exe;76
-\\rundll64\.exe;76
+\\rundll64\.exe;55
 
 # Stuff running where it normally shouldn't
 \\((Users|Documents and Settings))\\[^\\"]{1,20}\.(exe|dll);65
@@ -3698,7 +3700,7 @@ _BloodHound\.zip;90
 \\Invoke-PetitPotam;95
 \\RottenPotato;85
 \\HotPotato;85
-\\JuicyPotato;85
+\\JuicyPotato;85;\\JuicyPotato\.php
 \\just_dce_;85
 \\Juicy Potato;85
 \\temp\rot\.exe;75
@@ -3903,7 +3905,7 @@ linpeas\.log;75
 \\passav\.exe;65
 
 # Exploit Code File Names
-\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);60;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok|\\sigma\\|\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}\\n | MFSA |emerging-threats)
+\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);55;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok|\\sigma\\|\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}\\n | MFSA |emerging-threats|advisory|fixed)
 \\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}(\.py|\.exe|\.vbs|\.bat|\.ps1|\.dll);75;(\\share\\doc|CVE\-2017\-9800\-pre\-commit)
 
 # Possible Service Path Escalation Attempt http://www.commonexploits.com/unquoted-service-paths/ or simple malware
@@ -3973,7 +3975,7 @@ Potato\.exe;65
 \\mktzx64\.dll;85
 
 # BPFDoor Analysis https://doublepulsar.com/bpfdoor-an-active-chinese-global-surveillance-tool-54b078f1a896 https://www.sandflysecurity.com/blog/bpfdoor-an-evasive-linux-backdoor-technical-analysis/
-/dev/shm/kdmtmpflush;90
+/dev/shm/kdmtmpflush;90;grep
 /dev/shm/kdumpflush;90
 /dev/shm/kdumpdb;90
 /var/run/haldrund\.pid;80
@@ -4403,5 +4405,127 @@ C:\\ProgramData\\JWrapper-Remote Access\\JWAppsSharedConfig\\serviceconfig\.xml;
 C:\\ProgramData\\1\.msi;85
 c:\\programdata\\update\.dat;80
 C:\\perflogs\\RunSchedulerTaskOnce\.ps1;85
+
+# perfctl IOCs https://www.aquasec.com/blog/perfctl-a-stealthy-malware-targeting-millions-of-linux-servers/
+/libgcwrap\.so;65
+/libpprocps\.so;65
+/libfsnldev\.so;65
+/usr/bin/perfcc;65
+/root/\.config/cron/perfcc;65
+/tmp/.xdiag/exi;65
+/tmp/.xdiag/elog;65
+/tmp/.xdiag/int/.e.lock;65
+/tmp/.xdiag/hroot/hscheck;65
+/tmp/.xdiag/tordata/control_auth_cookie.tmp;85
+/tmp/.xdiag/tordata/cached-certs.tmp;85
+/tmp/.xdiag/tordata/cached-microdesc-consensus.tmp;85
+/tmp/.xdiag/tordata/state.tmp;85
+
+# Suspicioius *.rdp files in Outlook temporary folders https://www.microsoft.com/en-us/security/blog/2024/10/29/midnight-blizzard-conducts-large-scale-spear-phishing-campaign-using-rdp-files/
+\\AppData\\Local\\Microsoft\\Windows\\(INetCache|Temporary Internet Files)\\Content\.Outlook\\[A-Z0-9]{8}\\[^\\]{1,255}\.rdp$;70
+\\AppData\\Local\\Packages\\Microsoft\.Outlook_[a-zA-Z0-9]{1,50}\\.{0,120}\\[^\\]{1,80}\.rdp$;70
+\\AppData\\Local\\Microsoft\\Olk\\Attachments\\([^\\]{1,50}\\){0,5}[^\\]{1,80}\.rdp$;70
+
+# Cleo Software Exploitation https://www.huntress.com/blog/threat-advisory-oh-no-cleo-cleo-software-actively-being-exploited-in-the-wild
+60282967-dc91-40ef-a34c-38e992509c2c\.xml;85
+\\healthchecktemplate\.txt;75
+\\healthcheck\.txt;60
+
+# Malicious Chrome Extensions https://docs.google.com/spreadsheets/d/1LN7MQ_9W5QHIyZjjqXK7JnSiCLlcF4aBRhmZKon-p4U/edit?gid=0#gid=0
+\\User Data\\Default\\Extensions\\odccobbfnngplckpongkahajfjpnbcck;75
+\\User Data\\Default\\Extensions\\afefmfbcccnppcaiebpmbpmddhilkkdi;75
+\\User Data\\Default\\Extensions\\oaljkhbgbedmfoiieocoenglpaeogjmf;75
+\\User Data\\Default\\Extensions\\ndajnaaobjaganokllcgbapngenfbgkc;75
+\\User Data\\Default\\Extensions\\okjdbeegldeilceaflghgfdemobmfhbd;75
+\\User Data\\Default\\Extensions\\jhigofkbdbndeooldpdhmphldaglejlh;75
+\\User Data\\Default\\Extensions\\pmgmbeeafpdjjhmeaalneginpmdhamhe;75
+\\User Data\\Default\\Extensions\\eobcealmgdjeoheieiobkedbgddicaba;75
+\\User Data\\Default\\Extensions\\lnedcnepmplnjmfdiclhbfhneconamoj;75
+\\User Data\\Default\\Extensions\\gadjnphfolikkffmppnicebdfimlblkj;75
+\\User Data\\Default\\Extensions\\njfkgeajknkffkngdmjmjninkbgjedlo;75
+\\User Data\\Default\\Extensions\\eldjnmdpkecnjjkmmgndpcibgkfpodfh;75
+\\User Data\\Default\\Extensions\\omieocempinhilcpbmnfdaamgomapded;75
+\\User Data\\Default\\Extensions\\ilgbcnkedmncjlhpfconadpjnhlflejf;75
+\\User Data\\Default\\Extensions\\okggiiagcegdfiajlkodohfkeemnjlnd;75
+\\User Data\\Default\\Extensions\\jgajjllfidghjkjfipmjbaegafkdpfha;75
+\\User Data\\Default\\Extensions\\gpibjjfllodpcfhcjpamonnblkbinbie;75
+\\User Data\\Default\\Extensions\\hpdpddnfjaacnbcnoohlcipfafkbmdja;75
+\\User Data\\Default\\Extensions\\lljnhidbljbfkejjcfogkhgmgdihjmlf;75
+\\User Data\\Default\\Extensions\\gclgncjpanihjpbjbecgfmfnipggcckn;75
+\\User Data\\Default\\Extensions\\cpehflfpgdgofpocagbdeecjlfhjfjdh;75
+\\User Data\\Default\\Extensions\\mdenajpfccjjjnbochgkdahmnipfpelc;75
+\\User Data\\Default\\Extensions\\eoclijfghiglinncpceohgaigfgnlbim;75
+\\User Data\\Default\\Extensions\\cghdfcbncfjhleinblpalngjhojokjeo;75
+\\User Data\\Default\\Extensions\\jeahgicmhigopdgilnmclihdjjlhnmop;75
+\\User Data\\Default\\Extensions\\edbhdbhgdbanjhdnpjcianjgfmdkgbcf;75
+\\User Data\\Default\\Extensions\\jjnfhbcilcppomkcmkbbmcadoihkkgah;75
+\\User Data\\Default\\Extensions\\dmnajaiijohbndidolbdbpicdjanombo;75
+\\User Data\\Default\\Extensions\\gpghebehjahceknfdcfifeifhdbongld;75
+\\User Data\\Default\\Extensions\\gidejehfgombmkfflghejpncblgfkagj;75
+\\User Data\\Default\\Extensions\\koolcjajfdkjjfklmidahmcjhcmmkhma;75
+\\User Data\\Default\\Extensions\\gijlkeaijpeaoihdajcgmiajeoonnkoj;75
+\\User Data\\Default\\Extensions\\kldgaejigkhpgmfglbamggiglngkifck;75
+\\User Data\\Default\\Extensions\\ojlhcbolfcndnojcjhhjgmdblnojgefm;75
+\\User Data\\Default\\Extensions\\eldjnmdpkecnjjkmmgndpcibgkfpodfh;75
+\\User Data\\Default\\Extensions\\kiecdaoopedhfgapicmpebbhodepnbbp;75
+\\User Data\\Default\\Extensions\\dmakkciciccnjgmfjflpbdfkdnmpfghp;75
+\\User Data\\Default\\Extensions\\ebhcaliljppmelancooakfgcgcceiind;75
+\\User Data\\Default\\Extensions\\eekblbhfmladafbmpgkdedmolbjkjbnc;75
+\\User Data\\Default\\Extensions\\ejkdgndbgpfcaggpmnijcbddlnmdnpka;75
+\\User Data\\Default\\Extensions\\fojomppheellamdaddnbgommepnlkooh;75
+\\User Data\\Default\\Extensions\\gmbebpcapalekeaoekfhpbioilghcfmp;75
+\\User Data\\Default\\Extensions\\ndcphhjcebhifabfmebineokbfdnbphm;75
+\\User Data\\Default\\Extensions\\oghbffaoaooigagpockijkpfpgmnibkh;75
+\\User Data\\Default\\Extensions\\oppeaknhldjjnfnflbcedipjbnbimhhf;75
+\\User Data\\Default\\Extensions\\pcfapghfanllmbdfiipeiihpkojekckk;75
+\\User Data\\Default\\Extensions\\lfmdddfdacgdimongmjclgijepoknmjm;75
+\\User Data\\Default\\Extensions\\pmannhofeaiadkcdbcebhnkcnkjjnfpn;75
+\\User Data\\Default\\Extensions\\lkbfbidpkbeicafnnhlaockggaknjolf;75
+\\User Data\\Default\\Extensions\\adjpoipklnhlapjijccnemdhkcphcegd;75
+\\User Data\\Default\\Extensions\\dkcjihabohaldgjkdmenepolojcjdaah;75
+\\User Data\\Default\\Extensions\\iiegilogjnagependdonbfcmfmmaamon;75
+\\User Data\\Default\\Extensions\\aiaaeimmjjeceodjpficfnjckenedbon;75
+\\User Data\\Default\\Extensions\\alogdolelipkojjgggejccalcbdioolg;75
+\\User Data\\Default\\Extensions\\fchgahponkgfomlgieipannlfanfbfak;75
+\\User Data\\Default\\Extensions\\fojomppheellamdaddnbgommepnlkooh;75
+\\User Data\\Default\\Extensions\\ldanhaibkdifncinbpjdjpambmofmpkf;75
+\\User Data\\Default\\Extensions\\aehjmdkbfemaefoebbihbfcmhehgimcl;75
+
+# SAP Netwaever Exploitation IOCs https://redcanary.com/blog/threat-intelligence/cve-2025-31324/
+\\irj\\servlet_jsp\\irj\\root\\usage\.jsp;80
+\\irj\\servlet_jsp\\irj\\root\\usage1\.jsp;80
+\\irj\\servlet_jsp\\irj\\root\\helper\.jsp;80
+\\irj\\servlet_jsp\\irj\\root\\404_error\.jsp;80
+\\irj\\servlet_jsp\\irj\\root\\\.h\.jsp;80
+\\irj\\servlet_jsp\\irj\\root\\webhelp\.jsp;80
+\\irj\\servlet_jsp\\irj\\root\\\.webhelper\.jsp;80
+\\servlet_jsp\\_default\\root\\forwardsap\.jsp;80
+\\tmp\\8bq\.sh;80
+
+# Katz Stealer 
+\\katz_ontop\.dll;80
+\\received_dll\.dll;80
+\\decrypted_chrome_key\.txt;80
+\\decrypted_edge_key\.txt;80
+\\decrypted_brave_key\.txt;80
+
+# Discovery and Enumeration Tools often used by ransomware gangs: https://github.com/BushidoUK/Ransomware-Tool-Matrix/blob/main/Tools/DiscoveryEnum.md - Some have low score because they're also often used by administrators and developers. Investigate if they're found on the machine of Bob from accounting.
+(?i)\\advanced_ip_scanner;45
+(?i)\\advanced_port_scanner;45
+\\netscan\.exe;45
+\\ipscan\.exe;45
+(?i)\\everything.exe;38
+\\rustscan.exe;60
+\\PingCastle\.exe;70
+(?i)\\sharefinder\.exe;80
+(?i)\\SharpShares\.exe;80
+
+# SharePoint exploitation artefact CVE-2025-53770 https://research.eye.security/sharepoint-under-siege/
+# and https://www.welivesecurity.com/en/eset-research/toolshell-an-all-you-can-eat-buffet-for-threat-actors/
+\\spinstall[0-9]{0,1}\.aspx;85
+\\ghostfile[0-9]{0,3}\.aspx;85
+\\TEMPLATE\\LAYOUTS\\spinstall;85
+\\LAYOUTS\\debug_dev\.js;85
+\\TEMPLATE\\LAYOUTS\\1\.css;85
 
 # End

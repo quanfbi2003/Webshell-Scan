@@ -11,7 +11,7 @@ def is_valid_yara_rule(rule_text):
     try:
         yara.compile(source=rule_text, externals={
             'filename': dummy,
-            'filepath': dummy,
+            'file_path': dummy,
             'extension': dummy,
             'filetype': dummy,
             'md5': dummy,

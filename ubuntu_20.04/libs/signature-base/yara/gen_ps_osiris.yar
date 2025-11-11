@@ -14,7 +14,7 @@ rule Neo23x0_gen_Invoke_OSiRis {
       $x2 = "Invoke-OSiRis" ascii
       $x3 = "-Arg@{Name=$VarName;VariableValue=$OSiRis;UserName=$env:Username}" fullword ascii
       $x4 = "Device Guard Bypass Command Execution" fullword ascii
-      $x5 = "-Put Payload in Win32_OSRecoveryConfiguration DebugFilePath" fullword ascii
+      $x5 = "-Put Payload in Win32_OSRecoveryConfiguration Debugfile_path" fullword ascii
       $x6 = "$null = Iwmi Win32_Process -EnableA -Impers 3 -AuthenPacketprivacy -Name Create" fullword ascii
    condition:
       1 of them

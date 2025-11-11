@@ -168,10 +168,10 @@ def replaceEnvVars(path):
     return new_path
 
 
-def get_file_type(filePath, filetype_sigs, max_filetype_magics, logger):
+def get_file_type(file_path, filetype_sigs, max_filetype_magics, logger):
     try:
         # Reading bytes from file
-        res_full = open(filePath, 'rb', os.O_RDONLY).read(max_filetype_magics)
+        res_full = open(file_path, 'rb', os.O_RDONLY).read(max_filetype_magics)
         # Checking sigs
         for sig in filetype_sigs:
             bytes_to_read = int(len(str(sig)) / 2)
@@ -211,9 +211,9 @@ def removeNonAsciiDrop(s):
     return nonascii
 
 
-def getAge(filePath):
+def getAge(file_path):
     try:
-        stats = os.stat(filePath)
+        stats = os.stat(file_path)
 
         # Created
         ctime = stats.st_ctime
@@ -230,8 +230,8 @@ def getAge(filePath):
     return (ctime, mtime, atime)
 
 
-def getAgeString(filePath):
-    (ctime, mtime, atime) = getAge(filePath)
+def getAgeString(file_path):
+    (ctime, mtime, atime) = getAge(file_path)
     timestring = ""
     try:
         timestring = "\n CREATED: %s MODIFIED: %s ACCESSED: %s" % (time.ctime(ctime), time.ctime(mtime), time.ctime(atime))

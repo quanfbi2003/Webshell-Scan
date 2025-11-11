@@ -1,6 +1,6 @@
 
 
-rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Failed_Aug21_1 : SCRIPT {
+rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Failed_Aug21_1: SCRIPT {
    meta:
       description = "Detects ProxyShell exploitation attempts in log files"
       author = "Florian Roth (Nextron Systems)"
@@ -16,18 +16,18 @@ rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Failed_Aug21_1 : SCRIPT {
       1 of them
 }
 
-rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Successful_Aug21_1 : SCRIPT {
+rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Successful_Aug21_1: SCRIPT {
    meta:
       description = "Detects successful ProxyShell exploitation attempts in log files"
       author = "Florian Roth (Nextron Systems)"
-      score = 85
+      score = 65
       reference = "https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html"
       date = "2021-08-08"
-      modified = "2021-08-09"
+      modified = "2025-03-21"
       id = "8c11cd1a-6d3f-5f29-af61-17179b01ca8b"
    strings:
       $xr1a = / \/autodiscover\/autodiscover\.json[^\n]{1,300}\/(powershell|X-Rps-CAT)/ nocase ascii
-      $xr1b = / \/autodiscover\/autodiscover\.json[^\n]{1,300}\/(mapi\/nspi|EWS\/)[^\n]{1,400}(200|302) 0 0/ 
+      $xr1b = / \/autodiscover\/autodiscover\.json[^\n]{1,300}\/(mapi\/nspi|EWS\/)[^\n]{1,400}(200|302) 0 0/
       $xr2 = /autodiscover\/autodiscover\.json[^\n]{1,60}&X-Rps-CAT=/ nocase ascii
       $xr3 = /Email=autodiscover\/autodiscover\.json[^\n]{1,400}200 0 0/ nocase ascii
    condition:
@@ -44,7 +44,7 @@ rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Aug21_2 {
    strings:
       $s1 = "Page Language=" ascii nocase
    condition:
-      uint32(0) == 0x4e444221 /* PST header: !BDN */
+      uint32(0) == 0x4e444221  /* PST header: !BDN */
       and filesize < 2MB
       and $s1
 }
@@ -60,12 +60,12 @@ rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Aug21_3 {
    strings:
       $s1 = "Page Language=" ascii nocase
    condition:
-      uint16(0) == 0x8230 /* DER start */
+      uint16(0) == 0x8230  /* DER start */
       and filesize < 10KB
       and $s1
 }
 
-rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Sep21_1 { 
+rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Sep21_1 {
    meta:
       description = "Detects webshells dropped by ProxyShell exploitation based on their file header (must be PST) and base64 decoded request"
       author = "Tobias Michalski"
@@ -90,7 +90,7 @@ rule Neo23x0_exp_APT_IIS_Config_ProxyShell_Artifacts {
       score = 90
       id = "21888fc0-82c6-555a-9320-9cbb8332a843"
    strings:
-      $a1 = "<site name=" ascii /* marker used to select IIS configs */
+      $a1 = "<site name=" ascii  /* marker used to select IIS configs */
       $a2 = "<sectionGroup name=\"system.webServer\">" ascii
 
       $sa1 = " physicalPath=\"C:\\ProgramData\\COM" ascii
@@ -126,6 +126,7 @@ rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Aug15 {
       author = "Moritz Oettle"
       reference = "https://github.com/hvs-consulting/ioc_signatures/tree/main/Proxyshell"
       date = "2021-09-04"
+      modified = "2025-11-03"
       score = 75
       id = "b1e6c0f3-787f-59b8-8123-4045522047ca"
    strings:
@@ -138,12 +139,18 @@ rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Aug15 {
       $g7 = "Request[" ascii
       $g8 = "eval/*" ascii
 
-      $s1 = "AppcacheVer" ascii /* HTTP Request Parameter */
-      $s2 = "clientCode" ascii /* HTTP Request Parameter */
+      $s1 = "AppcacheVer" ascii  /* HTTP Request Parameter */
+      //$s2 = "clientCode" ascii /* HTTP Request Parameter */
       $s3 = "LaTkWfI64XeDAXZS6pU1KrsvLAcGH7AZOQXjrFkT816RnFYJQR" ascii
+
+      $fp1 = "<input type=\"submit\" Value=\"Refresh This Page\""
    condition:
-      filesize < 1KB and
-      ( 1 of ($s*) or 4 of ($g*) )
+      filesize < 1KB
+      and (
+         1 of ($s*)
+         or 4 of ($g*)
+      )
+      and not 1 of ($fp*)
 }
 
 rule Neo23x0_exp_WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
@@ -155,7 +162,7 @@ rule Neo23x0_exp_WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
       score = 85
       id = "6aea414f-d27c-5202-84f8-b8620782fc90"
    strings:
-      $x1 = "!BDN" /* PST file header */
+      $x1 = "!BDN"  /* PST file header */
 
       $g1 = "Page language=" ascii
       $g2 = "<%@ Page" ascii
@@ -165,13 +172,13 @@ rule Neo23x0_exp_WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
       $g6 = "script language=" ascii
       $g7 = "Request[" ascii
 
-      $s1 = "gold8899" ascii /* HTTP Request Parameter */
-      $s2 = "exec_code" ascii /* HTTP Request Parameter */
-      $s3 = "orangenb" ascii /* HTTP Request Parameter */
+      $s1 = "gold8899" ascii  /* HTTP Request Parameter */
+      $s2 = "exec_code" ascii  /* HTTP Request Parameter */
+      $s3 = "orangenb" ascii  /* HTTP Request Parameter */
    condition:
       filesize < 500KB and
       $x1 at 0 and
-      ( 1 of ($s*) or 3 of ($g*) )
+      (1 of ($s*) or 3 of ($g*))
 }
 
 rule Neo23x0_exp_SUSP_IIS_Config_ProxyShell_Artifacts {
@@ -183,7 +190,7 @@ rule Neo23x0_exp_SUSP_IIS_Config_ProxyShell_Artifacts {
       score = 70
       id = "bde65d9e-b17d-5746-8d29-8419363d0511"
    strings:
-      $a1 = "<site name=" ascii /* marker used to select IIS configs */
+      $a1 = "<site name=" ascii  /* marker used to select IIS configs */
       $a2 = "<sectionGroup name=\"system.webServer\">" ascii
 
       $s1 = " physicalPath=\"C:\\ProgramData\\" ascii
@@ -201,7 +208,7 @@ rule Neo23x0_exp_SUSP_IIS_Config_VirtualDir {
       score = 60
       id = "cfe5ca5e-a0cc-5f60-84d2-1b0538e999c7"
    strings:
-      $a1 = "<site name=" ascii /* marker used to select IIS configs */
+      $a1 = "<site name=" ascii  /* marker used to select IIS configs */
       $a2 = "<sectionGroup name=\"system.webServer\">" ascii
 
       $s2 = " physicalPath=\"C:\\Users\\" ascii
@@ -227,21 +234,21 @@ rule Neo23x0_exp_SUSP_ASPX_PossibleDropperArtifact_Aug21 {
       $fp1 = "Page Language=\"java\"" ascii nocase
    condition:
       filesize < 500KB
-      and not uint16(0) == 0x4B50 and not uint16(0) == 0x6152 and not uint16(0) == 0x8b1f // Exclude ZIP / RAR / GZIP files (can cause FPs when uncompressed)
-      and not uint16(0) == 0x5A4D // PE
-      and not uint16(0) == 0xCFD0 // OLE
-      and not uint16(0) == 0xC3D4 // PCAP
-      and not uint16(0) == 0x534D // CAB
+      and not uint16(0) == 0x4B50 and not uint16(0) == 0x6152 and not uint16(0) == 0x8b1f  // Exclude ZIP / RAR / GZIP files (can cause FPs when uncompressed)
+      and not uint16(0) == 0x5A4D  // PE
+      and not uint16(0) == 0xCFD0  // OLE
+      and not uint16(0) == 0xC3D4  // PCAP
+      and not uint16(0) == 0x534D  // CAB
       and all of ($s*) and not 1 of ($fp*) and
       (
-         ((uint8(0) < 0x20 or uint8(0) > 0x7E /*non-ASCII*/ ) and uint8(0) != 0x9 /* tab */ and uint8(0) != 0x0D /* carriage return */ and uint8(0) != 0x0A /* new line */ and uint8(0) != 0xEF /* BOM UTF-8 */)
-         or ((uint8(1) < 0x20 or uint8(1) > 0x7E /*non-ASCII*/ ) and uint8(1) != 0x9 /* tab */ and uint8(1) != 0x0D /* carriage return */ and uint8(1) != 0x0A /* new line */ and uint8(1) != 0xBB /* BOM UTF-8 */)
-         or ((uint8(2) < 0x20 or uint8(2) > 0x7E /*non-ASCII*/ ) and uint8(2) != 0x9 /* tab */ and uint8(2) != 0x0D /* carriage return */ and uint8(2) != 0x0A /* new line */ and uint8(2) != 0xBF /* BOM UTF-8 */)
-         or ((uint8(3) < 0x20 or uint8(3) > 0x7E /*non-ASCII*/ ) and uint8(3) != 0x9 /* tab */ and uint8(3) != 0x0D /* carriage return */ and uint8(3) != 0x0A /* new line */)
-         or ((uint8(4) < 0x20 or uint8(4) > 0x7E /*non-ASCII*/ ) and uint8(4) != 0x9 /* tab */ and uint8(4) != 0x0D /* carriage return */ and uint8(4) != 0x0A /* new line */)
-         or ((uint8(5) < 0x20 or uint8(5) > 0x7E /*non-ASCII*/ ) and uint8(5) != 0x9 /* tab */ and uint8(5) != 0x0D /* carriage return */ and uint8(5) != 0x0A /* new line */)
-         or ((uint8(6) < 0x20 or uint8(6) > 0x7E /*non-ASCII*/ ) and uint8(6) != 0x9 /* tab */ and uint8(6) != 0x0D /* carriage return */ and uint8(6) != 0x0A /* new line */)
-         or ((uint8(7) < 0x20 or uint8(7) > 0x7E /*non-ASCII*/ ) and uint8(7) != 0x9 /* tab */ and uint8(7) != 0x0D /* carriage return */ and uint8(7) != 0x0A /* new line */)
+         ((uint8(0) < 0x20 or uint8(0) > 0x7E  /*non-ASCII*/ ) and uint8(0) != 0x9  /* tab */ and uint8(0) != 0x0D  /* carriage return */ and uint8(0) != 0x0A  /* new line */ and uint8(0) != 0xEF  /* BOM UTF-8 */ )
+         or ((uint8(1) < 0x20 or uint8(1) > 0x7E  /*non-ASCII*/ ) and uint8(1) != 0x9  /* tab */ and uint8(1) != 0x0D  /* carriage return */ and uint8(1) != 0x0A  /* new line */ and uint8(1) != 0xBB  /* BOM UTF-8 */ )
+         or ((uint8(2) < 0x20 or uint8(2) > 0x7E  /*non-ASCII*/ ) and uint8(2) != 0x9  /* tab */ and uint8(2) != 0x0D  /* carriage return */ and uint8(2) != 0x0A  /* new line */ and uint8(2) != 0xBF  /* BOM UTF-8 */ )
+         or ((uint8(3) < 0x20 or uint8(3) > 0x7E  /*non-ASCII*/ ) and uint8(3) != 0x9  /* tab */ and uint8(3) != 0x0D  /* carriage return */ and uint8(3) != 0x0A  /* new line */ )
+         or ((uint8(4) < 0x20 or uint8(4) > 0x7E  /*non-ASCII*/ ) and uint8(4) != 0x9  /* tab */ and uint8(4) != 0x0D  /* carriage return */ and uint8(4) != 0x0A  /* new line */ )
+         or ((uint8(5) < 0x20 or uint8(5) > 0x7E  /*non-ASCII*/ ) and uint8(5) != 0x9  /* tab */ and uint8(5) != 0x0D  /* carriage return */ and uint8(5) != 0x0A  /* new line */ )
+         or ((uint8(6) < 0x20 or uint8(6) > 0x7E  /*non-ASCII*/ ) and uint8(6) != 0x9  /* tab */ and uint8(6) != 0x0D  /* carriage return */ and uint8(6) != 0x0A  /* new line */ )
+         or ((uint8(7) < 0x20 or uint8(7) > 0x7E  /*non-ASCII*/ ) and uint8(7) != 0x9  /* tab */ and uint8(7) != 0x0D  /* carriage return */ and uint8(7) != 0x0A  /* new line */ )
       )
 }
 

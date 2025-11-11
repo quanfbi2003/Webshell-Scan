@@ -62,7 +62,7 @@ rule Neo23x0_gen_APT_Backdoor_Win_GORAT_3
         $dirty4 = "gorat" ascii nocase wide
         $dirty5 = "flare" ascii nocase wide
         $go1 = "go.buildid" ascii wide
-        $go2 = "Go build ID:" ascii wide
+        $go2 = "Go build" ascii wide
         $json1 = "json:\"pid\"" ascii wide
         $json2 = "json:\"key\"" ascii wide
         $json3 = "json:\"agent_time\"" ascii wide
@@ -1540,7 +1540,7 @@ rule Neo23x0_gen_APT_Backdoor_Win_GORAT_2
         id = "e2c47711-d088-5cb4-8d21-f8199a865a28"
     strings:
         $go1 = "go.buildid" ascii wide
-        $go2 = "Go build ID:" ascii wide
+        $go2 = "Go build" ascii wide
         $json1 = "json:\"pid\"" ascii wide
         $json2 = "json:\"key\"" ascii wide
         $json3 = "json:\"agent_time\"" ascii wide
@@ -1978,7 +1978,7 @@ rule Neo23x0_gen_APT_Loader_Win_PGF_1
         id = "fcbefa45-8dcd-57a3-a2ac-f4613152716f"
     strings:
         $pdb1 = /RSDS[\x00-\xFF]{20}c:\\source\\dllconfig-master\\dllsource[\x00-\xFF]{0,500}\.pdb\x00/ nocase
-        $pdb2 = /RSDS[\x00-\xFF]{20}C:\\Users\\Developer\\Source[\x00-\xFF]{0,500}\Release\\DllSource\.pdb\x00/ nocase
+        $pdb2 = /RSDS[\x00-\xFF]{20}C:\\Users\\Developer\\Source[\x00-\xFF]{0,500}\\Release\\DllSource\.pdb\x00/ nocase
         $pdb3 = /RSDS[\x00-\xFF]{20}q:\\objchk_win7_amd64\\amd64\\init\.pdb\x00/ nocase
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and filesize < 15MB and any of them

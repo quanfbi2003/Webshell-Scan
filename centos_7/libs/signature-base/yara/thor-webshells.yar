@@ -18,22 +18,38 @@ rule Neo23x0_tho_Weevely_Webshell {
 		uint32(0) == 0x68703f3c and all of ($s*) and filesize > 570 and filesize < 800
 }
 
-rule Neo23x0_tho_webshell_h4ntu_shell_powered_by_tsoi_ {
-	meta:
-		description = "Web Shell - file h4ntu shell powered by tsoi.php"
-		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth (Nextron Systems)"
-		date = "2014/01/28"
-		score = 70
-		hash = "06ed0b2398f8096f1bebf092d0526137"
-		id = "393e738a-b4c2-5630-a55f-c3caee4ff75e"
-	strings:
-		$s0 = "  <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><b>Server Adress:</b"
-		$s3 = "  <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><b>User Info:</b> ui"
-		$s4 = "    <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><?= $info ?>: <?= "
-		$s5 = "<INPUT TYPE=\"text\" NAME=\"cmd\" value=\"<?php echo stripslashes(htmlentities($"
-	condition:
-		all of them
+rule Neo23x0_tho_WEBSHELL_H4ntu_Shell_Powered_Tsoi_3 {
+   meta:
+      description = "Web Shell - file h4ntu shell powered by tsoi.php"
+      author = "Florian Roth"
+      date = "2014-01-28"
+      modified = "2025-03-21"
+      score = 70
+      old_rule_name = "Webshell_h4ntu_shell_powered_by_tsoi_"
+      hash = "06ed0b2398f8096f1bebf092d0526137"
+   strings:
+      $s0 = "  <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><b>Server Adress:</b"
+      $s3 = "  <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><b>User Info:</b> ui"
+      $s4 = "    <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><?= $info ?>: <?= "
+   condition:
+      2 of them
+}
+
+rule Neo23x0_tho_WEBSHELL_H4ntu_Shell_Powered_Tsoi {
+   meta:
+      description = "Semi-Auto-generated - file h4ntu shell [powered by tsoi].txt"
+      author = "Florian Roth"
+      date = "2014-03-29"
+      modified = "2025-03-21"
+      score = 80
+      old_rule_name = "Webshell_h4ntu_shell__powered_by_tsoi_"
+      hash = "06ed0b2398f8096f1bebf092d0526137"
+   strings:
+      $x1 = "<title>h4ntu shell"
+      $x2 = "system(\"$cmd 1> /tmp/cmdtemp 2>&1; cat /tmp/cmdtemp; rm /tmp/cmdtemp\");"
+   condition:
+      filesize < 100KB
+      and 1 of them
 }
 
 rule Neo23x0_tho_webshell_PHP_sql {
@@ -4999,6 +5015,7 @@ rule Neo23x0_tho_sql_php_php {
 		$s3 = "print \"<a href=\\\"$_SERVER[PHP_SELF]?s=$s&login=$login&passwd=$passwd&"
 	condition:
 		1 of them
+		and not uint32(0) == 0x6D783F3C /* <?xm */
 }
 
 rule Neo23x0_tho_cgi_python_py {
@@ -6068,22 +6085,21 @@ rule Neo23x0_tho_WebShell_SimAttacker___Vrsion_1_0_0___priv8_4_My_friend {
 		3 of them
 }
 
-rule Neo23x0_tho_WebShell_h4ntu_shell__powered_by_tsoi_ {
-	meta:
-		description = "PHP Webshells Github Archive - file h4ntu shell [powered by tsoi].php"
-		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
-		author = "Florian Roth (Nextron Systems)"
-		hash = "cbca8cd000e705357e2a7e0cf8262678706f18f9"
-		id = "5a12a025-6497-545a-8da0-423ef448e374"
-	strings:
-		$s11 = "<title>h4ntu shell [powered by tsoi]</title>" fullword
-		$s13 = "$cmd = $_POST['cmd'];" fullword
-		$s16 = "$uname = posix_uname( );" fullword
-		$s17 = "if(!$whoami)$whoami=exec(\"whoami\");" fullword
-		$s18 = "echo \"<p><font size=2 face=Verdana><b>This Is The Server Information</b></font>"
-		$s20 = "ob_end_clean();" fullword
-	condition:
-		3 of them
+rule Neo23x0_tho_WEBSHELL_H4ntu_Shell_Powered_Tsoi_2 {
+   meta:
+      description = "PHP Webshells Github Archive - file h4ntu shell [powered by tsoi].php"
+      author = "Florian Roth"
+      date = "2014-04-06"
+      modified = "2025-03-21"
+      old_rule_name = "WebShell_h4ntu_shell__powered_by_tsoi_"
+      hash = "cbca8cd000e705357e2a7e0cf8262678706f18f9"
+   strings:
+      $s1 = "<title>h4ntu shell [powered by tsoi]</title>" fullword
+      $s2 = "$uname = posix_uname( );" fullword
+      $s3 = "if(!$whoami)$whoami=exec(\"whoami\");" fullword
+      $s4 = "echo \"<p><font size=2 face=Verdana><b>This Is The Server Information</b></font>"
+   condition:
+      filesize <2MB and 2 of them
 }
 
 rule Neo23x0_tho_WebShell_php_webshells_MyShell {
@@ -10403,6 +10419,7 @@ rule Neo23x0_tho_WEBSHELL_ASPX_Mar21_1 {
       author = "Florian Roth (Nextron Systems)"
       reference = "Internal Research"
       date = "2021-03-12"
+      modified = "2025-11-03"
       hash1 = "10b6e82125a2ddf3cc31a238e0d0c71a64f902e0d77171766713affede03174d"
       hash2 = "170bee832df176aac0a3c6c7d5aa3fee413b4572030a24c994a97e70f6648ffc"
       hash3 = "31c4d1fc81c052e269866deff324dffb215e7d481a47a2b6357a572a3e685d90"
@@ -10415,7 +10432,7 @@ rule Neo23x0_tho_WEBSHELL_ASPX_Mar21_1 {
       hash10 = "d40b16307d6434c3281374c0e1bbc0f6db388883e7f6266c3c81de0694266882"
       id = "52884135-6b86-5e3e-a866-36a812d5a9af"
    strings:
-      $s1 = ".StartInfo.FileName = 'cmd.exe';" ascii fullword
+      $s1 = ".StartInfo.FileName = 'cmd.exe';" ascii
       $s2 = "<xsl:template match=\"\"/root\"\">" ascii fullword
       $s3 = "<?xml version=\"\"1.0\"\"?><root>test</root>\";" ascii fullword
    condition:

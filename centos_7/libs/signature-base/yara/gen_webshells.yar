@@ -4,13 +4,13 @@ import "console"
 rule Neo23x0_gen_WEBSHELL_PHP_Generic
 {
     meta:
-        description = "php webshell having some kind of input and some kind of payload. restricted to small files or big ones inclusing suspicious strings"
+        description = "php webshell having some kind of input and some kind of payload. restricted to small files or big ones including suspicious strings"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
-        score = 75
-        date = "2021/01/14"
-        modified = "2023-09-18"
+        score = 70
+        date = "2021-01-14"
+        modified = "2024-12-09"
         hash = "bee1b76b1455105d4bfe2f45191071cf05e83a309ae9defcf759248ca9bceddd"
         hash = "6bf351900a408120bee3fc6ea39905c6a35fe6efcf35d0a783ee92062e63a854"
         hash = "e3b4e5ec29628791f836e15500f6fdea19beaf3e8d9981c50714656c50d3b365"
@@ -56,6 +56,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Generic
         $gfp_tiny8 = "echo shell_exec($aspellcommand . ' 2>&1');"
         $gfp_tiny9 = "throw new Exception('Could not find authentication source with id ' . $sourceId);"
         $gfp_tiny10= "return isset( $_POST[ $key ] ) ? $_POST[ $key ] : ( isset( $_REQUEST[ $key ] ) ? $_REQUEST[ $key ] : $default );"
+        $gfp_tiny11= "; This is the recommended, PHP 4-style version of the php.ini-dist file"
 
         //strings from private rule capa_php_old_safe
         $php_short = "<?" wide ascii
@@ -847,7 +848,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Generic_Eval
         id = "79cfbd88-f6f7-5cba-a325-0a99962139ca"
     strings:
         // new: eval($GLOBALS['_POST'
-        $geval = /\b(exec|shell_exec|passthru|system|popen|proc_open|pcntl_exec|eval|assert)[\t ]{0,500}(\(base64_decode)?(\(stripslashes)?[\t ]{0,500}(\(trim)?[\t ]{0,500}\(\$(_POST|_GET|_REQUEST|_SERVER\s?\[['"]HTTP_|GLOBALS\[['"]_(POST|GET|REQUEST))/ wide ascii
+        $geval = /\b(exec|shell_exec|passthru|system|popen|proc_open|pcntl_exec|eval|assert)[\t ]{0,300}(\(base64_decode)?(\(stripslashes)?[\t ]{0,300}(\(trim)?[\t ]{0,300}\(\$(_POST|_GET|_REQUEST|_SERVER\s?\[['"]HTTP_|GLOBALS\[['"]_(POST|GET|REQUEST))/ wide ascii
 
         //strings from private rule php_false_positive
         // try to use only strings which would be flagged by themselves as suspicious by other rules, e.g. eval
@@ -936,7 +937,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_OBFUSC
         reference = "Internal Research"
         score = 75
         date = "2021/01/12"
-        modified = "2024-03-11"
+        modified = "2025-09-22"
         hash = "eec9ac58a1e763f5ea0f7fa249f1fe752047fa60"
         hash = "181a71c99a4ae13ebd5c94bfc41f9ec534acf61cd33ef5bce5fb2a6f48b65bf4"
         hash = "76d4e67e13c21662c4b30aab701ce9cdecc8698696979e504c288f20de92aee7"
@@ -959,6 +960,9 @@ rule Neo23x0_gen_WEBSHELL_PHP_OBFUSC
         $gfp10 = "[][}{;|]\\|\\\\[+=]\\|<?=>?"
         $gfp11 = "(eval (getenv \"EPROLOG\")))"
         $gfp12 = "ZmlsZV9nZXRfY29udGVudHMoJ2h0dHA6Ly9saWNlbnNlLm9wZW5jYXJ0LWFwaS5jb20vbGljZW5zZS5waHA/b3JkZXJ"
+        $gfp13 = "assert(\\\""
+        $gfp14 = "PhutilUTF8TestCase"
+        $gfp15 = "chr(195).chr(128) => 'A',"  // 3d413ceb54e929d6af2e64ebb8df7ba2452a7aac876dddcf6336c3445e7bcc91, wordpress formatter.php
 
         //strings from private rule capa_php_old_safe
         $php_short = "<?" wide ascii
@@ -1464,9 +1468,9 @@ rule Neo23x0_gen_WEBSHELL_PHP_OBFUSC_3
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
-        score = 75
+        score = 70
         date = "2021/04/17"
-        modified = "2024-03-11"
+        modified = "2024-12-09"
         hash = "11bb1fa3478ec16c00da2a1531906c05e9c982ea"
         hash = "d6b851cae249ea6744078393f622ace15f9880bc"
         hash = "14e02b61905cf373ba9234a13958310652a91ece"
@@ -1533,6 +1537,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_OBFUSC_3
         $cfp1 = /ob_start\(['\"]ob_gzhandler/ nocase wide ascii
         $cfp2 = "IWPML_Backend_Action_Loader" ascii wide
         $cfp3 = "<?phpclass WPML" ascii
+        $cfp4 = "      return implode('', "
 
         //strings from private rule capa_php_payload
         // \([^)] to avoid matching on e.g. eval() in comments
@@ -1870,7 +1875,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
         date = "2021/01/13"
-        modified = "2023-10-06"
+        modified = "2024-12-09"
         score = 60
         hash = "65dca1e652d09514e9c9b2e0004629d03ab3c3ef"
         hash = "b8ab38dc75cec26ce3d3a91cb2951d7cdd004838"
@@ -1908,7 +1913,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic
         $dynamic6 = /\$[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff\[\]'"]{0,20}\s{0,20}\(@/ wide ascii
         $dynamic7 = /\$[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff\[\]'"]{0,20}\s{0,20}\(base64_decode/ wide ascii
         // ${'_'.$_}["_"](${'_'.$_}["__"]
-        $dynamic8 = /\${[^}]{1,20}}(\[[^\]]{1,20}\])?\(\${/ wide ascii
+        $dynamic8 = /\$\{[^}]{1,20}}(\[[^\]]{1,20}\])?\(\$\{/ wide ascii
 
         $fp1 = { 3C 3F 70 68 70 0A 0A 24 61 28 24 62 20 3D 20 33 2C 20 24 63 29 3B } /* <?php\x0a\x0a$a($b = 3, $c); */
         $fp2 = { 3C 3F 70 68 70 0A 0A 24 61 28 24 62 20 3D 20 33 2C 20 2E 2E 2E 20 24 63 29 3B } /* <?php\x0a\x0a$a($b = 3, ... $c); */
@@ -1918,6 +1923,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic
         $fp6 = "// TODO error about missing expression" /* <?php\x0a// TODO error about missing expression\x0a$a($b = 3, $c,); */
         $fp7 = "// This is an invalid location for an attribute, "
         $fp8 = "/* Auto-generated from php/php-langspec tests */"
+        $fp_dynamic1 = /"\$[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff\[\]'"]{0,20}\s{0,20}\(\$/ wide ascii // e.g. echo "$callback($text)";
     condition:
         filesize > 20 and filesize < 200 and (
             (
@@ -1944,7 +1950,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic_Big
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
         date = "2021/02/07"
-        modified = "2024-02-23"
+        modified = "2025-08-18"
         score = 50
         hash = "6559bfc4be43a55c6bb2bd867b4c9b929713d3f7f6de8111a3c330f87a9b302c"
         hash = "9e82c9c2fa64e26fd55aa18f74759454d89f968068d46b255bd4f41eb556112e"
@@ -1959,7 +1965,8 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic_Big
         id = "a5caab93-7b94-59d7-bbca-f9863e81b9e5"
     strings:
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
         //strings from private rule capa_php_new_long
@@ -2134,6 +2141,8 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic_Big
         $fp2 = "* @package   PHP_CodeSniffer" ascii
         $fp3 = ".jQuery===" ascii
         $fp4 = "* @param string $lstat encoded LStat string" ascii
+        $fp5 = "' => array('horde:"
+        $fp6 = "$messages['fileuploaderror'] = '"
     condition:
         //any of them or
         not (
@@ -2142,7 +2151,8 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic_Big
             uint32be(0) == 0x3c3f786d  or
             // <?XML
             uint32be(0) == 0x3c3f584d  or
-            $dex at 0 or
+            $dex1 at 0 or
+            $dex2 at 0 or
             $pack at 0 or
             // fp on jar with zero compression
             uint16(0) == 0x4b50 or
@@ -2258,12 +2268,12 @@ rule Neo23x0_gen_WEBSHELL_PHP_Dynamic_Big
 rule Neo23x0_gen_WEBSHELL_PHP_Encoded_Big
 {
     meta:
-        description = "PHP webshell using some kind of eval with encoded blob to decode"
+        description = "PHP webshell using some kind of eval with encoded blob to decode, which is checked with YARAs math.entropy module"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
         date = "2021/02/07"
-        modified = "2024-03-11"
+        modified = "2024-12-16"
         score = 50
         hash = "1d4b374d284c12db881ba42ee63ebce2759e0b14"
         hash = "fc0086caee0a2cd20609a05a6253e23b5e3245b8"
@@ -2286,7 +2296,6 @@ rule Neo23x0_gen_WEBSHELL_PHP_Encoded_Big
         $cpayload2 = /\bexec[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
         $cpayload3 = /\bshell_exec[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
         $cpayload4 = /\bpassthru[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
-        $cpayload5 = /\bsystem[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
         $cpayload6 = /\bpopen[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
         $cpayload7 = /\bproc_open[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
         $cpayload8 = /\bpcntl_exec[\n\t ]{0,500}(\([^)]|\/\*)/ nocase wide ascii
@@ -2363,7 +2372,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_Generic_Backticks
 
         id = "b2f1d8d0-8668-5641-8ce9-c8dd71f51f58"
     strings:
-        $backtick = /`\s*{?\$(_POST\[|_GET\[|_REQUEST\[|_SERVER\['HTTP_)/ wide ascii
+        $backtick = /`\s*\{?\$(_POST\[|_GET\[|_REQUEST\[|_SERVER\['HTTP_)/ wide ascii
 
         //strings from private rule capa_php_old_safe
         $php_short = "<?" wide ascii
@@ -2450,7 +2459,7 @@ rule Neo23x0_gen_WEBSHELL_PHP_By_String_Known_Webshell
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
         date = "2021-01-09"
-        modified = "2023-04-05"
+        modified = "2025-08-18"
         score = 70
         hash = "d889da22893536d5965541c30896f4ed4fdf461d"
         hash = "10f4988a191774a2c6b85604344535ee610b844c1708602a355cf7e9c12c3605"
@@ -2553,7 +2562,8 @@ rule Neo23x0_gen_WEBSHELL_PHP_By_String_Known_Webshell
         $php_new3 = "<script language=\"php" nocase wide ascii
 
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
     condition:
@@ -2569,7 +2579,8 @@ rule Neo23x0_gen_WEBSHELL_PHP_By_String_Known_Webshell
         )
         and not (
         uint16(0) == 0x5a4d or
-        $dex at 0 or
+        $dex1 at 0 or
+        $dex2 at 0 or
         $pack at 0 or
         // fp on jar with zero compression
         uint16(0) == 0x4b50
@@ -4122,7 +4133,7 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic_Tiny
         reference = "Internal Research"
         score = 75
         date = "2021/01/07"
-        modified = "2023-07-05"
+        modified = "2025-08-18"
         hash = "990e3f129b8ba409a819705276f8fa845b95dad0"
         hash = "52ce724580e533da983856c4ebe634336f5fd13a"
         hash = "0864f040a37c3e1cef0213df273870ed6a61e4bc"
@@ -4207,7 +4218,8 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic_Tiny
         $asp_text2 = ".Text" wide ascii
 
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
         //strings from private rule capa_asp_payload
@@ -4295,7 +4307,8 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic_Tiny
         )
         and not 1 of ( $fp* ) and not (
         uint16(0) == 0x5a4d or
-        $dex at 0 or
+        $dex1 at 0 or
+        $dex2 at 0 or
         $pack at 0 or
         // fp on jar with zero compression
         uint16(0) == 0x4b50
@@ -4329,7 +4342,7 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic : FILE {
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
         date = "2021-03-07"
-        modified = "2023-07-05"
+        modified = "2025-08-18"
         score = 60
         hash = "a8c63c418609c1c291b3e731ca85ded4b3e0fba83f3489c21a3199173b176a75"
         hash = "4cf6fbad0411b7d33e38075f5e00d4c8ae9ce2f6f53967729974d004a183b25c"
@@ -4407,6 +4420,7 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic : FILE {
         $fp2 = "B2BTools"
         $fp3 = "<b>Failed to execute cache update. See the log file for more information" ascii
         $fp4 = "Microsoft. All rights reserved."
+        $fp5 = "\"unsafe\"," ascii wide
 
         //strings from private rule capa_asp
         $tagasp_short1 = /<%[^"]/ wide ascii
@@ -4464,7 +4478,8 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic : FILE {
 
 
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
         //strings from private rule capa_asp_input
@@ -4567,7 +4582,8 @@ rule Neo23x0_gen_WEBSHELL_ASP_Generic : FILE {
         )
         and not (
         uint16(0) == 0x5a4d or
-        $dex at 0 or
+        $dex1 at 0 or
+        $dex2 at 0 or
         $pack at 0 or
         // fp on jar with zero compression
         uint16(0) == 0x4b50
@@ -5430,7 +5446,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_ReGeorg
         hash = "6db49e43722080b5cd5f07e058a073ba5248b584"
         author = "Arnim Rupp (https://github.com/ruppde)"
         date = "2021/01/24"
-        modified = "2023-04-05"
+        modified = "2024-12-09"
         score = 75
         hash = "650eaa21f4031d7da591ebb68e9fc5ce5c860689"
         hash = "00c86bf6ce026ccfaac955840d18391fbff5c933"
@@ -5462,7 +5478,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_ReGeorg
         filesize < 300KB and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5483,7 +5499,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_HTTP_Proxy
         reference = "Internal Research"
         score = 75
         date = "2021/01/24"
-        modified = "2023-07-05"
+        modified = "2024-12-09"
         hash = "97c1e2bf7e769d3fc94ae2fc74ac895f669102c6"
         hash = "2f9b647660923c5262636a5344e2665512a947a4"
 
@@ -5512,7 +5528,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_HTTP_Proxy
         filesize < 10KB and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5532,7 +5548,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Writer_Nano
         reference = "Internal Research"
         score = 75
         date = "2021/01/24"
-        modified = "2023-04-05"
+        modified = "2024-12-09"
         hash = "ac91e5b9b9dcd373eaa9360a51aa661481ab9429"
         hash = "c718c885b5d6e29161ee8ea0acadb6e53c556513"
         hash = "9f1df0249a6a491cdd5df598d83307338daa4c43"
@@ -5592,7 +5608,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Writer_Nano
         and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5606,7 +5622,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Writer_Nano
             )
 }
 
-rule Neo23x0_gen_WEBSHELL_JSP_Generic_Tiny
+rule Neo23x0_gen_EXT_WEBSHELL_JSP_Generic_Tiny
 {
     meta:
         description = "Generic JSP webshell tiny"
@@ -5615,12 +5631,12 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Tiny
         reference = "Internal Research"
         score = 75
         date = "2021/01/07"
-        modified = "2023-04-05"
+        modified = "2024-12-16"
         hash = "8fd343db0442136e693e745d7af1018a99b042af"
         hash = "87c3ac9b75a72187e8bc6c61f50659435dbdc4fde6ed720cebb93881ba5989d8"
         hash = "1aa6af726137bf261849c05d18d0a630d95530588832aadd5101af28acc034b5"
 
-        id = "7535ade8-fc65-5558-a72c-cc14c3306390"
+        id = "fad14524-de44-52ea-95e6-3e5de3138926"
     strings:
         $payload1 = "ProcessBuilder" fullword wide ascii
         $payload2 = "URLClassLoader" fullword wide ascii
@@ -5660,6 +5676,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Tiny
         // no web input but fixed command to create reverse shell
         $fixed_cmd1 = "bash -i >& /dev/" ascii wide
 
+        $fp1 = "Find Security Bugs is a plugin that aims to help security audit.</Details>"
     condition:
         //any of them or
         (
@@ -5671,7 +5688,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Tiny
         ) and (
             $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5689,6 +5706,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Tiny
         )
         and
         ( 1 of ( $payload* ) or all of ( $payload_rt* ) )
+        and not any of ( $fp* )
 }
 
 rule Neo23x0_gen_WEBSHELL_JSP_Generic
@@ -5700,7 +5718,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic
         reference = "Internal Research"
         score = 75
         date = "2021/01/07"
-        modified = "2023-04-05"
+        modified = "2025-08-18"
         hash = "4762f36ca01fb9cda2ab559623d2206f401fc0b1"
         hash = "bdaf9279b3d9e07e955d0ce706d9c42e4bdf9aa1"
         hash = "ee9408eb923f2d16f606a5aaac7e16b009797a07"
@@ -5721,7 +5739,8 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic
         $fp1 = "command = \"cmd.exe /c set\";"
 
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
         //strings from private rule capa_jsp_safe
@@ -5758,7 +5777,8 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic
     condition:
         filesize < 300KB and not (
         uint16(0) == 0x5a4d or
-        $dex at 0 or
+        $dex1 at 0 or
+        $dex2 at 0 or
         $pack at 0 or
         // fp on jar with zero compression
         uint16(0) == 0x4b50
@@ -5766,7 +5786,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic
         and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5794,7 +5814,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Base64
         reference = "Internal Research"
         score = 75
         date = "2021/01/24"
-        modified = "2023-04-05"
+        modified = "2025-08-18"
         hash = "8b5fe53f8833df3657ae2eeafb4fd101c05f0db0"
         hash = "1b916afdd415dfa4e77cecf47321fd676ba2184d"
 
@@ -5836,14 +5856,15 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Base64
         $cjsp_long7 = "< %" ascii wide
 
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
     condition:
         (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5853,7 +5874,8 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Base64
         )
         and not (
         uint16(0) == 0x5a4d or
-        $dex at 0 or
+        $dex1 at 0 or
+        $dex2 at 0 or
         $pack at 0 or
         // fp on jar with zero compression
         uint16(0) == 0x4b50
@@ -5910,7 +5932,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Reflection
         reference = "Internal Research"
         score = 75
         date = "2021/01/07"
-        modified = "2023-04-05"
+        modified = "2024-12-09"
         hash = "62e6c6065b5ca45819c1fc049518c81d7d165744"
         hash = "bf0ff88cbb72c719a291c722ae3115b91748d5c4920afe7a00a0d921d562e188"
 
@@ -5918,7 +5940,8 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Reflection
     strings:
         $ws_exec = "invoke" fullword wide ascii
         $ws_class = "Class" fullword wide ascii
-        $fp = "SOAPConnection"
+        $fp1 = "SOAPConnection"
+        $fp2 = "/CORBA/"
 
         //strings from private rule capa_jsp_safe
         $cjsp_short1 = "<%" ascii wide
@@ -5949,7 +5972,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Reflection
         all of ( $ws_* ) and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -5957,7 +5980,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Reflection
             )
         )
         )
-        and not $fp and
+        and not any of ( $fp* ) and
         (
             // either some kind of code input from the a web request ...
             filesize < 10KB and
@@ -5994,7 +6017,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Classloader
         score = 75
         hash = "6b546e78cc7821b63192bb8e087c133e8702a377d17baaeb64b13f0dd61e2347"
         date = "2021/01/07"
-        modified = "2023-04-05"
+        modified = "2024-12-09"
         hash = "f3a7e28e1c38fa5d37811bdda1d6b0893ab876023d3bd696747a35c04141dcf0"
         hash = "8ea2a25344e6094fa82dfc097bbec5f1675f6058f2b7560deb4390bcbce5a0e7"
         hash = "b9ea1e9f91c70160ee29151aa35f23c236d220c72709b2b75123e6fa1da5c86c"
@@ -6035,7 +6058,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Classloader
             (
                 $cjsp_short1 at 0 or
                     any of ( $cjsp_long* ) or
-                    $cjsp_short2 in ( filesize-100..filesize ) or
+                    ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
                 (
                     $cjsp_short2 and (
                         $cjsp_short1 in ( 0..1000 ) or
@@ -6079,13 +6102,13 @@ rule Neo23x0_gen_WEBSHELL_JSP_Generic_Encoded_Shell
 
         id = "359949d7-1793-5e13-9fdc-fe995ae12117"
     strings:
-        $sj0 = /{ ?47, 98, 105, 110, 47, 98, 97, 115, 104/ wide ascii
-        $sj1 = /{ ?99, 109, 100}/ wide ascii
-        $sj2 = /{ ?99, 109, 100, 46, 101, 120, 101/ wide ascii
-        $sj3 = /{ ?47, 98, 105, 110, 47, 98, 97/ wide ascii
-        $sj4 = /{ ?106, 97, 118, 97, 46, 108, 97, 110/ wide ascii
-        $sj5 = /{ ?101, 120, 101, 99 }/ wide ascii
-        $sj6 = /{ ?103, 101, 116, 82, 117, 110/ wide ascii
+        $sj0 = /\{ ?47, 98, 105, 110, 47, 98, 97, 115, 104/ wide ascii
+        $sj1 = /\{ ?99, 109, 100}/ wide ascii
+        $sj2 = /\{ ?99, 109, 100, 46, 101, 120, 101/ wide ascii
+        $sj3 = /\{ ?47, 98, 105, 110, 47, 98, 97/ wide ascii
+        $sj4 = /\{ ?106, 97, 118, 97, 46, 108, 97, 110/ wide ascii
+        $sj5 = /\{ ?101, 120, 101, 99 }/ wide ascii
+        $sj6 = /\{ ?103, 101, 116, 82, 117, 110/ wide ascii
 
     condition:
         filesize <300KB and any of ($sj*)
@@ -6100,7 +6123,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_NetSpy
         reference = "Internal Research"
         score = 75
         date = "2021/01/24"
-        modified = "2023-04-05"
+        modified = "2024-12-09"
         hash = "94d1aaabde8ff9b4b8f394dc68caebf981c86587"
         hash = "3870b31f26975a7cb424eab6521fc9bffc2af580"
 
@@ -6144,7 +6167,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_NetSpy
         filesize < 30KB and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -6168,7 +6191,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_By_String
         reference = "Internal Research"
         score = 75
         date = "2021/01/09"
-        modified = "2023-04-05"
+        modified = "2025-08-18"
         hash = "e9060aa2caf96be49e3b6f490d08b8a996c4b084"
         hash = "4c2464503237beba54f66f4a099e7e75028707aa"
         hash = "06b42d4707e7326aff402ecbb585884863c6351a"
@@ -6218,14 +6241,16 @@ rule Neo23x0_gen_WEBSHELL_JSP_By_String
         $cjsp_long7 = "< %" ascii wide
 
         //strings from private rule capa_bin_files
-        $dex   = { 64 65 ( 78 | 79 ) 0a 30 }
+        $dex1 = "dex\n0"
+        $dex2 = "dey\n0"
         $pack  = { 50 41 43 4b 00 00 00 02 00 }
 
     condition:
         //any of them or
         not (
             uint16(0) == 0x5a4d or
-            $dex at 0 or
+            $dex1 at 0 or
+            $dex2 at 0 or
             $pack at 0 or
             // fp on jar with zero compression
             uint16(0) == 0x4b50
@@ -6236,7 +6261,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_By_String
                 (
                     $cjsp_short1 at 0 or
                     any of ( $cjsp_long* ) or
-                    $cjsp_short2 in ( filesize-100..filesize ) or
+                    ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
                     (
                         $cjsp_short2 and (
                             $cjsp_short1 in ( 0..1000 ) or
@@ -6267,7 +6292,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Input_Upload_Write
         reference = "Internal Research"
         score = 75
         date = "2021/01/24"
-        modified = "2023-04-05"
+        modified = "2024-12-09"
         hash = "ef98ca135dfb9dcdd2f730b18e883adf50c4ab82"
         hash = "583231786bc1d0ecca7d8d2b083804736a3f0a32"
         hash = "19eca79163259d80375ebebbc440b9545163e6a3"
@@ -6305,7 +6330,7 @@ rule Neo23x0_gen_WEBSHELL_JSP_Input_Upload_Write
         filesize < 10KB and (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or
@@ -6327,7 +6352,7 @@ rule Neo23x0_gen_WEBSHELL_Generic_OS_Strings : FILE {
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
         date = "2021/01/12"
-        modified = "2023-07-05"
+        modified = "2024-12-09"
         score = 50
         hash = "d5bfe40283a28917fcda0cefd2af301f9a7ecdad"
         hash = "fd45a72bda0a38d5ad81371d68d206035cb71a14"
@@ -6472,7 +6497,7 @@ rule Neo23x0_gen_WEBSHELL_Generic_OS_Strings : FILE {
         or (
         $cjsp_short1 at 0 or
             any of ( $cjsp_long* ) or
-            $cjsp_short2 in ( filesize-100..filesize ) or
+            ($cjsp_short1 and $cjsp_short2 in ( filesize-100..filesize )) or
         (
             $cjsp_short2 and (
                 $cjsp_short1 in ( 0..1000 ) or

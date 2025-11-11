@@ -6,7 +6,17 @@ import signal as signal_module
 import stat
 from bisect import bisect_left
 from sys import platform as _platform
+import os
+import zipfile
 
+import py7zr
+import rarfile
+import tarfile
+import tempfile
+import shutil
+import gzip
+import bz2
+import lzma
 import yara  # install 'yara-python' module not the outdated 'yara' module
 
 from libs.helpers import *
@@ -20,7 +30,7 @@ except:
     pass
 
 # Version
-VERSION = "v1.7"
+VERSION = "v1.8"
 
 # Platform
 os_platform = ""
@@ -34,6 +44,7 @@ else:
 
 # CSV file
 fileInfo_csv = {"FILE": [], "SCORE": [], "DESCRIPTION": [], "EXTENSION": [], "TIME": []}
+
 
 
 class Scanner(object):
@@ -115,7 +126,6 @@ class Scanner(object):
 
         # Compile Yara Rules
         self.initialize_yara_rules()
-
         # Initialize File Type Magic signatures
         self.initialize_filetype_magics(os.path.join(self.app_path, 'libs/signature-base/misc/file-type-signatures.txt'
                                                      .replace("/", os.sep)))
@@ -151,304 +161,330 @@ class Scanner(object):
         return index != len(sorted_list) and sorted_list[index] == value
 
     @staticmethod
-    def get_file_data(filePath):
+    def get_file_data(file_path):
         fileData = b''
         try:
             # Read file complete
-            with open(filePath, 'rb') as f:
+            with open(file_path, 'rb') as f:
                 fileData = f.read()
         except Exception:
-            # logger.log("ERROR", "FileScan", "Cannot open file %s (access denied)" % filePath)
-            pass
+            logger.log("ERROR", "FileScan", "Cannot open file %s (access denied)" % file_path)
         finally:
             return fileData
+
+    @staticmethod
+    def separate_rule(text):
+        count = 0
+        res = []
+        for line in text.strip().split("\n"):
+            if line.startswith("rule ") or line.startswith("private rule ") or line.startswith("private global rule "):
+                res.append("")
+                count += 1
+            if count > 0:
+                res[count - 1] = res[count - 1] + "\n" + line
+
+        return res
+
+    @staticmethod
+    def check_yara_rule(rule_text, new_rule):
+        dummy = ""
+        try:
+            yara.compile(source=rule_text, externals={
+                'filename': dummy,
+                'file_path': dummy,
+                'extension': dummy,
+                'filetype': dummy,
+                'md5': dummy,
+                'owner': dummy,
+            })
+            return True
+        except Exception as e:
+            # print("Syntax error in rule: {0}".format(e))
+            # if "undefined identifier" in str(e):
+            #     print(new_rule)
+            return False
+
+    def is_supported_file(self, file_path):
+        """
+        Kiểm tra xem file có phải loại được hỗ trợ không dựa trên loại file từ get_file_type.
+        """
+        file_type = get_file_type(file_path, self.filetype_magics, self.max_filetype_magics, logger)
+        supported_types = ['ZIP', 'JAR', 'Office', 'PKZIP', 'WinZIP', 'PKSFX', 'RAR', '7Zip', 'GZIP', 'BZip2']
+        return file_type in supported_types
+
+    def extract_to_temp(self, file_path):
+        """
+        Giải nén file vào thư mục tạm thời dựa trên loại file.
+        """
+        file_type = get_file_type(file_path, self.filetype_magics, self.max_filetype_magics, logger)
+        # Tạo thư mục ./temp/ nếu chưa tồn tại
+        base_temp_dir = "temp/".replace("/", os.sep)
+        if not os.path.exists(base_temp_dir):
+            os.makedirs(base_temp_dir)
+
+        # Tạo tên thư mục tạm duy nhất bằng cách sử dụng timestamp
+        temp_dir_name = f"extracted_{int(time.time() * 1000)}"
+        temp_dir = os.path.join(base_temp_dir, temp_dir_name)
+        os.makedirs(temp_dir)
+        # print(f"Extracting to: {temp_dir}")
+
+        try:
+            if file_type in ['ZIP', 'JAR', 'Office', 'PKZIP', 'WinZIP', 'PKSFX']:
+                with zipfile.ZipFile(file_path, 'r') as zip_ref:
+                    zip_ref.extractall(temp_dir)
+            elif file_type == 'RAR':
+                try:
+                    with rarfile.RarFile(file_path, 'r') as rar_ref:
+                        rar_ref.extractall(temp_dir)
+                except ImportError:
+                    print("rarfile not installed, please install it and ensure unrar is available")
+                    return None
+            elif file_type == '7Zip':
+                try:
+                    with py7zr.SevenZipFile(file_path, 'r') as z:
+                        z.extractall(temp_dir)
+                except ImportError:
+                    print("py7zr not installed, please install it")
+                    return None
+            elif file_type == 'GZIP':
+                with gzip.open(file_path, 'rb') as gz_ref:
+                    output_file = os.path.join(temp_dir, os.path.basename(file_path) + '.decompressed')
+                    with open(output_file, 'wb') as out_file:
+                        shutil.copyfileobj(gz_ref, out_file)
+            elif file_type == 'BZip2':
+                with bz2.open(file_path, 'rb') as bz2_ref:
+                    output_file = os.path.join(temp_dir, os.path.basename(file_path) + '.decompressed')
+                    with open(output_file, 'wb') as out_file:
+                        shutil.copyfileobj(bz2_ref, out_file)
+            else:
+                print(f"Unsupported file type: {file_type}")
+                return None
+            return temp_dir
+        except Exception as e:
+            print(f"Error extracting file: {e}")
+            return None
+
+    @staticmethod
+    def delete_temp_dir(temp_dir):
+        if os.path.exists(temp_dir):
+            shutil.rmtree(temp_dir)
+            # print(f"Deleted temporary directory: {temp_dir}")
+        else:
+            # print(f"Directory not found: {temp_dir}")
+            pass
 
     def scan_path(self, path):
         global MESSAGE
         MESSAGE = []
-        # Check if path exists
         if not os.path.exists(path):
-            logger.log("ERROR", "FileScan", "None Existing Scanning Path %s ...  " % path)
+            logger.log("ERROR", "FileScan", f"None Existing Scanning Path {path} ...")
             return
 
-        # Startup
-        logger.log("INFO", "FileScan", "Scanning Path %s ...  " % path)
-        # Platform specific excludes
+        logger.log("INFO", "FileScan", f"Scanning Path {path} ...")
         for skip in self.startExcludes:
             if path.startswith(skip):
-                logger.log("INFO", "FileScan",
-                           "Skipping %s directory [fixed excludes] (try using --force)" % skip)
+                logger.log("INFO", "FileScan", f"Skipping {skip} directory [fixed excludes] (try using --force)")
                 return
 
-        # Counter
         c = 0
         total = 0
 
         for root, directories, files in os.walk(path, onerror=self.walk_error, followlinks=False):
-            # Skip paths that start with ..
             newDirectories = []
             for directory in directories:
                 skipIt = False
-
-                # Generate a complete path for comparisons
                 completePath = os.path.join(root, directory).lower() + os.sep
-
-                # Platform specific excludes
                 for skip in self.startExcludes:
                     if completePath.startswith(skip):
                         skipIt = True
-
                 if not skipIt:
                     newDirectories.append(directory)
             directories[:] = newDirectories
 
             total += len(files)
 
-            # Loop through files
             for filename in files:
                 try:
-                    # Findings
-                    reasons = []
-                    # Total Score
-                    total_score = 0
-
-                    # Get the file and path
-                    filePath = os.path.join(root, filename)
-                    fpath = os.path.split(filePath)[0]
-                    # Clean the values for YARA matching
-                    # > due to errors when Unicode characters are passed to the match function as
-                    #   external variables
-                    filePathCleaned = fpath.encode('ascii', errors='replace')
-                    fileNameCleaned = filename.encode('ascii', errors='replace')
-
-                    # Get Extension
-                    extension = os.path.splitext(filePath)[1].lower()
-
-                    skipIt = False
-
-                    # File size check
-                    if os.stat(filePath).st_size > 20 * (1024 * 1024):
-                        skipIt = True
-
-                    # User defined excludes
-                    for skip in self.fullExcludes:
-                        if skip.search(filePath):
-                            skipIt = True
-
-                    # Linux directory skip
-                    if os_platform == "linux" or os_platform == "macos":
-
-                        # Skip paths that end with ..
-                        for skip in self.LINUX_PATH_SKIPS_END:
-                            if filePath.endswith(skip):
-                                if self.LINUX_PATH_SKIPS_END[skip] == 0:
-                                    self.LINUX_PATH_SKIPS_END[skip] = 1
-                                    skipIt = True
-
-                        # File mode
-                        mode = os.stat(filePath).st_mode
-                        if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(
-                                mode) or stat.S_ISSOCK(mode):
-                            continue
-
-                    # Skip
-                    if skipIt:
+                    file_path = os.path.join(root, filename)
+                    if not self.should_scan_file(file_path):
                         continue
 
-                    # Counter
                     c += 1
+                    logger.log("DEBUG", "PROCESSING", f"{print_progress(c, total)}\t{file_path}\tSize: {os.stat(file_path).st_size / 1024 / 1024} MB\t CSV: {sys.getsizeof(fileInfo_csv)} bytes")
 
-                    print_progress(c, total)
-                    print(filePath + "\t Size: {0} MB\t CSV: {1} bytes".format(os.stat(filePath).st_size / 1024 / 1024,
-                                                                               sys.getsizeof(fileInfo_csv)))
-                    # Skip program directory
-                    # print appPath.lower() +" - "+ filePath.lower()
-                    if self.app_path.lower() in filePath.lower():
-                        continue
-
-                    # File Name Checks -------------------------------------------------
-                    for fioc in self.filename_iocs:
-                        match = fioc['regex'].search(filePath)
-                        if match:
-                            # Check for False Positive
-                            if fioc['regex_fp']:
-                                match_fp = fioc['regex_fp'].search(filePath)
-                                if match_fp:
-                                    continue
-                            # Create Reason
-                            reasons.append("File Name IOC matched PATTERN: %s SUBSCORE: %s DESC: %s" % (
-                                fioc['regex'].pattern, fioc['score'], fioc['description']))
-                            total_score += int(fioc['score'])
-
-                    # Evaluate Type
-                    fileType = get_file_type(filePath, self.filetype_magics, self.max_filetype_magics, logger)
-
-                    # Hash Check -------------------------------------------------------
-                    # Do the check
-
-                    # Set fileData to an empty value
-                    fileData = ""
-
-                    fileData = self.get_file_data(filePath)
-
-                    # Hash Eval
-                    matchType = None
-                    matchDesc = None
-                    matchHash = None
-                    md5 = 0
-                    sha1 = 0
-                    sha256 = 0
-
-                    md5, sha1, sha256 = generateHashes(fileData)
-                    md5_num = int(md5, 16)
-                    sha1_num = int(sha1, 16)
-                    sha256_num = int(sha256, 16)
-
-                    # False Positive Hash
-                    if md5_num in self.false_hashes.keys() or sha1_num in self.false_hashes.keys() or sha256_num \
-                            in self.false_hashes.keys():
-                        continue
-
-                    # Malware Hash
-                    if self.ioc_contains(self, self.hashes_md5_list, md5_num):
-                        matchType = "MD5"
-                        matchDesc = self.hashes_md5[md5_num]
-                        matchHash = md5
-                    if self.ioc_contains(self, self.hashes_sha1_list, sha1_num):
-                        matchType = "SHA1"
-                        matchDesc = self.hashes_sha1[sha1_num]
-                        matchHash = sha1
-                    if self.ioc_contains(self, self.hashes_sha256_list, sha256_num):
-                        matchType = "SHA256"
-                        matchDesc = self.hashes_sha256[sha256_num]
-                        matchHash = sha256
-
-                    # Hash string
-                    if matchType:
-                        reasons.append("Malware Hash TYPE: %s HASH: %s SUBSCORE: 100 DESC: %s" % (
-                            matchType, matchHash, matchDesc))
-                        total_score += 100
-
-                    # Yara Check -------------------------------------------------------
-
-                    # Scan the read data
-                    try:
-                        for (score, rule, description, reference, matched_strings, author) in \
-                                self.scan_data(fileData=fileData,
-                                               fileType=fileType,
-                                               fileName=fileNameCleaned,
-                                               filePath=filePathCleaned,
-                                               extension=extension,
-                                               md5=md5  # legacy rule support
-                                               ):
-                            # Message
-                            message = "Yara Rule MATCH: %s SUBSCORE: %s DESCRIPTION: %s REF: %s AUTHOR: %s" % \
-                                      (rule, score, description, reference, author)
-
-                            # Matches
-                            if matched_strings:
-                                message += " MATCHES: %s" % matched_strings
-
-                            total_score += score
-                            reasons.append(message)
-
-                    except Exception:
-                        logger.log("ERROR", "FileScan", "Cannot YARA scan file: %s" % filePathCleaned)
-
-                    # Info Line -----------------------------------------------------------------------
-                    fileInfo = "===========================================================\n" \
-                               "FILE: %s\n SCORE: %s%s\n " % (
-                                   filePath, total_score, getAgeString(filePath))
-                    message_csv = ""
-                    message_type = "INFO"
-                    # Now print the total result
-                    if total_score >= 100:
-                        message_type = "ALERT"
-                    elif total_score >= 60:
-                        message_type = "WARNING"
-                    elif total_score >= 40:
-                        message_type = "NOTICE"
-
-                    if total_score < 40:
-                        continue
-
-                    # Reasons to message body
-                    message_body = fileInfo
-                    for i, r in enumerate(reasons):
-                        message_body += "\tREASON_{0}: {1}\n ".format(i + 1, r)
-                        message_csv += "REASON_{0}: {1}\n ".format(i + 1, r)
-                    if args.quarantine and "===========================================================" in message_body:
-                        src = filePath
-                        filename = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time()))
-                        dst = os.path.join(self.app_path, ("quarantine/" + filename).replace("/", os.sep))
-                        try:
-                            shutil.move(src, dst)
-                            message_body += "FILE MOVED TO QUARANTINE: %s\n " % dst
-                        except Exception:
-                            message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n "
-                    MESSAGE.append([total_score, message_type, message_body])
-                    fileInfo_csv["FILE"].append(filePath)
-                    fileInfo_csv["SCORE"].append(total_score)
-                    fileInfo_csv["TIME"].append(getAgeString(filePath))
-                    fileInfo_csv["DESCRIPTION"].append(message_csv)
-                    fileInfo_csv["EXTENSION"].append(extension)
+                    # Kiểm tra xem file có phải là file nén không
+                    if self.is_supported_file(file_path):
+                        self.scan_compressed_file(file_path, file_path)
+                    else:
+                        self.scan_single_file(file_path)
                 except Exception:
                     traceback.print_exc()
+
         MESSAGE.sort(key=lambda x: x[0], reverse=True)
         for i in MESSAGE:
             logger.log(i[1], "FileScan", i[2])
 
-    def scan_data(self, fileData, fileType="-", fileName=b"-", filePath=b"-", extension=b"-", md5="-"):
+    def should_scan_file(self, file_path):
+        """Kiểm tra xem file có nên được quét hay không"""
+        if self.app_path.lower() in file_path.lower():
+            return False
+        if os.stat(file_path).st_size > 150 * 1024 * 1024:
+            logger.log("ERROR", "PROCESSING", f"{file_path}\tSize: {os.stat(file_path).st_size / 1024 / 1024} MB > 150 MB")
+            return False
+        for skip in self.fullExcludes:
+            if skip.search(file_path):
+                return False
+        if os_platform == "linux" or os_platform == "macos":
+            for skip in self.LINUX_PATH_SKIPS_END:
+                if file_path.endswith(skip):
+                    if self.LINUX_PATH_SKIPS_END[skip] == 0:
+                        self.LINUX_PATH_SKIPS_END[skip] = 1
+                        return False
+            mode = os.stat(file_path).st_mode
+            if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(mode) or stat.S_ISSOCK(mode):
+                return False
+        return True
 
-        # Scan parameters
-        # print fileType, fileName, filePath, extension, md5
-        # Scan with yara
+    def scan_single_file(self, file_path, parent_file=None):
+        """Quét một file đơn lẻ và ghi nhận kết quả"""
+        reasons = []
+        total_score = 0
+        extension = os.path.splitext(file_path)[1].lower()
+        fileType = get_file_type(file_path, self.filetype_magics, self.max_filetype_magics, logger)
+        fileData = self.get_file_data(file_path)
+
+        # File Name Checks
+        for fioc in self.filename_iocs:
+            match = fioc['regex'].search(file_path)
+            if match and (not fioc['regex_fp'] or not fioc['regex_fp'].search(file_path)):
+                reasons.append(f"File Name IOC matched PATTERN: {fioc['regex'].pattern} SUBSCORE: {fioc['score']} DESC: {fioc['description']}")
+                total_score += int(fioc['score'])
+
+        # Hash Check
+        md5, sha1, sha256 = generateHashes(fileData)
+        md5_num, sha1_num, sha256_num = int(md5, 16), int(sha1, 16), int(sha256, 16)
+        if md5_num in self.false_hashes or sha1_num in self.false_hashes or sha256_num in self.false_hashes:
+            return
+        matchType, matchDesc, matchHash = None, None, None
+        if self.ioc_contains(self, self.hashes_md5_list, md5_num):
+            matchType, matchDesc, matchHash = "MD5", self.hashes_md5[md5_num], md5
+        elif self.ioc_contains(self, self.hashes_sha1_list, sha1_num):
+            matchType, matchDesc, matchHash = "SHA1", self.hashes_sha1[sha1_num], sha1
+        elif self.ioc_contains(self, self.hashes_sha256_list, sha256_num):
+            matchType, matchDesc, matchHash = "SHA256", self.hashes_sha256[sha256_num], sha256
+        if matchType:
+            reasons.append(f"Malware Hash TYPE: {matchType} HASH: {matchHash} SUBSCORE: 100 DESC: {matchDesc}")
+            total_score += 100
+
+        # Yara Check
         try:
-            for rules in self.yara_rules:
-                # Yara Rule Match
-                matches = rules.match(data=fileData,
-                                      externals={
-                                          'filename': fileName.decode('utf-8'),
-                                          'filepath': filePath.decode('utf-8'),
-                                          'extension': extension,
-                                          'filetype': fileType,
-                                          'md5': md5,
-                                          'owner': "dummy"
-                                      })
+            for score, rule, description, reference, matched_strings, author in self.scan_data(
+                fileData=fileData,
+                fileType=fileType,
+                fileName=os.path.basename(file_path).encode('ascii', errors='replace'),
+                file_path=file_path.encode('ascii', errors='replace'),
+                extension=extension,
+                md5=md5
+            ):
+                message = f"Yara Rule MATCH: {rule} SUBSCORE: {score} DESCRIPTION: {description} REF: {reference} AUTHOR: {author}"
+                if matched_strings:
+                    message += f" MATCHES: {matched_strings}"
+                total_score += score
+                reasons.append(message)
+        except Exception:
+            logger.log("ERROR", "FileScan", f"Cannot YARA scan file: {file_path}")
 
-                # If matched
+        if total_score >= 40:
+            self.log_findings(file_path, total_score, reasons, extension, parent_file)
+
+    def scan_compressed_file(self, file_path, parent_file):
+        """Quét file nén và các file bên trong"""
+        temp_dir = self.extract_to_temp(file_path)
+        if temp_dir is not None:
+            try:
+                for root, _, files in os.walk(temp_dir):
+                    for filename in files:
+                        nested_file = os.path.join(root, filename)
+                        if self.should_scan_file(nested_file):
+                            if self.is_supported_file(nested_file):
+                                self.scan_compressed_file(nested_file, parent_file)
+                            else:
+                                self.scan_single_file(nested_file, parent_file)
+            finally:
+                self.delete_temp_dir(temp_dir)
+
+    def log_findings(self, file_path, total_score, reasons, extension, parent_file=None):
+        """Ghi nhận kết quả quét"""
+        fileInfo = f"===========================================================\nFILE: {file_path}\n SCORE: {total_score}{getAgeString(file_path)}\n"
+        if parent_file:
+            fileInfo = fileInfo.replace("\nFILE:", f"\nPARENT FILE: {parent_file}\nFILE:")
+        message_csv = ""
+        message_type = "INFO"
+        if total_score >= 100:
+            message_type = "ALERT"
+        elif total_score >= 60:
+            message_type = "WARNING"
+        elif total_score >= 40:
+            message_type = "NOTICE"
+
+        message_body = fileInfo
+        for i, r in enumerate(reasons):
+            message_body += f"\tREASON_{i + 1}: {r}\n"
+            message_csv += f"REASON_{i + 1}: {r}\n"
+        if args.quarantine and "===========================================================" in message_body:
+            src = file_path if not parent_file else parent_file
+            filename = os.path.basename(src.replace("/", os.sep)) + "." + str(int(time.time()))
+            dst = os.path.join(self.app_path, ("quarantine/" + filename).replace("/", os.sep))
+            try:
+                if os.path.exists(src):
+                    shutil.move(src, dst)
+                message_body += f"FILE MOVED TO QUARANTINE: {dst}\n"
+            except Exception:
+                message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n"
+        MESSAGE.append([total_score, message_type, message_body])
+        fileInfo_csv["FILE"].append(file_path if not parent_file else parent_file)
+        fileInfo_csv["SCORE"].append(total_score)
+        fileInfo_csv["TIME"].append(getAgeString(file_path))
+        fileInfo_csv["DESCRIPTION"].append(message_csv)
+        fileInfo_csv["EXTENSION"].append(extension)
+
+
+    def scan_data(self, fileData, fileType="-", fileName=b"-", file_path=b"-", extension=b"-", md5="-"):
+        try:
+            # Duyệt qua từng quy tắc YARA đã biên dịch và áp dụng chúng riêng biệt
+            for rule in self.yara_rules:
+                matches = rule.match(data=fileData, externals={
+                    'filename': fileName.decode('utf-8'),
+                    'file_path': file_path.decode('utf-8'),
+                    'extension': extension,
+                    'filetype': fileType,
+                    'md5': md5,
+                    'owner': "dummy"
+                })
+
+                # Nếu có sự khớp, trả về thông tin về quy tắc và mô tả
                 if matches:
                     for match in matches:
-
-                        score = 70
+                        score = 70  # Mặc định điểm số cho mỗi quy tắc
                         description = "not set"
                         reference = "-"
                         author = "-"
-                        if match.rule in self.fullExcludeYaraRules:
-                            continue
-                        # Built-in rules have meta fields (cannot be expected from custom rules)
                         if hasattr(match, 'meta'):
-
                             if 'description' in match.meta:
                                 description = match.meta['description']
                             if 'cluster' in match.meta:
-                                description = "IceWater Cluster {0}".format(match.meta['cluster'])
+                                description = f"IceWater Cluster {match.meta['cluster']}"
 
                             if 'reference' in match.meta:
                                 reference = match.meta['reference']
-                            if 'viz_url' in match.meta:
-                                reference = match.meta['viz_url']
                             if 'author' in match.meta:
                                 author = match.meta['author']
 
-                            # If a score is given
                             if 'score' in match.meta:
                                 score = int(match.meta['score'])
 
-                        # Matching strings
                         matched_strings = ""
                         if hasattr(match, 'strings'):
-                            # Get matching strings
                             matched_strings = self.get_string_matches(match.strings)
 
                         yield score, match.rule, description, reference, matched_strings, author
@@ -526,75 +562,57 @@ class Scanner(object):
             sys.exit(1)
 
     def initialize_yara_rules(self):
-        yaraRuleFile = None
-        yaraRules = ""
-        dummy = ""
-        rule_count = 0
+        yara_rules = []  # Danh sách lưu trữ các quy tắc YARA riêng biệt
 
         try:
             for yara_rule_directory in self.yara_rule_directories:
+                print(yara_rule_directory)
                 if not os.path.exists(yara_rule_directory):
                     continue
-                # logger.log("INFO", "Init", "Processing YARA rules folder {0}".format(yara_rule_directory))
+                # Duyệt qua các tệp trong thư mục quy tắc
                 for root, directories, files in os.walk(yara_rule_directory, onerror=self.walk_error,
                                                         followlinks=False):
                     for file in files:
+                        print(file)
                         try:
-                            # Full Path
-                            yaraRuleFile = os.path.join(root, file)
-
-                            # Skip hidden, backup or system related files
-                            if file.startswith(".") or file.startswith("~") or file.startswith("_"):
-                                continue
-
-                            # Extension
+                            # Kiểm tra phần mở rộng của tệp (chỉ chấp nhận *.yar hoặc *.yara)
                             extension = os.path.splitext(file)[1].lower()
-
-                            # Skip all files that don't have *.yar or *.yara extensions
                             if extension != ".yar" and extension != ".yara":
                                 continue
 
+                            # Đọc nội dung tệp YARA
+                            yaraRuleFile = os.path.join(root, file)
+                            print(yaraRuleFile)
+
                             with open(yaraRuleFile, 'r') as yfile:
                                 yara_rule_data = yfile.read()
-
-                            # Test Compile
+                            print(len(yara_rule_data))
+                            # Biên dịch từng quy tắc YARA riêng biệt
                             try:
-                                rule_count += 1
+                                compiled_rule = yara.compile(source=yara_rule_data)
+                                print(compiled_rule)
+                                yara_rules.append(compiled_rule)
                             except Exception:
-                                logger.log("ERROR", "Init", "Error while initializing Yara rule %s ERROR: %s"
-                                           % (file, sys.exc_info()[1]))
-                                continue
+                                res = ""
+                                imports = "\n".join(re.findall(r'import\s+".+?"$', yara_rule_data, re.MULTILINE))
+                                rules = re.findall(r'rule\s.*?{.*?condition:.*?}', yara_rule_data, re.DOTALL)
 
-                            if ("webshell" in str(yara_rule_data).lower() or "jsp" in str(yara_rule_data).lower()
-                                    or "asp" in str(yara_rule_data).lower() or "php" in str(yara_rule_data).lower()
-                                    or "web" in str(yara_rule_data).lower() or "shell" in str(yara_rule_data).lower()
-                                    or "cmd" in str(yara_rule_data).lower()):
-                                yaraRules += yara_rule_data
+                                for rule in rules:
+                                    separate = self.separate_rule(rule)
+                                    for ru in separate:
+                                        temp_combined = res + ru + "\n"
+                                        if self.check_yara_rule(imports + temp_combined, ru):
+                                            res = temp_combined
+                                yara_rules.append(yara.compile(source=(imports + res)))
 
                         except Exception:
+                            # traceback.print_exc()
                             logger.log("ERROR", "Init",
-                                       "Error reading signature file %s ERROR: %s" % (yaraRuleFile, sys.exc_info()[1]))
+                                       f"Error while initializing YARA rule {file} ERROR: {sys.exc_info()[1]}")
 
-            # Compile
-            try:
-                # logger.log("INFO", "Init", "Initializing all YARA rules at once (composed string of all rule files)")
-                compiledRules = yara.compile(source=yaraRules, externals={
-                    'filename': dummy,
-                    'filepath': dummy,
-                    'extension': dummy,
-                    'filetype': dummy,
-                    'md5': dummy,
-                    'owner': dummy,
-                })
-                logger.log("INFO", "Init", "Initialized %d Yara rules" % rule_count)
-            except Exception:
-                logger.log("ERROR", "Init",
-                           "Error during YARA rule compilation ERROR: %s - please fix the issue in the rule set" %
-                           sys.exc_info()[1])
-                sys.exit(1)
-
-            # Add YARA rules
-            self.yara_rules.append(compiledRules)
+            # Lưu trữ các quy tắc đã biên dịch vào biến đối tượng
+            self.yara_rules = yara_rules
+            logger.log("INFO", "Init", f"Initialized {len(yara_rules)} YARA rules")
 
         except Exception:
             logger.log("ERROR", "Init", "Error reading signature folder /signatures/")
@@ -768,7 +786,6 @@ def main():
     # Parse Arguments
     parser = argparse.ArgumentParser(description='WebShell Scanner')
     parser.add_argument('-p', '--path', help='Path to scan', required=True)
-    parser.add_argument('-o', '--out_file', help='Write to file', default="output.log")
     parser.add_argument('-q', '--quarantine', help='Rename and move to quarantine areas', default=False,
                         action='store_true')
     args = parser.parse_args()
@@ -787,7 +804,7 @@ if __name__ == '__main__':
 
     # Logger
     logger = Logger(getHostname(os_platform),
-                    platform=os_platform, caller='main', VERSION=VERSION, log_file=args.out_file)
+                    platform=os_platform, caller='main', VERSION=VERSION)
 
     logger.log("NOTICE", "Init", "Starting Webshell Scan SYSTEM: {0} TIME: {1} PLATFORM: {2}".format(
         getHostname(os_platform), getSyslogTimestamp(), getPlatformFull()))
@@ -838,10 +855,7 @@ if __name__ == '__main__':
     else:
         logger.log("RESULT", "Results", "SYSTEM SEEMS TO BE CLEAN.")
 
-    logger.log("NOTICE", "Results",
-               "Log file is stored in: {0}{1}{2}".format(scanner.get_application_path(), "/logs/".replace("/", os.sep),
-                                                         args.out_file))
-    logger.log("NOTICE", "Results",
-               "Finished Webshell Scan SYSTEM: %s TIME: %s" % (getHostname(os_platform), getSyslogTimestamp()))
+    logger.log("NOTICE", "Results", f"Log file is stored in: {scanner.get_application_path()}{ '/logs/'.replace('/', os.sep)}")
+    logger.log("NOTICE", "Results", f"Finished Webshell Scan SYSTEM: {getHostname(os_platform)} TIME: {getSyslogTimestamp()}")
 
 sys.exit(0)
