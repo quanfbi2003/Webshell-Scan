@@ -558,7 +558,13 @@ class Scanner(object):
 
         # Counter
         c = 0
-        total = 0
+
+        # Pre-count total files for accurate progress display
+        try:
+            total = sum(len(filenames) for _, _, filenames in os.walk(path, onerror=self.walk_error, followlinks=False))
+        except Exception as e:
+            logger.log("DEBUG", "FileScan", f"Cannot pre-count files in {path}: {str(e)}")
+            total = 0
 
         for root, directories, files in os.walk(path, onerror=self.walk_error, followlinks=False):
             # Skip paths that start with ..
@@ -577,8 +583,6 @@ class Scanner(object):
                 if not skipIt:
                     newDirectories.append(directory)
             directories[:] = newDirectories
-
-            total += len(files)
 
             # Loop through files
             for filename in files:
