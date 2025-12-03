@@ -1641,16 +1641,11 @@ def main():
                 else:
                     scan_dir_name = 'root'
             
-            # Làm sạch tên thư mục: bỏ ký tự đặc biệt, giới hạn độ dài
+            # Làm sạch tên thư mục: bỏ ký tự đặc biệt
             # Thay thế các ký tự không hợp lệ trong tên file
             invalid_chars = '<>:"/\\|?*'
             for char in invalid_chars:
                 scan_dir_name = scan_dir_name.replace(char, '_')
-            
-            # Giới hạn độ dài tên thư mục (tránh tên file quá dài)
-            max_dir_name_length = 30
-            if len(scan_dir_name) > max_dir_name_length:
-                scan_dir_name = scan_dir_name[:max_dir_name_length]
             
             # Tạo tên file log mới với tên thư mục
             if hostname_clean:
