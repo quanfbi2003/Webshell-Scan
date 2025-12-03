@@ -1,6 +1,0 @@
-colorama
-psutil
-netaddr
-WMI
-pywin32
-pandas
