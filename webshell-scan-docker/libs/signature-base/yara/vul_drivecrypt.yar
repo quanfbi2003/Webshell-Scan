@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_drivecrypt.yar
-
-rule EXP_DriveCrypt_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_drivecrypt_EXP_DriveCrypt_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_drivecrypt.yar
    meta:
       description = "Detects DriveCrypt exploit"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -20,13 +15,8 @@ rule Neo23x0_vul_drivecrypt_EXP_DriveCrypt_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_drivecrypt.yar
-
-rule EXP_DriveCrypt_x64passldr {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_drivecrypt_EXP_DriveCrypt_x64passldr {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_drivecrypt.yar
    meta:
       description = "Detects DriveCrypt exploit"
       author = "Florian Roth (Nextron Systems)"

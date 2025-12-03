@@ -1,13 +1,9 @@
 import "pe"
 //import "hash"
 
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_imphash_detection.yar
-rule Neo23x0_gen_MAL_Malware_Imphash_Mar23_1 : HIGHVOL {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_imphash_detection_MAL_Malware_Imphash_Mar23_1 : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_imphash_detection.yar
     meta:
         description = "Detects malware by known bad imphash or rich_pe_header_hash"
         reference = "https://yaraify.abuse.ch/statistics/"

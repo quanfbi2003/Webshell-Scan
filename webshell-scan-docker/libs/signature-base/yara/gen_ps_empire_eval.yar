@@ -5,20 +5,12 @@
    Identifier: PowerShell Empire Eval
    2 of 8 rules
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ps_empire_eval.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ps_empire_eval.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ps_empire_eval.yar
-rule PowerShell_Emp_Eval_Jul17_A1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_ps_empire_eval_PowerShell_Emp_Eval_Jul17_A1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ps_empire_eval.yar
    meta:
       description = "Detects suspicious sample with PowerShell content "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_gen_ps_empire_eval_PowerShell_Emp_Eval_Jul17_A1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 30KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ps_empire_eval.yar
-
-rule PowerShell_Emp_Eval_Jul17_A2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ps_empire_eval_PowerShell_Emp_Eval_Jul17_A2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ps_empire_eval.yar
    meta:
       description = "Detects suspicious sample with PowerShell content "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

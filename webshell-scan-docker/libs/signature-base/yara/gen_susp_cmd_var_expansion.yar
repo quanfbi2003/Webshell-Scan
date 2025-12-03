@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_cmd_var_expansion.yar
-
-rule SUSP_CMD_Var_Expansion {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_cmd_var_expansion_SUSP_CMD_Var_Expansion {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_cmd_var_expansion.yar
    meta:
       description = "Detects Office droppers that include a variable expansion string"
       author = "Florian Roth (Nextron Systems)"

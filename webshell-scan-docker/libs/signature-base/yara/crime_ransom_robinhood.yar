@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_robinhood.yar
-
-rule MAL_RANSOM_RobinHood_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_robinhood_MAL_RANSOM_RobinHood_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_robinhood.yar
    meta:
       description = "Detects RobinHood Ransomware"
       author = "Florian Roth (Nextron Systems)"

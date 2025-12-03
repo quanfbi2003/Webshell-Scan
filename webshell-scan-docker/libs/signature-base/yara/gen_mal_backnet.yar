@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_backnet.yar
-
-rule MAL_BackNet_Nov18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_backnet_MAL_BackNet_Nov18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_backnet.yar
    meta:
       description = "Detects BackNet samples"
       author = "Florian Roth (Nextron Systems)"

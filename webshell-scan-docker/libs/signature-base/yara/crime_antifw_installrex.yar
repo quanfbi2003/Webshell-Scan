@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_antifw_installrex.yar
-
-rule PUP_InstallRex_AntiFWb {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_antifw_installrex_PUP_InstallRex_AntiFWb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_antifw_installrex.yar
 	meta:
 		description = "Malware InstallRex / AntiFW"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

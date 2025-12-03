@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-10-03
-   Identifier: APT17 Oct 10
-   Reference: https://goo.gl/puVc9q
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://goo.gl/puVc9q
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt17_mal_sep17.yar
-rule APT17_Malware_Oct17_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_apt17_mal_sep17_APT17_Malware_Oct17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt17_mal_sep17.yar
    meta:
       description = "Detects APT17 malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +29,8 @@ rule Neo23x0_apt_apt17_mal_sep17_APT17_Malware_Oct17_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt17_mal_sep17.yar
-
-rule APT17_Malware_Oct17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt17_mal_sep17_APT17_Malware_Oct17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt17_mal_sep17.yar
    meta:
       description = "Detects APT17 malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -78,13 +59,8 @@ rule Neo23x0_apt_apt17_mal_sep17_APT17_Malware_Oct17_2 {
          6 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt17_mal_sep17.yar
-
-rule APT17_Unsigned_Symantec_Binary_EFA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt17_mal_sep17_APT17_Unsigned_Symantec_Binary_EFA {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt17_mal_sep17.yar
    meta:
       description = "Detects APT17 malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -99,13 +75,8 @@ rule Neo23x0_apt_apt17_mal_sep17_APT17_Unsigned_Symantec_Binary_EFA {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them and pe.number_of_signatures == 0 )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt17_mal_sep17.yar
-
-rule APT17_Malware_Oct17_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt17_mal_sep17_APT17_Malware_Oct17_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt17_mal_sep17.yar
    meta:
       description = "Detects APT17 malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

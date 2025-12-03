@@ -6,19 +6,12 @@
    Identifier: Patchwork
    Reference: https://goo.gl/Pg3P4W
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_xrat.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule xRAT_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_xrat_xRAT_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_xrat.yar
    meta:
       description = "Detects Patchwork malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

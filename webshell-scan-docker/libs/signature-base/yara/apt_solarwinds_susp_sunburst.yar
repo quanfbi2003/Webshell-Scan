@@ -1,4 +1,3 @@
-/*
 import "pe"
 /*
 
@@ -19,13 +18,9 @@ rule SUSP_Solarwinds_SUNBURST_Revoked_Cert {
 }
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_susp_sunburst.yar
-rule LOG_APT_WEBSHELL_Solarwinds_SUNBURST_Report_Webshell_Dec20_2 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_susp_sunburst_LOG_APT_WEBSHELL_Solarwinds_SUNBURST_Report_Webshell_Dec20_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_susp_sunburst.yar
    meta:
       description = "Detects webshell access mentioned in FireEye's SUNBURST report"
       author = "Florian Roth (Nextron Systems)"

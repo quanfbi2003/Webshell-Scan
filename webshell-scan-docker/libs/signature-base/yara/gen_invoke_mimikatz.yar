@@ -4,20 +4,12 @@
 	Date: 2016-07-19
 	Identifier: Invoke-Mimikatz
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_mimikatz.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_invoke_mimikatz.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_mimikatz.yar
-rule Invoke_Mimikatz {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_invoke_mimikatz_Invoke_Mimikatz {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_invoke_mimikatz.yar
 	meta:
 		description = "Detects Invoke-Mimikatz String"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

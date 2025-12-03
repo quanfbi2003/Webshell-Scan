@@ -1,11 +1,7 @@
 /* Old webshell rule from THOR's signature set - donation to the community */ 
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_spring4shell.yar
-rule WEBSHELL_JSP_Nov21_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_expl_spring4shell_WEBSHELL_JSP_Nov21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_spring4shell.yar
    meta:
       description = "Detects JSP webshells"
       author = "Florian Roth (Nextron Systems)"
@@ -21,13 +17,8 @@ rule Neo23x0_expl_spring4shell_WEBSHELL_JSP_Nov21_1 {
    condition:
       filesize < 400KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_spring4shell.yar
-
-rule EXPL_POC_SpringCore_0day_Indicators_Mar22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_spring4shell_EXPL_POC_SpringCore_0day_Indicators_Mar22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_spring4shell.yar
    meta:
       description = "Detects indicators found after SpringCore exploitation attempts and in the POC script"
       author = "Florian Roth (Nextron Systems)"
@@ -43,13 +34,8 @@ rule Neo23x0_expl_spring4shell_EXPL_POC_SpringCore_0day_Indicators_Mar22_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_spring4shell.yar
-
-rule EXPL_POC_SpringCore_0day_Webshell_Mar22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_spring4shell_EXPL_POC_SpringCore_0day_Webshell_Mar22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_spring4shell.yar
    meta:
       description = "Detects webshell found after SpringCore exploitation attempts POC script"
       author = "Florian Roth (Nextron Systems)"

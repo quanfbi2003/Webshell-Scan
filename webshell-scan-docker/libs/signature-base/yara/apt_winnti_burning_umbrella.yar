@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-05-04
-   Identifier: Burning Umbrella
-   Reference: https://401trg.pw/burning-umbrella/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://401trg.pw/burning-umbrella/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-rule MAL_BurningUmbrella_Sample_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -45,13 +31,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_1 {
          $s2 in (0..1024)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -70,13 +51,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_2 {
       $s2 in (0..1024) and
       $s3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -90,13 +66,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -128,13 +99,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_4 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -149,13 +115,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_6 {
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -169,13 +130,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_7 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and pe.imphash() == "f5b113d6708a3927b5cc48f2215fcaff"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -189,13 +145,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_8 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_10 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -212,13 +163,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_10 {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_11 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -232,13 +178,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_11 {
    condition:
       uint16(0) == 0x4b50 and filesize < 700KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_12 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_12 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -260,13 +201,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_12 {
          5 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_13 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_13 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -279,13 +215,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_13 {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and pe.imphash() == "75f201aa8b18e1c4f826b2fe0963b84f"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_14 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_14 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -300,13 +231,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_14 {
    condition:
       uint16(0) == 0x5a4d and filesize < 40KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_15 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_15 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -322,13 +248,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_15 {
    condition:
       uint16(0) == 0x5a4d and filesize < 50KB and pe.imphash() == "cc33b1500354cf785409a3b428f7cd2a"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_16 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_16 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -342,13 +263,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_16 {
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -368,13 +284,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_17 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -402,13 +313,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_18 {
          1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_19 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_19 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -426,13 +332,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_19 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_20 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_20 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -454,13 +355,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_20 {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_21 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -480,13 +376,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_21 {
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_BurningUmbrella_Sample_22 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -504,14 +395,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_BurningUmbrella_Sample_22 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-
-rule MAL_AirdViper_Sample_Apr18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_AirdViper_Sample_Apr18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects Arid Viper malware sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -538,13 +423,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_AirdViper_Sample_Apr18_1 {
 }
 
 /* Generic Rules ------------------------------------ */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_Winnti_Sample_May18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_Winnti_Sample_May18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects malware sample from Burning Umbrella report - Generic Winnti Rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -559,13 +439,8 @@ rule Neo23x0_apt_winnti_burning_umbrella_MAL_Winnti_Sample_May18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_burning_umbrella.yar
-
-rule MAL_Visel_Sample_May18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_burning_umbrella_MAL_Visel_Sample_May18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_burning_umbrella.yar
    meta:
       description = "Detects Visel malware sample from Burning Umbrella report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

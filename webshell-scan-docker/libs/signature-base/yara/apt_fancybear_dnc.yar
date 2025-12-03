@@ -4,20 +4,12 @@
 	Date: 2016-06-14
 	Identifier: Fancy Bear and Cozy Bear Report - CrowdStrike
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fancybear_dnc.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fancybear_dnc.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fancybear_dnc.yar
-rule COZY_FANCY_BEAR_Hunt {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_fancybear_dnc_COZY_FANCY_BEAR_Hunt {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fancybear_dnc.yar
 	meta:
 		description = "Detects Cozy Bear / Fancy Bear C2 Server IPs"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +28,8 @@ rule Neo23x0_apt_fancybear_dnc_COZY_FANCY_BEAR_Hunt {
 	condition:
 		uint16(0) == 0x5a4d and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fancybear_dnc.yar
-
-rule COZY_FANCY_BEAR_pagemgr_Hunt {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fancybear_dnc_COZY_FANCY_BEAR_pagemgr_Hunt {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fancybear_dnc.yar
 	meta:
 		description = "Detects a pagemgr.exe as mentioned in the CrowdStrike report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

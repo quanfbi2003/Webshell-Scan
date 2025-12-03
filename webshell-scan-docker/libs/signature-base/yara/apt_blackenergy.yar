@@ -5,13 +5,9 @@
 	Identifier: BlackEnergy Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-rule BlackEnergy_BE_2 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_BE_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
    meta:
       description = "Detects BlackEnergy 2 Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +32,8 @@ rule Neo23x0_apt_blackenergy_BlackEnergy_BE_2 {
 	Date: 2016-01-03
 	Identifier: BlackEnergy Malware
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule BlackEnergy_VBS_Agent {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_VBS_Agent {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Detects VBS Agent from BlackEnergy Report - file Dropbearrun.vbs"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +49,8 @@ rule Neo23x0_apt_blackenergy_BlackEnergy_VBS_Agent {
 	condition:
 		filesize < 1KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule DropBear_SSH_Server {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_DropBear_SSH_Server {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Detects DropBear SSH Server (not a threat but used to maintain access)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -83,13 +69,8 @@ rule Neo23x0_apt_blackenergy_DropBear_SSH_Server {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule BlackEnergy_BackdoorPass_DropBear_SSH {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_BackdoorPass_DropBear_SSH {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Detects the password of the backdoored DropBear SSH Server - BlackEnergy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -105,13 +86,8 @@ rule Neo23x0_apt_blackenergy_BlackEnergy_BackdoorPass_DropBear_SSH {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule BlackEnergy_KillDisk_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_KillDisk_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Detects KillDisk malware from BlackEnergy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -139,13 +115,8 @@ rule Neo23x0_apt_blackenergy_BlackEnergy_KillDisk_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and 8 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule BlackEnergy_KillDisk_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_KillDisk_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Detects KillDisk malware from BlackEnergy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -167,13 +138,8 @@ rule Neo23x0_apt_blackenergy_BlackEnergy_KillDisk_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule BlackEnergy_Driver_USBMDM {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_Driver_USBMDM {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Black Energy Driver"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -197,13 +163,8 @@ rule Neo23x0_apt_blackenergy_BlackEnergy_Driver_USBMDM {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 180KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy.yar
-
-rule BlackEnergy_Driver_AMDIDE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_BlackEnergy_Driver_AMDIDE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_blackenergy.yar
 	meta:
 		description = "Black Energy Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

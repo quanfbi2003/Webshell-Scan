@@ -4,20 +4,12 @@
 	Date: 2016-09-08
 	Identifier: Pirpi
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_pirpi.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_pirpi.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_pirpi.yar
-rule Pirpi_1609_A {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_pirpi_Pirpi_1609_A {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_pirpi.yar
 	meta:
 		description = "Detects Pirpi Backdoor - and other malware (generic rule)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -51,13 +43,8 @@ rule Neo23x0_gen_pirpi_Pirpi_1609_A {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 200KB and ( $x1 or all of ($c*) or all of ($op*) ) ) or ( 8 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_pirpi.yar
-
-rule Pirpi_1609_B {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_pirpi_Pirpi_1609_B {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_pirpi.yar
 	meta:
 		description = "Detects Pirpi Backdoor"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

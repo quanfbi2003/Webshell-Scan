@@ -5,13 +5,9 @@
 	Identifier: SharpCat
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sharpcat.yar
-rule SharpCat {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_sharpcat_SharpCat {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sharpcat.yar
 	meta:
 		description = "Detects command shell SharpCat - file SharpCat.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

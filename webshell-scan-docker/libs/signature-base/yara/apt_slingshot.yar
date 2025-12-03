@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-03-09
-   Identifier: Slingshot APT
-   Reference: https://securelist.com/apt-slingshot/84312/
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,14 +7,10 @@ import "pe"
    Reference: https://securelist.com/apt-slingshot/84312/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-rule Slingshot_APT_Spork_Downloader {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Spork_Downloader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +24,8 @@ rule Neo23x0_apt_slingshot_Slingshot_APT_Spork_Downloader {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-
-rule Slingshot_APT_Minisling {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Minisling {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -55,13 +38,8 @@ rule Neo23x0_apt_slingshot_Slingshot_APT_Minisling {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-
-rule Slingshot_APT_Ring0_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Ring0_Loader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -80,13 +58,8 @@ rule Neo23x0_apt_slingshot_Slingshot_APT_Ring0_Loader {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-
-rule Slingshot_APT_Malware_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -106,13 +79,8 @@ rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_1 {
         1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-
-rule Slingshot_APT_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -132,13 +100,8 @@ rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 900KB and ( 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-
-rule Slingshot_APT_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -159,13 +122,8 @@ rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_3 {
         ( $a1 and 2 of ($s*) )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_slingshot.yar
-
-rule Slingshot_APT_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_slingshot_Slingshot_APT_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_slingshot.yar
    meta:
       description = "Detects malware from Slingshot APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

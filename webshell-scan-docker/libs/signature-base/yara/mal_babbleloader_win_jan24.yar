@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_babbleloader_win_jan24.yar
-rule mal_babbleloader_win_jan24 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_babbleloader_win_jan24_mal_babbleloader_win_jan24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_babbleloader_win_jan24.yar
   meta:
       author = "0x0d4y"
       description = "This rule detects intrinsic patterns of BabbleLoader."
@@ -26,8 +22,4 @@ rule Neo23x0_mal_babbleloader_win_jan24_mal_babbleloader_win_jan24 {
     condition:
         uint16(0) == 0x5a4d and
         $str_decryption_algorithm and $hashing_algorithm and (1 of ($halos_gate, $get_syscall_offset, $jump_syscall_offset))
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_babbleloader_win_jan24.yar
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_babbleloader_win_jan24.yar

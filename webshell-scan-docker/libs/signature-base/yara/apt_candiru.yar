@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_candiru.yar
-
-rule MAL_DevilsTongue_HijackDll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_candiru_MAL_DevilsTongue_HijackDll {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_candiru.yar
    meta:
       description = "Detects SOURGUM's DevilsTongue hijack DLL"
       author = "Microsoft Threat Intelligence Center (MSTIC)"

@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318B.yar
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta17_318B.yar
 /*
    Yara Rule Set
    Author: US CERT
@@ -10,13 +7,9 @@ import "pe"
    Reference: https://www.us-cert.gov/ncas/alerts/TA17-318B
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318B.yar
-rule TA17_318B_volgmer {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ta17_318B_TA17_318B_volgmer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta17_318B.yar
    meta:
       description = "Malformed User Agent in Volgmer malware"
       author = "US CERT"
@@ -37,18 +30,10 @@ rule Neo23x0_apt_ta17_318B_TA17_318B_volgmer {
    Reference: https://www.us-cert.gov/ncas/alerts/TA17-318B
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318B.yar
-import "pe"
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Volgmer_Malware {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 //===SUCCESS===
 rule Neo23x0_apt_ta17_318B_Volgmer_Malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta17_318B.yar
    meta:
       description = "Detects Volgmer malware as reported in US CERT TA17-318B"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

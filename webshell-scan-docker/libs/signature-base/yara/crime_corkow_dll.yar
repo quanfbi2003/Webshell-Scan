@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_corkow_dll.yar
-
-rule CorkowDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_corkow_dll_CorkowDLL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_corkow_dll.yar
     meta:
         description = "Rule to detect the Corkow DLL files"
         author = "Group IB"

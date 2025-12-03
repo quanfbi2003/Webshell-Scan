@@ -1,18 +1,11 @@
-// Copyright 2020 by FireEye, Inc.
-// You may not use this file except in compliance with the license. The license should have been received with this file. You may obtain a copy of the license at:
-// https://github.com/fireeye/sunburst_countermeasures/blob/main/LICENSE.txt
 import "pe"
 // Copyright 2020 by FireEye, Inc.
 // You may not use this file except in compliance with the license. The license should have been received with this file. You may obtain a copy of the license at:
 // https://github.com/fireeye/sunburst_countermeasures/blob/main/LICENSE.txt
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_Backdoor_SUNBURST_1
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_Backdoor_SUNBURST_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"
@@ -34,12 +27,8 @@ rule Neo23x0_apt_solarwinds_sunburst_APT_Backdoor_SUNBURST_1
     condition:
         $fnv_xor and ($cmd_regex_encoded or $cmd_regex_plain) or ( ($fake_orion_event_encoded or $fake_orion_event_plain) and ($fake_orion_eventmanager_encoded or $fake_orion_eventmanager_plain) and ($fake_orion_message_encoded and $fake_orion_message_plain) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_Backdoor_SUNBURST_2
-=======
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_Backdoor_SUNBURST_2
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"
@@ -91,12 +80,8 @@ rule Neo23x0_apt_solarwinds_sunburst_APT_Backdoor_SUNBURST_2
     condition:
         ($a and $b and $c and $d and $e and $f and $h and $i) or ($j and $k and $l and $m and $n and $o and $p and $q and $r and $s and ($aa or $ab)) or ($t and $u and $v and $w and $x and $y and $z and ($aa or $ab)) or ($ac and $ad and $ae and $af and $ag and $ah and ($am or $an)) or ($ai and $aj and $ak and $al and ($am or $an))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_Webshell_SUPERNOVA_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_Webshell_SUPERNOVA_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"
@@ -116,12 +101,8 @@ rule Neo23x0_apt_solarwinds_sunburst_APT_Webshell_SUPERNOVA_1
     condition:
         uint16(0) == 0x5a4d and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10KB and pe.imports("mscoree.dll","_CorDllMain") and $httpmodule and $context and all of ($compile*) and all of ($string*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_Webshell_SUPERNOVA_2
-=======
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_Webshell_SUPERNOVA_2
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"
@@ -140,12 +121,8 @@ rule Neo23x0_apt_solarwinds_sunburst_APT_Webshell_SUPERNOVA_2
     condition:
         uint16(0) == 0x5a4d and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10KB and 3 of ($string*) and $dynamic and $solar
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_HackTool_PS1_COSMICGALE_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_HackTool_PS1_COSMICGALE_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"
@@ -167,12 +144,8 @@ rule Neo23x0_apt_solarwinds_sunburst_APT_HackTool_PS1_COSMICGALE_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_Dropper_Raw64_TEARDROP_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_Dropper_Raw64_TEARDROP_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"
@@ -188,12 +161,8 @@ rule Neo23x0_apt_solarwinds_sunburst_APT_Dropper_Raw64_TEARDROP_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_solarwinds_sunburst.yar
-rule APT_Dropper_Win64_TEARDROP_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_solarwinds_sunburst_APT_Dropper_Win64_TEARDROP_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_solarwinds_sunburst.yar
 {
     meta:
         author = "FireEye"

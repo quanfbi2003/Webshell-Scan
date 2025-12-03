@@ -1,12 +1,8 @@
 // low hanging fruits ;)
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-rule HKTL_NET_NAME_FakeFileMaker {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_FakeFileMaker {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DamonMohammadbagher/FakeFileMaker"
@@ -20,13 +16,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_FakeFileMaker {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_WMIPersistence {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_WMIPersistence {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/mdsecactivebreach/WMIPersistence"
@@ -62,13 +53,8 @@ rule HKTL_NET_NAME_ADCollector {
         and not 1 of ($fp*)
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_AdCollector_Sep22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_AdCollector_Sep22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
    meta:
       description = "Detects ADCollector Tool - a lightweight tool to quickly extract valuable information from the Active Directory environment for both attacking and defending"
       author = "Florian Roth (Nextron Systems)"
@@ -89,13 +75,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_AdCollector_Sep22_1 {
       uint16(0) == 0x5a4d and
       filesize < 300KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_MaliciousClickOnceGenerator {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_MaliciousClickOnceGenerator {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/Mr-Un1k0d3r/MaliciousClickOnceGenerator"
@@ -109,13 +90,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_MaliciousClickOnce
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_directInjectorPOC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_directInjectorPOC {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/badBounty/directInjectorPOC"
@@ -129,13 +105,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_directInjectorPOC 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_AsStrongAsFuck {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AsStrongAsFuck {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/Charterino/AsStrongAsFuck"
@@ -149,13 +120,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AsStrongAsFuck {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_MagentoScanner {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_MagentoScanner {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/soufianetahiri/MagentoScanner"
@@ -169,13 +135,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_MagentoScanner {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_RevengeRAT_Stub_CSsharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RevengeRAT_Stub_CSsharp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/NYAN-x-CAT/RevengeRAT-Stub-CSsharp"
@@ -189,13 +150,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RevengeRAT_Stub_CS
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_SharPyShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharPyShell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/antonioCoco/SharPyShell"
@@ -209,13 +165,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharPyShell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_GhostLoader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_GhostLoader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/TheWover/GhostLoader"
@@ -229,13 +180,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_GhostLoader {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_DotNetInject {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_DotNetInject {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/dtrizna/DotNetInject"
@@ -256,13 +202,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_DotNetInject {
         and $name and $compile
         and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_ATPMiniDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_ATPMiniDump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/b4rtik/ATPMiniDump"
@@ -276,13 +217,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_ATPMiniDump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule SUSP_NET_NAME_ConfuserEx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_SUSP_NET_NAME_ConfuserEx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects ConfuserEx packed file"
         reference = "https://github.com/yck1509/ConfuserEx"
@@ -298,13 +234,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_SUSP_NET_NAME_ConfuserEx {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_SharpBuster {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpBuster {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/passthehashbrowns/SharpBuster"
@@ -318,13 +249,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpBuster {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_AmsiBypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AmsiBypass {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/0xB455/AmsiBypass"
@@ -337,16 +263,6 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AmsiBypass {
     strings:
         $s_name = "AmsiBypass" ascii wide
         $s_compile = "AssemblyTitle" ascii wide
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-        $fp1 = "Adaptive Threat Protection" wide
-    condition:
-        (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of ($s*)
-        and not 1 of ($fp*)
-}
-
-rule HKTL_NET_NAME_Recon_AD {
-=======
 
         $fp1 = "Adaptive Threat Protection" wide
     condition:
@@ -355,7 +271,6 @@ rule HKTL_NET_NAME_Recon_AD {
 }
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_Recon_AD {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/outflanknl/Recon-AD"
@@ -369,13 +284,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_Recon_AD {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_SharpWatchdogs {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpWatchdogs {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/RITRedteam/SharpWatchdogs"
@@ -389,13 +299,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpWatchdogs {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_SharpCat {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpCat {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/Cn33liz/SharpCat"
@@ -409,13 +314,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpCat {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_K8tools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_K8tools {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/k8gege/K8tools"
@@ -429,13 +329,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_K8tools {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_HTTPSBeaconShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_HTTPSBeaconShell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/limbenjamin/HTTPSBeaconShell"
@@ -449,13 +344,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_HTTPSBeaconShell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_Ghostpack_CompiledBinaries {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_Ghostpack_CompiledBinaries {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/r3motecontrol/Ghostpack-CompiledBinaries"
@@ -469,13 +359,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_Ghostpack_Compiled
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_metasploit_sharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_metasploit_sharp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/VolatileMindsLLC/metasploit-sharp"
@@ -489,13 +374,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_metasploit_sharp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_trevorc2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_trevorc2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/trustedsec/trevorc2"
@@ -509,13 +389,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_trevorc2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_NativePayload_DNS2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_DNS2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DamonMohammadbagher/NativePayload_DNS2"
@@ -529,13 +404,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_DNS2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_AggressiveProxy {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AggressiveProxy {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/EncodeGroup/AggressiveProxy"
@@ -549,13 +419,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AggressiveProxy {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_MSBuildAPICaller {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_MSBuildAPICaller {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/rvrsh3ll/MSBuildAPICaller"
@@ -569,13 +434,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_MSBuildAPICaller {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_GrayKeylogger {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_GrayKeylogger {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DarkSecDevelopers/GrayKeylogger"
@@ -589,13 +449,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_GrayKeylogger {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_weevely3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_weevely3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/epinna/weevely3"
@@ -609,13 +464,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_weevely3 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_FudgeC2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_FudgeC2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/Ziconius/FudgeC2"
@@ -629,13 +479,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_FudgeC2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_NativePayload_Reverse_tcp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_Reverse_tcp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DamonMohammadbagher/NativePayload_Reverse_tcp"
@@ -649,13 +494,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_Reve
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_SharpHose {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpHose {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/ustayready/SharpHose"
@@ -669,13 +509,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpHose {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_RAT_NjRat_0_7d_modded_source_code {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RAT_NjRat_0_7d_modded_source_code {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/AliBawazeEer/RAT-NjRat-0.7d-modded-source-code"
@@ -689,13 +524,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RAT_NjRat_0_7d_mod
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_RdpThief {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RdpThief {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/0x09AL/RdpThief"
@@ -709,13 +539,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RdpThief {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_RunasCs {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RunasCs {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/antonioCoco/RunasCs"
@@ -729,13 +554,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RunasCs {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_NativePayload_IP6DNS {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_IP6DNS {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DamonMohammadbagher/NativePayload_IP6DNS"
@@ -749,13 +569,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_IP6D
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_NativePayload_ARP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_ARP {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DamonMohammadbagher/NativePayload_ARP"
@@ -769,13 +584,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_ARP 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_C2Bridge {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_C2Bridge {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/cobbr/C2Bridge"
@@ -789,13 +599,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_C2Bridge {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_Infrastructure_Assessment {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_Infrastructure_Assessment {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/NyaMeeEain/Infrastructure-Assessment"
@@ -809,13 +614,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_Infrastructure_Ass
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_shellcodeTester {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_shellcodeTester {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/tophertimzen/shellcodeTester"
@@ -829,13 +629,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_shellcodeTester {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_gray_hat_csharp_code {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_gray_hat_csharp_code {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/brandonprry/gray_hat_csharp_code"
@@ -849,13 +644,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_gray_hat_csharp_co
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_NativePayload_ReverseShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_ReverseShell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/DamonMohammadbagher/NativePayload_ReverseShell"
@@ -869,13 +659,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_NativePayload_Reve
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_DotNetAVBypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_DotNetAVBypass {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/mandreko/DotNetAVBypass"
@@ -889,13 +674,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_DotNetAVBypass {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_HexyRunner {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_HexyRunner {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/bao7uo/HexyRunner"
@@ -909,13 +689,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_HexyRunner {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_SharpOffensiveShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpOffensiveShell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/darkr4y/SharpOffensiveShell"
@@ -929,13 +704,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_SharpOffensiveShel
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_reconness {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_reconness {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/reconness/reconness"
@@ -949,13 +719,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_reconness {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_tvasion {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_tvasion {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/loadenmb/tvasion"
@@ -969,13 +734,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_tvasion {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_ibombshell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_ibombshell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/Telefonica/ibombshell"
@@ -989,13 +749,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_ibombshell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_RemoteProcessInjection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RemoteProcessInjection {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/Mr-Un1k0d3r/RemoteProcessInjection"
@@ -1009,13 +764,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_RemoteProcessInjec
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_CACTUSTORCH {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_CACTUSTORCH {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/mdsecactivebreach/CACTUSTORCH"
@@ -1029,13 +779,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_CACTUSTORCH {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_PandaSniper {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_PandaSniper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/QAX-A-Team/PandaSniper"
@@ -1049,13 +794,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_PandaSniper {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_xbapAppWhitelistBypassPOC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_xbapAppWhitelistBypassPOC {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/jpginc/xbapAppWhitelistBypassPOC"
@@ -1069,13 +809,8 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_xbapAppWhitelistBy
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-rule HKTL_NET_NAME_StageStrike {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_StageStrike {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
     meta:
         description = "Detects .NET red/black-team tools via name"
         reference = "https://github.com/RedXRanger/StageStrike"
@@ -1089,4 +824,3 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_StageStrike {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-

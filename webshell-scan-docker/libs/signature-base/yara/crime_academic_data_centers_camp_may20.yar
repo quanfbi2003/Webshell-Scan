@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_academic_data_centers_camp_may20.yar
-rule APT_LNX_Academic_Camp_May20_Eraser_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_academic_data_centers_camp_may20_APT_LNX_Academic_Camp_May20_Eraser_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_academic_data_centers_camp_may20.yar
    meta:
       description = "Detects malware used in attack on academic data centers"
       author = "Florian Roth (Nextron Systems)"
@@ -21,13 +17,8 @@ rule Neo23x0_crime_academic_data_centers_camp_may20_APT_LNX_Academic_Camp_May20_
       filesize < 60KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_academic_data_centers_camp_may20.yar
-
-rule APT_LNX_Academic_Camp_May20_Loader_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_academic_data_centers_camp_may20_APT_LNX_Academic_Camp_May20_Loader_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_academic_data_centers_camp_may20.yar
    meta:
       description = "Detects malware used in attack on academic data centers"
       author = "Florian Roth (Nextron Systems)"
@@ -43,4 +34,3 @@ rule Neo23x0_crime_academic_data_centers_camp_may20_APT_LNX_Academic_Camp_May20_
       uint16(0) == 0x457f and
       filesize < 10KB and all of them
 }
-

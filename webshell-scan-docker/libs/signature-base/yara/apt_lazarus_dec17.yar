@@ -6,19 +6,12 @@
    Identifier: Lazarus malware
    Reference: https://www.proofpoint.com/us/threat-insight/post/north-korea-bitten-bitcoin-bug-financially-motivated-campaigns-reveal-new
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec17.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Lazarus_Dec_17_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec17.yar
    meta:
       description = "Detects Lazarus malware from incident in Dec 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +29,8 @@ rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_1 {
    condition:
       uint16(0) == 0x5449 and filesize < 4000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec17.yar
-
-rule Lazarus_Dec_17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec17.yar
    meta:
       description = "Detects Lazarus malware from incident in Dec 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +51,8 @@ rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_2 {
         all of ($s*) and not $a1
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec17.yar
-
-rule Lazarus_Dec_17_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec17.yar
    meta:
       description = "Detects Lazarus malware from incident in Dec 2017ithumb.js"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -84,13 +67,8 @@ rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_4 {
    condition:
       filesize < 9KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec17.yar
-
-rule Lazarus_Dec_17_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec17_Lazarus_Dec_17_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec17.yar
    meta:
       description = "Detects Lazarus malware from incident in Dec 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_backdoor_sunburst_fnv1a_experimental.yar
-
-rule APT_fnv1a_plus_extra_XOR_in_MSIL_experimental
-=======
 //===SUCCESS===
 rule Neo23x0_apt_backdoor_sunburst_fnv1a_experimental_APT_fnv1a_plus_extra_XOR_in_MSIL_experimental
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_backdoor_sunburst_fnv1a_experimental.yar
 {
     meta:
         description = "This rule detects the specific MSIL implementation of fnv1a of the SUNBURST backdoor (standard fnv1a + one final XOR before RET) independent of the XOR-string. (fnv64a_offset and fnv64a_prime are standard constants in the fnv1a hashing algorithm.)"

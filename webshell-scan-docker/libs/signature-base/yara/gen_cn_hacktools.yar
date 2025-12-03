@@ -6,13 +6,9 @@
 	Reference: Diclosed hacktool set at http://w2op.us/ (Mirror: http://tools.zjqhr.com)
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-rule mswin_check_lm_group {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_mswin_check_lm_group {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
    meta:
       description = "Chinese Hacktool Set - file mswin_check_lm_group.exe"
       author = "Florian Roth (Nextron Systems)"
@@ -32,13 +28,8 @@ rule Neo23x0_gen_cn_hacktools_mswin_check_lm_group {
       uint16(0) == 0x5a4d and filesize < 380KB and all of ($s*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule WAF_Bypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_WAF_Bypass {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file WAF-Bypass.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -57,13 +48,8 @@ rule Neo23x0_gen_cn_hacktools_WAF_Bypass {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 7992KB and 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Guilin_veterans_cookie_spoofing_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Guilin_veterans_cookie_spoofing_tool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Guilin veterans cookie spoofing tool.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -81,13 +67,8 @@ rule Neo23x0_gen_cn_hacktools_Guilin_veterans_cookie_spoofing_tool {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1387KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule MarathonTool {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_MarathonTool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file MarathonTool.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -103,13 +84,8 @@ rule Neo23x0_gen_cn_hacktools_MarathonTool {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1040KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule PLUGIN_TracKid {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_PLUGIN_TracKid {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file TracKid.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -128,13 +104,8 @@ rule Neo23x0_gen_cn_hacktools_PLUGIN_TracKid {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Pc_pc2015 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Pc_pc2015 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file pc2015.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -150,13 +121,8 @@ rule Neo23x0_gen_cn_hacktools_Pc_pc2015 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 309KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule sekurlsa {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_sekurlsa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file sekurlsa.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -173,13 +139,8 @@ rule Neo23x0_gen_cn_hacktools_sekurlsa {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1150KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule mysqlfast {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_mysqlfast {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file mysqlfast.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -198,13 +159,8 @@ rule Neo23x0_gen_cn_hacktools_mysqlfast {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 900KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule DTools2_02_DTools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_DTools2_02_DTools {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file DTools.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -223,13 +179,8 @@ rule Neo23x0_gen_cn_hacktools_DTools2_02_DTools {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule dll_PacketX {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_dll_PacketX {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file PacketX.dll - ActiveX wrapper for WinPcap packet capture library"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -245,13 +196,8 @@ rule Neo23x0_gen_cn_hacktools_dll_PacketX {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1920KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule SqlDbx_zhs {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_SqlDbx_zhs {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file SqlDbx_zhs.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -271,13 +217,8 @@ rule Neo23x0_gen_cn_hacktools_SqlDbx_zhs {
 	condition:
 		uint16(0) == 0x5a4d and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule ms10048_x86 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_ms10048_x86 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ms10048-x86.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -296,13 +237,8 @@ rule Neo23x0_gen_cn_hacktools_ms10048_x86 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_ch {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_ch {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ch.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -321,13 +257,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_ch {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 260KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule DUBrute_DUBrute {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_DUBrute_DUBrute {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file DUBrute.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -344,13 +275,8 @@ rule Neo23x0_gen_cn_hacktools_DUBrute_DUBrute {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1020KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CookieTools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CookieTools {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file CookieTools.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -368,13 +294,8 @@ rule Neo23x0_gen_cn_hacktools_CookieTools {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 5000KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule update_PcInit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_update_PcInit {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file PcInit.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -393,13 +314,8 @@ rule Neo23x0_gen_cn_hacktools_update_PcInit {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 50KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule dat_NaslLib {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_dat_NaslLib {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file NaslLib.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -415,13 +331,8 @@ rule Neo23x0_gen_cn_hacktools_dat_NaslLib {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1360KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file 1.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -436,13 +347,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule OtherTools_servu {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_OtherTools_servu {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file svu.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -459,13 +365,8 @@ rule Neo23x0_gen_cn_hacktools_OtherTools_servu {
 	condition:
 		uint32(0) == 0x454b5a4d and $s0 at 0 and filesize < 50KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule ustrrefadd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_ustrrefadd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ustrrefadd.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -483,13 +384,8 @@ rule Neo23x0_gen_cn_hacktools_ustrrefadd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 320KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule XScanLib {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_XScanLib {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file XScanLib.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -506,13 +402,8 @@ rule Neo23x0_gen_cn_hacktools_XScanLib {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 360KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule IDTools_For_WinXP_IdtTool {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_IDTools_For_WinXP_IdtTool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file IdtTool.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -528,13 +419,8 @@ rule Neo23x0_gen_cn_hacktools_IDTools_For_WinXP_IdtTool {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 25KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule GoodToolset_ms11046 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_GoodToolset_ms11046 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ms11046.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -552,13 +438,8 @@ rule Neo23x0_gen_cn_hacktools_GoodToolset_ms11046 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 840KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Cmdshell32 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Cmdshell32 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Cmdshell32.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -574,13 +455,8 @@ rule Neo23x0_gen_cn_hacktools_Cmdshell32 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 62KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Sniffer_analyzer_SSClone_1210_full_version {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Sniffer_analyzer_SSClone_1210_full_version {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Sniffer analyzer SSClone 1210 full version.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -597,13 +473,8 @@ rule Neo23x0_gen_cn_hacktools_Sniffer_analyzer_SSClone_1210_full_version {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3580KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule x64_klock {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_x64_klock {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file klock.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -620,13 +491,8 @@ rule Neo23x0_gen_cn_hacktools_x64_klock {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 907KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_Down32 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_Down32 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Down32.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -642,13 +508,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_Down32 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 137KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule MarathonTool_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_MarathonTool_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file MarathonTool.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -664,13 +525,8 @@ rule Neo23x0_gen_cn_hacktools_MarathonTool_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule scanms_scanms {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_scanms_scanms {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file scanms.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -688,13 +544,8 @@ rule Neo23x0_gen_cn_hacktools_scanms_scanms {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_PcShare {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_PcShare {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file PcShare.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -714,13 +565,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_PcShare {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 6000KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule pw_inspector {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_pw_inspector {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file pw-inspector.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -736,13 +582,8 @@ rule Neo23x0_gen_cn_hacktools_pw_inspector {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 460KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dll_LoadEx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dll_LoadEx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Dll_LoadEx.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -762,13 +603,8 @@ rule Neo23x0_gen_cn_hacktools_Dll_LoadEx {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 120KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule dat_report {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_dat_report {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file report.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -783,13 +619,8 @@ rule Neo23x0_gen_cn_hacktools_dat_report {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 480KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_iis7 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_iis7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file iis7.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -807,13 +638,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_iis7 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 140KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule SwitchSniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_SwitchSniffer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file SwitchSniffer.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -828,13 +654,8 @@ rule Neo23x0_gen_cn_hacktools_SwitchSniffer {
 	condition:
 		uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule dbexpora {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_dbexpora {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file dbexpora.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -850,13 +671,8 @@ rule Neo23x0_gen_cn_hacktools_dbexpora {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 835KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule SQLCracker {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_SQLCracker {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file SQLCracker.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -874,13 +690,8 @@ rule Neo23x0_gen_cn_hacktools_SQLCracker {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 125KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule FreeVersion_debug {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_FreeVersion_debug {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file debug.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -900,13 +711,8 @@ rule Neo23x0_gen_cn_hacktools_FreeVersion_debug {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 820KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_look {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_look {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file look.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -922,13 +728,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_look {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 40KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule NtGodMode {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_NtGodMode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file NtGodMode.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -946,13 +747,8 @@ rule Neo23x0_gen_cn_hacktools_NtGodMode {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 45KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule WebCrack4_RouterPasswordCracking {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_WebCrack4_RouterPasswordCracking {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file WebCrack4-RouterPasswordCracking.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -970,13 +766,8 @@ rule Neo23x0_gen_cn_hacktools_WebCrack4_RouterPasswordCracking {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 5000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule hscan_gui {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_hscan_gui {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hscan-gui.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -992,13 +783,8 @@ rule Neo23x0_gen_cn_hacktools_hscan_gui {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 550KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule S_MultiFunction_Scanners_s {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_S_MultiFunction_Scanners_s {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file s.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1023,13 +809,8 @@ rule Neo23x0_gen_cn_hacktools_S_MultiFunction_Scanners_s {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 8000KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_CN_Dos_GetPass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_CN_Dos_GetPass {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file GetPass.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1049,13 +830,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_CN_Dos_GetPass {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 890KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_CN_update_PcMain {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_CN_update_PcMain {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
    meta:
       description = "Chinese Hacktool Set - file PcMain.dll"
       author = "Florian Roth (Nextron Systems)"
@@ -1082,13 +858,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_CN_update_PcMain {
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_CN_Dos_sys {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_CN_Dos_sys {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file sys.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1107,13 +878,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_CN_Dos_sys {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_CN_dat_xpf {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_CN_dat_xpf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file xpf.sys"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1131,13 +897,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_CN_dat_xpf {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 25KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_CN_Project1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_CN_Project1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Project1.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1155,13 +916,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_CN_Project1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 5000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Arp_EMP_v1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Arp_EMP_v1_0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Arp EMP v1.0.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1175,13 +931,8 @@ rule Neo23x0_gen_cn_hacktools_Arp_EMP_v1_0 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 800KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_MyUPnP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_MyUPnP {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file MyUPnP.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1197,13 +948,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_MyUPnP {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_Shiell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_Shiell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Shiell.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1220,13 +966,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_Shiell {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1500KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule cndcom_cndcom {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_cndcom_cndcom {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file cndcom.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1247,13 +988,8 @@ rule Neo23x0_gen_cn_hacktools_cndcom_cndcom {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule IsDebug_V1_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_IsDebug_V1_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file IsDebug V1.4.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1274,13 +1010,8 @@ rule Neo23x0_gen_cn_hacktools_IsDebug_V1_4 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 30KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HTTPSCANNER {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HTTPSCANNER {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file HTTPSCANNER.EXE"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1295,13 +1026,8 @@ rule Neo23x0_gen_cn_hacktools_HTTPSCANNER {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HScan_v1_20_PipeCmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HScan_v1_20_PipeCmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file PipeCmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1323,13 +1049,8 @@ rule Neo23x0_gen_cn_hacktools_HScan_v1_20_PipeCmd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_fp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_fp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file fp.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1346,13 +1067,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_fp {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 65KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_netstat {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_netstat {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file netstat.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1369,13 +1085,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_netstat {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_xsniff {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_xsniff {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file xsniff.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1393,13 +1104,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_xsniff {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 220KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule MSSqlPass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_MSSqlPass {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file MSSqlPass.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1415,13 +1121,8 @@ rule Neo23x0_gen_cn_hacktools_MSSqlPass {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 120KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule WSockExpert {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_WSockExpert {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file WSockExpert.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1440,13 +1141,8 @@ rule Neo23x0_gen_cn_hacktools_WSockExpert {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2500KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Ms_Viru_racle {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Ms_Viru_racle {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file racle.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1463,13 +1159,8 @@ rule Neo23x0_gen_cn_hacktools_Ms_Viru_racle {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 210KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule lamescan3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_lamescan3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file lamescan3.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1486,13 +1177,8 @@ rule Neo23x0_gen_cn_hacktools_lamescan3 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3740KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_pc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_pc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file pc.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1509,13 +1195,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_pc {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_Down64 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_Down64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Down64.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1534,13 +1215,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_Down64 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule epathobj_exp32 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_epathobj_exp32 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file epathobj_exp32.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1559,13 +1235,8 @@ rule Neo23x0_gen_cn_hacktools_epathobj_exp32 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 270KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Tools_unknown {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Tools_unknown {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file unknown.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1583,13 +1254,8 @@ rule Neo23x0_gen_cn_hacktools_Tools_unknown {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2500KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule PLUGIN_AJunk {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_PLUGIN_AJunk {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file AJunk.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1605,13 +1271,8 @@ rule Neo23x0_gen_cn_hacktools_PLUGIN_AJunk {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 560KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule IISPutScanner {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_IISPutScanner {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file IISPutScanner.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1655,13 +1316,8 @@ rule Neo23x0_gen_cn_hacktools_IISPutScanner {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and filesize > 350KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule IDTools_For_WinXP_IdtTool_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_IDTools_For_WinXP_IdtTool_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file IdtTool.sys"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1679,13 +1335,8 @@ rule Neo23x0_gen_cn_hacktools_IDTools_For_WinXP_IdtTool_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 7KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule hkmjjiis6 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_hkmjjiis6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hkmjjiis6.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1707,13 +1358,8 @@ rule Neo23x0_gen_cn_hacktools_hkmjjiis6 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 70KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_lcx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_lcx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file lcx.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1738,13 +1384,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_lcx {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule x_way2_5_X_way {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_x_way2_5_X_way {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file X-way.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1766,13 +1407,8 @@ rule Neo23x0_gen_cn_hacktools_x_way2_5_X_way {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule tools_Sqlcmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_tools_Sqlcmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Sqlcmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1792,13 +1428,8 @@ rule Neo23x0_gen_cn_hacktools_tools_Sqlcmd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 40KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Sword1_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Sword1_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Sword1.5.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1818,13 +1449,8 @@ rule Neo23x0_gen_cn_hacktools_Sword1_5 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Tools_scan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Tools_scan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file scan.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1840,13 +1466,8 @@ rule Neo23x0_gen_cn_hacktools_Tools_scan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_c {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file c.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1866,13 +1487,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_c {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule arpsniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_arpsniffer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file arpsniffer.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1890,13 +1506,8 @@ rule Neo23x0_gen_cn_hacktools_arpsniffer {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 120KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule pw_inspector_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_pw_inspector_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file pw-inspector.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1913,13 +1524,8 @@ rule Neo23x0_gen_cn_hacktools_pw_inspector_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule datPcShare {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_datPcShare {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file datPcShare.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1936,13 +1542,8 @@ rule Neo23x0_gen_cn_hacktools_datPcShare {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Tools_xport {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Tools_xport {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file xport.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1964,13 +1565,8 @@ rule Neo23x0_gen_cn_hacktools_Tools_xport {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Pc_xai {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Pc_xai {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file xai.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1990,13 +1586,8 @@ rule Neo23x0_gen_cn_hacktools_Pc_xai {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Radmin_Hash {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Radmin_Hash {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Radmin_Hash.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2014,13 +1605,8 @@ rule Neo23x0_gen_cn_hacktools_Radmin_Hash {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 600KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule OSEditor {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_OSEditor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file OSEditor.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2038,13 +1624,8 @@ rule Neo23x0_gen_cn_hacktools_OSEditor {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule GoodToolset_ms11011 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_GoodToolset_ms11011 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ms11011.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2061,13 +1642,8 @@ rule Neo23x0_gen_cn_hacktools_GoodToolset_ms11011 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule FreeVersion_release {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_FreeVersion_release {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file release.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2086,13 +1662,8 @@ rule Neo23x0_gen_cn_hacktools_FreeVersion_release {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule churrasco {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_churrasco {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file churrasco.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2110,12 +1681,8 @@ rule Neo23x0_gen_cn_hacktools_churrasco {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-rule x64_KiwiCmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_x64_KiwiCmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file KiwiCmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2131,13 +1698,8 @@ rule Neo23x0_gen_cn_hacktools_x64_KiwiCmd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule sql1433_SQL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_sql1433_SQL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file SQL.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2154,13 +1716,8 @@ rule Neo23x0_gen_cn_hacktools_sql1433_SQL {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 90KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CookieTools2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CookieTools2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file CookieTools2.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2177,13 +1734,8 @@ rule Neo23x0_gen_cn_hacktools_CookieTools2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 700KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule cyclotron {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_cyclotron {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file cyclotron.sys"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2201,13 +1753,8 @@ rule Neo23x0_gen_cn_hacktools_cyclotron {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule xscan_gui {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_xscan_gui {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file xscan_gui.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2224,13 +1771,8 @@ rule Neo23x0_gen_cn_hacktools_xscan_gui {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_hscan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_hscan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hscan.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2251,13 +1793,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_hscan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule GoodToolset_pr {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_GoodToolset_pr {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file pr.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2276,13 +1813,8 @@ rule Neo23x0_gen_cn_hacktools_GoodToolset_pr {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule hydra_7_4_1_hydra {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_hydra_7_4_1_hydra {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hydra.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2301,13 +1833,8 @@ rule Neo23x0_gen_cn_hacktools_hydra_7_4_1_hydra {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_srss_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_srss_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file srss.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2330,13 +1857,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_srss_2 {
 	condition:
 		uint16(0) == 0x5a4d and ( $x1 at 0 ) and filesize < 14KB and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_NtGod {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_NtGod {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file NtGod.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2353,13 +1875,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_NtGod {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 250KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_VNCLink {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_VNCLink {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file VNCLink.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2375,13 +1892,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_VNCLink {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 580KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule tools_NTCmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_tools_NTCmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file NTCmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2400,13 +1912,8 @@ rule Neo23x0_gen_cn_hacktools_tools_NTCmd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 80KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule mysql_pwd_crack {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_mysql_pwd_crack {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file mysql_pwd_crack.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2424,13 +1931,8 @@ rule Neo23x0_gen_cn_hacktools_mysql_pwd_crack {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CmdShell64 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CmdShell64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file CmdShell64.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2450,13 +1952,8 @@ rule Neo23x0_gen_cn_hacktools_CmdShell64 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 30KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Ms_Viru_v {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Ms_Viru_v {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file v.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2475,13 +1972,8 @@ rule Neo23x0_gen_cn_hacktools_Ms_Viru_v {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule CN_Tools_Vscan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_CN_Tools_Vscan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Vscan.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2499,13 +1991,8 @@ rule Neo23x0_gen_cn_hacktools_CN_Tools_Vscan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 60KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Dos_iis {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Dos_iis {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file iis.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2525,13 +2012,8 @@ rule Neo23x0_gen_cn_hacktools_Dos_iis {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 70KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule IISPutScannesr {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_IISPutScannesr {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file IISPutScannesr.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2546,13 +2028,8 @@ rule Neo23x0_gen_cn_hacktools_IISPutScannesr {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_Unknown_CN_Generate {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_Unknown_CN_Generate {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Generate.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2571,13 +2048,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_Unknown_CN_Generate {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2000KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Pc_rejoice {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Pc_rejoice {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file rejoice.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2596,13 +2068,8 @@ rule Neo23x0_gen_cn_hacktools_Pc_rejoice {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3000KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule ms11080_withcmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_ms11080_withcmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ms11080_withcmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2621,13 +2088,8 @@ rule Neo23x0_gen_cn_hacktools_ms11080_withcmd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule OtherTools_xiaoa {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_OtherTools_xiaoa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file xiaoa.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2646,13 +2108,8 @@ rule Neo23x0_gen_cn_hacktools_OtherTools_xiaoa {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule unknown2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_unknown2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file unknown2.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2672,13 +2129,8 @@ rule Neo23x0_gen_cn_hacktools_unknown2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule hydra_7_3_hydra {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_hydra_7_3_hydra {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hydra.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2696,13 +2148,8 @@ rule Neo23x0_gen_cn_hacktools_hydra_7_3_hydra {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 700KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule OracleScan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_OracleScan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file OracleScan.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2719,13 +2166,8 @@ rule Neo23x0_gen_cn_hacktools_OracleScan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule SQLTools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_SQLTools {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file SQLTools.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2745,13 +2187,8 @@ rule Neo23x0_gen_cn_hacktools_SQLTools {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2350KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HKTL_Portscanner_533_NET_Jun15 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HKTL_Portscanner_533_NET_Jun15 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file portscanner.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2769,13 +2206,8 @@ rule Neo23x0_gen_cn_hacktools_HKTL_Portscanner_533_NET_Jun15 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 25KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule kappfree {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_kappfree {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file kappfree.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2791,13 +2223,8 @@ rule Neo23x0_gen_cn_hacktools_kappfree {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Smartniff {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Smartniff {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file Smartniff.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2813,13 +2240,8 @@ rule Neo23x0_gen_cn_hacktools_Smartniff {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule ChinaChopper_caidao {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_ChinaChopper_caidao {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file caidao.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2838,13 +2260,8 @@ rule Neo23x0_gen_cn_hacktools_ChinaChopper_caidao {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1077KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule KiwiTaskmgr_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_KiwiTaskmgr_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file KiwiTaskmgr.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2860,13 +2277,8 @@ rule Neo23x0_gen_cn_hacktools_KiwiTaskmgr_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule kappfree_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_kappfree_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file kappfree.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2883,13 +2295,8 @@ rule Neo23x0_gen_cn_hacktools_kappfree_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule x_way2_5_sqlcmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_x_way2_5_sqlcmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file sqlcmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2918,13 +2325,8 @@ rule Neo23x0_gen_cn_hacktools_x_way2_5_sqlcmd {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 23KB and filesize > 20KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule Win32_klock {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_Win32_klock {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file klock.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2940,13 +2342,8 @@ rule Neo23x0_gen_cn_hacktools_Win32_klock {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 250KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule ipsearcher {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_ipsearcher {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ipsearcher.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2964,13 +2361,8 @@ rule Neo23x0_gen_cn_hacktools_ipsearcher {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 140KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule ms10048_x64 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_ms10048_x64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ms10048-x64.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2987,13 +2379,8 @@ rule Neo23x0_gen_cn_hacktools_ms10048_x64 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 40KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule hscangui {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_hscangui {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hscangui.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3010,13 +2397,8 @@ rule Neo23x0_gen_cn_hacktools_hscangui {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 220KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule GoodToolset_ms11080 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_GoodToolset_ms11080 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file ms11080.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3036,13 +2418,8 @@ rule Neo23x0_gen_cn_hacktools_GoodToolset_ms11080 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 240KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule epathobj_exp64 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_epathobj_exp64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file epathobj_exp64.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3062,13 +2439,8 @@ rule Neo23x0_gen_cn_hacktools_epathobj_exp64 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule kelloworld_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_kelloworld_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file kelloworld.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3084,13 +2456,8 @@ rule Neo23x0_gen_cn_hacktools_kelloworld_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule HScan_v1_20_hscan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_HScan_v1_20_hscan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - file hscan.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3108,13 +2475,8 @@ rule Neo23x0_gen_cn_hacktools_HScan_v1_20_hscan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule _Project1_Generate_rejoice {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools__Project1_Generate_rejoice {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - from files Project1.exe, Generate.exe, rejoice.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3136,13 +2498,8 @@ rule Neo23x0_gen_cn_hacktools__Project1_Generate_rejoice {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule _hscan_hscan_hscangui {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools__hscan_hscan_hscangui {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set - from files hscan.exe, hscan.exe, hscangui.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3163,13 +2520,8 @@ rule Neo23x0_gen_cn_hacktools__hscan_hscan_hscangui {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 240KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule kiwi_tools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_kiwi_tools {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3203,13 +2555,8 @@ rule Neo23x0_gen_cn_hacktools_kiwi_tools {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktools.yar
-
-rule kiwi_tools_gentil_kiwi {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktools_kiwi_tools_gentil_kiwi {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktools.yar
 	meta:
 		description = "Chinese Hacktool Set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

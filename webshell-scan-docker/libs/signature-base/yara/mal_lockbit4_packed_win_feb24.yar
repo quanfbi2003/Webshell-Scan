@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit4_packed_win_feb24.yar
-rule mal_lockbit4_packed_feb24
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit4_packed_win_feb24_mal_lockbit4_packed_feb24
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit4_packed_win_feb24.yar
 {
     meta:
         author = "0x0d4y"
@@ -27,8 +23,4 @@ rule Neo23x0_mal_lockbit4_packed_win_feb24_mal_lockbit4_packed_feb24
         uint16(0) == 0x5a4d and
         1 of ($jump_to_unpacked_code_*) and
         1 of ($unpacking_loop_*)
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit4_packed_win_feb24.yar
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit4_packed_win_feb24.yar

@@ -5,13 +5,9 @@
    Identifier: Enigma Protector
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_enigma_protector.yar
-rule EnigmaPacker_Rare {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_enigma_protector_EnigmaPacker_Rare {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_enigma_protector.yar
    meta:
       description = "Detects an ENIGMA packed executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -27,13 +23,8 @@ rule Neo23x0_gen_enigma_protector_EnigmaPacker_Rare {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 4000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_enigma_protector.yar
-
-rule Enigma_Protected_Malware_May17_RhxFiles {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_enigma_protector_Enigma_Protected_Malware_May17_RhxFiles {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_enigma_protector.yar
    meta:
       description = "Auto-generated rule - file RhxFiles.dll"
       author = "Florian Roth (Nextron Systems) with the help of binar.ly"
@@ -48,13 +39,8 @@ rule Neo23x0_gen_enigma_protector_Enigma_Protected_Malware_May17_RhxFiles {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 4000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_enigma_protector.yar
-
-rule Enigma_Protected_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_enigma_protector_Enigma_Protected_Malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_enigma_protector.yar
    meta:
       description = "Detects samples packed by Enigma Protector"
       author = "Florian Roth (Nextron Systems) with the help of binar.ly"

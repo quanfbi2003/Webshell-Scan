@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_camaro_dragon_oct23.yar
-
-rule MAL_LNX_CamaroDragon_Sheel_Oct23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_camaro_dragon_oct23_MAL_LNX_CamaroDragon_Sheel_Oct23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_camaro_dragon_oct23.yar
    meta:
       description = "Detects CamaroDragon's tool named sheel"
       author = "Florian Roth"
@@ -28,13 +23,8 @@ rule Neo23x0_apt_camaro_dragon_oct23_MAL_LNX_CamaroDragon_Sheel_Oct23 {
       ) 
       or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_camaro_dragon_oct23.yar
-
-rule MAL_LNX_CamaroDragon_HorseShell_Oct23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_camaro_dragon_oct23_MAL_LNX_CamaroDragon_HorseShell_Oct23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_camaro_dragon_oct23.yar
    meta:
       description = "Detects CamaroDragon's HorseShell implant for routers"
       author = "Florian Roth"

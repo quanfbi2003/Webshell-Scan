@@ -5,20 +5,12 @@
    Identifier: OilRig / Chafer activity
    Reference: https://nyotron.com/nyotron-discovers-next-generation-oilrig-attacks/
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-rule Chafer_Mimikatz_Custom  {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Mimikatz_Custom  {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
    meta:
       description = "Detects Custom Mimikatz Version"
       author = "Florian Roth (Nextron Systems) / Markus Neis"
@@ -31,13 +23,8 @@ rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Mimikatz_Custom  {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-
-rule Chafer_Exploit_Copyright_2017 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Exploit_Copyright_2017 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
    meta:
       description = "Detects Oilrig Internet Server Extension with Copyright (C) 2017 Exploit"
       author = "Markus Neis"
@@ -56,13 +43,8 @@ rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Exploit_Copyright_2017 {
          1 of ($x*) or all of ($a*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-
-rule Chafer_Portscanner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Portscanner {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
    meta:
       description = "Detects Custom Portscanner used by Oilrig"
       author = "Markus Neis"
@@ -77,13 +59,8 @@ rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Portscanner {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-
-rule Oilrig_Myrtille {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_chafer_mar18_Oilrig_Myrtille {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
    meta:
       description = "Detects Oilrig Myrtille RDP Browser"
       author = "Markus Neis"
@@ -99,13 +76,8 @@ rule Neo23x0_apt_oilrig_chafer_mar18_Oilrig_Myrtille {
    condition:
       uint16(0) == 0x5a4d and filesize < 50KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-
-rule Chafer_Packed_Mimikatz {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Packed_Mimikatz {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
    meta:
       description = "Detects Oilrig Packed Mimikatz also detected as Chafer_WSC_x64 by FR"
       author = "Florian Roth (Nextron Systems) / Markus Neis"
@@ -120,13 +92,8 @@ rule Neo23x0_apt_oilrig_chafer_mar18_Chafer_Packed_Mimikatz {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and ( all of ($s*) or $x1 )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
-
-rule Oilrig_PS_CnC {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_chafer_mar18_Oilrig_PS_CnC {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_chafer_mar18.yar
    meta:
       description = "Powershell CnC using DNS queries"
       author = "Markus Neis"

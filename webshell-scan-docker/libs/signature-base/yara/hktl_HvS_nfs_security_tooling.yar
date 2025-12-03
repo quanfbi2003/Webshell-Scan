@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/hktl_HvS_nfs_security_tooling.yar
-rule HKTL_NFS_Fuse_NFS {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_HvS_nfs_security_tooling_HKTL_NFS_Fuse_NFS {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/hktl_HvS_nfs_security_tooling.yar
    meta:
       description = "Detects the nfs-security-tooling fuse_nfs by HvS Consulting"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -27,13 +23,8 @@ rule Neo23x0_hktl_HvS_nfs_security_tooling_HKTL_NFS_Fuse_NFS {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/hktl_HvS_nfs_security_tooling.yar
-
-rule HKTL_NFS_NFS_Analyze {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_HvS_nfs_security_tooling_HKTL_NFS_NFS_Analyze {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/hktl_HvS_nfs_security_tooling.yar
    meta:
       description = "Detects the nfs-security-tooling nfy_analyze by HvS Consulting"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"

@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-05-01
-   Identifier: APT10 / Hogfish Report
-   Reference: https://www.accenture.com/t20180423T055005Z__w__/se-en/_acnmedia/PDF-76/Accenture-Hogfish-Threat-Analysis.pdf
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://www.accenture.com/t20180423T055005Z__w__/se-en/_acnmedia/PDF-76/Accenture-Hogfish-Threat-Analysis.pdf
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt10_redleaves.yar
-rule MAL_Hogfish_Report_Related_Sample {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_apt10_redleaves_MAL_Hogfish_Report_Related_Sample {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt10_redleaves.yar
    meta:
       description = "Detects APT10 / Hogfish related samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -45,13 +31,8 @@ rule Neo23x0_apt_apt10_redleaves_MAL_Hogfish_Report_Related_Sample {
          1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt10_redleaves.yar
-
-rule MAL_RedLeaves_Apr18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt10_redleaves_MAL_RedLeaves_Apr18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt10_redleaves.yar
    meta:
       description = "Detects RedLeaves malware"
       author = "Florian Roth (Nextron Systems)"

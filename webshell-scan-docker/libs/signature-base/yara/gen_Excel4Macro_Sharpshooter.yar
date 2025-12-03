@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_Excel4Macro_Sharpshooter.yar
-rule MAL_Sharpshooter_Excel4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_Excel4Macro_Sharpshooter_MAL_Sharpshooter_Excel4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_Excel4Macro_Sharpshooter.yar
    meta:
       description = "Detects Excel documents weaponized with Sharpshooter"
       author = "John Lambert, Florian Roth"
@@ -28,13 +24,8 @@ rule Neo23x0_gen_Excel4Macro_Sharpshooter_MAL_Sharpshooter_Excel4 {
       and #concat > 10
       and $s1 and 2 of ($f*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_Excel4Macro_Sharpshooter.yar
-
-rule SUSP_Excel4Macro_AutoOpen
-=======
 //===SUCCESS===
 rule Neo23x0_gen_Excel4Macro_Sharpshooter_SUSP_Excel4Macro_AutoOpen
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_Excel4Macro_Sharpshooter.yar
 {
     meta:
         description = "Detects Excel4 macro use with auto open / close"

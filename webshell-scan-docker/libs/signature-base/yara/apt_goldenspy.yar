@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_goldenspy.yar
-rule APT_MAL_BKA_GoldenSpy_Aug20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_goldenspy_APT_MAL_BKA_GoldenSpy_Aug20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_goldenspy.yar
 	meta:
 		description = "Detects variants of GoldenSpy Malware"
         reference = "https://www.bka.de/SharedDocs/Kurzmeldungen/DE/Warnhinweise/200821_Cyberspionage.html"
@@ -22,4 +18,3 @@ rule Neo23x0_apt_goldenspy_APT_MAL_BKA_GoldenSpy_Aug20_1 {
 	condition:
 	 	uint16(0) == 0x5A4D and 5 of ($str*)
 }
-

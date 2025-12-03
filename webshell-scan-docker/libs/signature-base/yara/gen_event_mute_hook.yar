@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_event_mute_hook.yar
-rule SUSP_Hunt_EvtMuteHook_Memory {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_event_mute_hook_SUSP_Hunt_EvtMuteHook_Memory {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_event_mute_hook.yar
     meta:
         description = "Memory hunt for default wevtsv EtwEventCallback hook pattern to apply to eventlog svchost memory dump"
         reference = "https://blog.dylan.codes/pwning-windows-event-logging/"

@@ -6,13 +6,9 @@
    Reference: https://researchcenter.paloaltonetworks.com/2017/11/unit42-uboatrat-navigates-east-asia/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uboat_rat.yar
-rule UBoatRAT {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_uboat_rat_UBoatRAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_uboat_rat.yar
    meta:
       description = "Detects UBoat RAT Samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +50,8 @@ rule Neo23x0_apt_uboat_rat_UBoatRAT {
          $vprotect in (600..700)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uboat_rat.yar
-
-rule UBoatRAT_Dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_uboat_rat_UBoatRAT_Dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_uboat_rat.yar
    meta:
       description = "Detects UBoatRAT Dropper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

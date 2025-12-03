@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_Agent_Csharp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_Agent_Csharp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from CSharp version of Agent"
         author = "Fox-IT SRT"
@@ -25,13 +20,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_Agent_Csharp {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_agent_powershell_dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_powershell_dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from PowerShell dropper of CSharp version of Agent"
         author = "Fox-IT SRT"
@@ -46,13 +36,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_powershell_dropper {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_agent_powershell_b64encoded {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_powershell_b64encoded {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Piece of Base64 encoded data from Agent CSharp version"
         author = "Fox-IT SRT"
@@ -65,13 +50,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_powershell_b64encoded {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_agent_py {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_py {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from Python version of Agent"
         author = "Fox-IT SRT"
@@ -93,13 +73,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_py {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_agent_py_b64encoded {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_py_b64encoded {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Piece of Base64 encoded data from Agent Python version"
         author = "Fox-IT SRT"
@@ -112,13 +87,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_agent_py_b64encoded {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_keylogger_py {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_keylogger_py {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from Python keylogger"
         author = "Fox-IT SRT"
@@ -135,13 +105,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_keylogger_py {
     condition:
         3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_keylogger_file {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_keylogger_file {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Rule for finding keylogger output files"
         author = "Fox-IT SRT"
@@ -154,13 +119,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_keylogger_file {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_xserver_csharp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_xserver_csharp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from the CSharp version of XServer"
         author = "Fox-IT SRT"
@@ -179,13 +139,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_xserver_csharp {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_xserver_powershell_b64encoded {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_xserver_powershell_b64encoded {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Piece of Base64 encoded data from the XServer PowerShell dropper"
         author = "Fox-IT SRT"
@@ -198,13 +153,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_xserver_powershell_b64encoded {
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_xserver_powershell_dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_xserver_powershell_dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from the PowerShell dropper of XServer"
         author = "Fox-IT SRT"
@@ -216,13 +166,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_xserver_powershell_dropper {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_injector_bin {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_injector_bin {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Process injector/launcher"
         author = "Fox-IT SRT"
@@ -246,13 +191,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_injector_bin {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_timeliner_bin {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_timeliner_bin {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Timeliner utility"
         author = "Fox-IT SRT"
@@ -271,13 +211,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_timeliner_bin {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_checkadmin_bin {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_checkadmin_bin {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Checkadmin utility"
         author = "Fox-IT SRT"
@@ -295,13 +230,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_checkadmin_bin {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_getos_py {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_getos_py {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Python getos utility"
         author = "Fox-IT SRT"
@@ -363,13 +293,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_getos_py {
         (all of ($tsk_*)) or
         (3 of ($str_*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_info_vbs {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_info_vbs {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from the information grabber VBS"
         author = "Fox-IT SRT"
@@ -389,13 +314,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_info_vbs {
     condition:
         4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_webshell_console_jsp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_console_jsp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from the console.jsp webshell"
         author = "Fox-IT SRT"
@@ -413,13 +333,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_console_jsp {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_webshell_index_jsp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_index_jsp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from the index.jsp socket tunnel"
         author = "Fox-IT SRT"
@@ -436,13 +351,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_index_jsp {
     condition:
         all of ($x*) and $a
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_webshell_ver_jsp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_ver_jsp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Strings from the ver.jsp webshell"
         author = "Fox-IT SRT"
@@ -460,13 +370,8 @@ rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_ver_jsp {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_wocao.yar
-
-rule APT_MAL_CN_Wocao_webshell_webinfo {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_wocao_APT_MAL_CN_Wocao_webshell_webinfo {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_wocao.yar
     meta:
         description = "Generic strings from webinfo.war webshells"
         author = "Fox-IT SRT"

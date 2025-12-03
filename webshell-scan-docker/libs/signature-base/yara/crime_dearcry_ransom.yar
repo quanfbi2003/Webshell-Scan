@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_dearcry_ransom.yar
-rule MAL_RANSOM_Crime_DearCry_Mar2021_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_dearcry_ransom_MAL_RANSOM_Crime_DearCry_Mar2021_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_dearcry_ransom.yar
     meta:
         description = "Triggers on strings of known DearCry samples"
         author = "Nils Kuhnert"
@@ -30,13 +26,8 @@ rule Neo23x0_crime_dearcry_ransom_MAL_RANSOM_Crime_DearCry_Mar2021_1 {
         and ( 1 of ($x*) or 3 of them )
         or 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_dearcry_ransom.yar
-
-rule MAL_CRIME_RANSOM_DearCry_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_dearcry_ransom_MAL_CRIME_RANSOM_DearCry_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_dearcry_ransom.yar
    meta:
       description = "Detects DearCry Ransomware affecting Exchange servers"
       author = "Florian Roth (Nextron Systems)"

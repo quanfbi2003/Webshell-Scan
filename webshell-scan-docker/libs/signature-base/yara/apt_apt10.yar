@@ -1,10 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Jonas Lejon
-   Date: 2017-04-06
-   Identifier: APT 10 Malware
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -13,10 +6,7 @@ import "pe"
    Identifier: APT 10 Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt10.yar
-=======
 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt10.yar
 /* outdated and prone to FPs */
 /* disabled on 18.07.23 */
 /* see : https://www.linkedin.com/feed/update/urn:li:activity:7087021383276236800/ */
@@ -1397,13 +1387,9 @@ rule APT10_Malware_Sample_Gen : FILE {
 }
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt10.yar
-rule APT_APT10_Malware_Imphash_Dec18_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_apt10_APT_APT10_Malware_Imphash_Dec18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt10.yar
    meta:
       description = "Detects APT10 malware based on ImpHashes"
       author = "Florian Roth (Nextron Systems)"

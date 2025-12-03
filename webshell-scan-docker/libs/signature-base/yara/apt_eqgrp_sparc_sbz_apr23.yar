@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_sparc_sbz_apr23.yar
-
-rule SUSP_ELF_SPARC_Hunting_SBZ_Obfuscation {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_sparc_sbz_apr23_SUSP_ELF_SPARC_Hunting_SBZ_Obfuscation {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_eqgrp_sparc_sbz_apr23.yar
    meta:
    description = "This rule is UNTESTED against a large dataset and is for hunting purposes only."
    author = "netadr, modified by Florian Roth to avoid elf module import"
@@ -27,13 +22,8 @@ rule Neo23x0_apt_eqgrp_sparc_sbz_apr23_SUSP_ELF_SPARC_Hunting_SBZ_Obfuscation {
       and $a1
       and $xor_block
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_sparc_sbz_apr23.yar
-
-rule SUSP_ELF_SPARC_Hunting_SBZ_UniqueStrings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_sparc_sbz_apr23_SUSP_ELF_SPARC_Hunting_SBZ_UniqueStrings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_eqgrp_sparc_sbz_apr23.yar
    meta:
       description = "This rule is UNTESTED against a large dataset and is for hunting purposes only."
       author = "netadr, modified by Florian Roth for performance reasons"
@@ -55,13 +45,8 @@ rule Neo23x0_apt_eqgrp_sparc_sbz_apr23_SUSP_ELF_SPARC_Hunting_SBZ_UniqueStrings 
    condition:
       2 of ($*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_sparc_sbz_apr23.yar
-
-rule SUSP_ELF_SPARC_Hunting_SBZ_ModuleStruct {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_sparc_sbz_apr23_SUSP_ELF_SPARC_Hunting_SBZ_ModuleStruct {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_eqgrp_sparc_sbz_apr23.yar
    meta:
       description = "This rule is UNTESTED against a large dataset and is for hunting purposes only."
       author = "netadr, modified by Florian Roth for FP reduction reasons"
@@ -78,4 +63,3 @@ rule Neo23x0_apt_eqgrp_sparc_sbz_apr23_SUSP_ELF_SPARC_Hunting_SBZ_ModuleStruct {
    condition:
       uint32be(0) == 0x7f454c46 and ( $be or $le )
 }
-

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ru_sparepart_dec22.yar
-
-rule MAL_Backdoor_SPAREPART_SleepGenerator {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ru_sparepart_dec22_MAL_Backdoor_SPAREPART_SleepGenerator {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ru_sparepart_dec22.yar
     meta:
         author = "Mandiant"
         date = "2022-12-14"
@@ -23,13 +18,8 @@ rule Neo23x0_mal_ru_sparepart_dec22_MAL_Backdoor_SPAREPART_SleepGenerator {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ru_sparepart_dec22.yar
-
-rule MAL_Backdoor_SPAREPART_Struct {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ru_sparepart_dec22_MAL_Backdoor_SPAREPART_Struct {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ru_sparepart_dec22.yar
     meta:
         author = "Mandiant"
         date = "2022-12-14"
@@ -46,4 +36,4 @@ rule Neo23x0_mal_ru_sparepart_dec22_MAL_Backdoor_SPAREPART_Struct {
        $pdb and
        $struct and
        filesize < 20KB
-} 
+}

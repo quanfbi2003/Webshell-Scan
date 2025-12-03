@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_bat_aux.yar
-
-rule SUSP_BAT_Aux_Jan20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_bat_aux_SUSP_BAT_Aux_Jan20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_bat_aux.yar
    meta:
       description = "Detects BAT file often dropped to cleanup temp dirs during infection"
       author = "Florian Roth (Nextron Systems)"

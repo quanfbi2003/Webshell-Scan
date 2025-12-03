@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_revil_general.yar
-
-rule APT_MAL_REvil_Kaseya_Jul21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_revil_general_APT_MAL_REvil_Kaseya_Jul21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_revil_general.yar
    meta:
       description = "Detects malware used in the Kaseya supply chain attack"
       author = "Florian Roth (Nextron Systems)"
@@ -33,13 +28,8 @@ rule Neo23x0_crime_revil_general_APT_MAL_REvil_Kaseya_Jul21_1 {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_revil_general.yar
-
-rule APT_MAL_REvil_Kaseya_Jul21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_revil_general_APT_MAL_REvil_Kaseya_Jul21_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_revil_general.yar
    meta:
       description = "Detects malware used in the Kaseya supply chain attack"
       author = "Florian Roth (Nextron Systems)"

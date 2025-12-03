@@ -5,13 +5,9 @@
 	Identifier: Kraken_Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kraken_bot1.yar
-rule Kraken_Bot_Sample {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_kraken_bot1_Kraken_Bot_Sample {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kraken_bot1.yar
 	meta:
 		description = "Kraken Bot Sample - file inf.bin"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -30,4 +26,3 @@ rule Neo23x0_crime_kraken_bot1_Kraken_Bot_Sample {
 	condition:
 		uint16(0) == 0x5a4d and all of them
 }
-

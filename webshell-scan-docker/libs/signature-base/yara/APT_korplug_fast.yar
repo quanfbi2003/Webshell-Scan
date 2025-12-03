@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_korplug_fast.yar
-rule Korplug_FAST {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_korplug_fast_Korplug_FAST {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_korplug_fast.yar
     meta:
         description = "Rule to detect Korplug/PlugX FAST variant"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

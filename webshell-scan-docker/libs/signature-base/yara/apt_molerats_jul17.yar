@@ -5,20 +5,12 @@
    Identifier: Molerats Jul17
    Reference: https://mymalwareparty.blogspot.de/2017/07/operation-desert-eagle.html
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-rule Molerats_Jul17_Sample_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
    meta:
       description = "Detects Molerats sample - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-
-rule Molerats_Jul17_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
    meta:
       description = "Detects Molerats sample - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -55,13 +42,8 @@ rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-
-rule Molerats_Jul17_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
    meta:
       description = "Detects Molerats sample - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -77,13 +59,8 @@ rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-
-rule Molerats_Jul17_Sample_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
    meta:
       description = "Detects Molerats sample - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -99,13 +76,8 @@ rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_4 {
    condition:
       ( filesize < 700KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-
-rule Molerats_Jul17_Sample_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
    meta:
       description = "Detects Molerats sample - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -123,13 +95,8 @@ rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_5 {
    condition:
       filesize < 200KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_molerats_jul17.yar
-
-rule Molerats_Jul17_Sample_Dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_molerats_jul17_Molerats_Jul17_Sample_Dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_molerats_jul17.yar
    meta:
       description = "Detects Molerats sample dropper SFX - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

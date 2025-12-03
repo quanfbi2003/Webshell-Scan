@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_svg_js_phish_mar25.yar
-
-
-rule SUSP_SVG_JS_Payload_Mar25 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_svg_js_phish_mar25_SUSP_SVG_JS_Payload_Mar25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_svg_js_phish_mar25.yar
    meta:
       description = "Detects a suspicious SVG file that contains a JavaScript payload. This rule is a generic rule that might generate false positives. A match should be further investigated."
       author = "Florian Roth"
@@ -23,10 +17,7 @@ rule Neo23x0_gen_susp_svg_js_phish_mar25_SUSP_SVG_JS_Payload_Mar25 {
       hash = "5b3d11109e0d10b9266cbfbb6906e728c4470d752f95769280666d1166df4b43"
       hash = "a7620155da2a576823dbe7963ff4a5f79702645edb8b2ae67b8af8ba7eac697b"
       hash = "52e1c6279dc151616bbd85ac7d0abc42cab5850deb6da2e2b20e339f79c3536a"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_svg_js_phish_mar25.yar
-=======
       id = "cdb22283-8427-5c25-b653-d6d76dd27dc6"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_svg_js_phish_mar25.yar
    strings:
       $a1 = "<svg xmlns=" ascii fullword
 

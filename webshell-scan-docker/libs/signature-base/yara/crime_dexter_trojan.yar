@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_dexter_trojan.yar
-rule Dexter_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_dexter_trojan_Dexter_Malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_dexter_trojan.yar
 	meta:
 		description = "Detects the Dexter Trojan/Agent http://goo.gl/oBvy8b"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

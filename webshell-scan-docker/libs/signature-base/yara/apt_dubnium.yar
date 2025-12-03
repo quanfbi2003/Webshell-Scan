@@ -4,20 +4,12 @@
 	Date: 2016-06-10
 	Identifier: Dubnium
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-rule Dubnium_Sample_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +24,8 @@ rule Neo23x0_apt_dubnium_Dubnium_Sample_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-
-rule Dubnium_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -53,13 +40,8 @@ rule Neo23x0_apt_dubnium_Dubnium_Sample_2 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-
-rule Dubnium_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -80,13 +62,8 @@ rule Neo23x0_apt_dubnium_Dubnium_Sample_3 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2000KB and 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-
-rule Dubnium_Sample_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -110,13 +87,8 @@ rule Neo23x0_apt_dubnium_Dubnium_Sample_5 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 9000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-
-rule Dubnium_Sample_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -135,13 +107,8 @@ rule Neo23x0_apt_dubnium_Dubnium_Sample_6 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 4000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-
-rule Dubnium_Sample_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -164,13 +131,8 @@ rule Neo23x0_apt_dubnium_Dubnium_Sample_7 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 9000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dubnium.yar
-
-rule Dubnium_Sample_SSHOpenSSL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dubnium_Dubnium_Sample_SSHOpenSSL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dubnium.yar
 	meta:
 		description = "Detects sample mentioned in the Dubnium Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

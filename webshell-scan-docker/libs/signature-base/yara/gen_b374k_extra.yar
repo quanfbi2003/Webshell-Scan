@@ -5,13 +5,9 @@
 	Identifier: b374k - Back Connect Payload UPX
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_b374k_extra.yar
-rule b374k_back_connect {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_b374k_extra_b374k_back_connect {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_b374k_extra.yar
 	meta:
 		description = "Detects privilege escalation tool"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

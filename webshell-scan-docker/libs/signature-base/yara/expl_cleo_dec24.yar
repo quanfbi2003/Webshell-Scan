@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule EXPL_Cleo_Exploitation_Log_Indicators_Dec24 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_Log_Indicators_Dec24 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects indicators found in logs during and after Cleo software exploitation (as reported by Huntress in December 2024)"
       author = "Florian Roth"
@@ -19,13 +14,8 @@ rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_Log_Indicators_Dec24 : SCRIP
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule SUSP_EXPL_Cleo_Exploitation_Log_Indicators_Dec24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_Log_Indicators_Dec24_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       author = "X__Junior"
       description = "Detects indicators found in logs during and after Cleo software exploitation (as reported by Huntress in December 2024)"
@@ -60,13 +50,8 @@ rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_Log_Indicators_Dec24_1 
       and all of ($sa*)
       and 1 of ($sb*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule SUSP_EXPL_Cleo_Exploitation_Log_Indicators_Dec24_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_Log_Indicators_Dec24_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       author = "X__Junior"
       description = "Detects indicators found in logs during and after Cleo software exploitation (as reported by Huntress in December 2024)"
@@ -102,13 +87,8 @@ rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_Log_Indicators_Dec24_2 
       and all of ($sa*)
       and 1 of ($sb*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule EXPL_Cleo_Exploitation_XML_Indicators_Dec24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_XML_Indicators_Dec24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects XML used during and after Cleo software exploitation (as reported by Huntress in December 2024)"
       author = "Florian Roth"
@@ -127,14 +107,8 @@ rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_XML_Indicators_Dec24 {
          or 2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-
-rule SUSP_EXPL_Cleo_Exploitation_XML_Indicators_Dec24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_XML_Indicators_Dec24_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       author = "X__Junior"
       description = "Detects XML used during and after Cleo software exploitation (as reported by Huntress in December 2024)"
@@ -169,13 +143,8 @@ rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_XML_Indicators_Dec24_1 
       and all of ($sa*)
       and 1 of ($sb*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule SUSP_EXPL_Cleo_Exploitation_XML_Indicators_Dec24_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_XML_Indicators_Dec24_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       author = "X__Junior"
       description = "Detects XML used during and after Cleo software exploitation (as reported by Huntress in December 2024)"
@@ -211,13 +180,8 @@ rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_Cleo_Exploitation_XML_Indicators_Dec24_2 
       and all of ($sa*)
       and 1 of ($sb*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule EXPL_Cleo_Exploitation_PS1_Indicators_Dec24 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_PS1_Indicators_Dec24 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects encoded and decoded PowerShell loader used during Cleo software exploitation (as reported by Huntress in December 2024)"
       author = "Florian Roth"
@@ -235,13 +199,8 @@ rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_PS1_Indicators_Dec24 : SCRIP
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule SUSP_EXPL_JAR_Indicators_Dec24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_JAR_Indicators_Dec24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects characteristics of JAR files used during Cleo software exploitation (as reported by Huntress in December 2024)"
       author = "Florian Roth"
@@ -260,13 +219,8 @@ rule Neo23x0_expl_cleo_dec24_SUSP_EXPL_JAR_Indicators_Dec24 {
       and filesize < 20KB
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_1_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_1_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects characteristics of JAVA files used during Cleo software exploitation (as reported by Huntress in December 2024) - files Cli, ScSlot, Slot, SrvSlot"
       author = "Florian Roth"
@@ -288,13 +242,8 @@ rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_1_1 {
       and $a1
       and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects characteristics of JAVA files used during Cleo software exploitation (as reported by Huntress in December 2024) - file Proc"
       author = "Florian Roth"
@@ -313,13 +262,8 @@ rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_2 {
       and filesize < 30KB
       and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
-
-rule EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar
    meta:
       description = "Detects characteristics of JAR files used during Cleo software exploitation"
       author = "X__Junior"
@@ -338,8 +282,4 @@ rule Neo23x0_expl_cleo_dec24_EXPL_Cleo_Exploitation_JAVA_Payloads_Dec24_3 {
       uint16(0) == 0xfeca
       and filesize < 20KB
       and 3 of ($s*) and $a1
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cleo_dec24.yar
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cleo_dec24.yar

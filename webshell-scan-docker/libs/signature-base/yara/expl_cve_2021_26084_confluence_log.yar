@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_26084_confluence_log.yar
-
-rule LOG_EXPL_Confluence_RCE_CVE_2021_26084_Sep21 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_26084_confluence_log_LOG_EXPL_Confluence_RCE_CVE_2021_26084_Sep21 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cve_2021_26084_confluence_log.yar
    meta:
       description = "Detects exploitation attempts against Confluence servers abusing a RCE reported as CVE-2021-26084"
       author = "Florian Roth (Nextron Systems)"

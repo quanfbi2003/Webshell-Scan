@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ace_with_exe.yar
-
-rule ACE_Containing_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ace_with_exe_ACE_Containing_EXE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ace_with_exe.yar
     meta:
         author = "Florian Roth (Nextron Systems) - based on Nick Hoffman' rule - Morphick Inc"
         description = "Looks for ACE Archives containing an exe/scr file"
@@ -23,5 +18,3 @@ rule Neo23x0_gen_ace_with_exe_ACE_Containing_EXE {
             $ in (81..(81+uint16(79)))
         )
 }
-
-

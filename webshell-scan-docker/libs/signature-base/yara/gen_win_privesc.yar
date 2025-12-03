@@ -4,20 +4,12 @@
 	Date: 2016-06-02
 	Identifier: Win Privilege Escalation
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_win_privesc.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_win_privesc.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_win_privesc.yar
-rule Win_PrivEsc_gp3finder_v4_0 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_win_privesc_Win_PrivEsc_gp3finder_v4_0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_win_privesc.yar
 	meta:
 		description = "Detects a tool that can be used for privilege escalation - file gp3finder_v4.0.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +26,8 @@ rule Neo23x0_gen_win_privesc_Win_PrivEsc_gp3finder_v4_0 {
 	condition:
 		( uint16(0) == 0x5a4d and 1 of ($x*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_win_privesc.yar
-
-rule Win_PrivEsc_folderperm {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_win_privesc_Win_PrivEsc_folderperm {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_win_privesc.yar
 	meta:
 		description = "Detects a tool that can be used for privilege escalation - file folderperm.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -57,13 +44,8 @@ rule Neo23x0_gen_win_privesc_Win_PrivEsc_folderperm {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_win_privesc.yar
-
-rule Win_PrivEsc_ADACLScan4_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_win_privesc_Win_PrivEsc_ADACLScan4_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_win_privesc.yar
 	meta:
 		description = "Detects a tool that can be used for privilege escalation - file ADACLScan4.3.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

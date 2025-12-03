@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_atm_xfsadm.yar
-rule ATM_Malware_XFSADM {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_atm_xfsadm_ATM_Malware_XFSADM {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_atm_xfsadm.yar
    meta:
       description = "Detects ATM Malware XFSADM"
       author = "Frank Boldewin (@r3c0nst), modified by Florian Roth"

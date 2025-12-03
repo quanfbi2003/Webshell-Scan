@@ -1,3 +1,4 @@
+import "pe"
 
 /*
    Yara Rule Set
@@ -9,13 +10,9 @@
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_zxshell.yar
-rule ZxShell_Related_Malware_CN_Group_Jul17_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_zxshell_ZxShell_Related_Malware_CN_Group_Jul17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_zxshell.yar
    meta:
       description = "Detects a ZxShell related sample from a CN threat group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +31,8 @@ rule Neo23x0_apt_zxshell_ZxShell_Related_Malware_CN_Group_Jul17_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_zxshell.yar
-
-rule ZxShell_Related_Malware_CN_Group_Jul17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_zxshell_ZxShell_Related_Malware_CN_Group_Jul17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_zxshell.yar
    meta:
       description = "Detects a ZxShell related sample from a CN threat group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -67,13 +59,8 @@ rule Neo23x0_apt_zxshell_ZxShell_Related_Malware_CN_Group_Jul17_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_zxshell.yar
-
-rule ZxShell_Related_Malware_CN_Group_Jul17_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_zxshell_ZxShell_Related_Malware_CN_Group_Jul17_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_zxshell.yar
    meta:
       description = "Detects a ZxShell related sample from a CN threat group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -88,13 +75,8 @@ rule Neo23x0_apt_zxshell_ZxShell_Related_Malware_CN_Group_Jul17_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_zxshell.yar
-
-rule ZxShell_Jul17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_zxshell_ZxShell_Jul17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_zxshell.yar
    meta:
       description = "Detects a ZxShell - CN threat group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -129,18 +111,10 @@ rule Neo23x0_apt_zxshell_ZxShell_Jul17 {
    Reference: https://goo.gl/snc85M
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_zxshell.yar
-import "pe"
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule ZXshell_20171211_chrsben {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 //===SUCCESS===
 rule Neo23x0_apt_zxshell_ZXshell_20171211_chrsben {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_zxshell.yar
    meta:
       description = "Detects ZxShell variant surfaced in Dec 17"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

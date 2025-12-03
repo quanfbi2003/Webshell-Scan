@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_generic.yar
-
-rule SUSP_RANSOMWARE_Indicator_Jul20 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_generic_SUSP_RANSOMWARE_Indicator_Jul20 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_generic.yar
    meta:
       description = "Detects ransomware indicator"
       author = "Florian Roth (Nextron Systems)"

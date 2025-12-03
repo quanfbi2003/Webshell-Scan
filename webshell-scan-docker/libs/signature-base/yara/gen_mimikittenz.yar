@@ -4,20 +4,12 @@
 	Date: 2016-07-19
 	Identifier: Mimikittenz
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mimikittenz.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mimikittenz.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mimikittenz.yar
-rule Invoke_mimikittenz {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_mimikittenz_Invoke_mimikittenz {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mimikittenz.yar
 	meta:
 		description = "Detects Mimikittenz - file Invoke-mimikittenz.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

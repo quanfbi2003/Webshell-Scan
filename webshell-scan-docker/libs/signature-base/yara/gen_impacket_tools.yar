@@ -8,10 +8,7 @@
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-=======
 /* already covered by : Impacket_Tools_Generic_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
 rule Impacket_Tools_tracer {
    meta:
       description = "Compiled Impacket Tools"
@@ -25,9 +22,6 @@ rule Impacket_Tools_tracer {
       $s2 = "btcl85.dll" fullword ascii
       $s3 = "xtk\\unsupported.tcl" fullword ascii
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-rule Impacket_Tools_wmiexec {
-=======
       $fp1 = "Linden Research Inc" wide
    condition:
       ( uint16(0) == 0x5a4d and filesize < 21000KB and all of ($s*) )
@@ -38,7 +32,6 @@ rule Impacket_Tools_wmiexec {
 
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_wmiexec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +47,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_wmiexec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_sniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_sniffer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -75,13 +63,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_sniffer {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 15000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_mmcexec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_mmcexec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -96,13 +79,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_mmcexec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 16000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_ifmap {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_ifmap {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +95,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_ifmap {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 15000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule karmaSMB {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_karmaSMB {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -137,13 +110,8 @@ rule Neo23x0_gen_impacket_tools_karmaSMB {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule samrdump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_samrdump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -158,13 +126,8 @@ rule Neo23x0_gen_impacket_tools_samrdump {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_rpcdump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_rpcdump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -179,13 +142,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_rpcdump {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_secretsdump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_secretsdump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -200,13 +158,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_secretsdump {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_esentutl {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_esentutl {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -221,13 +174,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_esentutl {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 11000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_opdump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_opdump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -242,13 +190,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_opdump {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_sniff {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_sniff {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -263,13 +206,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_sniff {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 15000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_smbexec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_smbexec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -284,13 +222,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_smbexec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_goldenPac {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_goldenPac {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -306,13 +239,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_goldenPac {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_netview {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_netview {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -328,13 +256,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_netview {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_smbtorture {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_smbtorture {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -349,13 +272,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_smbtorture {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_mimikatz {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_mimikatz {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -371,13 +289,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_mimikatz {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_smbrelayx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_smbrelayx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -394,13 +307,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_smbrelayx {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 18000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_wmipersist {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_wmipersist {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -415,13 +323,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_wmipersist {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_lookupsid {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_lookupsid {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -436,13 +339,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_lookupsid {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 15000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_wmiquery {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_wmiquery {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -457,13 +355,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_wmiquery {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_atexec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_atexec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -480,13 +373,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_atexec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 15000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_psexec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_psexec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -502,13 +390,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_psexec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 17000KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Tools_Generic_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Tools_Generic_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Compiled Impacket Tools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -544,13 +427,8 @@ rule Neo23x0_gen_impacket_tools_Impacket_Tools_Generic_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 21000KB and all of ($s*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_impacket_tools.yar
-
-rule Impacket_Lateral_Movement {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_impacket_tools_Impacket_Lateral_Movement {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_impacket_tools.yar
    meta:
       description = "Detects Impacket Network Aktivity for Lateral Movement"
       author = "Markus Neis"

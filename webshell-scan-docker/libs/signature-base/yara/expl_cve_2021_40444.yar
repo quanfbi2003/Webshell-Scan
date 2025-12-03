@@ -3,13 +3,9 @@
    see my video: https://www.youtube.com/watch?v=53gpfmKFxr4
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_40444.yar
-rule EXPL_CVE_2021_40444_Document_Rels_XML {
-=======
 
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_40444_EXPL_CVE_2021_40444_Document_Rels_XML {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cve_2021_40444.yar
    meta:
       description = "Detects indicators found in weaponized documents that exploit CVE-2021-40444"
       author = "Jeremy Brown / @alteredbytes"
@@ -29,13 +25,8 @@ rule Neo23x0_expl_cve_2021_40444_EXPL_CVE_2021_40444_Document_Rels_XML {
       and 1 of ($b*)
       and all of ($c*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_40444.yar
-
-rule EXPL_MAL_MalDoc_OBFUSCT_MHTML_Sep21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_40444_EXPL_MAL_MalDoc_OBFUSCT_MHTML_Sep21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cve_2021_40444.yar
    meta:
       description = "Detects suspicious office reference files including an obfuscated MHTML reference exploiting CVE-2021-40444"
       author = "Florian Roth (Nextron Systems)"
@@ -50,14 +41,8 @@ rule Neo23x0_expl_cve_2021_40444_EXPL_MAL_MalDoc_OBFUSCT_MHTML_Sep21_1 {
    condition:
       filesize < 25KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_40444.yar
-
-
-rule EXPL_XML_Encoded_CVE_2021_40444 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_40444_EXPL_XML_Encoded_CVE_2021_40444 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cve_2021_40444.yar
    meta:
       author = "James E.C, Proofpoint"
       description = "Detects possible CVE-2021-40444 with no encoding, HTML/XML entity (and hex notation) encoding, or all 3"
@@ -77,12 +62,8 @@ rule Neo23x0_expl_cve_2021_40444_EXPL_XML_Encoded_CVE_2021_40444 {
 }
 
 /* not directly related to CVE-2021-40444 */
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_40444.yar
-rule SUSP_OBFUSC_Indiators_XML_OfficeDoc_Sep21_1 : Windows CVE {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_40444_SUSP_OBFUSC_Indiators_XML_OfficeDoc_Sep21_1 : Windows CVE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cve_2021_40444.yar
    meta:
       author = "Florian Roth (Nextron Systems)"
       description = "Detects suspicious encodings in fields used in reference files found in weaponized MS Office documents"
@@ -100,13 +81,8 @@ rule Neo23x0_expl_cve_2021_40444_SUSP_OBFUSC_Indiators_XML_OfficeDoc_Sep21_1 : W
    condition:
       filesize < 500KB and $h1 and 1 of ($xml*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_40444.yar
-
-rule SUSP_OBFUSC_Indiators_XML_OfficeDoc_Sep21_2 : Windows CVE {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_40444_SUSP_OBFUSC_Indiators_XML_OfficeDoc_Sep21_2 : Windows CVE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_cve_2021_40444.yar
    meta:
       author = "Florian Roth (Nextron Systems)"
       description = "Detects suspicious encodings in fields used in reference files found in weaponized MS Office documents"

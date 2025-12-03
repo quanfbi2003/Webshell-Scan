@@ -4,20 +4,12 @@
    Date: 2017-02-23
    Identifier: Suspicious PowerShell Script Code
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-rule WordDoc_PowerShell_URLDownloadToFile {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_WordDoc_PowerShell_URLDownloadToFile {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects Word Document with PowerShell URLDownloadToFile"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -38,13 +30,8 @@ rule Neo23x0_gen_powershell_susp_WordDoc_PowerShell_URLDownloadToFile {
    condition:
       ( uint16(0) == 0xcfd0 and 1 of ($w*) and all of ($p*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule Suspicious_PowerShell_Code_1 : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_Suspicious_PowerShell_Code_1 : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects suspicious PowerShell code"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +50,8 @@ rule Neo23x0_gen_powershell_susp_Suspicious_PowerShell_Code_1 : FILE {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule Suspicious_PowerShell_WebDownload_1 : HIGHVOL FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_Suspicious_PowerShell_WebDownload_1 : HIGHVOL FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects suspicious PowerShell code that downloads from web sites"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -120,13 +102,8 @@ rule Neo23x0_gen_powershell_susp_Suspicious_PowerShell_WebDownload_1 : HIGHVOL F
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule PowerShell_in_Word_Doc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_PowerShell_in_Word_Doc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects a powershell and bypass keyword in a Word document"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -152,13 +129,8 @@ rule Neo23x0_gen_powershell_susp_PowerShell_in_Word_Doc {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule Susp_PowerShell_Sep17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_Susp_PowerShell_Sep17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects suspicious PowerShell script in combo with VBS or JS "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -176,13 +148,8 @@ rule Neo23x0_gen_powershell_susp_Susp_PowerShell_Sep17_1 {
    condition:
       ( filesize < 2KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule Susp_PowerShell_Sep17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_Susp_PowerShell_Sep17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects suspicious PowerShell script in combo with VBS or JS "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -203,13 +170,8 @@ rule Neo23x0_gen_powershell_susp_Susp_PowerShell_Sep17_2 {
           or 2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule WScript_Shell_PowerShell_Combo {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_WScript_Shell_PowerShell_Combo {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects malware from Middle Eastern campaign reported by Talos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -231,13 +193,8 @@ rule Neo23x0_gen_powershell_susp_WScript_Shell_PowerShell_Combo {
       filesize < 400KB and $s1 and 1 of ($p*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule SUSP_PowerShell_String_K32_RemProcess {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_SUSP_PowerShell_String_K32_RemProcess {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects suspicious PowerShell code that uses Kernel32, RemoteProccess handles or shellcode"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -258,13 +215,8 @@ rule Neo23x0_gen_powershell_susp_SUSP_PowerShell_String_K32_RemProcess {
    condition:
       uint16(0) == 0x7566 and filesize < 6000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule PowerShell_JAB_B64 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_PowerShell_JAB_B64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects base464 encoded $ sign at the beginning of a string"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -279,13 +231,8 @@ rule Neo23x0_gen_powershell_susp_PowerShell_JAB_B64 {
    condition:
       filesize < 30KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_susp.yar
-
-rule SUSP_PS1_FromBase64String_Content_Indicator : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_susp_SUSP_PS1_FromBase64String_Content_Indicator : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_susp.yar
    meta:
       description = "Detects suspicious base64 encoded PowerShell expressions"
       author = "Florian Roth (Nextron Systems)"

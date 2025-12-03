@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fidelis_phishing_plain_sight.yar
-
-rule Fidelis_Advisory_Purchase_Order_pps {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fidelis_phishing_plain_sight_Fidelis_Advisory_Purchase_Order_pps {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fidelis_phishing_plain_sight.yar
     meta:
         description = "Detects a string found in a malicious document named Purchase_Order.pps"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -17,13 +12,8 @@ rule Neo23x0_apt_fidelis_phishing_plain_sight_Fidelis_Advisory_Purchase_Order_pp
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fidelis_phishing_plain_sight.yar
-
-rule Fidelis_Advisory_cedt370 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fidelis_phishing_plain_sight_Fidelis_Advisory_cedt370 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fidelis_phishing_plain_sight.yar
     meta:
         description = "Detects a string found in memory of malware cedt370r(3).exe"
         author = "Florian Roth (Nextron Systems)"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_InPage_dropper.yar
-rule gen_suspicious_InPage_dropper
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_InPage_dropper_gen_suspicious_InPage_dropper
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_suspicious_InPage_dropper.yar
 {
 
     meta:

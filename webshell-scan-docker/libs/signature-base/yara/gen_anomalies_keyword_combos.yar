@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_anomalies_keyword_combos.yar
-
-rule SUSP_NullSoftInst_Combo_Oct20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_anomalies_keyword_combos_SUSP_NullSoftInst_Combo_Oct20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_anomalies_keyword_combos.yar
    meta:
       description = "Detects suspicious NullSoft Installer combination with common Copyright strings"
       author = "Florian Roth (Nextron Systems)"

@@ -4,20 +4,12 @@
    Date: 2017-01-25
    Identifier: Winnti MS Report
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_ms_report_201701.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_ms_report_201701.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_ms_report_201701.yar
-rule Winnti_fonfig {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_winnti_ms_report_201701_Winnti_fonfig {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_ms_report_201701.yar
    meta:
       description = "Winnti sample - file fonfig.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +24,8 @@ rule Neo23x0_apt_winnti_ms_report_201701_Winnti_fonfig {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_ms_report_201701.yar
-
-rule Winnti_NlaifSvc {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_ms_report_201701_Winnti_NlaifSvc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_ms_report_201701.yar
    meta:
       description = "Winnti sample - file NlaifSvc.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

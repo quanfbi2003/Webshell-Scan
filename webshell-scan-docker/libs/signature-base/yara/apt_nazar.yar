@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nazar.yar
-rule APT_Nazar_Svchost_Commands {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nazar_APT_Nazar_Svchost_Commands {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nazar.yar
     meta:
         description = "Detects Nazar's svchost based on supported commands"
         author = "Itay Cohen"
@@ -21,13 +17,8 @@ rule Neo23x0_apt_nazar_APT_Nazar_Svchost_Commands {
     condition:
         4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nazar.yar
-
-rule APT_Nazar_Component_Guids {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nazar_APT_Nazar_Component_Guids {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nazar.yar
     meta:
         description = "Detects Nazar Components by COM Objects' GUID"
         author = "Itay Cohen"

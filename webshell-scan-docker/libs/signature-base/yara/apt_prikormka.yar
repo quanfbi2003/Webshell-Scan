@@ -30,13 +30,9 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_prikormka.yar
-private rule PrikormkaDropper
-=======
 
 //===SUCCESS===
 private rule Neo23x0_apt_prikormka_PrikormkaDropper
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_prikormka.yar
 {
     strings:
         $kd1 = "KDSTORAGE" wide
@@ -53,13 +49,8 @@ private rule Neo23x0_apt_prikormka_PrikormkaDropper
     condition:
         uint16(0) == 0x5a4d and ((any of ($bin*)) or (3 of ($kd*)) or (all of ($inj*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_prikormka.yar
-
-private rule PrikormkaModule
-=======
 //===SUCCESS===
 private rule Neo23x0_apt_prikormka_PrikormkaModule
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_prikormka.yar
 {
     strings:
         // binary
@@ -115,13 +106,8 @@ private rule Neo23x0_apt_prikormka_PrikormkaModule
     condition:
         uint16(0) == 0x5a4d and (any of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_prikormka.yar
-
-private rule PrikormkaEarlyVersion
-=======
 //===SUCCESS===
 private rule Neo23x0_apt_prikormka_PrikormkaEarlyVersion
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_prikormka.yar
 {
     strings:
         $str1 = "IntelRestore" ascii fullword
@@ -136,13 +122,8 @@ private rule Neo23x0_apt_prikormka_PrikormkaEarlyVersion
     condition:
         uint16(0) == 0x5a4d and (2 of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_prikormka.yar
-
-rule Prikormka
-=======
 //===SUCCESS===
 rule Neo23x0_apt_prikormka_Prikormka
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_prikormka.yar
 {
     meta:
         Author      = "Anton Cherepanov"
@@ -153,9 +134,5 @@ rule Neo23x0_apt_prikormka_Prikormka
         License = "BSD 2-Clause"
         id = "6073aa34-d385-5ae8-b97d-9b3d61015aae"
     condition:
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_prikormka.yar
-        PrikormkaDropper or PrikormkaModule or PrikormkaEarlyVersion
-=======
         Neo23x0_apt_prikormka_PrikormkaDropper or Neo23x0_apt_prikormka_PrikormkaModule or Neo23x0_apt_prikormka_PrikormkaEarlyVersion
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_prikormka.yar
 }

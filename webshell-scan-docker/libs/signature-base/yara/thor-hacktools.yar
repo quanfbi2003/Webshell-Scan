@@ -4412,14 +4412,6 @@ rule Neo23x0_thor_hacktools_SUSP_shellpop_Bash {
    strings:
       $x1 = "bash -i >& /dev/tcp/" ascii
       $x2 = "bash -i >& /dev/tcp/" ascii base64
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/thor-hacktools.yar
-
-      $fp1 = "bash -i >& /dev/tcp/IP/PORT" ascii
-   condition:
-      1 of ($x*) and not 1 of ($fp*)
-}
-=======
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/thor-hacktools.yar
 
       $fp1 = "bash -i >& /dev/tcp/IP/PORT" ascii
    condition:

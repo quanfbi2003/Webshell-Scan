@@ -263,19 +263,6 @@ rule Neo23x0_gen_suspicious_strings_SUSP_JAVA_Class_with_VBS_Content {
       $s1 = ".vbs" ascii
       $s2 = "createNewFile" fullword ascii
       $s3 = "wscript" fullword ascii nocase
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_suspicious_strings.yar
-
-      $fp1 = "com/smm/"
-      $fp2 = "install"
-   condition:
-      ( uint16(0) == 0xfeca or uint16(0) == 0xfacf or uint32(0) == 0xbebafeca ) 
-      and filesize < 100KB 
-      and $a1 
-      and all of ($s*)
-      and not 1 of ($fp*)
-}
-=======
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_suspicious_strings.yar
 
       $fp1 = "com/smm/"
       $fp2 = "install"

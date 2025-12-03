@@ -5,20 +5,12 @@
    Identifier: HTA Anomalies
    Reference: Internal Research
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hta_anomalies.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_hta_anomalies.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hta_anomalies.yar
-rule HTA_with_WScript_Shell {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_hta_anomalies_HTA_with_WScript_Shell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_hta_anomalies.yar
    meta:
       description = "Detects WScript Shell in HTA"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +26,8 @@ rule Neo23x0_gen_hta_anomalies_HTA_with_WScript_Shell {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hta_anomalies.yar
-
-rule HTA_Embedded {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_hta_anomalies_HTA_Embedded {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_hta_anomalies.yar
    meta:
       description = "Detects an embedded HTA file"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium_log_sigs.yar
-
-rule EXPL_LOG_CVE_2021_27065_Exchange_Forensic_Artefacts_Mar21_1 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_log_sigs_EXPL_LOG_CVE_2021_27065_Exchange_Forensic_Artefacts_Mar21_1 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hafnium_log_sigs.yar
    meta:
       description = "Detects forensic artefacts found in HAFNIUM intrusions exploiting CVE-2021-27065"
       author = "Florian Roth (Nextron Systems)"
@@ -16,13 +11,8 @@ rule Neo23x0_apt_hafnium_log_sigs_EXPL_LOG_CVE_2021_27065_Exchange_Forensic_Arte
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium_log_sigs.yar
-
-rule EXPL_LOG_CVE_2021_26858_Exchange_Forensic_Artefacts_Mar21_1 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_log_sigs_EXPL_LOG_CVE_2021_26858_Exchange_Forensic_Artefacts_Mar21_1 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hafnium_log_sigs.yar
    meta:
       description = "Detects forensic artefacts found in HAFNIUM intrusions exploiting CVE-2021-26858"
       author = "Florian Roth (Nextron Systems)"
@@ -36,13 +26,8 @@ rule Neo23x0_apt_hafnium_log_sigs_EXPL_LOG_CVE_2021_26858_Exchange_Forensic_Arte
    condition:
       $xr1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium_log_sigs.yar
-
-rule LOG_APT_HAFNIUM_Exchange_Log_Traces_Mar21_1 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_log_sigs_LOG_APT_HAFNIUM_Exchange_Log_Traces_Mar21_1 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hafnium_log_sigs.yar
    meta:
       description = "Detects suspicious log entries that indicate requests as described in reports on HAFNIUM activity"
       author = "Florian Roth (Nextron Systems)"
@@ -59,13 +44,8 @@ rule Neo23x0_apt_hafnium_log_sigs_LOG_APT_HAFNIUM_Exchange_Log_Traces_Mar21_1 : 
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium_log_sigs.yar
-
-rule LOG_Exchange_Forensic_Artefacts_CleanUp_Activity_Mar21_1 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_log_sigs_LOG_Exchange_Forensic_Artefacts_CleanUp_Activity_Mar21_1 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hafnium_log_sigs.yar
    meta:
       description = "Detects forensic artefacts showing cleanup activity found in HAFNIUM intrusions exploiting"
       author = "Florian Roth (Nextron Systems)"
@@ -83,13 +63,8 @@ rule Neo23x0_apt_hafnium_log_sigs_LOG_Exchange_Forensic_Artefacts_CleanUp_Activi
    condition:
       1 of ($x*) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium_log_sigs.yar
-
-rule EXPL_LOG_CVE_2021_27055_Exchange_Forensic_Artefacts : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_log_sigs_EXPL_LOG_CVE_2021_27055_Exchange_Forensic_Artefacts : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hafnium_log_sigs.yar
    meta:
       description = "Detects suspicious log entries that indicate requests as described in reports on HAFNIUM activity"
       author = "Zach Stanford - @svch0st, Florian Roth"
@@ -113,13 +88,8 @@ rule Neo23x0_apt_hafnium_log_sigs_EXPL_LOG_CVE_2021_27055_Exchange_Forensic_Arte
    condition:
       $x1 and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium_log_sigs.yar
-
-rule LOG_CVE_2021_27065_Exchange_Forensic_Artefacts_Mar21_2 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_log_sigs_LOG_CVE_2021_27065_Exchange_Forensic_Artefacts_Mar21_2 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hafnium_log_sigs.yar
    meta:
       description = "Detects suspicious log entries that indicate requests as described in reports on HAFNIUM activity"
       author = "Florian Roth (Nextron Systems)"

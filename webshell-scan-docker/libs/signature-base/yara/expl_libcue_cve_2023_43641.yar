@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_libcue_cve_2023_43641.yar
-
-rule SUSP_EXPL_LIBCUE_CVE_2023_43641_Oct23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_libcue_cve_2023_43641_SUSP_EXPL_LIBCUE_CVE_2023_43641_Oct23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_libcue_cve_2023_43641.yar
    meta:
       author = "Florian Roth"
       description = "Detects a suspicious .cue file that could be an exploitation attempt of libcue vulnerability CVE-2023-43641"

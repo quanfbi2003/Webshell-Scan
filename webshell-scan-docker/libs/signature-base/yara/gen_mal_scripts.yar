@@ -1,14 +1,9 @@
 
 /* Various rules - see the references */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule PS_AMSI_Bypass : FILE {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_PS_AMSI_Bypass : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects PowerShell AMSI Bypass"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -22,13 +17,8 @@ rule Neo23x0_gen_mal_scripts_PS_AMSI_Bypass : FILE {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule JS_Suspicious_Obfuscation_Dropbox {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_JS_Suspicious_Obfuscation_Dropbox {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects PowerShell AMSI Bypass"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +33,8 @@ rule Neo23x0_gen_mal_scripts_JS_Suspicious_Obfuscation_Dropbox {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule JS_Suspicious_MSHTA_Bypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_JS_Suspicious_MSHTA_Bypass {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects MSHTA Bypass"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -65,13 +50,8 @@ rule Neo23x0_gen_mal_scripts_JS_Suspicious_MSHTA_Bypass {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule JavaScript_Run_Suspicious {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_JavaScript_Run_Suspicious {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects a suspicious Javascript Run command"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -88,13 +68,8 @@ rule Neo23x0_gen_mal_scripts_JavaScript_Run_Suspicious {
 }
 
 /* Certutil Rule Improved */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule Certutil_Decode_OR_Download {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_Certutil_Decode_OR_Download {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Certutil Decode"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -118,13 +93,8 @@ rule Neo23x0_gen_mal_scripts_Certutil_Decode_OR_Download {
       and 1 of ($a*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule Suspicious_JS_script_content {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_Suspicious_JS_script_content {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects suspicious statements in JavaScript files"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -142,13 +112,8 @@ rule Neo23x0_gen_mal_scripts_Suspicious_JS_script_content {
    condition:
       ( filesize < 10KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule Universal_Exploit_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_Universal_Exploit_Strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects a group of strings often used in exploit codes"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -166,13 +131,8 @@ rule Neo23x0_gen_mal_scripts_Universal_Exploit_Strings {
    condition:
       ( filesize < 2KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_scripts.yar
-
-rule VBS_Obfuscated_Mal_Feb18_1  {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_scripts_VBS_Obfuscated_Mal_Feb18_1  {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_mal_scripts.yar
    meta:
       description = "Detects malicious obfuscated VBS observed in February 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

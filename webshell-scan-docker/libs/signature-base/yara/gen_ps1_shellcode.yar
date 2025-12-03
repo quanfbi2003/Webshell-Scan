@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ps1_shellcode.yar
-rule Base64_PS1_Shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ps1_shellcode_Base64_PS1_Shellcode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ps1_shellcode.yar
    meta:
       description = "Detects Base64 encoded PS1 Shellcode"
       author = "Nick Carr, David Ledbetter"

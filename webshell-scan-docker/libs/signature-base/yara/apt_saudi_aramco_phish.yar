@@ -4,20 +4,12 @@
    Date: 2017-10-12
    Identifier: Saudi Aramco Phishing
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_saudi_aramco_phish.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_saudi_aramco_phish.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_saudi_aramco_phish.yar
-rule Saudi_Phish_Trojan {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_saudi_aramco_phish_Saudi_Phish_Trojan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_saudi_aramco_phish.yar
    meta:
       description = "Detects a trojan used in Saudi Aramco Phishing"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

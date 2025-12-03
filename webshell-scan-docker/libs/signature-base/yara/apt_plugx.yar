@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_plugx.yar
-
-rule APTGroupX_PlugXTrojanLoader_StringDecode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_plugx_APTGroupX_PlugXTrojanLoader_StringDecode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_plugx.yar
    meta:
       author = "Jay DiMartino"
    	description = "Rule to detect PlugX Malware"

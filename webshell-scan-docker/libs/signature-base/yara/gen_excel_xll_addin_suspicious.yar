@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_excel_xll_addin_suspicious.yar
-
-rule gen_Excel_xll_addin_suspicious
-=======
 //===SUCCESS===
 rule Neo23x0_gen_excel_xll_addin_suspicious_gen_Excel_xll_addin_suspicious
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_excel_xll_addin_suspicious.yar
 {
     meta:
         description = "Detects suspicious XLL add-ins to Excel"

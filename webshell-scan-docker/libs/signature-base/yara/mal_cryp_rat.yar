@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_cryp_rat.yar
-
-rule MAL_CrypRAT_Jan19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_cryp_rat_MAL_CrypRAT_Jan19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_cryp_rat.yar
    meta:
       description = "Detects CrypRAT"
       author = "Florian Roth (Nextron Systems)"

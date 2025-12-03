@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_inocnation.yar
-rule apt_win32_dll_rat_1a53b0cp32e46g0qio7
-=======
 //===SUCCESS===
 rule Neo23x0_apt_inocnation_apt_win32_dll_rat_1a53b0cp32e46g0qio7
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_inocnation.yar
 {
 	meta:
 		description = "Detects Inocnation Malware"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kins_dropper.yar
-rule KINS_dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_kins_dropper_KINS_dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kins_dropper.yar
 	meta:
 		author = "AlienVault Labs aortega@alienvault.com"
 		description = "Match protocol, process injects and windows exploit present in KINS dropper"
@@ -29,13 +25,8 @@ rule Neo23x0_crime_kins_dropper_KINS_dropper {
 	condition:
 		2 of ($n*) and 2 of ($i*) and 2 of ($uac*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kins_dropper.yar
-
-rule KINS_DLL_zeus {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_kins_dropper_KINS_DLL_zeus {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kins_dropper.yar
 	meta:
 		author = "AlienVault Labs aortega@alienvault.com"
 		description = "Match default bot in KINS leaked dropper, Zeus"

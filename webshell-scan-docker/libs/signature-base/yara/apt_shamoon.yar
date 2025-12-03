@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shamoon.yar
-rule CrowdStrike_Shamoon_DroppedFile { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_shamoon_CrowdStrike_Shamoon_DroppedFile { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_shamoon.yar
 	meta:
 		description = "Rule to detect Shamoon malware http://goo.gl/QTxohN"
 		reference = "http://www.rsaconference.com/writable/presentations/file_upload/exp-w01-hacking-exposed-day-of-destruction.pdf"

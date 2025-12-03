@@ -7,19 +7,12 @@
    License: https://creativecommons.org/licenses/by-nc/4.0/
    Reference: https://researchcenter.paloaltonetworks.com/2018/09/unit42-xbash-combines-botnet-ransomware-coinmining-worm-targets-linux-windows/
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_xbash.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule MAL_Xbash_PY_Sep18 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_xbash_MAL_Xbash_PY_Sep18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_xbash.yar
    meta:
       description = "Detects Xbash malware"
       author = "Florian Roth (Nextron Systems)"
@@ -32,13 +25,8 @@ rule Neo23x0_crime_xbash_MAL_Xbash_PY_Sep18 {
    condition:
       uint16(0) == 0x457f and filesize < 10000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_xbash.yar
-
-rule MAL_Xbash_SH_Sep18 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_xbash_MAL_Xbash_SH_Sep18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_xbash.yar
    meta:
       description = "Detects Xbash malware"
       author = "Florian Roth (Nextron Systems)"
@@ -60,13 +48,8 @@ rule Neo23x0_crime_xbash_MAL_Xbash_SH_Sep18 {
    condition:
       uint16(0) == 0x2123 and filesize < 3KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_xbash.yar
-
-rule MAL_Xbash_JS_Sep18 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_xbash_MAL_Xbash_JS_Sep18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_xbash.yar
    meta:
       description = "Detects XBash malware"
       author = "Florian Roth (Nextron Systems)"

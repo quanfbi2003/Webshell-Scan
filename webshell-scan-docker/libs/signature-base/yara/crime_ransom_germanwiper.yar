@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_germanwiper.yar
-rule MAL_Ransomware_GermanWiper {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_germanwiper_MAL_Ransomware_GermanWiper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_germanwiper.yar
    meta:
       description = "Detects RansomWare GermanWiper in Memory or in unpacked state"
       author = "Frank Boldewin (@r3c0nst), modified by Florian Roth"

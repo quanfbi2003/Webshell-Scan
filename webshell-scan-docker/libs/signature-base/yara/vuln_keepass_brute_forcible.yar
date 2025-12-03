@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_keepass_brute_forcible.yar
-
-rule VULN_KeePass_DB_Brute_Forcible {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_keepass_brute_forcible_VULN_KeePass_DB_Brute_Forcible {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_keepass_brute_forcible.yar
    meta:
       description = "Detects KeePass .kdbx password stores, which could be brute forced to steal the credentials. With AES-KDF and less than 65536 iterations the cracking speed with a single GPU is 20k/s, for the old default of 6.000 iterations it's 200k/s. Best remediation is to change the key derivative function to Argon2d and delete all older versions of the .kdbx"
       author = "Arnim Rupp (https://github.com/ruppde)"

@@ -4,20 +4,12 @@
    Date: 2017-02-07
    Identifier: Rotten Potato
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_rottenpotato.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_rottenpotato.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_rottenpotato.yar
-rule RottenPotato_Potato {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_rottenpotato_RottenPotato_Potato {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_rottenpotato.yar
    meta:
       description = "Detects a component of privilege escalation tool Rotten Potato - file Potato.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

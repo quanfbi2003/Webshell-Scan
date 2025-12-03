@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cmd_script_obfuscated.yar
-
-rule MAL_CMD_Script_Obfuscated_Feb19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cmd_script_obfuscated_MAL_CMD_Script_Obfuscated_Feb19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cmd_script_obfuscated.yar
    meta:
       description = "Detects obfuscated batch script using env variable sub-strings"
       author = "Florian Roth (Nextron Systems)"

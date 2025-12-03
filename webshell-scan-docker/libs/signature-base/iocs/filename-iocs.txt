@@ -3905,11 +3905,7 @@ linpeas\.log;75
 \\passav\.exe;65
 
 # Exploit Code File Names
-<<<<<<< Updated upstream:libs/signature-base/iocs/filename-iocs.txt
-\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);60;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok|\\sigma\\|\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}\\n | MFSA |emerging-threats|advisory|fixed)
-=======
 \\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}($|\\);55;(\\share\\doc|\\Microsoft\\Windows Defender Advanced Threat Protection\\|/\.cpanm/work/| \.\.\.\.\. ok|\\sigma\\|\\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}\\n | MFSA |emerging-threats|advisory|fixed)
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/iocs/filename-iocs.txt
 \\(cve|CVE)-20[012][0-9]\-[0-9]{4,5}.{0,20}(\.py|\.exe|\.vbs|\.bat|\.ps1|\.dll);75;(\\share\\doc|CVE\-2017\-9800\-pre\-commit)
 
 # Possible Service Path Escalation Attempt http://www.commonexploits.com/unquoted-service-paths/ or simple malware
@@ -4435,9 +4431,6 @@ C:\\perflogs\\RunSchedulerTaskOnce\.ps1;85
 \\healthchecktemplate\.txt;75
 \\healthcheck\.txt;60
 
-<<<<<<< Updated upstream:libs/signature-base/iocs/filename-iocs.txt
-# End
-=======
 # Malicious Chrome Extensions https://docs.google.com/spreadsheets/d/1LN7MQ_9W5QHIyZjjqXK7JnSiCLlcF4aBRhmZKon-p4U/edit?gid=0#gid=0
 \\User Data\\Default\\Extensions\\odccobbfnngplckpongkahajfjpnbcck;75
 \\User Data\\Default\\Extensions\\afefmfbcccnppcaiebpmbpmddhilkkdi;75
@@ -4536,4 +4529,3 @@ C:\\perflogs\\RunSchedulerTaskOnce\.ps1;85
 \\TEMPLATE\\LAYOUTS\\1\.css;85
 
 # End
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/iocs/filename-iocs.txt

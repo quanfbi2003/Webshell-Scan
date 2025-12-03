@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_qbot_payloads.yar
-
-rule MAL_QBot_HTML_Smuggling_Indicators_Oct22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_qbot_payloads_MAL_QBot_HTML_Smuggling_Indicators_Oct22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_qbot_payloads.yar
    meta:
       description = "Detects double encoded PKZIP headers as seen in HTML files used by QBot"
       author = "Florian Roth (Nextron Systems)"

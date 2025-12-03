@@ -1,33 +1,6 @@
-/*
-
- YARA doesn't perform complete digital certificate chain validation.
-
- This can cause unwanted matches for:
-    a) Files that are signed with non-verified, self-issued, certificates
-    b) Files that fail integrity validation due to checksum mismatch
-    c) Files that have extra data appended after the certificate
-
- It's also worth mentioning that the timestamp value in the condition is only
- informative, since YARA doesn't extract timestamping certificate information.
- This information could be used in combination with other tools to reduce
- potential false positives.
-
- ReversingLabs recommends using Titanium platform for best results with certificate-based classifications.
-
- References on importance of certificate verification:
-    https://blog.reversinglabs.com/blog/tampering-with-signed-objects-without-breaking-the-integrity-seal
-    https://blog.reversinglabs.com/blog/breaking-the-windows-authenticode-security-model
-    https://blog.reversinglabs.com/blog/breaking-uefi-firmware-authenticode-security-model
-    https://blog.reversinglabs.com/blog/breaking-the-linux-authenticode-security-model
-
-*/
-
 import "pe"
 /*
 
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-rule cert_blocklist_05e2e6a4cd09ea54d665b075fe22A256 {
-=======
  YARA doesn't perform complete digital certificate chain validation.
 
  This can cause unwanted matches for:
@@ -54,7 +27,6 @@ rule cert_blocklist_05e2e6a4cd09ea54d665b075fe22A256 {
 
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_05e2e6a4cd09ea54d665b075fe22A256 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -71,13 +43,8 @@ rule reversinglabs_blocklist_cert_blocklist_05e2e6a4cd09ea54d665b075fe22A256 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_77019a082385e4b73f569569c9f87bb8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_77019a082385e4b73f569569c9f87bb8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -94,13 +61,8 @@ rule reversinglabs_blocklist_cert_blocklist_77019a082385e4b73f569569c9f87bb8 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4f2ef29ca5f96e5777b82c62f34fd3a6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4f2ef29ca5f96e5777b82c62f34fd3a6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -117,13 +79,8 @@ rule reversinglabs_blocklist_cert_blocklist_4f2ef29ca5f96e5777b82c62f34fd3a6 {
             1342051200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7cc1db2ad0a290a4bfe7a5f336d6800c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7cc1db2ad0a290a4bfe7a5f336d6800c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -140,13 +97,8 @@ rule reversinglabs_blocklist_cert_blocklist_7cc1db2ad0a290a4bfe7a5f336d6800c {
             1342051200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_13c8351aece71c731158980f575f4133 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_13c8351aece71c731158980f575f4133 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -163,13 +115,8 @@ rule reversinglabs_blocklist_cert_blocklist_13c8351aece71c731158980f575f4133 {
             1371513600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4531954f6265304055f66ce4f624f95b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4531954f6265304055f66ce4f624f95b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -186,13 +133,8 @@ rule reversinglabs_blocklist_cert_blocklist_4531954f6265304055f66ce4f624f95b {
             1384819199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0e808f231515bc519eea1a73cdf3266f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0e808f231515bc519eea1a73cdf3266f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -209,13 +151,8 @@ rule reversinglabs_blocklist_cert_blocklist_0e808f231515bc519eea1a73cdf3266f {
             1468799999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_36be4ad457f062fa77d87595b8ccc8cf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_36be4ad457f062fa77d87595b8ccc8cf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -232,13 +169,8 @@ rule reversinglabs_blocklist_cert_blocklist_36be4ad457f062fa77d87595b8ccc8cf {
             1372377599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_75a38507bf403b152125b8f5ce1b97ad {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_75a38507bf403b152125b8f5ce1b97ad {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -255,13 +187,8 @@ rule reversinglabs_blocklist_cert_blocklist_75a38507bf403b152125b8f5ce1b97ad {
             1395359999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4effa8b216e24b16202940c1bc2fa8a5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4effa8b216e24b16202940c1bc2fa8a5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -278,13 +205,8 @@ rule reversinglabs_blocklist_cert_blocklist_4effa8b216e24b16202940c1bc2fa8a5 {
             1404691199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_57d7153a89bbf4729be87f3c927043aa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_57d7153a89bbf4729be87f3c927043aa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -301,13 +223,8 @@ rule reversinglabs_blocklist_cert_blocklist_57d7153a89bbf4729be87f3c927043aa {
             1469059200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_028e1deccf93d38ecf396118dfe908b4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_028e1deccf93d38ecf396118dfe908b4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -324,13 +241,8 @@ rule reversinglabs_blocklist_cert_blocklist_028e1deccf93d38ecf396118dfe908b4 {
             1392163199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_40575df73eaa1b6140c7ef62c08bf216 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_40575df73eaa1b6140c7ef62c08bf216 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -347,13 +259,8 @@ rule reversinglabs_blocklist_cert_blocklist_40575df73eaa1b6140c7ef62c08bf216 {
             1394063999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_049ce8c47f1f0e650cb086f0cfa7ca53 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_049ce8c47f1f0e650cb086f0cfa7ca53 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -370,13 +277,8 @@ rule reversinglabs_blocklist_cert_blocklist_049ce8c47f1f0e650cb086f0cfa7ca53 {
             1393804799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_29f42680e653cf8fafd0e935553f7e86 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_29f42680e653cf8fafd0e935553f7e86 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -393,13 +295,8 @@ rule reversinglabs_blocklist_cert_blocklist_29f42680e653cf8fafd0e935553f7e86 {
             1390175999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c15 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c15 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -416,13 +313,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c15 {
             1387324799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c0f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c0f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -439,13 +331,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c0f {
             1386719999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06a164ec5978497741ee6cec9966871b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06a164ec5978497741ee6cec9966871b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -462,13 +349,8 @@ rule reversinglabs_blocklist_cert_blocklist_06a164ec5978497741ee6cec9966871b {
             1385596799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1121ed568764e75be35574448feadefcd3bc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1121ed568764e75be35574448feadefcd3bc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -485,13 +367,8 @@ rule reversinglabs_blocklist_cert_blocklist_1121ed568764e75be35574448feadefcd3bc
             1385337599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6ed2450ceac0f72e73fda1727e66e654 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6ed2450ceac0f72e73fda1727e66e654 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -508,13 +385,8 @@ rule reversinglabs_blocklist_cert_blocklist_6ed2450ceac0f72e73fda1727e66e654 {
             1376092799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_32665079c5a5854a6833623ca77ff5ac {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_32665079c5a5854a6833623ca77ff5ac {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -531,13 +403,8 @@ rule reversinglabs_blocklist_cert_blocklist_32665079c5a5854a6833623ca77ff5ac {
             1381967999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_01a90094c83412c00cf98dd2eb0d7042 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_01a90094c83412c00cf98dd2eb0d7042 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -554,13 +421,8 @@ rule reversinglabs_blocklist_cert_blocklist_01a90094c83412c00cf98dd2eb0d7042 {
             1376956799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_55efe24b9674855baf16e67716479c71 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_55efe24b9674855baf16e67716479c71 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -577,13 +439,8 @@ rule reversinglabs_blocklist_cert_blocklist_55efe24b9674855baf16e67716479c71 {
             1374451199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_094bf19d509d3074913995160b195b6c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_094bf19d509d3074913995160b195b6c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -600,13 +457,8 @@ rule reversinglabs_blocklist_cert_blocklist_094bf19d509d3074913995160b195b6c {
             1373241599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a77cf3ba49b64e6cbe5fb4a6a6aacc6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a77cf3ba49b64e6cbe5fb4a6a6aacc6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -623,13 +475,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a77cf3ba49b64e6cbe5fb4a6a6aacc6 {
             1371081599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1f4c22da1107d20c1eda04569d58e573 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1f4c22da1107d20c1eda04569d58e573 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -646,13 +493,8 @@ rule reversinglabs_blocklist_cert_blocklist_1f4c22da1107d20c1eda04569d58e573 {
             1366156799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4fe68d48634893d18de040d8f1c289d2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4fe68d48634893d18de040d8f1c289d2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -669,13 +511,8 @@ rule reversinglabs_blocklist_cert_blocklist_4fe68d48634893d18de040d8f1c289d2 {
             1371081600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6767def972d6ea702d8c8a53af1832d3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6767def972d6ea702d8c8a53af1832d3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -692,13 +529,8 @@ rule reversinglabs_blocklist_cert_blocklist_6767def972d6ea702d8c8a53af1832d3 {
             1361750400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06477e3425f1448995ced539789e6842 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06477e3425f1448995ced539789e6842 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -715,13 +547,8 @@ rule reversinglabs_blocklist_cert_blocklist_06477e3425f1448995ced539789e6842 {
             1334275199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0450a7c1c36951da09c8ad0e7f716ff2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0450a7c1c36951da09c8ad0e7f716ff2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -738,13 +565,8 @@ rule reversinglabs_blocklist_cert_blocklist_0450a7c1c36951da09c8ad0e7f716ff2 {
             1362182399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f9fbdab9b39645cf3211f87abb5ddb7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f9fbdab9b39645cf3211f87abb5ddb7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -761,13 +583,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f9fbdab9b39645cf3211f87abb5ddb7 {
             1361318399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4211d2e4f0e87127319302c55b85bcf2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4211d2e4f0e87127319302c55b85bcf2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -784,13 +601,8 @@ rule reversinglabs_blocklist_cert_blocklist_4211d2e4f0e87127319302c55b85bcf2 {
             1360713599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_07b44cdbfffb78de05f4261672a67312 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_07b44cdbfffb78de05f4261672a67312 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -807,13 +619,8 @@ rule reversinglabs_blocklist_cert_blocklist_07b44cdbfffb78de05f4261672a67312 {
             1359503999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4f8b9a1ba5e60c754dbb40ddee7905e2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4f8b9a1ba5e60c754dbb40ddee7905e2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -830,13 +637,8 @@ rule reversinglabs_blocklist_cert_blocklist_4f8b9a1ba5e60c754dbb40ddee7905e2 {
             1348617599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a389b95ee736dd13bc0ed743fd74d2f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a389b95ee736dd13bc0ed743fd74d2f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -853,13 +655,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a389b95ee736dd13bc0ed743fd74d2f {
             1351814399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1a3faaeb3a8b93b2394fec36345996e6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1a3faaeb3a8b93b2394fec36345996e6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -876,13 +673,8 @@ rule reversinglabs_blocklist_cert_blocklist_1a3faaeb3a8b93b2394fec36345996e6 {
             1468454400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1a35acce5b0c77206b1c3dc2a6a2417c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1a35acce5b0c77206b1c3dc2a6a2417c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -899,13 +691,8 @@ rule reversinglabs_blocklist_cert_blocklist_1a35acce5b0c77206b1c3dc2a6a2417c {
             1166054399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6eb40ea11eaac847b050de9b59e25bdc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6eb40ea11eaac847b050de9b59e25bdc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -922,13 +709,8 @@ rule reversinglabs_blocklist_cert_blocklist_6eb40ea11eaac847b050de9b59e25bdc {
             1062201599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6724340ddbc7252f7fb714b812a5c04d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6724340ddbc7252f7fb714b812a5c04d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -945,13 +727,8 @@ rule reversinglabs_blocklist_cert_blocklist_6724340ddbc7252f7fb714b812a5c04d {
             1306195199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0813ee9b7b9d7c46001d6bc8784df1dd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0813ee9b7b9d7c46001d6bc8784df1dd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -968,13 +745,8 @@ rule reversinglabs_blocklist_cert_blocklist_0813ee9b7b9d7c46001d6bc8784df1dd {
             1334707199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_530591c61b5e1212f659138b7cea0a97 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_530591c61b5e1212f659138b7cea0a97 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -991,13 +763,8 @@ rule reversinglabs_blocklist_cert_blocklist_530591c61b5e1212f659138b7cea0a97 {
             1403654399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_07270ff9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_07270ff9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1014,13 +781,8 @@ rule reversinglabs_blocklist_cert_blocklist_07270ff9 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0727100d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0727100d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1037,13 +799,8 @@ rule reversinglabs_blocklist_cert_blocklist_0727100d {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_07271003 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_07271003 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1060,13 +817,8 @@ rule reversinglabs_blocklist_cert_blocklist_07271003 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_013134bf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_013134bf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1083,13 +835,8 @@ rule reversinglabs_blocklist_cert_blocklist_013134bf {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_01314476 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_01314476 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1106,13 +853,8 @@ rule reversinglabs_blocklist_cert_blocklist_01314476 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_013169b0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_013169b0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1129,13 +871,8 @@ rule reversinglabs_blocklist_cert_blocklist_013169b0 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c76da9c910c4e2c9efe15d058933c4c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c76da9c910c4e2c9efe15d058933c4c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1152,13 +889,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c76da9c910c4e2c9efe15d058933c4c {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_469c2caf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_469c2caf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1175,13 +907,8 @@ rule reversinglabs_blocklist_cert_blocklist_469c2caf {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_469c3cc9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_469c3cc9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1198,13 +925,8 @@ rule reversinglabs_blocklist_cert_blocklist_469c3cc9 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a82bd1e144e8814d75b1a5527bebf3e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a82bd1e144e8814d75b1a5527bebf3e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1221,13 +943,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a82bd1e144e8814d75b1a5527bebf3e {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_469c2cb0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_469c2cb0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1244,13 +961,8 @@ rule reversinglabs_blocklist_cert_blocklist_469c2cb0 {
             1308182400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4c0e636a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4c0e636a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1267,13 +979,8 @@ rule reversinglabs_blocklist_cert_blocklist_4c0e636a {
             1320191999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_072714a9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_072714a9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1290,13 +997,8 @@ rule reversinglabs_blocklist_cert_blocklist_072714a9 {
             1320191999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_00d8f35f4eb7872b2dab0692e315382fb0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_00d8f35f4eb7872b2dab0692e315382fb0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1315,13 +1017,8 @@ rule reversinglabs_blocklist_cert_blocklist_00d8f35f4eb7872b2dab0692e315382fb0 {
             1300060800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_750e40ff97f047edf556c7084eb1abfd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_750e40ff97f047edf556c7084eb1abfd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1338,13 +1035,8 @@ rule reversinglabs_blocklist_cert_blocklist_750e40ff97f047edf556c7084eb1abfd {
             980899199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1b5190f73724399c9254cd424637996a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1b5190f73724399c9254cd424637996a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1361,13 +1053,8 @@ rule reversinglabs_blocklist_cert_blocklist_1b5190f73724399c9254cd424637996a {
             980812799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_00ebaa11d62e2481081820 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_00ebaa11d62e2481081820 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1385,13 +1072,8 @@ rule reversinglabs_blocklist_cert_blocklist_00ebaa11d62e2481081820 {
             )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3aab11dee52f1b19d056 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3aab11dee52f1b19d056 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1407,13 +1089,8 @@ rule reversinglabs_blocklist_cert_blocklist_3aab11dee52f1b19d056 {
             pe.signatures[i].serial == "3a:ab:11:de:e5:2f:1b:19:d0:56"
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6102b01900000000002f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6102b01900000000002f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1429,13 +1106,8 @@ rule reversinglabs_blocklist_cert_blocklist_6102b01900000000002f {
             pe.signatures[i].serial == "61:02:b0:19:00:00:00:00:00:2f"
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_01e2b4f759811c64379fca0be76d2dce {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_01e2b4f759811c64379fca0be76d2dce {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1452,13 +1124,8 @@ rule reversinglabs_blocklist_cert_blocklist_01e2b4f759811c64379fca0be76d2dce {
             1417651200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03e5a010b05c9287f823c2585f547b80 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03e5a010b05c9287f823c2585f547b80 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1475,13 +1142,8 @@ rule reversinglabs_blocklist_cert_blocklist_03e5a010b05c9287f823c2585f547b80 {
             1385423999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fe7df6c4b9a33b83d04e23e98a77cce {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fe7df6c4b9a33b83d04e23e98a77cce {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1498,13 +1160,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fe7df6c4b9a33b83d04e23e98a77cce {
             1396310399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_065569a3e261409128a40affa90d6d10 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_065569a3e261409128a40affa90d6d10 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1521,13 +1178,8 @@ rule reversinglabs_blocklist_cert_blocklist_065569a3e261409128a40affa90d6d10 {
             1381795199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0979616733e062c544df0abd315e3b92 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0979616733e062c544df0abd315e3b92 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1544,13 +1196,8 @@ rule reversinglabs_blocklist_cert_blocklist_0979616733e062c544df0abd315e3b92 {
             1408319999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7d3250b27e0547c77307030491b42802 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7d3250b27e0547c77307030491b42802 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1567,13 +1214,8 @@ rule reversinglabs_blocklist_cert_blocklist_7d3250b27e0547c77307030491b42802 {
             1412207999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_00d1836bd37c331a67 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_00d1836bd37c331a67 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1592,13 +1234,8 @@ rule reversinglabs_blocklist_cert_blocklist_00d1836bd37c331a67 {
             1422835199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2ca028d1a4de0eb743135edecf74d7af {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2ca028d1a4de0eb743135edecf74d7af {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1615,13 +1252,8 @@ rule reversinglabs_blocklist_cert_blocklist_2ca028d1a4de0eb743135edecf74d7af {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_dbb14dcf973eada14ece7ea79c895c11 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_dbb14dcf973eada14ece7ea79c895c11 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1638,13 +1270,8 @@ rule reversinglabs_blocklist_cert_blocklist_dbb14dcf973eada14ece7ea79c895c11 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f8c2239de3977b8d4a3dcbedc9031a51 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f8c2239de3977b8d4a3dcbedc9031a51 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1661,13 +1288,8 @@ rule reversinglabs_blocklist_cert_blocklist_f8c2239de3977b8d4a3dcbedc9031a51 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_caad8222705d3fb3430e114a31c8c6a4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_caad8222705d3fb3430e114a31c8c6a4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1684,13 +1306,8 @@ rule reversinglabs_blocklist_cert_blocklist_caad8222705d3fb3430e114a31c8c6a4 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b191812516e6618d49e6ccf5e63dc343 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b191812516e6618d49e6ccf5e63dc343 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1707,13 +1324,8 @@ rule reversinglabs_blocklist_cert_blocklist_b191812516e6618d49e6ccf5e63dc343 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4ba7fb8ee1deff8f4a1525e1e0580057 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4ba7fb8ee1deff8f4a1525e1e0580057 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1730,13 +1342,8 @@ rule reversinglabs_blocklist_cert_blocklist_4ba7fb8ee1deff8f4a1525e1e0580057 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2df9f7eb6cdc5ca243b33122e3941e25 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2df9f7eb6cdc5ca243b33122e3941e25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1753,13 +1360,8 @@ rule reversinglabs_blocklist_cert_blocklist_2df9f7eb6cdc5ca243b33122e3941e25 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_58a541d50f9e2fab4380c6a2ed433b82 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_58a541d50f9e2fab4380c6a2ed433b82 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1776,13 +1378,8 @@ rule reversinglabs_blocklist_cert_blocklist_58a541d50f9e2fab4380c6a2ed433b82 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5f273626859ae4bc4becbbeb71e2ab2d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5f273626859ae4bc4becbbeb71e2ab2d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1799,13 +1396,8 @@ rule reversinglabs_blocklist_cert_blocklist_5f273626859ae4bc4becbbeb71e2ab2d {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b1ad46ce4db160b348c24f66c9663178 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b1ad46ce4db160b348c24f66c9663178 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1822,13 +1414,8 @@ rule reversinglabs_blocklist_cert_blocklist_b1ad46ce4db160b348c24f66c9663178 {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_256541e204619033f8b09f9eb7c88ef8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_256541e204619033f8b09f9eb7c88ef8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1845,13 +1432,8 @@ rule reversinglabs_blocklist_cert_blocklist_256541e204619033f8b09f9eb7c88ef8 {
             1424303999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_00e8cc18cf100b6b27443ef26319398734 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_00e8cc18cf100b6b27443ef26319398734 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1870,13 +1452,8 @@ rule reversinglabs_blocklist_cert_blocklist_00e8cc18cf100b6b27443ef26319398734 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_62af28a7657ba8ab10fa8e2d47250c69 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_62af28a7657ba8ab10fa8e2d47250c69 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1893,13 +1470,8 @@ rule reversinglabs_blocklist_cert_blocklist_62af28a7657ba8ab10fa8e2d47250c69 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_04c8eca7243208a110dea926c7ad89ce {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_04c8eca7243208a110dea926c7ad89ce {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1916,13 +1488,8 @@ rule reversinglabs_blocklist_cert_blocklist_04c8eca7243208a110dea926c7ad89ce {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_157c3a4a6bcf35cf8453e6b6c0072e1d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_157c3a4a6bcf35cf8453e6b6c0072e1d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1939,13 +1506,8 @@ rule reversinglabs_blocklist_cert_blocklist_157c3a4a6bcf35cf8453e6b6c0072e1d {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_04422f12037bc2032521dbb6ae02ea0e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_04422f12037bc2032521dbb6ae02ea0e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1962,13 +1524,8 @@ rule reversinglabs_blocklist_cert_blocklist_04422f12037bc2032521dbb6ae02ea0e {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_65eae6c98111dc40bf4f962bf27227f2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_65eae6c98111dc40bf4f962bf27227f2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -1985,13 +1542,8 @@ rule reversinglabs_blocklist_cert_blocklist_65eae6c98111dc40bf4f962bf27227f2 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_12d5a4b29fe6156d4195fba55ae0d9a9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_12d5a4b29fe6156d4195fba55ae0d9a9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2008,13 +1560,8 @@ rule reversinglabs_blocklist_cert_blocklist_12d5a4b29fe6156d4195fba55ae0d9a9 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0087d60d1e2b9374eb7a735dce4bbdae56 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0087d60d1e2b9374eb7a735dce4bbdae56 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2033,13 +1580,8 @@ rule reversinglabs_blocklist_cert_blocklist_0087d60d1e2b9374eb7a735dce4bbdae56 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0860c8a7ed18c3f030a32722fd2b220c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0860c8a7ed18c3f030a32722fd2b220c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2056,13 +1598,8 @@ rule reversinglabs_blocklist_cert_blocklist_0860c8a7ed18c3f030a32722fd2b220c {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2fdadd0740572270203f8138692c4a83 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2fdadd0740572270203f8138692c4a83 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2079,13 +1616,8 @@ rule reversinglabs_blocklist_cert_blocklist_2fdadd0740572270203f8138692c4a83 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4fc13d6220c629043a26f81b1cad72d8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4fc13d6220c629043a26f81b1cad72d8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2102,13 +1634,8 @@ rule reversinglabs_blocklist_cert_blocklist_4fc13d6220c629043a26f81b1cad72d8 {
             1404172799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3457a918c6d3701b2eaca6a92474a7cc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3457a918c6d3701b2eaca6a92474a7cc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2125,13 +1652,8 @@ rule reversinglabs_blocklist_cert_blocklist_3457a918c6d3701b2eaca6a92474a7cc {
             1432252799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_621ed8265b0ad872d9f4b4ed6d560513 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_621ed8265b0ad872d9f4b4ed6d560513 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2148,13 +1670,8 @@ rule reversinglabs_blocklist_cert_blocklist_621ed8265b0ad872d9f4b4ed6d560513 {
             1413183357 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_56e22b992b4c7f1afeac1d63b492bf54 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_56e22b992b4c7f1afeac1d63b492bf54 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2171,13 +1688,8 @@ rule reversinglabs_blocklist_cert_blocklist_56e22b992b4c7f1afeac1d63b492bf54 {
             1435622399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3bc3bae4118d46f3fdd9beeeab749fee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3bc3bae4118d46f3fdd9beeeab749fee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2194,13 +1706,8 @@ rule reversinglabs_blocklist_cert_blocklist_3bc3bae4118d46f3fdd9beeeab749fee {
             1442275199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f0449f7691e5b4c8e74e71cae822179 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f0449f7691e5b4c8e74e71cae822179 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2217,13 +1724,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f0449f7691e5b4c8e74e71cae822179 {
             1432079999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_43db4448d870d7bdc275f36a01fba36f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_43db4448d870d7bdc275f36a01fba36f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2240,13 +1742,8 @@ rule reversinglabs_blocklist_cert_blocklist_43db4448d870d7bdc275f36a01fba36f {
             1436227199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2880a7f7ff2d334aa08744a8754fab2c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2880a7f7ff2d334aa08744a8754fab2c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2263,13 +1760,8 @@ rule reversinglabs_blocklist_cert_blocklist_2880a7f7ff2d334aa08744a8754fab2c {
             1393891199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0492f5c18e26fa0cd7e15067674aff1c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0492f5c18e26fa0cd7e15067674aff1c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2286,13 +1778,8 @@ rule reversinglabs_blocklist_cert_blocklist_0492f5c18e26fa0cd7e15067674aff1c {
             1445990399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6aa668cd6a9de1fdd476ea8225326937 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6aa668cd6a9de1fdd476ea8225326937 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2309,13 +1796,8 @@ rule reversinglabs_blocklist_cert_blocklist_6aa668cd6a9de1fdd476ea8225326937 {
             1441583999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1cb06dccb482255728671ea12ac41620 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1cb06dccb482255728671ea12ac41620 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2332,13 +1814,8 @@ rule reversinglabs_blocklist_cert_blocklist_1cb06dccb482255728671ea12ac41620 {
             1445126399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_370c2467c41d6019bbecd72e00c5d73d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_370c2467c41d6019bbecd72e00c5d73d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2355,13 +1832,8 @@ rule reversinglabs_blocklist_cert_blocklist_370c2467c41d6019bbecd72e00c5d73d {
             1445299199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5067339614c5cc219c489d40420f3bf9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5067339614c5cc219c489d40420f3bf9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2378,13 +1850,8 @@ rule reversinglabs_blocklist_cert_blocklist_5067339614c5cc219c489d40420f3bf9 {
             1441238400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e32531ae83992f0573120a5e78de271 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e32531ae83992f0573120a5e78de271 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2401,13 +1868,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e32531ae83992f0573120a5e78de271 {
             1451606399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6967a89bcf6efef160aaeebbff376c0a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6967a89bcf6efef160aaeebbff376c0a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2424,13 +1886,8 @@ rule reversinglabs_blocklist_cert_blocklist_6967a89bcf6efef160aaeebbff376c0a {
             1451174399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7473d95405d2b0b3a8f28785ce6e74ca {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7473d95405d2b0b3a8f28785ce6e74ca {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2447,13 +1904,8 @@ rule reversinglabs_blocklist_cert_blocklist_7473d95405d2b0b3a8f28785ce6e74ca {
             1453939199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_04f380f97579f1702a85e0169bbdfd78 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_04f380f97579f1702a85e0169bbdfd78 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2470,13 +1922,8 @@ rule reversinglabs_blocklist_cert_blocklist_04f380f97579f1702a85e0169bbdfd78 {
             1454889599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_04d6b8cc6dce353fcf3ae8a532be7255 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_04d6b8cc6dce353fcf3ae8a532be7255 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2493,13 +1940,8 @@ rule reversinglabs_blocklist_cert_blocklist_04d6b8cc6dce353fcf3ae8a532be7255 {
             1451692799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_191322a00200f793 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_191322a00200f793 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2516,13 +1958,8 @@ rule reversinglabs_blocklist_cert_blocklist_191322a00200f793 {
             1442966399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_451c9d0b413e6e8df175 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_451c9d0b413e6e8df175 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2539,13 +1976,8 @@ rule reversinglabs_blocklist_cert_blocklist_451c9d0b413e6e8df175 {
             1442275199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03943858218f35adb7073a6027555621 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03943858218f35adb7073a6027555621 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2562,13 +1994,8 @@ rule reversinglabs_blocklist_cert_blocklist_03943858218f35adb7073a6027555621 {
             1480550399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_09813ee7318452c28a1f6426d1cee12d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_09813ee7318452c28a1f6426d1cee12d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2585,13 +2012,8 @@ rule reversinglabs_blocklist_cert_blocklist_09813ee7318452c28a1f6426d1cee12d {
             1455667199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_476bf24a4b1e9f4bc2a61b152115e1fe {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_476bf24a4b1e9f4bc2a61b152115e1fe {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2608,13 +2030,8 @@ rule reversinglabs_blocklist_cert_blocklist_476bf24a4b1e9f4bc2a61b152115e1fe {
             1414454399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7bd55818c5971b63dc45cf57cbeb950b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7bd55818c5971b63dc45cf57cbeb950b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2631,13 +2048,8 @@ rule reversinglabs_blocklist_cert_blocklist_7bd55818c5971b63dc45cf57cbeb950b {
             1371513599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4c0b2e9d2ef909d15270d4dd7fa5a4a5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4c0b2e9d2ef909d15270d4dd7fa5a4a5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2654,13 +2066,8 @@ rule reversinglabs_blocklist_cert_blocklist_4c0b2e9d2ef909d15270d4dd7fa5a4a5 {
             1372118399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5e3d76dc7e273e2f313fc0775847a2a2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5e3d76dc7e273e2f313fc0775847a2a2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2677,13 +2084,8 @@ rule reversinglabs_blocklist_cert_blocklist_5e3d76dc7e273e2f313fc0775847a2a2 {
             1372723199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_47d5d5372bcb1562b4c9f4c2bdf13587 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_47d5d5372bcb1562b4c9f4c2bdf13587 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2700,13 +2102,8 @@ rule reversinglabs_blocklist_cert_blocklist_47d5d5372bcb1562b4c9f4c2bdf13587 {
             1400803199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3ac10e68f1ce519e84ddcd28b11fa542 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3ac10e68f1ce519e84ddcd28b11fa542 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2723,13 +2120,8 @@ rule reversinglabs_blocklist_cert_blocklist_3ac10e68f1ce519e84ddcd28b11fa542 {
             1420156799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_31062e483e0106b18c982f0053185c36 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_31062e483e0106b18c982f0053185c36 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2746,13 +2138,8 @@ rule reversinglabs_blocklist_cert_blocklist_31062e483e0106b18c982f0053185c36 {
             1332287999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_20d0ee42fc901e6b3a8fefe8c1e6087a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_20d0ee42fc901e6b3a8fefe8c1e6087a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2769,13 +2156,8 @@ rule reversinglabs_blocklist_cert_blocklist_20d0ee42fc901e6b3a8fefe8c1e6087a {
             1391299199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_127251b32b9a50bd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_127251b32b9a50bd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2792,13 +2174,8 @@ rule reversinglabs_blocklist_cert_blocklist_127251b32b9a50bd {
             1493769599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_48cad4e6966e22d6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_48cad4e6966e22d6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2815,13 +2192,8 @@ rule reversinglabs_blocklist_cert_blocklist_48cad4e6966e22d6 {
             1492732799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5e15205f180442cc6c3c0f03e1a33d9f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5e15205f180442cc6c3c0f03e1a33d9f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2838,13 +2210,8 @@ rule reversinglabs_blocklist_cert_blocklist_5e15205f180442cc6c3c0f03e1a33d9f {
             1498607999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4c8e3b1613f73542f7106f272094eb23 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4c8e3b1613f73542f7106f272094eb23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2861,13 +2228,8 @@ rule reversinglabs_blocklist_cert_blocklist_4c8e3b1613f73542f7106f272094eb23 {
             1472687999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2ce2bd0ad3cfde9ea73eec7ca30400da {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2ce2bd0ad3cfde9ea73eec7ca30400da {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2884,13 +2246,8 @@ rule reversinglabs_blocklist_cert_blocklist_2ce2bd0ad3cfde9ea73eec7ca30400da {
             1493337599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fbc30db127a536c34d7a0fa81b48193 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fbc30db127a536c34d7a0fa81b48193 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2907,13 +2264,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fbc30db127a536c34d7a0fa81b48193 {
             1466121599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08448bd6ee9105ae31228ea5fe496f63 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08448bd6ee9105ae31228ea5fe496f63 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2930,13 +2282,8 @@ rule reversinglabs_blocklist_cert_blocklist_08448bd6ee9105ae31228ea5fe496f63 {
             1445212799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_02f17566ef568dc06c9a379ea2f4faea {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_02f17566ef568dc06c9a379ea2f4faea {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2953,13 +2300,8 @@ rule reversinglabs_blocklist_cert_blocklist_02f17566ef568dc06c9a379ea2f4faea {
             1441324799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7d824ba1f7f730319c50d64c9a7ed507 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7d824ba1f7f730319c50d64c9a7ed507 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2976,13 +2318,8 @@ rule reversinglabs_blocklist_cert_blocklist_7d824ba1f7f730319c50d64c9a7ed507 {
             1238025599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_77a64759f12766e363d779998c71bdc9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_77a64759f12766e363d779998c71bdc9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -2999,13 +2336,8 @@ rule reversinglabs_blocklist_cert_blocklist_77a64759f12766e363d779998c71bdc9 {
             1301011199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0b0d17ec1449b4b2d38fcb0f20fbcd3a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0b0d17ec1449b4b2d38fcb0f20fbcd3a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3022,13 +2354,8 @@ rule reversinglabs_blocklist_cert_blocklist_0b0d17ec1449b4b2d38fcb0f20fbcd3a {
             1394150399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fe9404dc73cf1c2ba1450b8398305557 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fe9404dc73cf1c2ba1450b8398305557 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3047,13 +2374,8 @@ rule reversinglabs_blocklist_cert_blocklist_fe9404dc73cf1c2ba1450b8398305557 {
             1287360000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1cb2d523a6bf7a066642c578de1c9be4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1cb2d523a6bf7a066642c578de1c9be4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3070,13 +2392,8 @@ rule reversinglabs_blocklist_cert_blocklist_1cb2d523a6bf7a066642c578de1c9be4 {
             1400889599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3a6ccabb1c62f3be3eb03869fa43dc4a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3a6ccabb1c62f3be3eb03869fa43dc4a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3093,13 +2410,8 @@ rule reversinglabs_blocklist_cert_blocklist_3a6ccabb1c62f3be3eb03869fa43dc4a {
             1259798399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_864196f01971dbec7002b48642a7013a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_864196f01971dbec7002b48642a7013a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3118,13 +2430,8 @@ rule reversinglabs_blocklist_cert_blocklist_864196f01971dbec7002b48642a7013a {
             1384300799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4fda1e121b61adeca936a6aebe079303 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4fda1e121b61adeca936a6aebe079303 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3141,13 +2448,8 @@ rule reversinglabs_blocklist_cert_blocklist_4fda1e121b61adeca936a6aebe079303 {
             1310687999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03866deb183abfbf4ff458d4de7bd73a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03866deb183abfbf4ff458d4de7bd73a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3164,13 +2466,8 @@ rule reversinglabs_blocklist_cert_blocklist_03866deb183abfbf4ff458d4de7bd73a {
             1371772799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1be41b34127ca9e6270830d2070db426 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1be41b34127ca9e6270830d2070db426 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3187,13 +2484,8 @@ rule reversinglabs_blocklist_cert_blocklist_1be41b34127ca9e6270830d2070db426 {
             1352764799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9b108b8a1daa0d5581f59fcee0447901 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9b108b8a1daa0d5581f59fcee0447901 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3212,13 +2504,8 @@ rule reversinglabs_blocklist_cert_blocklist_9b108b8a1daa0d5581f59fcee0447901 {
             1380671999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5f8203c430fc7db4e61f6684f6829ffc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5f8203c430fc7db4e61f6684f6829ffc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3235,13 +2522,8 @@ rule reversinglabs_blocklist_cert_blocklist_5f8203c430fc7db4e61f6684f6829ffc {
             1382572799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6b6daef5be29f20ddce4b0f5e9fa6ea5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6b6daef5be29f20ddce4b0f5e9fa6ea5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3258,13 +2540,8 @@ rule reversinglabs_blocklist_cert_blocklist_6b6daef5be29f20ddce4b0f5e9fa6ea5 {
             1280447999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_57d6dff1ef96f01b9430666b2733cc87 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_57d6dff1ef96f01b9430666b2733cc87 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3281,13 +2558,8 @@ rule reversinglabs_blocklist_cert_blocklist_57d6dff1ef96f01b9430666b2733cc87 {
             1314575999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0166b65038d61e5435b48204cae4795a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0166b65038d61e5435b48204cae4795a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3304,13 +2576,8 @@ rule reversinglabs_blocklist_cert_blocklist_0166b65038d61e5435b48204cae4795a {
             1403999999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_784f226b45c3bd8e4089243d747d1f59 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_784f226b45c3bd8e4089243d747d1f59 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3327,13 +2594,8 @@ rule reversinglabs_blocklist_cert_blocklist_784f226b45c3bd8e4089243d747d1f59 {
             1242777599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_11690f05604445fae0de539eeeeec584 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_11690f05604445fae0de539eeeeec584 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3350,13 +2612,8 @@ rule reversinglabs_blocklist_cert_blocklist_11690f05604445fae0de539eeeeec584 {
             1294703999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aa146bff4b832bdbfe30b84580356763 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aa146bff4b832bdbfe30b84580356763 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3375,13 +2632,8 @@ rule reversinglabs_blocklist_cert_blocklist_aa146bff4b832bdbfe30b84580356763 {
             1295481599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e86f46b60142092aae81b8f6fa3d9c7c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e86f46b60142092aae81b8f6fa3d9c7c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3400,13 +2652,8 @@ rule reversinglabs_blocklist_cert_blocklist_e86f46b60142092aae81b8f6fa3d9c7c {
             1373932799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1a0fd2a4ef4c2a36ab9c5e8f792a35e2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1a0fd2a4ef4c2a36ab9c5e8f792a35e2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3423,13 +2670,8 @@ rule reversinglabs_blocklist_cert_blocklist_1a0fd2a4ef4c2a36ab9c5e8f792a35e2 {
             1389311999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_53bb753b79a99e61a6e822ac52460c70 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_53bb753b79a99e61a6e822ac52460c70 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3446,13 +2688,8 @@ rule reversinglabs_blocklist_cert_blocklist_53bb753b79a99e61a6e822ac52460c70 {
             1400543999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_83f68fc6834bf8bd2c801a2d1f1acc76 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_83f68fc6834bf8bd2c801a2d1f1acc76 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3471,13 +2708,8 @@ rule reversinglabs_blocklist_cert_blocklist_83f68fc6834bf8bd2c801a2d1f1acc76 {
             1407715199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f385e765acfb95605c9b35ca4c32f80e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f385e765acfb95605c9b35ca4c32f80e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3496,13 +2728,8 @@ rule reversinglabs_blocklist_cert_blocklist_f385e765acfb95605c9b35ca4c32f80e {
             1382313599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f62c9c4efc81caf0d5a2608009d48018 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f62c9c4efc81caf0d5a2608009d48018 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3521,13 +2748,8 @@ rule reversinglabs_blocklist_cert_blocklist_f62c9c4efc81caf0d5a2608009d48018 {
             1292889599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cc8d902da36587c9b2113cd76c3c3f8d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cc8d902da36587c9b2113cd76c3c3f8d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3546,13 +2768,8 @@ rule reversinglabs_blocklist_cert_blocklist_cc8d902da36587c9b2113cd76c3c3f8d {
             1292544000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_328bdcc0f679c4649147fbb3eb0e9bc6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_328bdcc0f679c4649147fbb3eb0e9bc6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3569,13 +2786,8 @@ rule reversinglabs_blocklist_cert_blocklist_328bdcc0f679c4649147fbb3eb0e9bc6 {
             1204847999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5f78149eb4f75eb17404a8143aaeaed7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5f78149eb4f75eb17404a8143aaeaed7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3592,13 +2804,8 @@ rule reversinglabs_blocklist_cert_blocklist_5f78149eb4f75eb17404a8143aaeaed7 {
             1303116124 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_629d120dd84f9c1688d4da40366fab7a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_629d120dd84f9c1688d4da40366fab7a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3615,13 +2822,8 @@ rule reversinglabs_blocklist_cert_blocklist_629d120dd84f9c1688d4da40366fab7a {
             1306799999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_039e5d0e3297f574db99e1d9503853d9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_039e5d0e3297f574db99e1d9503853d9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3638,13 +2840,8 @@ rule reversinglabs_blocklist_cert_blocklist_039e5d0e3297f574db99e1d9503853d9 {
             1378079999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bc32bbe5bbb4f06f490c50651cd5da50 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bc32bbe5bbb4f06f490c50651cd5da50 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3663,13 +2860,8 @@ rule reversinglabs_blocklist_cert_blocklist_bc32bbe5bbb4f06f490c50651cd5da50 {
             1387151999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3e1656dfcaacfed7c2d2564355698aa3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3e1656dfcaacfed7c2d2564355698aa3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3686,13 +2878,8 @@ rule reversinglabs_blocklist_cert_blocklist_3e1656dfcaacfed7c2d2564355698aa3 {
             1385251199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4bf1d68e926e2dd8966008c44f95ea1c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4bf1d68e926e2dd8966008c44f95ea1c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3709,13 +2896,8 @@ rule reversinglabs_blocklist_cert_blocklist_4bf1d68e926e2dd8966008c44f95ea1c {
             1322092799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_149c12083c145e28155510cfc19db0fe {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_149c12083c145e28155510cfc19db0fe {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3732,13 +2914,8 @@ rule reversinglabs_blocklist_cert_blocklist_149c12083c145e28155510cfc19db0fe {
             1209340799 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_77e0117e8b2b8faa84bed961019d5ef8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_77e0117e8b2b8faa84bed961019d5ef8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3755,13 +2932,8 @@ rule reversinglabs_blocklist_cert_blocklist_77e0117e8b2b8faa84bed961019d5ef8 {
             1383695999 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4f3feb4baf377aea90a463c5dee63884 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4f3feb4baf377aea90a463c5dee63884 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3778,13 +2950,8 @@ rule reversinglabs_blocklist_cert_blocklist_4f3feb4baf377aea90a463c5dee63884 {
             1526601599 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3d2580e89526f7852b570654efd9a8bf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3d2580e89526f7852b570654efd9a8bf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3801,13 +2968,8 @@ rule reversinglabs_blocklist_cert_blocklist_3d2580e89526f7852b570654efd9a8bf {
             1529888400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fffe432a53ff03b9223f88be1b83d9d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fffe432a53ff03b9223f88be1b83d9d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3824,13 +2986,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fffe432a53ff03b9223f88be1b83d9d {
             1498524050 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_832e161aea5206d815f973e5a1feb3e7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_832e161aea5206d815f973e5a1feb3e7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3849,13 +3006,8 @@ rule reversinglabs_blocklist_cert_blocklist_832e161aea5206d815f973e5a1feb3e7 {
             1549830060 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_09aecea45bfd40ce7d62d7d711916d7d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_09aecea45bfd40ce7d62d7d711916d7d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3872,13 +3024,8 @@ rule reversinglabs_blocklist_cert_blocklist_09aecea45bfd40ce7d62d7d711916d7d {
             1551052800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4ff4eda5fa641e70162713426401f438 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4ff4eda5fa641e70162713426401f438 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3895,13 +3042,8 @@ rule reversinglabs_blocklist_cert_blocklist_4ff4eda5fa641e70162713426401f438 {
             1555349604 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_067dffc5e3026eb4c62971c98ac8a900 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_067dffc5e3026eb4c62971c98ac8a900 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3918,13 +3060,8 @@ rule reversinglabs_blocklist_cert_blocklist_067dffc5e3026eb4c62971c98ac8a900 {
             1552176000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b1da219688e51fd0bfac2c891d56cbb8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b1da219688e51fd0bfac2c891d56cbb8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3943,13 +3080,8 @@ rule reversinglabs_blocklist_cert_blocklist_b1da219688e51fd0bfac2c891d56cbb8 {
             1542931200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7289b0f9bd641e3e352dc3183f8de6be {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7289b0f9bd641e3e352dc3183f8de6be {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3966,13 +3098,8 @@ rule reversinglabs_blocklist_cert_blocklist_7289b0f9bd641e3e352dc3183f8de6be {
             1557933274 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fd7b7a8678a67181a54bc7499eba44da {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fd7b7a8678a67181a54bc7499eba44da {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -3991,13 +3118,8 @@ rule reversinglabs_blocklist_cert_blocklist_fd7b7a8678a67181a54bc7499eba44da {
             1548028800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ebbdd6cdeda40ca64513280ecd625c54 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ebbdd6cdeda40ca64513280ecd625c54 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4016,13 +3138,8 @@ rule reversinglabs_blocklist_cert_blocklist_ebbdd6cdeda40ca64513280ecd625c54 {
             1549238400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_61da676c1dcfcf188276e2c70d68082e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_61da676c1dcfcf188276e2c70d68082e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4039,13 +3156,8 @@ rule reversinglabs_blocklist_cert_blocklist_61da676c1dcfcf188276e2c70d68082e {
             1552723954 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_767436921b2698bd18400a24b01341b6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_767436921b2698bd18400a24b01341b6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4062,13 +3174,8 @@ rule reversinglabs_blocklist_cert_blocklist_767436921b2698bd18400a24b01341b6 {
             1556284480 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3e795531b3265510f935187eca59920a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3e795531b3265510f935187eca59920a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4085,13 +3192,8 @@ rule reversinglabs_blocklist_cert_blocklist_3e795531b3265510f935187eca59920a {
             1557243644 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8f40b1485309a064a28b96bfa3f55f36 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8f40b1485309a064a28b96bfa3f55f36 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4110,13 +3212,8 @@ rule reversinglabs_blocklist_cert_blocklist_8f40b1485309a064a28b96bfa3f55f36 {
             1542585600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b2120facadbb92cc0a176759604c6a0f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b2120facadbb92cc0a176759604c6a0f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4135,13 +3232,8 @@ rule reversinglabs_blocklist_cert_blocklist_b2120facadbb92cc0a176759604c6a0f {
             1554249600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4f407eb50803845cc43937823e1344c0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4f407eb50803845cc43937823e1344c0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4158,13 +3250,8 @@ rule reversinglabs_blocklist_cert_blocklist_4f407eb50803845cc43937823e1344c0 {
             1556555362 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6922bb5de88e4127e1ac6969e6a199f5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6922bb5de88e4127e1ac6969e6a199f5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4181,13 +3268,8 @@ rule reversinglabs_blocklist_cert_blocklist_6922bb5de88e4127e1ac6969e6a199f5 {
             1552692162 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_73065efa163b7901fa1ccb0a54e80540 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_73065efa163b7901fa1ccb0a54e80540 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4204,13 +3286,8 @@ rule reversinglabs_blocklist_cert_blocklist_73065efa163b7901fa1ccb0a54e80540 {
             1548115200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4842afad00904ed8c98811e652ccb3b7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4842afad00904ed8c98811e652ccb3b7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4227,13 +3304,8 @@ rule reversinglabs_blocklist_cert_blocklist_4842afad00904ed8c98811e652ccb3b7 {
             1545177600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5a59a686b4a904d0fca07153ea6db6cc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5a59a686b4a904d0fca07153ea6db6cc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4250,13 +3322,8 @@ rule reversinglabs_blocklist_cert_blocklist_5a59a686b4a904d0fca07153ea6db6cc {
             1563403380 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0b6d8152f4a06ba781c6677eea5ab74b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0b6d8152f4a06ba781c6677eea5ab74b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4273,13 +3340,8 @@ rule reversinglabs_blocklist_cert_blocklist_0b6d8152f4a06ba781c6677eea5ab74b {
             1568246400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3ad60cea73e1dd1a3e6c02d9b339c380 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3ad60cea73e1dd1a3e6c02d9b339c380 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4296,13 +3358,8 @@ rule reversinglabs_blocklist_cert_blocklist_3ad60cea73e1dd1a3e6c02d9b339c380 {
             1567036800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7df2dfed47c6fd6542131847cffbc102 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7df2dfed47c6fd6542131847cffbc102 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4319,13 +3376,8 @@ rule reversinglabs_blocklist_cert_blocklist_7df2dfed47c6fd6542131847cffbc102 {
             1567036800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_74fedf0f8398060fa8378c6d174465c8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_74fedf0f8398060fa8378c6d174465c8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4342,13 +3394,8 @@ rule reversinglabs_blocklist_cert_blocklist_74fedf0f8398060fa8378c6d174465c8 {
             1566172800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3bd6a5bba28e7c1ca44880159dace237 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3bd6a5bba28e7c1ca44880159dace237 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4365,13 +3412,8 @@ rule reversinglabs_blocklist_cert_blocklist_3bd6a5bba28e7c1ca44880159dace237 {
             1563408000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c04f8f1e00c69e96a51bf14aab1c6ae0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c04f8f1e00c69e96a51bf14aab1c6ae0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4390,13 +3432,8 @@ rule reversinglabs_blocklist_cert_blocklist_c04f8f1e00c69e96a51bf14aab1c6ae0 {
             1551398400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_23f537ce13c6cccdfd3f8ce81fb981cb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_23f537ce13c6cccdfd3f8ce81fb981cb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4413,13 +3450,8 @@ rule reversinglabs_blocklist_cert_blocklist_23f537ce13c6cccdfd3f8ce81fb981cb {
             1566086400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_73ecfdbb99aec176ddfcf7958d120e1a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_73ecfdbb99aec176ddfcf7958d120e1a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4436,13 +3468,8 @@ rule reversinglabs_blocklist_cert_blocklist_73ecfdbb99aec176ddfcf7958d120e1a {
             1566864000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_675129bb174a5b05e330cc09f8bbd70a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_675129bb174a5b05e330cc09f8bbd70a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4459,13 +3486,8 @@ rule reversinglabs_blocklist_cert_blocklist_675129bb174a5b05e330cc09f8bbd70a {
             1565568000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_de13fe2dbb8f890287e1780aff6ffd22 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_de13fe2dbb8f890287e1780aff6ffd22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4482,13 +3504,8 @@ rule reversinglabs_blocklist_cert_blocklist_de13fe2dbb8f890287e1780aff6ffd22 {
             1566259200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_da000d18949c247d4ddfc2585cc8bd0f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_da000d18949c247d4ddfc2585cc8bd0f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4507,13 +3524,8 @@ rule reversinglabs_blocklist_cert_blocklist_da000d18949c247d4ddfc2585cc8bd0f {
             1564444800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06e842d3ea6249d783d6b55e29c060c7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06e842d3ea6249d783d6b55e29c060c7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4530,13 +3542,8 @@ rule reversinglabs_blocklist_cert_blocklist_06e842d3ea6249d783d6b55e29c060c7 {
             1565568000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06473c3c19d9e1a9429b58b6faec2967 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06473c3c19d9e1a9429b58b6faec2967 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4553,13 +3560,8 @@ rule reversinglabs_blocklist_cert_blocklist_06473c3c19d9e1a9429b58b6faec2967 {
             1581984001 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_39f56251df2088223cc03494084e6081 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_39f56251df2088223cc03494084e6081 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4576,13 +3578,8 @@ rule reversinglabs_blocklist_cert_blocklist_39f56251df2088223cc03494084e6081 {
             1583539200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1362e56d34dc7b501e17fa1ac3c3e3d9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1362e56d34dc7b501e17fa1ac3c3e3d9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4599,13 +3596,8 @@ rule reversinglabs_blocklist_cert_blocklist_1362e56d34dc7b501e17fa1ac3c3e3d9 {
             1575936000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4b83593fc78d92cfaa9bdf3f97383964 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4b83593fc78d92cfaa9bdf3f97383964 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4622,13 +3614,8 @@ rule reversinglabs_blocklist_cert_blocklist_4b83593fc78d92cfaa9bdf3f97383964 {
             1579996800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c7505e7464e00ec1dccd8d1b466d15ff {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c7505e7464e00ec1dccd8d1b466d15ff {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4647,13 +3634,8 @@ rule reversinglabs_blocklist_cert_blocklist_c7505e7464e00ec1dccd8d1b466d15ff {
             1583824676 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cbf91988fb83511de1b3a7a520712e9c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cbf91988fb83511de1b3a7a520712e9c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4672,13 +3654,8 @@ rule reversinglabs_blocklist_cert_blocklist_cbf91988fb83511de1b3a7a520712e9c {
             1578786662 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ce3675ae4abfe688870bcacb63060f4f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ce3675ae4abfe688870bcacb63060f4f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4697,13 +3674,8 @@ rule reversinglabs_blocklist_cert_blocklist_ce3675ae4abfe688870bcacb63060f4f {
             1582675200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9813229efe0046d23542cc7569d5a403 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9813229efe0046d23542cc7569d5a403 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4722,13 +3694,8 @@ rule reversinglabs_blocklist_cert_blocklist_9813229efe0046d23542cc7569d5a403 {
             1575849600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_86e5a9b9e89e5075c475006d0ca03832 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_86e5a9b9e89e5075c475006d0ca03832 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4747,13 +3714,8 @@ rule reversinglabs_blocklist_cert_blocklist_86e5a9b9e89e5075c475006d0ca03832 {
             1574791194 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_075dca9ca84b93e8a89b775128f90302 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_075dca9ca84b93e8a89b775128f90302 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4770,13 +3732,8 @@ rule reversinglabs_blocklist_cert_blocklist_075dca9ca84b93e8a89b775128f90302 {
             1579305601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0ddce8cdc91b5b649bb4b45ffbba6c6c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0ddce8cdc91b5b649bb4b45ffbba6c6c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4793,13 +3750,8 @@ rule reversinglabs_blocklist_cert_blocklist_0ddce8cdc91b5b649bb4b45ffbba6c6c {
             1580722435 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9bd614d5869bb66c96b67e154d517384 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9bd614d5869bb66c96b67e154d517384 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4818,13 +3770,8 @@ rule reversinglabs_blocklist_cert_blocklist_9bd614d5869bb66c96b67e154d517384 {
             1581618180 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_540cea639d5d48669b7f2f64 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_540cea639d5d48669b7f2f64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4841,13 +3788,8 @@ rule reversinglabs_blocklist_cert_blocklist_540cea639d5d48669b7f2f64 {
             1570871755 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03a7748a4355020a652466b5e02e07de {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03a7748a4355020a652466b5e02e07de {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4864,13 +3806,8 @@ rule reversinglabs_blocklist_cert_blocklist_03a7748a4355020a652466b5e02e07de {
             1575244801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b881a72d4117bbc38b81d3c65c792c1a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b881a72d4117bbc38b81d3c65c792c1a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4889,13 +3826,8 @@ rule reversinglabs_blocklist_cert_blocklist_b881a72d4117bbc38b81d3c65c792c1a {
             1581936420 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08653ef2ed9e6ebb56ffa7e93f963235 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08653ef2ed9e6ebb56ffa7e93f963235 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4912,13 +3844,8 @@ rule reversinglabs_blocklist_cert_blocklist_08653ef2ed9e6ebb56ffa7e93f963235 {
             1581465601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9c4816d900a6ecdbe54adf72b19ebcf5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9c4816d900a6ecdbe54adf72b19ebcf5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4937,13 +3864,8 @@ rule reversinglabs_blocklist_cert_blocklist_9c4816d900a6ecdbe54adf72b19ebcf5 {
             1557187200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_269174f9fe7c6ed4e1d19b26c3f5b35f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_269174f9fe7c6ed4e1d19b26c3f5b35f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4960,13 +3882,8 @@ rule reversinglabs_blocklist_cert_blocklist_269174f9fe7c6ed4e1d19b26c3f5b35f {
             1586386919 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_523fb4036368dc26192d68827f2d889b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_523fb4036368dc26192d68827f2d889b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -4983,13 +3900,8 @@ rule reversinglabs_blocklist_cert_blocklist_523fb4036368dc26192d68827f2d889b {
             1586847880 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_84f842f6d33cd2f25b88dd1710e21137 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_84f842f6d33cd2f25b88dd1710e21137 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5008,13 +3920,8 @@ rule reversinglabs_blocklist_cert_blocklist_84f842f6d33cd2f25b88dd1710e21137 {
             1586775720 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4fbcaa289ba925b4e247809b6b028202 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4fbcaa289ba925b4e247809b6b028202 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5031,13 +3938,8 @@ rule reversinglabs_blocklist_cert_blocklist_4fbcaa289ba925b4e247809b6b028202 {
             1588227220 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1f2e8effbb08c7dbcc7a7f2d835457b5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1f2e8effbb08c7dbcc7a7f2d835457b5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5054,13 +3956,8 @@ rule reversinglabs_blocklist_cert_blocklist_1f2e8effbb08c7dbcc7a7f2d835457b5 {
             1581382360 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aeba4c39306fdd022849867801645814 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aeba4c39306fdd022849867801645814 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5079,13 +3976,8 @@ rule reversinglabs_blocklist_cert_blocklist_aeba4c39306fdd022849867801645814 {
             1579478400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_028d50ae0c554b49148e82db5b1c2699 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_028d50ae0c554b49148e82db5b1c2699 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5102,13 +3994,8 @@ rule reversinglabs_blocklist_cert_blocklist_028d50ae0c554b49148e82db5b1c2699 {
             1579478400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_684f478c7259dde0cfe2260112ca9846 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_684f478c7259dde0cfe2260112ca9846 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5125,13 +4012,8 @@ rule reversinglabs_blocklist_cert_blocklist_684f478c7259dde0cfe2260112ca9846 {
             1584981648 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0b7c32208a954a483dd102e1be094867 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0b7c32208a954a483dd102e1be094867 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5148,13 +4030,8 @@ rule reversinglabs_blocklist_cert_blocklist_0b7c32208a954a483dd102e1be094867 {
             1583884800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3e72daf2b9a4449e946009e5084a8e76 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3e72daf2b9a4449e946009e5084a8e76 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5171,13 +4048,8 @@ rule reversinglabs_blocklist_cert_blocklist_3e72daf2b9a4449e946009e5084a8e76 {
             1591787570 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_11edd343e21c36ac985555d85c16135f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_11edd343e21c36ac985555d85c16135f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5194,13 +4066,8 @@ rule reversinglabs_blocklist_cert_blocklist_11edd343e21c36ac985555d85c16135f {
             1589925600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_093fe63d1a5f68f14ecaac871a03f7a3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_093fe63d1a5f68f14ecaac871a03f7a3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5217,13 +4084,8 @@ rule reversinglabs_blocklist_cert_blocklist_093fe63d1a5f68f14ecaac871a03f7a3 {
             1562716800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bb26b7b6634d5db548c437b5085b01c1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bb26b7b6634d5db548c437b5085b01c1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5242,13 +4104,8 @@ rule reversinglabs_blocklist_cert_blocklist_bb26b7b6634d5db548c437b5085b01c1 {
             1591919307 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_29128a56e7b3bfb230742591ac8b4718 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_29128a56e7b3bfb230742591ac8b4718 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5265,13 +4122,8 @@ rule reversinglabs_blocklist_cert_blocklist_29128a56e7b3bfb230742591ac8b4718 {
             1590900909 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7bfbfdfef43608730ee14779ee3ee2cb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7bfbfdfef43608730ee14779ee3ee2cb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5288,13 +4140,8 @@ rule reversinglabs_blocklist_cert_blocklist_7bfbfdfef43608730ee14779ee3ee2cb {
             1590537600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_62205361a758b00572d417cba014f007 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_62205361a758b00572d417cba014f007 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5311,13 +4158,8 @@ rule reversinglabs_blocklist_cert_blocklist_62205361a758b00572d417cba014f007 {
             1590470683 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4b47d18dbea57abd1563ddf89f87a6c2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4b47d18dbea57abd1563ddf89f87a6c2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5334,13 +4176,8 @@ rule reversinglabs_blocklist_cert_blocklist_4b47d18dbea57abd1563ddf89f87a6c2 {
             1590485607 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_be41e2c7bb2493044b9241abb732599d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_be41e2c7bb2493044b9241abb732599d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5359,13 +4196,8 @@ rule reversinglabs_blocklist_cert_blocklist_be41e2c7bb2493044b9241abb732599d {
             1589146251 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_15c5af15afecf1c900cbab0ca9165629 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_15c5af15afecf1c900cbab0ca9165629 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5382,13 +4214,8 @@ rule reversinglabs_blocklist_cert_blocklist_15c5af15afecf1c900cbab0ca9165629 {
             1586091840 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_476de2f108d20b43ba3bae6f331af8f1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_476de2f108d20b43ba3bae6f331af8f1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5405,13 +4232,8 @@ rule reversinglabs_blocklist_cert_blocklist_476de2f108d20b43ba3bae6f331af8f1 {
             1588135722 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08ddcc67f8cad6929607e4cda29b3503 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08ddcc67f8cad6929607e4cda29b3503 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5428,13 +4250,8 @@ rule reversinglabs_blocklist_cert_blocklist_08ddcc67f8cad6929607e4cda29b3503 {
             1564310268 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_052242ace583adf2a3b96adcb04d0812 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_052242ace583adf2a3b96adcb04d0812 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5451,13 +4268,8 @@ rule reversinglabs_blocklist_cert_blocklist_052242ace583adf2a3b96adcb04d0812 {
             1573603200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bebef5c533ce92efc402fab8605c43ec {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bebef5c533ce92efc402fab8605c43ec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5476,13 +4288,8 @@ rule reversinglabs_blocklist_cert_blocklist_bebef5c533ce92efc402fab8605c43ec {
             1587513600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1d3f39f481fe067f8a9289bb49e05a04 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1d3f39f481fe067f8a9289bb49e05a04 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5499,13 +4306,8 @@ rule reversinglabs_blocklist_cert_blocklist_1d3f39f481fe067f8a9289bb49e05a04 {
             1592553220 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7be35d025e65cc7a4ee01f72 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7be35d025e65cc7a4ee01f72 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5522,13 +4324,8 @@ rule reversinglabs_blocklist_cert_blocklist_7be35d025e65cc7a4ee01f72 {
             1594976445 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_351fe2efdc0ac56a0c822cf8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_351fe2efdc0ac56a0c822cf8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5545,13 +4342,8 @@ rule reversinglabs_blocklist_cert_blocklist_351fe2efdc0ac56a0c822cf8 {
             1594976475 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9cfbb4c69008821aaacecde97ee149ab {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9cfbb4c69008821aaacecde97ee149ab {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5570,13 +4362,8 @@ rule reversinglabs_blocklist_cert_blocklist_9cfbb4c69008821aaacecde97ee149ab {
             1592363914 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c04f5d17af872cb2c37e3367fe761d0d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c04f5d17af872cb2c37e3367fe761d0d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5595,13 +4382,8 @@ rule reversinglabs_blocklist_cert_blocklist_c04f5d17af872cb2c37e3367fe761d0d {
             1594590024 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_02c5351936abe405ac760228a40387e8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_02c5351936abe405ac760228a40387e8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5618,13 +4400,8 @@ rule reversinglabs_blocklist_cert_blocklist_02c5351936abe405ac760228a40387e8 {
             1589932801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1ecd829adcc55d9d6afe30dc371ebda6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1ecd829adcc55d9d6afe30dc371ebda6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5643,13 +4420,8 @@ rule reversinglabs_blocklist_cert_blocklist_1ecd829adcc55d9d6afe30dc371ebda6 {
             1588723200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b0167124ca59149e64d292eb4b142014 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b0167124ca59149e64d292eb4b142014 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5668,13 +4440,8 @@ rule reversinglabs_blocklist_cert_blocklist_b0167124ca59149e64d292eb4b142014 {
             1585267200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_112613b7b5f696cf377680f6463fcc8c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_112613b7b5f696cf377680f6463fcc8c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5691,13 +4458,8 @@ rule reversinglabs_blocklist_cert_blocklist_112613b7b5f696cf377680f6463fcc8c {
             1566518400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b3f906e5e6b2cf61c5e51be79b4e8777 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b3f906e5e6b2cf61c5e51be79b4e8777 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5716,13 +4478,8 @@ rule reversinglabs_blocklist_cert_blocklist_b3f906e5e6b2cf61c5e51be79b4e8777 {
             1594900020 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_566ac16a57b132d3f64dced14de790ee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_566ac16a57b132d3f64dced14de790ee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5739,13 +4496,8 @@ rule reversinglabs_blocklist_cert_blocklist_566ac16a57b132d3f64dced14de790ee {
             1562889600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d2caf7908aaebfa1a8f3e2136fece024 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d2caf7908aaebfa1a8f3e2136fece024 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5764,13 +4516,8 @@ rule reversinglabs_blocklist_cert_blocklist_d2caf7908aaebfa1a8f3e2136fece024 {
             1599041760 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e04a344b397f752a45b128a594a3d6b5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e04a344b397f752a45b128a594a3d6b5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5789,13 +4536,8 @@ rule reversinglabs_blocklist_cert_blocklist_e04a344b397f752a45b128a594a3d6b5 {
             1597708800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3bcaed3ef678f2f9bf38d09e149b8d70 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3bcaed3ef678f2f9bf38d09e149b8d70 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5812,13 +4554,8 @@ rule reversinglabs_blocklist_cert_blocklist_3bcaed3ef678f2f9bf38d09e149b8d70 {
             1599091200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_56d576a062491ea0a5877ced418203a1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_56d576a062491ea0a5877ced418203a1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5835,13 +4572,8 @@ rule reversinglabs_blocklist_cert_blocklist_56d576a062491ea0a5877ced418203a1 {
             1596249885 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fcba260df7da602ecf4d4d6fc89d5dd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fcba260df7da602ecf4d4d6fc89d5dd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5858,13 +4590,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fcba260df7da602ecf4d4d6fc89d5dd {
             1593388801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4152169f22454ed604d03555b7afb175 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4152169f22454ed604d03555b7afb175 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5881,13 +4608,8 @@ rule reversinglabs_blocklist_cert_blocklist_4152169f22454ed604d03555b7afb175 {
             1595808000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_01c88ccbd219500139d1af138a9e898e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_01c88ccbd219500139d1af138a9e898e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5904,13 +4626,8 @@ rule reversinglabs_blocklist_cert_blocklist_01c88ccbd219500139d1af138a9e898e {
             1593041280 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_41d05676e0d31908be4dead3486aeae3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_41d05676e0d31908be4dead3486aeae3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5927,13 +4644,8 @@ rule reversinglabs_blocklist_cert_blocklist_41d05676e0d31908be4dead3486aeae3 {
             1594857600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8cff807edaf368a60e4106906d8df319 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8cff807edaf368a60e4106906d8df319 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5952,13 +4664,8 @@ rule reversinglabs_blocklist_cert_blocklist_8cff807edaf368a60e4106906d8df319 {
             1598334455 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a3e62be1572293ad618f58a8aa32857f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a3e62be1572293ad618f58a8aa32857f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -5977,13 +4684,8 @@ rule reversinglabs_blocklist_cert_blocklist_a3e62be1572293ad618f58a8aa32857f {
             1596585600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_672d4428450afcc24fc60969a5063a3e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_672d4428450afcc24fc60969a5063a3e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6000,13 +4702,8 @@ rule reversinglabs_blocklist_cert_blocklist_672d4428450afcc24fc60969a5063a3e {
             1597381260 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_df479e14a70c7970a4de3dd3e4bb0318 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_df479e14a70c7970a4de3dd3e4bb0318 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6025,13 +4722,8 @@ rule reversinglabs_blocklist_cert_blocklist_df479e14a70c7970a4de3dd3e4bb0318 {
             1591660800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2924785fd7990b2d510675176dae2bed {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2924785fd7990b2d510675176dae2bed {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6048,13 +4740,8 @@ rule reversinglabs_blocklist_cert_blocklist_2924785fd7990b2d510675176dae2bed {
             1595000258 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f4d2def53bccb0dd2b7d54e4853a2fc5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f4d2def53bccb0dd2b7d54e4853a2fc5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6073,13 +4760,8 @@ rule reversinglabs_blocklist_cert_blocklist_f4d2def53bccb0dd2b7d54e4853a2fc5 {
             1598347687 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03bf9ef4cf037a2385649026c3da9d3e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03bf9ef4cf037a2385649026c3da9d3e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6096,13 +4778,8 @@ rule reversinglabs_blocklist_cert_blocklist_03bf9ef4cf037a2385649026c3da9d3e {
             1595371955 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_790177a54209d55560a55db97c5900d6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_790177a54209d55560a55db97c5900d6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6119,13 +4796,8 @@ rule reversinglabs_blocklist_cert_blocklist_790177a54209d55560a55db97c5900d6 {
             1594080000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_048f7b5f67d8e2b3030f75eb7be2713d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_048f7b5f67d8e2b3030f75eb7be2713d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6142,13 +4814,8 @@ rule reversinglabs_blocklist_cert_blocklist_048f7b5f67d8e2b3030f75eb7be2713d {
             1591142400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_082023879112289bf351d297cc8efcfc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_082023879112289bf351d297cc8efcfc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6165,13 +4832,8 @@ rule reversinglabs_blocklist_cert_blocklist_082023879112289bf351d297cc8efcfc {
             1573430400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0d53690631dd186c56be9026eb931ae2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0d53690631dd186c56be9026eb931ae2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6188,13 +4850,8 @@ rule reversinglabs_blocklist_cert_blocklist_0d53690631dd186c56be9026eb931ae2 {
             1592190240 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_32119925a6ce4710aecc4006c28e749f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_32119925a6ce4710aecc4006c28e749f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6211,13 +4868,8 @@ rule reversinglabs_blocklist_cert_blocklist_32119925a6ce4710aecc4006c28e749f {
             1592438400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2c90eaf4de3afc03ba924c719435c2a3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2c90eaf4de3afc03ba924c719435c2a3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6236,13 +4888,8 @@ rule reversinglabs_blocklist_cert_blocklist_2c90eaf4de3afc03ba924c719435c2a3 {
             1586293430 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aff762e907f0644e76ed8a7485fb12a1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aff762e907f0644e76ed8a7485fb12a1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6261,13 +4908,8 @@ rule reversinglabs_blocklist_cert_blocklist_aff762e907f0644e76ed8a7485fb12a1 {
             1594882330 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d8530214ca0f512946496b5164c61201 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d8530214ca0f512946496b5164c61201 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6286,13 +4928,8 @@ rule reversinglabs_blocklist_cert_blocklist_d8530214ca0f512946496b5164c61201 {
             1595485920 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_661ba8f3c9d1b348413484e9a49502f7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_661ba8f3c9d1b348413484e9a49502f7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6311,13 +4948,8 @@ rule reversinglabs_blocklist_cert_blocklist_661ba8f3c9d1b348413484e9a49502f7 {
             1594942800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_51aead5a9ab2d841b449fa82de3a8a00 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_51aead5a9ab2d841b449fa82de3a8a00 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6334,13 +4966,8 @@ rule reversinglabs_blocklist_cert_blocklist_51aead5a9ab2d841b449fa82de3a8a00 {
             1501577475 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03b630f9645531f8868dae8ac0f8cfe6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03b630f9645531f8868dae8ac0f8cfe6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6357,13 +4984,8 @@ rule reversinglabs_blocklist_cert_blocklist_03b630f9645531f8868dae8ac0f8cfe6 {
             1594252801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6f8373cf89f1b49138f4328118487f9e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6f8373cf89f1b49138f4328118487f9e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6380,13 +5002,8 @@ rule reversinglabs_blocklist_cert_blocklist_6f8373cf89f1b49138f4328118487f9e {
             1572566400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e38259cf24cc702ce441b683ad578911 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e38259cf24cc702ce441b683ad578911 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6405,13 +5022,8 @@ rule reversinglabs_blocklist_cert_blocklist_e38259cf24cc702ce441b683ad578911 {
             1597276800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bdc81bc76090dae0eee2e1eb744a4f9a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bdc81bc76090dae0eee2e1eb744a4f9a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6430,13 +5042,8 @@ rule reversinglabs_blocklist_cert_blocklist_bdc81bc76090dae0eee2e1eb744a4f9a {
             1579824000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b2e730b0526f36faf7d093d48d6d9997 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b2e730b0526f36faf7d093d48d6d9997 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6455,13 +5062,8 @@ rule reversinglabs_blocklist_cert_blocklist_b2e730b0526f36faf7d093d48d6d9997 {
             1597276800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7156ec47ef01ab8359ef4304e5af1a05 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7156ec47ef01ab8359ef4304e5af1a05 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6478,13 +5080,8 @@ rule reversinglabs_blocklist_cert_blocklist_7156ec47ef01ab8359ef4304e5af1a05 {
             1597363200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_13794371c052ec0559e9b492abb25c26 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_13794371c052ec0559e9b492abb25c26 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6501,13 +5098,8 @@ rule reversinglabs_blocklist_cert_blocklist_13794371c052ec0559e9b492abb25c26 {
             1599177600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5c7e78f53c31d6aa5b45de14b47eb5c4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5c7e78f53c31d6aa5b45de14b47eb5c4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6524,13 +5116,8 @@ rule reversinglabs_blocklist_cert_blocklist_5c7e78f53c31d6aa5b45de14b47eb5c4 {
             1579824000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_dadf44e4046372313ee97b8e394c4079 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_dadf44e4046372313ee97b8e394c4079 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6549,13 +5136,8 @@ rule reversinglabs_blocklist_cert_blocklist_dadf44e4046372313ee97b8e394c4079 {
             1600244736 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f8c2e08438bb0e9adc955e4b493e5821 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f8c2e08438bb0e9adc955e4b493e5821 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6574,13 +5156,8 @@ rule reversinglabs_blocklist_cert_blocklist_f8c2e08438bb0e9adc955e4b493e5821 {
             1599523200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_70e1ebd170db8102d8c28e58392e5632 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_70e1ebd170db8102d8c28e58392e5632 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6597,13 +5174,8 @@ rule reversinglabs_blocklist_cert_blocklist_70e1ebd170db8102d8c28e58392e5632 {
             1599264000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_09c89de6f64a7fdf657e69353c5fdd44 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_09c89de6f64a7fdf657e69353c5fdd44 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6620,13 +5192,8 @@ rule reversinglabs_blocklist_cert_blocklist_09c89de6f64a7fdf657e69353c5fdd44 {
             1601337601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ffff2ce862378b26440df49ca9175b70 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ffff2ce862378b26440df49ca9175b70 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6645,13 +5212,8 @@ rule reversinglabs_blocklist_cert_blocklist_ffff2ce862378b26440df49ca9175b70 {
             1576195200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3223b4616c2687c04865bee8321726a8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3223b4616c2687c04865bee8321726a8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6668,13 +5230,8 @@ rule reversinglabs_blocklist_cert_blocklist_3223b4616c2687c04865bee8321726a8 {
             1601337600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7709d2df39e9a4f7db2f3cbc29b49743 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7709d2df39e9a4f7db2f3cbc29b49743 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6691,13 +5248,8 @@ rule reversinglabs_blocklist_cert_blocklist_7709d2df39e9a4f7db2f3cbc29b49743 {
             1556353331 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e29690e14518874d2dcf00234ae94f1f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e29690e14518874d2dcf00234ae94f1f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6716,13 +5268,8 @@ rule reversinglabs_blocklist_cert_blocklist_e29690e14518874d2dcf00234ae94f1f {
             1570838400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cfac705c7e6845904f99995324f7562c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cfac705c7e6845904f99995324f7562c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6741,13 +5288,8 @@ rule reversinglabs_blocklist_cert_blocklist_cfac705c7e6845904f99995324f7562c {
             1601918720 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a7989f8be0c82d35a19e7b3dd4be30e5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a7989f8be0c82d35a19e7b3dd4be30e5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6766,13 +5308,8 @@ rule reversinglabs_blocklist_cert_blocklist_a7989f8be0c82d35a19e7b3dd4be30e5 {
             1598054400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fa13ae98e17ae23fcfe7ae873d0c120 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fa13ae98e17ae23fcfe7ae873d0c120 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6789,13 +5326,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fa13ae98e17ae23fcfe7ae873d0c120 {
             1597276801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3696883055975d571199c6b5d48f3cd5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3696883055975d571199c6b5d48f3cd5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6812,13 +5344,8 @@ rule reversinglabs_blocklist_cert_blocklist_3696883055975d571199c6b5d48f3cd5 {
             1600069289 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ee678930d5bdfaa2ab0172fa4c10ae07 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ee678930d5bdfaa2ab0172fa4c10ae07 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6837,13 +5364,8 @@ rule reversinglabs_blocklist_cert_blocklist_ee678930d5bdfaa2ab0172fa4c10ae07 {
             1571011200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d7c432e8d4edef515bfb9d1c214ff0f5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d7c432e8d4edef515bfb9d1c214ff0f5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6862,13 +5384,8 @@ rule reversinglabs_blocklist_cert_blocklist_d7c432e8d4edef515bfb9d1c214ff0f5 {
             1601596800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5b440a47e8ce3dd202271e5c7a666c78 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5b440a47e8ce3dd202271e5c7a666c78 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6885,13 +5402,8 @@ rule reversinglabs_blocklist_cert_blocklist_5b440a47e8ce3dd202271e5c7a666c78 {
             1601895571 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b82c6553b2186c219797621aaa233edb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b82c6553b2186c219797621aaa233edb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6910,13 +5422,8 @@ rule reversinglabs_blocklist_cert_blocklist_b82c6553b2186c219797621aaa233edb {
             1585785600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f360f7ad0ed065fec0b44f98e04481a0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f360f7ad0ed065fec0b44f98e04481a0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6935,13 +5442,8 @@ rule reversinglabs_blocklist_cert_blocklist_f360f7ad0ed065fec0b44f98e04481a0 {
             1599031121 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fe41941464b9992a69b7317418ae8eb7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fe41941464b9992a69b7317418ae8eb7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6960,13 +5462,8 @@ rule reversinglabs_blocklist_cert_blocklist_fe41941464b9992a69b7317418ae8eb7 {
             1599523200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c14b611a44a1bae0e8c7581651845b6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c14b611a44a1bae0e8c7581651845b6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -6983,13 +5480,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c14b611a44a1bae0e8c7581651845b6 {
             1600300801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_690910dc89d7857c3500fb74bed2b08d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_690910dc89d7857c3500fb74bed2b08d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7006,13 +5498,8 @@ rule reversinglabs_blocklist_cert_blocklist_690910dc89d7857c3500fb74bed2b08d {
             1597276800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fd41e6bd7428d3008c8a05f68c9ac6f2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fd41e6bd7428d3008c8a05f68c9ac6f2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7031,13 +5518,8 @@ rule reversinglabs_blocklist_cert_blocklist_fd41e6bd7428d3008c8a05f68c9ac6f2 {
             1575590400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c7079866c0e48b01246ba0c148e70d4d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c7079866c0e48b01246ba0c148e70d4d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7056,13 +5538,8 @@ rule reversinglabs_blocklist_cert_blocklist_c7079866c0e48b01246ba0c148e70d4d {
             1588679105 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d591da22f33c800a7024aecff2cd6c6d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d591da22f33c800a7024aecff2cd6c6d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7081,13 +5558,8 @@ rule reversinglabs_blocklist_cert_blocklist_d591da22f33c800a7024aecff2cd6c6d {
             1588679107 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b36e0f2053caee9c3b966f7be0b40fc3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b36e0f2053caee9c3b966f7be0b40fc3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7106,13 +5578,8 @@ rule reversinglabs_blocklist_cert_blocklist_b36e0f2053caee9c3b966f7be0b40fc3 {
             1600172855 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5b320a2f46c99c1ba1357bee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5b320a2f46c99c1ba1357bee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7129,13 +5596,8 @@ rule reversinglabs_blocklist_cert_blocklist_5b320a2f46c99c1ba1357bee {
             1602513116 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08d4352185317271c1cec9d05c279af7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08d4352185317271c1cec9d05c279af7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7152,13 +5614,8 @@ rule reversinglabs_blocklist_cert_blocklist_08d4352185317271c1cec9d05c279af7 {
             1596585601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b514e4c5309ef9f27add05bedd4339a0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b514e4c5309ef9f27add05bedd4339a0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7177,13 +5634,8 @@ rule reversinglabs_blocklist_cert_blocklist_b514e4c5309ef9f27add05bedd4339a0 {
             1572566400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_13c7b92282aae782bfb00baf879935f4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_13c7b92282aae782bfb00baf879935f4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7200,13 +5652,8 @@ rule reversinglabs_blocklist_cert_blocklist_13c7b92282aae782bfb00baf879935f4 {
             1603130510 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d627f1000d12485995514bfbdefc55d9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d627f1000d12485995514bfbdefc55d9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7225,13 +5672,8 @@ rule reversinglabs_blocklist_cert_blocklist_d627f1000d12485995514bfbdefc55d9 {
             1597622400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5fb6bae8834edd8d3d58818edc86d7d7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5fb6bae8834edd8d3d58818edc86d7d7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7248,13 +5690,8 @@ rule reversinglabs_blocklist_cert_blocklist_5fb6bae8834edd8d3d58818edc86d7d7 {
             1600781989 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e5ad42c509a7c24605530d35832c091e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e5ad42c509a7c24605530d35832c091e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7273,13 +5710,8 @@ rule reversinglabs_blocklist_cert_blocklist_e5ad42c509a7c24605530d35832c091e {
             1600786458 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8e3d89c682f7c0dad70110cb7b7c8263 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8e3d89c682f7c0dad70110cb7b7c8263 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7298,13 +5730,8 @@ rule reversinglabs_blocklist_cert_blocklist_8e3d89c682f7c0dad70110cb7b7c8263 {
             1570626662 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ef2d35f2ae82a767a16be582ab0d1ba0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ef2d35f2ae82a767a16be582ab0d1ba0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7323,13 +5750,8 @@ rule reversinglabs_blocklist_cert_blocklist_ef2d35f2ae82a767a16be582ab0d1ba0 {
             1567123200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_039668034826df47e6207ec9daed57c3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_039668034826df47e6207ec9daed57c3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7346,13 +5768,8 @@ rule reversinglabs_blocklist_cert_blocklist_039668034826df47e6207ec9daed57c3 {
             1601424001 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_07bb6a9d1c642c5973c16d5353b17ca4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_07bb6a9d1c642c5973c16d5353b17ca4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7369,13 +5786,8 @@ rule reversinglabs_blocklist_cert_blocklist_07bb6a9d1c642c5973c16d5353b17ca4 {
             1601856001 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a1dc99e4d5264c45a5090f93242a30a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a1dc99e4d5264c45a5090f93242a30a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7392,13 +5804,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a1dc99e4d5264c45a5090f93242a30a {
             1600905601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_018093cfad72cdf402eecbe18b33ec71 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_018093cfad72cdf402eecbe18b33ec71 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7415,13 +5822,8 @@ rule reversinglabs_blocklist_cert_blocklist_018093cfad72cdf402eecbe18b33ec71 {
             1602000390 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_569e03988af60d80ce60728940850d9b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_569e03988af60d80ce60728940850d9b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7440,13 +5842,8 @@ rule reversinglabs_blocklist_cert_blocklist_569e03988af60d80ce60728940850d9b {
             1601006510 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_418f6d959a8a0f82bef07ceba3603e52 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_418f6d959a8a0f82bef07ceba3603e52 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7465,13 +5862,8 @@ rule reversinglabs_blocklist_cert_blocklist_418f6d959a8a0f82bef07ceba3603e52 {
             1601928240 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5378c5bbeba0d3309a35bb47f63037f7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5378c5bbeba0d3309a35bb47f63037f7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7490,13 +5882,8 @@ rule reversinglabs_blocklist_cert_blocklist_5378c5bbeba0d3309a35bb47f63037f7 {
             1601427420 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0bab6a2aa84b495d9e554a4c42c0126d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0bab6a2aa84b495d9e554a4c42c0126d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7513,13 +5900,8 @@ rule reversinglabs_blocklist_cert_blocklist_0bab6a2aa84b495d9e554a4c42c0126d {
             1597971600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6314001c3235cd59bcc3f5278c518804 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6314001c3235cd59bcc3f5278c518804 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7536,13 +5918,8 @@ rule reversinglabs_blocklist_cert_blocklist_6314001c3235cd59bcc3f5278c518804 {
             1600304400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0ed8ade5d73b73dade6943d557ff87e5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0ed8ade5d73b73dade6943d557ff87e5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7559,13 +5936,8 @@ rule reversinglabs_blocklist_cert_blocklist_0ed8ade5d73b73dade6943d557ff87e5 {
             1597885200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0292c7d574132ba5c0441d1c7ffcb805 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0292c7d574132ba5c0441d1c7ffcb805 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7582,13 +5954,8 @@ rule reversinglabs_blocklist_cert_blocklist_0292c7d574132ba5c0441d1c7ffcb805 {
             1602183720 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1f23f001458716d435cca1a55d660ec5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1f23f001458716d435cca1a55d660ec5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7605,13 +5972,8 @@ rule reversinglabs_blocklist_cert_blocklist_1f23f001458716d435cca1a55d660ec5 {
             1603176940 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e0ccbdfb4777e10ea6221b90dc350c2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e0ccbdfb4777e10ea6221b90dc350c2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7628,13 +5990,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e0ccbdfb4777e10ea6221b90dc350c2 {
             1603046620 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0ed1847a2ae5d71def1e833fddd33d38 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0ed1847a2ae5d71def1e833fddd33d38 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7651,13 +6008,8 @@ rule reversinglabs_blocklist_cert_blocklist_0ed1847a2ae5d71def1e833fddd33d38 {
             1598662800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_97df46acb26b7c81a13cc467b47688c8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_97df46acb26b7c81a13cc467b47688c8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7676,13 +6028,8 @@ rule reversinglabs_blocklist_cert_blocklist_97df46acb26b7c81a13cc467b47688c8 {
             1602636910 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_186d49fac34ce99775b8e7ffbf50679d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_186d49fac34ce99775b8e7ffbf50679d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7699,13 +6046,8 @@ rule reversinglabs_blocklist_cert_blocklist_186d49fac34ce99775b8e7ffbf50679d {
             1602234590 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b1aea98bf0ce789b6c952310f14edde0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b1aea98bf0ce789b6c952310f14edde0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7724,13 +6066,8 @@ rule reversinglabs_blocklist_cert_blocklist_b1aea98bf0ce789b6c952310f14edde0 {
             1602612570 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2dcd0699da08915dde6d044cb474157c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2dcd0699da08915dde6d044cb474157c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7747,13 +6084,8 @@ rule reversinglabs_blocklist_cert_blocklist_2dcd0699da08915dde6d044cb474157c {
             1601830010 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4b03cabe6a0481f17a2dbeb9aefad425 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4b03cabe6a0481f17a2dbeb9aefad425 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7770,13 +6102,8 @@ rule reversinglabs_blocklist_cert_blocklist_4b03cabe6a0481f17a2dbeb9aefad425 {
             1603230930 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_64cd303fa289790afa03c403e9240002 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_64cd303fa289790afa03c403e9240002 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7793,13 +6120,8 @@ rule reversinglabs_blocklist_cert_blocklist_64cd303fa289790afa03c403e9240002 {
             1602723600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_07cef66a71c35bc3aed6d100c6493863 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_07cef66a71c35bc3aed6d100c6493863 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7816,13 +6138,8 @@ rule reversinglabs_blocklist_cert_blocklist_07cef66a71c35bc3aed6d100c6493863 {
             1602740890 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_be77fe5c58b7a360add6a3fced4e8334 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_be77fe5c58b7a360add6a3fced4e8334 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7841,13 +6158,8 @@ rule reversinglabs_blocklist_cert_blocklist_be77fe5c58b7a360add6a3fced4e8334 {
             1602530730 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f097e59809ae2e771b7b9ae5fc3408d7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f097e59809ae2e771b7b9ae5fc3408d7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7866,13 +6178,8 @@ rule reversinglabs_blocklist_cert_blocklist_f097e59809ae2e771b7b9ae5fc3408d7 {
             1602542033 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0cf1ed2a6ff4bee621efdf725ea174b7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0cf1ed2a6ff4bee621efdf725ea174b7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7889,13 +6196,8 @@ rule reversinglabs_blocklist_cert_blocklist_0cf1ed2a6ff4bee621efdf725ea174b7 {
             1603036100 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1249aa2ada4967969b71ce63bf187c38 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1249aa2ada4967969b71ce63bf187c38 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7912,13 +6214,8 @@ rule reversinglabs_blocklist_cert_blocklist_1249aa2ada4967969b71ce63bf187c38 {
             1599181200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d59a05955a4a421500f9561ce983aac4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d59a05955a4a421500f9561ce983aac4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7937,13 +6234,8 @@ rule reversinglabs_blocklist_cert_blocklist_d59a05955a4a421500f9561ce983aac4 {
             1601895290 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_539015999e304a5952985a994f9c3a53 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_539015999e304a5952985a994f9c3a53 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7960,13 +6252,8 @@ rule reversinglabs_blocklist_cert_blocklist_539015999e304a5952985a994f9c3a53 {
             1599181200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0b1926a5e8ae50a0efa504f005f93869 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0b1926a5e8ae50a0efa504f005f93869 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -7983,13 +6270,8 @@ rule reversinglabs_blocklist_cert_blocklist_0b1926a5e8ae50a0efa504f005f93869 {
             1600650000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a23b660e7322e54d7bd0e5acc890966 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a23b660e7322e54d7bd0e5acc890966 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8006,13 +6288,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a23b660e7322e54d7bd0e5acc890966 {
             1601254800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6cfa5050c819c4acbb8fa75979688dff {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6cfa5050c819c4acbb8fa75979688dff {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8031,13 +6308,8 @@ rule reversinglabs_blocklist_cert_blocklist_6cfa5050c819c4acbb8fa75979688dff {
             1600176940 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_044e05bb1a01a1cbb50cfb6cd24e5d6b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_044e05bb1a01a1cbb50cfb6cd24e5d6b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8054,13 +6326,8 @@ rule reversinglabs_blocklist_cert_blocklist_044e05bb1a01a1cbb50cfb6cd24e5d6b {
             1601427600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b7f19b13de9bee8a52ff365ced6f67fa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b7f19b13de9bee8a52ff365ced6f67fa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8079,13 +6346,8 @@ rule reversinglabs_blocklist_cert_blocklist_b7f19b13de9bee8a52ff365ced6f67fa {
             1574914319 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b61b8e71514059adc604da05c283e514 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b61b8e71514059adc604da05c283e514 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8104,13 +6366,8 @@ rule reversinglabs_blocklist_cert_blocklist_b61b8e71514059adc604da05c283e514 {
             1603328400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ece6cbf67dc41635a5e5d075f286af23 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ece6cbf67dc41635a5e5d075f286af23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8129,13 +6386,8 @@ rule reversinglabs_blocklist_cert_blocklist_ece6cbf67dc41635a5e5d075f286af23 {
             1603369254 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_014a98d697b44f43ded21f18eb6ad0ba {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_014a98d697b44f43ded21f18eb6ad0ba {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8152,13 +6404,8 @@ rule reversinglabs_blocklist_cert_blocklist_014a98d697b44f43ded21f18eb6ad0ba {
             1605364760 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_063a7d09107eddd8aa1f733634c6591b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_063a7d09107eddd8aa1f733634c6591b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8175,13 +6422,8 @@ rule reversinglabs_blocklist_cert_blocklist_063a7d09107eddd8aa1f733634c6591b {
             1605712706 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1e74cfe7de8c5f57840a61034414ca9f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1e74cfe7de8c5f57840a61034414ca9f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8200,13 +6442,8 @@ rule reversinglabs_blocklist_cert_blocklist_1e74cfe7de8c5f57840a61034414ca9f {
             1601733106 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_75cf729f8a740bbdef183a1c4d86a02f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_75cf729f8a740bbdef183a1c4d86a02f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8223,13 +6460,8 @@ rule reversinglabs_blocklist_cert_blocklist_75cf729f8a740bbdef183a1c4d86a02f {
             1604223894 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2f64677254d3844efdac2922123d05d1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2f64677254d3844efdac2922123d05d1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8246,13 +6478,8 @@ rule reversinglabs_blocklist_cert_blocklist_2f64677254d3844efdac2922123d05d1 {
             1605640092 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_32fbf8cfa43dca3f85efabe96dfefa49 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_32fbf8cfa43dca3f85efabe96dfefa49 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8269,13 +6496,8 @@ rule reversinglabs_blocklist_cert_blocklist_32fbf8cfa43dca3f85efabe96dfefa49 {
             1598255906 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ef9d0cf071d463cd63d13083046a7b8d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ef9d0cf071d463cd63d13083046a7b8d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8294,13 +6516,8 @@ rule reversinglabs_blocklist_cert_blocklist_ef9d0cf071d463cd63d13083046a7b8d {
             1605358307 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_115cf1353a0e33e19099a4867a4c750a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_115cf1353a0e33e19099a4867a4c750a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8319,13 +6536,8 @@ rule reversinglabs_blocklist_cert_blocklist_115cf1353a0e33e19099a4867a4c750a {
             1605515909 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5cf3778bb11115a884e192a7cb807599 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5cf3778bb11115a884e192a7cb807599 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8344,13 +6556,8 @@ rule reversinglabs_blocklist_cert_blocklist_5cf3778bb11115a884e192a7cb807599 {
             1605006199 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_82cb93593b658100cdd7a00c874287f2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_82cb93593b658100cdd7a00c874287f2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8369,13 +6576,8 @@ rule reversinglabs_blocklist_cert_blocklist_82cb93593b658100cdd7a00c874287f2 {
             1605117874 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9a8bcfd05f86b15d0c99f50cf414bd00 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9a8bcfd05f86b15d0c99f50cf414bd00 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8394,13 +6596,8 @@ rule reversinglabs_blocklist_cert_blocklist_9a8bcfd05f86b15d0c99f50cf414bd00 {
             1592442000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_95e5793f2abe0b4ec9be54fd24f76ae5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_95e5793f2abe0b4ec9be54fd24f76ae5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8419,13 +6616,8 @@ rule reversinglabs_blocklist_cert_blocklist_95e5793f2abe0b4ec9be54fd24f76ae5 {
             1604933746 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_133565779808c3b79d8e3f70a9c3ffac {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_133565779808c3b79d8e3f70a9c3ffac {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8442,13 +6634,8 @@ rule reversinglabs_blocklist_cert_blocklist_133565779808c3b79d8e3f70a9c3ffac {
             1605019819 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7e0ccda0ef37acef6c2ebe4538627e5c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7e0ccda0ef37acef6c2ebe4538627e5c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8467,13 +6654,8 @@ rule reversinglabs_blocklist_cert_blocklist_7e0ccda0ef37acef6c2ebe4538627e5c {
             1606159604 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bad35fd70025d46c56b89e32b1a3954c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bad35fd70025d46c56b89e32b1a3954c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8492,13 +6674,8 @@ rule reversinglabs_blocklist_cert_blocklist_bad35fd70025d46c56b89e32b1a3954c {
             1604937337 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7b91468122273aa32b7cfc80c331ea13 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7b91468122273aa32b7cfc80c331ea13 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8515,13 +6692,8 @@ rule reversinglabs_blocklist_cert_blocklist_7b91468122273aa32b7cfc80c331ea13 {
             1586942863 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3e267b5d14cdf1f645c1ec545cec3aee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3e267b5d14cdf1f645c1ec545cec3aee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8538,13 +6710,8 @@ rule reversinglabs_blocklist_cert_blocklist_3e267b5d14cdf1f645c1ec545cec3aee {
             1579825892 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ae6d3c0269ef6497e14379c51a8507ba {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ae6d3c0269ef6497e14379c51a8507ba {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8563,13 +6730,8 @@ rule reversinglabs_blocklist_cert_blocklist_ae6d3c0269ef6497e14379c51a8507ba {
             1578566034 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fd8c468cc1b45c9cfb41cbd8c835cc9e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fd8c468cc1b45c9cfb41cbd8c835cc9e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8588,13 +6750,8 @@ rule reversinglabs_blocklist_cert_blocklist_fd8c468cc1b45c9cfb41cbd8c835cc9e {
             1604019600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7c061baa3118327255161f6a7fa4e21d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7c061baa3118327255161f6a7fa4e21d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8613,13 +6770,8 @@ rule reversinglabs_blocklist_cert_blocklist_7c061baa3118327255161f6a7fa4e21d {
             1599611338 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_04332c16724ffeda5868d22af56aea43 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_04332c16724ffeda5868d22af56aea43 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8636,13 +6788,8 @@ rule reversinglabs_blocklist_cert_blocklist_04332c16724ffeda5868d22af56aea43 {
             1597971601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_030012f134e64347669f3256c7d050c5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_030012f134e64347669f3256c7d050c5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8659,13 +6806,8 @@ rule reversinglabs_blocklist_cert_blocklist_030012f134e64347669f3256c7d050c5 {
             1604036657 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fa3dcac19b884b44ef4f81541184d6b0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fa3dcac19b884b44ef4f81541184d6b0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8684,13 +6826,8 @@ rule reversinglabs_blocklist_cert_blocklist_fa3dcac19b884b44ef4f81541184d6b0 {
             1603958571 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0e6f4cb8b06e01c3bd296ace3a95f814 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0e6f4cb8b06e01c3bd296ace3a95f814 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8707,13 +6844,8 @@ rule reversinglabs_blocklist_cert_blocklist_0e6f4cb8b06e01c3bd296ace3a95f814 {
             1603957781 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_085b70224253486624fc36fa658a1e32 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_085b70224253486624fc36fa658a1e32 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8730,13 +6862,8 @@ rule reversinglabs_blocklist_cert_blocklist_085b70224253486624fc36fa658a1e32 {
             1597971601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_51cd5393514f7ace2b407c3dbfb09d8d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_51cd5393514f7ace2b407c3dbfb09d8d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8753,13 +6880,8 @@ rule reversinglabs_blocklist_cert_blocklist_51cd5393514f7ace2b407c3dbfb09d8d {
             1605299467 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b72179c027b9037ee220e81ab18fe56d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b72179c027b9037ee220e81ab18fe56d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8778,13 +6900,8 @@ rule reversinglabs_blocklist_cert_blocklist_b72179c027b9037ee220e81ab18fe56d {
             1603381300 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_07b74c70c4aa092648b7f0d1a8a3a28f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_07b74c70c4aa092648b7f0d1a8a3a28f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8801,13 +6918,8 @@ rule reversinglabs_blocklist_cert_blocklist_07b74c70c4aa092648b7f0d1a8a3a28f {
             1603240965 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4c8def294478b7d59ee95c61fae3d965 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4c8def294478b7d59ee95c61fae3d965 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8824,13 +6936,8 @@ rule reversinglabs_blocklist_cert_blocklist_4c8def294478b7d59ee95c61fae3d965 {
             1592961292 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7d36cbb64bc9add17ba71737d3ecceca {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7d36cbb64bc9add17ba71737d3ecceca {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8847,13 +6954,8 @@ rule reversinglabs_blocklist_cert_blocklist_7d36cbb64bc9add17ba71737d3ecceca {
             1616025600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ad255d4ebefa751f3782587396c08629 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ad255d4ebefa751f3782587396c08629 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8872,13 +6974,8 @@ rule reversinglabs_blocklist_cert_blocklist_ad255d4ebefa751f3782587396c08629 {
             1614643200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_262ca7ae19d688138e75932832b18f9d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_262ca7ae19d688138e75932832b18f9d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8895,13 +6992,8 @@ rule reversinglabs_blocklist_cert_blocklist_262ca7ae19d688138e75932832b18f9d {
             1616025600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_59a57e8ba3dcf2b6f59981fda14b03 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_59a57e8ba3dcf2b6f59981fda14b03 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8918,13 +7010,8 @@ rule reversinglabs_blocklist_cert_blocklist_59a57e8ba3dcf2b6f59981fda14b03 {
             1609113600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aebe117a13b8bca21685df48c74f584d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aebe117a13b8bca21685df48c74f584d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8943,13 +7030,8 @@ rule reversinglabs_blocklist_cert_blocklist_aebe117a13b8bca21685df48c74f584d {
             1613520000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7dcd19a94535f034ee36af4676740633 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7dcd19a94535f034ee36af4676740633 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8966,13 +7048,8 @@ rule reversinglabs_blocklist_cert_blocklist_7dcd19a94535f034ee36af4676740633 {
             1609200000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ca4822e6905aa4fca9e28523f04f14a3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ca4822e6905aa4fca9e28523f04f14a3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -8991,13 +7068,8 @@ rule reversinglabs_blocklist_cert_blocklist_ca4822e6905aa4fca9e28523f04f14a3 {
             1614643200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_24c1ef800f275ab2780280c595de3464 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_24c1ef800f275ab2780280c595de3464 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9014,13 +7086,8 @@ rule reversinglabs_blocklist_cert_blocklist_24c1ef800f275ab2780280c595de3464 {
             1614729600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6401831b46588b9d872b02076c3a7b00 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6401831b46588b9d872b02076c3a7b00 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9037,13 +7104,8 @@ rule reversinglabs_blocklist_cert_blocklist_6401831b46588b9d872b02076c3a7b00 {
             1615507200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a01a91cce63ede5eaa3dac4883aea05 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a01a91cce63ede5eaa3dac4883aea05 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9060,13 +7122,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a01a91cce63ede5eaa3dac4883aea05 {
             1618876800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_54cd7ae1c27f1421136ed25088f4979a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_54cd7ae1c27f1421136ed25088f4979a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9083,13 +7140,8 @@ rule reversinglabs_blocklist_cert_blocklist_54cd7ae1c27f1421136ed25088f4979a {
             1616371200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f2d693aad63e6920782a0027dfc97d91 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f2d693aad63e6920782a0027dfc97d91 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9108,13 +7160,8 @@ rule reversinglabs_blocklist_cert_blocklist_f2d693aad63e6920782a0027dfc97d91 {
             1598989763 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f8e8f6c92ba666b0688a8cacce9acccf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f8e8f6c92ba666b0688a8cacce9acccf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9133,13 +7180,8 @@ rule reversinglabs_blocklist_cert_blocklist_f8e8f6c92ba666b0688a8cacce9acccf {
             1618531200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e3d5089d4b8f01aadce2731062fb0cce {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e3d5089d4b8f01aadce2731062fb0cce {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9158,13 +7200,8 @@ rule reversinglabs_blocklist_cert_blocklist_e3d5089d4b8f01aadce2731062fb0cce {
             1618358400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7ed801843fa001b8add52d3a97b25931 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7ed801843fa001b8add52d3a97b25931 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9181,13 +7218,8 @@ rule reversinglabs_blocklist_cert_blocklist_7ed801843fa001b8add52d3a97b25931 {
             1614297600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d9e834182dec62c654e775e809ac1d1b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d9e834182dec62c654e775e809ac1d1b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9206,13 +7238,8 @@ rule reversinglabs_blocklist_cert_blocklist_d9e834182dec62c654e775e809ac1d1b {
             1614297600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_801689896ed339237464a41a2900a969 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_801689896ed339237464a41a2900a969 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9231,13 +7258,8 @@ rule reversinglabs_blocklist_cert_blocklist_801689896ed339237464a41a2900a969 {
             1615507200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3fd3661533eef209153c9afec3ba4d8a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3fd3661533eef209153c9afec3ba4d8a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9254,13 +7276,8 @@ rule reversinglabs_blocklist_cert_blocklist_3fd3661533eef209153c9afec3ba4d8a {
             1614816000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0ced87bd70b092cb93b182fac32655f6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0ced87bd70b092cb93b182fac32655f6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9277,13 +7294,8 @@ rule reversinglabs_blocklist_cert_blocklist_0ced87bd70b092cb93b182fac32655f6 {
             1614816000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_047801d5b55c800b48411fd8c320ca5b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_047801d5b55c800b48411fd8c320ca5b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9300,13 +7312,8 @@ rule reversinglabs_blocklist_cert_blocklist_047801d5b55c800b48411fd8c320ca5b {
             1614297600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f0ed5318848703405d40f7c62d0f39a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f0ed5318848703405d40f7c62d0f39a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9323,13 +7330,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f0ed5318848703405d40f7c62d0f39a {
             1614729600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4e7545c9fc5938f5198ab9f1749ca31c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4e7545c9fc5938f5198ab9f1749ca31c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9346,13 +7348,8 @@ rule reversinglabs_blocklist_cert_blocklist_4e7545c9fc5938f5198ab9f1749ca31c {
             1614297600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7ddd3796a427b42f2e52d7c7af0ca54f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7ddd3796a427b42f2e52d7c7af0ca54f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9369,13 +7366,8 @@ rule reversinglabs_blocklist_cert_blocklist_7ddd3796a427b42f2e52d7c7af0ca54f {
             1612915200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_03b27d7f4ee21a462a064a17eef70d6c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_03b27d7f4ee21a462a064a17eef70d6c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9392,13 +7384,8 @@ rule reversinglabs_blocklist_cert_blocklist_03b27d7f4ee21a462a064a17eef70d6c {
             1613952000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b0a308fc2e71ac4ac40677b9c27ccbad {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b0a308fc2e71ac4ac40677b9c27ccbad {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9417,13 +7404,8 @@ rule reversinglabs_blocklist_cert_blocklist_b0a308fc2e71ac4ac40677b9c27ccbad {
             1611705600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_61b11ef9726ab2e78132e01bd791b336 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_61b11ef9726ab2e78132e01bd791b336 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9440,13 +7422,8 @@ rule reversinglabs_blocklist_cert_blocklist_61b11ef9726ab2e78132e01bd791b336 {
             1609372800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8fe807310d98357a59382090634b93f0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8fe807310d98357a59382090634b93f0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9465,13 +7442,8 @@ rule reversinglabs_blocklist_cert_blocklist_8fe807310d98357a59382090634b93f0 {
             1613433600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b97f66bb221772dc07ef1d4bed8f6085 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b97f66bb221772dc07ef1d4bed8f6085 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9490,13 +7462,8 @@ rule reversinglabs_blocklist_cert_blocklist_b97f66bb221772dc07ef1d4bed8f6085 {
             1614556800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fed006fbf85cd1c6ba6b4345b198e1e6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fed006fbf85cd1c6ba6b4345b198e1e6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9515,13 +7482,8 @@ rule reversinglabs_blocklist_cert_blocklist_fed006fbf85cd1c6ba6b4345b198e1e6 {
             1614297600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aa28c9bd16d9d304f18af223b27bfa1e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aa28c9bd16d9d304f18af223b27bfa1e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9540,13 +7502,8 @@ rule reversinglabs_blocklist_cert_blocklist_aa28c9bd16d9d304f18af223b27bfa1e {
             1611705600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_19beff8a6c129663e5e8c18953dc1f67 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_19beff8a6c129663e5e8c18953dc1f67 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9563,13 +7520,8 @@ rule reversinglabs_blocklist_cert_blocklist_19beff8a6c129663e5e8c18953dc1f67 {
             1608163200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_029685cda1c8233d2409a31206f78f9f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_029685cda1c8233d2409a31206f78f9f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9586,13 +7538,8 @@ rule reversinglabs_blocklist_cert_blocklist_029685cda1c8233d2409a31206f78f9f {
             1612396800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d609b6c95428954a999a8a99d4f198af {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d609b6c95428954a999a8a99d4f198af {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9611,13 +7558,8 @@ rule reversinglabs_blocklist_cert_blocklist_d609b6c95428954a999a8a99d4f198af {
             1612828800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d3356318924c8c42959bf1d1574e6482 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d3356318924c8c42959bf1d1574e6482 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9636,13 +7578,8 @@ rule reversinglabs_blocklist_cert_blocklist_d3356318924c8c42959bf1d1574e6482 {
             1613001600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_31d852f5fca1a5966b5ed08a14825c54 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_31d852f5fca1a5966b5ed08a14825c54 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9659,13 +7596,8 @@ rule reversinglabs_blocklist_cert_blocklist_31d852f5fca1a5966b5ed08a14825c54 {
             1612396800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_17d99cc2f5b29522d422332e681f3e18 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_17d99cc2f5b29522d422332e681f3e18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9682,13 +7614,8 @@ rule reversinglabs_blocklist_cert_blocklist_17d99cc2f5b29522d422332e681f3e18 {
             1613088000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6a568f85de2061f67ded98707d4988df {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6a568f85de2061f67ded98707d4988df {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9705,13 +7632,8 @@ rule reversinglabs_blocklist_cert_blocklist_6a568f85de2061f67ded98707d4988df {
             1613001600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_038fc745523b41b40d653b83aa381b80 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_038fc745523b41b40d653b83aa381b80 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9728,13 +7650,8 @@ rule reversinglabs_blocklist_cert_blocklist_038fc745523b41b40d653b83aa381b80 {
             1606143708 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_30af0d0e6d8201a5369664c5ebbb010f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_30af0d0e6d8201a5369664c5ebbb010f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9751,13 +7668,8 @@ rule reversinglabs_blocklist_cert_blocklist_30af0d0e6d8201a5369664c5ebbb010f {
             1613433600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ac0a7b9420b369af3ddb748385b981 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ac0a7b9420b369af3ddb748385b981 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9776,13 +7688,8 @@ rule reversinglabs_blocklist_cert_blocklist_ac0a7b9420b369af3ddb748385b981 {
             1604620800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c167f04b338b1e8747b92c2197403c43 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c167f04b338b1e8747b92c2197403c43 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9801,13 +7708,8 @@ rule reversinglabs_blocklist_cert_blocklist_c167f04b338b1e8747b92c2197403c43 {
             1604361600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9272607cfc982b782a5d36c4b78f5e7b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9272607cfc982b782a5d36c4b78f5e7b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9826,13 +7728,8 @@ rule reversinglabs_blocklist_cert_blocklist_9272607cfc982b782a5d36c4b78f5e7b {
             1605139200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_45eb9187a2505d8e6c842e6d366ad0c8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_45eb9187a2505d8e6c842e6d366ad0c8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9849,13 +7746,8 @@ rule reversinglabs_blocklist_cert_blocklist_45eb9187a2505d8e6c842e6d366ad0c8 {
             1607040000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_56fff139df5ae7e788e5d72196dd563a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_56fff139df5ae7e788e5d72196dd563a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9872,13 +7764,8 @@ rule reversinglabs_blocklist_cert_blocklist_56fff139df5ae7e788e5d72196dd563a {
             1606435200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e161f76da3b5e4623892c8e6fda1ea3d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e161f76da3b5e4623892c8e6fda1ea3d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9897,13 +7784,8 @@ rule reversinglabs_blocklist_cert_blocklist_e161f76da3b5e4623892c8e6fda1ea3d {
             1604966400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9ae5b177ac3a7ce2aadf1c891b574924 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9ae5b177ac3a7ce2aadf1c891b574924 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9922,13 +7804,8 @@ rule reversinglabs_blocklist_cert_blocklist_9ae5b177ac3a7ce2aadf1c891b574924 {
             1608076800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a03ea3a4fa772b17037a0b80f1f968aa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a03ea3a4fa772b17037a0b80f1f968aa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9947,13 +7824,8 @@ rule reversinglabs_blocklist_cert_blocklist_a03ea3a4fa772b17037a0b80f1f968aa {
             1608076800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_333ca7d100b139b0d9c1a97cb458e226 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_333ca7d100b139b0d9c1a97cb458e226 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9970,13 +7842,8 @@ rule reversinglabs_blocklist_cert_blocklist_333ca7d100b139b0d9c1a97cb458e226 {
             1608076800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9245d1511923f541844faa3c6bfebcbe {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9245d1511923f541844faa3c6bfebcbe {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -9995,13 +7862,8 @@ rule reversinglabs_blocklist_cert_blocklist_9245d1511923f541844faa3c6bfebcbe {
             1607040000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2888cf0f953a4a3640ee4cfc6304d9d4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2888cf0f953a4a3640ee4cfc6304d9d4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10018,13 +7880,8 @@ rule reversinglabs_blocklist_cert_blocklist_2888cf0f953a4a3640ee4cfc6304d9d4 {
             1608024974 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c8edcfe8be174c2f204d858c5b91dea5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c8edcfe8be174c2f204d858c5b91dea5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10043,13 +7900,8 @@ rule reversinglabs_blocklist_cert_blocklist_c8edcfe8be174c2f204d858c5b91dea5 {
             1608076800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9faf8705a3eaef9340800cc4fd38597c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9faf8705a3eaef9340800cc4fd38597c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10068,13 +7920,8 @@ rule reversinglabs_blocklist_cert_blocklist_9faf8705a3eaef9340800cc4fd38597c {
             1605744000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0940fa9a4080f35052b2077333769c2f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0940fa9a4080f35052b2077333769c2f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10091,13 +7938,8 @@ rule reversinglabs_blocklist_cert_blocklist_0940fa9a4080f35052b2077333769c2f {
             1603497600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ea720222d92dc8d48e3b3c3b0fc360a6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ea720222d92dc8d48e3b3c3b0fc360a6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10116,13 +7958,8 @@ rule reversinglabs_blocklist_cert_blocklist_ea720222d92dc8d48e3b3c3b0fc360a6 {
             1608640280 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4743e140c05b33f0449023946bd05acb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4743e140c05b33f0449023946bd05acb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10139,13 +7976,8 @@ rule reversinglabs_blocklist_cert_blocklist_4743e140c05b33f0449023946bd05acb {
             1607644800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a496bc774575c31abec861b68c36dcb6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a496bc774575c31abec861b68c36dcb6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10164,13 +7996,8 @@ rule reversinglabs_blocklist_cert_blocklist_a496bc774575c31abec861b68c36dcb6 {
             1606867200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a55c15f733bf1633e9ffae8a6e3b37d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a55c15f733bf1633e9ffae8a6e3b37d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10187,13 +8014,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a55c15f733bf1633e9ffae8a6e3b37d {
             1604016000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c650ae531100a91389a7f030228b3095 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c650ae531100a91389a7f030228b3095 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10212,13 +8034,8 @@ rule reversinglabs_blocklist_cert_blocklist_c650ae531100a91389a7f030228b3095 {
             1606089600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3990362c34015ce4c23ecc3377fd3c06 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3990362c34015ce4c23ecc3377fd3c06 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10235,13 +8052,8 @@ rule reversinglabs_blocklist_cert_blocklist_3990362c34015ce4c23ecc3377fd3c06 {
             1606780800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_121fca3cfa4bd011669f5cc4e053aa3f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_121fca3cfa4bd011669f5cc4e053aa3f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10258,13 +8070,8 @@ rule reversinglabs_blocklist_cert_blocklist_121fca3cfa4bd011669f5cc4e053aa3f {
             1606953600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d338f8a490e37e6c2be80a0e349929fa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d338f8a490e37e6c2be80a0e349929fa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10283,13 +8090,8 @@ rule reversinglabs_blocklist_cert_blocklist_d338f8a490e37e6c2be80a0e349929fa {
             1607558400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2c1ee9b583310b5e34a1ee6945a34b26 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2c1ee9b583310b5e34a1ee6945a34b26 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10306,13 +8108,8 @@ rule reversinglabs_blocklist_cert_blocklist_2c1ee9b583310b5e34a1ee6945a34b26 {
             1607558400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d875b3e3f2db6c3eb426e24946066111 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d875b3e3f2db6c3eb426e24946066111 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10331,13 +8128,8 @@ rule reversinglabs_blocklist_cert_blocklist_d875b3e3f2db6c3eb426e24946066111 {
             1606953600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ad0a958cdf188bed43154a54bf23afba {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ad0a958cdf188bed43154a54bf23afba {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10356,13 +8148,8 @@ rule reversinglabs_blocklist_cert_blocklist_ad0a958cdf188bed43154a54bf23afba {
             1612915200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3cee26c125b8c188f316c3fa78d9c2f1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3cee26c125b8c188f316c3fa78d9c2f1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10379,13 +8166,8 @@ rule reversinglabs_blocklist_cert_blocklist_3cee26c125b8c188f316c3fa78d9c2f1 {
             1606435200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4c687a0022c36f89e253f91d1f6954e2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4c687a0022c36f89e253f91d1f6954e2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10402,13 +8184,8 @@ rule reversinglabs_blocklist_cert_blocklist_4c687a0022c36f89e253f91d1f6954e2 {
             1606780800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ca646b4275406df639cf603756f63d77 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ca646b4275406df639cf603756f63d77 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10427,13 +8204,8 @@ rule reversinglabs_blocklist_cert_blocklist_ca646b4275406df639cf603756f63d77 {
             1605830400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_addbec454b5479cabd940a72df4500af {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_addbec454b5479cabd940a72df4500af {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10452,13 +8224,8 @@ rule reversinglabs_blocklist_cert_blocklist_addbec454b5479cabd940a72df4500af {
             1612828800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ac307e5257bb814b818d3633b630326f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ac307e5257bb814b818d3633b630326f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10477,13 +8244,8 @@ rule reversinglabs_blocklist_cert_blocklist_ac307e5257bb814b818d3633b630326f {
             1606089600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0d83e7f47189cdbfc7fa3e5f58882329 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0d83e7f47189cdbfc7fa3e5f58882329 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10500,13 +8262,8 @@ rule reversinglabs_blocklist_cert_blocklist_0d83e7f47189cdbfc7fa3e5f58882329 {
             1605830400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_58aa64564a50e8b2d6e31d5cd6250fde {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_58aa64564a50e8b2d6e31d5cd6250fde {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10523,13 +8280,8 @@ rule reversinglabs_blocklist_cert_blocklist_58aa64564a50e8b2d6e31d5cd6250fde {
             1609002028 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2aa0ae245b487c8926c88ee6d736d1ca {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2aa0ae245b487c8926c88ee6d736d1ca {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10546,13 +8298,8 @@ rule reversinglabs_blocklist_cert_blocklist_2aa0ae245b487c8926c88ee6d736d1ca {
             1612262280 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1aec3d3f752a38617c1d7a677d0b5591 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1aec3d3f752a38617c1d7a677d0b5591 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10569,13 +8316,8 @@ rule reversinglabs_blocklist_cert_blocklist_1aec3d3f752a38617c1d7a677d0b5591 {
             1611705600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a7e1dc5352c3852c5523030f57f2425c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a7e1dc5352c3852c5523030f57f2425c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10594,13 +8336,8 @@ rule reversinglabs_blocklist_cert_blocklist_a7e1dc5352c3852c5523030f57f2425c {
             1611792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bbd4dc3768a51aa2b3059c1bad569276 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bbd4dc3768a51aa2b3059c1bad569276 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10619,13 +8356,8 @@ rule reversinglabs_blocklist_cert_blocklist_bbd4dc3768a51aa2b3059c1bad569276 {
             1607472000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08622b9dd9d78e67678ecc21e026522e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08622b9dd9d78e67678ecc21e026522e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10642,13 +8374,8 @@ rule reversinglabs_blocklist_cert_blocklist_08622b9dd9d78e67678ecc21e026522e {
             1611619200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e69a6de0074ece38c2f30f0d4a808456 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e69a6de0074ece38c2f30f0d4a808456 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10667,13 +8394,8 @@ rule reversinglabs_blocklist_cert_blocklist_e69a6de0074ece38c2f30f0d4a808456 {
             1611532800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8385684419ab26a3f2640b1496e1fe94 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8385684419ab26a3f2640b1496e1fe94 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10692,13 +8414,8 @@ rule reversinglabs_blocklist_cert_blocklist_8385684419ab26a3f2640b1496e1fe94 {
             1612137600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_21e3cae5b77c41528658ada08509c392 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_21e3cae5b77c41528658ada08509c392 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10715,13 +8432,8 @@ rule reversinglabs_blocklist_cert_blocklist_21e3cae5b77c41528658ada08509c392 {
             1609233559 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2abd2eef14d480dfea9ca9fdd823cf03 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2abd2eef14d480dfea9ca9fdd823cf03 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10738,13 +8450,8 @@ rule reversinglabs_blocklist_cert_blocklist_2abd2eef14d480dfea9ca9fdd823cf03 {
             1611100800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_86909b91f07f9316984d888d1e28ab76 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_86909b91f07f9316984d888d1e28ab76 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10763,13 +8470,8 @@ rule reversinglabs_blocklist_cert_blocklist_86909b91f07f9316984d888d1e28ab76 {
             1611273600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d1b8f1fe56381befdb2e73ffef2a4b28 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d1b8f1fe56381befdb2e73ffef2a4b28 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10788,13 +8490,8 @@ rule reversinglabs_blocklist_cert_blocklist_d1b8f1fe56381befdb2e73ffef2a4b28 {
             1617667200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d4ef1ab6ab5d3cb35e4efb7984def7a2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d4ef1ab6ab5d3cb35e4efb7984def7a2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10813,13 +8510,8 @@ rule reversinglabs_blocklist_cert_blocklist_d4ef1ab6ab5d3cb35e4efb7984def7a2 {
             1611187200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_066276af2f2c7e246d3b1cab1b4aa42e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_066276af2f2c7e246d3b1cab1b4aa42e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10836,13 +8528,8 @@ rule reversinglabs_blocklist_cert_blocklist_066276af2f2c7e246d3b1cab1b4aa42e {
             1616630400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_65cd323c2483668b90a44a711d2a6b98 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_65cd323c2483668b90a44a711d2a6b98 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10859,13 +8546,8 @@ rule reversinglabs_blocklist_cert_blocklist_65cd323c2483668b90a44a711d2a6b98 {
             1602547200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5a17d5de74fd8f09df596df3123139bb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5a17d5de74fd8f09df596df3123139bb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10882,13 +8564,8 @@ rule reversinglabs_blocklist_cert_blocklist_5a17d5de74fd8f09df596df3123139bb {
             1611273600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_15da61d7e1a631803431561674fb9b90 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_15da61d7e1a631803431561674fb9b90 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10905,13 +8582,8 @@ rule reversinglabs_blocklist_cert_blocklist_15da61d7e1a631803431561674fb9b90 {
             1610668800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7ab21306b11ff280a93fc445876988ab {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7ab21306b11ff280a93fc445876988ab {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10928,13 +8600,8 @@ rule reversinglabs_blocklist_cert_blocklist_7ab21306b11ff280a93fc445876988ab {
             1611014400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_634e16e38f12e9a71aca08e4c6b2dbb9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_634e16e38f12e9a71aca08e4c6b2dbb9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10951,13 +8618,8 @@ rule reversinglabs_blocklist_cert_blocklist_634e16e38f12e9a71aca08e4c6b2dbb9 {
             1616112000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_289051a83f350a2c600187c99b6c0a73 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_289051a83f350a2c600187c99b6c0a73 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10974,13 +8636,8 @@ rule reversinglabs_blocklist_cert_blocklist_289051a83f350a2c600187c99b6c0a73 {
             1616716800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_818631110b5d14331dac7e6ad998b902 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_818631110b5d14331dac7e6ad998b902 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -10999,13 +8656,8 @@ rule reversinglabs_blocklist_cert_blocklist_818631110b5d14331dac7e6ad998b902 {
             1571616000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_277cd16de5d61b9398b645afe41c09c7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_277cd16de5d61b9398b645afe41c09c7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11022,13 +8674,8 @@ rule reversinglabs_blocklist_cert_blocklist_277cd16de5d61b9398b645afe41c09c7 {
             1619049600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d0eda76c13d30c97015708790bb94214 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d0eda76c13d30c97015708790bb94214 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11047,13 +8694,8 @@ rule reversinglabs_blocklist_cert_blocklist_d0eda76c13d30c97015708790bb94214 {
             1619136000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6333ed618f88a05b4d82ad7bf66cb0fa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6333ed618f88a05b4d82ad7bf66cb0fa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11070,13 +8712,8 @@ rule reversinglabs_blocklist_cert_blocklist_6333ed618f88a05b4d82ad7bf66cb0fa {
             1616457600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3b777165b125bccc181d0bac3f5b55b3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3b777165b125bccc181d0bac3f5b55b3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11093,13 +8730,8 @@ rule reversinglabs_blocklist_cert_blocklist_3b777165b125bccc181d0bac3f5b55b3 {
             1607299200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5b37ac3479283b6f9d75ddf0f8742d06 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5b37ac3479283b6f9d75ddf0f8742d06 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11116,13 +8748,8 @@ rule reversinglabs_blocklist_cert_blocklist_5b37ac3479283b6f9d75ddf0f8742d06 {
             1619740800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3112c69d460c781fd649c71e61bfec82 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3112c69d460c781fd649c71e61bfec82 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11139,13 +8766,8 @@ rule reversinglabs_blocklist_cert_blocklist_3112c69d460c781fd649c71e61bfec82 {
             1614902400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a5b4f67ad8b22afc2debe6ce5f8f679 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a5b4f67ad8b22afc2debe6ce5f8f679 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11162,13 +8784,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a5b4f67ad8b22afc2debe6ce5f8f679 {
             1607472000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_df45b36c9d0bd248c3f9494e7ca822 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_df45b36c9d0bd248c3f9494e7ca822 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11187,13 +8804,8 @@ rule reversinglabs_blocklist_cert_blocklist_df45b36c9d0bd248c3f9494e7ca822 {
             1619740800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1ae3c4eccecda2127d43be390a850dda {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1ae3c4eccecda2127d43be390a850dda {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11210,13 +8822,8 @@ rule reversinglabs_blocklist_cert_blocklist_1ae3c4eccecda2127d43be390a850dda {
             1614902400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2e36360538624c9b1afd78a2fb756028 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2e36360538624c9b1afd78a2fb756028 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11233,13 +8840,8 @@ rule reversinglabs_blocklist_cert_blocklist_2e36360538624c9b1afd78a2fb756028 {
             1615766400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_addb899f8229fd53e6435e08bbd3a733 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_addb899f8229fd53e6435e08bbd3a733 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11258,13 +8860,8 @@ rule reversinglabs_blocklist_cert_blocklist_addb899f8229fd53e6435e08bbd3a733 {
             1616630400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c1a1db95d7bf80290aa6e82d8f8f996a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c1a1db95d7bf80290aa6e82d8f8f996a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11283,13 +8880,8 @@ rule reversinglabs_blocklist_cert_blocklist_c1a1db95d7bf80290aa6e82d8f8f996a {
             1615334400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c667ffe3a5b0a5ae7cf3a9e41682e91b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c667ffe3a5b0a5ae7cf3a9e41682e91b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11308,13 +8900,8 @@ rule reversinglabs_blocklist_cert_blocklist_c667ffe3a5b0a5ae7cf3a9e41682e91b {
             1616976000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e0a83917660d05cf476374659d3c7b85 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e0a83917660d05cf476374659d3c7b85 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11333,13 +8920,8 @@ rule reversinglabs_blocklist_cert_blocklist_e0a83917660d05cf476374659d3c7b85 {
             1621468800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_afc5522898143aafaab7fd52304cf00c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_afc5522898143aafaab7fd52304cf00c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11358,13 +8940,8 @@ rule reversinglabs_blocklist_cert_blocklist_afc5522898143aafaab7fd52304cf00c {
             1622419200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8b3333d32b2c2a1d33b41ba5db9d4d2d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8b3333d32b2c2a1d33b41ba5db9d4d2d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11383,13 +8960,8 @@ rule reversinglabs_blocklist_cert_blocklist_8b3333d32b2c2a1d33b41ba5db9d4d2d {
             1620000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fbb1198bd8bddb0d693eb72a8613fe3f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fbb1198bd8bddb0d693eb72a8613fe3f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11408,13 +8980,8 @@ rule reversinglabs_blocklist_cert_blocklist_fbb1198bd8bddb0d693eb72a8613fe3f {
             1620000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_846f77d9919fc4405aefe1701309bd67 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_846f77d9919fc4405aefe1701309bd67 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11433,13 +9000,8 @@ rule reversinglabs_blocklist_cert_blocklist_846f77d9919fc4405aefe1701309bd67 {
             1621382400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0939c2bad859c0432e8e98a6c0162c02 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0939c2bad859c0432e8e98a6c0162c02 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11456,13 +9018,8 @@ rule reversinglabs_blocklist_cert_blocklist_0939c2bad859c0432e8e98a6c0162c02 {
             1615939200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7fba0e19919ac50d700ba60250d02c8b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7fba0e19919ac50d700ba60250d02c8b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11479,13 +9036,8 @@ rule reversinglabs_blocklist_cert_blocklist_7fba0e19919ac50d700ba60250d02c8b {
             1623196800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a758504e7971869d0aec2775fffa03d5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a758504e7971869d0aec2775fffa03d5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11504,13 +9056,8 @@ rule reversinglabs_blocklist_cert_blocklist_a758504e7971869d0aec2775fffa03d5 {
             1623628800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_37a67cf754ee5ae284b4cf8b9d651604 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_37a67cf754ee5ae284b4cf8b9d651604 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11527,13 +9074,8 @@ rule reversinglabs_blocklist_cert_blocklist_37a67cf754ee5ae284b4cf8b9d651604 {
             1617321600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_119acead668bad57a48b4f42f294f8f0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_119acead668bad57a48b4f42f294f8f0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11550,13 +9092,8 @@ rule reversinglabs_blocklist_cert_blocklist_119acead668bad57a48b4f42f294f8f0 {
             1619654400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7a6d30a6eb2fa0c3369283725704ac4c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7a6d30a6eb2fa0c3369283725704ac4c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11573,13 +9110,8 @@ rule reversinglabs_blocklist_cert_blocklist_7a6d30a6eb2fa0c3369283725704ac4c {
             1619568000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_670c3494206b9f0c18714fdcffaaa42f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_670c3494206b9f0c18714fdcffaaa42f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11596,13 +9128,8 @@ rule reversinglabs_blocklist_cert_blocklist_670c3494206b9f0c18714fdcffaaa42f {
             1622160000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0e8aa328af207ce8bcae1dc15c626188 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0e8aa328af207ce8bcae1dc15c626188 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11619,13 +9146,8 @@ rule reversinglabs_blocklist_cert_blocklist_0e8aa328af207ce8bcae1dc15c626188 {
             1627344000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cfad6be1d823b4eacb803b720f525a7d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cfad6be1d823b4eacb803b720f525a7d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11644,13 +9166,8 @@ rule reversinglabs_blocklist_cert_blocklist_cfad6be1d823b4eacb803b720f525a7d {
             1627430400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7ebcb54b7e0e6410b28610de0743d4dd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7ebcb54b7e0e6410b28610de0743d4dd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11667,13 +9184,8 @@ rule reversinglabs_blocklist_cert_blocklist_7ebcb54b7e0e6410b28610de0743d4dd {
             1625616000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_01106cc293772ca905a2b6eff02bf0f5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_01106cc293772ca905a2b6eff02bf0f5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11690,13 +9202,8 @@ rule reversinglabs_blocklist_cert_blocklist_01106cc293772ca905a2b6eff02bf0f5 {
             1627084800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_05bb162f6efe852b7bd4712fd737a61e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_05bb162f6efe852b7bd4712fd737a61e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11713,13 +9220,8 @@ rule reversinglabs_blocklist_cert_blocklist_05bb162f6efe852b7bd4712fd737a61e {
             1628726400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6171990ba1c8e71049ebb296a35bd160 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6171990ba1c8e71049ebb296a35bd160 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11736,13 +9238,8 @@ rule reversinglabs_blocklist_cert_blocklist_6171990ba1c8e71049ebb296a35bd160 {
             1620000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2114ca3bd2afd63d7fa29d744992b043 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2114ca3bd2afd63d7fa29d744992b043 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11759,13 +9256,8 @@ rule reversinglabs_blocklist_cert_blocklist_2114ca3bd2afd63d7fa29d744992b043 {
             1625097600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6aaa62208a3a78bfac1443007d031e61 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6aaa62208a3a78bfac1443007d031e61 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11782,13 +9274,8 @@ rule reversinglabs_blocklist_cert_blocklist_6aaa62208a3a78bfac1443007d031e61 {
             1608163200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_09450b8f73ea43e39d2cdd56049dbe40 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_09450b8f73ea43e39d2cdd56049dbe40 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11805,13 +9292,8 @@ rule reversinglabs_blocklist_cert_blocklist_09450b8f73ea43e39d2cdd56049dbe40 {
             1561602110 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0efd9bd4b4281c6522d96011df46c9c4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0efd9bd4b4281c6522d96011df46c9c4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11828,13 +9310,8 @@ rule reversinglabs_blocklist_cert_blocklist_0efd9bd4b4281c6522d96011df46c9c4 {
             1586249095 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0dd7d4a785990584d8c0837659173272 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0dd7d4a785990584d8c0837659173272 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11851,13 +9328,8 @@ rule reversinglabs_blocklist_cert_blocklist_0dd7d4a785990584d8c0837659173272 {
             1586249095 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c59d46580f039af2c4ab6ba0ffed197 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c59d46580f039af2c4ab6ba0ffed197 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11874,13 +9346,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c59d46580f039af2c4ab6ba0ffed197 {
             1585108595 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0448ec8d26597f99912138500cc41c1b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0448ec8d26597f99912138500cc41c1b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11897,13 +9364,8 @@ rule reversinglabs_blocklist_cert_blocklist_0448ec8d26597f99912138500cc41c1b {
             1585108595 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0108cbaee60728f5bf06e45a56d6f170 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0108cbaee60728f5bf06e45a56d6f170 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11920,13 +9382,8 @@ rule reversinglabs_blocklist_cert_blocklist_0108cbaee60728f5bf06e45a56d6f170 {
             1605680260 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_038d56a12153e8b5c74c69bff65cbe3f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_038d56a12153e8b5c74c69bff65cbe3f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11943,13 +9400,8 @@ rule reversinglabs_blocklist_cert_blocklist_038d56a12153e8b5c74c69bff65cbe3f {
             1605680260 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_060d94e2ccae84536654d9daf39fef1e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_060d94e2ccae84536654d9daf39fef1e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11966,13 +9418,8 @@ rule reversinglabs_blocklist_cert_blocklist_060d94e2ccae84536654d9daf39fef1e {
             1627948800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0bc9b800f480691bd6b60963466b0c75 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0bc9b800f480691bd6b60963466b0c75 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -11989,13 +9436,8 @@ rule reversinglabs_blocklist_cert_blocklist_0bc9b800f480691bd6b60963466b0c75 {
             1629158400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c4324ff41f0a7b16ffcc93dffa8fa99 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c4324ff41f0a7b16ffcc93dffa8fa99 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12012,13 +9454,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c4324ff41f0a7b16ffcc93dffa8fa99 {
             1600300800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0b980fc8783e4f158e41829ab21bab81 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0b980fc8783e4f158e41829ab21bab81 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12035,13 +9472,8 @@ rule reversinglabs_blocklist_cert_blocklist_0b980fc8783e4f158e41829ab21bab81 {
             1631750400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d8f515715aeffef0a0e4e37f16c254fa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d8f515715aeffef0a0e4e37f16c254fa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12060,13 +9492,8 @@ rule reversinglabs_blocklist_cert_blocklist_d8f515715aeffef0a0e4e37f16c254fa {
             1619136000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d79739187c585e453c00afc11d77b523 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d79739187c585e453c00afc11d77b523 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12085,13 +9512,8 @@ rule reversinglabs_blocklist_cert_blocklist_d79739187c585e453c00afc11d77b523 {
             1631059200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_961cecb0227845317549e9343a980e91 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_961cecb0227845317549e9343a980e91 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12110,13 +9532,8 @@ rule reversinglabs_blocklist_cert_blocklist_961cecb0227845317549e9343a980e91 {
             1615248000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1ef6392b2993a6f67578299659467ea8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1ef6392b2993a6f67578299659467ea8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12133,13 +9550,8 @@ rule reversinglabs_blocklist_cert_blocklist_1ef6392b2993a6f67578299659467ea8 {
             1618531200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a918455c0d4da7ca474f41f11a7cf38c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a918455c0d4da7ca474f41f11a7cf38c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12158,13 +9570,8 @@ rule reversinglabs_blocklist_cert_blocklist_a918455c0d4da7ca474f41f11a7cf38c {
             1618963200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_936bc256d2057ca9b9ec3034c3ed0ee6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_936bc256d2057ca9b9ec3034c3ed0ee6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12183,13 +9590,8 @@ rule reversinglabs_blocklist_cert_blocklist_936bc256d2057ca9b9ec3034c3ed0ee6 {
             1616889600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_afe8fee94b41422e01e4897bcd52d0a4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_afe8fee94b41422e01e4897bcd52d0a4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12208,13 +9610,8 @@ rule reversinglabs_blocklist_cert_blocklist_afe8fee94b41422e01e4897bcd52d0a4 {
             1617062400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_718e89ddb33257ea77ba74be7f2baf1d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_718e89ddb33257ea77ba74be7f2baf1d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12231,13 +9628,8 @@ rule reversinglabs_blocklist_cert_blocklist_718e89ddb33257ea77ba74be7f2baf1d {
             1635462927 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4d3e38f4aebbc32257450726b29be117 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4d3e38f4aebbc32257450726b29be117 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12254,13 +9646,8 @@ rule reversinglabs_blocklist_cert_blocklist_4d3e38f4aebbc32257450726b29be117 {
             1636123882 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8f4c49dae1f1ff0ebe9104c6f73242bd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8f4c49dae1f1ff0ebe9104c6f73242bd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12279,13 +9666,8 @@ rule reversinglabs_blocklist_cert_blocklist_8f4c49dae1f1ff0ebe9104c6f73242bd {
             1636039748 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ac3c05f1cb9453de8e7110f589fb32c0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ac3c05f1cb9453de8e7110f589fb32c0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12304,13 +9686,8 @@ rule reversinglabs_blocklist_cert_blocklist_ac3c05f1cb9453de8e7110f589fb32c0 {
             1635854205 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fbb96a90b6718810311767ca25ab1e48 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fbb96a90b6718810311767ca25ab1e48 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12329,13 +9706,8 @@ rule reversinglabs_blocklist_cert_blocklist_fbb96a90b6718810311767ca25ab1e48 {
             1636046757 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cfd38423aef875a10b16644d058297e2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cfd38423aef875a10b16644d058297e2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12354,13 +9726,8 @@ rule reversinglabs_blocklist_cert_blocklist_cfd38423aef875a10b16644d058297e2 {
             1632884040 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e6c05c5a2222bf92818324a3a7374ad3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e6c05c5a2222bf92818324a3a7374ad3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12379,13 +9746,8 @@ rule reversinglabs_blocklist_cert_blocklist_e6c05c5a2222bf92818324a3a7374ad3 {
             1634720407 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_75ce08bdbad44123299dbe9d7c1d20de {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_75ce08bdbad44123299dbe9d7c1d20de {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12402,13 +9764,8 @@ rule reversinglabs_blocklist_cert_blocklist_75ce08bdbad44123299dbe9d7c1d20de {
             1631007095 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_333705c20b56e57f60b5eb191eef0d90 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_333705c20b56e57f60b5eb191eef0d90 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12425,13 +9782,8 @@ rule reversinglabs_blocklist_cert_blocklist_333705c20b56e57f60b5eb191eef0d90 {
             1634233052 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a2a0ba281262acce7a00119e25564386 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a2a0ba281262acce7a00119e25564386 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12450,13 +9802,8 @@ rule reversinglabs_blocklist_cert_blocklist_a2a0ba281262acce7a00119e25564386 {
             1631908320 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_338483cc174c16ebc454a3803ffd4217 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_338483cc174c16ebc454a3803ffd4217 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12473,13 +9820,8 @@ rule reversinglabs_blocklist_cert_blocklist_338483cc174c16ebc454a3803ffd4217 {
             1635208206 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_be89936c26cd0d845074f6b7b47f480c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_be89936c26cd0d845074f6b7b47f480c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12498,13 +9840,8 @@ rule reversinglabs_blocklist_cert_blocklist_be89936c26cd0d845074f6b7b47f480c {
             1634235015 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f20a5155e53ce20bb644f646ed6a2fd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f20a5155e53ce20bb644f646ed6a2fd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12521,13 +9858,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f20a5155e53ce20bb644f646ed6a2fd {
             1635196200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ea734e1dfb6e69ed2bc55e513bf95b5e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ea734e1dfb6e69ed2bc55e513bf95b5e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12546,13 +9878,8 @@ rule reversinglabs_blocklist_cert_blocklist_ea734e1dfb6e69ed2bc55e513bf95b5e {
             1635153791 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ba67b0de51ebb9b1179804e75357ab26 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ba67b0de51ebb9b1179804e75357ab26 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12571,13 +9898,8 @@ rule reversinglabs_blocklist_cert_blocklist_ba67b0de51ebb9b1179804e75357ab26 {
             1636145940 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cff2b275ba8a1dde83ac7ff858399a62 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cff2b275ba8a1dde83ac7ff858399a62 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12596,13 +9918,8 @@ rule reversinglabs_blocklist_cert_blocklist_cff2b275ba8a1dde83ac7ff858399a62 {
             1636111842 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d22e026c5b5966f1cf6ef00a7c06682e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d22e026c5b5966f1cf6ef00a7c06682e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12621,13 +9938,8 @@ rule reversinglabs_blocklist_cert_blocklist_d22e026c5b5966f1cf6ef00a7c06682e {
             1636456620 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3054f940c931bad7b238a24376c6a5cc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3054f940c931bad7b238a24376c6a5cc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12644,13 +9956,8 @@ rule reversinglabs_blocklist_cert_blocklist_3054f940c931bad7b238a24376c6a5cc {
             1637030220 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a617e23d6ca8f34e2f7413cd299fc72b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a617e23d6ca8f34e2f7413cd299fc72b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12669,13 +9976,8 @@ rule reversinglabs_blocklist_cert_blocklist_a617e23d6ca8f34e2f7413cd299fc72b {
             1636971821 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_387eeb89b8bf626bbf4c7c9f5b998b40 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_387eeb89b8bf626bbf4c7c9f5b998b40 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12692,13 +9994,8 @@ rule reversinglabs_blocklist_cert_blocklist_387eeb89b8bf626bbf4c7c9f5b998b40 {
             1637141034 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_292eb1133507f42e6f36c5549c189d5e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_292eb1133507f42e6f36c5549c189d5e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12715,13 +10012,8 @@ rule reversinglabs_blocklist_cert_blocklist_292eb1133507f42e6f36c5549c189d5e {
             1638832273 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5fbf16a33d26390a15f046c310030cf0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5fbf16a33d26390a15f046c310030cf0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12738,13 +10030,8 @@ rule reversinglabs_blocklist_cert_blocklist_5fbf16a33d26390a15f046c310030cf0 {
             1638390070 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f007898afcba5f8af8ae65d01803617 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f007898afcba5f8af8ae65d01803617 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12761,13 +10048,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f007898afcba5f8af8ae65d01803617 {
             1638372946 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e55be88ddbd93c423220468d430905dd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e55be88ddbd93c423220468d430905dd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12786,13 +10068,8 @@ rule reversinglabs_blocklist_cert_blocklist_e55be88ddbd93c423220468d430905dd {
             1637712000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06bcb74291d96096577bdb1e165dce85 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06bcb74291d96096577bdb1e165dce85 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12809,13 +10086,8 @@ rule reversinglabs_blocklist_cert_blocklist_06bcb74291d96096577bdb1e165dce85 {
             1637971201 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c8442a8185082ef1ed7dc3fff2176aa7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c8442a8185082ef1ed7dc3fff2176aa7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12834,13 +10106,8 @@ rule reversinglabs_blocklist_cert_blocklist_c8442a8185082ef1ed7dc3fff2176aa7 {
             1616976000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0406c4a1521a38c8d0c4aa214388e4dc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0406c4a1521a38c8d0c4aa214388e4dc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12857,13 +10124,8 @@ rule reversinglabs_blocklist_cert_blocklist_0406c4a1521a38c8d0c4aa214388e4dc {
             1641859201 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_12705fb66bc22c68372a1c4e5fa662e2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_12705fb66bc22c68372a1c4e5fa662e2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12880,13 +10142,8 @@ rule reversinglabs_blocklist_cert_blocklist_12705fb66bc22c68372a1c4e5fa662e2 {
             1642464000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3b0914e2982be8980aa23f49848555e5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3b0914e2982be8980aa23f49848555e5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12903,13 +10160,8 @@ rule reversinglabs_blocklist_cert_blocklist_3b0914e2982be8980aa23f49848555e5 {
             1643155200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_029bf7e1cb09fe277564bd27c267de5a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_029bf7e1cb09fe277564bd27c267de5a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12926,13 +10178,8 @@ rule reversinglabs_blocklist_cert_blocklist_029bf7e1cb09fe277564bd27c267de5a {
             1637712001 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d3aee8abb9948844a3ac1c04cc7e6bdf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d3aee8abb9948844a3ac1c04cc7e6bdf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12951,13 +10198,8 @@ rule reversinglabs_blocklist_cert_blocklist_d3aee8abb9948844a3ac1c04cc7e6bdf {
             1640822400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_734819463c1195bd6e135ce4d5bf49bc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_734819463c1195bd6e135ce4d5bf49bc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12974,13 +10216,8 @@ rule reversinglabs_blocklist_cert_blocklist_734819463c1195bd6e135ce4d5bf49bc {
             1637884800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_db95b22362d46a73c39e0ac924883c5b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_db95b22362d46a73c39e0ac924883c5b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -12999,13 +10236,8 @@ rule reversinglabs_blocklist_cert_blocklist_db95b22362d46a73c39e0ac924883c5b {
             1621296000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c48732873ac8ccebaf8f0e1e8329cec {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c48732873ac8ccebaf8f0e1e8329cec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13022,13 +10254,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c48732873ac8ccebaf8f0e1e8329cec {
             1618272000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c51f4cf4d82bc920421e1ad93e39d490 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c51f4cf4d82bc920421e1ad93e39d490 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13047,13 +10274,8 @@ rule reversinglabs_blocklist_cert_blocklist_c51f4cf4d82bc920421e1ad93e39d490 {
             1644624000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c96086f1894e6420d2b4bdeea834c4d7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c96086f1894e6420d2b4bdeea834c4d7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13072,13 +10294,8 @@ rule reversinglabs_blocklist_cert_blocklist_c96086f1894e6420d2b4bdeea834c4d7 {
             1644969600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06fa27a121cc82230c3013ee634b6c62 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06fa27a121cc82230c3013ee634b6c62 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13095,13 +10312,8 @@ rule reversinglabs_blocklist_cert_blocklist_06fa27a121cc82230c3013ee634b6c62 {
             1645142401 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9dd3b2f7957ba99f4b04fcdbe03b7aac {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9dd3b2f7957ba99f4b04fcdbe03b7aac {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13120,13 +10332,8 @@ rule reversinglabs_blocklist_cert_blocklist_9dd3b2f7957ba99f4b04fcdbe03b7aac {
             1646438400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_061051ff2a8afab10347a6f1ff08ecb6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_061051ff2a8afab10347a6f1ff08ecb6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13143,13 +10350,8 @@ rule reversinglabs_blocklist_cert_blocklist_061051ff2a8afab10347a6f1ff08ecb6 {
             1606435200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_eda2429083bfafb04e6e7bdda1b08834 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_eda2429083bfafb04e6e7bdda1b08834 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13168,13 +10370,8 @@ rule reversinglabs_blocklist_cert_blocklist_eda2429083bfafb04e6e7bdda1b08834 {
             1625011200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a590154b5980e566314122987dea548 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a590154b5980e566314122987dea548 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13191,13 +10388,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a590154b5980e566314122987dea548 {
             1636416000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_69a72f5591ad78a0825fbb9402ab9543 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_69a72f5591ad78a0825fbb9402ab9543 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13214,13 +10406,8 @@ rule reversinglabs_blocklist_cert_blocklist_69a72f5591ad78a0825fbb9402ab9543 {
             1581811200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0883db137021b51f3a2a08a76a4bc066 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0883db137021b51f3a2a08a76a4bc066 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13237,13 +10424,8 @@ rule reversinglabs_blocklist_cert_blocklist_0883db137021b51f3a2a08a76a4bc066 {
             1627430400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2b921aaaba777b5a99507196c6f1c46c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2b921aaaba777b5a99507196c6f1c46c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13260,13 +10442,8 @@ rule reversinglabs_blocklist_cert_blocklist_2b921aaaba777b5a99507196c6f1c46c {
             1648425600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0332d5c942869bdcabf5a8266197cd14 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0332d5c942869bdcabf5a8266197cd14 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13283,13 +10460,8 @@ rule reversinglabs_blocklist_cert_blocklist_0332d5c942869bdcabf5a8266197cd14 {
             1622160000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4679c5398a279318365fd77a84445699 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4679c5398a279318365fd77a84445699 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13306,13 +10478,8 @@ rule reversinglabs_blocklist_cert_blocklist_4679c5398a279318365fd77a84445699 {
             1643846400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_101d6a5a29d9a77807553ceac669d853 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_101d6a5a29d9a77807553ceac669d853 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13329,13 +10496,8 @@ rule reversinglabs_blocklist_cert_blocklist_101d6a5a29d9a77807553ceac669d853 {
             1646352000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6000f8c02b0a15b1e53b8399845faddf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6000f8c02b0a15b1e53b8399845faddf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13352,13 +10514,8 @@ rule reversinglabs_blocklist_cert_blocklist_6000f8c02b0a15b1e53b8399845faddf {
             1644278400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_121070be1e782f206985543bc7bc58b6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_121070be1e782f206985543bc7bc58b6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13375,13 +10532,8 @@ rule reversinglabs_blocklist_cert_blocklist_121070be1e782f206985543bc7bc58b6 {
             1647820800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5226a724cfa0b4bc0164ecda3f02a3dc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5226a724cfa0b4bc0164ecda3f02a3dc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13398,13 +10550,8 @@ rule reversinglabs_blocklist_cert_blocklist_5226a724cfa0b4bc0164ecda3f02a3dc {
             1647302400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a7be7722b65a866ebcd3bd7f8f10825 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a7be7722b65a866ebcd3bd7f8f10825 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13421,13 +10568,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a7be7722b65a866ebcd3bd7f8f10825 {
             1637971200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_05634456dbedb3556ca8415e64815c5d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_05634456dbedb3556ca8415e64815c5d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13444,13 +10586,8 @@ rule reversinglabs_blocklist_cert_blocklist_05634456dbedb3556ca8415e64815c5d {
             1648425600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2e07a8d6e3b25ae010c8ed2c4ab0fb37 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2e07a8d6e3b25ae010c8ed2c4ab0fb37 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13467,13 +10604,8 @@ rule reversinglabs_blocklist_cert_blocklist_2e07a8d6e3b25ae010c8ed2c4ab0fb37 {
             1650499200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_30b4eeebd88fd205acc8577bbaed8655 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_30b4eeebd88fd205acc8577bbaed8655 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13490,13 +10622,8 @@ rule reversinglabs_blocklist_cert_blocklist_30b4eeebd88fd205acc8577bbaed8655 {
             1646179200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b3391a6c1b3c6836533959e2384ab4ca {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b3391a6c1b3c6836533959e2384ab4ca {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13515,13 +10642,8 @@ rule reversinglabs_blocklist_cert_blocklist_b3391a6c1b3c6836533959e2384ab4ca {
             1595462400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_05d50a0e09bb9a836ffb90a3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_05d50a0e09bb9a836ffb90a3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13538,13 +10660,8 @@ rule reversinglabs_blocklist_cert_blocklist_05d50a0e09bb9a836ffb90a3 {
             1643892810 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a2787fbb4627c91611573e323584113 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a2787fbb4627c91611573e323584113 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13561,13 +10678,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a2787fbb4627c91611573e323584113 {
             1640822400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1d36c4f439d651503589318f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1d36c4f439d651503589318f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13584,13 +10696,8 @@ rule reversinglabs_blocklist_cert_blocklist_1d36c4f439d651503589318f {
             1651518469 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_26f855a25890b749578f13e4b9459768 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_26f855a25890b749578f13e4b9459768 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13607,13 +10714,8 @@ rule reversinglabs_blocklist_cert_blocklist_26f855a25890b749578f13e4b9459768 {
             1645401600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f1ae2239bb96c5aef49d0ae50266912 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f1ae2239bb96c5aef49d0ae50266912 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13630,13 +10732,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f1ae2239bb96c5aef49d0ae50266912 {
             1653004800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1deea179f5757fe529043577762419df {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1deea179f5757fe529043577762419df {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13653,13 +10750,8 @@ rule reversinglabs_blocklist_cert_blocklist_1deea179f5757fe529043577762419df {
             1645401600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5b1f9ec88d185631ab032dbfd5166c0d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5b1f9ec88d185631ab032dbfd5166c0d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13676,13 +10768,8 @@ rule reversinglabs_blocklist_cert_blocklist_5b1f9ec88d185631ab032dbfd5166c0d {
             1656028800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_58af00ce542760fc116b41fa92e18589 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_58af00ce542760fc116b41fa92e18589 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13699,13 +10786,8 @@ rule reversinglabs_blocklist_cert_blocklist_58af00ce542760fc116b41fa92e18589 {
             1654819200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_25ba18a267d6d8e08ebc6e2457d58d1e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_25ba18a267d6d8e08ebc6e2457d58d1e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13722,13 +10804,8 @@ rule reversinglabs_blocklist_cert_blocklist_25ba18a267d6d8e08ebc6e2457d58d1e {
             1648684800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_12df5ff3460979cec1288d874a9fbf83 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_12df5ff3460979cec1288d874a9fbf83 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13745,13 +10822,8 @@ rule reversinglabs_blocklist_cert_blocklist_12df5ff3460979cec1288d874a9fbf83 {
             1599091200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_df2547b2cab5689a81d61de80eaaa3a2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_df2547b2cab5689a81d61de80eaaa3a2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13770,13 +10842,8 @@ rule reversinglabs_blocklist_cert_blocklist_df2547b2cab5689a81d61de80eaaa3a2 {
             1657756800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_28b691272719b1ee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_28b691272719b1ee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13793,13 +10860,8 @@ rule reversinglabs_blocklist_cert_blocklist_28b691272719b1ee {
             1616410532 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1c897216e58e83cbe74ad03284e1fb82 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1c897216e58e83cbe74ad03284e1fb82 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13816,13 +10878,8 @@ rule reversinglabs_blocklist_cert_blocklist_1c897216e58e83cbe74ad03284e1fb82 {
             1639119705 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5a364c4957d93406f76321c2316f42f0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5a364c4957d93406f76321c2316f42f0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13839,13 +10896,8 @@ rule reversinglabs_blocklist_cert_blocklist_5a364c4957d93406f76321c2316f42f0 {
             1661337307 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e7e7f7180666546ce7a8da32119f5ce1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e7e7f7180666546ce7a8da32119f5ce1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13864,13 +10916,8 @@ rule reversinglabs_blocklist_cert_blocklist_e7e7f7180666546ce7a8da32119f5ce1 {
             1661558399 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_062b2827500c5df35a83f661b3af5dd3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_062b2827500c5df35a83f661b3af5dd3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13887,13 +10934,8 @@ rule reversinglabs_blocklist_cert_blocklist_062b2827500c5df35a83f661b3af5dd3 {
             1651449600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7bf27695fd20b588f2b2f173b6caf2ba {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7bf27695fd20b588f2b2f173b6caf2ba {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13910,13 +10952,8 @@ rule reversinglabs_blocklist_cert_blocklist_7bf27695fd20b588f2b2f173b6caf2ba {
             1662112800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1b248c8508042d36bbd5d92d189c61d8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1b248c8508042d36bbd5d92d189c61d8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13933,13 +10970,8 @@ rule reversinglabs_blocklist_cert_blocklist_1b248c8508042d36bbd5d92d189c61d8 {
             1663171218 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_032660ee1d49ad35086027473e2614e5e724 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_032660ee1d49ad35086027473e2614e5e724 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13956,13 +10988,8 @@ rule reversinglabs_blocklist_cert_blocklist_032660ee1d49ad35086027473e2614e5e724
             1660238245 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_043052956e1e6dbd5f6ae3d8b82cad2a2ed8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_043052956e1e6dbd5f6ae3d8b82cad2a2ed8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -13979,13 +11006,8 @@ rule reversinglabs_blocklist_cert_blocklist_043052956e1e6dbd5f6ae3d8b82cad2a2ed8
             1662149613 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_dbc03ca7e6ae6db6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_dbc03ca7e6ae6db6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14004,13 +11026,8 @@ rule reversinglabs_blocklist_cert_blocklist_dbc03ca7e6ae6db6 {
             1600826873 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7d27332c3cb3a382a4fd232c5c66a2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7d27332c3cb3a382a4fd232c5c66a2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14027,13 +11044,8 @@ rule reversinglabs_blocklist_cert_blocklist_7d27332c3cb3a382a4fd232c5c66a2 {
             1655424000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_82d224323efa65060b641f51fadfef02 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_82d224323efa65060b641f51fadfef02 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14052,13 +11064,8 @@ rule reversinglabs_blocklist_cert_blocklist_82d224323efa65060b641f51fadfef02 {
             1665100800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_890570b6b0e2868a53be3f8f904a88ee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_890570b6b0e2868a53be3f8f904a88ee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14077,13 +11084,8 @@ rule reversinglabs_blocklist_cert_blocklist_890570b6b0e2868a53be3f8f904a88ee {
             1636588800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2642fe865f7566ce3123a5142c207094 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2642fe865f7566ce3123a5142c207094 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14100,13 +11102,8 @@ rule reversinglabs_blocklist_cert_blocklist_2642fe865f7566ce3123a5142c207094 {
             1666310400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4a2e337fff23e5b2a1321ffde56d1759 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4a2e337fff23e5b2a1321ffde56d1759 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14123,13 +11120,8 @@ rule reversinglabs_blocklist_cert_blocklist_4a2e337fff23e5b2a1321ffde56d1759 {
             1660314070 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_92d9b92f8cf7a1ba8b2c025be730c300 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_92d9b92f8cf7a1ba8b2c025be730c300 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14148,13 +11140,8 @@ rule reversinglabs_blocklist_cert_blocklist_92d9b92f8cf7a1ba8b2c025be730c300 {
             1598054400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b8164f7143e1a313003ab0c834562f1f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b8164f7143e1a313003ab0c834562f1f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14173,13 +11160,8 @@ rule reversinglabs_blocklist_cert_blocklist_b8164f7143e1a313003ab0c834562f1f {
             1598313600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_24e4a2b3db6be1007b9ddc91995bc0c8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_24e4a2b3db6be1007b9ddc91995bc0c8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14196,13 +11178,8 @@ rule reversinglabs_blocklist_cert_blocklist_24e4a2b3db6be1007b9ddc91995bc0c8 {
             1645142400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_881573fc67ff7395dde5bccfbce5b088 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_881573fc67ff7395dde5bccfbce5b088 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14221,13 +11198,8 @@ rule reversinglabs_blocklist_cert_blocklist_881573fc67ff7395dde5bccfbce5b088 {
             1620000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_53e1f226cb77574f8fbeb5682da091bb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_53e1f226cb77574f8fbeb5682da091bb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14244,13 +11216,8 @@ rule reversinglabs_blocklist_cert_blocklist_53e1f226cb77574f8fbeb5682da091bb {
             1654020559 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0772b4d1d63233d2b8771997bc8da5c4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0772b4d1d63233d2b8771997bc8da5c4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14267,13 +11234,8 @@ rule reversinglabs_blocklist_cert_blocklist_0772b4d1d63233d2b8771997bc8da5c4 {
             1637971201 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_02b6656292310b84022db5541bc48faf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_02b6656292310b84022db5541bc48faf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14290,13 +11252,8 @@ rule reversinglabs_blocklist_cert_blocklist_02b6656292310b84022db5541bc48faf {
             1613865600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_64c2505c7306639fc8eae544b0305338 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_64c2505c7306639fc8eae544b0305338 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14313,13 +11270,8 @@ rule reversinglabs_blocklist_cert_blocklist_64c2505c7306639fc8eae544b0305338 {
             1609418043 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2f96a89bfec6e44dd224e8fd7e72d9bb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2f96a89bfec6e44dd224e8fd7e72d9bb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14336,13 +11288,8 @@ rule reversinglabs_blocklist_cert_blocklist_2f96a89bfec6e44dd224e8fd7e72d9bb {
             1625529600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b649a966410f62999c939384af553919 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b649a966410f62999c939384af553919 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14361,13 +11308,8 @@ rule reversinglabs_blocklist_cert_blocklist_b649a966410f62999c939384af553919 {
             1590537600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_45245eef53fcf38169c715cf68f44452 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_45245eef53fcf38169c715cf68f44452 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14384,13 +11326,8 @@ rule reversinglabs_blocklist_cert_blocklist_45245eef53fcf38169c715cf68f44452 {
             1639958400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1895433ee9e2bd48619d75132262616f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1895433ee9e2bd48619d75132262616f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14407,13 +11344,8 @@ rule reversinglabs_blocklist_cert_blocklist_1895433ee9e2bd48619d75132262616f {
             1619789516 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1ffc9825644caf5b1f521780c5c7f42c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1ffc9825644caf5b1f521780c5c7f42c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14430,13 +11362,8 @@ rule reversinglabs_blocklist_cert_blocklist_1ffc9825644caf5b1f521780c5c7f42c {
             1615507200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8d52fb12a2511e86bbb0ba75c517eab0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8d52fb12a2511e86bbb0ba75c517eab0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14455,13 +11382,8 @@ rule reversinglabs_blocklist_cert_blocklist_8d52fb12a2511e86bbb0ba75c517eab0 {
             1599177600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_332bd5801e8415585e72c87e0e2ec71d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_332bd5801e8415585e72c87e0e2ec71d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14478,13 +11400,8 @@ rule reversinglabs_blocklist_cert_blocklist_332bd5801e8415585e72c87e0e2ec71d {
             1662616824 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e3b80c0932b52a708477939b0d32186f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e3b80c0932b52a708477939b0d32186f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14503,13 +11420,8 @@ rule reversinglabs_blocklist_cert_blocklist_e3b80c0932b52a708477939b0d32186f {
             1617062400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c79f817f082986bef3209f6723c8da97 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c79f817f082986bef3209f6723c8da97 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14528,13 +11440,8 @@ rule reversinglabs_blocklist_cert_blocklist_c79f817f082986bef3209f6723c8da97 {
             1616371200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1e5efa53a14599cc82f56f0790e20b17 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1e5efa53a14599cc82f56f0790e20b17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14551,13 +11458,8 @@ rule reversinglabs_blocklist_cert_blocklist_1e5efa53a14599cc82f56f0790e20b17 {
             1623196800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0cf2d0b5bfdd68cf777a0c12f806a569 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0cf2d0b5bfdd68cf777a0c12f806a569 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14574,13 +11476,8 @@ rule reversinglabs_blocklist_cert_blocklist_0cf2d0b5bfdd68cf777a0c12f806a569 {
             1611705600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f675139ea68b897a865a98f8e4611f00 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f675139ea68b897a865a98f8e4611f00 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14599,13 +11496,8 @@ rule reversinglabs_blocklist_cert_blocklist_f675139ea68b897a865a98f8e4611f00 {
             1606953600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4728189fa0f57793484cdf764f5e283d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4728189fa0f57793484cdf764f5e283d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14622,13 +11514,8 @@ rule reversinglabs_blocklist_cert_blocklist_4728189fa0f57793484cdf764f5e283d {
             1647302400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9bd81a9adaf71f1ff081c1f4a05d7fd7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9bd81a9adaf71f1ff081c1f4a05d7fd7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14647,13 +11534,8 @@ rule reversinglabs_blocklist_cert_blocklist_9bd81a9adaf71f1ff081c1f4a05d7fd7 {
             1601683200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c81319d20c6f1f1aec3398522189d90c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c81319d20c6f1f1aec3398522189d90c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14672,13 +11554,8 @@ rule reversinglabs_blocklist_cert_blocklist_c81319d20c6f1f1aec3398522189d90c {
             1643500800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c318d876768258a696ab9dd825e27acd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c318d876768258a696ab9dd825e27acd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14697,13 +11574,8 @@ rule reversinglabs_blocklist_cert_blocklist_c318d876768258a696ab9dd825e27acd {
             1615161600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06df5c318759d6ea9d090bfb2faf1d94 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06df5c318759d6ea9d090bfb2faf1d94 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14720,13 +11592,8 @@ rule reversinglabs_blocklist_cert_blocklist_06df5c318759d6ea9d090bfb2faf1d94 {
             1634515201 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_02de1cc6c487954592f1bf574ca2b000 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_02de1cc6c487954592f1bf574ca2b000 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14743,13 +11610,8 @@ rule reversinglabs_blocklist_cert_blocklist_02de1cc6c487954592f1bf574ca2b000 {
             1613735394 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a32b8b4f1be43c23eb2848ab4ef06bb2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a32b8b4f1be43c23eb2848ab4ef06bb2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14768,13 +11630,8 @@ rule reversinglabs_blocklist_cert_blocklist_a32b8b4f1be43c23eb2848ab4ef06bb2 {
             1673395200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_626735ed30e50e3e0553986d806bfc54 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_626735ed30e50e3e0553986d806bfc54 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14791,13 +11648,8 @@ rule reversinglabs_blocklist_cert_blocklist_626735ed30e50e3e0553986d806bfc54 {
             1666742400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_34d42e871ddb1c92fa20b55b384e1259 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_34d42e871ddb1c92fa20b55b384e1259 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14814,13 +11666,8 @@ rule reversinglabs_blocklist_cert_blocklist_34d42e871ddb1c92fa20b55b384e1259 {
             1630368000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08d4dc90047b8470ccaf3924dfbd8b5f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08d4dc90047b8470ccaf3924dfbd8b5f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14837,13 +11684,8 @@ rule reversinglabs_blocklist_cert_blocklist_08d4dc90047b8470ccaf3924dfbd8b5f {
             1619136000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c2fc83d458e653837fcfc132c9b03062 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c2fc83d458e653837fcfc132c9b03062 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14862,13 +11704,8 @@ rule reversinglabs_blocklist_cert_blocklist_c2fc83d458e653837fcfc132c9b03062 {
             1602201600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_54c793d2224bdd6ca527bb2b7b9dfe9d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_54c793d2224bdd6ca527bb2b7b9dfe9d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14885,13 +11722,8 @@ rule reversinglabs_blocklist_cert_blocklist_54c793d2224bdd6ca527bb2b7b9dfe9d {
             1629676800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8cece6df54cf6ad63596546d77ba3581 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8cece6df54cf6ad63596546d77ba3581 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14910,13 +11742,8 @@ rule reversinglabs_blocklist_cert_blocklist_8cece6df54cf6ad63596546d77ba3581 {
             1613088000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_984e84cfe362e278f558e2c70aaafac2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_984e84cfe362e278f558e2c70aaafac2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14935,13 +11762,8 @@ rule reversinglabs_blocklist_cert_blocklist_984e84cfe362e278f558e2c70aaafac2 {
             1640304000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ff52eb011bb748fee75153cbe1e50dd6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ff52eb011bb748fee75153cbe1e50dd6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14960,13 +11782,8 @@ rule reversinglabs_blocklist_cert_blocklist_ff52eb011bb748fee75153cbe1e50dd6 {
             1647388800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_84a4a0d0657e217b176b455e2465aee0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_84a4a0d0657e217b176b455e2465aee0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -14985,13 +11802,8 @@ rule reversinglabs_blocklist_cert_blocklist_84a4a0d0657e217b176b455e2465aee0 {
             1616457600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b8f726508cf1d7b7913bf4bbd1e5c19c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b8f726508cf1d7b7913bf4bbd1e5c19c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15010,13 +11822,8 @@ rule reversinglabs_blocklist_cert_blocklist_b8f726508cf1d7b7913bf4bbd1e5c19c {
             1619568000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6a241ffe96a6349df608d22c02942268 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6a241ffe96a6349df608d22c02942268 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15033,13 +11840,8 @@ rule reversinglabs_blocklist_cert_blocklist_6a241ffe96a6349df608d22c02942268 {
             1605052800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aa1d84779792b57f91fe7a4bde041942 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aa1d84779792b57f91fe7a4bde041942 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15058,13 +11860,8 @@ rule reversinglabs_blocklist_cert_blocklist_aa1d84779792b57f91fe7a4bde041942 {
             1639872000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3c98b6872fbb1f4ae37a4caa749d24c2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3c98b6872fbb1f4ae37a4caa749d24c2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15081,13 +11878,8 @@ rule reversinglabs_blocklist_cert_blocklist_3c98b6872fbb1f4ae37a4caa749d24c2 {
             1613370100 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e4e795fd1fd25595b869ce22aa7dc49f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e4e795fd1fd25595b869ce22aa7dc49f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15106,13 +11898,8 @@ rule reversinglabs_blocklist_cert_blocklist_e4e795fd1fd25595b869ce22aa7dc49f {
             1608508800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e953ada7e8f1438e5f7680ff599ae43e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e953ada7e8f1438e5f7680ff599ae43e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15131,13 +11918,8 @@ rule reversinglabs_blocklist_cert_blocklist_e953ada7e8f1438e5f7680ff599ae43e {
             1614729600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_28c57df09ce7cc3fde2243beb4d00101 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_28c57df09ce7cc3fde2243beb4d00101 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15154,13 +11936,8 @@ rule reversinglabs_blocklist_cert_blocklist_28c57df09ce7cc3fde2243beb4d00101 {
             1622678400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2d8cfcf04209dc7f771d8d18e462c35a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2d8cfcf04209dc7f771d8d18e462c35a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15177,13 +11954,8 @@ rule reversinglabs_blocklist_cert_blocklist_2d8cfcf04209dc7f771d8d18e462c35a {
             1631491200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_016836311fc39fbb8e6f308bb03cc2b3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_016836311fc39fbb8e6f308bb03cc2b3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15200,13 +11972,8 @@ rule reversinglabs_blocklist_cert_blocklist_016836311fc39fbb8e6f308bb03cc2b3 {
             1602547200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_435abf46053a0a445c54217a8c233a7f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_435abf46053a0a445c54217a8c233a7f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15223,13 +11990,8 @@ rule reversinglabs_blocklist_cert_blocklist_435abf46053a0a445c54217a8c233a7f {
             1616976000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b2f9c693a2e6634565f63c79b01dd8f8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b2f9c693a2e6634565f63c79b01dd8f8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15248,13 +12010,8 @@ rule reversinglabs_blocklist_cert_blocklist_b2f9c693a2e6634565f63c79b01dd8f8 {
             1620000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_54a6d33f73129e0ef059ccf51be0c35e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_54a6d33f73129e0ef059ccf51be0c35e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15271,13 +12028,8 @@ rule reversinglabs_blocklist_cert_blocklist_54a6d33f73129e0ef059ccf51be0c35e {
             1607100127 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_142aac4217e22b525c8587589773ba9b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_142aac4217e22b525c8587589773ba9b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15294,13 +12046,8 @@ rule reversinglabs_blocklist_cert_blocklist_142aac4217e22b525c8587589773ba9b {
             1614124800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_239664c12baeb5a6d787912888051392 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_239664c12baeb5a6d787912888051392 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15317,13 +12064,8 @@ rule reversinglabs_blocklist_cert_blocklist_239664c12baeb5a6d787912888051392 {
             1618272000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0218ebfd5a9bfd55d2f661f0d18d1d71 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0218ebfd5a9bfd55d2f661f0d18d1d71 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15340,13 +12082,8 @@ rule reversinglabs_blocklist_cert_blocklist_0218ebfd5a9bfd55d2f661f0d18d1d71 {
             1608508800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_35590ebe4a02dc23317d8ce47a947a9b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_35590ebe4a02dc23317d8ce47a947a9b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15363,13 +12100,8 @@ rule reversinglabs_blocklist_cert_blocklist_35590ebe4a02dc23317d8ce47a947a9b {
             1602201600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aa07d4f2857119cee514a0bd412f8201 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aa07d4f2857119cee514a0bd412f8201 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15388,13 +12120,8 @@ rule reversinglabs_blocklist_cert_blocklist_aa07d4f2857119cee514a0bd412f8201 {
             1615766400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_40f5660a90301e7a8a8c3b42 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_40f5660a90301e7a8a8c3b42 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15411,13 +12138,8 @@ rule reversinglabs_blocklist_cert_blocklist_40f5660a90301e7a8a8c3b42 {
             1641833688 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0400c7614f86d75fe4ee3f6192b6feda {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0400c7614f86d75fe4ee3f6192b6feda {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15434,13 +12156,8 @@ rule reversinglabs_blocklist_cert_blocklist_0400c7614f86d75fe4ee3f6192b6feda {
             1626393601 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e573d9c8b403c41bd59ffa0a8efd4168 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e573d9c8b403c41bd59ffa0a8efd4168 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15459,13 +12176,8 @@ rule reversinglabs_blocklist_cert_blocklist_e573d9c8b403c41bd59ffa0a8efd4168 {
             1563148800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b06bc166fc765dacd2f7448c8cdd9205 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b06bc166fc765dacd2f7448c8cdd9205 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15484,13 +12196,8 @@ rule reversinglabs_blocklist_cert_blocklist_b06bc166fc765dacd2f7448c8cdd9205 {
             1615507200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e9268ed63a7d7e9dfd40a664ddfbaf18 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e9268ed63a7d7e9dfd40a664ddfbaf18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15509,13 +12216,8 @@ rule reversinglabs_blocklist_cert_blocklist_e9268ed63a7d7e9dfd40a664ddfbaf18 {
             1647302400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_425dc3e0ca8bcdce19d00d87e3f0ba28 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_425dc3e0ca8bcdce19d00d87e3f0ba28 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15532,13 +12234,8 @@ rule reversinglabs_blocklist_cert_blocklist_425dc3e0ca8bcdce19d00d87e3f0ba28 {
             1621900800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_afc0ddb7bdc8207e8c3b7204018eecd3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_afc0ddb7bdc8207e8c3b7204018eecd3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15557,13 +12254,8 @@ rule reversinglabs_blocklist_cert_blocklist_afc0ddb7bdc8207e8c3b7204018eecd3 {
             1629676800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_38989ec61ecdb7391ff5647f7d58ad18 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_38989ec61ecdb7391ff5647f7d58ad18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15580,13 +12272,8 @@ rule reversinglabs_blocklist_cert_blocklist_38989ec61ecdb7391ff5647f7d58ad18 {
             1613088000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bc6c43d206a360f2d6b58537c456b709 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bc6c43d206a360f2d6b58537c456b709 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15605,13 +12292,8 @@ rule reversinglabs_blocklist_cert_blocklist_bc6c43d206a360f2d6b58537c456b709 {
             1616630400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4929ab561c812af93ddb9758b545f546 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4929ab561c812af93ddb9758b545f546 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15628,13 +12310,8 @@ rule reversinglabs_blocklist_cert_blocklist_4929ab561c812af93ddb9758b545f546 {
             1594252800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_25c6dbce3d5499f65d9df16e9007465d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_25c6dbce3d5499f65d9df16e9007465d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15651,13 +12328,8 @@ rule reversinglabs_blocklist_cert_blocklist_25c6dbce3d5499f65d9df16e9007465d {
             1626566400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bc6a1812e001362469541108973bbd52 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bc6a1812e001362469541108973bbd52 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15676,13 +12348,8 @@ rule reversinglabs_blocklist_cert_blocklist_bc6a1812e001362469541108973bbd52 {
             1623801600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_bde1d6dc3622724f427a39e6a34f5124 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_bde1d6dc3622724f427a39e6a34f5124 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15701,13 +12368,8 @@ rule reversinglabs_blocklist_cert_blocklist_bde1d6dc3622724f427a39e6a34f5124 {
             1628553600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5c9f5f96726a6e6fc3b8bb153ac82af2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5c9f5f96726a6e6fc3b8bb153ac82af2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15724,13 +12386,8 @@ rule reversinglabs_blocklist_cert_blocklist_5c9f5f96726a6e6fc3b8bb153ac82af2 {
             1679061408 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e889bb3b7f7194b674c6a0335a608e0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e889bb3b7f7194b674c6a0335a608e0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15747,13 +12404,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e889bb3b7f7194b674c6a0335a608e0 {
             1646956800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f62f760704bdf8dc30c7baa7376f484 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f62f760704bdf8dc30c7baa7376f484 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15770,13 +12422,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f62f760704bdf8dc30c7baa7376f484 {
             1659398400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_071202dbfda40b629c5e7acac947c2d3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_071202dbfda40b629c5e7acac947c2d3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15793,13 +12440,8 @@ rule reversinglabs_blocklist_cert_blocklist_071202dbfda40b629c5e7acac947c2d3 {
             1658620801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_98ab9585c04d7f0e4cf4de98c14b684d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_98ab9585c04d7f0e4cf4de98c14b684d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15818,13 +12460,8 @@ rule reversinglabs_blocklist_cert_blocklist_98ab9585c04d7f0e4cf4de98c14b684d {
             1656547200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4631713e66e91347f0388b98cf747794 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4631713e66e91347f0388b98cf747794 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15841,13 +12478,8 @@ rule reversinglabs_blocklist_cert_blocklist_4631713e66e91347f0388b98cf747794 {
             1488240000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e963f8983d21b4c1a69c66a9d37498e5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e963f8983d21b4c1a69c66a9d37498e5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15866,13 +12498,8 @@ rule reversinglabs_blocklist_cert_blocklist_e963f8983d21b4c1a69c66a9d37498e5 {
             1656288000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e44fcedd49f22f7a28cecc99104f61a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e44fcedd49f22f7a28cecc99104f61a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15889,13 +12516,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e44fcedd49f22f7a28cecc99104f61a {
             1672923378 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_35b49ee870aea532e6ef0a4987105c8f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_35b49ee870aea532e6ef0a4987105c8f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15912,13 +12534,8 @@ rule reversinglabs_blocklist_cert_blocklist_35b49ee870aea532e6ef0a4987105c8f {
             1663151018 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_063dcd7d7b0bc77cac844c7213be3989 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_063dcd7d7b0bc77cac844c7213be3989 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15935,13 +12552,8 @@ rule reversinglabs_blocklist_cert_blocklist_063dcd7d7b0bc77cac844c7213be3989 {
             1656892801 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6f8777aa866142ad7120e5e1c9321e37 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6f8777aa866142ad7120e5e1c9321e37 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15958,13 +12570,8 @@ rule reversinglabs_blocklist_cert_blocklist_6f8777aa866142ad7120e5e1c9321e37 {
             1629676800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4a7f07c5d4ad2e23f9e8e03f0e229dd4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4a7f07c5d4ad2e23f9e8e03f0e229dd4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -15981,13 +12588,8 @@ rule reversinglabs_blocklist_cert_blocklist_4a7f07c5d4ad2e23f9e8e03f0e229dd4 {
             1608681600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f5f9c8f8c33e4ce84dd48fcb03ccb075 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f5f9c8f8c33e4ce84dd48fcb03ccb075 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16006,13 +12608,8 @@ rule reversinglabs_blocklist_cert_blocklist_f5f9c8f8c33e4ce84dd48fcb03ccb075 {
             1545004800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_57fc55239f21f139978609e323097132 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_57fc55239f21f139978609e323097132 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16029,13 +12626,8 @@ rule reversinglabs_blocklist_cert_blocklist_57fc55239f21f139978609e323097132 {
             1501632000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_eeefec4308abe63323600e1608f5e6f2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_eeefec4308abe63323600e1608f5e6f2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16054,13 +12646,8 @@ rule reversinglabs_blocklist_cert_blocklist_eeefec4308abe63323600e1608f5e6f2 {
             1491177600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0ecd460ce14bd8ef2926da2cd9a44176 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0ecd460ce14bd8ef2926da2cd9a44176 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16077,13 +12664,8 @@ rule reversinglabs_blocklist_cert_blocklist_0ecd460ce14bd8ef2926da2cd9a44176 {
             1463035153 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5e75e997f3d70bb8c182d56b25b7d836 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5e75e997f3d70bb8c182d56b25b7d836 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16100,13 +12682,8 @@ rule reversinglabs_blocklist_cert_blocklist_5e75e997f3d70bb8c182d56b25b7d836 {
             1324252800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d5690d94f15315e143db10af35497dc5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d5690d94f15315e143db10af35497dc5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16125,13 +12702,8 @@ rule reversinglabs_blocklist_cert_blocklist_d5690d94f15315e143db10af35497dc5 {
             1576195200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_8223c74185add0927246f5e33ebac467 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_8223c74185add0927246f5e33ebac467 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16150,13 +12722,8 @@ rule reversinglabs_blocklist_cert_blocklist_8223c74185add0927246f5e33ebac467 {
             1463616000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_dd9e9e1d7c573714e3f567c5380ae6d0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_dd9e9e1d7c573714e3f567c5380ae6d0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16175,13 +12742,8 @@ rule reversinglabs_blocklist_cert_blocklist_dd9e9e1d7c573714e3f567c5380ae6d0 {
             1575849600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3d5e71 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3d5e71 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16198,13 +12760,8 @@ rule reversinglabs_blocklist_cert_blocklist_3d5e71 {
             1066997730 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c33187fe848a65e8484ea492cb2cbb18 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c33187fe848a65e8484ea492cb2cbb18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16223,13 +12780,8 @@ rule reversinglabs_blocklist_cert_blocklist_c33187fe848a65e8484ea492cb2cbb18 {
             1426204800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6fc143ba34cabf1de7a4c7f8f4cdad6d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6fc143ba34cabf1de7a4c7f8f4cdad6d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16246,13 +12798,8 @@ rule reversinglabs_blocklist_cert_blocklist_6fc143ba34cabf1de7a4c7f8f4cdad6d {
             1147046400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6ac6268b2e431a2c1369346d175d0e30 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6ac6268b2e431a2c1369346d175d0e30 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16269,13 +12816,8 @@ rule reversinglabs_blocklist_cert_blocklist_6ac6268b2e431a2c1369346d175d0e30 {
             1436140800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fc4d9178b8df2c19e269ac6f43dd708 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fc4d9178b8df2c19e269ac6f43dd708 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16292,13 +12834,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fc4d9178b8df2c19e269ac6f43dd708 {
             1466553600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e01407871e2146c9baab1ae7ab8ab172 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e01407871e2146c9baab1ae7ab8ab172 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16317,13 +12854,8 @@ rule reversinglabs_blocklist_cert_blocklist_e01407871e2146c9baab1ae7ab8ab172 {
             1464220800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_effc6d19d6fc85872e4e5b3ccee6d301 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_effc6d19d6fc85872e4e5b3ccee6d301 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16342,13 +12874,8 @@ rule reversinglabs_blocklist_cert_blocklist_effc6d19d6fc85872e4e5b3ccee6d301 {
             1572307200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2f4a25d52b16eb4c9dfe71ebbd8121bb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2f4a25d52b16eb4c9dfe71ebbd8121bb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16365,13 +12892,8 @@ rule reversinglabs_blocklist_cert_blocklist_2f4a25d52b16eb4c9dfe71ebbd8121bb {
             1629763200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6889aab6202bcc5f11caedf4d04f435b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6889aab6202bcc5f11caedf4d04f435b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16388,13 +12910,8 @@ rule reversinglabs_blocklist_cert_blocklist_6889aab6202bcc5f11caedf4d04f435b {
             1231891200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3be63083fbb1787b445da97583721419 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3be63083fbb1787b445da97583721419 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16411,13 +12928,8 @@ rule reversinglabs_blocklist_cert_blocklist_3be63083fbb1787b445da97583721419 {
             1493942400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e2d3449272b6b96b8b9f728e87580d5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e2d3449272b6b96b8b9f728e87580d5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16434,13 +12946,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e2d3449272b6b96b8b9f728e87580d5 {
             1421107200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_268c0d7028a154ac3b6349c5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_268c0d7028a154ac3b6349c5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16457,13 +12964,8 @@ rule reversinglabs_blocklist_cert_blocklist_268c0d7028a154ac3b6349c5 {
             1474266712 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2daa8d629cc0410a9482e62a0f8bf8fc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2daa8d629cc0410a9482e62a0f8bf8fc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16480,13 +12982,8 @@ rule reversinglabs_blocklist_cert_blocklist_2daa8d629cc0410a9482e62a0f8bf8fc {
             1543449600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_9a727e200ea76570 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_9a727e200ea76570 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16505,13 +13002,8 @@ rule reversinglabs_blocklist_cert_blocklist_9a727e200ea76570 {
             1539056530 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0954a3c876df9262cde5817f9870f0c6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0954a3c876df9262cde5817f9870f0c6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16528,13 +13020,8 @@ rule reversinglabs_blocklist_cert_blocklist_0954a3c876df9262cde5817f9870f0c6 {
             1160438400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3c30930e53bb026f9a5d7440155f7118 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3c30930e53bb026f9a5d7440155f7118 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16551,13 +13038,8 @@ rule reversinglabs_blocklist_cert_blocklist_3c30930e53bb026f9a5d7440155f7118 {
             1064534400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_432eefc0d4dc0326eb277a518cc4310a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_432eefc0d4dc0326eb277a518cc4310a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16574,13 +13056,8 @@ rule reversinglabs_blocklist_cert_blocklist_432eefc0d4dc0326eb277a518cc4310a {
             1466121600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_470d6ce21a6940320261f09e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_470d6ce21a6940320261f09e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16597,13 +13074,8 @@ rule reversinglabs_blocklist_cert_blocklist_470d6ce21a6940320261f09e {
             1474523038 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7e6bc7e5a49e2c28e6f5d042 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7e6bc7e5a49e2c28e6f5d042 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16620,13 +13092,8 @@ rule reversinglabs_blocklist_cert_blocklist_7e6bc7e5a49e2c28e6f5d042 {
             1560995284 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4c5020899147c850196c4ebf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4c5020899147c850196c4ebf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16643,13 +13110,8 @@ rule reversinglabs_blocklist_cert_blocklist_4c5020899147c850196c4ebf {
             1476693792 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4efcf7adc21f070e590d49ddb8081397 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4efcf7adc21f070e590d49ddb8081397 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16666,13 +13128,8 @@ rule reversinglabs_blocklist_cert_blocklist_4efcf7adc21f070e590d49ddb8081397 {
             1476921600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cbd37c0a651913ee25a6860d7d5ccdf2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cbd37c0a651913ee25a6860d7d5ccdf2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16691,13 +13148,8 @@ rule reversinglabs_blocklist_cert_blocklist_cbd37c0a651913ee25a6860d7d5ccdf2 {
             1431734400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5fe0ad6b03c57ab67a352159004ca3db {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5fe0ad6b03c57ab67a352159004ca3db {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16714,13 +13166,8 @@ rule reversinglabs_blocklist_cert_blocklist_5fe0ad6b03c57ab67a352159004ca3db {
             1402272000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_642ad8e5ef8b3ac767f0d5c1a999bdaa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_642ad8e5ef8b3ac767f0d5c1a999bdaa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16737,13 +13184,8 @@ rule reversinglabs_blocklist_cert_blocklist_642ad8e5ef8b3ac767f0d5c1a999bdaa {
             1447804800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5333d3079d8afda715703775e1389991 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5333d3079d8afda715703775e1389991 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16760,13 +13202,8 @@ rule reversinglabs_blocklist_cert_blocklist_5333d3079d8afda715703775e1389991 {
             1239148800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_139a7ee1f1a7735c151089755df5d373 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_139a7ee1f1a7735c151089755df5d373 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16783,13 +13220,8 @@ rule reversinglabs_blocklist_cert_blocklist_139a7ee1f1a7735c151089755df5d373 {
             1476057600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_74dbe83082e1b3dfa29f9c24 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_74dbe83082e1b3dfa29f9c24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16806,13 +13238,8 @@ rule reversinglabs_blocklist_cert_blocklist_74dbe83082e1b3dfa29f9c24 {
             1468817578 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a466553a6391aafd181b400266c7b18 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a466553a6391aafd181b400266c7b18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16829,13 +13256,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a466553a6391aafd181b400266c7b18 {
             1555545600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0d3dec8794fa7228d1ee40eeb8187149 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0d3dec8794fa7228d1ee40eeb8187149 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16852,13 +13274,8 @@ rule reversinglabs_blocklist_cert_blocklist_0d3dec8794fa7228d1ee40eeb8187149 {
             1582675200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_24af70b5d17a63ad053e5821 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_24af70b5d17a63ad053e5821 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16875,13 +13292,8 @@ rule reversinglabs_blocklist_cert_blocklist_24af70b5d17a63ad053e5821 {
             1474179615 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_402e9fcba61e5eaf9c0c7b3bfd6259d9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_402e9fcba61e5eaf9c0c7b3bfd6259d9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16898,13 +13310,8 @@ rule reversinglabs_blocklist_cert_blocklist_402e9fcba61e5eaf9c0c7b3bfd6259d9 {
             1477440000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2c84f9136059e96134f8766670eacd52 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2c84f9136059e96134f8766670eacd52 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16921,13 +13328,8 @@ rule reversinglabs_blocklist_cert_blocklist_2c84f9136059e96134f8766670eacd52 {
             1442215311 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6716a9c195987d5cfe53a094779461e7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6716a9c195987d5cfe53a094779461e7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16944,13 +13346,8 @@ rule reversinglabs_blocklist_cert_blocklist_6716a9c195987d5cfe53a094779461e7 {
             1169424000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_876c00bd665df98b35554f67a5c1c32a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_876c00bd665df98b35554f67a5c1c32a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16969,13 +13366,8 @@ rule reversinglabs_blocklist_cert_blocklist_876c00bd665df98b35554f67a5c1c32a {
             1493078400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4b093cb60d4b992266f550934a4ac7d0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4b093cb60d4b992266f550934a4ac7d0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -16992,13 +13384,8 @@ rule reversinglabs_blocklist_cert_blocklist_4b093cb60d4b992266f550934a4ac7d0 {
             1478649600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2050b54146b011ed30f60f61 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2050b54146b011ed30f60f61 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17015,13 +13402,8 @@ rule reversinglabs_blocklist_cert_blocklist_2050b54146b011ed30f60f61 {
             1476773926 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_73e2f34c9c2435f29bbe0a3c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_73e2f34c9c2435f29bbe0a3c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17038,13 +13420,8 @@ rule reversinglabs_blocklist_cert_blocklist_73e2f34c9c2435f29bbe0a3c {
             1480312984 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_68c457d7495d2a8d0d7b9042836135c2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_68c457d7495d2a8d0d7b9042836135c2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17061,13 +13438,8 @@ rule reversinglabs_blocklist_cert_blocklist_68c457d7495d2a8d0d7b9042836135c2 {
             1476921600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6b72ca367d40fbef16e73e6eba6a9a59 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6b72ca367d40fbef16e73e6eba6a9a59 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17084,13 +13456,8 @@ rule reversinglabs_blocklist_cert_blocklist_6b72ca367d40fbef16e73e6eba6a9a59 {
             1476748800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_736b7663d322533413f36e3e7e55f920 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_736b7663d322533413f36e3e7e55f920 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17107,13 +13474,8 @@ rule reversinglabs_blocklist_cert_blocklist_736b7663d322533413f36e3e7e55f920 {
             1159488000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_54a170102461fdc967acfafe4bbbc7f0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_54a170102461fdc967acfafe4bbbc7f0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17130,13 +13492,8 @@ rule reversinglabs_blocklist_cert_blocklist_54a170102461fdc967acfafe4bbbc7f0 {
             1476748800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0c501b8b113209c96c8119cf7a6b8b79 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0c501b8b113209c96c8119cf7a6b8b79 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17153,13 +13510,8 @@ rule reversinglabs_blocklist_cert_blocklist_0c501b8b113209c96c8119cf7a6b8b79 {
             1474329600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0300ee4a4c52443147821a8186d04309 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0300ee4a4c52443147821a8186d04309 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17176,13 +13528,8 @@ rule reversinglabs_blocklist_cert_blocklist_0300ee4a4c52443147821a8186d04309 {
             1494892800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_202cf8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_202cf8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17199,13 +13546,8 @@ rule reversinglabs_blocklist_cert_blocklist_202cf8 {
             1087841761 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6651cc8b4850d4dec61961503ea7956b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6651cc8b4850d4dec61961503ea7956b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17222,13 +13564,8 @@ rule reversinglabs_blocklist_cert_blocklist_6651cc8b4850d4dec61961503ea7956b {
             1436175828 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_25bef28467e4750331d2f403458113b8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_25bef28467e4750331d2f403458113b8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17245,13 +13582,8 @@ rule reversinglabs_blocklist_cert_blocklist_25bef28467e4750331d2f403458113b8 {
             1474156800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0296cf3314f434c5b74d0c3e36616dd1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0296cf3314f434c5b74d0c3e36616dd1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17268,13 +13600,8 @@ rule reversinglabs_blocklist_cert_blocklist_0296cf3314f434c5b74d0c3e36616dd1 {
             1474934400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_045d57d63e13775c8f812e1864797f5a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_045d57d63e13775c8f812e1864797f5a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17291,13 +13618,8 @@ rule reversinglabs_blocklist_cert_blocklist_045d57d63e13775c8f812e1864797f5a {
             1485043200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6d633df9bb6015fc3ecea99dff309ee7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6d633df9bb6015fc3ecea99dff309ee7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17314,13 +13636,8 @@ rule reversinglabs_blocklist_cert_blocklist_6d633df9bb6015fc3ecea99dff309ee7 {
             1474156800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_22e2a66e63b8cb4ec6989bf7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_22e2a66e63b8cb4ec6989bf7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17337,13 +13654,8 @@ rule reversinglabs_blocklist_cert_blocklist_22e2a66e63b8cb4ec6989bf7 {
             1466995365 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_654b406de388ec2aec253ff2ba4c4bbd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_654b406de388ec2aec253ff2ba4c4bbd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17360,13 +13672,8 @@ rule reversinglabs_blocklist_cert_blocklist_654b406de388ec2aec253ff2ba4c4bbd {
             1398902400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_78d1817ebcf338b4e9c810f9740a726b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_78d1817ebcf338b4e9c810f9740a726b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17383,13 +13690,8 @@ rule reversinglabs_blocklist_cert_blocklist_78d1817ebcf338b4e9c810f9740a726b {
             1431734400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_45fbcdb1fbd3d702fb77257b45d8c58e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_45fbcdb1fbd3d702fb77257b45d8c58e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17406,13 +13708,8 @@ rule reversinglabs_blocklist_cert_blocklist_45fbcdb1fbd3d702fb77257b45d8c58e {
             1476662400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4b5d8ed5ca011679f141f124 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4b5d8ed5ca011679f141f124 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17429,13 +13726,8 @@ rule reversinglabs_blocklist_cert_blocklist_4b5d8ed5ca011679f141f124 {
             1480644725 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_33671f1bcbd0f5e231fc386f4895000e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_33671f1bcbd0f5e231fc386f4895000e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17452,13 +13744,8 @@ rule reversinglabs_blocklist_cert_blocklist_33671f1bcbd0f5e231fc386f4895000e {
             1491868800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_32bc299f0694c19ec21e71265b1d7e17 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_32bc299f0694c19ec21e71265b1d7e17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17475,13 +13762,8 @@ rule reversinglabs_blocklist_cert_blocklist_32bc299f0694c19ec21e71265b1d7e17 {
             1474416000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7b75c6b0a09afdb9787f6dff75ae7844 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7b75c6b0a09afdb9787f6dff75ae7844 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17498,13 +13780,8 @@ rule reversinglabs_blocklist_cert_blocklist_7b75c6b0a09afdb9787f6dff75ae7844 {
             1476662400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_167fd1295b3bb102dbb37292c838e7cd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_167fd1295b3bb102dbb37292c838e7cd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17521,13 +13798,8 @@ rule reversinglabs_blocklist_cert_blocklist_167fd1295b3bb102dbb37292c838e7cd {
             1476921600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_253ad25e39abe8f8fda9fcf6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_253ad25e39abe8f8fda9fcf6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17544,13 +13816,8 @@ rule reversinglabs_blocklist_cert_blocklist_253ad25e39abe8f8fda9fcf6 {
             1538662130 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a9c1523cb2c73a82771d318124963e87 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a9c1523cb2c73a82771d318124963e87 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17569,13 +13836,8 @@ rule reversinglabs_blocklist_cert_blocklist_a9c1523cb2c73a82771d318124963e87 {
             1499731200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_68e1b2c210b19bb1f2a24176709b165b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_68e1b2c210b19bb1f2a24176709b165b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17592,13 +13854,8 @@ rule reversinglabs_blocklist_cert_blocklist_68e1b2c210b19bb1f2a24176709b165b {
             1474502400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5c88313bd98bde99c9b9ac1408a63249 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5c88313bd98bde99c9b9ac1408a63249 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17615,13 +13872,8 @@ rule reversinglabs_blocklist_cert_blocklist_5c88313bd98bde99c9b9ac1408a63249 {
             1474243200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7a632a6ecfc6c49ec1f42f76 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7a632a6ecfc6c49ec1f42f76 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17638,13 +13890,8 @@ rule reversinglabs_blocklist_cert_blocklist_7a632a6ecfc6c49ec1f42f76 {
             1474959780 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_f57df6a6eee3854d513d0ba8585049b7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_f57df6a6eee3854d513d0ba8585049b7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17663,13 +13910,8 @@ rule reversinglabs_blocklist_cert_blocklist_f57df6a6eee3854d513d0ba8585049b7 {
             1277769600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0ac5ac5d323122e6d8e92d6e191b1432 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0ac5ac5d323122e6d8e92d6e191b1432 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17686,13 +13928,8 @@ rule reversinglabs_blocklist_cert_blocklist_0ac5ac5d323122e6d8e92d6e191b1432 {
             1140134400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2433d9df7efbccb870ee5904d62a0101 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2433d9df7efbccb870ee5904d62a0101 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17709,13 +13946,8 @@ rule reversinglabs_blocklist_cert_blocklist_2433d9df7efbccb870ee5904d62a0101 {
             1322438400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_462baada57570f70df76d10b9e7bf2b7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_462baada57570f70df76d10b9e7bf2b7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17732,13 +13964,8 @@ rule reversinglabs_blocklist_cert_blocklist_462baada57570f70df76d10b9e7bf2b7 {
             1551744000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_83320d93dd8cf16d11f99b1078b0a7cb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_83320d93dd8cf16d11f99b1078b0a7cb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17757,13 +13984,8 @@ rule reversinglabs_blocklist_cert_blocklist_83320d93dd8cf16d11f99b1078b0a7cb {
             1524614400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_10bae1d20cb4cc36a0ffac86 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_10bae1d20cb4cc36a0ffac86 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17780,13 +14002,8 @@ rule reversinglabs_blocklist_cert_blocklist_10bae1d20cb4cc36a0ffac86 {
             1476773830 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_230716bfe915dd6203b2e2a35674c2ee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_230716bfe915dd6203b2e2a35674c2ee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17803,13 +14020,8 @@ rule reversinglabs_blocklist_cert_blocklist_230716bfe915dd6203b2e2a35674c2ee {
             1472169600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_36a77d37e68e02fd3d043c7197e044ca {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_36a77d37e68e02fd3d043c7197e044ca {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17826,13 +14038,8 @@ rule reversinglabs_blocklist_cert_blocklist_36a77d37e68e02fd3d043c7197e044ca {
             1515542400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_73bff2fb714f986c1707165f0b0f2e0e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_73bff2fb714f986c1707165f0b0f2e0e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17849,13 +14056,8 @@ rule reversinglabs_blocklist_cert_blocklist_73bff2fb714f986c1707165f0b0f2e0e {
             1090886400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_33b24170694ca0cf4d2bdf4aadf475a3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_33b24170694ca0cf4d2bdf4aadf475a3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17872,13 +14074,8 @@ rule reversinglabs_blocklist_cert_blocklist_33b24170694ca0cf4d2bdf4aadf475a3 {
             1474934400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3a9bdec10e00e780316baaebfe7a772c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3a9bdec10e00e780316baaebfe7a772c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17895,13 +14092,8 @@ rule reversinglabs_blocklist_cert_blocklist_3a9bdec10e00e780316baaebfe7a772c {
             1556582400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7cad9c37f7affa8f4d8229f97607e265 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7cad9c37f7affa8f4d8229f97607e265 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17918,13 +14110,8 @@ rule reversinglabs_blocklist_cert_blocklist_7cad9c37f7affa8f4d8229f97607e265 {
             1122508800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_098a57 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_098a57 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17941,13 +14128,8 @@ rule reversinglabs_blocklist_cert_blocklist_098a57 {
             1032855179 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5389cc6286da3bfa1dc4df498bf68361 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5389cc6286da3bfa1dc4df498bf68361 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17964,13 +14146,8 @@ rule reversinglabs_blocklist_cert_blocklist_5389cc6286da3bfa1dc4df498bf68361 {
             1495497600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ed9caeb7911b31bd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ed9caeb7911b31bd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -17989,13 +14166,8 @@ rule reversinglabs_blocklist_cert_blocklist_ed9caeb7911b31bd {
             1506001740 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0fd2b19a941b7009cc728a37cb1b10b9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0fd2b19a941b7009cc728a37cb1b10b9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18012,13 +14184,8 @@ rule reversinglabs_blocklist_cert_blocklist_0fd2b19a941b7009cc728a37cb1b10b9 {
             1560470400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2d88c0af1fe2609961c171213c03bd23 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2d88c0af1fe2609961c171213c03bd23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18035,13 +14202,8 @@ rule reversinglabs_blocklist_cert_blocklist_2d88c0af1fe2609961c171213c03bd23 {
             1683676800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e7cc176062d91225cfdcbdf5b5f0ea5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e7cc176062d91225cfdcbdf5b5f0ea5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18058,13 +14220,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e7cc176062d91225cfdcbdf5b5f0ea5 {
             1317945600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_cecedd2efc985c2dbf0019669d270079 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_cecedd2efc985c2dbf0019669d270079 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18083,13 +14240,8 @@ rule reversinglabs_blocklist_cert_blocklist_cecedd2efc985c2dbf0019669d270079 {
             1527811200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_61fe6f00bd79684210534050ff46bc92 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_61fe6f00bd79684210534050ff46bc92 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18106,13 +14258,8 @@ rule reversinglabs_blocklist_cert_blocklist_61fe6f00bd79684210534050ff46bc92 {
             1512000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0323cc4e38735b0e6efba76ea25c73b7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0323cc4e38735b0e6efba76ea25c73b7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18129,13 +14276,8 @@ rule reversinglabs_blocklist_cert_blocklist_0323cc4e38735b0e6efba76ea25c73b7 {
             1512000000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1f9aca069ac1b6bfb0e14861ec857bf6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1f9aca069ac1b6bfb0e14861ec857bf6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18152,13 +14294,8 @@ rule reversinglabs_blocklist_cert_blocklist_1f9aca069ac1b6bfb0e14861ec857bf6 {
             1477440000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3e9d26dcf703ca3b140d7e7ad48312e2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3e9d26dcf703ca3b140d7e7ad48312e2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18175,13 +14312,8 @@ rule reversinglabs_blocklist_cert_blocklist_3e9d26dcf703ca3b140d7e7ad48312e2 {
             1440580240 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4e2523e76ea455941e75fb8240474a75 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4e2523e76ea455941e75fb8240474a75 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18198,13 +14330,8 @@ rule reversinglabs_blocklist_cert_blocklist_4e2523e76ea455941e75fb8240474a75 {
             1476403200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6102468293ba7308d17efb43ad6bfb58 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6102468293ba7308d17efb43ad6bfb58 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18221,13 +14348,8 @@ rule reversinglabs_blocklist_cert_blocklist_6102468293ba7308d17efb43ad6bfb58 {
             1470960000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6ded1a7ff6da152a98a57a2f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6ded1a7ff6da152a98a57a2f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18244,13 +14366,8 @@ rule reversinglabs_blocklist_cert_blocklist_6ded1a7ff6da152a98a57a2f {
             1479094343 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3ce65ea057b975d2c17eaf2c2297b1eb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3ce65ea057b975d2c17eaf2c2297b1eb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18267,13 +14384,8 @@ rule reversinglabs_blocklist_cert_blocklist_3ce65ea057b975d2c17eaf2c2297b1eb {
             1528243200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5d085a9a288549d09edc4941 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5d085a9a288549d09edc4941 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18290,13 +14402,8 @@ rule reversinglabs_blocklist_cert_blocklist_5d085a9a288549d09edc4941 {
             1478757821 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7d20dec3797a1ac30649ebb184265b79 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7d20dec3797a1ac30649ebb184265b79 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18313,13 +14420,8 @@ rule reversinglabs_blocklist_cert_blocklist_7d20dec3797a1ac30649ebb184265b79 {
             1474156800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_187d92861076e469b5b7a19e2a9fd4ba {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_187d92861076e469b5b7a19e2a9fd4ba {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18336,13 +14438,8 @@ rule reversinglabs_blocklist_cert_blocklist_187d92861076e469b5b7a19e2a9fd4ba {
             1476748800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_199a9476feca3c004ff889d34545de07 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_199a9476feca3c004ff889d34545de07 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18359,13 +14456,8 @@ rule reversinglabs_blocklist_cert_blocklist_199a9476feca3c004ff889d34545de07 {
             1138060800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1efe65 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1efe65 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18382,13 +14474,8 @@ rule reversinglabs_blocklist_cert_blocklist_1efe65 {
             1063224491 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0af7e2b6a3deb99291dcaf66 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0af7e2b6a3deb99291dcaf66 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18405,13 +14492,8 @@ rule reversinglabs_blocklist_cert_blocklist_0af7e2b6a3deb99291dcaf66 {
             1474523112 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_45e27c4dfa5e6175566a13b1b6ddf3f5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_45e27c4dfa5e6175566a13b1b6ddf3f5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18428,13 +14510,8 @@ rule reversinglabs_blocklist_cert_blocklist_45e27c4dfa5e6175566a13b1b6ddf3f5 {
             1465474542 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_37d36a4e61c0ac68ceb8bfcef2dbf283 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_37d36a4e61c0ac68ceb8bfcef2dbf283 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18451,13 +14528,8 @@ rule reversinglabs_blocklist_cert_blocklist_37d36a4e61c0ac68ceb8bfcef2dbf283 {
             1532476800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4321de10738278b93683ca542407f103 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4321de10738278b93683ca542407f103 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18474,13 +14546,8 @@ rule reversinglabs_blocklist_cert_blocklist_4321de10738278b93683ca542407f103 {
             1367884800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2a6b2df210be14f4e18e10c7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2a6b2df210be14f4e18e10c7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18497,13 +14564,8 @@ rule reversinglabs_blocklist_cert_blocklist_2a6b2df210be14f4e18e10c7 {
             1472095404 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_412ab2a50e8028ddcbc499ddf45f2045 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_412ab2a50e8028ddcbc499ddf45f2045 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18520,13 +14582,8 @@ rule reversinglabs_blocklist_cert_blocklist_412ab2a50e8028ddcbc499ddf45f2045 {
             1479340800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0747f6a8c3542f954b113fd98c7607cf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0747f6a8c3542f954b113fd98c7607cf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18543,13 +14600,8 @@ rule reversinglabs_blocklist_cert_blocklist_0747f6a8c3542f954b113fd98c7607cf {
             1474329600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2572b484fa0a61be7288d785d7bda7d3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2572b484fa0a61be7288d785d7bda7d3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18566,13 +14618,8 @@ rule reversinglabs_blocklist_cert_blocklist_2572b484fa0a61be7288d785d7bda7d3 {
             1495152000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6726bd04204746c46857887f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6726bd04204746c46857887f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18589,13 +14636,8 @@ rule reversinglabs_blocklist_cert_blocklist_6726bd04204746c46857887f {
             1474352405 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4463d8b31e0f87c14233d4d0d2c487a0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4463d8b31e0f87c14233d4d0d2c487a0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18612,13 +14654,8 @@ rule reversinglabs_blocklist_cert_blocklist_4463d8b31e0f87c14233d4d0d2c487a0 {
             1477612800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_387982605e542d6d52f231ca6f5657cc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_387982605e542d6d52f231ca6f5657cc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18635,13 +14672,8 @@ rule reversinglabs_blocklist_cert_blocklist_387982605e542d6d52f231ca6f5657cc {
             1475884800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e0134c41e7eda6863c4eee5b003976dd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e0134c41e7eda6863c4eee5b003976dd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18660,13 +14692,8 @@ rule reversinglabs_blocklist_cert_blocklist_e0134c41e7eda6863c4eee5b003976dd {
             1528070400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5b47a4739dd8ffe81d9b5307 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5b47a4739dd8ffe81d9b5307 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18683,13 +14710,8 @@ rule reversinglabs_blocklist_cert_blocklist_5b47a4739dd8ffe81d9b5307 {
             1476953007 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4f5a9bf75da76b949645475473793a7d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4f5a9bf75da76b949645475473793a7d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18706,13 +14728,8 @@ rule reversinglabs_blocklist_cert_blocklist_4f5a9bf75da76b949645475473793a7d {
             1553817600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_081df56c9a48d02571f08907 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_081df56c9a48d02571f08907 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18729,13 +14746,8 @@ rule reversinglabs_blocklist_cert_blocklist_081df56c9a48d02571f08907 {
             1474870728 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_77d5c1a3e623575999c74409dc19753c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_77d5c1a3e623575999c74409dc19753c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18752,13 +14764,8 @@ rule reversinglabs_blocklist_cert_blocklist_77d5c1a3e623575999c74409dc19753c {
             1475884800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e9756b3f38b1172ea89fdbdfdba5f979 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e9756b3f38b1172ea89fdbdfdba5f979 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18777,13 +14784,8 @@ rule reversinglabs_blocklist_cert_blocklist_e9756b3f38b1172ea89fdbdfdba5f979 {
             1492732800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_09fb28 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_09fb28 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18800,13 +14802,8 @@ rule reversinglabs_blocklist_cert_blocklist_09fb28 {
             1046968418 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_197dc32d915458953562d2fe78bf2468 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_197dc32d915458953562d2fe78bf2468 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18823,13 +14820,8 @@ rule reversinglabs_blocklist_cert_blocklist_197dc32d915458953562d2fe78bf2468 {
             1575331200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7c0be3d14787351e3156f5f37f2b3663 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7c0be3d14787351e3156f5f37f2b3663 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18846,13 +14838,8 @@ rule reversinglabs_blocklist_cert_blocklist_7c0be3d14787351e3156f5f37f2b3663 {
             1523318400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_05054fdea356f3dd7db479fa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_05054fdea356f3dd7db479fa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18869,13 +14856,8 @@ rule reversinglabs_blocklist_cert_blocklist_05054fdea356f3dd7db479fa {
             1474436511 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08aaa069e92517f21ce67ca713f6ea63 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08aaa069e92517f21ce67ca713f6ea63 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18892,13 +14874,8 @@ rule reversinglabs_blocklist_cert_blocklist_08aaa069e92517f21ce67ca713f6ea63 {
             1368403200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1b7b54e0dd4d7e45a0b46834de52658d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1b7b54e0dd4d7e45a0b46834de52658d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18915,13 +14892,8 @@ rule reversinglabs_blocklist_cert_blocklist_1b7b54e0dd4d7e45a0b46834de52658d {
             1476662400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b63e4299d0b0e2dcdaeb976167a23235 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b63e4299d0b0e2dcdaeb976167a23235 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18940,13 +14912,8 @@ rule reversinglabs_blocklist_cert_blocklist_b63e4299d0b0e2dcdaeb976167a23235 {
             1604102400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1dabae616705f5a51152eac48423f354 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1dabae616705f5a51152eac48423f354 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18963,13 +14930,8 @@ rule reversinglabs_blocklist_cert_blocklist_1dabae616705f5a51152eac48423f354 {
             1470960000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_50d08f3c9bf86fba52cf592b4fe6eacf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_50d08f3c9bf86fba52cf592b4fe6eacf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -18986,13 +14948,8 @@ rule reversinglabs_blocklist_cert_blocklist_50d08f3c9bf86fba52cf592b4fe6eacf {
             1518134400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7c7fc3616f3157a28f702cc1df275dcd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7c7fc3616f3157a28f702cc1df275dcd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19009,13 +14966,8 @@ rule reversinglabs_blocklist_cert_blocklist_7c7fc3616f3157a28f702cc1df275dcd {
             1522972800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_73ed1b2f4bf8dd37a8ad9bb775774592 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_73ed1b2f4bf8dd37a8ad9bb775774592 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19032,13 +14984,8 @@ rule reversinglabs_blocklist_cert_blocklist_73ed1b2f4bf8dd37a8ad9bb775774592 {
             1528243200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_211b5dfe65bc6f34bc9d3a54 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_211b5dfe65bc6f34bc9d3a54 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19055,13 +15002,8 @@ rule reversinglabs_blocklist_cert_blocklist_211b5dfe65bc6f34bc9d3a54 {
             1526717931 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5400d1c1406528b1ef625976 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5400d1c1406528b1ef625976 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19078,13 +15020,8 @@ rule reversinglabs_blocklist_cert_blocklist_5400d1c1406528b1ef625976 {
             1474266628 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_013472d7d665557bfa0dc21b350a361b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_013472d7d665557bfa0dc21b350a361b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19101,13 +15038,8 @@ rule reversinglabs_blocklist_cert_blocklist_013472d7d665557bfa0dc21b350a361b {
             1470960000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_66c758a22bfbbce327616815616ddd07 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_66c758a22bfbbce327616815616ddd07 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19124,13 +15056,8 @@ rule reversinglabs_blocklist_cert_blocklist_66c758a22bfbbce327616815616ddd07 {
             1469404800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_e61b0366d940896430bcfe3e93baac5b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_e61b0366d940896430bcfe3e93baac5b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19149,13 +15076,8 @@ rule reversinglabs_blocklist_cert_blocklist_e61b0366d940896430bcfe3e93baac5b {
             1528156800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6294b8acc35dea7d32a95ac5d4536f8f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6294b8acc35dea7d32a95ac5d4536f8f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19172,13 +15094,8 @@ rule reversinglabs_blocklist_cert_blocklist_6294b8acc35dea7d32a95ac5d4536f8f {
             1517443200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_485e4626c32493c16283cfd9e30d17ad {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_485e4626c32493c16283cfd9e30d17ad {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19195,13 +15112,8 @@ rule reversinglabs_blocklist_cert_blocklist_485e4626c32493c16283cfd9e30d17ad {
             1473292800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d0312f9177cd46b943df3ef22db4608b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d0312f9177cd46b943df3ef22db4608b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19220,13 +15132,8 @@ rule reversinglabs_blocklist_cert_blocklist_d0312f9177cd46b943df3ef22db4608b {
             1341273600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_202702 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_202702 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19243,13 +15150,8 @@ rule reversinglabs_blocklist_cert_blocklist_202702 {
             1087391361 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_369a02e5d90b2649040e7f87 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_369a02e5d90b2649040e7f87 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19266,13 +15168,8 @@ rule reversinglabs_blocklist_cert_blocklist_369a02e5d90b2649040e7f87 {
             1479094204 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_60497070ff4a83bc87bdea24da5b431d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_60497070ff4a83bc87bdea24da5b431d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19289,13 +15186,8 @@ rule reversinglabs_blocklist_cert_blocklist_60497070ff4a83bc87bdea24da5b431d {
             1477008000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a333e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a333e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19312,13 +15204,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a333e {
             1052750648 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1cb6519b2528d006d1da987153dad2b3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1cb6519b2528d006d1da987153dad2b3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19335,13 +15222,8 @@ rule reversinglabs_blocklist_cert_blocklist_1cb6519b2528d006d1da987153dad2b3 {
             1012780800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_621e696c3a6371e77a678cbf0ee34ab2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_621e696c3a6371e77a678cbf0ee34ab2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19358,13 +15240,8 @@ rule reversinglabs_blocklist_cert_blocklist_621e696c3a6371e77a678cbf0ee34ab2 {
             1467072000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_21b991 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_21b991 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19381,13 +15258,8 @@ rule reversinglabs_blocklist_cert_blocklist_21b991 {
             1125477041 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1cc37de5dbed097f98f56dbc {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1cc37de5dbed097f98f56dbc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19404,13 +15276,8 @@ rule reversinglabs_blocklist_cert_blocklist_1cc37de5dbed097f98f56dbc {
             1476693977 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_50f66ab0d7ed19b69d48f635e69572fa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_50f66ab0d7ed19b69d48f635e69572fa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19427,13 +15294,8 @@ rule reversinglabs_blocklist_cert_blocklist_50f66ab0d7ed19b69d48f635e69572fa {
             1467158400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_11212f502836a784752160351defb136cf09 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_11212f502836a784752160351defb136cf09 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19450,13 +15312,8 @@ rule reversinglabs_blocklist_cert_blocklist_11212f502836a784752160351defb136cf09
             1463726573 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2c16be9a7ce2a23ab7a4b4eb7da3400c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2c16be9a7ce2a23ab7a4b4eb7da3400c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19473,13 +15330,8 @@ rule reversinglabs_blocklist_cert_blocklist_2c16be9a7ce2a23ab7a4b4eb7da3400c {
             1371081600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_22accad235fb1ac7422ebe5ea7ac9bc5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_22accad235fb1ac7422ebe5ea7ac9bc5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19496,13 +15348,8 @@ rule reversinglabs_blocklist_cert_blocklist_22accad235fb1ac7422ebe5ea7ac9bc5 {
             1019001600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4d29757c4fbfc32b97091d96e3723002 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4d29757c4fbfc32b97091d96e3723002 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19519,13 +15366,8 @@ rule reversinglabs_blocklist_cert_blocklist_4d29757c4fbfc32b97091d96e3723002 {
             1474848000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3a949ef03d9dd2d150b24b274ff6d7b4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3a949ef03d9dd2d150b24b274ff6d7b4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19542,13 +15384,8 @@ rule reversinglabs_blocklist_cert_blocklist_3a949ef03d9dd2d150b24b274ff6d7b4 {
             1474156800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_954d0577d5ce8999e0387a5364829f66 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_954d0577d5ce8999e0387a5364829f66 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19567,13 +15404,8 @@ rule reversinglabs_blocklist_cert_blocklist_954d0577d5ce8999e0387a5364829f66 {
             1543968000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_df5121dc99d1ab6b7e5229f6832123ef {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_df5121dc99d1ab6b7e5229f6832123ef {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19592,13 +15424,8 @@ rule reversinglabs_blocklist_cert_blocklist_df5121dc99d1ab6b7e5229f6832123ef {
             1613433600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_760cef386b63406751ae83a9eae92342 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_760cef386b63406751ae83a9eae92342 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19615,13 +15442,8 @@ rule reversinglabs_blocklist_cert_blocklist_760cef386b63406751ae83a9eae92342 {
             1601942400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5c2625fa836a64f4882c56cc7a45f0ed {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5c2625fa836a64f4882c56cc7a45f0ed {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19638,13 +15460,8 @@ rule reversinglabs_blocklist_cert_blocklist_5c2625fa836a64f4882c56cc7a45f0ed {
             1474416000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7df6fa580f84493c414ee0e431086737 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7df6fa580f84493c414ee0e431086737 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19661,13 +15478,8 @@ rule reversinglabs_blocklist_cert_blocklist_7df6fa580f84493c414ee0e431086737 {
             1477440000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_309d2e115f1fe2993ee2e063 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_309d2e115f1fe2993ee2e063 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19684,13 +15496,8 @@ rule reversinglabs_blocklist_cert_blocklist_309d2e115f1fe2993ee2e063 {
             1467102525 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_90e33c1068f54913315b6ce9311141b9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_90e33c1068f54913315b6ce9311141b9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19709,13 +15516,8 @@ rule reversinglabs_blocklist_cert_blocklist_90e33c1068f54913315b6ce9311141b9 {
             1487635200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3f15c3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3f15c3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19732,13 +15534,8 @@ rule reversinglabs_blocklist_cert_blocklist_3f15c3 {
             1110577130 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_285eccbd1d0000e640b84307ef88cd9f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_285eccbd1d0000e640b84307ef88cd9f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19755,13 +15552,8 @@ rule reversinglabs_blocklist_cert_blocklist_285eccbd1d0000e640b84307ef88cd9f {
             1611619200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_55ab71a3f9dde3ef20c788dd1d5ff6c3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_55ab71a3f9dde3ef20c788dd1d5ff6c3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19778,13 +15570,8 @@ rule reversinglabs_blocklist_cert_blocklist_55ab71a3f9dde3ef20c788dd1d5ff6c3 {
             1323907200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4beca26210737a5442ff8b47 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4beca26210737a5442ff8b47 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19801,13 +15588,8 @@ rule reversinglabs_blocklist_cert_blocklist_4beca26210737a5442ff8b47 {
             1476437049 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0f203839a9c63b8798a7cb31 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0f203839a9c63b8798a7cb31 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19824,13 +15606,8 @@ rule reversinglabs_blocklist_cert_blocklist_0f203839a9c63b8798a7cb31 {
             1480923809 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_dc992ea8e6bb4926931df656d5eef8a0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_dc992ea8e6bb4926931df656d5eef8a0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19849,13 +15626,8 @@ rule reversinglabs_blocklist_cert_blocklist_dc992ea8e6bb4926931df656d5eef8a0 {
             1497916800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_41bd49bb456644d8183b3dae72ec8f22 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_41bd49bb456644d8183b3dae72ec8f22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19872,13 +15644,8 @@ rule reversinglabs_blocklist_cert_blocklist_41bd49bb456644d8183b3dae72ec8f22 {
             1468454400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a8d40da6708679c08aebddea6d3f6b8a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a8d40da6708679c08aebddea6d3f6b8a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19897,13 +15664,8 @@ rule reversinglabs_blocklist_cert_blocklist_a8d40da6708679c08aebddea6d3f6b8a {
             1547424000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_307642e1f3a92c6cc2e7fb6e18f2ddcb {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_307642e1f3a92c6cc2e7fb6e18f2ddcb {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19920,13 +15682,8 @@ rule reversinglabs_blocklist_cert_blocklist_307642e1f3a92c6cc2e7fb6e18f2ddcb {
             1500422400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_52379131a1c69263c795a7d398db0997 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_52379131a1c69263c795a7d398db0997 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19943,13 +15700,8 @@ rule reversinglabs_blocklist_cert_blocklist_52379131a1c69263c795a7d398db0997 {
             1476748800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_44312cb9a927b4111360762b4d4bdd6d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_44312cb9a927b4111360762b4d4bdd6d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19966,13 +15718,8 @@ rule reversinglabs_blocklist_cert_blocklist_44312cb9a927b4111360762b4d4bdd6d {
             1554768000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_123a5074069162f4ed68fc7d48f464c2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_123a5074069162f4ed68fc7d48f464c2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -19989,13 +15736,8 @@ rule reversinglabs_blocklist_cert_blocklist_123a5074069162f4ed68fc7d48f464c2 {
             1472428800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_64eb04b8def382b5efa75f63e0e85ad0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_64eb04b8def382b5efa75f63e0e85ad0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20012,13 +15754,8 @@ rule reversinglabs_blocklist_cert_blocklist_64eb04b8def382b5efa75f63e0e85ad0 {
             1535587200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_76d8d908eed2f9857dc5676a680ceac9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_76d8d908eed2f9857dc5676a680ceac9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20035,13 +15772,8 @@ rule reversinglabs_blocklist_cert_blocklist_76d8d908eed2f9857dc5676a680ceac9 {
             1467158400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_083e3f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_083e3f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20058,13 +15790,8 @@ rule reversinglabs_blocklist_cert_blocklist_083e3f {
             999002664 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_79227311acdd575759198dbd3544cca7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_79227311acdd575759198dbd3544cca7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20081,13 +15808,8 @@ rule reversinglabs_blocklist_cert_blocklist_79227311acdd575759198dbd3544cca7 {
             1478131200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_13ae38c9ae21a8576c0d024d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_13ae38c9ae21a8576c0d024d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20104,13 +15826,8 @@ rule reversinglabs_blocklist_cert_blocklist_13ae38c9ae21a8576c0d024d {
             1475062802 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_557b0abf44045827f1f36efbc96271ec {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_557b0abf44045827f1f36efbc96271ec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20127,13 +15844,8 @@ rule reversinglabs_blocklist_cert_blocklist_557b0abf44045827f1f36efbc96271ec {
             1480291200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7903870184e18a80899740845a15e2b2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7903870184e18a80899740845a15e2b2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20150,13 +15862,8 @@ rule reversinglabs_blocklist_cert_blocklist_7903870184e18a80899740845a15e2b2 {
             1079654400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5fba9b373f812c16aef531d4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5fba9b373f812c16aef531d4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20173,13 +15880,8 @@ rule reversinglabs_blocklist_cert_blocklist_5fba9b373f812c16aef531d4 {
             1473329076 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_616a5205238590b01d7b761e444e4ad9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_616a5205238590b01d7b761e444e4ad9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20196,13 +15898,8 @@ rule reversinglabs_blocklist_cert_blocklist_616a5205238590b01d7b761e444e4ad9 {
             1421452800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_29be2278113dd062eadca32de6b242d0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_29be2278113dd062eadca32de6b242d0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20219,13 +15916,8 @@ rule reversinglabs_blocklist_cert_blocklist_29be2278113dd062eadca32de6b242d0 {
             1536883200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_05f70a557afd4a443f44d0baf0bc8c60 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_05f70a557afd4a443f44d0baf0bc8c60 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20242,13 +15934,8 @@ rule reversinglabs_blocklist_cert_blocklist_05f70a557afd4a443f44d0baf0bc8c60 {
             1477440000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4e0665d61997072294a70c662f72eae3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4e0665d61997072294a70c662f72eae3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20265,13 +15952,8 @@ rule reversinglabs_blocklist_cert_blocklist_4e0665d61997072294a70c662f72eae3 {
             1474502400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_74702dff5d4056b847d009a2265fb1b3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_74702dff5d4056b847d009a2265fb1b3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20288,13 +15970,8 @@ rule reversinglabs_blocklist_cert_blocklist_74702dff5d4056b847d009a2265fb1b3 {
             1469664000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_353b1cf7866ee0b0acdd532d0bb1a220 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_353b1cf7866ee0b0acdd532d0bb1a220 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20311,13 +15988,8 @@ rule reversinglabs_blocklist_cert_blocklist_353b1cf7866ee0b0acdd532d0bb1a220 {
             1558915200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_093ff2870fa33eaf47259457ee58c2e0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_093ff2870fa33eaf47259457ee58c2e0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20334,13 +16006,8 @@ rule reversinglabs_blocklist_cert_blocklist_093ff2870fa33eaf47259457ee58c2e0 {
             1503532800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_719c17a823839dca813ee85888b3b39a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_719c17a823839dca813ee85888b3b39a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20357,13 +16024,8 @@ rule reversinglabs_blocklist_cert_blocklist_719c17a823839dca813ee85888b3b39a {
             1479686400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6dc86ebf5863568e2237b2d89582d705 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6dc86ebf5863568e2237b2d89582d705 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20380,13 +16042,8 @@ rule reversinglabs_blocklist_cert_blocklist_6dc86ebf5863568e2237b2d89582d705 {
             1471305600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_214df59fe53874cc011dd45727035f51 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_214df59fe53874cc011dd45727035f51 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20403,13 +16060,8 @@ rule reversinglabs_blocklist_cert_blocklist_214df59fe53874cc011dd45727035f51 {
             1468800000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_37ca4f66fdcc8732992723199859886c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_37ca4f66fdcc8732992723199859886c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20426,13 +16078,8 @@ rule reversinglabs_blocklist_cert_blocklist_37ca4f66fdcc8732992723199859886c {
             1505952000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_be2f22c152bb218b898c4029056816a9 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_be2f22c152bb218b898c4029056816a9 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20451,13 +16098,8 @@ rule reversinglabs_blocklist_cert_blocklist_be2f22c152bb218b898c4029056816a9 {
             1676246400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_fc7065abf8303fb472b8af85918f5c24 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_fc7065abf8303fb472b8af85918f5c24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20476,13 +16118,8 @@ rule reversinglabs_blocklist_cert_blocklist_fc7065abf8303fb472b8af85918f5c24 {
             1604361600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_698ff388adb50b88afb832e76b0a0ad1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_698ff388adb50b88afb832e76b0a0ad1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20499,13 +16136,8 @@ rule reversinglabs_blocklist_cert_blocklist_698ff388adb50b88afb832e76b0a0ad1 {
             1675070541 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_391ae38670ab188a5de26e07 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_391ae38670ab188a5de26e07 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20522,13 +16154,8 @@ rule reversinglabs_blocklist_cert_blocklist_391ae38670ab188a5de26e07 {
             1540832872 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_d08d83ff118df3777e371c5c482cce7b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_d08d83ff118df3777e371c5c482cce7b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20547,13 +16174,8 @@ rule reversinglabs_blocklist_cert_blocklist_d08d83ff118df3777e371c5c482cce7b {
             1444780800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_06ce209477f1ac19a2049bdc5846a831 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_06ce209477f1ac19a2049bdc5846a831 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20570,13 +16192,8 @@ rule reversinglabs_blocklist_cert_blocklist_06ce209477f1ac19a2049bdc5846a831 {
             1426710344 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_447f449121b883211663b7b7e2ead868 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_447f449121b883211663b7b7e2ead868 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20593,13 +16210,8 @@ rule reversinglabs_blocklist_cert_blocklist_447f449121b883211663b7b7e2ead868 {
             1443052800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6366a9ac97df4de17366943c9b291aaa {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6366a9ac97df4de17366943c9b291aaa {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20616,13 +16228,8 @@ rule reversinglabs_blocklist_cert_blocklist_6366a9ac97df4de17366943c9b291aaa {
             1326796477 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_66e3f0b4459f15ac7f2a2b44990dd709 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_66e3f0b4459f15ac7f2a2b44990dd709 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20639,13 +16246,8 @@ rule reversinglabs_blocklist_cert_blocklist_66e3f0b4459f15ac7f2a2b44990dd709 {
             1320288125 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_610039d6349ee531e4caa3a65d100c7d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_610039d6349ee531e4caa3a65d100c7d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20662,13 +16264,8 @@ rule reversinglabs_blocklist_cert_blocklist_610039d6349ee531e4caa3a65d100c7d {
             1341792000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1caa0d0dadf32a2404a75195ae47820a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1caa0d0dadf32a2404a75195ae47820a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20685,13 +16282,8 @@ rule reversinglabs_blocklist_cert_blocklist_1caa0d0dadf32a2404a75195ae47820a {
             1324425600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_140d2c515e8ee9739bb5f1b2637dc478 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_140d2c515e8ee9739bb5f1b2637dc478 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20708,13 +16300,8 @@ rule reversinglabs_blocklist_cert_blocklist_140d2c515e8ee9739bb5f1b2637dc478 {
             1386806400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_58015acd501fc9c344264eace2ce5730 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_58015acd501fc9c344264eace2ce5730 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20731,13 +16318,8 @@ rule reversinglabs_blocklist_cert_blocklist_58015acd501fc9c344264eace2ce5730 {
             1352246400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0b7279068beb15ffe8060d2c56153c35 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0b7279068beb15ffe8060d2c56153c35 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20754,13 +16336,8 @@ rule reversinglabs_blocklist_cert_blocklist_0b7279068beb15ffe8060d2c56153c35 {
             1350864000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0bc0f18da36702e302db170d91dc9202 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0bc0f18da36702e302db170d91dc9202 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20777,13 +16354,8 @@ rule reversinglabs_blocklist_cert_blocklist_0bc0f18da36702e302db170d91dc9202 {
             1637712000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ca9b6f49b8b41204a174c751c73dc393 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ca9b6f49b8b41204a174c751c73dc393 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20802,13 +16374,8 @@ rule reversinglabs_blocklist_cert_blocklist_ca9b6f49b8b41204a174c751c73dc393 {
             1654646400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_aaf65b8e7a2e68bc8c9e8f27331b795c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_aaf65b8e7a2e68bc8c9e8f27331b795c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20827,13 +16394,8 @@ rule reversinglabs_blocklist_cert_blocklist_aaf65b8e7a2e68bc8c9e8f27331b795c {
             1549324800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_c6ed0efe2844fa44aae350c6845c3331 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_c6ed0efe2844fa44aae350c6845c3331 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20852,13 +16414,8 @@ rule reversinglabs_blocklist_cert_blocklist_c6ed0efe2844fa44aae350c6845c3331 {
             1549324800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_ede6cfbf9fa18337b0fdb49c1f693020 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_ede6cfbf9fa18337b0fdb49c1f693020 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20877,13 +16434,8 @@ rule reversinglabs_blocklist_cert_blocklist_ede6cfbf9fa18337b0fdb49c1f693020 {
             1554940800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_eda0f47b3b38e781cdf6ef6be5d3f6ee {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_eda0f47b3b38e781cdf6ef6be5d3f6ee {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20902,13 +16454,8 @@ rule reversinglabs_blocklist_cert_blocklist_eda0f47b3b38e781cdf6ef6be5d3f6ee {
             1650931200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5da173eb1ac76340ac058e1ff4bf5e1b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5da173eb1ac76340ac058e1ff4bf5e1b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20925,13 +16472,8 @@ rule reversinglabs_blocklist_cert_blocklist_5da173eb1ac76340ac058e1ff4bf5e1b {
             1550793600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1380a7ccf2bf36bc496b00d8 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1380a7ccf2bf36bc496b00d8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20948,13 +16490,8 @@ rule reversinglabs_blocklist_cert_blocklist_1380a7ccf2bf36bc496b00d8 {
             1478069976 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_02eaf27e6f1575e365fc7fe4e0be43f7 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_02eaf27e6f1575e365fc7fe4e0be43f7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20971,13 +16508,8 @@ rule reversinglabs_blocklist_cert_blocklist_02eaf27e6f1575e365fc7fe4e0be43f7 {
             1562889600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6eb02ac2beb9611ed57eb12e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6eb02ac2beb9611ed57eb12e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -20994,13 +16526,8 @@ rule reversinglabs_blocklist_cert_blocklist_6eb02ac2beb9611ed57eb12e {
             1585023767 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_010000000001297dba69dd {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_010000000001297dba69dd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21017,13 +16544,8 @@ rule reversinglabs_blocklist_cert_blocklist_010000000001297dba69dd {
             1277713154 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_7def22ef4c645b1decfb36b6d3539dbf {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_7def22ef4c645b1decfb36b6d3539dbf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21040,13 +16562,8 @@ rule reversinglabs_blocklist_cert_blocklist_7def22ef4c645b1decfb36b6d3539dbf {
             1474416000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3e39c2ccc494438bb8c2560f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3e39c2ccc494438bb8c2560f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21063,13 +16580,8 @@ rule reversinglabs_blocklist_cert_blocklist_3e39c2ccc494438bb8c2560f {
             1466142876 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6e3b09f43c3a0fd53b7d600f08fae2b5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6e3b09f43c3a0fd53b7d600f08fae2b5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21086,13 +16598,8 @@ rule reversinglabs_blocklist_cert_blocklist_6e3b09f43c3a0fd53b7d600f08fae2b5 {
             1507248000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_21220646c639d62c16992f46 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_21220646c639d62c16992f46 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21109,13 +16616,8 @@ rule reversinglabs_blocklist_cert_blocklist_21220646c639d62c16992f46 {
             1466130984 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_738663f2c9e4adb3ad5306aa5e7cc548 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_738663f2c9e4adb3ad5306aa5e7cc548 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21132,13 +16634,8 @@ rule reversinglabs_blocklist_cert_blocklist_738663f2c9e4adb3ad5306aa5e7cc548 {
             1498435200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_4280f2c8ce1d98e5f8da7ecb005eeae5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_4280f2c8ce1d98e5f8da7ecb005eeae5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21155,13 +16652,8 @@ rule reversinglabs_blocklist_cert_blocklist_4280f2c8ce1d98e5f8da7ecb005eeae5 {
             1476316800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2946397be9c5ae44e95c99af {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2946397be9c5ae44e95c99af {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21178,13 +16670,8 @@ rule reversinglabs_blocklist_cert_blocklist_2946397be9c5ae44e95c99af {
             1476092708 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2df453588177cf1c0c297ff4 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2df453588177cf1c0c297ff4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21201,13 +16688,8 @@ rule reversinglabs_blocklist_cert_blocklist_2df453588177cf1c0c297ff4 {
             1479735173 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0619c5e39a4fc60a32f9b07f6a4ca328 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0619c5e39a4fc60a32f9b07f6a4ca328 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21224,13 +16706,8 @@ rule reversinglabs_blocklist_cert_blocklist_0619c5e39a4fc60a32f9b07f6a4ca328 {
             1475884800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_2bffef48e6a321b418041310fdb9b0d0 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_2bffef48e6a321b418041310fdb9b0d0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21247,13 +16724,8 @@ rule reversinglabs_blocklist_cert_blocklist_2bffef48e6a321b418041310fdb9b0d0 {
             1554681600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_34ec9565805f34204c6966fb81e36ba1 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_34ec9565805f34204c6966fb81e36ba1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21270,13 +16742,8 @@ rule reversinglabs_blocklist_cert_blocklist_34ec9565805f34204c6966fb81e36ba1 {
             1476921600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_b2b934b7f01e0ac1e577814992243709 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_b2b934b7f01e0ac1e577814992243709 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21295,13 +16762,8 @@ rule reversinglabs_blocklist_cert_blocklist_b2b934b7f01e0ac1e577814992243709 {
             1590710400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3a1b397fd9451e3b5891fc69681ed73d {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3a1b397fd9451e3b5891fc69681ed73d {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21318,13 +16780,8 @@ rule reversinglabs_blocklist_cert_blocklist_3a1b397fd9451e3b5891fc69681ed73d {
             1470614400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1eb816aa49e4894d9e9f78729e53cd48 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1eb816aa49e4894d9e9f78729e53cd48 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21341,13 +16798,8 @@ rule reversinglabs_blocklist_cert_blocklist_1eb816aa49e4894d9e9f78729e53cd48 {
             1429056000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_383ca88d6d9379c740609560 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_383ca88d6d9379c740609560 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21364,13 +16816,8 @@ rule reversinglabs_blocklist_cert_blocklist_383ca88d6d9379c740609560 {
             1478250214 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6731cb1430f18b8c0c43ab40e1154169 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6731cb1430f18b8c0c43ab40e1154169 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21387,13 +16834,8 @@ rule reversinglabs_blocklist_cert_blocklist_6731cb1430f18b8c0c43ab40e1154169 {
             1436313600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_159505e6456b9a9352f7c47168d89b96 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_159505e6456b9a9352f7c47168d89b96 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21410,13 +16852,8 @@ rule reversinglabs_blocklist_cert_blocklist_159505e6456b9a9352f7c47168d89b96 {
             1469404800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_04a0e92b0b9ebbb797df6ef52bd5ad05 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_04a0e92b0b9ebbb797df6ef52bd5ad05 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21433,13 +16870,8 @@ rule reversinglabs_blocklist_cert_blocklist_04a0e92b0b9ebbb797df6ef52bd5ad05 {
             1479081600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_25f222ab2613dc4270b2aabc2519a101 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_25f222ab2613dc4270b2aabc2519a101 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21456,13 +16888,8 @@ rule reversinglabs_blocklist_cert_blocklist_25f222ab2613dc4270b2aabc2519a101 {
             1445299200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_212ca239866f88c3d5b000b3004a569c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_212ca239866f88c3d5b000b3004a569c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21479,13 +16906,8 @@ rule reversinglabs_blocklist_cert_blocklist_212ca239866f88c3d5b000b3004a569c {
             1347840000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_18b700a319aa98ae71b279d4e8030b82 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_18b700a319aa98ae71b279d4e8030b82 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21502,13 +16924,8 @@ rule reversinglabs_blocklist_cert_blocklist_18b700a319aa98ae71b279d4e8030b82 {
             1479686400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_169138a86954be1d9b264f47 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_169138a86954be1d9b264f47 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21525,13 +16942,8 @@ rule reversinglabs_blocklist_cert_blocklist_169138a86954be1d9b264f47 {
             1477636474 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_33412168eeb3c0e4c7dd0508a9ffecd5 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_33412168eeb3c0e4c7dd0508a9ffecd5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21548,13 +16960,8 @@ rule reversinglabs_blocklist_cert_blocklist_33412168eeb3c0e4c7dd0508a9ffecd5 {
             1467590400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_422ab71ac7fb125ad7171b0c99510b0e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_422ab71ac7fb125ad7171b0c99510b0e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21571,13 +16978,8 @@ rule reversinglabs_blocklist_cert_blocklist_422ab71ac7fb125ad7171b0c99510b0e {
             1475193600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_6f18946e5b773b7e32d9e7b4fb8d434c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_6f18946e5b773b7e32d9e7b4fb8d434c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21594,13 +16996,8 @@ rule reversinglabs_blocklist_cert_blocklist_6f18946e5b773b7e32d9e7b4fb8d434c {
             1454716800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3596dfc23b9a42c66700982250da2906 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3596dfc23b9a42c66700982250da2906 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21617,13 +17014,8 @@ rule reversinglabs_blocklist_cert_blocklist_3596dfc23b9a42c66700982250da2906 {
             1397219344 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_486bbddc8c5ee99f051ecaeb3f99d2a3 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_486bbddc8c5ee99f051ecaeb3f99d2a3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21640,13 +17032,8 @@ rule reversinglabs_blocklist_cert_blocklist_486bbddc8c5ee99f051ecaeb3f99d2a3 {
             1473292800 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_11211eea9d0d1d1a325b5eae1b2b1951120f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_11211eea9d0d1d1a325b5eae1b2b1951120f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21663,13 +17050,8 @@ rule reversinglabs_blocklist_cert_blocklist_11211eea9d0d1d1a325b5eae1b2b1951120f
             1460147212 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_172fea8cb06ffced6bfac7f2f6b77754 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_172fea8cb06ffced6bfac7f2f6b77754 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21686,13 +17068,8 @@ rule reversinglabs_blocklist_cert_blocklist_172fea8cb06ffced6bfac7f2f6b77754 {
             1467936000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_3ee50bb98fadca2d662a0920e76685a2 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_3ee50bb98fadca2d662a0920e76685a2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21709,13 +17086,8 @@ rule reversinglabs_blocklist_cert_blocklist_3ee50bb98fadca2d662a0920e76685a2 {
             1330041600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_21bfddb6a66435d1adce2ceb23ed7c9a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_21bfddb6a66435d1adce2ceb23ed7c9a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21732,13 +17104,8 @@ rule reversinglabs_blocklist_cert_blocklist_21bfddb6a66435d1adce2ceb23ed7c9a {
             1395297334 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_5b1c3f7bbaa91ca49b06a5c1004ee5be {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_5b1c3f7bbaa91ca49b06a5c1004ee5be {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21755,13 +17122,8 @@ rule reversinglabs_blocklist_cert_blocklist_5b1c3f7bbaa91ca49b06a5c1004ee5be {
             1440643213 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0a2089 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0a2089 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21778,13 +17140,8 @@ rule reversinglabs_blocklist_cert_blocklist_0a2089 {
             1050073884 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_1f84e030a0ed10d5ffe2b81b {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_1f84e030a0ed10d5ffe2b81b {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21801,13 +17158,8 @@ rule reversinglabs_blocklist_cert_blocklist_1f84e030a0ed10d5ffe2b81b {
             1476869735 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_88346267057c0a82e2f39851d1b9694c {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_88346267057c0a82e2f39851d1b9694c {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21826,13 +17178,8 @@ rule reversinglabs_blocklist_cert_blocklist_88346267057c0a82e2f39851d1b9694c {
             1595376000 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_a46f9d8784778baa48167c48bbc56f30 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_a46f9d8784778baa48167c48bbc56f30 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21851,13 +17198,8 @@ rule reversinglabs_blocklist_cert_blocklist_a46f9d8784778baa48167c48bbc56f30 {
             1618963200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_525b5529db20d17a85be284d6b7952ea {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_525b5529db20d17a85be284d6b7952ea {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21874,13 +17216,8 @@ rule reversinglabs_blocklist_cert_blocklist_525b5529db20d17a85be284d6b7952ea {
             1508198400 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_70ae0e517d2ef6d5eed06b56730a1a9a {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_70ae0e517d2ef6d5eed06b56730a1a9a {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21897,13 +17234,8 @@ rule reversinglabs_blocklist_cert_blocklist_70ae0e517d2ef6d5eed06b56730a1a9a {
             1475193600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_57c3717c5e2ce9a2e0cf0340c03f458e {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_57c3717c5e2ce9a2e0cf0340c03f458e {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21920,13 +17252,8 @@ rule reversinglabs_blocklist_cert_blocklist_57c3717c5e2ce9a2e0cf0340c03f458e {
             1450915200 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_0761110efe0b688c469d687512828c1f {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_0761110efe0b688c469d687512828c1f {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"
@@ -21943,13 +17270,8 @@ rule reversinglabs_blocklist_cert_blocklist_0761110efe0b688c469d687512828c1f {
             1433721600 <= pe.signatures[i].not_after
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/blocklist.yara
-
-rule cert_blocklist_08aa03f385f870e3a6d243b74b1dadf6 {
-=======
 //===SUCCESS===
 rule reversinglabs_blocklist_cert_blocklist_08aa03f385f870e3a6d243b74b1dadf6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/blocklist.yara
     meta:
         author      = "ReversingLabs"
         source      = "ReversingLabs"

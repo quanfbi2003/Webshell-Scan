@@ -1,10 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-01-25
-   Identifier: Greenbug Malware
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -13,18 +6,12 @@ import "pe"
    Identifier: Greenbug Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greenbug.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Greenbug_Malware_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_greenbug_Greenbug_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_greenbug.yar
    meta:
       description = "Detects Malware from Greenbug Incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +26,8 @@ rule Neo23x0_apt_greenbug_Greenbug_Malware_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greenbug.yar
-
-rule Greenbug_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greenbug_Greenbug_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_greenbug.yar
    meta:
       description = "Detects Backdoor from Greenbug Incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -72,13 +54,8 @@ rule Neo23x0_apt_greenbug_Greenbug_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and ( 1 of ($x*) or 2 of them ) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greenbug.yar
-
-rule Greenbug_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greenbug_Greenbug_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_greenbug.yar
    meta:
       description = "Detects Backdoor from Greenbug Incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -96,13 +73,8 @@ rule Neo23x0_apt_greenbug_Greenbug_Malware_3 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greenbug.yar
-
-rule Greenbug_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greenbug_Greenbug_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_greenbug.yar
    meta:
       description = "Detects ISMDoor Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -129,13 +101,8 @@ rule Neo23x0_apt_greenbug_Greenbug_Malware_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greenbug.yar
-
-rule Greenbug_Malware_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greenbug_Greenbug_Malware_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_greenbug.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -172,13 +139,8 @@ rule Neo23x0_apt_greenbug_Greenbug_Malware_5 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greenbug.yar
-
-rule Greenbug_Malware_Nov17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greenbug_Greenbug_Malware_Nov17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_greenbug.yar
    meta:
       description = "Detects Greenbug Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

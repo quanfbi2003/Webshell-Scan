@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-03-03
-   Identifier: Operation HoneyBee
-   Reference: https://goo.gl/JAHZVL
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://goo.gl/JAHZVL
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_honeybee.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule HoneyBee_Dropper_MalDoc {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_op_honeybee_HoneyBee_Dropper_MalDoc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_honeybee.yar
    meta:
       description = "Detects samples from Operation Honeybee"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -49,13 +35,8 @@ rule Neo23x0_apt_op_honeybee_HoneyBee_Dropper_MalDoc {
    condition:
       uint16(0) == 0xcfd0 and filesize < 400KB and ( 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_honeybee.yar
-
-rule OpHoneybee_Malware_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_honeybee_OpHoneybee_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_honeybee.yar
    meta:
       description = "Detects malware from Operation Honeybee"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -90,13 +71,8 @@ rule Neo23x0_apt_op_honeybee_OpHoneybee_Malware_1 {
         3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_honeybee.yar
-
-rule OpHoneybee_MaoCheng_Dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_honeybee_OpHoneybee_MaoCheng_Dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_honeybee.yar
    meta:
       description = "Detects MaoCheng dropper from Operation Honeybee"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

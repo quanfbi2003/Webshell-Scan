@@ -6,13 +6,9 @@
 	Comment: Reduced Subset
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-rule Empire_Invoke_BypassUAC {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_Invoke_BypassUAC {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file Invoke-BypassUAC.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -30,13 +26,8 @@ rule Neo23x0_gen_powershell_empire_Empire_Invoke_BypassUAC {
 	condition:
 		filesize < 1200KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_lib_modules_trollsploit_message {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_lib_modules_trollsploit_message {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file message.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +45,8 @@ rule Neo23x0_gen_powershell_empire_Empire_lib_modules_trollsploit_message {
 	condition:
 		filesize < 10KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_Persistence {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_Persistence {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file Persistence.psm1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -77,13 +63,8 @@ rule Neo23x0_gen_powershell_empire_Empire_Persistence {
 	condition:
 		filesize < 108KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_portscan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_portscan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file portscan.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -99,13 +80,8 @@ rule Neo23x0_gen_powershell_empire_Empire_portscan {
 	condition:
 		filesize < 14KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_Invoke_Shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_Invoke_Shellcode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file Invoke-Shellcode.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -122,13 +98,8 @@ rule Neo23x0_gen_powershell_empire_Empire_Invoke_Shellcode {
 	condition:
 		filesize < 100KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_Invoke_Mimikatz {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_Invoke_Mimikatz {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file Invoke-Mimikatz.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -145,13 +116,8 @@ rule Neo23x0_gen_powershell_empire_Empire_Invoke_Mimikatz {
 	condition:
 		filesize < 2500KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_lib_modules_credentials_mimikatz_pth {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_lib_modules_credentials_mimikatz_pth {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file pth.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -167,13 +133,8 @@ rule Neo23x0_gen_powershell_empire_Empire_lib_modules_credentials_mimikatz_pth {
 	condition:
 		filesize < 12KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_Write_HijackDll {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_Write_HijackDll {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file Write-HijackDll.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -190,13 +151,8 @@ rule Neo23x0_gen_powershell_empire_Empire_Write_HijackDll {
 	condition:
 		filesize < 500KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_skeleton_key {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_skeleton_key {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file skeleton_key.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -214,13 +170,8 @@ rule Neo23x0_gen_powershell_empire_Empire_skeleton_key {
 	condition:
 		filesize < 6KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_empire.yar
-
-rule Empire_invoke_wmi {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_empire_Empire_invoke_wmi {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_empire.yar
 	meta:
 		description = "Empire - a pure PowerShell post-exploitation agent - file invoke_wmi.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

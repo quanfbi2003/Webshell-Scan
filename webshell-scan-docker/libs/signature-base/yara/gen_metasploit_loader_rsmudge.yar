@@ -4,20 +4,12 @@
 	Date: 2016-04-20
 	Identifier: Metasploit Loader
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_loader_rsmudge.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_metasploit_loader_rsmudge.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_loader_rsmudge.yar
-rule Metasploit_Loader_RSMudge {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_loader_rsmudge_Metasploit_Loader_RSMudge {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_metasploit_loader_rsmudge.yar
 	meta:
 		description = "Detects a Metasploit Loader by RSMudge - file loader.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,11 +1,7 @@
 /* previously: APT_DarkHydrus_Jul18_4 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_bat2exe.yar
-rule SUSP_BAT2EXE_BDargo_Converted_BAT {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_susp_bat2exe_SUSP_BAT2EXE_BDargo_Converted_BAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_bat2exe.yar
    meta:
       description = "Detects binaries created with BDARGO Advanced BAT to EXE converter"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

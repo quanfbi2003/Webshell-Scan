@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_ivanti_epmm_mobileiron_cve_2023_35078.yar
-
-rule LOG_EXPL_Ivanti_EPMM_MobileIron_Core_CVE_2023_35078_Jul23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_ivanti_epmm_mobileiron_cve_2_LOG_EXPL_Ivanti_EPMM_MobileIron_Core_CVE_2023_35078_Jul23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_ivanti_epmm_mobileiron_cve_2023_35078.yar
    meta:
       description = "Detects the successful exploitation of Ivanti Endpoint Manager Mobile (EPMM) / MobileIron Core CVE-2023-35078"
       author = "Florian Roth"
@@ -17,13 +12,8 @@ rule Neo23x0_expl_ivanti_epmm_mobileiron_cve_2_LOG_EXPL_Ivanti_EPMM_MobileIron_C
    condition:
       $xr1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_ivanti_epmm_mobileiron_cve_2023_35078.yar
-
-rule MAL_WAR_Ivanti_EPMM_MobileIron_Mi_War_Aug23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_ivanti_epmm_mobileiron_cve_2023_3507_MAL_WAR_Ivanti_EPMM_MobileIron_Mi_War_Aug23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_ivanti_epmm_mobileiron_cve_2023_35078.yar
    meta:
       description = "Detects WAR file found in the Ivanti EPMM / MobileIron Core compromises exploiting CVE-2023-35078"
       author = "Florian Roth"
@@ -40,13 +30,8 @@ rule Neo23x0_expl_ivanti_epmm_mobileiron_cve_2023_3507_MAL_WAR_Ivanti_EPMM_Mobil
       filesize < 20KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_ivanti_epmm_mobileiron_cve_2023_35078.yar
-
-rule MAL_WAR_Ivanti_EPMM_MobileIron_LogClear_JAVA_Aug23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_ivanti_epmm_mobileiron_cve_2023_3_MAL_WAR_Ivanti_EPMM_MobileIron_LogClear_JAVA_Aug23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_ivanti_epmm_mobileiron_cve_2023_35078.yar
    meta:
       description = "Detects LogClear.class found in the Ivanti EPMM / MobileIron Core compromises exploiting CVE-2023-35078"
       author = "Florian Roth"

@@ -5702,13 +5702,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Writer_Nano
             all of ( $logger* )
             )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_webshells.yar
-
-rule Neo23x0_gen_EXT_WEBSHELL_JSP_Generic_Tiny
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_EXT_WEBSHELL_JSP_Generic_Tiny
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell tiny"

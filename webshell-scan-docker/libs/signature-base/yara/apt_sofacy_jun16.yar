@@ -4,20 +4,12 @@
 	Date: 2016-06-14
 	Identifier: Sofacy June 2016
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_jun16.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_jun16.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_jun16.yar
-rule Sofacy_Jun16_Sample1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_jun16_Sofacy_Jun16_Sample1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_jun16.yar
 	meta:
 		description = "Detects Sofacy Malware mentioned in PaloAltoNetworks APT report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_apt_sofacy_jun16_Sofacy_Jun16_Sample1 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 200KB and ( 1 of ($s*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_jun16.yar
-
-rule Sofacy_Jun16_Sample2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_jun16_Sofacy_Jun16_Sample2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_jun16.yar
 	meta:
 		description = "Detects Sofacy Malware mentioned in PaloAltoNetworks APT report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -62,13 +49,8 @@ rule Neo23x0_apt_sofacy_jun16_Sofacy_Jun16_Sample2 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 100KB and ( all of ($x*) ) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_jun16.yar
-
-rule Sofacy_Jun16_Sample3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_jun16_Sofacy_Jun16_Sample3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_jun16.yar
 	meta:
 		description = "Detects Sofacy Malware mentioned in PaloAltoNetworks APT report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/hktl_natbypass.yar
-
-rule HKTL_NATBypass_Dec22_1 : T1090 {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_natbypass_HKTL_NATBypass_Dec22_1 : T1090 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/hktl_natbypass.yar
    meta:
       description = "Detects NatBypass tool (also used by APT41)"
       author = "Florian Roth (Nextron Systems)"

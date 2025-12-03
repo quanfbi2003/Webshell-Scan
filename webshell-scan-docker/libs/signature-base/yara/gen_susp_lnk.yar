@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_lnk.yar
-
-rule SUSP_LNK_Big_Link_File {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_lnk_SUSP_LNK_Big_Link_File {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_lnk.yar
    meta:
       description = "Detects a suspiciously big LNK file - maybe with embedded content"
       author = "Florian Roth (Nextron Systems)"

@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-01
-   Identifier: Foudre
-   Reference: https://goo.gl/Nbqbt6
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://goo.gl/Nbqbt6
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_foudre.yar
-rule Foudre_Backdoor_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_foudre_Foudre_Backdoor_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_foudre.yar
    meta:
       description = "Detects Foudre Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +29,8 @@ rule Neo23x0_apt_foudre_Foudre_Backdoor_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_foudre.yar
-
-rule Foudre_Backdoor_Dropper_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_foudre_Foudre_Backdoor_Dropper_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_foudre.yar
    meta:
       description = "Detects Foudre Backdoor"
       author = "Florian Roth (Nextron Systems)"
@@ -70,13 +51,8 @@ rule Neo23x0_apt_foudre_Foudre_Backdoor_Dropper_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and ( 1 of ($x*) or 4 of them ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_foudre.yar
-
-rule Foudre_Backdoor_Component_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_foudre_Foudre_Backdoor_Component_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_foudre.yar
    meta:
       description = "Detects Foudre Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -99,13 +75,8 @@ rule Neo23x0_apt_foudre_Foudre_Backdoor_Component_1 {
          ( 2 of them and pe.exports("D1") )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_foudre.yar
-
-rule Foudre_Backdoor_SFX {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_foudre_Foudre_Backdoor_SFX {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_foudre.yar
    meta:
       description = "Detects Foudre Backdoor SFX"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

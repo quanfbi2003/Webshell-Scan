@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta_liudoor.yar
-rule APT_Liudoor {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_terracotta_liudoor_APT_Liudoor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta_liudoor.yar
     meta:
         author = "RSA FirstWatch"
         date = "2015-07-23"

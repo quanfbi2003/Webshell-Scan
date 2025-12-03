@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_xor_hunting.yar
-
-
-rule Neo23x0_gen_SUSP_XORed_Mozilla_Oct19 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_xor_hunting_SUSP_XORed_Mozilla_Oct19 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_xor_hunting.yar
    meta:
       old_rule_name = "SUSP_XORed_Mozilla"
       description = "Detects suspicious single byte XORed keyword 'Mozilla/5.0' - it uses yara's XOR modifier and therefore cannot print the XOR key. You can use the CyberChef recipe linked in the reference field to brute force the used key."

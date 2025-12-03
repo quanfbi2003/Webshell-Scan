@@ -6,15 +6,10 @@
    Identifier: APT19
    Reference: https://www.fireeye.com/blog/threat-research/2017/06/phished-at-the-request-of-counsel.html
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt19.yar
-
-rule Beacon_K5om {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_apt19_Beacon_K5om {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt19.yar
    meta:
       description = "Detects Meterpreter Beacon - file K5om.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +32,8 @@ rule Neo23x0_apt_apt19_Beacon_K5om {
 }
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt19.yar
-
-rule FE_LEGALSTRIKE_MACRO {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt19_FE_LEGALSTRIKE_MACRO {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt19.yar
    meta:
       version=".1"
       filetype="MACRO"
@@ -60,13 +50,8 @@ rule Neo23x0_apt_apt19_FE_LEGALSTRIKE_MACRO {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt19.yar
-
-rule FE_LEGALSTRIKE_RTF {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt19_FE_LEGALSTRIKE_RTF {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt19.yar
    meta:
       version=".1"
       filetype="MACRO"

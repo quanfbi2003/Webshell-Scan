@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wsh_rat.yar
-rule MAL_WshRAT_Dotnet_Packer_Feb21 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_wsh_rat_MAL_WshRAT_Dotnet_Packer_Feb21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_wsh_rat.yar
     meta:
         description = "Yara Rule for WSH rat .NET packer of February 2021 "
         author = "Yoroi Malware ZLab"

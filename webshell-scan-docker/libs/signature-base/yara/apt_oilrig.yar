@@ -1,10 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2016-10-12
-   Identifier: OilRig Malware Campaign
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -13,18 +6,12 @@ import "pe"
    Identifier: OilRig Malware Campaign
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule OilRig_Malware_Campaign_Gen1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Gen1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects malware from OilRig Campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -80,13 +67,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Gen1 {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 700KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Malware_Campaign_Mal1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Mal1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects malware from OilRig Campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -104,13 +86,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Mal1 {
    condition:
       ( uint16(0) == 0x4f48 and filesize < 4KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Malware_Campaign_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Gen2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects Oilrig malware samples"
       author = "Florian Roth (Nextron Systems)"
@@ -133,13 +110,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Gen2 {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 4000KB and 2 of ($s*) ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Malware_Campaign_Gen3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Gen3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects Oilrig malware samples"
       author = "Florian Roth (Nextron Systems)"
@@ -157,13 +129,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Gen3 {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Malware_Campaign_Mal2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Mal2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects malware from OilRig Campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -182,13 +149,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Mal2 {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Campaign_Reconnaissance {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Campaign_Reconnaissance {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects Windows discovery commands - known from OilRig Campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -204,13 +166,8 @@ rule Neo23x0_apt_oilrig_OilRig_Campaign_Reconnaissance {
    condition:
       ( filesize < 1KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Malware_Campaign_Mal3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Mal3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects malware from OilRig Campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -226,13 +183,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Campaign_Mal3 {
    condition:
       ( filesize < 10KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule OilRig_Malware_Nov17_13 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_OilRig_Malware_Nov17_13 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = ""
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -254,13 +206,8 @@ rule Neo23x0_apt_oilrig_OilRig_Malware_Nov17_13 {
         all of ($a*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule Oilrig_IntelSecurityManager_macro {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_Oilrig_IntelSecurityManager_macro {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects OilRig malware"
       author = "Eyal Sela (slightly modified by Florian Roth)"
@@ -286,13 +233,8 @@ rule Neo23x0_apt_oilrig_Oilrig_IntelSecurityManager_macro {
    condition:
       filesize < 300KB and 1 of ($one*) or 2 of ($two*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule Oilrig_IntelSecurityManager {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_Oilrig_IntelSecurityManager {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects OilRig malware"
       author = "Eyal Sela"
@@ -323,13 +265,8 @@ rule Neo23x0_apt_oilrig_Oilrig_IntelSecurityManager {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule APT_APT34_PS_Malware_Apr19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_APT_APT34_PS_Malware_Apr19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects APT34 PowerShell malware"
       author = "Florian Roth (Nextron Systems)"
@@ -346,13 +283,8 @@ rule Neo23x0_apt_oilrig_APT_APT34_PS_Malware_Apr19_1 {
    condition:
       1 of ($x*) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule APT_APT34_PS_Malware_Apr19_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_APT_APT34_PS_Malware_Apr19_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects APT34 PowerShell malware"
       author = "Florian Roth (Nextron Systems)"
@@ -372,13 +304,8 @@ rule Neo23x0_apt_oilrig_APT_APT34_PS_Malware_Apr19_2 {
    condition:
       1 of ($x*) and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig.yar
-
-rule APT_APT34_PS_Malware_Apr19_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_APT_APT34_PS_Malware_Apr19_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig.yar
    meta:
       description = "Detects APT34 PowerShell malware"
       author = "Florian Roth (Nextron Systems)"

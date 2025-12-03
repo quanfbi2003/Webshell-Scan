@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_moveit_0day_jun23.yar
-
-rule WEBSHELL_ASPX_DLL_MOVEit_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_moveit_0day_jun23_WEBSHELL_ASPX_DLL_MOVEit_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_moveit_0day_jun23.yar
    meta:
       description = "Detects compiled ASPX web shells found being used in MOVEit Transfer exploitation"
       author = "Florian Roth"
@@ -25,13 +20,8 @@ rule Neo23x0_vuln_moveit_0day_jun23_WEBSHELL_ASPX_DLL_MOVEit_Jun23_1 {
          1 of ($x*) and $a1
       ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_moveit_0day_jun23.yar
-
-rule WEBSHELL_ASPX_MOVEit_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_moveit_0day_jun23_WEBSHELL_ASPX_MOVEit_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_moveit_0day_jun23.yar
    meta:
       description = "Detects ASPX web shells as being used in MOVEit Transfer exploitation"
       author = "Florian Roth"
@@ -49,13 +39,8 @@ rule Neo23x0_vuln_moveit_0day_jun23_WEBSHELL_ASPX_MOVEit_Jun23_1 {
    condition:
       filesize < 150KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_moveit_0day_jun23.yar
-
-rule LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_moveit_0day_jun23_LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_moveit_0day_jun23.yar
    meta:
       description = "Detects a potential compromise indicator found in MOVEit Transfer logs"
       author = "Florian Roth"
@@ -69,13 +54,8 @@ rule Neo23x0_vuln_moveit_0day_jun23_LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_moveit_0day_jun23.yar
-
-rule LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_moveit_0day_jun23_LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_moveit_0day_jun23.yar
    meta:
       description = "Detects a potential compromise indicator found in MOVEit Transfer logs"
       author = "Florian Roth"
@@ -97,13 +77,8 @@ rule Neo23x0_vuln_moveit_0day_jun23_LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23
       1 of ($a*) and 3 of ($s*)
       or all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_moveit_0day_jun23.yar
-
-rule LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_moveit_0day_jun23_LOG_EXPL_MOVEit_Exploitation_Indicator_Jun23_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_moveit_0day_jun23.yar
    meta:
       description = "Detects a potential compromise indicator found in MOVEit DMZ Web API logs"
       author = "Nasreddine Bencherchali"

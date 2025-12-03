@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_dns_stager_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_dns_stager_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -32,13 +27,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_dns_stager_x
     uint32(@h01+0x01a4) == 0xe035f044 and
     uint32(@h01+0x01e4) == 0xcc8e00f4
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_smb_stager_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_smb_stager_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -70,13 +60,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_smb_stager_x
     uint32(@h01+0x0139) == 0x528796c6 and
     uint32(@h01+0x014b) == 0x56a2b5f0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Bind_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -116,13 +101,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x86
     uint32(@h01+0x0128) == 0x5fc8d902 and
     uint32(@h01+0x013d) == 0x614d6e75
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Bind_x64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -160,13 +140,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x64
     uint32(@h01+0x01d2) == 0x5fc8d902 and
     uint32(@h01+0x01ee) == 0x614d6e75
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -198,13 +173,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_
     uint32(@h01+0x0105) == 0xe553a458 and
     uint32(@h01+0x0113) == 0x5fc8d902
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -236,13 +206,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_
     uint32(@h01+0x01a5) == 0x5fc8d902 and
     uint32(@h01+0x01c1) == 0x614d6e75
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_http_stager_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -280,13 +245,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_
     uint32(@h01+0x02d8) == 0xe553a458 and
     uint32(@h01+0x02f3) == 0xe2899612
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_http_stager_x64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -318,14 +278,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_
     uint32(@h01+0x0324) == 0xe553a458 and
     uint32(@h01+0x0342) == 0xe2899612
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-
-rule Cobaltbaltstrike_RAW_Payload_https_stager_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -365,14 +319,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager
     uint32(@h01+0x02fd) == 0xe553a458 and
     uint32(@h01+0x0318) == 0xe2899612
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-
-rule Cobaltbaltstrike_RAW_Payload_https_stager_x64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -406,13 +354,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager
     uint32(@h01+0x0347) == 0xe553a458 and
     uint32(@h01+0x0365) == 0xe2899612
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_dns_stager_x86_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_dns_stager_x86_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -430,13 +373,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_dns_stager_x
     uint32(@h01+0x034b) == 0xe0003500 and
     uint32(@h01+0x03cb) == 0xcc008e00
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_smb_stager_x86_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_smb_stager_x86_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -456,13 +394,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_smb_stager_x
     uint32(@h01+0x0275) == 0x52008700 and
     uint32(@h01+0x0299) == 0x5600a200
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Bind_x86_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x86_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -486,13 +419,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x86
     uint32(@h01+0x0253) == 0x5f00c800 and
     uint32(@h01+0x027d) == 0x61004d00
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Bind_x64_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x64_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -515,13 +443,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Bind_x64
     uint32(@h01+0x03a7) == 0x5f00c800 and
     uint32(@h01+0x03df) == 0x61004d00
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x86_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x86_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -541,13 +464,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_
     uint32(@h01+0x020d) == 0xe5005300 and
     uint32(@h01+0x0229) == 0x5f00c800
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x64_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_x64_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -567,13 +485,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_TCP_Reverse_
     uint32(@h01+0x034d) == 0x5f00c800 and
     uint32(@h01+0x0385) == 0x61004d00
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_http_stager_x86_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_x86_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -596,13 +509,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_
     uint32(@h01+0x05b3) == 0xe5005300 and
     uint32(@h01+0x05e9) == 0xe2008900
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_http_stager_x64_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_x64_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -622,13 +530,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_http_stager_
     uint32(@h01+0x064b) == 0xe5005300 and
     uint32(@h01+0x0687) == 0xe2008900
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_https_stager_x86_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager_x86_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -652,13 +555,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager
     uint32(@h01+0x05fd) == 0xe5005300 and
     uint32(@h01+0x0633) == 0xe2008900
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_RAW_Payload_https_stager_x64_UTF16
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager_x64_UTF16
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -679,13 +577,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_RAW_Payload_https_stager
     uint32(@h01+0x0691) == 0xe5005300 and
     uint32(@h01+0x06cd) == 0xe2008900
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_Payload_Encoded
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Payload_Encoded
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -739,13 +632,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Payload_Encoded
   condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_strike_Payload_XORed
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_strike_Payload_XORed
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -766,13 +654,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_strike_Payload_XORed
     //NOP slide
     uint32be(@h01+8) ^ uint32be(@h01+16) == 0x90909090
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_Beacon_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -792,13 +675,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_x86
     $h01 and
     any of ($h1*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_Beacon_x64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -818,13 +696,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_x64
     $h01 and
     any of ($h1*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_Beacon_Encoded
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_Encoded
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -877,13 +750,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_Encoded
   condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_Beacon_XORed_x86
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_XORed_x86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"
@@ -907,13 +775,8 @@ rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_XORed_x86
             uint32be(@h11+12) ^ uint32be(@h11+20) == 0x90909090
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
-
-rule Cobaltbaltstrike_Beacon_XORed_x64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_by_avast_Cobaltbaltstrike_Beacon_XORed_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike_by_avast.yar
 {
   meta:
     author = "Avast Threat Intel Team"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_obfuscation.yar
-
-rule SUSP_Base64_Encoded_Hex_Encoded_Code {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_obfuscation_SUSP_Base64_Encoded_Hex_Encoded_Code {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_obfuscation.yar
    meta:
       author = "Florian Roth (Nextron Systems)"
       description = "Detects hex encoded code that has been base64 encoded"
@@ -20,13 +15,8 @@ rule Neo23x0_gen_susp_obfuscation_SUSP_Base64_Encoded_Hex_Encoded_Code {
    condition:
       1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_obfuscation.yar
-
-rule SUSP_Double_Base64_Encoded_Executable {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_obfuscation_SUSP_Double_Base64_Encoded_Executable {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_obfuscation.yar
    meta:
       description = "Detects an executable that has been encoded with base64 twice"
       author = "Florian Roth"
@@ -68,13 +58,8 @@ rule Neo23x0_gen_susp_obfuscation_SUSP_Double_Base64_Encoded_Executable {
       and not filepath contains "\\cache2\\entries\\" // FF cache
       and not filepath contains "\\Microsoft\\Windows\\INetCache\\IE\\" // old IE
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_obfuscation.yar
-
-rule SUSP_Reversed_Base64_Encoded_EXE : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_obfuscation_SUSP_Reversed_Base64_Encoded_EXE : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_obfuscation.yar
    meta:
       description = "Detects an base64 encoded executable with reversed characters"
       author = "Florian Roth (Nextron Systems)"
@@ -96,13 +81,8 @@ rule Neo23x0_gen_susp_obfuscation_SUSP_Reversed_Base64_Encoded_EXE : FILE {
    condition:
       filesize < 10000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_obfuscation.yar
-
-rule SUSP_Script_Base64_Blocks_Jun20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_obfuscation_SUSP_Script_Base64_Blocks_Jun20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_obfuscation.yar
    meta:
       description = "Detects suspicious file with base64 encoded payload in blocks"
       author = "Florian Roth (Nextron Systems)"
@@ -116,13 +96,8 @@ rule Neo23x0_gen_susp_obfuscation_SUSP_Script_Base64_Blocks_Jun20_1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_obfuscation.yar
-
-rule SUSP_Reversed_Hacktool_Author : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_obfuscation_SUSP_Reversed_Hacktool_Author : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_obfuscation.yar
    meta:
       description = "Detects a suspicious path traversal into a Windows folder"
       author = "Florian Roth (Nextron Systems)"
@@ -137,13 +112,8 @@ rule Neo23x0_gen_susp_obfuscation_SUSP_Reversed_Hacktool_Author : FILE {
       filesize < 4000KB and
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_obfuscation.yar
-
-rule SUSP_Base64_Encoded_Hacktool_Dev {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_obfuscation_SUSP_Base64_Encoded_Hacktool_Dev {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_obfuscation.yar
    meta:
       description = "Detects a suspicious base64 encoded keyword"
       author = "Florian Roth (Nextron Systems)"

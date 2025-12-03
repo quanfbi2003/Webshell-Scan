@@ -1,19 +1,5 @@
-
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-01-28
-   Identifier: Suckfly
-   Reference: https://www.symantec.com/connect/blogs/suckfly-revealing-secret-life-your-code-signing-certificates
-*/
-
 import "pe"
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_suckfly.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Suckfly_Nidiran_Gen_1 {
-=======
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -28,7 +14,6 @@ rule Suckfly_Nidiran_Gen_1 {
 
 //===SUCCESS===
 rule Neo23x0_apt_suckfly_Suckfly_Nidiran_Gen_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_suckfly.yar
    meta:
       description = "Detects Suckfly Nidiran Trojan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -44,13 +29,8 @@ rule Neo23x0_apt_suckfly_Suckfly_Nidiran_Gen_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_suckfly.yar
-
-rule Suckfly_Nidiran_Gen_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_suckfly_Suckfly_Nidiran_Gen_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_suckfly.yar
    meta:
       description = "Detects Suckfly Nidiran Trojan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -79,13 +59,8 @@ rule Neo23x0_apt_suckfly_Suckfly_Nidiran_Gen_2 {
         4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_suckfly.yar
-
-rule Suckfly_Nidiran_Gen_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_suckfly_Suckfly_Nidiran_Gen_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_suckfly.yar
    meta:
       description = "Detects Suckfly Nidiran Trojan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

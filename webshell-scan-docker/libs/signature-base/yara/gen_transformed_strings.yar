@@ -4,20 +4,12 @@
 	Date: 2016-07-31
 	Identifier: Transformed Strings
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_transformed_strings.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_transformed_strings.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_transformed_strings.yar
-rule Typical_Malware_String_Transforms {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_transformed_strings_Typical_Malware_String_Transforms {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_transformed_strings.yar
 	meta:
 		description = "Detects typical strings in a reversed or otherwise modified form"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

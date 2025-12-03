@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ru_crywiper.yar
-
-rule APT_CryWiper_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ru_crywiper_APT_CryWiper_Dec22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ru_crywiper.yar
    meta:
       description = "Detects CryWiper malware samples"
       author = "Florian Roth (Nextron Systems)"

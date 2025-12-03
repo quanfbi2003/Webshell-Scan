@@ -1,12 +1,8 @@
 /* Threat Hunting Rule - note the score of 40 > Notice */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hunting_susp_rar.yar
-rule SUSP_RAR_Single_Doc_File {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_hunting_susp_rar_SUSP_RAR_Single_Doc_File {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_hunting_susp_rar.yar
    meta:
       description = "Detects suspicious RAR files that contain nothing but a single .doc file"
       author = "Florian Roth (Nextron Systems)"

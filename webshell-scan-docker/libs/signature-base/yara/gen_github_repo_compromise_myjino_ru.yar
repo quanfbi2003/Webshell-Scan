@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_repo_compromise_myjino_ru.yar
-
-rule MAL_Github_Repo_Compromise_MyJino_Ru_Aug22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_repo_compromise_myjino_ru_MAL_Github_Repo_Compromise_MyJino_Ru_Aug22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_github_repo_compromise_myjino_ru.yar
    meta:
       description = "Detects URL mentioned in report on compromised Github repositories in August 2022"
       author = "Florian Roth (Nextron Systems)"

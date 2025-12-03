@@ -5,20 +5,12 @@
 	Identifier: Terracotta APT
 	Comment: Reduced Rule Set
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta.yar
-rule Apolmy_Privesc_Trojan {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_terracotta_Apolmy_Privesc_Trojan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta.yar
 	meta:
 		description = "Apolmy Privilege Escalation Trojan used in APT Terracotta"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -35,13 +27,8 @@ rule Neo23x0_apt_terracotta_Apolmy_Privesc_Trojan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta.yar
-
-rule Mithozhan_Trojan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_terracotta_Mithozhan_Trojan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta.yar
 	meta:
 		description = "Mitozhan Trojan used in APT Terracotta"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +45,8 @@ rule Neo23x0_apt_terracotta_Mithozhan_Trojan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta.yar
-
-rule RemoteExec_Tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_terracotta_RemoteExec_Tool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta.yar
 	meta:
 		description = "Remote Access Tool used in APT Terracotta"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -85,13 +67,8 @@ rule Neo23x0_apt_terracotta_RemoteExec_Tool {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta.yar
-
-rule LiuDoor_Malware_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_terracotta_LiuDoor_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta.yar
 	meta:
 		description = "Liudoor Trojan used in Terracotta APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -112,13 +89,8 @@ rule Neo23x0_apt_terracotta_LiuDoor_Malware_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_terracotta.yar
-
-rule LiuDoor_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_terracotta_LiuDoor_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_terracotta.yar
 	meta:
 		description = "Liudoor Trojan used in Terracotta APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

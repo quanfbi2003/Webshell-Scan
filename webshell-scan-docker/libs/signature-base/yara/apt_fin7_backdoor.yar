@@ -6,19 +6,12 @@
    Identifier: FIN7
    Reference: https://www.proofpoint.com/us/threat-insight/post/fin7carbanak-threat-actor-unleashes-bateleur-jscript-backdoor
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7_backdoor.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule FIN7_Dropper_Aug17 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_fin7_backdoor_FIN7_Dropper_Aug17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fin7_backdoor.yar
    meta:
       description = "Detects Word Dropper from Proofpoint FIN7 Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +32,8 @@ rule Neo23x0_apt_fin7_backdoor_FIN7_Dropper_Aug17 {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 700KB and 1 of ($x*) or all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7_backdoor.yar
-
-rule FIN7_Backdoor_Aug17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_backdoor_FIN7_Backdoor_Aug17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fin7_backdoor.yar
    meta:
       description = "Detects Word Dropper from Proofpoint FIN7 Report"
       author = "Florian Roth (Nextron Systems)"

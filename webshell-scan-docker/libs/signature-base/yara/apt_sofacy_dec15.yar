@@ -5,13 +5,9 @@
 	Identifier: Sofacy Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-rule Sofacy_Malware_StrangeSpaces {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_Malware_StrangeSpaces {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "Detetcs strange strings from Sofacy malware with many spaces"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -27,13 +23,8 @@ rule Neo23x0_apt_sofacy_dec15_Sofacy_Malware_StrangeSpaces {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 50KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-
-rule Sofacy_Malware_AZZY_Backdoor_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_Malware_AZZY_Backdoor_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "AZZY Backdoor - Sample 1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -49,13 +40,8 @@ rule Neo23x0_apt_sofacy_dec15_Sofacy_Malware_AZZY_Backdoor_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-
-rule Sofacy_AZZY_Backdoor_Implant_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_AZZY_Backdoor_Implant_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "AZZY Backdoor Implant 4.3 - Sample 1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -73,13 +59,8 @@ rule Neo23x0_apt_sofacy_dec15_Sofacy_AZZY_Backdoor_Implant_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-
-rule Sofacy_AZZY_Backdoor_HelperDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_AZZY_Backdoor_HelperDLL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "Dropped C&C helper DLL for AZZY 4.3"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -97,13 +78,8 @@ rule Neo23x0_apt_sofacy_dec15_Sofacy_AZZY_Backdoor_HelperDLL {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-
-rule Sofacy_CollectorStealer_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_CollectorStealer_Gen1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "Generic rule to detect Sofacy Malware Collector Stealer"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -121,13 +97,8 @@ rule Neo23x0_apt_sofacy_dec15_Sofacy_CollectorStealer_Gen1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-
-rule Sofacy_CollectorStealer_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_CollectorStealer_Gen2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "File collectors / USB stealers - Generic"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -145,13 +116,8 @@ rule Neo23x0_apt_sofacy_dec15_Sofacy_CollectorStealer_Gen2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_dec15.yar
-
-rule Sofacy_CollectorStealer_Gen3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_dec15_Sofacy_CollectorStealer_Gen3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_dec15.yar
 	meta:
 		description = "File collectors / USB stealers - Generic"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

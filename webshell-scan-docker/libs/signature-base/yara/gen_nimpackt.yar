@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_nimpackt.yar
-
-rule HKTL_Nim_NimPackt : EXE FILE HKTL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_nimpackt_HKTL_Nim_NimPackt : EXE FILE HKTL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_nimpackt.yar
     meta:
         description = "Detects binaries generated with NimPackt v1"
         author = "Cas van Cooten"

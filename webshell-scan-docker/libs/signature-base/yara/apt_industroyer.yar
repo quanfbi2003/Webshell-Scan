@@ -6,19 +6,12 @@
    Identifier: Industroyer
    Reference: https://goo.gl/x81cSy
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_industroyer.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Industroyer_Malware_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_industroyer_Industroyer_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_industroyer.yar
    meta:
       description = "Detects Industroyer related malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -44,13 +37,8 @@ rule Neo23x0_apt_industroyer_Industroyer_Malware_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_industroyer.yar
-
-rule Industroyer_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_industroyer_Industroyer_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_industroyer.yar
    meta:
       description = "Detects Industroyer related malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -89,13 +77,8 @@ rule Neo23x0_apt_industroyer_Industroyer_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of ($x*) or 3 of them or 1 of ($a*) ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_industroyer.yar
-
-rule Industroyer_Portscan_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_industroyer_Industroyer_Portscan_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_industroyer.yar
    meta:
       description = "Detects Industroyer related custom port scaner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +100,8 @@ rule Neo23x0_apt_industroyer_Industroyer_Portscan_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and all of ($s*) or 2 of ($d*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_industroyer.yar
-
-rule Industroyer_Portscan_3_Output {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_industroyer_Industroyer_Portscan_3_Output {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_industroyer.yar
    meta:
       description = "Detects Industroyer related custom port scaner output file"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -137,13 +115,8 @@ rule Neo23x0_apt_industroyer_Industroyer_Portscan_3_Output {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_industroyer.yar
-
-rule Industroyer_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_industroyer_Industroyer_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_industroyer.yar
    meta:
       description = "Detects Industroyer related malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -161,13 +134,8 @@ rule Neo23x0_apt_industroyer_Industroyer_Malware_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of ($s*) or $a1 )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_industroyer.yar
-
-rule Industroyer_Malware_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_industroyer_Industroyer_Malware_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_industroyer.yar
    meta:
       description = "Detects Industroyer related malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

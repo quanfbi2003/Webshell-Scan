@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mikey_trojan.yar
-
-rule Gen_Trojan_Mikey {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mikey_trojan_Gen_Trojan_Mikey {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_mikey_trojan.yar
 	meta:
 		description = "Trojan Mikey - file sample_mikey.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -24,4 +19,3 @@ rule Neo23x0_crime_mikey_trojan_Gen_Trojan_Mikey {
 	condition:
 		uint16(0) == 0x5a4d and $s0 and 2 of ($x*)
 }
-

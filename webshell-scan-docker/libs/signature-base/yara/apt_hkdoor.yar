@@ -8,13 +8,9 @@ import "pe"
    Reference: https://www.cylance.com/en_us/blog/threat-spotlight-opening-hackers-door.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hkdoor.yar
-rule hkdoor_backdoor_dll {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_hkdoor_hkdoor_backdoor_dll {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hkdoor.yar
    meta:
       description = "Hacker's Door Backdoor DLL"
       author = "Cylance Inc."
@@ -34,13 +30,8 @@ rule Neo23x0_apt_hkdoor_hkdoor_backdoor_dll {
       pe.imports("ws2_32.dll", "WSAStartup") and
       pe.imports("ws2_32.dll", "sendto")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hkdoor.yar
-
-rule hkdoor_backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hkdoor_hkdoor_backdoor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hkdoor.yar
    meta:
       description = "Hacker's Door Backdoor"
       author = "Cylance Inc."
@@ -60,13 +51,8 @@ rule Neo23x0_apt_hkdoor_hkdoor_backdoor {
       filesize < 400KB and
       ( 4 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hkdoor.yar
-
-rule hkdoor_dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hkdoor_hkdoor_dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hkdoor.yar
    meta:
       description = "Hacker's Door Dropper"
       author = "Cylance Inc."
@@ -93,13 +79,8 @@ rule Neo23x0_apt_hkdoor_hkdoor_dropper {
       pe.imports("KERNEL32.dll", "FindResourceW") and
       pe.imports("KERNEL32.dll", "LoadResource")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hkdoor.yar
-
-rule hkdoor_driver {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hkdoor_hkdoor_driver {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hkdoor.yar
    meta:
       description = "Hacker's Door Driver"
       author = "Cylance Inc."

@@ -6,13 +6,9 @@
    Reference: https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2017/february/ism-rat/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ism_rat.yar
-rule Trojan_ISMRAT_gen {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ism_rat_Trojan_ISMRAT_gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ism_rat.yar
    meta:
       description = "ISM RAT"
       author = "Ahmed Zaki"

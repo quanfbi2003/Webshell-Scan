@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sysscan.yar
-rule xDedic_SysScan_unpacked {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sysscan_xDedic_SysScan_unpacked {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sysscan.yar
    meta:
       author = " Kaspersky Lab"
       maltype = "crimeware"
@@ -30,13 +26,8 @@ rule Neo23x0_apt_sysscan_xDedic_SysScan_unpacked {
    condition:
       uint16(0) == 0x5A4D and filesize < 5000000 and ( any of ($a*) or all of ($b*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sysscan.yar
-
-rule xdedic_packed_syscan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sysscan_xdedic_packed_syscan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sysscan.yar
    meta:
       author = "Kaspersky Lab - modified by Florian Roth"
       company = "Kaspersky Lab"

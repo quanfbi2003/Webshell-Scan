@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_Sandworm_Keywords_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_Keywords_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects commands used by Sandworm group to exploit critical vulernability CVE-2019-10149 in Exim"
       author = "Florian Roth (Nextron Systems)"
@@ -18,13 +13,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_Keywords_May20_1 {
       filesize < 8000KB and
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_Sandworm_SSH_Key_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_SSH_Key_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects SSH key used by Sandworm on exploited machines"
       author = "Florian Roth (Nextron Systems)"
@@ -39,13 +29,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_SSH_Key_May20_1 {
       filesize < 1000KB and
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_Sandworm_SSHD_Config_Modification_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_SSHD_Config_Modification_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects ssh config entry inserted by Sandworm on compromised machines"
       author = "Florian Roth (Nextron Systems)"
@@ -62,13 +47,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_SSHD_Config_Modification_May20_
       filesize < 10KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_Sandworm_InitFile_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_InitFile_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects mysql init script used by Sandworm on compromised machines"
       author = "Florian Roth (Nextron Systems)"
@@ -84,13 +64,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_InitFile_May20_1 {
       filesize < 10KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_Sandworm_User_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_User_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects user added by Sandworm on compromised machines"
       author = "Florian Roth (Nextron Systems)"
@@ -107,13 +82,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_Sandworm_User_May20_1 {
    condition:
       filesize < 4KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_WEBSHELL_PHP_Sandworm_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_WEBSHELL_PHP_Sandworm_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects GIF header PHP webshell used by Sandworm on compromised machines"
       author = "Florian Roth (Nextron Systems)"
@@ -129,13 +99,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_WEBSHELL_PHP_Sandworm_May20_1 {
       filesize < 10KB and
       $h1 at 0 and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_SH_Sandworm_Shell_Script_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_SH_Sandworm_Shell_Script_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects shell script used by Sandworm in attack against Exim mail server"
       author = "Florian Roth (Nextron Systems)"
@@ -162,13 +127,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_SH_Sandworm_Shell_Script_May20_1 {
       filesize < 20KB and
       1 of ($x*) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_RU_Sandworm_PY_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_RU_Sandworm_PY_May20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects Sandworm Python loader"
       author = "Florian Roth (Nextron Systems)"
@@ -186,13 +146,8 @@ rule Neo23x0_apt_sandworm_exim_expl_APT_RU_Sandworm_PY_May20_1 {
       filesize < 1KB and
       1 of ($x*) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_exim_expl.yar
-
-rule APT_RU_Sandworm_PY_May20_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_exim_expl_APT_RU_Sandworm_PY_May20_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sandworm_exim_expl.yar
    meta:
       description = "Detects Sandworm Python loader"
       author = "Florian Roth (Nextron Systems)"

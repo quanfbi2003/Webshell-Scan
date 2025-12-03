@@ -6,13 +6,9 @@
    Reference: https://www.ncsc.gov.uk/alerts/turla-group-malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-rule Neuron_common_strings {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_Neuron_common_strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
     meta:
         description = "Rule for detection of Neuron based on commonly used strings"
         author = "NCSC UK"
@@ -36,13 +32,8 @@ rule Neo23x0_apt_turla_neuron_Neuron_common_strings {
     condition:
         (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and $dotnetMagic and 6 of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-
-rule Neuron_standalone_signature {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_Neuron_standalone_signature {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
     meta:
         description = "Rule for detection of Neuron based on a standalone signature from .NET metadata"
         author = "NCSC UK"
@@ -56,13 +47,8 @@ rule Neo23x0_apt_turla_neuron_Neuron_standalone_signature {
     condition:
         (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-
-rule Nautilus_modified_rc4_loop {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_Nautilus_modified_rc4_loop {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
     meta:
         description = "Rule for detection of Nautilus based on assembly code for a modified RC4 loop"
         author = "NCSC UK"
@@ -75,13 +61,8 @@ rule Neo23x0_apt_turla_neuron_Nautilus_modified_rc4_loop {
     condition:
         (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and $a
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-
-rule Nautilus_rc4_key {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_Nautilus_rc4_key {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
     meta:
         description = "Rule for detection of Nautilus based on a hardcoded RC4 key"
         author = "NCSC UK"
@@ -94,13 +75,8 @@ rule Neo23x0_apt_turla_neuron_Nautilus_rc4_key {
     condition:
         (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and $key
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-
-rule Nautilus_common_strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_Nautilus_common_strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
     meta:
         description = "Rule for detection of Nautilus based on common plaintext strings"
         author = "NCSC UK"
@@ -120,13 +96,8 @@ rule Neo23x0_apt_turla_neuron_Nautilus_common_strings {
 }
 
 /* Forensic Artifacts */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-
-rule Nautilus_forensic_artificats {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_Nautilus_forensic_artificats {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
     meta:
         description = "Rule for detection of Nautilus related strings"
         author = "NCSC UK / Florian Roth"
@@ -154,13 +125,8 @@ rule Neo23x0_apt_turla_neuron_Nautilus_forensic_artificats {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_neuron.yar
-
-rule APT_Neuron2_Loader_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_neuron_APT_Neuron2_Loader_Strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_neuron.yar
    meta:
       description = "Rule for detection of Neuron2 based on strings within the loader"
       author = "NCSC"

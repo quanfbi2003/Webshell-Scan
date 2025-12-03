@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-rule IronTiger_ASPXSpy : HIGHVOL
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ASPXSpy : HIGHVOL
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -16,13 +12,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ASPXSpy : HIGHVOL
 	condition:
 		any of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_ChangePort_Toolkit_driversinstall
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ChangePort_Toolkit_driversinstall
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -37,13 +28,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ChangePort_Toolkit_driversinstal
 	condition:
 		uint16(0) == 0x5a4d and (2 of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_ChangePort_Toolkit_ChangePortExe
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ChangePort_Toolkit_ChangePortExe
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -59,13 +45,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ChangePort_Toolkit_ChangePortExe
 	condition:
 		uint16(0) == 0x5a4d and (2 of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_dllshellexc2010
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_dllshellexc2010
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -81,13 +62,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_dllshellexc2010
 	condition:
 		(uint16(0) == 0x5a4d) and ((any of ($str*)) or (all of ($bla*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_dnstunnel
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_dnstunnel
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -107,13 +83,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_dnstunnel
 	condition:
 		(uint16(0) == 0x5a4d) and ((any of ($str*)) or (any of ($mistake*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_EFH3_encoder
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_EFH3_encoder
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -127,13 +98,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_EFH3_encoder
 	condition:
 		uint16(0) == 0x5a4d and (any of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_GetPassword_x64
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_GetPassword_x64
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -152,13 +118,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_GetPassword_x64
 	condition:
 		uint16(0) == 0x5a4d and ((any of ($str*)) or (all of ($bla*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_GTalk_Trojan
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_GTalk_Trojan
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -173,13 +134,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_GTalk_Trojan
 	condition:
 		uint16(0) == 0x5a4d and (2 of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_HTTP_SOCKS_Proxy_soexe
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_HTTP_SOCKS_Proxy_soexe
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -195,13 +151,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_HTTP_SOCKS_Proxy_soexe
 	condition:
 		uint16(0) == 0x5a4d and (3 of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_NBDDos_Gh0stvariant_dropper
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_NBDDos_Gh0stvariant_dropper
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -217,13 +168,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_NBDDos_Gh0stvariant_dropper
 	condition:
 		uint16(0) == 0x5a4d and ((any of ($str*)) or (all of ($bla*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_PlugX_DosEmulator
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_PlugX_DosEmulator
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro - modified by Florian Roth"
@@ -238,13 +184,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_PlugX_DosEmulator
 	condition:
 		uint16(0) == 0x5a4d and 2 of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_PlugX_FastProxy
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_PlugX_FastProxy
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -261,13 +202,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_PlugX_FastProxy
 	condition:
 		uint16(0) == 0x5a4d and (any of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_PlugX_Server
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_PlugX_Server
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -288,13 +224,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_PlugX_Server
 	condition:
 		uint16(0) == 0x5a4d and (2 of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_ReadPWD86
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ReadPWD86
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -308,13 +239,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_ReadPWD86
 	condition:
 		uint16(0) == 0x5a4d and (all of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_Ring_Gh0stvariant
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_Ring_Gh0stvariant
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"
@@ -330,13 +256,8 @@ rule Neo23x0_apt_irontiger_trendmicro_IronTiger_Ring_Gh0stvariant
 	condition:
 		uint16(0) == 0x5a4d and ((any of ($str*)) or (all of ($bla*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger_trendmicro.yar
-
-rule IronTiger_wmiexec
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_trendmicro_IronTiger_wmiexec
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger_trendmicro.yar
 {
 	meta:
 		author = "Cyber Safety Solutions, Trend Micro"

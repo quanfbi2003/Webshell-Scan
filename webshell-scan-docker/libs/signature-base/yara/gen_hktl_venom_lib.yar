@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hktl_venom_lib.yar
-
-rule HKTL_Venom_LIB_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_hktl_venom_lib_HKTL_Venom_LIB_Dec22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_hktl_venom_lib.yar
    meta:
       description = "Detects Venom - a library that meant to perform evasive communication using stolen browser socket"
       author = "Ido Veltzman, Florian Roth"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_shikataganai.yar
-rule Hunting_Rule_ShikataGaNai {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_shikataganai_Hunting_Rule_ShikataGaNai {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_shikataganai.yar
     meta:
         author    = "Steven Miller"
         company   = "FireEye"

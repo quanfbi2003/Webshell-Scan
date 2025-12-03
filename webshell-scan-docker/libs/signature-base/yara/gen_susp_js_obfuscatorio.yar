@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_js_obfuscatorio.yar
-rule SUSP_obfuscated_JS_obfuscatorio : HIGHVOL 
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_js_obfuscatorio_SUSP_obfuscated_JS_obfuscatorio : HIGHVOL 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_js_obfuscatorio.yar
 {
 	meta:
 	

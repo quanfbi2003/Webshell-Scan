@@ -417,13 +417,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_CompatLayer_UnilayDLL {
 //    condition:
 //       all of them
 // }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Neo23x0_spy_EquationDrug_NetworkSniffer2 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Network Sniffer - tdip.sys"
 		author = "Florian Roth (Nextron Systems) @4nc4p"

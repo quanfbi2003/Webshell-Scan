@@ -4,20 +4,12 @@
 	Date: 2016-03-30
 	Identifier: TempRacer
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_tempracer.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_tempracer.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_tempracer.yar
-rule TempRacer {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_tempracer_TempRacer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_tempracer.yar
 	meta:
 		description = "Detects privilege escalation tool - file TempRacer.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

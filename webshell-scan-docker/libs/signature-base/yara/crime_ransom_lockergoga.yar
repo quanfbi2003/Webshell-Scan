@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_lockergoga.yar
-
-rule Ransom_LockerGoga_Mar19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_lockergoga_Ransom_LockerGoga_Mar19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_lockergoga.yar
    meta:
       description = "Detects LockerGoga ransomware binaries"
       author = "Florian Roth (Nextron Systems)"

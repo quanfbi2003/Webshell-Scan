@@ -6,13 +6,9 @@
 	Identifier: Derusbi Dez 2015
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_derusbi.yar
-rule derusbi_kernel
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_derusbi_derusbi_kernel
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_derusbi.yar
 {
     meta:
         description = "Derusbi Driver version"
@@ -26,13 +22,8 @@ rule Neo23x0_apt_derusbi_derusbi_kernel
     condition:
         uint16(0) == 0x5A4D and $token1 and $token2 and $class
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_derusbi.yar
-
-rule derusbi_linux
-=======
 //===SUCCESS===
 rule Neo23x0_apt_derusbi_derusbi_linux
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_derusbi.yar
 {
     meta:
         description = "Derusbi Server Linux version"
@@ -55,13 +46,8 @@ rule Neo23x0_apt_derusbi_derusbi_linux
 	Date: 2015-12-15
 	Identifier: Derusbi Dez 2015
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_derusbi.yar
-
-rule Derusbi_Kernel_Driver_WD_UDFS {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_derusbi_Derusbi_Kernel_Driver_WD_UDFS {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_derusbi.yar
 	meta:
 		description = "Detects Derusbi Kernel Driver"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -93,13 +79,8 @@ rule Neo23x0_apt_derusbi_Derusbi_Kernel_Driver_WD_UDFS {
          2 of ($x*) or all of ($s*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_derusbi.yar
-
-rule Derusbi_Code_Signing_Cert {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_derusbi_Derusbi_Code_Signing_Cert {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_derusbi.yar
 	meta:
 		description = "Detects an executable signed with a certificate also used for Derusbi Trojan - suspicious"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -115,13 +96,8 @@ rule Neo23x0_apt_derusbi_Derusbi_Code_Signing_Cert {
    condition:
       uint16(0) == 0x5a4d and filesize < 800KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_derusbi.yar
-
-rule XOR_4byte_Key {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_derusbi_XOR_4byte_Key {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_derusbi.yar
 	meta:
 		description = "Detects an executable encrypted with a 4 byte XOR (also used for Derusbi Trojan)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -145,13 +121,8 @@ rule Neo23x0_apt_derusbi_XOR_4byte_Key {
    condition:
       uint16(0) == 0x5a4d and filesize < 900KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_derusbi.yar
-
-rule Derusbi_Backdoor_Mar17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_derusbi_Derusbi_Backdoor_Mar17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_derusbi.yar
    meta:
       description = "Detects a variant of the Derusbi backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_crunchrat.yar
-
-rule CrunchRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_crunchrat_CrunchRAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_crunchrat.yar
    meta:
       description = "Detects CrunchRAT - file CrunchRAT.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

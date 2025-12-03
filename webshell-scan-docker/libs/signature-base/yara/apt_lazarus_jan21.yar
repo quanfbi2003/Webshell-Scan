@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_jan21.yar
-
-rule SUSP_VEST_Encryption_Core_Accumulator_Jan21 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_jan21_SUSP_VEST_Encryption_Core_Accumulator_Jan21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_jan21.yar
    meta:
       description = "Detects VEST encryption core accumulator in PE file as used by Lazarus malware"
       author = "Florian Roth (Nextron Systems)"

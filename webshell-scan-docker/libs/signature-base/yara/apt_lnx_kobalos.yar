@@ -29,13 +29,9 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lnx_kobalos.yar
-rule APT_MAL_LNX_Kobalos {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_lnx_kobalos_APT_MAL_LNX_Kobalos {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lnx_kobalos.yar
     meta:
         description = "Kobalos malware"
         author = "Marc-Etienne M.Leveille"
@@ -61,13 +57,8 @@ rule Neo23x0_apt_lnx_kobalos_APT_MAL_LNX_Kobalos {
         uint16(0) == 0x457f and /* modification by Florian Roth to avoid false posirives */
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lnx_kobalos.yar
-
-rule APT_MAL_LNX_Kobalos_SSH_Credential_Stealer {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lnx_kobalos_APT_MAL_LNX_Kobalos_SSH_Credential_Stealer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lnx_kobalos.yar
     meta:
         description = "Kobalos SSH credential stealer seen in OpenSSH client"
         author = "Marc-Etienne M.Leveille"

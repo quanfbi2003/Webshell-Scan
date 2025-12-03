@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_stealbit_lockbit.yar
-rule MAL_RANSOM_Stealbit_Aug21 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_stealbit_lockbit_MAL_RANSOM_Stealbit_Aug21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_stealbit_lockbit.yar
 	meta:
 		description = "Detects Stealbit used by Lockbit 2.0 Ransomware Gang"
 		author = "Frank Boldewin (@r3c0nst)"

@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_nighthawk_c2.yar
-
-rule EXT_HKTL_Nighthawk_RAT
-=======
 //===SUCCESS===
 rule Neo23x0_gen_nighthawk_c2_EXT_HKTL_Nighthawk_RAT
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_nighthawk_c2.yar
 {
 	meta:
 		description = "Detects Nighthawk RAT"
@@ -33,13 +28,8 @@ rule Neo23x0_gen_nighthawk_c2_EXT_HKTL_Nighthawk_RAT
 		(3 of ($pattern*) or
 		(pe.section_index(".profile") >= 0 and pe.section_index(".detourc") >= 0 and pe.section_index(".detourd") >= 0))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_nighthawk_c2.yar
-
-rule HKTL_MAL_Nighthawk_Nov_2022_1 : nighthawk beacon {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_nighthawk_c2_HKTL_MAL_Nighthawk_Nov_2022_1 : nighthawk beacon {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_nighthawk_c2.yar
    meta:
         description = "Detect the Nighthawk dropped beacon"
         author = "Arkbird_SOLG"

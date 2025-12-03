@@ -5,15 +5,10 @@
 	Date: 2016-02-05
 	Identifier: Powerkatz
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powerkatz.yar
-
-rule Powerkatz_DLL_Generic {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_gen_powerkatz_Powerkatz_DLL_Generic {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powerkatz.yar
 	meta:
 		description = "Detects Powerkatz - a Mimikatz version prepared to run in memory via Powershell (overlap with other Mimikatz versions is possible)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

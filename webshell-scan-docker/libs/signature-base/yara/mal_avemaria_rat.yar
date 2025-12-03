@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_avemaria_rat.yar
-
-rule MAL_AveMaria_RAT_Jul19 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_avemaria_rat_MAL_AveMaria_RAT_Jul19 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_avemaria_rat.yar
    meta:
       description = "Detects AveMaria RAT"
       author = "Florian Roth (Nextron Systems)"

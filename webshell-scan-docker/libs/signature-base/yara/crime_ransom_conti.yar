@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_conti.yar
-
-rule MAL_RANSOM_ContiCrypter {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_conti_MAL_RANSOM_ContiCrypter {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_conti.yar
     meta:
         author = "James Quinn, Binary Defense"
         description = "Signature for a crypter associated with Conti"

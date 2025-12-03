@@ -4,20 +4,12 @@
 	Date: 2016-06-04
 	Identifier: IronGate (FireEye)
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irongate.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irongate.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irongate.yar
-rule IronGate_APT_Step7ProSim_Gen {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_irongate_IronGate_APT_Step7ProSim_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irongate.yar
 	meta:
 		description = "Detects IronGate APT Malware - Step7ProSim DLL"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -48,13 +40,8 @@ rule Neo23x0_apt_irongate_IronGate_APT_Step7ProSim_Gen {
 		( uint16(0) == 0x5a4d and filesize < 50KB and ( $x1 or 3 of ($s*) ) )
 		or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irongate.yar
-
-rule IronGate_PyInstaller_update_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irongate_IronGate_PyInstaller_update_EXE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irongate.yar
    meta:
       description = "Detects a PyInstaller file named update.exe as mentioned in the IronGate APT"
       author = "Florian Roth (Nextron Systems)"
@@ -78,13 +65,8 @@ rule Neo23x0_apt_irongate_IronGate_PyInstaller_update_EXE {
 
 /* Additional Rules --------------------------------------------------------- */
 /* Other tools used in the APT ---------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irongate.yar
-
-rule Nirsoft_NetResView {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irongate_Nirsoft_NetResView {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irongate.yar
 	meta:
 		description = "Detects NirSoft NetResView - utility that displays the list of all network resources"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

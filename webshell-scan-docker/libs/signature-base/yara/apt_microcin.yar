@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-09-26
-   Identifier: Microcin
-   Reference: https://securelist.com/files/2017/09/Microcin_Technical-PDF_eng_final.pdf
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://securelist.com/files/2017/09/Microcin_Technical-PDF_eng_final.pdf
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_microcin.yar
-rule Microcin_Sample_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_microcin_Microcin_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_microcin.yar
    meta:
       description = "Malware sample mentioned in Microcin technical report by Kaspersky"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -50,13 +36,8 @@ rule Neo23x0_apt_microcin_Microcin_Sample_1 {
          )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_microcin.yar
-
-rule Microcin_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_microcin_Microcin_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_microcin.yar
    meta:
       description = "Malware sample mentioned in Microcin technical report by Kaspersky"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -71,13 +52,8 @@ rule Neo23x0_apt_microcin_Microcin_Sample_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_microcin.yar
-
-rule Microcin_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_microcin_Microcin_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_microcin.yar
    meta:
       description = "Malware sample mentioned in Microcin technical report by Kaspersky"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -92,13 +68,8 @@ rule Neo23x0_apt_microcin_Microcin_Sample_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_microcin.yar
-
-rule Microcin_Sample_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_microcin_Microcin_Sample_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_microcin.yar
    meta:
       description = "Malware sample mentioned in Microcin technical report by Kaspersky"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -119,13 +90,8 @@ rule Neo23x0_apt_microcin_Microcin_Sample_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of ($s*) or 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_microcin.yar
-
-rule Microcin_Sample_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_microcin_Microcin_Sample_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_microcin.yar
    meta:
       description = "Malware sample mentioned in Microcin technical report by Kaspersky"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -144,13 +110,8 @@ rule Neo23x0_apt_microcin_Microcin_Sample_5 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them ) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_microcin.yar
-
-rule Microcin_Sample_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_microcin_Microcin_Sample_6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_microcin.yar
    meta:
       description = "Malware sample mentioned in Microcin technical report by Kaspersky"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

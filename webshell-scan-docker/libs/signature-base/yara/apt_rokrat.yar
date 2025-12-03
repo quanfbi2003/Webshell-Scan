@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rokrat.yar
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_rokrat.yar
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -9,13 +6,9 @@ import "pe"
    Identifier: ROKRAT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rokrat.yar
-rule ROKRAT_Malware {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_rokrat_ROKRAT_Malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_rokrat.yar
    meta:
       description = "Detects ROKRAT Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -52,15 +45,8 @@ rule Neo23x0_apt_rokrat_ROKRAT_Malware {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rokrat.yar
-
-import "pe"
-
-rule ROKRAT_Dropper_Nov17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rokrat_ROKRAT_Dropper_Nov17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_rokrat.yar
    meta:
       description = "Detects dropper for ROKRAT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -74,13 +60,8 @@ rule Neo23x0_apt_rokrat_ROKRAT_Dropper_Nov17 {
       uint16(0) == 0x5a4d and filesize < 2500KB and
       pe.imphash() == "c6187b1b5f4433318748457719dd6f39"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rokrat.yar
-
-rule Freeenki_Infostealer_Nov17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rokrat_Freeenki_Infostealer_Nov17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_rokrat.yar
    meta:
       description = "Detects Freenki infostealer malware"
       author = "Florian Roth (Nextron Systems)"
@@ -110,13 +91,8 @@ rule Neo23x0_apt_rokrat_Freeenki_Infostealer_Nov17 {
         all of ($a*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rokrat.yar
-
-rule Freeenki_Infostealer_Nov17_Export_Sig_Testing {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rokrat_Freeenki_Infostealer_Nov17_Export_Sig_Testing {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_rokrat.yar
    meta:
       description = "Detects Freenki infostealer malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -131,13 +107,8 @@ rule Neo23x0_apt_rokrat_Freeenki_Infostealer_Nov17_Export_Sig_Testing {
 }
 
 /* Further Investigations */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rokrat.yar
-
-rule ROKRAT_Nov17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rokrat_ROKRAT_Nov17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_rokrat.yar
    meta:
       description = "Detects ROKRAT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

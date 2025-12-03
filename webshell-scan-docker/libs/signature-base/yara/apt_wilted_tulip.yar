@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-07-23
-   Identifier: Operation Wilted Tulip
-   Reference: http://www.clearskysec.com/tulip
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: http://www.clearskysec.com/tulip
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule WiltedTulip_Tools_back {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_Tools_back {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects Chrome password dumper used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +29,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_Tools_back {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_Tools_clrlg {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_Tools_clrlg {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects Windows eventlog cleaner used in Operation Wilted Tulip - file clrlg.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -64,13 +45,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_Tools_clrlg {
    condition:
       filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_powershell {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_powershell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects powershell script used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -84,13 +60,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_powershell {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_vminst {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_vminst {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects malware used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +88,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_vminst {
          1 of ($x*) or 5 of ($s*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_Windows_UM_Task {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_Windows_UM_Task {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects a Windows scheduled task as used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -141,13 +107,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_Windows_UM_Task {
       ( $r1 and $p1 ) or
       1 of ($c*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_WindowsTask {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_WindowsTask {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects hack tool used in Operation Wilted Tulip - Windows Tasks"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -167,13 +128,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_WindowsTask {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_tdtess {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_tdtess {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects malicious service used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -191,13 +147,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_tdtess {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and ( 1 of ($x*) or 2 of them ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_SilverlightMSI {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_SilverlightMSI {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects powershell tool call Get_AD_Users_Logon_History used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -214,13 +165,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_SilverlightMSI {
    condition:
       ( filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_matryoshka_Injector {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_matryoshka_Injector {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects hack tool used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -243,13 +189,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_matryoshka_Injector {
         pe.exports("test")
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_Zpp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_Zpp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects hack tool used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -274,13 +215,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_Zpp {
    condition:
       uint16(0) == 0x5a4d and filesize < 30KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_Netsrv_netsrvs {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_Netsrv_netsrvs {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects sample from Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -306,13 +242,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_Netsrv_netsrvs {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and ( all of ($s*) and 1 of ($c*) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_ReflectiveLoader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_ReflectiveLoader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects reflective loader (Cobalt Strike) used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -337,13 +268,8 @@ rule Neo23x0_apt_wilted_tulip_WiltedTulip_ReflectiveLoader {
       ( 2 of them ) or
       pe.exports("_ReflectiveLoader@4")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wilted_tulip.yar
-
-rule WiltedTulip_Matryoshka_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wilted_tulip_WiltedTulip_Matryoshka_RAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_wilted_tulip.yar
    meta:
       description = "Detects Matryoshka RAT used in Operation Wilted Tulip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_linux.yar
-rule APT_MAL_WinntiLinux_Dropper_AzazelFork_May19 : azazel_fork {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_linux_APT_MAL_WinntiLinux_Dropper_AzazelFork_May19 : azazel_fork {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_linux.yar
     meta:
         description = "Detection of Linux variant of Winnti"
         author = "Silas Cutler (havex [@] chronicle.security), Chronicle Security"
@@ -19,13 +15,8 @@ rule Neo23x0_apt_winnti_linux_APT_MAL_WinntiLinux_Dropper_AzazelFork_May19 : aza
     condition:
         uint16(0) == 0x457f and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_linux.yar
-
-rule APT_MAL_WinntiLinux_Main_AzazelFork_May19 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_linux_APT_MAL_WinntiLinux_Main_AzazelFork_May19 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_winnti_linux.yar
     meta:
         description = "Detection of Linux variant of Winnti"
         author = "Silas Cutler (havex [@] chronicle.security), Chronicle Security"

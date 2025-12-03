@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cmstar.yar
-
-rule ce_enfal_cmstar_debug_msg {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cmstar_ce_enfal_cmstar_debug_msg {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_cmstar.yar
 	meta:
 		author = "rfalcone"
 		description = "Detects the static debug strings within CMSTAR"

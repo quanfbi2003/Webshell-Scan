@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule EXPL_Log4j_CallBackDomain_IOCs_Dec21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CallBackDomain_IOCs_Dec21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects IOCs found in Log4Shell incidents that indicate exploitation attempts of CVE-2021-44228"
       author = "Florian Roth (Nextron Systems)"
@@ -17,13 +12,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CallBackDomain_IOCs_Dec21_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule EXPL_JNDI_Exploit_Patterns_Dec21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_JNDI_Exploit_Patterns_Dec21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects JNDI Exploit Kit patterns in files"
       author = "Florian Roth (Nextron Systems)"
@@ -57,13 +47,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_JNDI_Exploit_Patterns_Dec21_1 {
    condition:
       1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule EXPL_Log4j_CVE_2021_44228_JAVA_Exception_Dec21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_JAVA_Exception_Dec21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects exceptions found in server logs that indicate an exploitation attempt of CVE-2021-44228"
       author = "Florian Roth (Nextron Systems)"
@@ -79,13 +64,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_JAVA_Exception_
    condition:
       $xa1 or all of ($sa*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule EXPL_Log4j_CVE_2021_44228_Dec21_Soft : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_Dec21_Soft : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects indicators in server logs that indicate an exploitation attempt of CVE-2021-44228"
       author = "Florian Roth (Nextron Systems)"
@@ -110,13 +90,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_Dec21_Soft : FI
    condition:
       1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule EXPL_Log4j_CVE_2021_44228_Dec21_OBFUSC {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_Dec21_OBFUSC {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects obfuscated indicators in server logs that indicate an exploitation attempt of CVE-2021-44228"
       author = "Florian Roth (Nextron Systems)"
@@ -139,13 +114,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_Dec21_OBFUSC {
    condition:
       1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule EXPL_Log4j_CVE_2021_44228_Dec21_Hard : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_Dec21_Hard : FILE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects indicators in server logs that indicate the exploitation of CVE-2021-44228"
       author = "Florian Roth"
@@ -168,13 +138,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_EXPL_Log4j_CVE_2021_44228_Dec21_Hard : FI
    condition:
       1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule SUSP_Base64_Encoded_Exploit_Indicators_Dec21 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_Base64_Encoded_Exploit_Indicators_Dec21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects base64 encoded strings found in payloads of exploits against log4j CVE-2021-44228"
       author = "Florian Roth (Nextron Systems)"
@@ -198,13 +163,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_Base64_Encoded_Exploit_Indicators_De
       1 of ($sa*) and 1 of ($sb*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule SUSP_JDNIExploit_Indicators_Dec21 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_JDNIExploit_Indicators_Dec21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects indicators of JDNI usage in log files and other payloads"
       author = "Florian Roth (Nextron Systems)"
@@ -218,13 +178,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_JDNIExploit_Indicators_Dec21 {
    condition:
       filesize < 100MB and $xr1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule SUSP_EXPL_OBFUSC_Dec21_1{
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_EXPL_OBFUSC_Dec21_1{
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects obfuscation methods used to evade detection in log4j exploitation attempt of CVE-2021-44228"
       author = "Florian Roth (Nextron Systems)"
@@ -254,13 +209,8 @@ rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_EXPL_OBFUSC_Dec21_1{
       ) 
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
-
-rule SUSP_JDNIExploit_Error_Indicators_Dec21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_log4j_cve_2021_44228_SUSP_JDNIExploit_Error_Indicators_Dec21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_log4j_cve_2021_44228.yar
    meta:
       description = "Detects error messages related to JDNI usage in log files that can indicate a Log4Shell / Log4j exploitation"
       author = "Florian Roth (Nextron Systems)"

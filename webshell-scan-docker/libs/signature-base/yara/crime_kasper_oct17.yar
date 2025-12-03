@@ -10,13 +10,9 @@ import "pe"
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kasper_oct17.yar
-rule KasperMalware_Oct17_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_kasper_oct17_KasperMalware_Oct17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kasper_oct17.yar
    meta:
       description = "Detects Kasper Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

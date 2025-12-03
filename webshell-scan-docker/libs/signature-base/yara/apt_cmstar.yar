@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-10-03
-   Identifier: CMStar Threat Actor
-   Reference: https://goo.gl/pTffPA
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://goo.gl/pTffPA
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cmstar.yar
-rule CMStar_Malware_Sep17 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_cmstar_CMStar_Malware_Sep17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_cmstar.yar
    meta:
       description = "Detects CMStar Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

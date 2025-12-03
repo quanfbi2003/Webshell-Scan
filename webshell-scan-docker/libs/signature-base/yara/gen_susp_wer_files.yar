@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_wer_files.yar
-
-rule SUSP_WER_Critical_HeapCorruption {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_wer_files_SUSP_WER_Critical_HeapCorruption {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_wer_files.yar
    meta:
       description = "Detects a crashed application that crashed due to a heap corruption error (could be a sign of exploitation)"
       author = "Florian Roth (Nextron Systems)"
@@ -21,13 +16,8 @@ rule Neo23x0_gen_susp_wer_files_SUSP_WER_Critical_HeapCorruption {
       ( uint32be(0) == 0x56006500 or uint32be(0) == 0xfffe5600 )
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_wer_files.yar
-
-rule SUSP_WER_Suspicious_Crash_Directory {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_wer_files_SUSP_WER_Suspicious_Crash_Directory {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_wer_files.yar
    meta:
       description = "Detects a crashed application executed in a suspicious directory"
       author = "Florian Roth (Nextron Systems)"

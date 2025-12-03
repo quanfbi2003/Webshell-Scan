@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-rule PoisonIvy_Sample_APT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects a PoisonIvy APT malware group"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -24,14 +19,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 47KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-
-rule PoisonIvy_Sample_APT_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects a PoisonIvy Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -66,13 +55,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 47KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-rule PoisonIvy_Sample_APT_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects a PoisonIvy Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -89,14 +73,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT_3 {
 	condition:
 		uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-
-rule PoisonIvy_Sample_APT_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects a PoisonIvy Sample APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -119,13 +97,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_APT_4 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and 7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-rule PoisonIvy_Sample_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects PoisonIvy RAT sample set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -146,14 +119,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_5 {
 condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-
-rule PoisonIvy_Sample_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects PoisonIvy RAT sample set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -192,13 +159,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_6 {
 		( 8 of ($s*) ) or
 		( 1 of ($z*) and 3 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-rule PoisonIvy_Sample_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects PoisonIvy RAT sample set"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -227,13 +189,8 @@ rule Neo23x0_apt_poisonivy_PoisonIvy_Sample_7 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy.yar
-
-rule PoisonIvy_RAT_ssMUIDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_PoisonIvy_RAT_ssMUIDLL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poisonivy.yar
 	meta:
 		description = "Detects PoisonIvy RAT DLL mentioned in Palo Alto Blog in April 2016"
 		author = "Florian Roth (Nextron Systems) (with the help of yarGen and Binarly)"

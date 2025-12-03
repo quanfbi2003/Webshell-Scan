@@ -5,13 +5,9 @@
 	Identifier: ONHAT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_onhat_proxy.yar
-rule ONHAT_Proxy_Hacktool {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_onhat_proxy_ONHAT_Proxy_Hacktool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_onhat_proxy.yar
 	meta:
 		description = "Detects ONHAT Proxy - Htran like SOCKS hack tool used by Chinese APT groups"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

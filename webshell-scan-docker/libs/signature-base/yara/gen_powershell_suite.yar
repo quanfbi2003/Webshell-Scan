@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_suite.yar
-
-rule PowerShell_Suite_Hacktools_Gen_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_suite_PowerShell_Suite_Hacktools_Gen_Strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_suite.yar
    meta:
       description = "Detects strings from scripts in the PowerShell-Suite repo"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -49,13 +44,8 @@ rule Neo23x0_gen_powershell_suite_PowerShell_Suite_Hacktools_Gen_Strings {
    condition:
       filesize < 100KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_suite.yar
-
-rule PowerShell_Suite_Eidolon {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_suite_PowerShell_Suite_Eidolon {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershell_suite.yar
    meta:
       description = "Detects PowerShell Suite Eidolon script - file Start-Eidolon.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

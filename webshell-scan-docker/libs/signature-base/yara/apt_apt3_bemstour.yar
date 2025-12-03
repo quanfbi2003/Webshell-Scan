@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt3_bemstour.yar
-rule apt3_bemstour_strings
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt3_bemstour_apt3_bemstour_strings
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt3_bemstour.yar
 {
 meta:
 
@@ -67,16 +63,8 @@ $unique_str_2 = "XD-A31C2E0087B2"
 condition:
     uint16(0) == 0x5a4d and (5 of ($dbg_print*) or 2 of ($cmdline*) or 1 of ($unique_str*)) and 3 of ($smb_param*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt3_bemstour.yar
-
-
-
-
-rule apt3_bemstour_implant_byte_patch
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt3_bemstour_apt3_bemstour_implant_byte_patch
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt3_bemstour.yar
 {
 meta:
 
@@ -112,14 +100,8 @@ C7 45 ?? 8C 4C 6F 61
 condition:
     any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt3_bemstour.yar
-
-
-rule apt3_bemstour_implant_command_stack_variable
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt3_bemstour_apt3_bemstour_implant_command_stack_variable
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt3_bemstour.yar
 {
 meta:
 

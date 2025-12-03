@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_outlook_cve_2023_23397.yar
-rule SUSP_EXPL_Msg_CVE_2023_23397_Mar23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_outlook_cve_2023_23397_SUSP_EXPL_Msg_CVE_2023_23397_Mar23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_outlook_cve_2023_23397.yar
    meta:
       description = "MSG file with a PidLidReminderFileParameter property, potentially exploiting CVE-2023-23397"
       author = "delivr.to, modified by Florian Roth, Nils Kuhnert, Arnim Rupp, marcin@ulikowski.pl"
@@ -42,13 +38,8 @@ rule Neo23x0_expl_outlook_cve_2023_23397_SUSP_EXPL_Msg_CVE_2023_23397_Mar23 {
       and $u1
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_outlook_cve_2023_23397.yar
-
-rule EXPL_SUSP_Outlook_CVE_2023_23397_Exfil_IP_Mar23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_outlook_cve_2023_23397_EXPL_SUSP_Outlook_CVE_2023_23397_Exfil_IP_Mar23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_outlook_cve_2023_23397.yar
    meta:
       description = "Detects suspicious .msg file with a PidLidReminderFileParameter property exploiting CVE-2023-23397 (modified delivr.to rule - more specific = less FPs but limited to exfil using IP addresses, not FQDNs)"
       author = "delivr.to, Florian Roth, Nils Kuhnert, Arnim Rupp, marcin@ulikowski.pl"
@@ -89,13 +80,8 @@ rule Neo23x0_expl_outlook_cve_2023_23397_EXPL_SUSP_Outlook_CVE_2023_23397_Exfil_
       and $rfp
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_outlook_cve_2023_23397.yar
-
-rule EXPL_SUSP_Outlook_CVE_2023_23397_SMTP_Mail_Mar23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_outlook_cve_2023_23397_EXPL_SUSP_Outlook_CVE_2023_23397_SMTP_Mail_Mar23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_outlook_cve_2023_23397.yar
    meta:
       author = "Nils Kuhnert"
       date = "2023-03-17"

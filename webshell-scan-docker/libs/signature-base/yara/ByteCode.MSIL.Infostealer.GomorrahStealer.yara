@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/ByteCode.MSIL.Infostealer.GomorrahStealer.yara
-rule ByteCode_MSIL_Infostealer_GomorrahStealer : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Infostealer_GomorrahStealer_ByteCode_MSIL_Infostealer_GomorrahStealer : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/ByteCode.MSIL.Infostealer.GomorrahStealer.yara
 {
     meta:
 
@@ -113,8 +109,4 @@ rule reversinglabs_ByteCode_MSIL_Infostealer_GomorrahStealer_ByteCode_MSIL_Infos
         (
             $get_browser_history
         )
-<<<<<<< Updated upstream:libs/signature-base/yara/ByteCode.MSIL.Infostealer.GomorrahStealer.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/ByteCode.MSIL.Infostealer.GomorrahStealer.yara

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_win_go_backorder_loader.yar
-rule MAL_BACKORDER_LOADER_WIN_Go_Jan23 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_win_go_backorder_loader_MAL_BACKORDER_LOADER_WIN_Go_Jan23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_win_go_backorder_loader.yar
    meta:
       description = "Detects the BACKORDER loader compiled in GO which download and executes a second stage payload from a remote server."
       author = "Arda Buyukkaya (modified by Florian Roth)"

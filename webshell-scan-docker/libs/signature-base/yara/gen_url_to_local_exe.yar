@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_to_local_exe.yar
-rule URL_File_Local_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_to_local_exe_URL_File_Local_EXE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_url_to_local_exe.yar
    meta:
       description = "Detects an .url file that points to a local executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

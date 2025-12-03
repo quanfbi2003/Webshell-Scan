@@ -3,13 +3,9 @@
 */
 
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_coreimpact_agent.yar
-rule CoreImpact_sysdll_exe {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_coreimpact_agent_CoreImpact_sysdll_exe {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_coreimpact_agent.yar
    meta:
       description = "Detects a malware sysdll.exe from the Rocket Kitten APT"
       author = "Florian Roth (Nextron Systems)"

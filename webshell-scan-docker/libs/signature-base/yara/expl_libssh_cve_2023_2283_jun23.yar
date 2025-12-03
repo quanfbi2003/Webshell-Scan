@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_libssh_cve_2023_2283_jun23.yar
-
-rule HKTL_EXPL_POC_LibSSH_Auth_Bypass_CVE_2023_2283_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_libssh_cve_2023_2283_jun23_HKTL_EXPL_POC_LibSSH_Auth_Bypass_CVE_2023_2283_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_libssh_cve_2023_2283_jun23.yar
    meta:
       description = "Detects POC code used in attacks against libssh vulnerability CVE-2023-2283"
       author = "Florian Roth"

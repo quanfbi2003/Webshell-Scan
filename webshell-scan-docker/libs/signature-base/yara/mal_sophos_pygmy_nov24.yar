@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_sophos_pygmy_nov24.yar
-
-rule MAL_Sophos_XG_Pygmy_Goat_AES_Key {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_sophos_pygmy_nov24_MAL_Sophos_XG_Pygmy_Goat_AES_Key {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_sophos_pygmy_nov24.yar
    meta:
       description = "Detects Pygmy Goat - a native x86-32 ELF shared object that was discovered on Sophos XG firewall devices, providing backdoor access to the device. This detection rule is based on the Pygmy Goat AES key built on the stack or in data"
       reference = "https://www.ncsc.gov.uk/static-assets/documents/malware-analysis-reports/pygmy-goat/ncsc-mar-pygmy-goat.pdf"
@@ -27,13 +22,8 @@ rule Neo23x0_mal_sophos_pygmy_nov24_MAL_Sophos_XG_Pygmy_Goat_AES_Key {
       // due to FPs - but I don't know the file size of the implant 
       and filesize < 4MB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_sophos_pygmy_nov24.yar
-
-rule MAL_Sophos_XG_Pygmy_Goat_Magic_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_sophos_pygmy_nov24_MAL_Sophos_XG_Pygmy_Goat_Magic_Strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_sophos_pygmy_nov24.yar
    meta:
       description = "Detects Pygmy Goat - a native x86-32 ELF shared object that was discovered on Sophos XG firewall devices, providing backdoor access to the device. This detection rule is based on the magic byte sequences used in C2 communications."
       reference = "https://www.ncsc.gov.uk/static-assets/documents/malware-analysis-reports/pygmy-goat/ncsc-mar-pygmy-goat.pdf"
@@ -52,13 +42,8 @@ rule Neo23x0_mal_sophos_pygmy_nov24_MAL_Sophos_XG_Pygmy_Goat_Magic_Strings {
    condition:
       uint32(0) == 0x464c457f and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_sophos_pygmy_nov24.yar
-
-rule MAL_EarthWorm_Socks_Proxy_ID_Generation {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_sophos_pygmy_nov24_MAL_EarthWorm_Socks_Proxy_ID_Generation {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_sophos_pygmy_nov24.yar
    meta:
       description = "Detects EarthWorm - a reverse socks proxy used by the threat group that deployed Pygmy Goat malware on Sophos XG firewall devices. The detection is based on the pool num generation x86 assembly."
       reference = "https://www.ncsc.gov.uk/static-assets/documents/malware-analysis-reports/pygmy-goat/ncsc-mar-pygmy-goat.pdf"

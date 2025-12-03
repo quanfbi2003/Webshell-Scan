@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_exile_rat.yar
-
-rule MAL_ExileRAT_Feb19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_exile_rat_MAL_ExileRAT_Feb19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_exile_rat.yar
    meta:
       description = "Detects Exile RAT"
       author = "Florian Roth (Nextron Systems)"

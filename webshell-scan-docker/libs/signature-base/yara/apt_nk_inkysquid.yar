@@ -1,7 +1,5 @@
 /* 
 Copyright 2021 by Volexity, Inc.
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-=======
 
 The 2-Clause BSD License
 
@@ -10,22 +8,10 @@ Redistribution and use in source and binary forms, with or without modification,
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
 
-The 2-Clause BSD License
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
-rule APT_RUBY_RokRat_Loader : InkySquid
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_inkysquid_APT_RUBY_RokRat_Loader : InkySquid
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
 {
     meta:
         author = "threatintel@volexity.com"
@@ -51,13 +37,8 @@ rule Neo23x0_apt_nk_inkysquid_APT_RUBY_RokRat_Loader : InkySquid
         any of ($magic*) or
         any of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-
-rule APT_PY_BlueLight_Loader : InkySquid
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_inkysquid_APT_PY_BlueLight_Loader : InkySquid
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
 {
     meta:
         author = "threatintel@volexity.com"
@@ -79,12 +60,8 @@ rule Neo23x0_apt_nk_inkysquid_APT_PY_BlueLight_Loader : InkySquid
 }
 
 /* slightly modified for performance reasons by Florian Roth */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-rule APT_MAL_Win_DecRok : InkySquid
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_inkysquid_APT_MAL_Win_DecRok : InkySquid
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
 {
     meta:
         author = "threatintel@volexity.com"
@@ -106,13 +83,8 @@ rule Neo23x0_apt_nk_inkysquid_APT_MAL_Win_DecRok : InkySquid
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-
-rule APT_MAL_Win_RokLoad_Loader : InkySquid
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_inkysquid_APT_MAL_Win_RokLoad_Loader : InkySquid
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
 {
     meta:
         author = "threatintel@volexity.com"
@@ -131,13 +103,8 @@ rule Neo23x0_apt_nk_inkysquid_APT_MAL_Win_RokLoad_Loader : InkySquid
 
 
 /* rules by S2W */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-
-rule APT_NK_Scarcruft_RUBY_Shellcode_XOR_Routine {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_inkysquid_APT_NK_Scarcruft_RUBY_Shellcode_XOR_Routine {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
      meta:
        author        = "S2WLAB_TALON_JACK2"
        description   = "Detects Ruby ShellCode XOR routine used by ScarCruft APT group"
@@ -167,13 +134,8 @@ rule Neo23x0_apt_nk_inkysquid_APT_NK_Scarcruft_RUBY_Shellcode_XOR_Routine {
      condition:
          1 of them
  }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_inkysquid.yar
-
-rule APT_NK_Scarcruft_evolved_ROKRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_inkysquid_APT_NK_Scarcruft_evolved_ROKRAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_inkysquid.yar
     meta:
         author        = "S2WLAB_TALON_JACK2"
         description   = "Detects RokRAT malware used by ScarCruft APT group"

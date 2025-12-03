@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_python_encoded_adware.yar
-rule gen_python_encoded_adware
-=======
 //===SUCCESS===
 rule Neo23x0_gen_python_encoded_adware_gen_python_encoded_adware
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_python_encoded_adware.yar
 {
     meta: 
         description = "Encoded Python payload for adware"

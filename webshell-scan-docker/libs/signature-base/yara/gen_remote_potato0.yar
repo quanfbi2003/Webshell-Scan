@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_remote_potato0.yar
-
-rule HKTL_SentinelOne_RemotePotato0_PrivEsc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_remote_potato0_HKTL_SentinelOne_RemotePotato0_PrivEsc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_remote_potato0.yar
    meta:
       author = "SentinelOne"    
       description = "Detects RemotePotato0 binary"

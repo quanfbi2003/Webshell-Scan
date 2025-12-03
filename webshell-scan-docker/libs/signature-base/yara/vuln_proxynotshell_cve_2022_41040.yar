@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_proxynotshell_cve_2022_41040.yar
-
-rule LOG_ProxyNotShell_POC_CVE_2022_41040_Nov22 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_proxynotshell_cve_2022_41040_LOG_ProxyNotShell_POC_CVE_2022_41040_Nov22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_proxynotshell_cve_2022_41040.yar
    meta:
       description = "Detects logs generated after a successful exploitation using the PoC code against CVE-2022-41040 and CVE-2022-41082 (aka ProxyNotShell) in Microsoft Exchange servers"
       author = "Florian Roth (Nextron Systems)"

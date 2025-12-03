@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_crime_bitpaymer.yar
-rule BitPaymer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_crime_bitpaymer_BitPaymer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_crime_bitpaymer.yar
    meta:
       description = "Rule to detect newer Bitpaymer samples. Rule is based on BitPaymer custom packer"
       author = "Morphisec labs"

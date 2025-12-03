@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_vicesociety_dec22.yar
-
-rule APT_MAL_RANSOM_ViceSociety_PolyVice_Jan23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_vicesociety_dec22_APT_MAL_RANSOM_ViceSociety_PolyVice_Jan23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ransom_vicesociety_dec22.yar
    meta:
       description = "Detects NTRU-ChaChaPoly (PolyVice) malware used by Vice Society"
       author = "Florian Roth (Nextron Systems)"
@@ -34,13 +29,8 @@ rule Neo23x0_apt_ransom_vicesociety_dec22_APT_MAL_RANSOM_ViceSociety_PolyVice_Ja
          or 2 of them
       ) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_vicesociety_dec22.yar
-
-rule APT_MAL_RANSOM_ViceSociety_Chily_Jan23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_vicesociety_dec22_APT_MAL_RANSOM_ViceSociety_Chily_Jan23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ransom_vicesociety_dec22.yar
    meta:
       description = "Detects Chily or SunnyDay malware used by Vice Society"
       author = "Florian Roth (Nextron Systems)"
@@ -71,4 +61,3 @@ rule Neo23x0_apt_ransom_vicesociety_dec22_APT_MAL_RANSOM_ViceSociety_Chily_Jan23
       )
       or 4 of them
 }
-

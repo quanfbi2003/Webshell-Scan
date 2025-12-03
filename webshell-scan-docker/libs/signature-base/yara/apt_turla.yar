@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
 /*
 	Yara Rule Set
 	Author: Florian Roth
@@ -11,13 +8,9 @@ import "pe"
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-rule Turla_APT_srsvc {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_turla_Turla_APT_srsvc {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
 	meta:
 		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +32,8 @@ rule Neo23x0_apt_turla_Turla_APT_srsvc {
 		( uint16(0) == 0x5a4d and filesize < 20KB and ( 1 of ($x*) or all of ($s*) ) )
 		or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-rule Turla_APT_Malware_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_Turla_APT_Malware_Gen1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
 	meta:
 		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -84,13 +72,8 @@ rule Neo23x0_apt_turla_Turla_APT_Malware_Gen1 {
 		( uint16(0) == 0x5a4d and filesize < 2000KB and ( 2 of ($x*) or 8 of ($s*) ) )
 		or ( 12 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-rule RUAG_APT_Malware_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_RUAG_APT_Malware_Gen2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
    meta:
       description = "Detects malware used in the RUAG APT case"
       author = "Florian Roth (Nextron Systems)"
@@ -126,13 +109,8 @@ rule Neo23x0_apt_turla_RUAG_APT_Malware_Gen2 {
       ( uint16(0) == 0x5a4d and filesize < 2000KB and ( 1 of ($x*) or 5 of ($s*) ) )
       or ( 10 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-rule Turla_APT_Malware_Gen3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_Turla_APT_Malware_Gen3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
 	meta:
 		description = "Detects Turla malware (based on sample used in the RUAG APT case)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -173,13 +151,8 @@ rule Neo23x0_apt_turla_Turla_APT_Malware_Gen3 {
 		( uint16(0) == 0x5a4d and filesize < 2000KB and ( 1 of ($x*) or 6 of ($s*) ) )
 		or ( 10 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-rule Turla_Mal_Script_Jan18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_Turla_Mal_Script_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
    meta:
       description = "Detects Turla malicious script"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -197,15 +170,8 @@ rule Neo23x0_apt_turla_Turla_Mal_Script_Jan18_1 {
    condition:
       filesize < 200KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-import "pe"
-
-rule Turla_KazuarRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_Turla_KazuarRAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
    meta:
       description = "Detects Turla Kazuar RAT described by DrunkBinary"
       author = "Markus Neis / Florian Roth"
@@ -225,14 +191,8 @@ rule Neo23x0_apt_turla_Turla_KazuarRAT {
          pe.imphash() == "682156c4380c216ff8cb766a2f2e8817" or
          2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-
-rule MAL_Turla_Agent_BTZ {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_MAL_Turla_Agent_BTZ {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
    meta:
       description = "Detects Turla Agent.BTZ"
       author = "Florian Roth (Nextron Systems)"
@@ -264,13 +224,8 @@ rule Neo23x0_apt_turla_MAL_Turla_Agent_BTZ {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-rule MAL_Turla_Sample_May18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_MAL_Turla_Sample_May18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
    meta:
       description = "Detects Turla samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -293,13 +248,8 @@ rule Neo23x0_apt_turla_MAL_Turla_Sample_May18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-
-rule APT_MAL_LNX_Turla_Apr20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_APT_MAL_LNX_Turla_Apr20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
    meta:
       description = "Detects Turla Linux malware"
       author = "Florian Roth (Nextron Systems)"
@@ -322,12 +272,8 @@ rule Neo23x0_apt_turla_APT_MAL_LNX_Turla_Apr20_1 {
 }
 
 /* slighly modified rule */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla.yar
-rule APT_MAL_TinyTurla_Sep21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_APT_MAL_TinyTurla_Sep21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla.yar
 	meta:
 		author = "Cisco Talos"
 		description = "Detects Tiny Turla backdoor DLL"

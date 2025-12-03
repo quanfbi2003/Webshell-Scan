@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-15
-   Identifier: ShadowPad
-   Reference: https://securelist.com/shadowpad-in-corporate-networks/81432/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://securelist.com/shadowpad-in-corporate-networks/81432/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shadowpad.yar
-rule ShadowPad_nssock2 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_shadowpad_ShadowPad_nssock2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_shadowpad.yar
    meta:
       description = "Detects malicious nssock2.dll from ShadowPad incident - file nssock2.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

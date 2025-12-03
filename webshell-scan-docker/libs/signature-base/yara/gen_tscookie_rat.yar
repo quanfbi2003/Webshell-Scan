@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-03-06
-   Identifier: TSCookie RAT
-   Reference: http://blog.jpcert.or.jp/2018/03/malware-tscooki-7aa0.html
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: http://blog.jpcert.or.jp/2018/03/malware-tscooki-7aa0.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_tscookie_rat.yar
-rule TSCookie_RAT {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_gen_tscookie_rat_TSCookie_RAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_tscookie_rat.yar
    meta:
       description = "Detects TSCookie RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

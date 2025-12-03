@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/webshell_regeorg.yar
-rule REGEORG_Tuneller_generic {
-=======
 //===SUCCESS===
 rule Neo23x0_webshell_regeorg_REGEORG_Tuneller_generic {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/webshell_regeorg.yar
     meta:
         author = "Mandiant"
         date = "2021-12-20"

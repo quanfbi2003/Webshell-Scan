@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_osx_backdoor_bella.yar
-
-rule OSX_backdoor_Bella {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_osx_backdoor_bella_OSX_backdoor_Bella {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_osx_backdoor_bella.yar
     meta:
         description = "Bella MacOS/OSX backdoor"
         author = "John Lambert @JohnLaTwC"

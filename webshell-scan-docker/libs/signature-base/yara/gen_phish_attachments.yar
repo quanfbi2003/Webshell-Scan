@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_phish_attachments.yar
-
-rule SUSP_ZIP_LNK_PhishAttachment_Pattern_Jun22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_phish_attachments_SUSP_ZIP_LNK_PhishAttachment_Pattern_Jun22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_phish_attachments.yar
    meta:
       description = "Detects suspicious tiny ZIP files with phishing attachment characteristics"
       author = "Florian Roth (Nextron Systems)"
@@ -24,13 +19,8 @@ rule Neo23x0_gen_phish_attachments_SUSP_ZIP_LNK_PhishAttachment_Pattern_Jun22_1 
       filesize < 2KB and 
       $sl1 in (filesize-256..filesize)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_phish_attachments.yar
-
-rule SUSP_ZIP_ISO_PhishAttachment_Pattern_Jun22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_phish_attachments_SUSP_ZIP_ISO_PhishAttachment_Pattern_Jun22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_phish_attachments.yar
    meta:
       description = "Detects suspicious small base64 encoded ZIP files (MIME email attachments) with .iso files as content as often used in phishing attacks"
       author = "Florian Roth (Nextron Systems)"
@@ -49,13 +39,8 @@ rule Neo23x0_gen_phish_attachments_SUSP_ZIP_ISO_PhishAttachment_Pattern_Jun22_1 
    condition:
       filesize < 2000KB and 1 of ($pk*) and 1 of ($iso*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_phish_attachments.yar
-
-rule SUSP_Archive_Phishing_Attachment_Characteristics_Jun22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_phish_attachments_SUSP_Archive_Phishing_Attachment_Characteristics_Jun22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_phish_attachments.yar
    meta:
       description = "Detects characteristics of suspicious file names or double extensions often found in phishing mail attachments"
       author = "Florian Roth (Nextron Systems)"

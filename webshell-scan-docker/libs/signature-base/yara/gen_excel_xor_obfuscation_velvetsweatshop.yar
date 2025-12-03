@@ -1,12 +1,8 @@
 /* Slightly modified by Florian Roth */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_excel_xor_obfuscation_velvetsweatshop.yar
-rule gen_excel_xor_obfuscation_velvetsweatshop {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_excel_xor_obfuscation_velvetsweatshop_gen_excel_xor_obfuscation_velvetsweatshop {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_excel_xor_obfuscation_velvetsweatshop.yar
     meta:
         description = "Detects XOR encryption (c. 2003) in Excel file formats"
         license = "https://creativecommons.org/licenses/by-nc/4.0/"

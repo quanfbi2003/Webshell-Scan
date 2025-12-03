@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-06-01
-   Identifier: Lazarus Group
-   Reference: https://twitter.com/DrunkBinary/status/1002587521073721346
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://twitter.com/DrunkBinary/status/1002587521073721346
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_jun18.yar
-rule APT_Lazarus_Dropper_Jun18_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_jun18_APT_Lazarus_Dropper_Jun18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_jun18.yar
    meta:
       description = "Detects Lazarus Group Dropper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -46,13 +32,8 @@ rule Neo23x0_apt_lazarus_jun18_APT_Lazarus_Dropper_Jun18_1 {
         all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_jun18.yar
-
-rule APT_Lazarus_RAT_Jun18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_jun18_APT_Lazarus_RAT_Jun18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_jun18.yar
    meta:
       description = "Detects Lazarus Group RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -85,13 +66,8 @@ rule Neo23x0_apt_lazarus_jun18_APT_Lazarus_RAT_Jun18_1 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_jun18.yar
-
-rule APT_Lazarus_RAT_Jun18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_jun18_APT_Lazarus_RAT_Jun18_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_jun18.yar
    meta:
       description = "Detects Lazarus Group RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

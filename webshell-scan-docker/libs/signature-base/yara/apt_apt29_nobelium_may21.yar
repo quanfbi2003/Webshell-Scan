@@ -145,25 +145,6 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_May21_1 {
 
       $xa1 = "123do3y4r378o5t34onf7t3o573tfo73" ascii wide fullword
       $xa2 = "1233t04p7jn3n4rg" ascii wide fullword
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-      $s1 = "\\Release\\BOOM.pdb" ascii
-      $s2 = "/files/upload" ascii
-      $s3 = "/tmp/readme.pdf" ascii fullword
-      $s4 = "/new/{0}" ascii fullword
-      $s5 = "(&(objectClass=user)(objectCategory=person))"
-   condition:
-      ( 
-         uint16(0) == 0x5a4d 
-         or 1 of ($a*) 
-      )
-      and (
-         1 of ($x*)
-         or 3 of ($s*)
-      )
-}
-=======
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
 
       $s1 = "\\Release\\BOOM.pdb" ascii
       $s2 = "/files/upload" ascii

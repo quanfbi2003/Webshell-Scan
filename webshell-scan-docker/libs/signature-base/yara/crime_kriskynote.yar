@@ -5,19 +5,12 @@
    Date: 2017-03-03
    Identifier: Kriskynote 03 March
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kriskynote.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Kriskynote_Mar17_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_kriskynote_Kriskynote_Mar17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kriskynote.yar
    meta:
       description = "Detects Kriskynote Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +30,8 @@ rule Neo23x0_crime_kriskynote_Kriskynote_Mar17_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and $s1 and ($opa1 or all of ($opb*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kriskynote.yar
-
-rule Kriskynote_Mar17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_kriskynote_Kriskynote_Mar17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kriskynote.yar
    meta:
       description = "Detects Kriskynote Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +46,8 @@ rule Neo23x0_crime_kriskynote_Kriskynote_Mar17_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_kriskynote.yar
-
-rule Kriskynote_Mar17_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_kriskynote_Kriskynote_Mar17_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_kriskynote.yar
    meta:
       description = "Detects Kriskynote Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

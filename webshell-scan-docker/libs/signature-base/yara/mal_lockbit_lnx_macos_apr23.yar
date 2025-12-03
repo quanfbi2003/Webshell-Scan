@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
-
-rule MAL_RANSOM_LNX_macOS_LockBit_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LNX_macOS_LockBit_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
    meta:
       description = "Detects LockBit ransomware samples for Linux and macOS"
       author = "Florian Roth"
@@ -44,13 +39,8 @@ rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LNX_macOS_LockBit_Apr23_1 {
       or 2 of ($x*)
       or 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
-
-rule MAL_RANSOM_LockBit_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LockBit_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
    meta:
       description = "Detects indicators found in LockBit ransomware"
       author = "Florian Roth"
@@ -75,13 +65,8 @@ rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LockBit_Apr23_1 {
       )
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
-
-rule MAL_RANSOM_LockBit_Locker_LOG_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LockBit_Locker_LOG_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
    meta:
       description = "Detects indicators found in LockBit ransomware log files"
       author = "Florian Roth"
@@ -97,13 +82,8 @@ rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LockBit_Locker_LOG_Apr23_1 {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
-
-rule MAL_RANSOM_LockBit_ForensicArtifacts_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit_lnx_macos_apr23_MAL_RANSOM_LockBit_ForensicArtifacts_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit_lnx_macos_apr23.yar
    meta:
       description = "Detects forensic artifacts found in LockBit intrusions"
       author = "Florian Roth"

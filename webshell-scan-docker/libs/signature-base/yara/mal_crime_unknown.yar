@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_crime_unknown.yar
-rule MAL_CRIME_suspicious_hex_string_Jun21_1 : CRIME PE {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_crime_unknown_MAL_CRIME_suspicious_hex_string_Jun21_1 : CRIME PE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_crime_unknown.yar
     meta:
         author = "Nils Kuhnert"
         date = "2021-06-04"
@@ -19,13 +15,8 @@ rule Neo23x0_mal_crime_unknown_MAL_CRIME_suspicious_hex_string_Jun21_1 : CRIME P
     condition:
         uint16(0) == 0x5a4d and filesize < 10MB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_crime_unknown.yar
-
-rule MAL_CRIME_Unknown_LNK_Jun21_1: LNK POWERSHELL {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_crime_unknown_MAL_CRIME_Unknown_LNK_Jun21_1: LNK POWERSHELL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_crime_unknown.yar
     meta:
         author = "Nils Kuhnert"
         date = "2021-06-04"
@@ -41,13 +32,8 @@ rule Neo23x0_mal_crime_unknown_MAL_CRIME_Unknown_LNK_Jun21_1: LNK POWERSHELL {
     condition:
         uint16(0) == 0x004c and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_crime_unknown.yar
-
-rule MAL_CRIME_Unknown_ISO_Jun21_1 : ISO POWERSHELL LNK {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_crime_unknown_MAL_CRIME_Unknown_ISO_Jun21_1 : ISO POWERSHELL LNK {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_crime_unknown.yar
     meta:
         author = "Nils Kuhnert"
         date = "2021-06-04"

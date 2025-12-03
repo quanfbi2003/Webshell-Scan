@@ -4,20 +4,12 @@
    Date: 2017-01-08
    Identifier: ShadowBroker Screenshot Rules
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_jan17.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_jan17.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_jan17.yar
-rule FVEY_ShadowBrokers_Jan17_Screen_Strings {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_jan17_FVEY_ShadowBrokers_Jan17_Screen_Strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_jan17.yar
    meta:
       description = "Detects strings derived from the ShadowBroker's leak of Windows tools/exploits"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dnspionage.yar
-
-rule MAL_DNSPIONAGE_Malware_Nov18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dnspionage_MAL_DNSPIONAGE_Malware_Nov18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dnspionage.yar
    meta:
       description = "Detects DNSpionage Malware"
       author = "Florian Roth (Nextron Systems)"
@@ -24,13 +19,8 @@ rule Neo23x0_apt_dnspionage_MAL_DNSPIONAGE_Malware_Nov18 {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dnspionage.yar
-
-rule APT_DNSpionage_Karkoff_Malware_Apr19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dnspionage_APT_DNSpionage_Karkoff_Malware_Apr19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dnspionage.yar
    meta:
       description = "Detects DNSpionage Karkoff malware"
       author = "Florian Roth (Nextron Systems)"

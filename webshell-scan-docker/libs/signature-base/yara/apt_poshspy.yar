@@ -5,20 +5,12 @@
    Identifier: APT29 POSHSPY
    Reference: https://www.fireeye.com/blog/threat-research/2017/03/dissecting_one_ofap.html
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poshspy.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poshspy.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poshspy.yar
-rule POSHSPY_Malware {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_poshspy_POSHSPY_Malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_poshspy.yar
    meta:
       description = "Detects"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_efile_apr23.yar
-
-rule MAL_JS_EFile_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_efile_apr23_MAL_JS_EFile_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_efile_apr23.yar
    meta:
       description = "Detects JavaScript malware used in eFile compromise"
       author = "Florian Roth"
@@ -18,14 +13,8 @@ rule Neo23x0_mal_efile_apr23_MAL_JS_EFile_Apr23_1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_efile_apr23.yar
-
-
-rule MAL_PHP_EFile_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_efile_apr23_MAL_PHP_EFile_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_efile_apr23.yar
    meta:
       description = "Detects malware "
       author = "Florian Roth"

@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-09-12
-   Identifier: DragonFly
-   Reference: https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dragonfly.yar
-rule Unspecified_Malware_Sep1_A1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_dragonfly_Unspecified_Malware_Sep1_A1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dragonfly.yar
    meta:
       description = "Detects malware from DrqgonFly APT report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +27,8 @@ rule Neo23x0_apt_dragonfly_Unspecified_Malware_Sep1_A1 {
         pe.imphash() == "17a4bd9c95f2898add97f309fc6f9bcd"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dragonfly.yar
-
-rule DragonFly_APT_Sep17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dragonfly.yar
    meta:
       description = "Detects malware from DrqgonFly APT report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +44,8 @@ rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dragonfly.yar
-
-rule DragonFly_APT_Sep17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dragonfly.yar
    meta:
       description = "Detects malware from DrqgonFly APT report"
       author = "Florian Roth (Nextron Systems)"
@@ -90,13 +66,8 @@ rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 3000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dragonfly.yar
-
-rule DragonFly_APT_Sep17_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dragonfly.yar
    meta:
       description = "Detects malware from DrqgonFly APT report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -118,13 +89,8 @@ rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_3 {
         )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dragonfly.yar
-
-rule DragonFly_APT_Sep17_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dragonfly_DragonFly_APT_Sep17_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_dragonfly.yar
    meta:
       description = "Detects malware from DrqgonFly APT report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,19 +1,5 @@
-
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-09-27
-   Identifier: Xtreme / XRat
-   Reference: Internal Research
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_xtreme_rat.yar
-rule Xtreme_Sep17_1 {
-=======
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -28,7 +14,6 @@ rule Xtreme_Sep17_1 {
 
 //===SUCCESS===
 rule Neo23x0_gen_xtreme_rat_Xtreme_Sep17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_xtreme_rat.yar
    meta:
       description = "Detects XTREME sample analyzed in September 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -52,13 +37,8 @@ rule Neo23x0_gen_xtreme_rat_Xtreme_Sep17_1 {
          ( 1 of ($x*) or 3 of them )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_xtreme_rat.yar
-
-rule Xtreme_Sep17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_xtreme_rat_Xtreme_Sep17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_xtreme_rat.yar
    meta:
       description = "Detects XTREME sample analyzed in September 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -73,13 +53,8 @@ rule Neo23x0_gen_xtreme_rat_Xtreme_Sep17_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 3000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_xtreme_rat.yar
-
-rule Xtreme_Sep17_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_xtreme_rat_Xtreme_Sep17_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_xtreme_rat.yar
    meta:
       description = "Detects XTREME sample analyzed in September 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -94,13 +69,8 @@ rule Neo23x0_gen_xtreme_rat_Xtreme_Sep17_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_xtreme_rat.yar
-
-rule Xtreme_RAT_Gen_Imp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_xtreme_rat_Xtreme_RAT_Gen_Imp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_xtreme_rat.yar
    meta:
       description = "Detects XTREME sample analyzed in September 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-02-07
-   Identifier: ME Campaign Talos Report
-   Reference: http://blog.talosintelligence.com/2018/02/targeted-attacks-in-middle-east.html
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: http://blog.talosintelligence.com/2018/02/targeted-attacks-in-middle-east.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_middle_east_talosreport.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule ME_Campaign_Malware_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_middle_east_talosreport.yar
    meta:
       description = "Detects malware from Middle Eastern campaign reported by Talos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -40,13 +26,8 @@ rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_1 {
         pe.imphash() == "618f76eaf4bd95c690d43e84d617efe9"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_middle_east_talosreport.yar
-
-rule ME_Campaign_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_middle_east_talosreport.yar
    meta:
       description = "Detects malware from Middle Eastern campaign reported by Talos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -67,13 +48,8 @@ rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_2 {
         4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_middle_east_talosreport.yar
-
-rule ME_Campaign_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_middle_east_talosreport.yar
    meta:
       description = "Detects malware from Middle Eastern campaign reported by Talos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -90,13 +66,8 @@ rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_3 {
    condition:
       uint16(0) == 0x6553 and filesize < 400KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_middle_east_talosreport.yar
-
-rule ME_Campaign_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_middle_east_talosreport.yar
    meta:
       description = "Detects malware from Middle Eastern campaign reported by Talos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -108,13 +79,8 @@ rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_4 {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and pe.imphash() == "fb7da233a35ac523d6059fff543627ab"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_middle_east_talosreport.yar
-
-rule ME_Campaign_Malware_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_middle_east_talosreport_ME_Campaign_Malware_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_middle_east_talosreport.yar
    meta:
       description = "Detects malware from Middle Eastern campaign reported by Talos"
       author = "Florian Roth (Nextron Systems)"

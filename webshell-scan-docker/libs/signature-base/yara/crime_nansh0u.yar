@@ -1,15 +1,3 @@
-/*
-   YARA Rule Set
-   Author: Florian Roth
-   Date: 2019-05-31
-   Identifier: Nansh0u
-   Reference: https://www.guardicore.com/2019/05/nansh0u-campaign-hackers-arsenal-grows-stronger/
-   License = CC BY-NC 4.0 https://creativecommons.org/licenses/by-nc/4.0/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
-
 import "pe"
 /*
    YARA Rule Set
@@ -20,9 +8,6 @@ import "pe"
    License = CC BY-NC 4.0 https://creativecommons.org/licenses/by-nc/4.0/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-rule MAL_XMR_Miner_May19_1 : HIGHVOL {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
@@ -30,7 +15,6 @@ rule MAL_XMR_Miner_May19_1 : HIGHVOL {
 
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_MAL_XMR_Miner_May19_1 : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects Monero Crypto Coin Miner"
       author = "Florian Roth (Nextron Systems)"
@@ -52,13 +36,8 @@ rule Neo23x0_crime_nansh0u_MAL_XMR_Miner_May19_1 : HIGHVOL {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-
-rule HKTL_CN_ProcHook_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_HKTL_CN_ProcHook_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects hacktool used by Chinese threat groups"
       author = "Florian Roth (Nextron Systems)"
@@ -70,14 +49,8 @@ rule Neo23x0_crime_nansh0u_HKTL_CN_ProcHook_May19_1 {
       uint16(0) == 0x5a4d and filesize < 300KB and
       pe.imphash() == "343d580dd50ee724746a5c28f752b709"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-
-
-rule SUSP_PDB_CN_Threat_Actor_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_SUSP_PDB_CN_Threat_Actor_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects PDB path user name used by Chinese threat actors"
       author = "Florian Roth (Nextron Systems)"
@@ -91,13 +64,8 @@ rule Neo23x0_crime_nansh0u_SUSP_PDB_CN_Threat_Actor_May19_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-
-rule MAL_Ramnit_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_MAL_Ramnit_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects Ramnit malware"
       author = "Florian Roth (Nextron Systems)"
@@ -109,13 +77,8 @@ rule Neo23x0_crime_nansh0u_MAL_Ramnit_May19_1 {
       uint16(0) == 0x5a4d and filesize < 300KB
       and pe.imphash() == "500cd02578808f964519eb2c85153046"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-
-rule MAL_Parite_Malware_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_MAL_Parite_Malware_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects Parite malware"
       author = "Florian Roth (Nextron Systems)"
@@ -136,13 +99,8 @@ rule Neo23x0_crime_nansh0u_MAL_Parite_Malware_May19_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 10000KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-
-rule MAL_Parite_Malware_May19_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_MAL_Parite_Malware_May19_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects Parite malware based on Imphash"
       author = "Florian Roth (Nextron Systems)"
@@ -159,13 +117,8 @@ rule Neo23x0_crime_nansh0u_MAL_Parite_Malware_May19_2 {
          pe.imphash() == "78f4f885323ffee9f8fa011455d0523d"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nansh0u.yar
-
-rule EXPL_Strings_CVE_POC_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_nansh0u_EXPL_Strings_CVE_POC_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_nansh0u.yar
    meta:
       description = "Detects strings used in CVE POC noticed in May 2019"
       author = "Florian Roth (Nextron Systems)"

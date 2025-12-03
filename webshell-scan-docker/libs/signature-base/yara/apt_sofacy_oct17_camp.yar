@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-10-23
-   Identifier: Sofacy Malware
-   Reference: http://blog.talosintelligence.com/2017/10/cyber-conflict-decoy-document.html
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: http://blog.talosintelligence.com/2017/10/cyber-conflict-decoy-document.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_oct17_camp.yar
-rule Sofacy_Oct17_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_oct17_camp_Sofacy_Oct17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_oct17_camp.yar
    meta:
       description = "Detects Sofacy malware reported in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -61,13 +47,8 @@ rule Neo23x0_apt_sofacy_oct17_camp_Sofacy_Oct17_1 {
          ( $s1 and all of ($g*) )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_oct17_camp.yar
-
-rule Sofacy_Oct17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_oct17_camp_Sofacy_Oct17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_oct17_camp.yar
    meta:
       description = "Detects Sofacy malware reported in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

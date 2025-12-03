@@ -4,20 +4,12 @@
 	Date: 2016-06-08
 	Identifier: PlugX Juni 2016
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_win_plugx.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_win_plugx.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_win_plugx.yar
-rule PlugX_J16_Gen {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_win_plugx_PlugX_J16_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_win_plugx.yar
 	meta:
 		description = "Detects PlugX Malware samples from June 2016"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -48,13 +40,8 @@ rule Neo23x0_apt_win_plugx_PlugX_J16_Gen {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 600KB and ( 1 of ($x*) or 4 of ($s*) ) ) or ( 8 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_win_plugx.yar
-
-rule PlugX_J16_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_win_plugx_PlugX_J16_Gen2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_win_plugx.yar
 	meta:
 		description = "Detects PlugX Malware Samples from June 2016"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_buzus_softpulse.yar
-
-rule Win32_Buzus_Softpulse {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_buzus_softpulse_Win32_Buzus_Softpulse {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_buzus_softpulse.yar
 	meta:
 		description = "Trojan Buzus / Softpulse"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

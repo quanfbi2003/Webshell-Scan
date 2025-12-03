@@ -5,20 +5,12 @@
    Identifier: Red Sails
    Reference: https://github.com/BeetleChunks/redsails
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_redsails.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_redsails.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_redsails.yar
-rule redSails_EXE {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_redsails_redSails_EXE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_redsails.yar
    meta:
       description = "Detects Red Sails Hacktool by WinDivert references"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_gen_redsails_redSails_EXE {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 6000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_redsails.yar
-
-rule redSails_PY {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_redsails_redSails_PY {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_redsails.yar
    meta:
       description = "Detects Red Sails Hacktool - Python"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

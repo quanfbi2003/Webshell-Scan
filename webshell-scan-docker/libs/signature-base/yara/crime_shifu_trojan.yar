@@ -5,13 +5,9 @@
 	Identifier: Shifu
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_shifu_trojan.yar
-rule Shifu_Banking_Trojan {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_shifu_trojan_Shifu_Banking_Trojan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_shifu_trojan.yar
 	meta:
 		description = "Detects Shifu Banking Trojan"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -31,13 +27,8 @@ rule Neo23x0_crime_shifu_trojan_Shifu_Banking_Trojan {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and ($x1 or all of ($s*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_shifu_trojan.yar
-
-rule SHIFU_Banking_Trojan {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_shifu_trojan_SHIFU_Banking_Trojan {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_shifu_trojan.yar
 	meta:
 		description = "Detects SHIFU Banking Trojan"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

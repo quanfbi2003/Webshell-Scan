@@ -7,13 +7,9 @@
 */
 
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-rule Tools_cmd {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Tools_cmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file cmd.jSp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,14 +32,8 @@ rule Neo23x0_gen_cn_webshells_Tools_cmd {
     condition:
         filesize < 3KB and 7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-
-rule trigger_drop {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_trigger_drop {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file trigger_drop.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -60,13 +50,8 @@ rule Neo23x0_gen_cn_webshells_trigger_drop {
     condition:
         filesize < 5KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule InjectionParameters {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_InjectionParameters {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file InjectionParameters.vb"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -81,13 +66,8 @@ rule Neo23x0_gen_cn_webshells_InjectionParameters {
     condition:
         filesize < 13KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule users_list {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_users_list {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file users_list.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -103,13 +83,8 @@ rule Neo23x0_gen_cn_webshells_users_list {
     condition:
         filesize < 12KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule trigger_modify {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_trigger_modify {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file trigger_modify.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -127,13 +102,8 @@ rule Neo23x0_gen_cn_webshells_trigger_modify {
     condition:
         filesize < 15KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Customize {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Customize {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file Customize.aspx"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -150,13 +120,8 @@ rule Neo23x0_gen_cn_webshells_Customize {
     condition:
         filesize < 24KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule oracle_data {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_oracle_data {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file oracle_data.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -172,13 +137,8 @@ rule Neo23x0_gen_cn_webshells_oracle_data {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule reDuhServers_reDuh {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_reDuhServers_reDuh {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file reDuh.jsp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -194,13 +154,8 @@ rule Neo23x0_gen_cn_webshells_reDuhServers_reDuh {
     condition:
         filesize < 116KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule item_old {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_item_old {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file item-old.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -216,13 +171,8 @@ rule Neo23x0_gen_cn_webshells_item_old {
     condition:
         filesize < 7KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Tools_2014 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Tools_2014 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file 2014.jsp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -238,13 +188,8 @@ rule Neo23x0_gen_cn_webshells_Tools_2014 {
     condition:
         filesize < 715KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule reDuhServers_reDuh_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_reDuhServers_reDuh_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file reDuh.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -260,13 +205,8 @@ rule Neo23x0_gen_cn_webshells_reDuhServers_reDuh_2 {
     condition:
         filesize < 57KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Customize_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Customize_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file Customize.jsp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -281,13 +221,8 @@ rule Neo23x0_gen_cn_webshells_Customize_2 {
     condition:
         filesize < 30KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule ChinaChopper_one {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_ChinaChopper_one {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file one.asp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -301,13 +236,8 @@ rule Neo23x0_gen_cn_webshells_ChinaChopper_one {
     condition:
         filesize < 50 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule CN_Tools_old {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_CN_Tools_old {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file old.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -324,13 +254,8 @@ rule Neo23x0_gen_cn_webshells_CN_Tools_old {
     condition:
         filesize < 6KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule item_301 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_item_301 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file item-301.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -347,13 +272,8 @@ rule Neo23x0_gen_cn_webshells_item_301 {
     condition:
         filesize < 3KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule CN_Tools_item {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_CN_Tools_item {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file item.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -370,13 +290,8 @@ rule Neo23x0_gen_cn_webshells_CN_Tools_item {
     condition:
         filesize < 4KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule f3_diy {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_f3_diy {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file diy.asp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -391,13 +306,8 @@ rule Neo23x0_gen_cn_webshells_f3_diy {
     condition:
         uint16(0) == 0x253c and filesize < 10KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule ChinaChopper_temp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_ChinaChopper_temp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file temp.asp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -414,13 +324,8 @@ rule Neo23x0_gen_cn_webshells_ChinaChopper_temp {
     condition:
         filesize < 1KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Tools_2015 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Tools_2015 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file 2015.jsp"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -438,13 +343,8 @@ rule Neo23x0_gen_cn_webshells_Tools_2015 {
     condition:
         filesize < 7KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule ChinaChopper_temp_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_ChinaChopper_temp_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file temp.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -458,13 +358,8 @@ rule Neo23x0_gen_cn_webshells_ChinaChopper_temp_2 {
     condition:
         filesize < 150 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule templatr {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_templatr {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file templatr.php"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -478,13 +373,8 @@ rule Neo23x0_gen_cn_webshells_templatr {
     condition:
         filesize < 70KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule reDuhServers_reDuh_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_reDuhServers_reDuh_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file reDuh.aspx"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -501,13 +391,8 @@ rule Neo23x0_gen_cn_webshells_reDuhServers_reDuh_3 {
     condition:
         filesize < 40KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule ChinaChopper_temp_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_ChinaChopper_temp_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - file temp.aspx"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -522,13 +407,8 @@ rule Neo23x0_gen_cn_webshells_ChinaChopper_temp_3 {
     condition:
         uint16(0) == 0x253c and filesize < 150 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Shell_Asp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Shell_Asp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set Webshells - file Asp.html"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -544,14 +424,8 @@ rule Neo23x0_gen_cn_webshells_Shell_Asp {
     condition:
         filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-
-rule Txt_aspxtag {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_aspxtag {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file aspxtag.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -567,13 +441,8 @@ rule Neo23x0_gen_cn_webshells_Txt_aspxtag {
     condition:
         filesize < 2KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_php {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_php {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file php.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -590,13 +459,8 @@ rule Neo23x0_gen_cn_webshells_Txt_php {
     condition:
         filesize < 1KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_aspx1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_aspx1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file aspx1.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -611,13 +475,8 @@ rule Neo23x0_gen_cn_webshells_Txt_aspx1 {
     condition:
         filesize < 150 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_shell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_shell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file shell.c"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -635,13 +494,8 @@ rule Neo23x0_gen_cn_webshells_Txt_shell {
     condition:
         filesize < 2KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_asp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_asp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file asp.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -656,13 +510,8 @@ rule Neo23x0_gen_cn_webshells_Txt_asp {
     condition:
         uint16(0) == 0x253c and filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_asp1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_asp1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file asp1.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -679,13 +528,8 @@ rule Neo23x0_gen_cn_webshells_Txt_asp1 {
     condition:
         filesize < 70KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_php_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_php_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file php.html"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -706,13 +550,8 @@ rule Neo23x0_gen_cn_webshells_Txt_php_2 {
     condition:
         filesize < 100KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_ftp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_ftp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file ftp.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -732,13 +571,8 @@ rule Neo23x0_gen_cn_webshells_Txt_ftp {
     condition:
         filesize < 2KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_lcx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_lcx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file lcx.c"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -756,13 +590,8 @@ rule Neo23x0_gen_cn_webshells_Txt_lcx {
     condition:
         filesize < 25KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_jspcmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_jspcmd {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file jspcmd.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -777,13 +606,8 @@ rule Neo23x0_gen_cn_webshells_Txt_jspcmd {
     condition:
         filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_jsp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_jsp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file jsp.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -800,13 +624,8 @@ rule Neo23x0_gen_cn_webshells_Txt_jsp {
     condition:
         filesize < 715KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_aspxlcx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_aspxlcx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file aspxlcx.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -823,13 +642,8 @@ rule Neo23x0_gen_cn_webshells_Txt_aspxlcx {
     condition:
         uint16(0) == 0x253c and filesize < 18KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_xiao {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_xiao {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file xiao.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -847,13 +661,8 @@ rule Neo23x0_gen_cn_webshells_Txt_xiao {
     condition:
         filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_aspx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_aspx {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file aspx.jpg"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -870,13 +679,8 @@ rule Neo23x0_gen_cn_webshells_Txt_aspx {
     condition:
         filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_Sql {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_Sql {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file Sql.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -893,13 +697,8 @@ rule Neo23x0_gen_cn_webshells_Txt_Sql {
     condition:
         filesize < 15KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_webshells.yar
-
-rule Txt_hello {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_webshells_Txt_hello {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_webshells.yar
     meta:
         description = "Chinese Hacktool Set - Webshells - file hello.txt"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

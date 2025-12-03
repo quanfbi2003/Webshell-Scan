@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gpp_cpassword.yar
-
-rule Groups_cpassword {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gpp_cpassword_Groups_cpassword {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_gpp_cpassword.yar
     meta:
         description = "Groups XML contains cpassword value, which is decrypted password - key is in MSDN http://goo.gl/mHrC8P"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -23,4 +18,3 @@ rule Neo23x0_gen_gpp_cpassword_Groups_cpassword {
         and filesize < 1000KB
         and all of ($s*)  
 }
-

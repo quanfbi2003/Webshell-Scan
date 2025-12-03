@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_gozi_crypter.yar
-
-rule MAL_GoziCrypter_Dec20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_gozi_crypter_MAL_GoziCrypter_Dec20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_gozi_crypter.yar
     meta:
       description = "Detects crypter associated with several Gozi samples"
       author = "James Quinn"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_dell_bios_upd_driver.yar
-
-rule VULN_Dell_BIOS_Update_Driver_DBUtil_May21 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_dell_bios_upd_driver_VULN_Dell_BIOS_Update_Driver_DBUtil_May21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_dell_bios_upd_driver.yar
    meta:
       description = "Detects vulnerable DELL BIOS update driver that allows privilege escalation as reported in CVE-2021-21551 - DBUtil_2_3.Sys - note: it's usual location is in the C:\\Windows\\Temp folder"
       author = "Florian Roth (Nextron Systems)"

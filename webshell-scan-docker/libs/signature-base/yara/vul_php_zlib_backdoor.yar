@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_php_zlib_backdoor.yar
-
-rule VULN_PHP_Hack_Backdoored_Zlib_Zerodium_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_php_zlib_backdoor_VULN_PHP_Hack_Backdoored_Zlib_Zerodium_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_php_zlib_backdoor.yar
    meta:
       description = "Detects backdoored PHP zlib version"
       author = "Florian Roth (Nextron Systems)"

@@ -5,13 +5,9 @@
 	Identifier: Phishing Gina Harrowell Dez 2015
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_phish_gina_dec15.yar
-rule PHISH_02Dez2015_dropped_p0o6543f_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_phish_gina_dec15_PHISH_02Dez2015_dropped_p0o6543f_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_phish_gina_dec15.yar
 	meta:
 		description = "Phishing Wave - file p0o6543f.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +29,8 @@ rule Neo23x0_crime_phish_gina_dec15_PHISH_02Dez2015_dropped_p0o6543f_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 250KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_phish_gina_dec15.yar
-
-rule PHISH_02Dez2015_dropped_p0o6543f_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_phish_gina_dec15_PHISH_02Dez2015_dropped_p0o6543f_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_phish_gina_dec15.yar
 	meta:
 		description = "Phishing Wave used MineExplorer Game by WangLei - file p0o6543f.exe.4"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -56,13 +47,8 @@ rule Neo23x0_crime_phish_gina_dec15_PHISH_02Dez2015_dropped_p0o6543f_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_phish_gina_dec15.yar
-
-rule PHISH_02Dez2015_attach_P_ORD_C_10156_124658 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_phish_gina_dec15_PHISH_02Dez2015_attach_P_ORD_C_10156_124658 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_phish_gina_dec15.yar
 	meta:
 		description = "Phishing Wave - file P-ORD-C-10156-124658.xls"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_patchwork.yar
-
-rule APT_ArtraDownloader2_Aug19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_patchwork_APT_ArtraDownloader2_Aug19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_patchwork.yar
    meta:
       description = "Detects ArtraDownloader malware"
       author = "Florian Roth (Nextron Systems)"

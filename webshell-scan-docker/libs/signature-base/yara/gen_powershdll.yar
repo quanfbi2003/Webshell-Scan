@@ -6,13 +6,9 @@
    Reference: https://github.com/p3nt4/PowerShdll
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershdll.yar
-rule PowerShdll {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_powershdll_PowerShdll {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_powershdll.yar
    meta:
       description = "Detects hack tool PowerShdll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

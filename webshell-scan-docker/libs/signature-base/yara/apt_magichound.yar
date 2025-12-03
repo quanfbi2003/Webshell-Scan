@@ -4,20 +4,12 @@
    Date: 2017-02-17
    Identifier: Magic Hound
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_magichound.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_magichound.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_magichound.yar
-rule APT_PupyRAT_PY {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_magichound_APT_PupyRAT_PY {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_magichound.yar
    meta:
       description = "Detects Pupy RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_apt_magichound_APT_PupyRAT_PY {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_magichound.yar
-
-rule APT_MagicHound_MalMacro {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_magichound_APT_MagicHound_MalMacro {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_magichound.yar
    meta:
       description = "Detects malicious macro / powershell in Office document"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

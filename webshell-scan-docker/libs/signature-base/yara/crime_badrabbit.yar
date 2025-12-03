@@ -5,20 +5,12 @@
    Identifier: BadRabbit
    Reference: https://pastebin.com/Y7pJv3tK
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_badrabbit.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_badrabbit.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_badrabbit.yar
-rule BadRabbit_Gen {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_badrabbit_BadRabbit_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_badrabbit.yar
    meta:
       description = "Detects BadRabbit Ransomware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -48,13 +40,8 @@ rule Neo23x0_crime_badrabbit_BadRabbit_Gen {
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_badrabbit.yar
-
-rule BadRabbit_Mimikatz_Comp {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_badrabbit_BadRabbit_Mimikatz_Comp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_badrabbit.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

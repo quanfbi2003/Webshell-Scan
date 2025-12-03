@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_scarcruft.yar
-
-rule Scarcruft_malware_Feb18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_scarcruft_Scarcruft_malware_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_scarcruft.yar
    meta:
       description = "Detects Scarcruft malware - February 2018"
       author = "Florian rootpath"

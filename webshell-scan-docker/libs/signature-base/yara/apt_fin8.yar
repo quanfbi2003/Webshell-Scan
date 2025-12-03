@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin8.yar
-rule Shellcode_APIHashing_FIN8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin8_Shellcode_APIHashing_FIN8 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fin8.yar
 	meta:
 		description = "Detects FIN8 Shellcode APIHashing"
 		author = "Frank Boldewin (@r3c0nst)"

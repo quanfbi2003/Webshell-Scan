@@ -4,20 +4,12 @@
 	Date: 2015-07-10
 	Identifier: Pass-the-Hash-Toolkit
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-rule whosthere_alt {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_whosthere_alt {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file whosthere-alt.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_apt_passthehashtoolkit_whosthere_alt {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 280KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-
-rule iam_alt_iam_alt {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_iam_alt_iam_alt {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file iam-alt.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -67,13 +54,8 @@ rule Neo23x0_apt_passthehashtoolkit_iam_alt_iam_alt {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 240KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-
-rule genhash_genhash {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_genhash_genhash {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file genhash.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -92,13 +74,8 @@ rule Neo23x0_apt_passthehashtoolkit_genhash_genhash {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-
-rule iam_iamdll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_iam_iamdll {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file iamdll.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -115,13 +92,8 @@ rule Neo23x0_apt_passthehashtoolkit_iam_iamdll {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 115KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-
-rule iam_iam {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_iam_iam {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file iam.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -142,13 +114,8 @@ rule Neo23x0_apt_passthehashtoolkit_iam_iam {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-
-rule whosthere_alt_pth {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_whosthere_alt_pth {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file pth.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -167,13 +134,8 @@ rule Neo23x0_apt_passthehashtoolkit_whosthere_alt_pth {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 240KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passthehashtoolkit.yar
-
-rule whosthere {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passthehashtoolkit_whosthere {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_passthehashtoolkit.yar
 	meta:
 		description = "Auto-generated rule - file whosthere.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -193,4 +155,3 @@ rule Neo23x0_apt_passthehashtoolkit_whosthere {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 320KB and 2 of them
 }
-

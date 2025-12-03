@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_python_pyminifier_encoded_payload.yar
-rule gen_python_pyminifier_encoded_payload
-=======
 //===SUCCESS===
 rule Neo23x0_gen_python_pyminifier_encoded_payload_gen_python_pyminifier_encoded_payload
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_python_pyminifier_encoded_payload.yar
 {
     meta:
         description = "Detects python code encoded by pyminifier. Used by the Machete malware as researched by ESET"

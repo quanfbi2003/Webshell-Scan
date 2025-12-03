@@ -5,13 +5,9 @@
 	Identifier: Furtim Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_furtim.yar
-rule Furtim_nativeDLL {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_furtim_Furtim_nativeDLL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_furtim.yar
 	meta:
 		description = "Detects Furtim malware - file native.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +32,8 @@ rule Neo23x0_apt_furtim_Furtim_nativeDLL {
 	Date: 2016-07-16
 	Identifier: Furtim Parent
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_furtim.yar
-
-rule Furtim_Parent_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_furtim_Furtim_Parent_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_furtim.yar
 	meta:
 		description = "Detects Furtim Parent Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

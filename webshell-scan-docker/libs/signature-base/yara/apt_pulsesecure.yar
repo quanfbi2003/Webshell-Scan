@@ -1,7 +1,5 @@
 /*
     Copyright 2021 by FireEye, Inc.
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-=======
 
     The 2-Clause BSD License
 
@@ -10,22 +8,10 @@
     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 
-    The 2-Clause BSD License
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-    1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-    2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
-rule FE_Webshell_PL_ATRIUM_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_Webshell_PL_ATRIUM_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {
     meta:
         author = "Mandiant"
@@ -41,13 +27,8 @@ rule Neo23x0_apt_pulsesecure_FE_Webshell_PL_ATRIUM_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-
-rule FE_Trojan_SH_ATRIUM_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_Trojan_SH_ATRIUM_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {
     meta:
         author = "Mandiant"
@@ -64,12 +45,8 @@ rule Neo23x0_apt_pulsesecure_FE_Trojan_SH_ATRIUM_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-rule FE_APT_Webshell_PL_HARDPULSE 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Webshell_PL_HARDPULSE
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant"  
@@ -88,14 +65,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Webshell_PL_HARDPULSE
         $s4 = "print $_" 
     condition: 
         all of them 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Trojan_Linux32_LOCKPICK_1
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_Linux32_LOCKPICK_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {
     meta:
         author = "Mandiant"
@@ -110,12 +82,8 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_Linux32_LOCKPICK_1
     condition:
         ((uint32(0) == 0x464c457f) and (uint8(4) == 1)) and (@sb1[1] < @sb2[1])
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-rule FE_APT_Trojan_Linux32_PACEMAKER 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_Linux32_PACEMAKER
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant"  
@@ -132,14 +100,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_Linux32_PACEMAKER
         $sb2 = { 8B 95 [4] B8 [4] 8D 8D [4] 89 4C 24 10 8D 8D [4] 89 4C 24 0C 89 54 24 08 89 44 24 04 8D 85 [4] 89 04 24 E8 [4] C7 44 24 08 02 00 00 00 C7 44 24 04 00 00 00 00 8B 45 ?? 89 04 24 E8 [4] 89 45 ?? 8D 85 [4] 89 04 24 E8 [4] 89 44 24 08 8D 85 [4] 89 44 24 04 8B 45 ?? 89 04 24 E8 [4] 8B 45 ?? 89 45 ?? C7 45 ?? 00 00 00 00 [0-16] 83 45 ?? 01 8B 45 ?? 3B 45 0C } 
     condition: 
         ((uint32(0) == 0x464c457f) and (uint8(4) == 1)) and all of them 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Trojan_Linux_PACEMAKER 
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_Linux_PACEMAKER
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant"  
@@ -156,12 +119,8 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_Linux_PACEMAKER
     condition: 
         (uint32(0) == 0x464c457f) and all of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-rule FE_APT_Webshell_PL_PULSECHECK_1 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Webshell_PL_PULSECHECK_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant" 
@@ -181,14 +140,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Webshell_PL_PULSECHECK_1
         $s7 = "HTTP_X_" 
     condition: 
         $s1 and $s2 and (@s3[1] < @s4[1]) and (@s4[1] < @s5[1]) and (@s5[1] < @s6[1]) and (#s7 > 2) and $r1 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Trojan_PL_PULSEJUMP_1
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_PULSEJUMP_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {
     meta:
         author = "Mandiant"
@@ -205,12 +159,8 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_PULSEJUMP_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-rule FE_APT_Trojan_PL_QUIETPULSE 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_QUIETPULSE
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {
     meta: 
         author = "Mandiant"  
@@ -228,14 +178,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_QUIETPULSE
         $s6 = /my[\x09\x20]{1,32}\$\w{1,64}[\x09\x20]{0,32}=[\x09\x20]{0,32}fork\([\x09\x20]{0,32}\)[\x09\x20]{0,32};\s{1,128}if[\x09\x20]{0,32}\([\x09\x20]{0,32}\$\w{1,64}[\x09\x20]{0,32}==[\x09\x20]{0,32}0[\x09\x20]{0,32}\)[\x09\x20]{0,32}\{\s{1,128}exec\(/ 
     condition: 
         all of them 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Trojan_PL_RADIALPULSE_1 
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_RADIALPULSE_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {
     meta: 
         author = "Mandiant" 
@@ -252,14 +197,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_RADIALPULSE_1
         $s5 = /syswrite\(\*fd,[\x09\x20]{0,32}[\x22\x27]password=\$/ 
     condition: 
         (@s1[1] < @s2[1]) and (@s2[1] < @s3[1]) and $s4 and $s5 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Trojan_PL_RADIALPULSE_2 
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_RADIALPULSE_2
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant"  
@@ -276,14 +216,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_RADIALPULSE_2
         $s5 = /syswrite\(\*fd,[\x09\x20]{0,32}[\x22\x27][\w]{1,128}=\$\w{1,128} ?[\x22\x27],[\x09\x20]{0,32}5000\)/ 
     condition: 
         all of them 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Trojan_PL_RADIALPULSE_3 
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_RADIALPULSE_3
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant"  
@@ -300,14 +235,9 @@ rule Neo23x0_apt_pulsesecure_FE_APT_Trojan_PL_RADIALPULSE_3
         $s5 = /syswrite\(\*fd,[\x09\x20]{0,32}[\x22\x27][\w]{1,128}=\$username ?[\x22\x27],[\x09\x20]{0,32}\d{4}\)/ 
     condition: 
         all of them 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-} 
-rule FE_APT_Backdoor_Linux32_SLOWPULSE_1 
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Backdoor_Linux32_SLOWPULSE_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 { 
     meta: 
         author = "Mandiant" 
@@ -344,13 +274,8 @@ rule FE_APT_Backdoor_Linux32_SLOWPULSE_2
         uint32(0) == 0x464C457F and (1 of ($sig*)) and (not (1 of ($exc*)))
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_pulsesecure.yar
-
-rule FE_APT_Webshell_PL_STEADYPULSE_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_pulsesecure_FE_APT_Webshell_PL_STEADYPULSE_1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_pulsesecure.yar
 {  
     meta:  
         author = "Mandiant"  

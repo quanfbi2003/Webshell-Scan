@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-07-28
-   Identifier: DarkHydrus
-   Reference: https://researchcenter.paloaltonetworks.com/2018/07/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2018/07/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_darkhydrus.yar
-rule APT_DarkHydrus_Jul18_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_darkhydrus_APT_DarkHydrus_Jul18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_darkhydrus.yar
    meta:
       description = "Detects strings found in malware samples in APT report in DarkHydrus"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +29,8 @@ rule Neo23x0_apt_darkhydrus_APT_DarkHydrus_Jul18_1 {
          1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_darkhydrus.yar
-
-rule APT_DarkHydrus_Jul18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_darkhydrus_APT_DarkHydrus_Jul18_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_darkhydrus.yar
    meta:
       description = "Detects strings found in malware samples in APT report in DarkHydrus"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -67,13 +48,8 @@ rule Neo23x0_apt_darkhydrus_APT_DarkHydrus_Jul18_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 40KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_darkhydrus.yar
-
-rule APT_DarkHydrus_Jul18_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_darkhydrus_APT_DarkHydrus_Jul18_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_darkhydrus.yar
    meta:
       description = "Detects strings found in malware samples in APT report in DarkHydrus"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -91,13 +67,8 @@ rule Neo23x0_apt_darkhydrus_APT_DarkHydrus_Jul18_3 {
          all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_darkhydrus.yar
-
-rule HKTL_Unlicensed_CobaltStrike_EICAR_Jul18_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_darkhydrus_HKTL_Unlicensed_CobaltStrike_EICAR_Jul18_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_darkhydrus.yar
    meta:
       description = "Detects strings found in CobaltStrike shellcode"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -119,4 +90,3 @@ rule Neo23x0_apt_darkhydrus_HKTL_Unlicensed_CobaltStrike_EICAR_Jul18_5 {
          $x1
       )
 }
-

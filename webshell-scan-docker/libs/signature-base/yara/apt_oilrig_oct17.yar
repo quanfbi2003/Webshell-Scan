@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_oct17.yar
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_oct17.yar
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -12,13 +9,9 @@ import "pe"
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_oct17.yar
-rule OilRig_Strings_Oct17 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_oct17_OilRig_Strings_Oct17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_oct17.yar
    meta:
       description = "Detects strings from OilRig malware and malicious scripts"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -46,15 +39,8 @@ rule Neo23x0_apt_oilrig_oct17_OilRig_Strings_Oct17 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_oct17.yar
-
-import "pe"
-
-rule OilRig_ISMAgent_Campaign_Samples1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_oct17_OilRig_ISMAgent_Campaign_Samples1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_oct17.yar
    meta:
       description = "Detects OilRig malware from Unit 42 report in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -74,13 +60,8 @@ rule Neo23x0_apt_oilrig_oct17_OilRig_ISMAgent_Campaign_Samples1 {
    condition:
       uint16(0) == 0xcfd0 and filesize < 3000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_oct17.yar
-
-rule OilRig_ISMAgent_Campaign_Samples2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_oct17_OilRig_ISMAgent_Campaign_Samples2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_oct17.yar
    meta:
       description = "Detects OilRig malware from Unit 42 report in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -100,13 +81,8 @@ rule Neo23x0_apt_oilrig_oct17_OilRig_ISMAgent_Campaign_Samples2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and ( 2 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_oct17.yar
-
-rule OilRig_ISMAgent_Campaign_Samples3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_oct17_OilRig_ISMAgent_Campaign_Samples3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_oilrig_oct17.yar
    meta:
       description = "Detects OilRig malware from Unit 42 report in October 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

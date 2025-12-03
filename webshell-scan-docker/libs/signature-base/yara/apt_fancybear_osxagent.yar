@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fancybear_osxagent.yar
-rule MAL_OSX_FancyBear_Agent_Jul18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fancybear_osxagent_MAL_OSX_FancyBear_Agent_Jul18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fancybear_osxagent.yar
    meta:
       description = "Detects FancyBear Agent for OSX"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

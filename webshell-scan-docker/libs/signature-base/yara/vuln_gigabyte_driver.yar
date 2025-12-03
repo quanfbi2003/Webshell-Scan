@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vuln_gigabyte_driver.yar
-
-rule VULN_PUA_GIGABYTE_Driver_Jul22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_gigabyte_driver_VULN_PUA_GIGABYTE_Driver_Jul22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vuln_gigabyte_driver.yar
    meta:
       description = "Detects a vulnerable GIGABYTE driver sometimes used by malicious actors to escalate privileges"
       author = "Florian Roth (Nextron Systems)"

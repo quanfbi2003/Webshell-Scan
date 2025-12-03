@@ -4,20 +4,12 @@
 	Date: 2016-12-08
 	Identifier: Modified SysInternals Tools
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sysinternals_anomaly.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sysinternals_anomaly.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sysinternals_anomaly.yar
-rule SysInternals_Tool_Anomaly {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_sysinternals_anomaly_SysInternals_Tool_Anomaly {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sysinternals_anomaly.yar
    meta:
       description = "SysInternals Tool Anomaly - does not contain Mark Russinovich as author"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

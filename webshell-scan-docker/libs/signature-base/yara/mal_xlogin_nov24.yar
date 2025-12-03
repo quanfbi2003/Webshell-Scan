@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_xlogin_nov24.yar
-
-rule MAL_ELF_Xlogin_Nov24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_xlogin_nov24_MAL_ELF_Xlogin_Nov24_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_xlogin_nov24.yar
    meta:
       description = "Detects xlogin backdoor samples"
       author = "Florian Roth"

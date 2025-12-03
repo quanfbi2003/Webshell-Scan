@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_python_pty_shell.yar
-rule HKTL_Reverse_Connect_TCP_PTY_Shell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_python_pty_shell_HKTL_Reverse_Connect_TCP_PTY_Shell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_python_pty_shell.yar
    meta:
       description = "Detects reverse connect TCP PTY shell"
       author = "Jeff Beley"

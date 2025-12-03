@@ -1,13 +1,7 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_octowave_loader_mar25.yar
-rule Octowave_Loader_03_2025 {
-    meta:
-        description = "Detects opcodes found in Octowave Loader DLLs and WAV steganography files"
-=======
 //===SUCCESS===
 rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_03_2025 {
     meta:
         description = "Detects opcodes found in Octowave loader DLLs and WAV steganography files"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_octowave_loader_mar25.yar
         author = "Jai Minton (@CyberRaiju) - HuntressLabs"
         date = "2025-03-19"
 		  score = 75
@@ -290,8 +284,6 @@ rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_03_2025 {
 		and all of them
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_octowave_loader_mar25.yar
-=======
 //===SUCCESS===
 rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_Supporting_File_03_2025
 {
@@ -319,4 +311,3 @@ rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_Supporting_File_03_2025
         and filesize < 10000KB
         and all of them
 }
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_octowave_loader_mar25.yar

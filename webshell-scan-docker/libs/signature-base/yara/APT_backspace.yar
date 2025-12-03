@@ -3,13 +3,9 @@ Author: Bit Byte Bitten
 Date: 5/14/2015
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_backspace.yar
-rule apt_backspace{
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_backspace_apt_backspace{
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_backspace.yar
 	meta:
 		description = "Detects APT backspace"
 		author = "Bit Byte Bitten"

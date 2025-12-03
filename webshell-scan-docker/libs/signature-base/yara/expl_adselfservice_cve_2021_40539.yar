@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_adselfservice_cve_2021_40539.yar
-
-rule LOG_EXPL_ADSelfService_CVE_2021_40539_ADSLOG_Sep21 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_adselfservice_cve_2021_40539_LOG_EXPL_ADSelfService_CVE_2021_40539_ADSLOG_Sep21 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_adselfservice_cve_2021_40539.yar
    meta:
       description = "Detects suspicious log lines produeced during the exploitation of ADSelfService vulnerability CVE-2021-40539"
       author = "Florian Roth (Nextron Systems)"
@@ -17,13 +12,8 @@ rule Neo23x0_expl_adselfservice_cve_2021_40539_LOG_EXPL_ADSelfService_CVE_2021_4
    condition:
       filesize < 50MB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_adselfservice_cve_2021_40539.yar
-
-rule LOG_EXPL_ADSelfService_CVE_2021_40539_WebLog_Sep21_1 : LOG {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_adselfservice_cve_2021_40539_LOG_EXPL_ADSelfService_CVE_2021_40539_WebLog_Sep21_1 : LOG {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_adselfservice_cve_2021_40539.yar
    meta:
       description = "Detects suspicious log lines produeced during the exploitation of ADSelfService vulnerability CVE-2021-40539"
       author = "Florian Roth (Nextron Systems)"

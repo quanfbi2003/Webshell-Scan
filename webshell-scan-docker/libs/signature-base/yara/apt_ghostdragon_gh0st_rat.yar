@@ -5,13 +5,9 @@
 	Identifier: Ghost Dragon Gh0st RAT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ghostdragon_gh0st_rat.yar
-rule GhostDragon_Gh0stRAT {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ghostdragon_gh0st_rat_GhostDragon_Gh0stRAT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ghostdragon_gh0st_rat.yar
 	meta:
 		description = "Detects Gh0st RAT mentioned in Cylance' Ghost Dragon Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -56,13 +52,8 @@ rule Neo23x0_apt_ghostdragon_gh0st_rat_GhostDragon_Gh0stRAT {
 			)
 		) or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ghostdragon_gh0st_rat.yar
-
-rule GhostDragon_Gh0stRAT_Sample2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ghostdragon_gh0st_rat_GhostDragon_Gh0stRAT_Sample2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ghostdragon_gh0st_rat.yar
 	meta:
 		description = "Detects Gh0st RAT mentioned in Cylance' Ghost Dragon Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -84,13 +75,8 @@ rule Neo23x0_apt_ghostdragon_gh0st_rat_GhostDragon_Gh0stRAT_Sample2 {
 			)
 		) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ghostdragon_gh0st_rat.yar
-
-rule GhostDragon_Gh0stRAT_Sample3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ghostdragon_gh0st_rat_GhostDragon_Gh0stRAT_Sample3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ghostdragon_gh0st_rat.yar
 	meta:
 		description = "Detects Gh0st RAT mentioned in Cylance' Ghost Dragon Report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

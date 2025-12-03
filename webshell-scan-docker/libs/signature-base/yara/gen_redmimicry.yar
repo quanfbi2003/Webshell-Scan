@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_redmimicry.yar
-
-rule HKTL_RedMimicry_Agent {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_redmimicry_HKTL_RedMimicry_Agent {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_redmimicry.yar
     meta:
         date        = "2020-06-22"
         modified = "2023-01-06"
@@ -29,13 +24,8 @@ rule Neo23x0_gen_redmimicry_HKTL_RedMimicry_Agent {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_redmimicry.yar
-
-rule HKTL_RedMimicry_WinntiLoader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_redmimicry_HKTL_RedMimicry_WinntiLoader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_redmimicry.yar
     meta:
         date        = "2020-06-22"
         modified = "2023-01-10"

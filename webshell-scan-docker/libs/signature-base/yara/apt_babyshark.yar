@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_babyshark.yar
-
-rule MAL_PE_Type_BabyShark_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_babyshark_MAL_PE_Type_BabyShark_Loader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_babyshark.yar
    meta:
       description = "Detects PE Type babyShark loader mentioned in February 2019 blog post by PaloAltNetworks"
       author = "Florian Roth (Nextron Systems)"
@@ -30,13 +24,8 @@ rule Neo23x0_apt_babyshark_MAL_PE_Type_BabyShark_Loader {
          )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_babyshark.yar
-
-rule APT_NK_BabyShark_KimJoingRAT_Apr19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_babyshark_APT_NK_BabyShark_KimJoingRAT_Apr19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_babyshark.yar
    meta:
       description = "Detects BabyShark KimJongRAT"
       author = "Florian Roth (Nextron Systems)"

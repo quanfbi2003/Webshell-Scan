@@ -4,20 +4,12 @@
    Date: 2016-12-01
    Identifier: Shamoon 2.0
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shamoon2.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_shamoon2.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shamoon2.yar
-rule Shamoon2_Wiper {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_shamoon2_Shamoon2_Wiper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_shamoon2.yar
    meta:
       description = "Detects Shamoon 2.0 Wiper Component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +28,8 @@ rule Neo23x0_apt_shamoon2_Shamoon2_Wiper {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 2 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shamoon2.yar
-
-rule Shamoon2_ComComp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_shamoon2_Shamoon2_ComComp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_shamoon2.yar
    meta:
       description = "Detects Shamoon 2.0 Communication Components"
       author = "Florian Roth (Nextron Systems) (with Binar.ly)"
@@ -61,13 +48,8 @@ rule Neo23x0_apt_shamoon2_Shamoon2_ComComp {
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and ( all of ($s*) or all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shamoon2.yar
-
-rule EldoS_RawDisk {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_shamoon2_EldoS_RawDisk {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_shamoon2.yar
    meta:
       description = "EldoS Rawdisk Device Driver (Commercial raw disk access driver - used in Operation Shamoon 2.0)"
       author = "Florian Roth (Nextron Systems) (with Binar.ly)"

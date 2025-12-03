@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_venus.yar
-
-rule MAL_RANSOM_Venus_Nov22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_venus_MAL_RANSOM_Venus_Nov22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_venus.yar
    meta:
       description = "Detects Venus Ransomware samples"
       author = "Florian Roth (Nextron Systems)"
@@ -41,4 +36,3 @@ rule Neo23x0_crime_ransom_venus_MAL_RANSOM_Venus_Nov22_1 {
       ) 
       or 4 of them
 }
-

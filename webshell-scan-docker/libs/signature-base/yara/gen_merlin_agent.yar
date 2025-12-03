@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_merlin_agent.yar
-
-rule merlinAgent {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_merlin_agent_merlinAgent {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_merlin_agent.yar
 	meta:
 		description = "Detects Merlin agent"
 		filetype = "pe, elf, mach"

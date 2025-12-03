@@ -6,13 +6,9 @@
    Reference: https://www.us-cert.gov/ncas/alerts/TA18-074A
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta18_074A.yar
-rule WEBSHELL_Z_Webshell_2 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ta18_074A_WEBSHELL_Z_Webshell_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta18_074A.yar
    meta:
       description = "Detection for the z_webshell"
       author = "DHS NCCIC Hunt and Incident Response Team"
@@ -36,13 +32,8 @@ rule Neo23x0_apt_ta18_074A_WEBSHELL_Z_Webshell_2 {
    Identifier: TA18-074A
    Reference: https://www.us-cert.gov/ncas/alerts/TA18-074A
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta18_074A.yar
-
-rule TA18_074A_screen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta18_074A_TA18_074A_screen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta18_074A.yar
    meta:
       description = "Detects malware mentioned in TA18-074A"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -60,13 +51,8 @@ rule Neo23x0_apt_ta18_074A_TA18_074A_screen {
    condition:
       uint16(0) == 0x5a4d and filesize < 60KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta18_074A.yar
-
-rule TA18_074A_scripts {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta18_074A_TA18_074A_scripts {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta18_074A.yar
    meta:
       description = "Detects malware mentioned in TA18-074A"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

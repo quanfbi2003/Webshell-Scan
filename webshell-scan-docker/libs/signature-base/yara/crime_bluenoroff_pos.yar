@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_bluenoroff_pos.yar
-
-rule BluenoroffPoS_DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_bluenoroff_pos_BluenoroffPoS_DLL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_bluenoroff_pos.yar
    meta:
       description = "Bluenoroff POS malware - hkp.dll"
       author = "http://blog.trex.re.kr/"

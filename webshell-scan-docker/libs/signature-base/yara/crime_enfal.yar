@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_enfal.yar
-rule MAL_Enfal_Nov22 { 
-=======
 //===SUCCESS===
 rule Neo23x0_crime_enfal_MAL_Enfal_Nov22 { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_enfal.yar
    meta:
       old_rule_name = "Enfal_Malware"
       description = "Detects a certain type of Enfal Malware"
@@ -28,13 +24,8 @@ rule Neo23x0_crime_enfal_MAL_Enfal_Nov22 {
       filesize < 200KB and
       ( 1 of ($x*) or 3 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_enfal.yar
-
-rule Enfal_Malware_Backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_enfal_Enfal_Malware_Backdoor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_enfal.yar
 	meta:
 		description = "Generic Rule to detect the Enfal Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

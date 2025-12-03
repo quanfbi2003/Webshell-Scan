@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_confluence_questions_plugin_cve_2022_26138.yar
-
-rule VULN_Confluence_Questions_Plugin_CVE_2022_26138_Jul22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_confluence_questions_plugin_cve_VULN_Confluence_Questions_Plugin_CVE_2022_26138_Jul22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_confluence_questions_plugin_cve_2022_26138.yar
    meta:
       description = "Detects properties file of Confluence Questions plugin with static user name and password (backdoor) CVE-2022-26138"
       author = "Florian Roth (Nextron Systems)"
@@ -26,4 +21,3 @@ rule Neo23x0_vul_confluence_questions_plugin_cve_VULN_Confluence_Questions_Plugi
    condition:
       1 of ($x*) or ( $jar_marker and 1 of ($jar_size*) )
 }
-

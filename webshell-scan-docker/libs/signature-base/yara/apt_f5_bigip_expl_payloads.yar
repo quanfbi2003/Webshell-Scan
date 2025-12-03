@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_f5_bigip_expl_payloads.yar
-
-rule MAL_Payload_F5_BIG_IP_Exploitations_Jul20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_f5_bigip_expl_payloads_MAL_Payload_F5_BIG_IP_Exploitations_Jul20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_f5_bigip_expl_payloads.yar
    meta:
       description = "Detects code found in report on exploits against CVE-2020-5902 F5 BIG-IP vulnerability by NCC group"
       author = "Florian Roth (Nextron Systems)"

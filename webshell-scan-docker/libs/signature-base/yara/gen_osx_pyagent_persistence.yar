@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_osx_pyagent_persistence.yar
-rule Persistence_Agent_MacOS {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_osx_pyagent_persistence_Persistence_Agent_MacOS {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_osx_pyagent_persistence.yar
     meta:
         description = "Detects a Python agent that establishes persistence on macOS"
         author = "John Lambert @JohnLaTwC"

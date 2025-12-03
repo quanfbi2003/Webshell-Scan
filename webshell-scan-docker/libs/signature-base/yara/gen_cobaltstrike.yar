@@ -1,12 +1,8 @@
 /* requires YARA 3.11 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike.yar
-rule HKTL_CobaltStrike_SleepMask_Jul22 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_cobaltstrike_HKTL_CobaltStrike_SleepMask_Jul22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike.yar
    meta:
       description = "Detects static bytes in Cobalt Strike 4.5 sleep mask function that are not obfuscated"
       author = "CodeX"
@@ -45,8 +41,4 @@ rule HKTL_CobaltStrike_CS_Core_Oct23 {
     condition:
         1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cobaltstrike.yar
 */
-=======
-*/
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cobaltstrike.yar

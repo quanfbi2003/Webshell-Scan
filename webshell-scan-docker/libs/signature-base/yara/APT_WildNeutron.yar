@@ -4,20 +4,12 @@
 	Date: 2015-07-10
 	Identifier: WildNeutron
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-rule WildNeutron_Sample_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +34,8 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 800KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-rule WildNeutron_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -70,13 +57,8 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 600KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-rule WildNeutron_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -101,13 +83,8 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_3 {
 		uint16(0) == 0x5a4d and filesize < 2020KB and
 		( 1 of ($x*) or all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-rule WildNeutron_Sample_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -131,13 +108,8 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_4 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1240KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-rule WildNeutron_Sample_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -161,13 +133,8 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_5 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-rule WildNeutron_Sample_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -182,13 +149,8 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_6 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 310KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-rule WildNeutron_Sample_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -237,34 +199,6 @@ rule HKTL_NativeCmd_subTee_Jul15 {
       $s16 = " %%%c in (%s) do " fullword wide
    condition:
       uint16(0) == 0x5a4d and ( 2 of ($x*) or 6 of ($s*) )
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-}
-*/
-
-rule WildNeutron_Sample_9 {
-   meta:
-      description = "Wild Neutron APT Sample Rule"
-      author = "Florian Roth (Nextron Systems)"
-      reference = "https://securelist.com/blog/research/71275/wild-neutron-economic-espionage-threat-actor-returns-with-new-tricks/"
-      date = "2015-07-10"
-      modified = "2023-01-06"
-      score = 60
-      hash = "781eb1e17349009fbae46aea5c59d8e5b68ae0b42335cb035742f6b0f4e4087e"
-      id = "dbfdbe8c-4a4a-5512-a03d-e9f80c853d48"
-   strings:
-      $s0 = "http://get.adobe.com/flashplayer/" wide  /* score: '30.00' */
-      $s4 = " Player Installer/Uninstaller" fullword wide  /* score: '11.42' */
-      $s5 = "Adobe Flash Plugin Updater" fullword wide  /* score: '11.00' */
-      $s6 = "uSOFTWARE\\Adobe" fullword wide  /* score: '10.42' */
-      $s11 = "2008R2" fullword wide /* PEStudio Blacklist: os */ /* score: '8.00' */
-      $s12 = "%02d.%04d.%s" fullword wide /* score: '7.02' */
-      $s13 = "%d -> %d" fullword wide /* score: '7.00' */
-   condition:
-      uint16(0) == 0x5a4d and filesize < 1477KB and all of them
-}
-
-rule WildNeutron_Sample_10 {
-=======
 }
 */
 //===SUCCESS===
@@ -291,7 +225,6 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_9 {
 }
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_WildNeutron_Sample_10 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
 	meta:
 		description = "Wild Neutron APT Sample Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -336,30 +269,6 @@ rule Neo23x0_apt_wildneutron_WildNeutron_Sample_10 {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_wildneutron.yar
-
-
-rule APT_MAL_WildNeutron_javacpl {
-   meta:
-      description = "Wild Neutron APT Sample Rule"
-      author = "Florian Roth (Nextron Systems)"
-      reference = "https://securelist.com/blog/research/71275/wild-neutron-economic-espionage-threat-actor-returns-with-new-tricks/"
-      date = "2015-07-10"
-      modified = "2023-01-06"
-      old_rule_name = "WildNeutron_javacpl"
-      score = 60
-      hash1 = "683f5b476f8ffe87ec22b8bab57f74da4a13ecc3a5c2cbf951999953c2064fc9"
-      hash2 = "758e6b519f6c0931ff93542b767524fc1eab589feb5cfc3854c77842f9785c92"
-      hash3 = "8ca7ed720babb32a6f381769ea00e16082a563704f8b672cb21cf11843f4da7a"
-      id = "de82827e-61d4-559e-886a-78d5293ab141"
-   strings:
-      $s1 = "RunFile: couldn't find ShellExecuteExA/W in SHELL32.DLL!" ascii fullword
-      $s2 = "cmdcmdline" wide fullword
-      $s3 = "\"%s\" /K %s" wide fullword
-      $s4 = "Process is not running any more" wide fullword
-      $s5 = "dpnxfsatz" wide fullword
-
-=======
 //===SUCCESS===
 rule Neo23x0_apt_wildneutron_APT_MAL_WildNeutron_javacpl {
    meta:
@@ -381,7 +290,6 @@ rule Neo23x0_apt_wildneutron_APT_MAL_WildNeutron_javacpl {
       $s4 = "Process is not running any more" wide fullword
       $s5 = "dpnxfsatz" wide fullword
 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_WildNeutron.yar
       $op1 = { ff d6 50 ff 15 ?? ?? 43 00 8b f8 85 ff 74 34 83 64 24 0c 00 e8 ?? ?? 02 00 }
       $op2 = { b8 02 00 00 00 01 45 80 01 45 88 6a 00 47 52 89 7d 8c 03 d8 }
       $op3 = { 8b c7 f7 f6 46 89 b5 c8 fd ff ff 0f b7 c0 8b c8 0f af ce 3b cf }

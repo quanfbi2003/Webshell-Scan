@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
 /*
 	Yara Rule Set
 	Author: YarGen Rule Generator
@@ -11,13 +8,9 @@ import "pe"
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-rule APT28_CHOPSTICK {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_CHOPSTICK {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
 	meta:
 		description = "Detects a malware that behaves like CHOPSTICK mentioned in APT28 report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -40,13 +33,8 @@ rule Neo23x0_apt_apt28_APT28_CHOPSTICK {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 722KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-
-rule APT28_SourFace_Malware1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_SourFace_Malware1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
 	meta:
 		description = "Detects Malware from APT28 incident - SOURFACE is a downloader that obtains a second-stage backdoor from a C2 server."
 		author = "Florian Roth (Nextron Systems)"
@@ -63,13 +51,8 @@ rule Neo23x0_apt_apt28_APT28_SourFace_Malware1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 62KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-
-rule APT28_SourFace_Malware2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_SourFace_Malware2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
 	meta:
 		description = "Detects Malware from APT28 incident - SOURFACE is a downloader that obtains a second-stage backdoor from a C2 server."
 		author = "Florian Roth (Nextron Systems)"
@@ -90,13 +73,8 @@ rule Neo23x0_apt_apt28_APT28_SourFace_Malware2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 550KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-
-rule APT28_SourFace_Malware3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_SourFace_Malware3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
 	meta:
 		description = "Detects Malware from APT28 incident - SOURFACE is a downloader that obtains a second-stage backdoor from a C2 server."
 		author = "Florian Roth (Nextron Systems)"
@@ -121,16 +99,8 @@ rule Neo23x0_apt_apt28_APT28_SourFace_Malware3 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 550KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-
-
-import "pe"
-
-rule APT28_SkinnyBoy_Dropper: RUSSIA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_SkinnyBoy_Dropper: RUSSIA {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
    meta:
       description = "Detects APT28 SkinnyBoy droppers"
       author = "Cluster25"
@@ -146,13 +116,8 @@ rule Neo23x0_apt_apt28_APT28_SkinnyBoy_Dropper: RUSSIA {
    condition:
       (uint16(0) == 0x5A4D and all of them)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-
-rule APT28_SkinnyBoy_Launcher: RUSSIA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_SkinnyBoy_Launcher: RUSSIA {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
    meta:
       description = "Detects APT28 SkinnyBoy launchers"
       author = "Cluster25"
@@ -174,13 +139,8 @@ rule Neo23x0_apt_apt28_APT28_SkinnyBoy_Launcher: RUSSIA {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and ($sha or (all of ($l*) and all of ($h*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28.yar
-
-rule APT28_SkinnyBoy_Implanter: RUSSIA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_APT28_SkinnyBoy_Implanter: RUSSIA {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28.yar
    meta:
       description = "Detects APT28 SkinnyBoy implanter"
       author = "Cluster25"

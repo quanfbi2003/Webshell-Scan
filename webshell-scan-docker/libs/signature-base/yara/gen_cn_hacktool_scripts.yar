@@ -7,13 +7,9 @@
 */
 
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-rule CN_Tools_xbat {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_CN_Tools_xbat {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file xbat.vbs"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -28,13 +24,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_CN_Tools_xbat {
     condition:
         uint16(0) == 0x6553 and filesize < 0KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule CN_Tools_Temp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_CN_Tools_Temp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file Temp.war"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -51,13 +42,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_CN_Tools_Temp {
     condition:
         uint16(0) == 0x4b50 and filesize < 203KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule CN_Tools_srss {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_CN_Tools_srss {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file srss.bat"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -72,13 +58,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_CN_Tools_srss {
     condition:
         filesize < 100 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule dll_UnReg {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_dll_UnReg {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file UnReg.bat"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -93,13 +74,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_dll_UnReg {
     condition:
         filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule dll_Reg {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_dll_Reg {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file Reg.bat"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -114,13 +90,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_dll_Reg {
     condition:
         filesize < 1KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule sbin_squid {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_sbin_squid {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file squid.bat"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -137,13 +108,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_sbin_squid {
     condition:
         filesize < 1KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule sql1433_creck {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_sql1433_creck {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file creck.bat"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -159,13 +125,8 @@ rule Neo23x0_gen_cn_hacktool_scripts_sql1433_creck {
     condition:
         uint16(0) == 0x7473 and filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cn_hacktool_scripts.yar
-
-rule sql1433_Start {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cn_hacktool_scripts_sql1433_Start {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_cn_hacktool_scripts.yar
     meta:
         description = "Chinese Hacktool Set - file Start.bat"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -6,13 +6,9 @@
   Reference: https://www.govcert.admin.ch/blog/22/technical-report-about-the-ruag-espionage-case
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ruag.yar
-rule RUAG_Tavdig_Malformed_Executable {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ruag_RUAG_Tavdig_Malformed_Executable {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ruag.yar
   meta:
     description = "Detects an embedded executable with a malformed header - known from Tavdig malware"
     author = "Florian Roth (Nextron Systems)"
@@ -23,13 +19,8 @@ rule Neo23x0_apt_ruag_RUAG_Tavdig_Malformed_Executable {
     uint16(0) == 0x5a4d and /* MZ Header */
     uint32(uint32(0x3C)) == 0x0000AD0B /* malformed PE header > 0x0bad */
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ruag.yar
-
-rule RUAG_Bot_Config_File {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ruag_RUAG_Bot_Config_File {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ruag.yar
   meta:
     description = "Detects a specific config file used by malware in RUAG APT case"
     author = "Florian Roth (Nextron Systems)"
@@ -43,13 +34,8 @@ rule Neo23x0_apt_ruag_RUAG_Bot_Config_File {
   condition:
     uint32(0) == 0x4e4f435b and $s1 at 0 and $s2 and $s3 and filesize < 160
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ruag.yar
-
-rule RUAG_Cobra_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ruag_RUAG_Cobra_Malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ruag.yar
   meta:
     description = "Detects a malware mentioned in the RUAG Case called Carbon/Cobra"
     author = "Florian Roth (Nextron Systems)"
@@ -61,13 +47,8 @@ rule Neo23x0_apt_ruag_RUAG_Cobra_Malware {
   condition:
     uint16(0) == 0x5a4d and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ruag.yar
-
-rule RUAG_Cobra_Config_File {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ruag_RUAG_Cobra_Config_File {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ruag.yar
   meta:
     description = "Detects a config text file used by malware Cobra in RUAG case"
     author = "Florian Roth (Nextron Systems)"
@@ -90,13 +71,8 @@ rule Neo23x0_apt_ruag_RUAG_Cobra_Config_File {
   condition:
     uint32(0) == 0x4d414e5b and $h1 at 0 and 8 of ($s*) and filesize < 5KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ruag.yar
-
-rule RUAG_Exfil_Config_File {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ruag_RUAG_Exfil_Config_File {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ruag.yar
   meta:
     description = "Detects a config text file used in data exfiltration in RUAG case"
     author = "Florian Roth (Nextron Systems)"

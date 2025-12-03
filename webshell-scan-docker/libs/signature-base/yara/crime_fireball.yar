@@ -6,19 +6,12 @@
    Identifier: Fireball
    Reference: https://goo.gl/4pTkGQ
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Fireball_de_svr {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_fireball_Fireball_de_svr {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file de_svr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +29,8 @@ rule Neo23x0_crime_fireball_Fireball_de_svr {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 3000KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule Fireball_lancer {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_Fireball_lancer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file lancer.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +51,8 @@ rule Neo23x0_crime_fireball_Fireball_lancer {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and ( 1 of ($x*) or 3 of ($s*) ) ) or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule QQBrowser {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_QQBrowser {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Not malware but suspicious browser - file QQBrowser.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -87,13 +70,8 @@ rule Neo23x0_crime_fireball_QQBrowser {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule chrome_elf {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_chrome_elf {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file chrome_elf.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -112,13 +90,8 @@ rule Neo23x0_crime_fireball_chrome_elf {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule Fireball_regkey {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_Fireball_regkey {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file regkey.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -135,13 +108,8 @@ rule Neo23x0_crime_fireball_Fireball_regkey {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule Fireball_winsap {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_Fireball_winsap {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file winsap.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -160,13 +128,8 @@ rule Neo23x0_crime_fireball_Fireball_winsap {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule Fireball_archer {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_Fireball_archer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file archer.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -186,13 +149,8 @@ rule Neo23x0_crime_fireball_Fireball_archer {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and ( $x1 or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule clearlog {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_clearlog {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file clearlog.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -213,13 +171,8 @@ rule Neo23x0_crime_fireball_clearlog {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and $x1 or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fireball.yar
-
-rule Fireball_gubed {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_fireball_Fireball_gubed {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_fireball.yar
    meta:
       description = "Detects Fireball malware - file gubed.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,12 +1,8 @@
 /* Op Cleaver -------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-rule OPCLEAVER_BackDoorLogger
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_BackDoorLogger
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Keylogger used by attackers in Operation Cleaver"
@@ -21,13 +17,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_BackDoorLogger
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_Jasus
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_Jasus
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "ARP cache poisoner used by attackers in Operation Cleaver"
@@ -43,13 +34,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_Jasus
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_LoggerModule
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_LoggerModule
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Keylogger used by attackers in Operation Cleaver"
@@ -64,13 +50,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_LoggerModule
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_NetC
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_NetC
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Net Crawler used by attackers in Operation Cleaver"
@@ -85,13 +66,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_NetC
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_ShellCreator2
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_ShellCreator2
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Shell Creator used by attackers in Operation Cleaver to create ASPX web shells"
@@ -106,13 +82,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_ShellCreator2
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_SmartCopy2
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_SmartCopy2
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Malware or hack tool used by attackers in Operation Cleaver"
@@ -127,13 +98,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_SmartCopy2
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_SynFlooder
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_SynFlooder
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Malware or hack tool used by attackers in Operation Cleaver"
@@ -149,13 +115,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_SynFlooder
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_TinyZBot
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_TinyZBot
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Tiny Bot used by attackers in Operation Cleaver"
@@ -177,13 +138,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_TinyZBot
 	condition:
 		(($s1 and $s2) or ($s3 and $s4 and $s5) or ($s6 and $s7 and $s8) or $s9)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_ZhoupinExploitCrew
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_ZhoupinExploitCrew
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Keywords used by attackers in Operation Cleaver"
@@ -198,13 +154,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_ZhoupinExploitCrew
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_antivirusdetector
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_antivirusdetector
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Hack tool used by attackers in Operation Cleaver"
@@ -220,13 +171,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_antivirusdetector
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_csext
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_csext
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Backdoor used by attackers in Operation Cleaver"
@@ -242,13 +188,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_csext
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_kagent
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_kagent
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Backdoor used by attackers in Operation Cleaver"
@@ -263,13 +204,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_kagent
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_mimikatzWrapper
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_mimikatzWrapper
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Mimikatz Wrapper used by attackers in Operation Cleaver"
@@ -284,13 +220,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_mimikatzWrapper
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_pvz_in
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_pvz_in
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Parviz tool used by attackers in Operation Cleaver"
@@ -305,13 +236,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_pvz_in
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_pvz_out
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_pvz_out
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Parviz tool used by attackers in Operation Cleaver"
@@ -326,13 +252,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_pvz_out
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_wndTest
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_wndTest
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Backdoor used by attackers in Operation Cleaver"
@@ -348,13 +269,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_wndTest
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_zhCat
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_zhCat
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Network tool used by Iranian hackers and used by attackers in Operation Cleaver"
@@ -369,13 +285,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_zhCat
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_zhLookUp
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_zhLookUp
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Hack tool used by attackers in Operation Cleaver"
@@ -389,13 +300,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_zhLookUp
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_zhmimikatz
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_zhmimikatz
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Mimikatz wrapper used by attackers in Operation Cleaver"
@@ -410,13 +316,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_zhmimikatz
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_Parviz_Developer
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_Parviz_Developer
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "Parviz developer known from Operation Cleaver"
@@ -431,13 +332,8 @@ rule Neo23x0_apt_op_cleaver_OPCLEAVER_Parviz_Developer
 	condition:
 		$s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cleaver.yar
-
-rule OPCLEAVER_CCProxy_Config
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cleaver_OPCLEAVER_CCProxy_Config
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_op_cleaver.yar
 {
 	meta:
 		description = "CCProxy config known from Operation Cleaver"

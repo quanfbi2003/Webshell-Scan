@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_h2miner_kinsing.yar
-rule crime_h2miner_kinsing
-=======
 //===SUCCESS===
 rule Neo23x0_crime_h2miner_kinsing_crime_h2miner_kinsing
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_h2miner_kinsing.yar
 {
     meta:
         description = "Rule to find Kinsing malware"

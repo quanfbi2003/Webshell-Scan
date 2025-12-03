@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_cve_2021_3438_printdriver.yar
-
-rule VULN_PrinterDriver_PrivEsc_CVE_2021_3438_Jul21 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_cve_2021_3438_printdriver_VULN_PrinterDriver_PrivEsc_CVE_2021_3438_Jul21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_cve_2021_3438_printdriver.yar
    meta:
       description = "Detects affected drivers with PE timestamps older than the date of the initial report"
       author = "Florian Roth (Nextron Systems)"

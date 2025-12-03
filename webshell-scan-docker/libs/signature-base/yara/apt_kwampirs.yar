@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kwampirs.yar
-rule MAL_Kwampirs_Apr18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_kwampirs_MAL_Kwampirs_Apr18 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kwampirs.yar
     meta:
         author = "Symantec"
         family = "Kwampirs"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sfx_with_microsoft_copyright.yar
-rule SUSP_Microsoft_7z_SFX_Combo {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_sfx_with_microsoft_copyright_SUSP_Microsoft_7z_SFX_Combo {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sfx_with_microsoft_copyright.yar
    meta:
       description = "Detects a suspicious file that has a Microsoft copyright and is a 7z SFX"
       author = "Florian Roth (Nextron Systems)"
@@ -27,14 +23,8 @@ rule Neo23x0_gen_sfx_with_microsoft_copyright_SUSP_Microsoft_7z_SFX_Combo {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of ($s*) and $c1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sfx_with_microsoft_copyright.yar
-
-
-rule SUSP_Microsoft_RAR_SFX_Combo {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_sfx_with_microsoft_copyright_SUSP_Microsoft_RAR_SFX_Combo {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sfx_with_microsoft_copyright.yar
    meta:
       description = "Detects a suspicious file that has a Microsoft copyright and is a RAR SFX"
       author = "Florian Roth (Nextron Systems)"

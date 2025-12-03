@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_elf_file_anomalies.yar
-
-rule SUSP_ELF_LNX_UPX_Compressed_File {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_elf_file_anomalies_SUSP_ELF_LNX_UPX_Compressed_File {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_elf_file_anomalies.yar
    meta:
       description = "Detects a suspicious ELF binary with UPX compression"
       author = "Florian Roth (Nextron Systems)"

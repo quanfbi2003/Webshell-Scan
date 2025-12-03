@@ -5,20 +5,12 @@
    Identifier: Telebots Backdoor MEDocs
    Reference: https://goo.gl/CpfJQQ
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_teledoor.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_teledoor.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_teledoor.yar
-rule TeleDoor_Backdoor {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_teledoor_TeleDoor_Backdoor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_teledoor.yar
    meta:
       description = "Detects the TeleDoor Backdoor as used in Petya Attack in June 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

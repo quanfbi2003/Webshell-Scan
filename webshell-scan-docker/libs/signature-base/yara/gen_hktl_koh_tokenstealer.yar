@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hktl_koh_tokenstealer.yar
-
-rule HKTL_Koh_TokenStealer
-=======
 //===SUCCESS===
 rule Neo23x0_gen_hktl_koh_tokenstealer_HKTL_Koh_TokenStealer
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_hktl_koh_tokenstealer.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project."

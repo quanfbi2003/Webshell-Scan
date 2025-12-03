@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cobalt_gang_pdf.yar
-rule Cobaltgang_PDF_Metadata_Rev_A {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cobalt_gang_pdf_Cobaltgang_PDF_Metadata_Rev_A {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_cobalt_gang_pdf.yar
    meta:
       description = "Find documents saved from the same potential Cobalt Gang PDF template"
       author = "Palo Alto Networks Unit 42"

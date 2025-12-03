@@ -4,20 +4,12 @@
    Date: 2017-04-07
    Identifier: Quasar RAT
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_rat.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_quasar_rat.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_rat.yar
-rule Quasar_RAT_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_quasar_rat_Quasar_RAT_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_quasar_rat.yar
    meta:
       description = "Detects Quasar RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +33,8 @@ rule Neo23x0_apt_quasar_rat_Quasar_RAT_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 5000KB and all of ($s*) or all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_rat.yar
-
-rule Quasar_RAT_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_quasar_rat_Quasar_RAT_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_quasar_rat.yar
    meta:
       description = "Detects Quasar RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -72,13 +59,8 @@ rule Neo23x0_apt_quasar_rat_Quasar_RAT_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 5000KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_rat.yar
-
-rule MAL_QuasarRAT_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_quasar_rat_MAL_QuasarRAT_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_quasar_rat.yar
    meta:
       description = "Detects QuasarRAT malware"
       author = "Florian Roth (Nextron Systems)"

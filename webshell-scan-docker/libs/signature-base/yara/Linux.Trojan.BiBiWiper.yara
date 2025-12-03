@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Trojan.BiBiWiper.yara
-rule Linux_Trojan_BiBiWiper : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Trojan_BiBiWiper_Linux_Trojan_BiBiWiper : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/Linux.Trojan.BiBiWiper.yara
 {
     meta:
 

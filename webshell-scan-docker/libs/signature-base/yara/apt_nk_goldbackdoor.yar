@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_goldbackdoor.yar
-
-rule EXT_NK_GOLDBACKDOOR_inital_shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_goldbackdoor_EXT_NK_GOLDBACKDOOR_inital_shellcode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_goldbackdoor.yar
     meta:
         author= "Silas Cutler (silas@Stairwell.com)"
         description = "Detection for initial shellcode loader used to deploy GOLDBACDOOR"
@@ -23,13 +18,8 @@ rule Neo23x0_apt_nk_goldbackdoor_EXT_NK_GOLDBACKDOOR_inital_shellcode {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_goldbackdoor.yar
-
-rule EXT_NK_GOLDBACKDOOR_injected_shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_goldbackdoor_EXT_NK_GOLDBACKDOOR_injected_shellcode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_goldbackdoor.yar
     meta:
         author= "Silas Cutler (silas@Stairwell.com)"
         description = "Detection for injected shellcode that decodes GOLDBACKDOOR"
@@ -50,13 +40,8 @@ rule Neo23x0_apt_nk_goldbackdoor_EXT_NK_GOLDBACKDOOR_injected_shellcode {
     condition:
        3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_goldbackdoor.yar
-
-rule EXT_NK_GOLDBACKDOOR_generic_shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_goldbackdoor_EXT_NK_GOLDBACKDOOR_generic_shellcode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_goldbackdoor.yar
     meta:
         author= "Silas Cutler (silas@Stairwell.com)"
         description = "Generic detection for shellcode used to drop GOLDBACKDOOR"

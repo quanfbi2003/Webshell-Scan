@@ -3,13 +3,9 @@
    More rules are included in the FULL THOR Scanner
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
-rule MAL_RANSOM_SH_ESXi_Attacks_Feb23_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_mal_ransom_esxi_attacks_feb23_MAL_RANSOM_SH_ESXi_Attacks_Feb23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
    meta:
       description = "Detects script used in ransomware attacks exploiting and encrypting ESXi servers - file encrypt.sh"
       author = "Florian Roth"
@@ -32,13 +28,8 @@ rule Neo23x0_mal_ransom_esxi_attacks_feb23_MAL_RANSOM_SH_ESXi_Attacks_Feb23_1 {
          or 2 of them
       ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
-
-rule MAL_RANSOM_ELF_ESXi_Attacks_Feb23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ransom_esxi_attacks_feb23_MAL_RANSOM_ELF_ESXi_Attacks_Feb23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
    meta:
       description = "Detects ransomware exploiting and encrypting ESXi servers"
       author = "Florian Roth"
@@ -65,13 +56,8 @@ rule Neo23x0_mal_ransom_esxi_attacks_feb23_MAL_RANSOM_ELF_ESXi_Attacks_Feb23_1 {
          or 3 of them
       ) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
-
-rule APT_PY_ESXi_Backdoor_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ransom_esxi_attacks_feb23_APT_PY_ESXi_Backdoor_Dec22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
    meta:
       description = "Detects Python backdoor found on ESXi servers"
       author = "Florian Roth"
@@ -85,13 +71,8 @@ rule Neo23x0_mal_ransom_esxi_attacks_feb23_APT_PY_ESXi_Backdoor_Dec22 {
     condition:
       filesize < 10KB and 1 of them or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
-
-rule APT_SH_ESXi_Backdoor_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ransom_esxi_attacks_feb23_APT_SH_ESXi_Backdoor_Dec22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
    meta:
       description = "Detects malicious script found on ESXi servers"
       author = "Florian Roth"
@@ -106,13 +87,8 @@ rule Neo23x0_mal_ransom_esxi_attacks_feb23_APT_SH_ESXi_Backdoor_Dec22 {
     condition:
       filesize < 10KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
-
-rule MAL_RANSOM_SH_ESXi_Attacks_Feb23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ransom_esxi_attacks_feb23_MAL_RANSOM_SH_ESXi_Attacks_Feb23_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
    meta:
       description = "Detects script used in ransomware attacks exploiting and encrypting ESXi servers"
       author = "Florian Roth"
@@ -125,13 +101,8 @@ rule Neo23x0_mal_ransom_esxi_attacks_feb23_MAL_RANSOM_SH_ESXi_Attacks_Feb23_2 {
    condition:
       filesize < 10KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
-
-rule SUSP_ESXiArgs_Endpoint_Conf_Aug23 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ransom_esxi_attacks_feb23_SUSP_ESXiArgs_Endpoint_Conf_Aug23 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_esxi_attacks_feb23.yar
    meta:
       description = "Detects indicators found in endpoint.conf files as modified by actors in the ESXiArgs campaign"
       author = "Florian Roth"

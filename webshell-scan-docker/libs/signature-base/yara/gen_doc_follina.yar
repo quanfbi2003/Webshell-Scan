@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-rule SUSP_PS1_Msdt_Execution_May22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_PS1_Msdt_Execution_May22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects suspicious calls of msdt.exe as seen in CVE-2022-30190 / Follina exploitation"
       author = "Nasreddine Bencherchali, Christian Burkard"
@@ -38,13 +34,8 @@ rule Neo23x0_gen_doc_follina_SUSP_PS1_Msdt_Execution_May22 {
       // not JSON
       and not uint8(0) == 0x7B
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule SUSP_Doc_WordXMLRels_May22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_Doc_WordXMLRels_May22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects a suspicious pattern in docx document.xml.rels file as seen in CVE-2022-30190 / Follina exploitation"
       author = "Tobias Michalski, Christian Burkard, Wojciech Cieslak"
@@ -67,13 +58,8 @@ rule Neo23x0_gen_doc_follina_SUSP_Doc_WordXMLRels_May22 {
       and all of ($a*)
       and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule SUSP_Doc_RTF_ExternalResource_May22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_Doc_RTF_ExternalResource_May22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects a suspicious pattern in RTF files which downloads external resources as seen in CVE-2022-30190 / Follina exploitation"
       author = "Tobias Michalski, Christian Burkard"
@@ -90,13 +76,8 @@ rule Neo23x0_gen_doc_follina_SUSP_Doc_RTF_ExternalResource_May22 {
       filesize < 300KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule EXPL_Follina_CVE_2022_30190_Msdt_MSProtocolURI_May22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_EXPL_Follina_CVE_2022_30190_Msdt_MSProtocolURI_May22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects the malicious usage of the ms-msdt URI as seen in CVE-2022-30190 / Follina exploitation"
       author = "Tobias Michalski, Christian Burkard"
@@ -115,13 +96,8 @@ rule Neo23x0_gen_doc_follina_EXPL_Follina_CVE_2022_30190_Msdt_MSProtocolURI_May2
       filesize < 100KB and
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule SUSP_Doc_RTF_OLE2Link_Jun22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_Doc_RTF_OLE2Link_Jun22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects a suspicious pattern in RTF files which downloads external resources"
       author = "Christian Burkard"
@@ -153,13 +129,8 @@ rule Neo23x0_gen_doc_follina_SUSP_Doc_RTF_OLE2Link_Jun22 {
       and 1 of ($sc*)
       and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule SUSP_Doc_RTF_OLE2Link_EMAIL_Jun22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_Doc_RTF_OLE2Link_EMAIL_Jun22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects a suspicious pattern in RTF files which downloads external resources inside e-mail attachments"
       author = "Christian Burkard"
@@ -219,13 +190,8 @@ rule Neo23x0_gen_doc_follina_SUSP_Doc_RTF_OLE2Link_EMAIL_Jun22 {
       and 1 of ($sc*)
       and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule SUSP_DOC_RTF_ExternalResource_EMAIL_Jun22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_DOC_RTF_ExternalResource_EMAIL_Jun22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects a suspicious pattern in RTF files which downloads external resources as seen in CVE-2022-30190 / Follina exploitation inside e-mail attachment"
       author = "Christian Burkard"
@@ -273,13 +239,8 @@ rule SUSP_Msdt_Artefact_Jun22_2 {
       and $a1
       and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_doc_follina.yar
-
-rule SUSP_LNK_Follina_Jun22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_doc_follina_SUSP_LNK_Follina_Jun22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_doc_follina.yar
    meta:
       description = "Detects LNK files with suspicious Follina/CVE-2022-30190 strings"
       author = "Paul Hager"

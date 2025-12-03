@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28_drovorub.yar
- rule APT_APT28_generic_poco_openssl {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_drovorub_APT_APT28_generic_poco_openssl {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28_drovorub.yar
     meta:
         description = "Rule to detect statically linked POCO and OpenSSL libraries (COULD be Drovorub related and should be further investigated)"
         author = "NSA / FBI"
@@ -24,13 +20,8 @@ rule Neo23x0_apt_apt28_drovorub_APT_APT28_generic_poco_openssl {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28_drovorub.yar
-
-rule APT_APT28_drovorub_library_and_unique_strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_drovorub_APT_APT28_drovorub_library_and_unique_strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28_drovorub.yar
     meta:
         description = "Rule to detect Drovorub-server, Drovorub-agent, and Drovorub-client"
         author = "NSA / FBI"
@@ -50,13 +41,8 @@ rule Neo23x0_apt_apt28_drovorub_APT_APT28_drovorub_library_and_unique_strings {
     condition:
         (filesize > 1MB and filesize < 10MB and (uint32(0) == 0x464c457f)) and (#s1 > 20 and #s2 > 15 and #s3 > 15 and all of ($a*)) 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28_drovorub.yar
-
-rule APT_APT28_drovorub_unique_network_comms_strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt28_drovorub_APT_APT28_drovorub_unique_network_comms_strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28_drovorub.yar
     meta:
         description = "Rule to detect Drovorub-server, Drovorub-agent, or Drovorub-client based"
         author = "NSA / FBI"
@@ -127,8 +113,4 @@ rule APT_APT28_drovorub_kernel_module_unique_strings {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt28_drovorub.yar
 */
-=======
-*/
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt28_drovorub.yar

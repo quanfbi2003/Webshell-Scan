@@ -1,32 +1,10 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_sliver.yar
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_gcti_sliver.yar
 /* 
 	SOURCE: https://github.com/chronicle/GCTI
 	
 	Generated with:
 	cat ./GCTI/YARA/CobaltStrike/* >> ./signature-base/yara/gen_gcti_cobaltstrike.yar
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_sliver.yar
-=======
-
-/*
- * Copyright 2022 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_gcti_sliver.yar
 
 /*
  * Copyright 2022 Google LLC
@@ -44,15 +22,10 @@ import "pe"
  * limitations under the License.
  */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_sliver.yar
-import "pe"
 
-rule Sliver_Implant_32bit
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_gcti_sliver_Sliver_Implant_32bit
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_gcti_sliver.yar
 {
   meta:
     description = "Sliver 32-bit implant (with and without --debug flag at compile)"
@@ -137,13 +110,8 @@ rule Neo23x0_gen_gcti_sliver_Sliver_Implant_32bit
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_sliver.yar
-
-rule Sliver_Implant_64bit
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_sliver_Sliver_Implant_64bit
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_gcti_sliver.yar
 {
   meta:
     description = "Sliver 64-bit implant (with and without --debug flag at compile)"

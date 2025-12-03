@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_gamaredon.yar
-rule MAL_SUSP_Gamaredon_GetImportByHash {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_gamaredon_MAL_SUSP_Gamaredon_GetImportByHash {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_gamaredon.yar
     meta:
         description = "Detects Gamaredon APIHashing"
         author = "Frank Boldewin (@r3c0nst)"

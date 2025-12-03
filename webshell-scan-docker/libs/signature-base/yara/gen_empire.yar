@@ -4,20 +4,12 @@
    Date: 2016-11-05
    Identifier: Empire
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-rule Empire_Invoke_MetasploitPayload {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_MetasploitPayload {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-MetasploitPayload.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +24,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_MetasploitPayload {
    condition:
       ( uint16(0) == 0x7566 and filesize < 9KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Exploit_Jenkins {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Exploit_Jenkins {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Exploit-Jenkins.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +41,8 @@ rule Neo23x0_gen_empire_Empire_Exploit_Jenkins {
    condition:
       ( uint16(0) == 0x6620 and filesize < 7KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Get_SecurityPackages {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Get_SecurityPackages {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Get-SecurityPackages.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -75,13 +57,8 @@ rule Neo23x0_gen_empire_Empire_Get_SecurityPackages {
    condition:
       ( uint16(0) == 0x7566 and filesize < 20KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_PowerDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_PowerDump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-PowerDump.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -97,13 +74,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_PowerDump {
    condition:
       ( uint16(0) == 0x2023 and filesize < 60KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Install_SSP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Install_SSP {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Install-SSP.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +89,8 @@ rule Neo23x0_gen_empire_Empire_Install_SSP {
    condition:
       ( uint16(0) == 0x7566 and filesize < 20KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_ShellcodeMSIL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_ShellcodeMSIL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-ShellcodeMSIL.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -140,13 +107,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_ShellcodeMSIL {
    condition:
       ( uint16(0) == 0x7566 and filesize < 30KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule HKTL_Empire_PowerUp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_HKTL_Empire_PowerUp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file PowerUp.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -160,13 +122,8 @@ rule Neo23x0_gen_empire_HKTL_Empire_PowerUp {
    condition:
       ( uint16(0) == 0x233c and filesize < 2000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_Mimikatz_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_Mimikatz_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-Mimikatz.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -181,13 +138,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_Mimikatz_Gen {
    condition:
       ( uint16(0) == 0x7566 and filesize < 4000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Get_GPPPassword {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Get_GPPPassword {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Get-GPPPassword.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -203,13 +155,8 @@ rule Neo23x0_gen_empire_Empire_Get_GPPPassword {
    condition:
       ( uint16(0) == 0x7566 and filesize < 30KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_SmbScanner {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_SmbScanner {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-SmbScanner.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -224,13 +171,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_SmbScanner {
    condition:
       ( uint16(0) == 0x7566 and filesize < 10KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Exploit_JBoss {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Exploit_JBoss {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Exploit-JBoss.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -248,13 +190,8 @@ rule Neo23x0_gen_empire_Empire_Exploit_JBoss {
    condition:
       ( uint16(0) == 0x7566 and filesize < 10KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_dumpCredStore {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_dumpCredStore {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file dumpCredStore.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -270,13 +207,8 @@ rule Neo23x0_gen_empire_Empire_dumpCredStore {
    condition:
       ( uint16(0) == 0x233c and filesize < 40KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_EgressCheck {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_EgressCheck {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-EgressCheck.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -290,13 +222,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_EgressCheck {
    condition:
       ( uint16(0) == 0x233c and filesize < 10KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_ReflectivePick_x64_orig {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_ReflectivePick_x64_orig {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file ReflectivePick_x64_orig.dll"
       author = "Florian Roth (Nextron Systems)"
@@ -313,13 +240,8 @@ rule Neo23x0_gen_empire_Empire_ReflectivePick_x64_orig {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and 1 of ($a*) and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Out_Minidump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Out_Minidump {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Out-Minidump.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -334,13 +256,8 @@ rule Neo23x0_gen_empire_Empire_Out_Minidump {
    condition:
       ( uint16(0) == 0x7566 and filesize < 10KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_PsExec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_PsExec {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-PsExec.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -356,13 +273,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_PsExec {
    condition:
       ( uint16(0) == 0x7566 and filesize < 50KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_PostExfil {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_PostExfil {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-PostExfil.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -377,13 +289,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_PostExfil {
    condition:
       ( uint16(0) == 0x490a and filesize < 2KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_SMBAutoBrute {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_SMBAutoBrute {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-SMBAutoBrute.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -398,13 +305,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_SMBAutoBrute {
    condition:
       ( uint16(0) == 0x7566 and filesize < 30KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Get_Keystrokes {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Get_Keystrokes {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Get-Keystrokes.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -418,13 +320,8 @@ rule Neo23x0_gen_empire_Empire_Get_Keystrokes {
    condition:
       ( uint16(0) == 0x7566 and filesize < 30KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_DllInjection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_DllInjection {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-DllInjection.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -438,13 +335,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_DllInjection {
    condition:
       ( uint16(0) == 0x7566 and filesize < 40KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_KeePassConfig {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_KeePassConfig {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file KeePassConfig.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -458,13 +350,8 @@ rule Neo23x0_gen_empire_Empire_KeePassConfig {
    condition:
       ( uint16(0) == 0x7223 and filesize < 80KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_SSHCommand {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_SSHCommand {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - file Invoke-SSHCommand.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -482,13 +369,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_SSHCommand {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_PowerShell_Framework_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -508,13 +390,8 @@ rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen1 {
    condition:
       ( uint16(0) == 0x7566 and filesize < 4000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_PowerUp_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_PowerUp_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files PowerUp.ps1, PowerUp.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -530,13 +407,8 @@ rule Neo23x0_gen_empire_Empire_PowerUp_Gen {
    condition:
       ( uint16(0) == 0x233c and filesize < 2000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_PowerShell_Framework_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -556,13 +428,8 @@ rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen2 {
    condition:
       ( uint16(0) == 0x7566 and filesize < 4000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Agent_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Agent_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files agent.ps1, agent.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -580,13 +447,8 @@ rule Neo23x0_gen_empire_Empire_Agent_Gen {
    condition:
       ( uint16(0) == 0x660a and filesize < 100KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_PowerShell_Framework_Gen3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -605,13 +467,8 @@ rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen3 {
    condition:
       ( uint16(0) == 0x7566 and filesize < 4000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_InveighRelay_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_InveighRelay_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files Invoke-InveighRelay.ps1, Invoke-InveighRelay.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -627,13 +484,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_InveighRelay_Gen {
    condition:
       ( uint16(0) == 0x7566 and filesize < 200KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_KeePassConfig_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_KeePassConfig_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files KeePassConfig.ps1, KeePassConfig.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -648,13 +500,8 @@ rule Neo23x0_gen_empire_Empire_KeePassConfig_Gen {
    condition:
       ( uint16(0) == 0x7223 and filesize < 80KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_Portscan_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_Portscan_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files Invoke-Portscan.ps1, Invoke-Portscan.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -670,13 +517,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_Portscan_Gen {
    condition:
       ( uint16(0) == 0x7566 and filesize < 100KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_PowerShell_Framework_Gen4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -703,13 +545,8 @@ rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen4 {
    condition:
       ( uint16(0) == 0x7566 and filesize < 4000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_CredentialInjection_Invoke_Mimikatz_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_CredentialInjection_Invoke_Mimikatz_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files Invoke-CredentialInjection.ps1, Invoke-Mimikatz.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -726,13 +563,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_CredentialInjection_Invoke_Mimikatz_Gen {
    condition:
       ( uint16(0) == 0x7566 and filesize < 4000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_Invoke_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_Invoke_Gen {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component - from files Invoke-DCSync.ps1, Invoke-PSInject.ps1, Invoke-ReflectivePEInjection.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -750,13 +582,8 @@ rule Neo23x0_gen_empire_Empire_Invoke_Gen {
    condition:
       ( uint16(0) == 0x7566 and filesize < 3000KB and 1 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_empire.yar
-
-rule Empire_PowerShell_Framework_Gen5 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_empire_Empire_PowerShell_Framework_Gen5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_empire.yar
    meta:
       description = "Detects Empire component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

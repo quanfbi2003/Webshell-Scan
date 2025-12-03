@@ -1,19 +1,5 @@
-
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-09-08
-   Identifier:
-   Reference: http://blog.fortinet.com/2017/04/05/in-depth-look-at-new-variant-of-monsoon-apt-backdoor-part-2
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_monsoon.yar
-rule Monsoon_APT_Malware_1 {
-=======
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -28,7 +14,6 @@ rule Monsoon_APT_Malware_1 {
 
 //===SUCCESS===
 rule Neo23x0_apt_monsoon_Monsoon_APT_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_monsoon.yar
    meta:
       description = "Detects malware from Monsoon APT"
       author = "Florian Roth (Nextron Systems)"
@@ -50,13 +35,8 @@ rule Neo23x0_apt_monsoon_Monsoon_APT_Malware_1 {
         )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_monsoon.yar
-
-rule Monsoon_APT_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_monsoon_Monsoon_APT_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_monsoon.yar
    meta:
       description = "Detects malware from Monsoon APT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-07
-   Identifier: Agent BTZ
-   Reference: http://www.intezer.com/new-variants-of-agent-btz-comrat-found/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: http://www.intezer.com/new-variants-of-agent-btz-comrat-found/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_agent_btz.yar
-rule Agent_BTZ_Proxy_DLL_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_agent_btz_Agent_BTZ_Proxy_DLL_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_agent_btz.yar
    meta:
       description = "Detects Agent-BTZ Proxy DLL - activeds.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +27,8 @@ rule Neo23x0_apt_agent_btz_Agent_BTZ_Proxy_DLL_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them and pe.exports("Entry") )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_agent_btz.yar
-
-rule Agent_BTZ_Proxy_DLL_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_agent_btz_Agent_BTZ_Proxy_DLL_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_agent_btz.yar
    meta:
       description = "Detects Agent-BTZ Proxy DLL - activeds.dll"
       author = "Florian Roth (Nextron Systems)"
@@ -71,13 +52,8 @@ rule Neo23x0_apt_agent_btz_Agent_BTZ_Proxy_DLL_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and all of them and pe.imphash() == "09b7c73fbe5529e6de7137e3e8268b7b"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_agent_btz.yar
-
-rule Agent_BTZ_Aug17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_agent_btz_Agent_BTZ_Aug17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_agent_btz.yar
    meta:
       description = "Detects Agent.BTZ"
       author = "Florian Roth (Nextron Systems)"
@@ -97,13 +73,8 @@ rule Neo23x0_apt_agent_btz_Agent_BTZ_Aug17 {
          pe.exports("Entry") and pe.exports("InstallW") and pe.exports("UnInstallW")
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_agent_btz.yar
-
-rule APT_Turla_Agent_BTZ_Gen_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_agent_btz_APT_Turla_Agent_BTZ_Gen_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_agent_btz.yar
    meta:
       description = "Detects Turla Agent.BTZ"
       author = "Florian Roth (Nextron Systems)"

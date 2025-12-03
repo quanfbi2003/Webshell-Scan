@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/hktl_bruteratel_c4.yar
-
-rule brc4_core {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_bruteratel_c4_brc4_core {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/hktl_bruteratel_c4.yar
     meta:
         version = "first version"
         author = "@ninjaparanoid"
@@ -264,13 +259,8 @@ rule Neo23x0_hktl_bruteratel_c4_brc4_core {
     condition:
         20 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/hktl_bruteratel_c4.yar
-
-rule brc4_shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_bruteratel_c4_brc4_shellcode {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/hktl_bruteratel_c4.yar
     meta:
         version = "last version"
         author = "@ninjaparanoid"

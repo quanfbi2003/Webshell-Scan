@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshell_csharp.yar
-
-rule WEBSHELL_Csharp_Hash_String_Oct22 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshell_csharp_WEBSHELL_Csharp_Hash_String_Oct22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_webshell_csharp.yar
 	meta:
 		description = "C# webshell using specific hash check for the password."
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

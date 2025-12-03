@@ -5,15 +5,10 @@
 	Date: 2016-02-13
 	Identifier: Sofacy Fysbis
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_fysbis.yar
-
-rule Sofacy_Fybis_ELF_Backdoor_Gen1 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_fysbis_Sofacy_Fybis_ELF_Backdoor_Gen1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_fysbis.yar
 	meta:
 		description = "Detects Sofacy Fysbis Linux Backdoor"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -40,13 +35,8 @@ rule Neo23x0_apt_sofacy_fysbis_Sofacy_Fybis_ELF_Backdoor_Gen1 {
 		( uint16(0) == 0x457f and filesize < 500KB and 1 of ($x*) ) or
 		( 1 of ($x*) and 3 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_fysbis.yar
-
-rule Sofacy_Fysbis_ELF_Backdoor_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_fysbis_Sofacy_Fysbis_ELF_Backdoor_Gen2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy_fysbis.yar
 	meta:
 		description = "Detects Sofacy Fysbis Linux Backdoor"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

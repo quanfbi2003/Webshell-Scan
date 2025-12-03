@@ -5,13 +5,9 @@
 	Identifier: No PowerShell
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_nopowershell.yar
-rule No_PowerShell {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_nopowershell_No_PowerShell {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_nopowershell.yar
 	meta:
 		description = "Detects an C# executable used to circumvent PowerShell detection - file nps.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

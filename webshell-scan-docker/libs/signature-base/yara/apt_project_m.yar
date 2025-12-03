@@ -4,20 +4,12 @@
 	Date: 2016-03-26
 	Identifier: ProjectM
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_m.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_project_m.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_m.yar
-rule ProjectM_DarkComet_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_project_m_ProjectM_DarkComet_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_project_m.yar
 	meta:
 		description = "Detects ProjectM Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -38,13 +30,8 @@ rule Neo23x0_apt_project_m_ProjectM_DarkComet_1 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 600KB and 4 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_m.yar
-
-rule ProjectM_CrimsonDownloader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_m_ProjectM_CrimsonDownloader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_project_m.yar
 	meta:
 		description = "Detects ProjectM Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

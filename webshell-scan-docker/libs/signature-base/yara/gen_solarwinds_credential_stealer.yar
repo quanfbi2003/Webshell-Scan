@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_solarwinds_credential_stealer.yar
-
-rule HKTL_Solarwinds_credential_stealer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_solarwinds_credential_stealer_HKTL_Solarwinds_credential_stealer {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_solarwinds_credential_stealer.yar
     meta:
         description = "Detects solarwinds credential stealers like e.g. solarflare via the touched certificate, files and database columns"
         reference = "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware"
@@ -30,4 +25,3 @@ rule Neo23x0_gen_solarwinds_credential_stealer_HKTL_Solarwinds_credential_steale
     condition:
         uint16(0) == 0x5A4D and $certificate and ( 2 of ( $credfile* ) or 5 of ( $sql* ) )
 }
-

@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_ragna_locker.yar
-
-rule MAL_RANSOM_Ragna_Locker_Apr20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_ragna_locker_MAL_RANSOM_Ragna_Locker_Apr20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_ragna_locker.yar
    meta:
       description = "Detects Ragna Locker Ransomware"
       author = "Florian Roth (Nextron Systems)"
@@ -39,13 +34,8 @@ rule Neo23x0_crime_ransom_ragna_locker_MAL_RANSOM_Ragna_Locker_Apr20_1 {
       filesize < 200KB and
       1 of ($x*) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_ragna_locker.yar
-
-rule MAL_Ransom_Ragnarlocker_July_2020_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_ragna_locker_MAL_Ransom_Ragnarlocker_July_2020_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_ragna_locker.yar
    meta:
       description = "Detects Ragnarlocker by strings (July 2020)"
       author = "Arkbird_SOLG"

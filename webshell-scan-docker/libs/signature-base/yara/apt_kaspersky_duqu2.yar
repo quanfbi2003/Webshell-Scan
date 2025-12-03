@@ -4,20 +4,12 @@
 	Date: 2015-06-10
 	Identifier: Duqu2
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-=======
-
-/* Rules by Kaspersky ------------------------------------------------------ */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 
 /* Rules by Kaspersky ------------------------------------------------------ */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-rule APT_apt_duqu2_loaders {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_kaspersky_duqu2_APT_apt_duqu2_loaders {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 	meta:
 		copyright = "Kaspersky Lab"
 		description = "Rule to detect Duqu 2.0 samples"
@@ -46,13 +38,8 @@ rule Neo23x0_apt_kaspersky_duqu2_APT_apt_duqu2_loaders {
 		or
 		( (uint32(0) == 0xe011cfd0) and ( (any of ($a*)) or (all of ($b*)) or (all of ($c*)) or (any of ($d*)) ) and filesize < 20000000 )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-
-rule APT_apt_duqu2_drivers {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_kaspersky_duqu2_APT_apt_duqu2_drivers {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 	meta:
 		copyright = "Kaspersky Lab"
 		description = "Rule to detect Duqu 2.0 drivers"
@@ -72,13 +59,8 @@ rule Neo23x0_apt_kaspersky_duqu2_APT_apt_duqu2_drivers {
 }
 
 /* Action Loader Samples --------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-
-rule Duqu2_Generic1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_kaspersky_duqu2_Duqu2_Generic1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 	meta:
 		description = "Kaspersky APT Report - Duqu2 Sample - Generic Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -108,13 +90,8 @@ rule Neo23x0_apt_kaspersky_duqu2_Duqu2_Generic1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 150KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-
-rule APT_Kaspersky_Duqu2_procexp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_kaspersky_duqu2_APT_Kaspersky_Duqu2_procexp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 	meta:
 		description = "Kaspersky APT Report - Duqu2 Sample - Malicious MSI"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -137,13 +114,8 @@ rule Neo23x0_apt_kaspersky_duqu2_APT_Kaspersky_Duqu2_procexp {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and ( 1 of ($x*) ) and ( all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-
-rule APT_Kaspersky_Duqu2_SamsungPrint {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_kaspersky_duqu2_APT_Kaspersky_Duqu2_SamsungPrint {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 	meta:
 		description = "Kaspersky APT Report - Duqu2 Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -162,13 +134,8 @@ rule Neo23x0_apt_kaspersky_duqu2_APT_Kaspersky_Duqu2_SamsungPrint {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 82KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_kaspersky_duqu2.yar
-
-rule APT_Kaspersky_Duqu2_msi3_32 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_kaspersky_duqu2_APT_Kaspersky_Duqu2_msi3_32 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_kaspersky_duqu2.yar
 	meta:
 		description = "Kaspersky APT Report - Duqu2 Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

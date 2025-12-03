@@ -6,19 +6,12 @@
    Identifier: TA 459 - April 2017
    Reference: https://goo.gl/RLf9qU
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta459.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule TA459_Malware_May17_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_ta459_TA459_Malware_May17_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta459.yar
    meta:
       description = "Detects TA459 related malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +26,8 @@ rule Neo23x0_apt_ta459_TA459_Malware_May17_1 {
    condition:
       ( uint16(0) == 0x6152 and filesize < 800KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta459.yar
-
-rule TA459_Malware_May17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta459_TA459_Malware_May17_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ta459.yar
    meta:
       description = "Detects TA459 related malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

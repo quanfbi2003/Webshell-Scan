@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/seaspy_backdoor_jan25.yar
-rule SUSP_LNX_ByteEncoder_Jan25 {
-=======
 //===SUCCESS===
 rule Neo23x0_seaspy_backdoor_jan25_SUSP_LNX_ByteEncoder_Jan25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/seaspy_backdoor_jan25.yar
    meta:
       description = "Detects Linux binaries that encode bytes by splitting them into upper and lower nibbles and mapping them to custom lookup tables, seen being used by SEASPY and Bluez backdoors"
       author = "MalGamy (Nextron System)"
@@ -25,13 +21,8 @@ rule Neo23x0_seaspy_backdoor_jan25_SUSP_LNX_ByteEncoder_Jan25 {
       and filesize < 4MB
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/seaspy_backdoor_jan25.yar
-
-rule SUSP_LNX_StackString_Technique_Jan25 {
-=======
 //===SUCCESS===
 rule Neo23x0_seaspy_backdoor_jan25_SUSP_LNX_StackString_Technique_Jan25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/seaspy_backdoor_jan25.yar
    meta:
       description = "Detects suspicious Linux binaries using stack-based string manipulation techniques, which are often used to generate PTY (pseudo-terminal) device names for stealth or persistence, seen being used by SEASPY and Bluez backdoors"
       author = "MalGamy (Nextron System)"

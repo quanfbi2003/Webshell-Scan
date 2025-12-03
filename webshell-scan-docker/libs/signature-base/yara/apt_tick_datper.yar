@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-21
-   Identifier: Datper Malware
-   Reference: http://blog.jpcert.or.jp/2017/08/detecting-datper-malware-from-proxy-logs.html
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: http://blog.jpcert.or.jp/2017/08/detecting-datper-malware-from-proxy-logs.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tick_datper.yar
-rule Datper_Backdoor {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_tick_datper_Datper_Backdoor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_tick_datper.yar
    meta:
       description = "Detects Datper Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

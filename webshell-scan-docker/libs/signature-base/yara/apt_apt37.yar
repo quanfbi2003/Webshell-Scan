@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt37.yar
-rule APT_NK_Methodology_Artificial_UserAgent_IE_Win7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt37_APT_NK_Methodology_Artificial_UserAgent_IE_Win7 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt37.yar
     meta:
         author = "Steve Miller aka @stvemillertime"
         description = "Detects hard-coded User-Agent string that has been present in several APT37 malware families."

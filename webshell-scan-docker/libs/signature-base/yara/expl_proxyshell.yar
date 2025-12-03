@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule EXPL_Exchange_ProxyShell_Failed_Aug21_1 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Failed_Aug21_1: SCRIPT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects ProxyShell exploitation attempts in log files"
       author = "Florian Roth (Nextron Systems)"
@@ -19,21 +14,12 @@ rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Failed_Aug21_1: SCRIPT {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule EXPL_Exchange_ProxyShell_Successful_Aug21_1 : SCRIPT {
-   meta:
-      description = "Detects successful ProxyShell exploitation attempts in log files"
-      author = "Florian Roth (Nextron Systems)"
-      score = 75
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Successful_Aug21_1: SCRIPT {
    meta:
       description = "Detects successful ProxyShell exploitation attempts in log files"
       author = "Florian Roth (Nextron Systems)"
       score = 65
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
       reference = "https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html"
       date = "2021-08-08"
       modified = "2025-03-21"
@@ -46,13 +32,8 @@ rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Successful_Aug21_1: SCRIPT
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule WEBSHELL_ASPX_ProxyShell_Aug21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug21_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects webshells dropped by ProxyShell exploitation based on their file header (must be PST), size and content"
       author = "Florian Roth (Nextron Systems)"
@@ -66,13 +47,8 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug21_2 {
       and filesize < 2MB
       and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule WEBSHELL_ASPX_ProxyShell_Aug21_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug21_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects webshells dropped by ProxyShell exploitation based on their file header (must be DER), size and content"
       author = "Max Altgelt"
@@ -87,13 +63,8 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug21_3 {
       and filesize < 10KB
       and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule WEBSHELL_ASPX_ProxyShell_Sep21_1 { 
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Sep21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects webshells dropped by ProxyShell exploitation based on their file header (must be PST) and base64 decoded request"
       author = "Tobias Michalski"
@@ -108,13 +79,8 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Sep21_1 {
       uint32(0) == 0x4e444221
       and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule APT_IIS_Config_ProxyShell_Artifacts {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_APT_IIS_Config_ProxyShell_Artifacts {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects virtual directory configured in IIS pointing to a ProgramData folder (as found in attacks against Exchange servers in August 2021)"
       author = "Florian Roth (Nextron Systems)"
@@ -138,13 +104,8 @@ rule Neo23x0_expl_proxyshell_APT_IIS_Config_ProxyShell_Artifacts {
    condition:
       filesize < 500KB and all of ($a*) and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule WEBSHELL_ASPX_ProxyShell_Exploitation_Aug21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Exploitation_Aug21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects unknown malicious loaders noticed in August 2021"
       author = "Florian Roth (Nextron Systems)"
@@ -157,13 +118,8 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Exploitation_Aug21_1 {
    condition:
       filesize < 600KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule WEBSHELL_ASPX_ProxyShell_Aug15 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug15 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Webshells iisstart.aspx and Logout.aspx"
       author = "Moritz Oettle"
@@ -186,9 +142,6 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug15 {
       //$s2 = "clientCode" ascii /* HTTP Request Parameter */
       $s3 = "LaTkWfI64XeDAXZS6pU1KrsvLAcGH7AZOQXjrFkT816RnFYJQR" ascii
 
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-rule WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
-=======
       $fp1 = "<input type=\"submit\" Value=\"Refresh This Page\""
    condition:
       filesize < 1KB
@@ -200,7 +153,6 @@ rule WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
 }
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Webshells generated by an Mailbox export to PST and stored as aspx: 570221043.aspx 689193944.aspx luifdecggoqmansn.aspx"
       author = "Moritz Oettle"
@@ -228,20 +180,11 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_Mailbox_Export_PST_ProxyShell_Aug26 {
       (1 of ($s*) or 3 of ($g*))
 }
 
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-/* 
-   Hunting Rules 
-*/
-
-rule SUSP_IIS_Config_ProxyShell_Artifacts {
-=======
 /* 
    Hunting Rules 
 */
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_SUSP_IIS_Config_ProxyShell_Artifacts {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects suspicious virtual directory configured in IIS pointing to a ProgramData folder (as found in attacks against Exchange servers in August 2021)"
       author = "Florian Roth (Nextron Systems)"
@@ -257,13 +200,8 @@ rule Neo23x0_expl_proxyshell_SUSP_IIS_Config_ProxyShell_Artifacts {
    condition:
       filesize < 500KB and all of ($a*) and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule SUSP_IIS_Config_VirtualDir {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_SUSP_IIS_Config_VirtualDir {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects suspicious virtual directory configured in IIS pointing to a User folder"
       author = "Florian Roth (Nextron Systems)"
@@ -284,13 +222,8 @@ rule Neo23x0_expl_proxyshell_SUSP_IIS_Config_VirtualDir {
       filesize < 500KB and all of ($a*) and 1 of ($s*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule SUSP_ASPX_PossibleDropperArtifact_Aug21 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_SUSP_ASPX_PossibleDropperArtifact_Aug21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects an ASPX file with a non-ASCII header, often a result of MS Exchange drop techniques"
       reference = "Internal Research"
@@ -321,13 +254,8 @@ rule Neo23x0_expl_proxyshell_SUSP_ASPX_PossibleDropperArtifact_Aug21 {
          or ((uint8(7) < 0x20 or uint8(7) > 0x7E  /*non-ASCII*/ ) and uint8(7) != 0x9  /* tab */ and uint8(7) != 0x0D  /* carriage return */ and uint8(7) != 0x0A  /* new line */ )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxyshell.yar
-
-rule WEBSHELL_ProxyShell_Exploitation_Nov21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ProxyShell_Exploitation_Nov21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects webshells dropped by DropHell malware"
       author = "Florian Roth (Nextron Systems)"

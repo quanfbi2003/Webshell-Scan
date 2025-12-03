@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/ByteCode.MSIL.Backdoor.AgentRacoon.yara
-rule ByteCode_MSIL_Backdoor_AgentRacoon: tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Backdoor_AgentRacoon_ByteCode_MSIL_Backdoor_AgentRacoon: tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/ByteCode.MSIL.Backdoor.AgentRacoon.yara
 {
     meta:
 

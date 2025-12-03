@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_sfx.yar
-
-rule SUSP_SFX_RunProgram_WScript {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_sfx_SUSP_SFX_RunProgram_WScript {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_sfx.yar
    meta:
       description = "Detects suspicious SFX that runs wscript.exe"
       author = "Florian Roth (Nextron Systems)"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_dridex_xml.yar
-rule Dridex_Trojan_XML {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_dridex_xml_Dridex_Trojan_XML {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_dridex_xml.yar
 	meta:
 		description = "Dridex Malware in XML Document"
 		author = "Florian Roth (Nextron Systems) @4nc4p"

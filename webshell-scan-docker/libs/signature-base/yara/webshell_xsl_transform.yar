@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/webshell_xsl_transform.yar
-rule WEBSHELL_ASPX_XslTransform_Aug21 {
-=======
 //===SUCCESS===
 rule Neo23x0_webshell_xsl_transform_WEBSHELL_ASPX_XslTransform_Aug21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/webshell_xsl_transform.yar
    meta:
       author = "Max Altgelt"
       reference = "https://gist.github.com/JohnHammond/cdae03ca5bc2a14a735ad0334dcb93d6"

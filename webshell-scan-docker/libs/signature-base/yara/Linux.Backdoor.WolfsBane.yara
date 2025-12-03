@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.WolfsBane.yara
-rule Linux_Backdoor_WolfsBane : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_WolfsBane_Linux_Backdoor_WolfsBane : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/Linux.Backdoor.WolfsBane.yara
 {
     meta:
 
@@ -126,8 +122,4 @@ rule reversinglabs_Linux_Backdoor_WolfsBane_Linux_Backdoor_WolfsBane : tc_detect
         (
             all of ($remove_backdoor_p*)
         )
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.WolfsBane.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/Linux.Backdoor.WolfsBane.yara

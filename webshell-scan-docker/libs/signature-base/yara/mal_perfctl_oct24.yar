@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_perfctl_oct24.yar
-
-rule MAL_EXPL_Perfctl_Oct24 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_perfctl_oct24_MAL_EXPL_Perfctl_Oct24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_perfctl_oct24.yar
    meta:
       description = "Detects exploits used in relation with Perfctl malware campaigns"
       author = "Florian Roth"
@@ -24,13 +19,8 @@ rule Neo23x0_mal_perfctl_oct24_MAL_EXPL_Perfctl_Oct24 {
       and 2 of them
       or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_perfctl_oct24.yar
-
-rule MAL_LNX_Perfctl_Oct24 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_perfctl_oct24_MAL_LNX_Perfctl_Oct24 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_perfctl_oct24.yar
    meta:
       description = "Detects Perfctl malware samples"
       author = "Florian Roth"

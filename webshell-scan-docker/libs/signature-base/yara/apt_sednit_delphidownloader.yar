@@ -5,20 +5,12 @@
    Identifier: Sednit Delphi Downloader
    Reference: https://www.welivesecurity.com/2018/04/24/sednit-update-analysis-zebrocy/
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sednit_delphidownloader.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sednit_delphidownloader.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sednit_delphidownloader.yar
-rule MAL_Sednit_DelphiDownloader_Apr18_2 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_sednit_delphidownloader_MAL_Sednit_DelphiDownloader_Apr18_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sednit_delphidownloader.yar
    meta:
       description = "Detects malware from Sednit Delphi Downloader report"
       author = "Florian Roth (Nextron Systems)"
@@ -46,13 +38,8 @@ rule Neo23x0_apt_sednit_delphidownloader_MAL_Sednit_DelphiDownloader_Apr18_2 {
    condition:
       filesize < 4000KB and 1 of ($s*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sednit_delphidownloader.yar
-
-rule MAL_Sednit_DelphiDownloader_Apr18_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sednit_delphidownloader_MAL_Sednit_DelphiDownloader_Apr18_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sednit_delphidownloader.yar
    meta:
       description = "Detects malware from Sednit Delphi Downloader report"
       author = "Florian Roth (Nextron Systems)"

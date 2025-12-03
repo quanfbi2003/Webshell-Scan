@@ -6,15 +6,10 @@
    Identifier: CN Group Tools
    Reference: Internal Research
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_group_btc.yar
-
-rule BTC_Miner_lsass1_chrome_2 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_crime_cn_group_btc_BTC_Miner_lsass1_chrome_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_cn_group_btc.yar
    meta:
       description = "Detects a Bitcoin Miner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +27,8 @@ rule Neo23x0_crime_cn_group_btc_BTC_Miner_lsass1_chrome_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 6000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_group_btc.yar
-
-rule CN_Actor_RA_Tool_Ammyy_mscorsvw {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_group_btc_CN_Actor_RA_Tool_Ammyy_mscorsvw {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_cn_group_btc.yar
    meta:
       description = "Detects Ammyy remote access tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -55,13 +45,8 @@ rule Neo23x0_crime_cn_group_btc_CN_Actor_RA_Tool_Ammyy_mscorsvw {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 4000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_group_btc.yar
-
-rule CN_Actor_AmmyyAdmin {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_group_btc_CN_Actor_AmmyyAdmin {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_cn_group_btc.yar
    meta:
       description = "Detects Ammyy Admin Downloader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

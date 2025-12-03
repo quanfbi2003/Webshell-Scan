@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hizor_rat.yar
-rule apt_win32_dll_rat_hiZorRAT
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hizor_rat_apt_win32_dll_rat_hiZorRAT
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hizor_rat.yar
 {
 	meta:
       dexcription = "Detects hiZor RAT"

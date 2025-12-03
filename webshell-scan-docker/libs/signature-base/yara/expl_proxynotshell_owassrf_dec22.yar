@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
-
-rule EXPL_LOG_ProxyNotShell_OWASSRF_PowerShell_Proxy_Log_Dec22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_OWASSRF_PowerShell_Proxy_Log_Dec22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
    meta:
       description = "Detects traces of exploitation activity in relation to ProxyNotShell MS Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082"
       author = "Florian Roth (Nextron Systems)"
@@ -25,13 +20,8 @@ rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_OWASSRF_Pow
    condition:
       all of ($s*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
-
-rule EXPL_LOG_ProxyNotShell_OWASSRF_PowerShell_Proxy_Log_Dec22_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_OWASSRF_PowerShell_Proxy_Log_Dec22_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
    meta:
       description = "Detects traces of exploitation activity in relation to ProxyNotShell MS Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082"
       author = "Florian Roth (Nextron Systems)"
@@ -53,13 +43,8 @@ rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_OWASSRF_Pow
       all of ($s*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
-
-rule EXPL_LOG_ProxyNotShell_OWASSRF_PowerShell_Proxy_Log_Dec22_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_OWASSRF_PowerShell_Proxy_Log_Dec22_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
    meta:
       description = "Detects traces of exploitation activity in relation to ProxyNotShell MS Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082"
       author = "Florian Roth (Nextron Systems)"
@@ -79,13 +64,8 @@ rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_OWASSRF_Pow
    condition:
       1 of ($sa*) and $sb1 and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
-
-rule EXPL_LOG_ProxyNotShell_PowerShell_Proxy_Log_Dec22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_PowerShell_Proxy_Log_Dec22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_proxynotshell_owassrf_dec22.yar
    meta:
       description = "Detects traces of exploitation activity in relation to ProxyNotShell MS Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082"
       author = "Florian Roth (Nextron Systems)"
@@ -104,4 +84,3 @@ rule Neo23x0_expl_proxynotshell_owassrf_dec22_EXPL_LOG_ProxyNotShell_PowerShell_
    condition:
       $re1 and not 1 of ($fp*)
 }
-

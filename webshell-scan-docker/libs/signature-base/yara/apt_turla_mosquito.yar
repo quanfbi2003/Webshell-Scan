@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-02-22
-   Identifier: TurlaMosquito
-   Reference: https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://www.welivesecurity.com/wp-content/uploads/2018/01/ESET_Turla_Mosquito.pdf
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-rule TurlaMosquito_Mal_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects malware sample from Turla Mosquito report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -44,13 +30,8 @@ rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_1 {
         all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-
-rule TurlaMosquito_Mal_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects malware sample from Turla Mosquito report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -71,13 +52,8 @@ rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_2 {
         all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-
-rule TurlaMosquito_Mal_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects malware sample from Turla Mosquito report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -101,13 +77,8 @@ rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_3 {
          3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-
-rule TurlaMosquito_Mal_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects malware sample from Turla Mosquito report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -119,13 +90,8 @@ rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_4 {
    condition:
       uint16(0) == 0x5a4d and filesize < 800KB and pe.imphash() == "17b328245e2874a76c2f46f9a92c3bad"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-
-rule TurlaMosquito_Mal_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_5 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects malware sample from Turla Mosquito report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -137,13 +103,8 @@ rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_5 {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and pe.imphash() == "ac40cf7479f53a4754ac6481a4f24e57"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-
-rule TurlaMosquito_Mal_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_6 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects malware sample from Turla Mosquito report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -166,13 +127,8 @@ rule Neo23x0_apt_turla_mosquito_TurlaMosquito_Mal_6 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_mosquito.yar
-
-rule APT_TurlaMosquito_MAL_Oct22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_mosquito_APT_TurlaMosquito_MAL_Oct22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_turla_mosquito.yar
    meta:
       description = "Detects Turla Mosquito malware"
       author = "Florian Roth (Nextron Systems)"

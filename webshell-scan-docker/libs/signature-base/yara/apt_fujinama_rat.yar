@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fujinama_rat.yar
-rule APT_MAL_Fujinama {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fujinama_rat_APT_MAL_Fujinama {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fujinama_rat.yar
     meta:
         description = "Fujinama RAT used by Leonardo SpA Insider Threat"
         author = "ReaQta Threat Intelligence Team"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sunspot.yar
-rule CrowdStrike_SUNSPOT_01 : artifact stellarparticle sunspot {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sunspot_CrowdStrike_SUNSPOT_01 : artifact stellarparticle sunspot {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sunspot.yar
 
     meta:
         author = "(c) 2021 CrowdStrike Inc."
@@ -24,13 +20,8 @@ rule Neo23x0_apt_sunspot_CrowdStrike_SUNSPOT_01 : artifact stellarparticle sunsp
         all of them and filesize < 32MB
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sunspot.yar
-
-rule CrowdStrike_SUNSPOT_02 : artifact stellarparticle sunspot
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sunspot_CrowdStrike_SUNSPOT_02 : artifact stellarparticle sunspot
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sunspot.yar
 {
 
     meta:
@@ -51,13 +42,8 @@ rule Neo23x0_apt_sunspot_CrowdStrike_SUNSPOT_02 : artifact stellarparticle sunsp
         any of them and filesize < 10MB
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sunspot.yar
-
-rule CrowdStrike_SUNSPOT_03 : artifact logging stellarparticle sunspot 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sunspot_CrowdStrike_SUNSPOT_03 : artifact logging stellarparticle sunspot 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sunspot.yar
 
 {
 

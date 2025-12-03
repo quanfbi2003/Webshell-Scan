@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_cve_2021_386471_omi.yar
-rule VULN_LNX_OMI_RCE_CVE_2021_386471_Sep21 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_cve_2021_386471_omi_VULN_LNX_OMI_RCE_CVE_2021_386471_Sep21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/vul_cve_2021_386471_omi.yar
    meta:
       description = "Detects a Linux OMI version vulnerable to CVE-2021-38647 (OMIGOD) which enables an unauthenticated RCE"
       author = "Christian Burkard"

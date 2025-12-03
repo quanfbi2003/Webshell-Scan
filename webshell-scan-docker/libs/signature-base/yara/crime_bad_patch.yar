@@ -5,20 +5,12 @@
    Identifier: BadPatch
    Reference: https://goo.gl/RvDwwA
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_bad_patch.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_bad_patch.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_bad_patch.yar
-rule WinAgent_BadPatch_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_bad_patch_WinAgent_BadPatch_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_bad_patch.yar
    meta:
       description = "Detects samples mentioned in BadPatch report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -47,13 +39,8 @@ rule Neo23x0_crime_bad_patch_WinAgent_BadPatch_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and ( 1 of ($x*) or 4 of them ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_bad_patch.yar
-
-rule WinAgent_BadPatch_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_bad_patch_WinAgent_BadPatch_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_bad_patch.yar
    meta:
       description = "Detects samples mentioned in BadPatch report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

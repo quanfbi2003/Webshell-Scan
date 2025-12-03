@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gobfuscate.yar
-
-rule SUSP_GObfuscate_May21 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gobfuscate_SUSP_GObfuscate_May21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_gobfuscate.yar
    meta:
       description = "Identifies binaries obfuscated with gobfuscate"
       author = "James Quinn, Paul Hager (merged with new similar pattern)"

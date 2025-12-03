@@ -5,20 +5,12 @@
    Identifier: CHAOS
    Reference: https://github.com/tiagorlampert/CHAOS
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_chaos_payload.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_chaos_payload.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_chaos_payload.yar
-rule CHAOS_Payload {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_chaos_payload_CHAOS_Payload {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_chaos_payload.yar
    meta:
       description = "Detects a CHAOS back connect payload"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

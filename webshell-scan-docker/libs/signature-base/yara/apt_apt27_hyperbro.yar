@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-
-rule APT_RU_APT27_HyperBro_Vftrace_Loader_Jan22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_APT_RU_APT27_HyperBro_Vftrace_Loader_Jan22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
     meta:
         description = "Yara rule to detect first Hyperbro Loader Stage, often called vftrace.dll. Detects decoding function."
         author = "Bundesamt fuer Verfassungsschutz (modified by Florian Roth)"
@@ -22,13 +17,8 @@ rule Neo23x0_apt_apt27_hyperbro_APT_RU_APT27_HyperBro_Vftrace_Loader_Jan22_1 {
         $decoder_routine and 
         pe.exports("D_C_Support_SetD_File")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-
-rule APT_CN_APT27_Compromised_Certficate_Jan22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_APT_CN_APT27_Compromised_Certficate_Jan22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
    meta:
       description = "Detects compromised certifcates used by APT27 malware"
       author = "Florian Roth (Nextron Systems)"
@@ -42,12 +32,8 @@ rule Neo23x0_apt_apt27_hyperbro_APT_CN_APT27_Compromised_Certficate_Jan22_1 {
          pe.signatures[i].serial == "08:68:70:51:50:f1:cf:c1:fc:c3:fc:91:a4:49:49:a6"
    )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-rule HvS_APT27_HyperBro_Decrypted_Stage2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Decrypted_Stage2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
    meta:
       description = "HyperBro Stage 2 and compressed Stage 3 detection"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -70,13 +56,8 @@ rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Decrypted_Stage2 {
       filesize < 200KB and
       ($lznt1_compressed_pe_header_small at 0x9ce) or (all of ($lznt1_compressed_pe_header_large_*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-
-rule HvS_APT27_HyperBro_Stage3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Stage3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
    meta:
       description = "HyperBro Stage 3 detection - also tested in memory"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -102,13 +83,8 @@ rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Stage3 {
       uint16(0) == 0x5a4d and filesize < 300KB and
       (( 4 of ($s*) ) or (4 of ($g*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-
-rule HvS_APT27_HyperBro_Stage3_C2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Stage3_C2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
    meta:
       description = "HyperBro Stage 3 C2 path and user agent detection - also tested in memory"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -123,14 +99,8 @@ rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Stage3_C2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-
-
-rule HvS_APT27_HyperBro_Stage3_Persistence {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Stage3_Persistence {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
    meta:
       description = "HyperBro Stage 3 registry keys for persistence"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"
@@ -145,14 +115,8 @@ rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Stage3_Persistence {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_hyperbro.yar
-
-
-rule HvS_APT27_HyperBro_Encrypted_Stage2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt27_hyperbro_HvS_APT27_HyperBro_Encrypted_Stage2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_apt27_hyperbro.yar
    meta:
       description = "HyperBro Encrypted Stage 2 detection. Looks for all possible one byte shifts of the lznt1 compressed PE header"
       license = "https://creativecommons.org/licenses/by-nc/4.0/"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fancybear_computrace_agent.yar
-rule PUP_ComputraceAgent {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fancybear_computrace_agent_PUP_ComputraceAgent {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fancybear_computrace_agent.yar
    meta:
       description = "Absolute Computrace Agent Executable"
       author = "ASERT - Arbor Networks (slightly modified by Florian Roth)"

@@ -1,19 +1,11 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_brooxml_dec24.yar
-
-rule Brooxml_Hunting {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_brooxml_dec24_Brooxml_Hunting {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_brooxml_dec24.yar
     meta:
         description = "Detects Microsoft OOXML files with prepended data/manipulated header"
         author = "Proofpoint"
         category = "hunting"
         date = "2024-11-27"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_brooxml_dec24.yar
-=======
         modified = "2025-06-02"
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_brooxml_dec24.yar
         score = 70
         reference = "https://x.com/threatinsight/status/1861817946508763480"
         id = "1ffea1c7-9f97-5bb1-93d7-ce914765416f"
@@ -29,10 +21,6 @@ rule Neo23x0_gen_brooxml_dec24_Brooxml_Hunting {
 
         // Negations for FPs / unwanted file types
         $ole = {d0 cf 11 e0}
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_brooxml_dec24.yar
-        $mz = {4d 5a}
-=======
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_brooxml_dec24.yar
         $tef = {78 9f 3e 22}
     condition:
         $pk_ooxml_magic in (4..16384) and
@@ -46,19 +34,11 @@ rule Neo23x0_gen_brooxml_dec24_Brooxml_Hunting {
         not ($pk_0506 at 0) and
         not ($pk_0708 at 0) and
         not ($ole at 0) and
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_brooxml_dec24.yar
-        not ($mz at 0) and
-        not ($tef at 0)
-}
-
-rule Brooxml_Phishing {
-=======
         not (uint16(0) == 0x5a4d) and
         not ($tef at 0)
 }
 //===SUCCESS===
 rule Neo23x0_gen_brooxml_dec24_Brooxml_Phishing {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_brooxml_dec24.yar
     meta:
         description = "Detects PDF and OOXML files leading to AiTM phishing"
         author = "Proofpoint"
@@ -69,13 +49,6 @@ rule Neo23x0_gen_brooxml_dec24_Brooxml_Phishing {
         id = "ccd8ab30-90a4-5d4b-8a77-dbc4669bdb95"
     strings:
         $hex1 = { 21 20 03 20 c3 be c3 bf 09 20 [0-1] 06 20 20 20 20 20 20 20 20 20 20 20 01 20 20 20 06 20 20 20 20 20 20 20 20 10 20 20 05 20 20 20 01 20 20 20 c3 be c3 bf c3 bf c3 bf }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_brooxml_dec24.yar
-        $docx = { 50 4b }
-        $pdf = { 25 50 44 46 2d }
-    condition:
-        all of ($hex*) and (($docx at 0) or ($pdf at 0))
-=======
     condition:
         all of ($hex*) and ((uint16be(0) == 0x504b) or (uint32be(0) == 0x25504446))
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_brooxml_dec24.yar
 }

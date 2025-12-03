@@ -1,10 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec20.yar
-rule HvS_APT37_smb_scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec20_HvS_APT37_smb_scanner {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec20.yar
    meta:
       description = "Unknown smb login scanner used by APT37"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +28,8 @@ rule Neo23x0_apt_lazarus_dec20_HvS_APT37_smb_scanner {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and (10 of them)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec20.yar
-
-rule HvS_APT37_cred_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec20_HvS_APT37_cred_tool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec20.yar
    meta:
       description = "Unknown cred tool used by APT37"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +49,8 @@ rule Neo23x0_apt_lazarus_dec20_HvS_APT37_cred_tool {
    condition:
       filesize < 500KB and 7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec20.yar
-
-rule HvS_APT37_RAT_loader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec20_HvS_APT37_RAT_loader {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec20.yar
    meta:
       description = "BLINDINGCAN RAT loader named iconcash.db used by APT37"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -78,14 +64,8 @@ rule Neo23x0_apt_lazarus_dec20_HvS_APT37_RAT_loader {
       (pe.version_info["OriginalFilename"] contains "MFC_DLL.dll") and
       (pe.exports("SMain") and pe.exports("SMainW") )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec20.yar
-
-
-rule HvS_APT37_webshell_img_thumbs_asp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec20_HvS_APT37_webshell_img_thumbs_asp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec20.yar
    meta:
       description = "Webshell named img.asp, thumbs.asp or thumb.asp used by APT37"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -113,13 +93,8 @@ rule Neo23x0_apt_lazarus_dec20_HvS_APT37_webshell_img_thumbs_asp {
    condition:
       filesize < 2KB and (( 1 of ($s*) ) or (3 of ($a*)) or (5 of ($g*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec20.yar
-
-rule HvS_APT37_webshell_template_query_asp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec20_HvS_APT37_webshell_template_query_asp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec20.yar
    meta:
       description = "Webshell named template-query.aspimg.asp used by APT37"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -161,13 +136,8 @@ rule HvS_APT37_mimikatz_loader_DF012 {
       (pe.imphash() == "fa0b87c7e07d21001355caf7b5027219") and (all of them)
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_dec20.yar
-
-rule HvS_APT37_webshell_controllers_asp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_dec20_HvS_APT37_webshell_controllers_asp {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lazarus_dec20.yar
    meta:
       description = "Webshell named controllers.asp or inc-basket-offer.asp used by APT37"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

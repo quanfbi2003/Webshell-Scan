@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxshop.yar
-
-rule STUXSHOP_config {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxshop_STUXSHOP_config {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_stuxshop.yar
    meta:
       desc = "Stuxshop standalone sample configuration"
       author = "JAG-S (turla@chronicle.security)"
@@ -33,13 +28,8 @@ rule Neo23x0_apt_stuxshop_STUXSHOP_config {
       or
       all of ($regkey*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxshop.yar
-
-rule STUXSHOP_OSCheck {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxshop_STUXSHOP_OSCheck {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_stuxshop.yar
    meta:
       author = "Silas Cutler (havex@Chronicle.Security)"
       desc = "Identifies the OS Check function in STUXSHOP and CheshireCat"

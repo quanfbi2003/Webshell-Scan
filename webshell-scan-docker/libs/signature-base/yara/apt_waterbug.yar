@@ -1,12 +1,8 @@
 /* WATERBUG ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbug.yar
-rule WaterBug_wipbot_2013_core_PDF {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_waterbug_WaterBug_wipbot_2013_core_PDF {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbug.yar
 	meta:
 		description = "Symantec Waterbug Attack - Trojan.Wipbot 2014 core PDF"
 		author = "Symantec Security Response"
@@ -19,13 +15,8 @@ rule Neo23x0_apt_waterbug_WaterBug_wipbot_2013_core_PDF {
 	condition:
 		uint32(0) == 0x46445025 and #a > 150 and #b > 200
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbug.yar
-
-rule WaterBug_wipbot_2013_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbug_WaterBug_wipbot_2013_dll {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbug.yar
 	meta:
 		description = "Symantec Waterbug Attack - Trojan.Wipbot 2014 Down.dll component"
 		author = "Symantec Security Response"
@@ -41,13 +32,8 @@ rule Neo23x0_apt_waterbug_WaterBug_wipbot_2013_dll {
 	condition:
 		2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbug.yar
-
-rule WaterBug_wipbot_2013_core {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbug_WaterBug_wipbot_2013_core {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbug.yar
 	meta:
 		description = "Symantec Waterbug Attack - Trojan.Wipbot core + core; garbage appended data (PDF Exploit leftovers) + wipbot dropper; fake AdobeRd32 Error"
 		author = "Symantec Security Response"
@@ -62,13 +48,8 @@ rule Neo23x0_apt_waterbug_WaterBug_wipbot_2013_core {
 	condition:
 		uint16(0) == 0x5A4D  and (($code1 or $code2) or ($code3 and $code4))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbug.yar
-
-rule WaterBug_turla_dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbug_WaterBug_turla_dropper {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbug.yar
 	meta:
 		description = "Symantec Waterbug Attack - Trojan Turla Dropper"
 		author = "Symantec Security Response"
@@ -81,13 +62,8 @@ rule Neo23x0_apt_waterbug_WaterBug_turla_dropper {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbug.yar
-
-rule WaterBug_fa_malware {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbug_WaterBug_fa_malware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbug.yar
 	meta:
 		description = "Symantec Waterbug Attack - FA malware variant"
 		author = "Symantec Security Response"
@@ -136,13 +112,8 @@ rule WaterBug_sav_dropper {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbug.yar
-
-rule WaterBug_sav {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbug_WaterBug_sav {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbug.yar
 	meta:
 		description = "Symantec Waterbug Attack - SAV Malware"
 		author = "Symantec Security Response"

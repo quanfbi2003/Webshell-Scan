@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-rule APT_Malware_PutterPanda_Rel {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Rel {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects an APT malware related to PutterPanda"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -30,14 +26,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Rel {
 	condition:
 		( uint16(0) == 0x5a4d and 1 of ($x*) ) or ( 4 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-
-rule APT_Malware_PutterPanda_Rel_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Rel_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "APT Malware related to PutterPanda Group"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -67,13 +57,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Rel_2 {
 	condition:
 		uint16(0) == 0x5a4d and 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_PSAPI {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_PSAPI {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects a malware related to Putter Panda"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -92,13 +77,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_PSAPI {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_WUAUCLT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_WUAUCLT {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects a malware related to Putter Panda"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -126,13 +106,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_WUAUCLT {
 		all of ($x*) or
 		(1 of ($x*) and all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Gen1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects a malware "
 		author = "YarGen Rule Generator"
@@ -154,13 +129,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Gen1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule Malware_MsUpdater_String_in_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_Malware_MsUpdater_String_in_EXE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "MSUpdater String in Executable"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -184,13 +154,8 @@ rule Neo23x0_apt_putterpanda_Malware_MsUpdater_String_in_EXE {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and ( 1 of ($x*) ) and not ( 1 of ($fp*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_MsUpdater_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_MsUpdater_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects Malware related to PutterPanda - MSUpdater"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -208,13 +173,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_MsUpdater_3 {
 	condition:
 		uint16(0) == 0x5a4d and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_MsUpdater_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_MsUpdater_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects Malware related to PutterPanda - MSUpdater"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -238,13 +198,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_MsUpdater_1 {
 		( uint16(0) == 0x5a4d and 1 of ($x*) and 4 of ($s*) ) or
 		( 1 of ($x*) and all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_MsUpdater_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_MsUpdater_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects Malware related to PutterPanda - MSUpdater"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -279,13 +234,8 @@ rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_MsUpdater_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 220KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_putterpanda.yar
-
-rule APT_Malware_PutterPanda_Gen4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_putterpanda_APT_Malware_PutterPanda_Gen4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/APT_putterpanda.yar
 	meta:
 		description = "Detects Malware related to PutterPanda"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

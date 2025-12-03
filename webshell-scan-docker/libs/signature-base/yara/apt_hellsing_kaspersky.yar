@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hellsing_kaspersky.yar
-
-rule apt_hellsing_implantstrings { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_implantstrings { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hellsing_kaspersky.yar
 	meta:
 		version = "1.0"
 		filetype = "PE"
@@ -32,13 +27,8 @@ rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_implantstrings {
 	condition:
 		uint16(0) == 0x5a4d and (all of ($a*)) or (all of ($b*)) or ($c and $d) or (any of ($debugpath*)) or ($e and $f) and filesize < 500000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hellsing_kaspersky.yar
-
-rule apt_hellsing_installer { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_installer { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hellsing_kaspersky.yar
 	meta:
 		version = "1.0"
 		filetype = "PE"
@@ -62,13 +52,8 @@ rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_installer {
 	condition:
 		uint16(0) == 0x5a4d and ($cmd and (2 of ($a*))) and filesize < 500000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hellsing_kaspersky.yar
-
-rule apt_hellsing_proxytool { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_proxytool { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hellsing_kaspersky.yar
 	meta:
 		version = "1.0"
 		filetype = "PE"
@@ -87,13 +72,8 @@ rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_proxytool {
 	condition:
 		uint16(0) == 0x5a4d and (2 of ($a*)) and filesize < 300000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hellsing_kaspersky.yar
-
-rule apt_hellsing_xkat { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_xkat { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hellsing_kaspersky.yar
 	meta:
 		version = "1.0"
 		filetype = "PE"
@@ -115,13 +95,8 @@ rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_xkat {
 	condition:
 		uint16(0) == 0x5a4d and (6 of ($a*)) and filesize < 300000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hellsing_kaspersky.yar
-
-rule apt_hellsing_msgertype2 { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_msgertype2 { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hellsing_kaspersky.yar
 	meta:
 		version = "1.0"
 		filetype = "PE"
@@ -140,13 +115,8 @@ rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_msgertype2 {
 	condition:
 		uint16(0) == 0x5a4d and (4 of ($a*)) and filesize < 500000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hellsing_kaspersky.yar
-
-rule apt_hellsing_irene { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hellsing_kaspersky_apt_hellsing_irene { 
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_hellsing_kaspersky.yar
 	meta:
 		version = "1.0"
 		filetype = "PE"

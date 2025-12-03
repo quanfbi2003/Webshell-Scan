@@ -5,20 +5,12 @@
    Identifier: Waterbear
    Reference: https://goo.gl/L9g9eR
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-rule Waterbear_1_Jun17 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_1_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_apt_waterbear_Waterbear_1_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_2_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_2_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -56,13 +43,8 @@ rule Neo23x0_apt_waterbear_Waterbear_2_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_4_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_4_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +68,8 @@ rule Neo23x0_apt_waterbear_Waterbear_4_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_5_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_5_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       author = "Florian Roth (Nextron Systems)"
@@ -113,13 +90,8 @@ rule Neo23x0_apt_waterbear_Waterbear_5_Jun17 {
    condition:
       ( uint16(0) == 0x3d53 and filesize < 100KB and ( all of ($a*) or 3 of them ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_6_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_6_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -134,13 +106,8 @@ rule Neo23x0_apt_waterbear_Waterbear_6_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 60KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_7_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_7_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -158,13 +125,8 @@ rule Neo23x0_apt_waterbear_Waterbear_7_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_8_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_8_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       author = "Florian Roth (Nextron Systems)"
@@ -183,13 +145,8 @@ rule Neo23x0_apt_waterbear_Waterbear_8_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_9_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_9_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -209,13 +166,8 @@ rule Neo23x0_apt_waterbear_Waterbear_9_Jun17 {
    condition:
       uint16(0) == 0x5a4d and filesize < 30KB and all of ($s*) and ( $a1 or all of ($b*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_10_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_10_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -230,14 +182,8 @@ rule Neo23x0_apt_waterbear_Waterbear_10_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 30KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-
-rule Waterbear_11_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_11_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -254,13 +200,8 @@ rule Neo23x0_apt_waterbear_Waterbear_11_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_12_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_12_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -275,13 +216,8 @@ rule Neo23x0_apt_waterbear_Waterbear_12_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_13_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_13_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -306,13 +242,8 @@ rule Neo23x0_apt_waterbear_Waterbear_13_Jun17 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_waterbear.yar
-
-rule Waterbear_14_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_waterbear_Waterbear_14_Jun17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_waterbear.yar
    meta:
       description = "Detects malware from Operation Waterbear"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

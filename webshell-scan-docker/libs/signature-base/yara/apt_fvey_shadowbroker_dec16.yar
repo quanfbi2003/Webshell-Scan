@@ -5,19 +5,12 @@
    Date: 2016-12-17
    Identifier: Five Eyes ShadowBroker - Screenshots Extractions
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule FVEY_ShadowBroker_Auct_Dez16_Strings {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Auct_Dez16_Strings {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
   meta:
      description = "String from the ShodowBroker Files Screenshots - Dec 2016"
      author = "Florian Roth (Nextron Systems)"
@@ -78,13 +71,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Auct_Dez16_Strings {
     ( uint16(0) == 0x5a4d and 1 of ($pe*) ) or
     1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_violetspirit {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_violetspirit {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file violetspirit.README"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -98,13 +86,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_violetspirit {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_gr_gr {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_gr_gr {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file gr.notes"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -118,13 +101,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_gr_gr {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_yellowspirit {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_yellowspirit {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.yellowspirit.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -139,13 +117,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_yellowspiri
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_eleganteagle_opscript_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_eleganteagle_opscript_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file eleganteagle_opscript.1.0.0.6"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -159,13 +132,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_eleganteagle_opscript
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_opscript {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_opscript {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file opscript.se"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -179,13 +147,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_opscript {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_shentysdelight {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_shentysdelight {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.shentysdelight.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -199,13 +162,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_shentysdeli
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_epichero {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_epichero {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.epichero.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -220,13 +178,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_epichero {
     condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.elatedmonkey"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -240,13 +193,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_dubmoat {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_dubmoat {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.dubmoat.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -261,13 +209,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_dubmoat {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_strifeworld {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_strifeworld {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file strifeworld.1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -282,13 +225,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_strifeworld {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_pork {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_pork {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.pork.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -304,13 +242,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_pork {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_ebbisland {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_ebbisland {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.ebbisland.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -325,13 +258,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_ebbisland {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_stoicsurgeon {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_stoicsurgeon {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.stoicsurgeon.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -345,13 +273,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_stoicsurgeo
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_elgingamble {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_elgingamble {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.elgingamble.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -365,13 +288,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_elgingamble
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_README_cup {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_README_cup {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file README.cup.NOPEN"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -386,13 +304,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_README_cup {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_nopen_oneshot {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_nopen_oneshot {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file oneshot.example"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -406,13 +319,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_nopen_oneshot {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_earlyshovel {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_earlyshovel {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.earlyshovel.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -426,13 +334,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_earlyshovel
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_user_tool_envisioncollision {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_envisioncollision {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - file user.tool.envisioncollision.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -451,13 +354,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_user_tool_envisioncol
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_Gen_Readme1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -474,13 +372,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_Gen_Readme2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - from files user.tool.orleansstride.COMMON, user.tool.curserazor.COMMON"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -496,13 +389,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme2 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_Gen_Readme3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -523,13 +411,8 @@ rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme3 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
-
-rule FVEY_ShadowBroker_Gen_Readme4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fvey_shadowbroker_dec16_FVEY_ShadowBroker_Gen_Readme4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_fvey_shadowbroker_dec16.yar
    meta:
       description = "Auto-generated rule - from files violetspirit.README, violetspirit.README"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

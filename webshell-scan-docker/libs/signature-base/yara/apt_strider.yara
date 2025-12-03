@@ -5,13 +5,9 @@
 	Identifier: Strider
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_strider.yara
-rule remsec_executable_blob_32 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_strider_remsec_executable_blob_32 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_strider.yara
    meta:
       copyright = "Symantec"
       description = "Detects malware from Symantec's Strider APT report"
@@ -24,13 +20,8 @@ rule Neo23x0_apt_strider_remsec_executable_blob_32 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_strider.yara
-
-rule remsec_executable_blob_64 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_strider_remsec_executable_blob_64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_strider.yara
    meta:
       copyright = "Symantec"
       description = "Detects malware from Symantec's Strider APT report"
@@ -43,13 +34,8 @@ rule Neo23x0_apt_strider_remsec_executable_blob_64 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_strider.yara
-
-rule remsec_executable_blob_parser {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_strider_remsec_executable_blob_parser {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_strider.yara
    meta:
       copyright = "Symantec"
       description = "Detects malware from Symantec's Strider APT report"
@@ -62,13 +48,8 @@ rule Neo23x0_apt_strider_remsec_executable_blob_parser {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_strider.yara
-
-rule remsec_encrypted_api {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_strider_remsec_encrypted_api {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_strider.yara
    meta:
       copyright = "Symantec"
       description = "Detects malware from Symantec's Strider APT report"
@@ -81,13 +62,8 @@ rule Neo23x0_apt_strider_remsec_encrypted_api {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_strider.yara
-
-rule remsec_packer_A {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_strider_remsec_packer_A {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_strider.yara
    meta:
       copyright = "Symantec"
       description = "Detects malware from Symantec's Strider APT report"
@@ -100,13 +76,8 @@ rule Neo23x0_apt_strider_remsec_packer_A {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_strider.yara
-
-rule remsec_packer_B {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_strider_remsec_packer_B {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_strider.yara
    meta:
       copyright = "Symantec"
       description = "Detects malware from Symantec's Strider APT report"

@@ -6,19 +6,12 @@
    Identifier: WORM_RETADUP
    Reference: http://blog.trendmicro.com/trendlabs-security-intelligence/information-stealer-found-hitting-israeli-hospitals/
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_andromeda_jun17.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Andromeda_MalBot_Jun_1A {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_andromeda_jun17_Andromeda_MalBot_Jun_1A {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_andromeda_jun17.yar
    meta:
       description = "Detects a malicious Worm Andromeda / RETADUP"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-01-24
-   Identifier: Lotus Blossom Elise Malware
-   Reference: https://community.rsa.com/community/products/netwitness/blog/2018/01/30/apt32-continues-asean-targeting
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://community.rsa.com/community/products/netwitness/blog/2018/01/30/apt32-continues-asean-targeting
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lotusblossom_elise.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Elise_Jan18_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_lotusblossom_elise_Elise_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lotusblossom_elise.yar
    meta:
       description = "Detects Elise malware samples - fake Norton Security NavShExt.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

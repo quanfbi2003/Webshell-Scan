@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_isaacwiper.yar
-
-rule MAL_WIPER_IsaacWiper_Mar22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_isaacwiper_MAL_WIPER_IsaacWiper_Mar22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_ua_isaacwiper.yar
    meta:
       description = "Detects IsaacWiper malware"
       author = "Florian Roth (Nextron Systems)"

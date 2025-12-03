@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fake_amsi_dll.yar
-
-rule SUSP_Fake_AMSI_DLL_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fake_amsi_dll_SUSP_Fake_AMSI_DLL_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_fake_amsi_dll.yar
    meta:
       description = "Detects an amsi.dll that has the same exports as the legitimate one but very different contents or file sizes"
       author = "Florian Roth"
@@ -40,13 +35,8 @@ rule Neo23x0_gen_fake_amsi_dll_SUSP_Fake_AMSI_DLL_Jun23_1 {
 }
 
 /* Uses the external variable "filename" and can thus only be used in LOKI or THOR */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fake_amsi_dll.yar
-
-rule SUSP_Fake_AMSI_DLL_Jun23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fake_amsi_dll_SUSP_Fake_AMSI_DLL_Jun23_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_fake_amsi_dll.yar
    meta:
       description = "Detects an amsi.dll that has very different contents or file sizes than the legitimate"
       author = "Florian Roth"

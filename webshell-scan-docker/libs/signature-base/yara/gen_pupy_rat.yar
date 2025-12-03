@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-11
-   Identifier: Pupy Backdoor
-   Reference: https://github.com/n1nj4sec/pupy-binaries
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://github.com/n1nj4sec/pupy-binaries
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_pupy_rat.yar
-rule Pupy_Backdoor {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_gen_pupy_rat_Pupy_Backdoor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_pupy_rat.yar
    meta:
       description = "Detects Pupy backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

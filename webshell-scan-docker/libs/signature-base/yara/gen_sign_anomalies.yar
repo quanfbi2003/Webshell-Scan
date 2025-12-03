@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sign_anomalies.yar
-
-rule SUSP_Unsigned_OSPPSVC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_sign_anomalies_SUSP_Unsigned_OSPPSVC {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sign_anomalies.yar
    meta:
       description = "Detects a suspicious unsigned office software protection platform service binary"
       author = "Florian Roth (Nextron Systems)"
@@ -28,14 +22,8 @@ rule Neo23x0_gen_sign_anomalies_SUSP_Unsigned_OSPPSVC {
    condition:
       uint16(0) == 0x5a4d and filesize < 8000KB and $sc1 and pe.number_of_signatures < 1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_sign_anomalies.yar
-
-
-rule SUSP_PE_Signed_by_Suspicious_Entitiy_Mar23
-=======
 //===SUCCESS===
 rule Neo23x0_gen_sign_anomalies_SUSP_PE_Signed_by_Suspicious_Entitiy_Mar23
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_sign_anomalies.yar
 {
     meta:
         author = "Arnim Rupp (https://github.com/ruppde)"

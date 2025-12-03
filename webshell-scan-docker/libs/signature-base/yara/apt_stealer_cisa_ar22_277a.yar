@@ -1,14 +1,9 @@
 
 /* slightly modified by Florian Roth */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stealer_cisa_ar22_277a.yar
-
-rule APT_MAL_CISA_10365227_03_ClientUploader_Dec21 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_stealer_cisa_ar22_277a_APT_MAL_CISA_10365227_03_ClientUploader_Dec21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_stealer_cisa_ar22_277a.yar
    meta:
        author = "CISA Code & Media Analysis"
        date = "2021-12-23"
@@ -28,13 +23,8 @@ rule Neo23x0_apt_stealer_cisa_ar22_277a_APT_MAL_CISA_10365227_03_ClientUploader_
    condition:
        uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stealer_cisa_ar22_277a.yar
-
-rule APT_MAL_CISA_10365227_01_APPSTORAGE_Dec21 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stealer_cisa_ar22_277a_APT_MAL_CISA_10365227_01_APPSTORAGE_Dec21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_stealer_cisa_ar22_277a.yar
    meta:
        author = "CISA Code & Media Analysis"
        date = "2021-12-23"
@@ -56,13 +46,8 @@ rule Neo23x0_apt_stealer_cisa_ar22_277a_APT_MAL_CISA_10365227_01_APPSTORAGE_Dec2
    condition:
        uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stealer_cisa_ar22_277a.yar
-
-rule APT_MAL_CISA_10365227_02_ClientUploader_Dec21 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stealer_cisa_ar22_277a_APT_MAL_CISA_10365227_02_ClientUploader_Dec21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_stealer_cisa_ar22_277a.yar
    meta:
        author = "CISA Code & Media Analysis"
        date = "2021-12-23"

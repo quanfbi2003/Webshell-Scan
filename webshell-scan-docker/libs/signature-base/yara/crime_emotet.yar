@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_emotet.yar
-
-rule MAL_Emotet_JS_Dropper_Oct19_1 {
-=======
 import "pe"
 //===SUCCESS===
 rule Neo23x0_crime_emotet_MAL_Emotet_JS_Dropper_Oct19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_emotet.yar
    meta:
       description = "Detects Emotet JS dropper"
       author = "Florian Roth (Nextron Systems)"
@@ -20,15 +15,8 @@ rule Neo23x0_crime_emotet_MAL_Emotet_JS_Dropper_Oct19_1 {
    condition:
       uint32(0) == 0x0076feff and filesize <= 700KB and $xc1 at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_emotet.yar
-
-import "pe"
-
-rule MAL_Emotet_Jan20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_emotet_MAL_Emotet_Jan20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_emotet.yar
    meta:
       description = "Detects Emotet malware"
       author = "Florian Roth (Nextron Systems)"
@@ -46,13 +34,8 @@ rule Neo23x0_crime_emotet_MAL_Emotet_Jan20_1 {
          1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_emotet.yar
-
-rule MAL_Emotet_BKA_Quarantine_Apr21 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_emotet_MAL_Emotet_BKA_Quarantine_Apr21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_emotet.yar
    meta:
       author = "press inquiries <info@bka.de>, technical contact <info@mha.bka.de>"
       reference = "https://www.bka.de/DE/IhreSicherheit/RichtigesVerhalten/StraftatenImInternet/FAQ/FAQ_node.html"
@@ -66,13 +49,8 @@ rule Neo23x0_crime_emotet_MAL_Emotet_BKA_Quarantine_Apr21 {
    condition:
       $key at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_emotet.yar
-
-rule MAL_Emotet_BKA_Cleanup_Apr21 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_emotet_MAL_Emotet_BKA_Cleanup_Apr21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_emotet.yar
    meta:
       author = "press inquiries <info@bka.de>, technical contact <info@mha.bka.de>"
       reference = "https://www.bka.de/DE/IhreSicherheit/RichtigesVerhalten/StraftatenImInternet/FAQ/FAQ_node.html"
@@ -89,13 +67,8 @@ rule Neo23x0_crime_emotet_MAL_Emotet_BKA_Cleanup_Apr21 {
       uint16(0) == 0x5A4D and
       $key
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_emotet.yar
-
-rule EXT_MAL_SystemBC_Mar22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_emotet_EXT_MAL_SystemBC_Mar22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_emotet.yar
     meta:
         author = "Thomas Barabosch, Deutsche Telekom Security"
         date = "2022-03-11"

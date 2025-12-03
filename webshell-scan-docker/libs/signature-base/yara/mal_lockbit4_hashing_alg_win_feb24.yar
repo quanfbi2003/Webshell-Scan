@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit4_hashing_alg_win_feb24.yar
-rule mal_lockbit4_hashing_alg_win_feb24
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit4_hashing_alg_win_feb24_mal_lockbit4_hashing_alg_win_feb24
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit4_hashing_alg_win_feb24.yar
 {
     meta:
         author = "0x0d4y"
@@ -24,8 +20,4 @@ rule Neo23x0_mal_lockbit4_hashing_alg_win_feb24_mal_lockbit4_hashing_alg_win_feb
     condition:
         uint16(0) == 0x5a4d and
         $hashing_alg
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lockbit4_hashing_alg_win_feb24.yar
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lockbit4_hashing_alg_win_feb24.yar

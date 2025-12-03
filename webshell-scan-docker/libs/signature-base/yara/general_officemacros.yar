@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/general_officemacros.yar
-
-rule Office_AutoOpen_Macro {
-=======
 //===SUCCESS===
 rule Neo23x0_general_officemacros_Office_AutoOpen_Macro {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/general_officemacros.yar
 	meta:
 		description = "Detects an Microsoft Office file that contains the AutoOpen Macro function"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -29,13 +24,8 @@ rule Neo23x0_general_officemacros_Office_AutoOpen_Macro {
 		)
 		and all of ($s*) and filesize < 300000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/general_officemacros.yar
-
-rule Office_as_MHTML {
-=======
 //===SUCCESS===
 rule Neo23x0_general_officemacros_Office_as_MHTML {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/general_officemacros.yar
 	meta:
 		description = "Detects an Microsoft Office saved as a MHTML file (false positives are possible but rare; many matches on CVE-2012-0158)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +48,8 @@ rule Neo23x0_general_officemacros_Office_as_MHTML {
 		uint32be(0) == 0x4d494d45 // "MIME" header
 		and all of ($s*) and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/general_officemacros.yar
-
-rule Docm_in_PDF {
-=======
 //===SUCCESS===
 rule Neo23x0_general_officemacros_Docm_in_PDF {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/general_officemacros.yar
    meta:
       description = "Detects an embedded DOCM in PDF combined with OpenAction"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

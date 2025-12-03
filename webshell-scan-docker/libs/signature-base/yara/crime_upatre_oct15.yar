@@ -5,13 +5,9 @@
 	Identifier: Upatre Campaign October 2015
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_upatre_oct15.yar
-rule Upatre_Hazgurut {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_upatre_oct15_Upatre_Hazgurut {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_upatre_oct15.yar
 	meta:
 		description = "Detects Upatre malware - file hazgurut.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

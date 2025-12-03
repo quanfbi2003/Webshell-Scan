@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_barracuda_cve_2023_2868.yar
-
-rule MAL_ELF_ReverseShell_SSLShell_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_barracuda_cve_2023_2868_MAL_ELF_ReverseShell_SSLShell_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lnx_barracuda_cve_2023_2868.yar
    meta:
       description = "Detects reverse shell named SSLShell used in Barracuda ESG exploitation (CVE-2023-2868)"
       author = "Florian Roth"
@@ -22,13 +17,8 @@ rule Neo23x0_mal_lnx_barracuda_cve_2023_2868_MAL_ELF_ReverseShell_SSLShell_Jun23
       and filesize < 5MB
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_barracuda_cve_2023_2868.yar
-
-rule MAL_ELF_SALTWATER_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_barracuda_cve_2023_2868_MAL_ELF_SALTWATER_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_lnx_barracuda_cve_2023_2868.yar
    meta:
       description = "Detects SALTWATER malware used in Barracuda ESG exploitations (CVE-2023-2868)"
       author = "Florian Roth"

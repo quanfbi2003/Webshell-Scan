@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.PygmyGoat.yara
-rule Linux_Backdoor_PygmyGoat : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_PygmyGoat_Linux_Backdoor_PygmyGoat : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/Linux.Backdoor.PygmyGoat.yara
 {
     meta:
 
@@ -137,8 +133,4 @@ rule reversinglabs_Linux_Backdoor_PygmyGoat_Linux_Backdoor_PygmyGoat : tc_detect
         (
             all of ($hook_accept_function_p*)
         )
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.PygmyGoat.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/Linux.Backdoor.PygmyGoat.yara

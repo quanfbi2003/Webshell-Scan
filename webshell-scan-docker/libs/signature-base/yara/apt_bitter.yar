@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bitter.yar
-
-rule EXT_APT_Bitter_Win32k_0day_Feb21 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bitter_EXT_APT_Bitter_Win32k_0day_Feb21 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_bitter.yar
    meta:
       description = "Detects code that exploits a Windows 0day exploited by Bitter APT group"
       author = "dbappsecurity_lieying_lab"

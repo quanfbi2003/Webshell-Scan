@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_ps_jab.yar
-
-rule SUSP_PS1_JAB_Pattern_Jun22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_ps_jab_SUSP_PS1_JAB_Pattern_Jun22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_susp_ps_jab.yar
    meta:
       description = "Detects suspicious UTF16 and Base64 encoded PowerShell code that starts with a $ sign and a single char variable"
       author = "Florian Roth (Nextron Systems)"

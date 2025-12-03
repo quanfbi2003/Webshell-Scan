@@ -93,7 +93,7 @@ class Logger:
     linesep = "\n"
     debug_mode = False
 
-def __init__(self, hostname, platform,  caller, log_file="output.log", VERSION="", debug_mode=False):
+    def __init__(self, hostname, platform,  caller, log_file="output.log", VERSION="", debug_mode=False):
         self.hostname = hostname
         self.caller = caller
         self.log_file = "logs/".replace("/", os.sep) + log_file

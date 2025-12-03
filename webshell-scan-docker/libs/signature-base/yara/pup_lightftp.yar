@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/pup_lightftp.yar
-
-rule LightFTP_fftp_x86_64 {
-=======
 //===SUCCESS===
 rule Neo23x0_pup_lightftp_LightFTP_fftp_x86_64 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/pup_lightftp.yar
 	meta:
 		description = "Detects a light FTP server"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -24,13 +19,8 @@ rule Neo23x0_pup_lightftp_LightFTP_fftp_x86_64 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 250KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pup_lightftp.yar
-
-rule LightFTP_Config {
-=======
 //===SUCCESS===
 rule Neo23x0_pup_lightftp_LightFTP_Config {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/pup_lightftp.yar
 	meta:
 		description = "Detects a light FTP server - config file"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

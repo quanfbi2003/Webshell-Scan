@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_sharepoint_cve_2023_29357.yar
-
-rule LOG_EXPL_SharePoint_CVE_2023_29357_Sep23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_cve_2023_29357_LOG_EXPL_SharePoint_CVE_2023_29357_Sep23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_sharepoint_cve_2023_29357.yar
    meta:
       description = "Detects log entries that could indicate a successful exploitation of CVE-2023-29357 on Microsoft SharePoint servers with the published Python POC"
       author = "Florian Roth (with help from @LuemmelSec)"
@@ -23,13 +18,8 @@ rule Neo23x0_expl_sharepoint_cve_2023_29357_LOG_EXPL_SharePoint_CVE_2023_29357_S
    condition:
       $xr1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_sharepoint_cve_2023_29357.yar
-
-rule HKTL_EXPL_POC_PY_SharePoint_CVE_2023_29357_Sep23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_cve_2023_29357_HKTL_EXPL_POC_PY_SharePoint_CVE_2023_29357_Sep23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_sharepoint_cve_2023_29357.yar
    meta:
       description = "Detects a Python POC to exploit CVE-2023-29357 on Microsoft SharePoint servers"
       author = "Florian Roth"
@@ -43,13 +33,8 @@ rule Neo23x0_expl_sharepoint_cve_2023_29357_HKTL_EXPL_POC_PY_SharePoint_CVE_2023
    condition:
       filesize < 30KB and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_sharepoint_cve_2023_29357.yar
-
-rule HKTL_EXPL_POC_NET_SharePoint_CVE_2023_29357_Sep23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_cve_2023_29357_HKTL_EXPL_POC_NET_SharePoint_CVE_2023_29357_Sep23_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/expl_sharepoint_cve_2023_29357.yar
    meta:
       description = "Detects a C# POC to exploit CVE-2023-29357 on Microsoft SharePoint servers"
       author = "Florian Roth"
@@ -75,5 +60,3 @@ rule Neo23x0_expl_sharepoint_cve_2023_29357_HKTL_EXPL_POC_NET_SharePoint_CVE_202
          or all of ($s*)
       )
 }
-
-

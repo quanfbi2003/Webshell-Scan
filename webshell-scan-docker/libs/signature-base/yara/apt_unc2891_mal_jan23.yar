@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2891_mal_jan23.yar
-
-rule MAL_UNC2891_Caketap {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Caketap {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_unc2891_mal_jan23.yar
    meta:
       description = "Detects UNC2891 Rootkit Caketap"
       author = "Frank Boldewin (@r3c0nst)"
@@ -20,13 +15,8 @@ rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Caketap {
    condition:
       uint32 (0) ==  0x464c457f and (all of ($code*) or (all of ($str*) and #str2 == 2))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2891_mal_jan23.yar
-
-rule MAL_UNC2891_Slapstick {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Slapstick {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_unc2891_mal_jan23.yar
    meta:
       description = "Detects UNC2891 Slapstick pam backdoor"
       author = "Frank Boldewin (@r3c0nst), slightly modifier by Florian Roth"
@@ -47,13 +37,8 @@ rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Slapstick {
    condition:
       uint32 (0) ==  0x464c457f and filesize < 100KB and (all of ($code*) or all of ($str*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2891_mal_jan23.yar
-
-rule MAL_UNC2891_Steelcorgi {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Steelcorgi {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_unc2891_mal_jan23.yar
    meta:
       description = "Detects UNC2891 Steelcorgi packed ELF binaries"
       author = "Frank Boldewin (@r3c0nst)"
@@ -71,13 +56,8 @@ rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Steelcorgi {
    condition:
       uint32(0) == 0x464c457f and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2891_mal_jan23.yar
-
-rule MAL_UNC2891_Winghook {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2891_mal_jan23_MAL_UNC2891_Winghook {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_unc2891_mal_jan23.yar
    meta:
       description = "Detects UNC2891 Winghook Keylogger"
       author = "Frank Boldewin (@r3c0nst)"

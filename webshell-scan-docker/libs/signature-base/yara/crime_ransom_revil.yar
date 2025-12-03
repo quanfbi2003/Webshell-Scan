@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_revil.yar
-
-rule MAL_RANSOM_REvil_Oct20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_revil_MAL_RANSOM_REvil_Oct20_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_ransom_revil.yar
    meta:
       description = "Detects REvil ransomware"
       author = "Florian Roth (Nextron Systems)"

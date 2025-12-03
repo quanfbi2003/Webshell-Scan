@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_macro_staroffice_suspicious.yar
-rule SUSP_Macro_StarOffice {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_macro_staroffice_suspicious_SUSP_Macro_StarOffice {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_macro_staroffice_suspicious.yar
    meta:
         description = "Suspicious macro in StarOffice"
         author = "John Lambert @JohnLaTwC"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_maldoc.yar
-rule SUSP_Doc_WindowsInstaller_Call_Feb22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_maldoc_SUSP_Doc_WindowsInstaller_Call_Feb22_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_maldoc.yar
     meta:
         author = "Nils Kuhnert"
         date = "2022-02-26"

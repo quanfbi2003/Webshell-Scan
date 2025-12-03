@@ -4,20 +4,12 @@
 	Date: 2015-09-16
 	Identifier: Iron Panda
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-rule IronPanda_DNSTunClient {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_DNSTunClient {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda malware DnsTunClient - file named.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -44,13 +36,8 @@ rule Neo23x0_apt_irontiger_IronPanda_DNSTunClient {
 		or
 		5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-
-rule IronPanda_Malware1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_Malware1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +55,8 @@ rule Neo23x0_apt_irontiger_IronPanda_Malware1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-
-rule IronPanda_Webshell_JSP {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_Webshell_JSP {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda Malware JSP"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -90,13 +72,8 @@ rule Neo23x0_apt_irontiger_IronPanda_Webshell_JSP {
 	condition:
 		filesize < 330KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-
-rule IronPanda_Malware_Htran {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_Malware_Htran {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda Malware Htran"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -125,13 +102,8 @@ rule Neo23x0_apt_irontiger_IronPanda_Malware_Htran {
 		 or 
 		 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-
-rule IronPanda_Malware2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_Malware2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -149,13 +121,8 @@ rule Neo23x0_apt_irontiger_IronPanda_Malware2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 180KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-
-rule IronPanda_Malware3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_Malware3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -174,13 +141,8 @@ rule Neo23x0_apt_irontiger_IronPanda_Malware3 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 10KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_irontiger.yar
-
-rule IronPanda_Malware4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_irontiger_IronPanda_Malware4 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_irontiger.yar
 	meta:
 		description = "Iron Panda Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -197,4 +159,3 @@ rule Neo23x0_apt_irontiger_IronPanda_Malware4 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 10KB and all of them
 }
-

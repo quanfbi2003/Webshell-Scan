@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy.yar
-
-rule Sofacy_Campaign_Mal_Feb18_cdnver {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_Sofacy_Campaign_Mal_Feb18_cdnver {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy.yar
    meta:
       description = "Detects Sofacy malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -30,13 +24,8 @@ rule Neo23x0_apt_sofacy_Sofacy_Campaign_Mal_Feb18_cdnver {
         2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy.yar
-
-rule Sofacy_Trojan_Loader_Feb18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_Sofacy_Trojan_Loader_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy.yar
    meta:
       description = "Sofacy Activity Feb 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -59,13 +48,8 @@ rule Neo23x0_apt_sofacy_Sofacy_Trojan_Loader_Feb18_1 {
         2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy.yar
-
-rule APT_ATP28_Sofacy_Indicators_May19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_APT_ATP28_Sofacy_Indicators_May19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sofacy.yar
    meta:
       description = "Detects APT28 Sofacy indicators in samples"
       author = "Florian Roth (Nextron Systems)"

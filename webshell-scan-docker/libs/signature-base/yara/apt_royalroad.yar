@@ -1,7 +1,5 @@
 /*
    MIT License
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-=======
 
    Copyright (c) 2020 nao_sec
 
@@ -23,35 +21,10 @@
    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    SOFTWARE.
 */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 
-   Copyright (c) 2020 nao_sec
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-   Permission is hereby granted, free of charge, to any person obtaining a copy
-   of this software and associated documentation files (the "Software"), to deal
-   in the Software without restriction, including without limitation the rights
-   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   copies of the Software, and to permit persons to whom the Software is
-   furnished to do so, subject to the following conditions:
-
-   The above copyright notice and this permission notice shall be included in all
-   copies or substantial portions of the Software.
-
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   SOFTWARE.
-*/
-
-rule RoyalRoad_code_pattern1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern1
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -67,13 +40,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern1
    condition:
        $RTF at 0 and $S1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_code_pattern2
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern2
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -89,13 +57,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern2
     condition:
         $RTF at 0 and $S1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_code_pattern3
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern3
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -112,13 +75,8 @@ condition:
     $RTF at 0 and $S1
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_code_pattern4ab
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern4ab
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -134,13 +92,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern4ab
     condition:
         $RTF at 0 and $S1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_code_pattern4ce
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern4ce
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -156,15 +109,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern4ce
     condition:
         $RTF at 0 and $S1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-
-
-rule RoyalRoad_code_pattern4d
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern4d
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -183,13 +129,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_code_pattern4d
 
 
 /* Hunting */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_RTF
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_RTF
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -205,13 +146,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_RTF
     condition:
         $RTF at 0 and $S1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_RTF_v7
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_RTF_v7
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"
@@ -228,13 +164,8 @@ rule Neo23x0_apt_royalroad_RoyalRoad_RTF_v7
     condition:
         $RTF at 0 and all of ($v7*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_royalroad.yar
-
-rule RoyalRoad_encode_in_RTF
-=======
 //===SUCCESS===
 rule Neo23x0_apt_royalroad_RoyalRoad_encode_in_RTF
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_royalroad.yar
 {
    meta:
       description = "Detects RoyalRoad weaponized RTF documents"

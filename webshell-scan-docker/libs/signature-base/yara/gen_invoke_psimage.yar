@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_psimage.yar
-
-rule Invoke_PSImage {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_invoke_psimage_Invoke_PSImage {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_invoke_psimage.yar
    meta:
       description = "Detects a command to execute PowerShell from String"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

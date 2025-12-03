@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ransom_lorenz.yar
-rule MAL_RANSOM_Lorenz_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ransom_lorenz_MAL_RANSOM_Lorenz_May21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_ransom_lorenz.yar
    meta:
       description = "Detects Lorenz Ransomware samples"
       author = "Florian Roth (Nextron Systems)"

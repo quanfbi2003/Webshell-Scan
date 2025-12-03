@@ -4,20 +4,12 @@
    Date: 2017-02-04
    Identifier: ysoserial payloads
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ysoserial_payloads.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ysoserial_payloads.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ysoserial_payloads.yar
-rule Ysoserial_Payload_MozillaRhino1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_MozillaRhino1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ysoserial_payloads.yar
    meta:
       description = "Ysoserial Payloads - file MozillaRhino1.bin"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -31,13 +23,8 @@ rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_MozillaRhino1 {
    condition:
       ( uint16(0) == 0xedac and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ysoserial_payloads.yar
-
-rule Ysoserial_Payload_C3P0 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_C3P0 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ysoserial_payloads.yar
    meta:
       description = "Ysoserial Payloads - file C3P0.bin"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -51,13 +38,8 @@ rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_C3P0 {
    condition:
       ( uint16(0) == 0xedac and filesize < 3KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ysoserial_payloads.yar
-
-rule Ysoserial_Payload_Spring1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_Spring1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ysoserial_payloads.yar
    meta:
       description = "Ysoserial Payloads - file Spring1.bin"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -77,13 +59,8 @@ rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_Spring1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ysoserial_payloads.yar
-
-rule Ysoserial_Payload {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ysoserial_payloads.yar
    meta:
       description = "Ysoserial Payloads"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -113,13 +90,8 @@ rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload {
    condition:
       ( uint16(0) == 0xedac and filesize < 40KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_ysoserial_payloads.yar
-
-rule Ysoserial_Payload_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_ysoserial_payloads_Ysoserial_Payload_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_ysoserial_payloads.yar
    meta:
       description = "Ysoserial Payloads - from files JavassistWeld1.bin, JBossInterceptors.bin"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

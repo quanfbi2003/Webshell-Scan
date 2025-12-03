@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_gen.yar
-
-rule APT_NK_MAL_Keylogger_Unknown_Nov19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_gen_APT_NK_MAL_Keylogger_Unknown_Nov19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_nk_gen.yar
    meta:
       description = "Detects unknown keylogger reported by CNMF in November 2019"
       author = "Florian Roth (Nextron Systems)"

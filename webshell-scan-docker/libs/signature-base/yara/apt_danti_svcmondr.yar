@@ -4,20 +4,12 @@
 	Date: 2016-05-25
 	Identifier: Kaspersky Report on threats involving CVE-2015-2545
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_danti_svcmondr.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_danti_svcmondr.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_danti_svcmondr.yar
-rule Mal_Dropper_httpEXE_from_CAB {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_danti_svcmondr_Mal_Dropper_httpEXE_from_CAB {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_danti_svcmondr.yar
 	meta:
 		description = "Detects a dropper from a CAB file mentioned in the article"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_apt_danti_svcmondr_Mal_Dropper_httpEXE_from_CAB {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 1000KB and ( all of ($s*) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_danti_svcmondr.yar
-
-rule Mal_http_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_danti_svcmondr_Mal_http_EXE {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_danti_svcmondr.yar
 	meta:
 		description = "Detects trojan from APT report named http.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -71,13 +58,8 @@ rule Neo23x0_apt_danti_svcmondr_Mal_http_EXE {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 2000KB and ( 1 of ($x*) and 2 of ($s*) ) ) or ( 3 of ($x*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_danti_svcmondr.yar
-
-rule Mal_PotPlayer_DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_danti_svcmondr_Mal_PotPlayer_DLL {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_danti_svcmondr.yar
 	meta:
 		description = "Detects a malicious PotPlayer.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -5,13 +5,9 @@
 	Identifier: Locky
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_locky.yar
-rule Locky_Ransomware {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_locky_Locky_Ransomware {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_locky.yar
 	meta:
 		description = "Detects Locky Ransomware (matches also on Win32/Kuluoz)"
 		author = "Florian Roth (Nextron Systems) (with the help of binar.ly)"

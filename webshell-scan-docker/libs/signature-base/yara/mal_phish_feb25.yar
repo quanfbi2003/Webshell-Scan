@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_phish_feb25.yar
-rule MAL_PHISH_ShellCode_Enc_Payload_Feb25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_phish_feb25_MAL_PHISH_ShellCode_Enc_Payload_Feb25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_phish_feb25.yar
    meta:
       author = "X__Junior"
       description = "Detects unknown of phishing-delivered malware"
@@ -17,13 +13,8 @@ rule Neo23x0_mal_phish_feb25_MAL_PHISH_ShellCode_Enc_Payload_Feb25 {
    condition:
       uint16(0) == 0x5a4d and $op1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_phish_feb25.yar
-
-rule MAL_PHISH_Final_Payload_Feb25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_phish_feb25_MAL_PHISH_Final_Payload_Feb25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_phish_feb25.yar
    meta:
       author = "X__Junior"
       description = "Detects possible final payload of phishing-delivered malware, where embedded shellcode is used to decrypt and execute the payload after user-supplied password input."
@@ -43,13 +34,8 @@ rule Neo23x0_mal_phish_feb25_MAL_PHISH_Final_Payload_Feb25 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_phish_feb25.yar
-
-rule SUSP_Sysinternals_Desktops_Anomaly_Feb25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_phish_feb25_SUSP_Sysinternals_Desktops_Anomaly_Feb25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_phish_feb25.yar
    meta:
       description = "Detects anomalies in Sysinternals Desktops binaries"
       author = "Florian Roth"
@@ -73,13 +59,8 @@ rule Neo23x0_mal_phish_feb25_SUSP_Sysinternals_Desktops_Anomaly_Feb25 {
       and filesize > 350KB
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_phish_feb25.yar
-
-rule SUSP_PE_Compromised_Certificate_Feb25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_phish_feb25_SUSP_PE_Compromised_Certificate_Feb25 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_phish_feb25.yar
    meta:
       description = "Detects suspicious PE files signed with a certificate used in a widespread phishing attack in February 2025"
       author = "Jonathan Peters"

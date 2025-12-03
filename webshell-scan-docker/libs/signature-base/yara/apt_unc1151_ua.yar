@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc1151_ua.yar
-rule APT_UNC1151_WindowsInstaller_Silent_InstallProduct_MacroMethod {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc1151_ua_APT_UNC1151_WindowsInstaller_Silent_InstallProduct_MacroMethod {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_unc1151_ua.yar
     meta:
         author = "Proofpoint Threat Research"
         date = "2021-07-28"

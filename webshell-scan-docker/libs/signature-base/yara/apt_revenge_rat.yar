@@ -5,20 +5,12 @@
    Identifier: RevengeRAT
    Reference: Internal Research
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_revenge_rat.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_revenge_rat.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_revenge_rat.yar
-rule RevengeRAT_Sep17 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_revenge_rat_RevengeRAT_Sep17 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_revenge_rat.yar
    meta:
       description = "Detects RevengeRAT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lnx_linadoor_rootkit.yar
-
-rule MAL_LNX_LinaDoor_Rootkit_May22 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lnx_linadoor_rootkit_MAL_LNX_LinaDoor_Rootkit_May22 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_lnx_linadoor_rootkit.yar
    meta:
       description = "Detects LinaDoor Linux Rootkit"
       author = "Florian Roth"

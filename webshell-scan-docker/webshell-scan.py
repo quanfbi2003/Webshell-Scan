@@ -809,12 +809,12 @@ class Scanner(object):
                                 
                                 # If similarity >= 50, consider it a match (ssdeep threshold)
                                 if best_match_score >= 50:
-                                    logger.log("INFO", "SSDeep", f"SSDeep match found: {best_match_score}% similarity with {best_match_filename}")
+                                    logger.log("DEBUG", "SSDeep", f"SSDeep match found: {best_match_score}% similarity with {best_match_filename}")
                                     reason_text = "SSDeep Match SCORE: %d%% HASH: %s SUBSCORE: 85 DESC: Similar to known webshell: %s" % (
                                         best_match_score, best_match_hash, best_match_filename)
                                     reasons.append(reason_text)
                                     total_score += best_match_score
-                                    logger.log("INFO", "SSDeep", f"Added SSDeep match to reasons. Total score now: {total_score}")
+                                    logger.log("DEBUG", "SSDeep", f"Added SSDeep match to reasons. Total score now: {total_score}")
                                 else:
                                     logger.log("DEBUG", "SSDeep", f"No SSDeep match (best: {best_match_score}%, threshold: 50%)")
                             else:

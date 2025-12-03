@@ -30,13 +30,8 @@ rule Neo23x0_thor_webshells_Weevely_Webshell {
 	condition:
 		uint32(0) == 0x68703f3c and all of ($s*) and filesize > 570 and filesize < 800
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/thor-webshells.yar
-
-rule Neo23x0_tho_WEBSHELL_H4ntu_Shell_Powered_Tsoi_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_webshells_WEBSHELL_H4ntu_Shell_Powered_Tsoi_3 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/thor-webshells.yar
    meta:
       description = "Web Shell - file h4ntu shell powered by tsoi.php"
       author = "Florian Roth"
@@ -51,26 +46,6 @@ rule Neo23x0_thor_webshells_WEBSHELL_H4ntu_Shell_Powered_Tsoi_3 {
       $s4 = "    <TD><DIV STYLE=\"font-family: verdana; font-size: 10px;\"><?= $info ?>: <?= "
    condition:
       2 of them
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/thor-webshells.yar
-}
-
-rule Neo23x0_tho_WEBSHELL_H4ntu_Shell_Powered_Tsoi {
-   meta:
-      description = "Semi-Auto-generated - file h4ntu shell [powered by tsoi].txt"
-      author = "Florian Roth"
-      date = "2014-03-29"
-      modified = "2025-03-21"
-      score = 80
-      old_rule_name = "Webshell_h4ntu_shell__powered_by_tsoi_"
-      hash = "06ed0b2398f8096f1bebf092d0526137"
-   strings:
-      $x1 = "<title>h4ntu shell"
-      $x2 = "system(\"$cmd 1> /tmp/cmdtemp 2>&1; cat /tmp/cmdtemp; rm /tmp/cmdtemp\");"
-   condition:
-      filesize < 100KB
-      and 1 of them
-=======
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/thor-webshells.yar
 }
 //===SUCCESS===
 rule Neo23x0_thor_webshells_WEBSHELL_H4ntu_Shell_Powered_Tsoi {
@@ -6128,13 +6103,8 @@ rule Neo23x0_thor_webshells_WebShell_SimAttacker___Vrsion_1_0_0___priv8_4_My_fri
 	condition:
 		3 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/thor-webshells.yar
-
-rule Neo23x0_tho_WEBSHELL_H4ntu_Shell_Powered_Tsoi_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_webshells_WEBSHELL_H4ntu_Shell_Powered_Tsoi_2 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/thor-webshells.yar
    meta:
       description = "PHP Webshells Github Archive - file h4ntu shell [powered by tsoi].php"
       author = "Florian Roth"

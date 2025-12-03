@@ -1,14 +1,9 @@
 
 /* modified by Florian Roth */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sidewinder.yar
-
-rule APT_SideWinder_NET_Loader_Aug_2020_1 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_sidewinder_APT_SideWinder_NET_Loader_Aug_2020_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sidewinder.yar
    meta:
       description = "Detected the NET loader used by SideWinder group (August 2020)"
       author = "Arkbird_SOLG"
@@ -27,13 +22,8 @@ rule Neo23x0_apt_sidewinder_APT_SideWinder_NET_Loader_Aug_2020_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 4KB and $a1 and 3 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sidewinder.yar
-
-rule APT_MAL_SideWinder_implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sidewinder_APT_MAL_SideWinder_implant {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_sidewinder.yar
    meta:
       author = "AT&T Alien Labs"
       description = "Detects SideWinder final payload"

@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mal_nitol.yar
-
-rule MAL_Nitol_Malware_Jan19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mal_nitol_MAL_Nitol_Malware_Jan19_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/crime_mal_nitol.yar
    meta:
       description = "Detects Nitol Malware"
       author = "Florian Roth (Nextron Systems)"

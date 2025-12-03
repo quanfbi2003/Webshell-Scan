@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_codecov_hack.yar
-
-rule APT_SH_CodeCov_Hack_Apr21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_codecov_hack_APT_SH_CodeCov_Hack_Apr21_1 {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/mal_codecov_hack.yar
    meta:
       description = "Detects manipulated Codecov bash uploader tool that has been manipulated by an unknown actor during March / April 2021"
       author = "Florian Roth (Nextron Systems)"

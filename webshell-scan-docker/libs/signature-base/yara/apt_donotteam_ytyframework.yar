@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_donotteam_ytyframework.yar
-
-rule APT_DonotTeam_YTYframework : APT DonotTeam Windows {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_donotteam_ytyframework_APT_DonotTeam_YTYframework : APT DonotTeam Windows {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/apt_donotteam_ytyframework.yar
    meta:
       author = "James E.C, ProofPoint"
       description = "Modular malware framework with similarities to EHDevel"

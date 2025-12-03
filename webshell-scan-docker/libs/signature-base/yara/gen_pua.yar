@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_pua.yar
-rule WinDivert_Driver {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_pua_WinDivert_Driver {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/gen_pua.yar
    meta:
       description = "Detects WinDivert User-Mode packet capturing driver"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

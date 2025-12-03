@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/log_teamviewer_keyboard_layouts.yar
-
-rule LOG_TeamViewer_Connect_Chinese_Keyboard_Layout {
-=======
 //===SUCCESS===
 rule Neo23x0_log_teamviewer_keyboard_layouts_LOG_TeamViewer_Connect_Chinese_Keyboard_Layout {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/log_teamviewer_keyboard_layouts.yar
    meta:
       description = "Detects a suspicious TeamViewer log entry stating that the remote systems had a Chinese keyboard layout"
       author = "Florian Roth (Nextron Systems)"
@@ -24,13 +19,8 @@ rule Neo23x0_log_teamviewer_keyboard_layouts_LOG_TeamViewer_Connect_Chinese_Keyb
    condition:
       ( #x1 + #x2 ) > ( #fp1 + #fp2 )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/log_teamviewer_keyboard_layouts.yar
-
-rule LOG_TeamViewer_Connect_Russian_Keyboard_Layout {
-=======
 //===SUCCESS===
 rule Neo23x0_log_teamviewer_keyboard_layouts_LOG_TeamViewer_Connect_Russian_Keyboard_Layout {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/log_teamviewer_keyboard_layouts.yar
    meta:
       description = "Detects a suspicious TeamViewer log entry stating that the remote systems had a Russian keyboard layout"
       author = "Florian Roth (Nextron Systems)"

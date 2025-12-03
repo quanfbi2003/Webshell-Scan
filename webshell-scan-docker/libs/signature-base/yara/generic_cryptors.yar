@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/generic_cryptors.yar
-
-rule DarkEYEv3_Cryptor {
-=======
 //===SUCCESS===
 rule Neo23x0_generic_cryptors_DarkEYEv3_Cryptor {
->>>>>>> Stashed changes:webshell-scan-docker/libs/signature-base/yara/generic_cryptors.yar
 	meta:
 		description = "Rule to detect DarkEYEv3 encrypted executables (often malware)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
