@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_gopuram_apr23.yar
-
-rule MAL_Shellcode_Loader_Apr23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mal_gopuram_apr23_MAL_Shellcode_Loader_Apr23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_gopuram_apr23.yar
    meta:
       author = "X__Junior (Nextron Systems)"
       reference = "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/"
@@ -21,13 +16,8 @@ rule Neo23x0_apt_mal_gopuram_apr23_MAL_Shellcode_Loader_Apr23 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_gopuram_apr23.yar
- 
-rule APT_MAL_Gopuram_Backdoor_Apr23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mal_gopuram_apr23_APT_MAL_Gopuram_Backdoor_Apr23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_gopuram_apr23.yar
    meta:
       author = "X__Junior (Nextron Systems)"
       reference = "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/"
@@ -49,13 +39,8 @@ rule Neo23x0_apt_mal_gopuram_apr23_APT_MAL_Gopuram_Backdoor_Apr23 {
       )
       or all of ($opa*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_gopuram_apr23.yar
-
-rule APT_NK_MAL_DLL_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mal_gopuram_apr23_APT_NK_MAL_DLL_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_gopuram_apr23.yar
    meta:
       description = "Detects DLLs loaded by shellcode loader (6ce5b6b4cdd6290d396465a1624d489c7afd2259a4d69b73c6b0ba0e5ad4e4ad) (relation to Lazarus group)"
       author = "Florian Roth (Nextron Systems)"
@@ -88,13 +73,8 @@ rule Neo23x0_apt_mal_gopuram_apr23_APT_NK_MAL_DLL_Apr23_1 {
          or 3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_gopuram_apr23.yar
-
-rule APT_UNC4736_NK_MAL_TAXHAUL_3CX_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mal_gopuram_apr23_APT_UNC4736_NK_MAL_TAXHAUL_3CX_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_gopuram_apr23.yar
    meta:
       description = "Detects TAXHAUL (AKA TxRLoader) malware used in the 3CX compromise by UNC4736"
       author = "Mandiant"

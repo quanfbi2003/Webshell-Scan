@@ -1,16 +1,5 @@
 
 /*
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-Moonlight Maze Yara rules - TLP_GREEN
-Author: Kaspersky Lab, 2017
-Version: 1.0
-Date: 2017-03-28
-
-*/
-
-rule apt_RU_MoonlightMaze_customlokitools {
-=======
 
 Moonlight Maze Yara rules - TLP_GREEN
 Author: Kaspersky Lab, 2017
@@ -22,7 +11,6 @@ Date: 2017-03-28
 
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_customlokitools {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -59,14 +47,8 @@ condition:
 	// Added filesize due to false positives with Nvidia drivers in process memory
 	filesize < 5000KB and 3 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-rule apt_RU_MoonlightMaze_customsniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_customsniffer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -96,14 +78,8 @@ strings:
 condition:
 	2 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-rule loki2crypto {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_loki2crypto {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -128,16 +104,8 @@ condition:
 	(any of them)
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-
-
-rule apt_RU_MoonlightMaze_de_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_de_tool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -164,14 +132,8 @@ condition:
 	((2 of ($a*)))
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-rule apt_RU_MoonlightMaze_cle_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_cle_tool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -199,14 +161,8 @@ condition:
 	((3 of ($a*)))
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-rule apt_RU_MoonlightMaze_xk_keylogger {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_xk_keylogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -239,13 +195,8 @@ condition:
 	((3 of ($a*)))
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-rule apt_RU_MoonlightMaze_encrypted_keylog {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_encrypted_keylog {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -264,13 +215,8 @@ condition:
 	uint32(0) == 0x2a220147 and ($a1 at 0)
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-rule apt_RU_MoonlightMaze_IRIX_exploit_GEN {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_IRIX_exploit_GEN {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -298,14 +244,8 @@ condition:
 	(uint32(0)==0x464c457f) and (all of them)
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-rule apt_RU_MoonlightMaze_u_logcleaner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_u_logcleaner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 
@@ -331,14 +271,8 @@ condition:
 	(uint32(0)==0x464c457f) and (any of them)
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_moonlightmaze.yar
-
-
-rule apt_RU_MoonlightMaze_wipe {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_moonlightmaze_apt_RU_MoonlightMaze_wipe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_moonlightmaze.yar
 
 meta:
 

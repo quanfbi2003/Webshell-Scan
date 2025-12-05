@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_miniasp.yar
-
-rule APT_Malware_CommentCrew_MiniASP {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_miniasp_APT_Malware_CommentCrew_MiniASP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_miniasp.yar
 	meta:
 		description = "CommentCrew Malware MiniASP APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

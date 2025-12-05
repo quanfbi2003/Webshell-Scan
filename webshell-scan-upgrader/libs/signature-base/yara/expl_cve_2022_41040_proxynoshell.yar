@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2022_41040_proxynoshell.yar
-
-rule EXPL_Exchange_ProxyNotShell_Patterns_CVE_2022_41040_Oct22_1 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2022_41040_proxynoshell_EXPL_Exchange_ProxyNotShell_Patterns_CVE_2022_41040_Oct22_1 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_cve_2022_41040_proxynoshell.yar
    meta:
       description = "Detects successful ProxyNotShell exploitation attempts in log files (attempt to identify the attack before the official release of detailed information)"
       author = "Florian Roth (Nextron Systems)"

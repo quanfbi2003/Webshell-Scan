@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/ByteCode.MSIL.Backdoor.ResolverRAT.yara
-
-
-rule reversinglabs_Byt_ByteCode_MSIL_Backdoor_ResolverRAT : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Backdoor_ResolverRAT_ByteCode_MSIL_Backdoor_ResolverRAT : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.ResolverRAT.yara
 {
     meta:
 

@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.Sshdinjector.yara
-
-
-rule reversinglabs_Lin_Linux_Backdoor_Sshdinjector : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_Sshdinjector_Linux_Backdoor_Sshdinjector : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.Sshdinjector.yara
 {
     meta:
 

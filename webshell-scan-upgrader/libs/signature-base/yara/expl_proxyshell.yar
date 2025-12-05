@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_proxyshell.yar
-
-
-rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Failed_Aug21_1: SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Failed_Aug21_1: SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects ProxyShell exploitation attempts in log files"
       author = "Florian Roth (Nextron Systems)"
@@ -20,13 +14,8 @@ rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Failed_Aug21_1: SCRIPT {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_proxyshell.yar
-
-rule Neo23x0_exp_EXPL_Exchange_ProxyShell_Successful_Aug21_1: SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_EXPL_Exchange_ProxyShell_Successful_Aug21_1: SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects successful ProxyShell exploitation attempts in log files"
       author = "Florian Roth (Nextron Systems)"
@@ -74,13 +63,8 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug21_3 {
       and filesize < 10KB
       and $s1
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_proxyshell.yar
-
-rule Neo23x0_exp_WEBSHELL_ASPX_ProxyShell_Sep21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Sep21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_proxyshell.yar
    meta:
       description = "Detects webshells dropped by ProxyShell exploitation based on their file header (must be PST) and base64 decoded request"
       author = "Tobias Michalski"
@@ -157,19 +141,6 @@ rule Neo23x0_expl_proxyshell_WEBSHELL_ASPX_ProxyShell_Aug15 {
       $s1 = "AppcacheVer" ascii  /* HTTP Request Parameter */
       //$s2 = "clientCode" ascii /* HTTP Request Parameter */
       $s3 = "LaTkWfI64XeDAXZS6pU1KrsvLAcGH7AZOQXjrFkT816RnFYJQR" ascii
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_proxyshell.yar
-
-      $fp1 = "<input type=\"submit\" Value=\"Refresh This Page\""
-   condition:
-      filesize < 1KB
-      and (
-         1 of ($s*)
-         or 4 of ($g*)
-      )
-      and not 1 of ($fp*)
-}
-=======
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_proxyshell.yar
 
       $fp1 = "<input type=\"submit\" Value=\"Refresh This Page\""
    condition:

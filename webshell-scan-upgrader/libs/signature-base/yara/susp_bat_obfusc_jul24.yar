@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
-
-
-rule Neo23x0_sus_SUSP_BAT_OBFUSC_Jul24_1 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/susp_bat_obfusc_jul24.yar
-
-rule SUSP_BAT_OBFUSC_Jul24_1 {
-========
 //===SUCCESS===
 rule Neo23x0_susp_bat_obfusc_jul24_SUSP_BAT_OBFUSC_Jul24_1 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
    meta:
       description = "Detects indicators of obfuscation in Windows Batch files"
       author = "Florian Roth"
@@ -25,18 +14,8 @@ rule Neo23x0_susp_bat_obfusc_jul24_SUSP_BAT_OBFUSC_Jul24_1 {
       and uint32(0) == 0x20746573 // "set " at the beginning of the file
       and $s1 in (0..32) // "&&set " in the first 32 bytes
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
-
-rule Neo23x0_sus_SUSP_BAT_OBFUSC_Jul24_2 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/susp_bat_obfusc_jul24.yar
-
-rule SUSP_BAT_OBFUSC_Jul24_2 {
-========
 //===SUCCESS===
 rule Neo23x0_susp_bat_obfusc_jul24_SUSP_BAT_OBFUSC_Jul24_2 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
    meta:
       description = "Detects indicators of obfuscation in Windows Batch files"
       author = "Florian Roth"
@@ -54,18 +33,8 @@ rule Neo23x0_susp_bat_obfusc_jul24_SUSP_BAT_OBFUSC_Jul24_2 {
       and uint16(filesize-2) == 0x0a0d
       and uint8(filesize-3) == 0x25
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
-
-rule Neo23x0_sus_SUSP_BAT_OBFUSC_Jul24_3 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/susp_bat_obfusc_jul24.yar
-
-rule SUSP_BAT_OBFUSC_Jul24_3 {
-========
 //===SUCCESS===
 rule Neo23x0_susp_bat_obfusc_jul24_SUSP_BAT_OBFUSC_Jul24_3 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_bat_obfusc_jul24.yar
    meta:
       description = "Detects indicators of obfuscation in Windows Batch files"
       author = "Florian Roth"

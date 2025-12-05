@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_bazarbackdoor.yar
-rule crime_win64_backdoor_bazarbackdoor1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_bazarbackdoor_crime_win64_backdoor_bazarbackdoor1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_bazarbackdoor.yar
     meta:
         description = "Detects BazarBackdoor injected 64-bit malware"
         author = "@VK_Intel"

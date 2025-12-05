@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_octowave_installer_mar25.yar
-
-
-rule Neo23x0_mal_Octowave_Installer_03_2025
-=======
 //===SUCCESS===
 rule Neo23x0_mal_octowave_installer_mar25_Octowave_Installer_03_2025
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_octowave_installer_mar25.yar
 {
     meta:
         description = "Detects resources embedded within Octowave Loader MSI installers"

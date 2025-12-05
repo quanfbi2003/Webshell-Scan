@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aa19_024a.yar
-
-rule APT_MAL_DNS_Hijacking_Campaign_AA19_024A {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aa19_024a_APT_MAL_DNS_Hijacking_Campaign_AA19_024A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aa19_024a.yar
    meta:
       description = "Detects malware used in DNS Hijackign campaign"
       author = "Florian Roth (Nextron Systems)"

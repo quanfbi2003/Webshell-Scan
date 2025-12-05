@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_net_msil.yar
-
-rule SUSP_NET_Msil_Suspicious_Use_StrReverse {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_net_msil_SUSP_NET_Msil_Suspicious_Use_StrReverse {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_net_msil.yar
    meta:
       /* 
          This combination of imports and usage of StrReverse appears often

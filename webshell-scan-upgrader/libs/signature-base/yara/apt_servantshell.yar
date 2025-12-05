@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_servantshell.yar
-rule Servantshell {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_servantshell_Servantshell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_servantshell.yar
    meta:
       author = "Arbor Networks ASERT Nov 2015"
       description = "Detects Servantshell malware"

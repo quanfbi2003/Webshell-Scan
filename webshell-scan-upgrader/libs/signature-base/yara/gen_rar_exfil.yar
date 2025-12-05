@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_rar_exfil.yar
-
-rule SUSP_RAR_NtdsDIT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_rar_exfil_SUSP_RAR_NtdsDIT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_rar_exfil.yar
    meta:
       description = "Detects suspicious RAR file that contains ntds.dit or SAM export"
       author = "Florian Roth (Nextron Systems)"

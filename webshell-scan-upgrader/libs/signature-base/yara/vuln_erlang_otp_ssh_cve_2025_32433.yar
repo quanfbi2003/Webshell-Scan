@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_erlang_otp_ssh_cve_2025_32433.yar
-
-
-rule Neo23x0_vul_VULN_Erlang_OTP_SSH_CVE_2025_32433_Apr25 {
-=======
 //===SUCCESS===
 rule Neo23x0_vuln_erlang_otp_ssh_cve_2025_32433_VULN_Erlang_OTP_SSH_CVE_2025_32433_Apr25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_erlang_otp_ssh_cve_2025_32433.yar
    meta:
       description = "Detects binaries vulnerable to CVE-2025-32433 in Erlang/OTP SSH"
       author = "Pierre-Henri Pezier, Florian Roth"

@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_floxif_flystudio.yar
-
-rule MAL_Floxif_Generic {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_floxif_flystudio_MAL_Floxif_Generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_floxif_flystudio.yar
    meta:
       description = "Detects Floxif Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -21,14 +16,8 @@ rule Neo23x0_crime_floxif_flystudio_MAL_Floxif_Generic {
          pe.exports("FloodFix") or pe.exports("FloodFix2")
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_floxif_flystudio.yar
-
-
-rule MAL_CN_FlyStudio_May18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_floxif_flystudio_MAL_CN_FlyStudio_May18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_floxif_flystudio.yar
    meta:
       description = "Detects malware / hacktool detected in May 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

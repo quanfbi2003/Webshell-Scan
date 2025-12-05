@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/ByteCode.MSIL.Backdoor.Menorah.yara
-
-
-rule reversinglabs_Byt_ByteCode_MSIL_Backdoor_Menorah : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/ByteCode.MSIL.Backdoor.Menorah.yara
-rule ByteCode_MSIL_Backdoor_Menorah : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Backdoor_Menorah_ByteCode_MSIL_Backdoor_Menorah : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.Menorah.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.Menorah.yara
 {
     meta:
 
@@ -177,8 +167,4 @@ rule reversinglabs_ByteCode_MSIL_Backdoor_Menorah_ByteCode_MSIL_Backdoor_Menorah
         (
             all of ($upload_file_to_c2_p*)
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/ByteCode.MSIL.Backdoor.Menorah.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.Menorah.yara

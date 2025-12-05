@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_aug20.yar
-
-rule APT_NK_Lazarus_RC4_Loop {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_aug20_APT_NK_Lazarus_RC4_Loop {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_aug20.yar
    meta: 
       author = "f-secure "
       description = "Detects RC4 loop in Lazarus Group implant" 
@@ -18,13 +13,8 @@ rule Neo23x0_apt_lazarus_aug20_APT_NK_Lazarus_RC4_Loop {
    condition:
       int16(0) == 0x5a4d and filesize < 3000KB and $str_rc4_loop
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_aug20.yar
-
-rule APT_NK_Lazarus_Network_Backdoor_Unpacked {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_aug20_APT_NK_Lazarus_Network_Backdoor_Unpacked {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_aug20.yar
    meta:
       author = "f-secure"
       description = "Detects unpacked variant of Lazarus Group network backdoor" 
@@ -49,4 +39,3 @@ rule Neo23x0_apt_lazarus_aug20_APT_NK_Lazarus_Network_Backdoor_Unpacked {
       and 1 of ($str_mask*)
       and 1 of ($str_other*)
 }
-

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_python_reverse_shell.yara
-rule gen_python_reverse_shell
-=======
 //===SUCCESS===
 rule Neo23x0_gen_python_reverse_shell_gen_python_reverse_shell
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_python_reverse_shell.yara
 {
    meta:
       description = "Python Base64 encoded reverse shell"

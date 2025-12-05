@@ -1,10 +1,3 @@
-/*
-	Yara Rule Set
-	Author: Florian Roth
-	Date: 2016-08-15
-	Identifier: EQGRP
-*/
-
 import "pe"
 /*
 	Yara Rule Set
@@ -13,18 +6,12 @@ import "pe"
 	Identifier: EQGRP
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule EQGRP_noclient_3_0_5 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_noclient_3_0_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file noclient-3.0.5.3"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +29,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_noclient_3_0_5 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 700KB and 1 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_installdate {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_installdate {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file installdate.pl"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +50,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_installdate {
 	condition:
 		filesize < 2KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_teflondoor {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_teflondoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file teflondoor.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -96,13 +73,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_teflondoor {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 30KB and 1 of ($x*) and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_durablenapkin_solaris_2_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_durablenapkin_solaris_2_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file durablenapkin.solaris.2.0.1.1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -120,13 +92,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_durablenapkin_solaris_2_0_1 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 40KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_teflonhandle {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_teflonhandle {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file teflonhandle.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -144,13 +111,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_teflonhandle {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 20KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_false {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_false {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file false.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -172,13 +134,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_false {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 50KB and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_dn_1_0_2_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_dn_1_0_2_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file dn.1.0.2.1.linux"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -195,13 +152,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_dn_1_0_2_1 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 30KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_morel {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_morel {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file morel.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -218,13 +170,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_morel {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 60KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_bc_parser {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_bc_parser {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file bc-parser"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -240,13 +187,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_bc_parser {
 	condition:
 		uint16(0) == 0x457f and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_1212 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_1212 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - file 1212.pl"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -265,13 +207,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_1212 {
 	condition:
 		filesize < 6KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_1212_dehex {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_1212_dehex {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Detects tool from EQGRP toolset - from files 1212.pl, dehex.pl"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -298,13 +235,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_1212_dehex {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule install_get_persistent_filenames {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_install_get_persistent_filenames {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file install_get_persistent_filenames"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -318,13 +250,8 @@ rule Neo23x0_apt_eqgrp_install_get_persistent_filenames {
 	condition:
 		( uint16(0) == 0x457f and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_create_dns_injection {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_create_dns_injection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file create_dns_injection.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -339,13 +266,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_create_dns_injection {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_screamingplow {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_screamingplow {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file screamingplow.sh"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -360,13 +282,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_screamingplow {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_MixText {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_MixText {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file MixText.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -380,13 +297,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_MixText {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_tunnel_state_reader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_tunnel_state_reader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file tunnel_state_reader"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -401,13 +313,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_tunnel_state_reader {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_payload {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_payload {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file payload.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -422,13 +329,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_payload {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_eligiblecandidate {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_eligiblecandidate {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file eligiblecandidate.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -446,13 +348,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_eligiblecandidate {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BUSURPER_2211_724 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BUSURPER_2211_724 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BUSURPER-2211-724.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -470,13 +367,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BUSURPER_2211_724 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_networkProfiler_orderScans {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_networkProfiler_orderScans {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file networkProfiler_orderScans.sh"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -491,13 +383,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_networkProfiler_orderScans {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_epicbanana_2_1_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_epicbanana_2_1_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file epicbanana_2.1.0.1.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -512,13 +399,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_epicbanana_2_1_0_1 {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_sniffer_xml2pcap {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_sniffer_xml2pcap {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file sniffer_xml2pcap"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -533,13 +415,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_sniffer_xml2pcap {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BananaAid {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BananaAid {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BananaAid"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -556,13 +433,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BananaAid {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_bo {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_bo {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file bo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -580,13 +452,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_bo {
 	condition:
 		( uint16(0) == 0x457f and filesize < 20KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_SecondDate_2211 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_SecondDate_2211 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file SecondDate-2211.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -603,13 +470,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_SecondDate_2211 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_config_jp1_UA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_config_jp1_UA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file config_jp1_UA.pl"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -626,13 +488,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_config_jp1_UA {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_userscript {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_userscript {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file userscript.FW"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -646,13 +503,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_userscript {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BBALL_M50FW08_2201 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BBALL_M50FW08_2201 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BBALL_M50FW08-2201.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -671,13 +523,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BBALL_M50FW08_2201 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 40KB and 5 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BUSURPER_3001_724 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BUSURPER_3001_724 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BUSURPER-3001-724.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -693,13 +540,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BUSURPER_3001_724 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 200KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_workit {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_workit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file workit.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -724,13 +566,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_workit {
 	condition:
 		6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_tinyhttp_setup {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_tinyhttp_setup {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file tinyhttp_setup.sh"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -747,13 +584,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_tinyhttp_setup {
 	condition:
 		( uint16(0) == 0x2123 and filesize < 2KB and 1 of ($x*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_shellcode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file shellcode.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -773,13 +605,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_shellcode {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_EPBA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_EPBA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file EPBA.script"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -799,13 +626,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_EPBA {
 	condition:
 		( uint16(0) == 0x2023 and filesize < 7KB and 1 of ($x*) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BPIE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BPIE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BPIE-2201.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -826,13 +648,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BPIE {
 	condition:
 		( uint16(0) == 0x457f and filesize < 70KB and 6 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_jetplow_SH {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_jetplow_SH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file jetplow.sh"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -849,13 +666,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_jetplow_SH {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BBANJO {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BBANJO {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BBANJO-3011.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -875,13 +687,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BBANJO {
 	condition:
 		( uint16(0) == 0x457f and filesize < 50KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BPATROL_2201 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BPATROL_2201 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BPATROL-2201.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -899,13 +706,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BPATROL_2201 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_extrabacon {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_extrabacon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file extrabacon_1.1.0.1.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -923,13 +725,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_extrabacon {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_sploit_py {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_sploit_py {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file sploit.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -945,13 +742,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_sploit_py {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_uninstallPBD {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_uninstallPBD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file uninstallPBD.bat"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -967,13 +759,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_uninstallPBD {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BICECREAM {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BICECREAM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BICECREAM-2140"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -995,13 +782,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BICECREAM {
 	condition:
 		( uint16(0) == 0x457f and filesize < 5000KB and 2 of them ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_create_http_injection {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_create_http_injection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file create_http_injection.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1020,13 +802,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_create_http_injection {
 	condition:
 		( uint16(0) == 0x2123 and filesize < 3KB and ( $x1 or 2 of them ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BFLEA_2201 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BFLEA_2201 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BFLEA-2201.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1046,13 +823,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BFLEA_2201 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 30KB and 5 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BpfCreator_RHEL4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BpfCreator_RHEL4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BpfCreator-RHEL4"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1070,13 +842,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BpfCreator_RHEL4 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_StoreFc {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_StoreFc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file StoreFc.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1092,13 +859,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_StoreFc {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_hexdump {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_hexdump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file hexdump.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1115,13 +877,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_hexdump {
 	condition:
 		( uint16(0) == 0x2123 and filesize < 1KB and 2 of ($s*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BBALL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BBALL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - file BBALL_E28F6-2201.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1143,13 +900,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BBALL {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BARPUNCH_BPICKER {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BARPUNCH_BPICKER {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files BARPUNCH-3110, BPICKER-3100"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1169,13 +921,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BARPUNCH_BPICKER {
 	condition:
 		( uint16(0) == 0x457f and filesize < 6000KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Implants_Gen6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1204,13 +951,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen6 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 6000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Implants_Gen5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1236,13 +978,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen5 {
 	condition:
 		( uint16(0) == 0x457f and 1 of ($x*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_pandarock {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_pandarock {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files pandarock_v1.11.1.1.bin, pit"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1270,13 +1007,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_pandarock {
 	condition:
 		( uint16(0) == 0x457f and filesize < 3000KB and 1 of ($x*) ) or ( 4 of them ) or 1 of ($o*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BananaUsurper_writeJetPlow {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BananaUsurper_writeJetPlow {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files BananaUsurper-2120, writeJetPlow-2130"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1296,13 +1028,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BananaUsurper_writeJetPlow {
 	condition:
 		( uint16(0) == 0x457f and filesize < 2000KB and 1 of ($x*) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Implants_Gen4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files BLIAR-2110, BLIQUER-2230, BLIQUER-3030, BLIQUER-3120"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1324,13 +1051,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen4 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 3000KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Implants_Gen3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1354,13 +1076,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen3 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 6000KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_BLIAR_BLIQUER {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_BLIAR_BLIQUER {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files BLIAR-2110, BLIQUER-2230"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1394,13 +1111,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_BLIAR_BLIQUER {
 	condition:
 		( uint16(0) == 0x457f and filesize < 3000KB and ( 1 of ($x*) or 1 of ($p*) ) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_sploit {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_sploit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files sploit.py, sploit.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1423,13 +1135,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_sploit {
 	condition:
 		( uint16(0) == 0x2123 and filesize < 90KB and 1 of ($s*) ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Implants_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1461,13 +1168,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen2 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 3000KB and 1 of ($x*) ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Implants_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1497,13 +1199,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Implants_Gen1 {
 	condition:
 		( uint16(0) == 0x457f and filesize < 6000KB and ( 2 of ($s*) ) ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_eligiblebombshell_generic {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_eligiblebombshell_generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files eligiblebombshell_1.2.0.1.py, eligiblebombshell_1.2.0.1.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1521,13 +1218,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_eligiblebombshell_generic {
 	condition:
 		( filesize < 70KB and 2 of ($s*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_ssh_telnet_29 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_ssh_telnet_29 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files ssh.py, telnet.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1551,13 +1243,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_ssh_telnet_29 {
 }
 
 /* Extras */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_tinyexec {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_tinyexec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - from files tinyexec"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1571,13 +1258,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_tinyexec {
 	condition:
 		uint32(0) == 0x464c457f and filesize < 270 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_callbacks {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_callbacks {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - Callback addresses"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1590,13 +1272,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_callbacks {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Extrabacon_Output {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Extrabacon_Output {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - Extrabacon exploit output"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1613,13 +1290,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Extrabacon_Output {
 	condition:
 		2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_Unique_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_Unique_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - Unique strings"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1633,13 +1305,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_Unique_Strings {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EQGRP_RC5_RC6_Opcode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EQGRP_RC5_RC6_Opcode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "EQGRP Toolset Firewall - RC5 / RC6 opcode"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1668,13 +1335,8 @@ rule Neo23x0_apt_eqgrp_EQGRP_RC5_RC6_Opcode {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_modifyAudit_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_modifyAudit_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file modifyAudit_Implant.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1691,13 +1353,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_modifyAudit_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 90KB and ( all of ($s*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_modifyAudit_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_modifyAudit_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file modifyAudit_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1715,13 +1372,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_modifyAudit_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_ProcessHide_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_ProcessHide_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file ProcessHide_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1741,13 +1393,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_ProcessHide_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_pwdump_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_pwdump_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file pwdump_Implant.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1763,13 +1410,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_pwdump_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_Gen_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level3_http_dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1786,13 +1428,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_5 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_PC_Level3_http_flav_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level3_http_flav_dll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level3_http_flav_dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1810,13 +1447,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level3_http_flav_dll {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_LSADUMP_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_LSADUMP_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file LSADUMP_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1830,13 +1462,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_LSADUMP_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_mstcp32 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_mstcp32 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file mstcp32.sys"
       author = "Florian Roth (Nextron Systems)"
@@ -1858,13 +1485,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_mstcp32 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 7 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_nethide_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_nethide_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file nethide_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1882,13 +1504,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_nethide_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_PC_Level4_flav_dll_x64 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level4_flav_dll_x64 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level4_flav_dll_x64"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1904,13 +1521,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level4_flav_dll_x64 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_PC_Level4_flav_exe {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level4_flav_exe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level4_flav_exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1929,13 +1541,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level4_flav_exe {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_processinfo_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_processinfo_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file processinfo_Implant.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1951,13 +1558,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_processinfo_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_Gen_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PortMap_Implant.dll"
       author = "Auto Generated"
@@ -1972,14 +1574,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 250KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-
-rule EquationGroup_EquationDrug_ntevt {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_ntevt {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file ntevt.sys"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1994,13 +1590,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_ntevt {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_nethide_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_nethide_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file nethide_Implant.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2016,13 +1607,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_nethide_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 90KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_Gen_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level4_flav_dll"
       author = "Auto Generated"
@@ -2037,13 +1623,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_tdi6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_tdi6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file tdi6.sys"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2060,13 +1641,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_tdi6 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_modifyAuthentication_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_modifyAuthentication_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file modifyAuthentication_Implant.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2084,13 +1660,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_modifyAuthentication_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_ntfltmgr {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_ntfltmgr {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file ntfltmgr.sys"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2107,13 +1678,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_ntfltmgr {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_DXGHLP16 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_DXGHLP16 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file DXGHLP16.SYS"
       author = "Florian Roth (Nextron Systems)"
@@ -2135,13 +1701,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_DXGHLP16 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_msgkd {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_msgkd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file msgkd.ex_"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2156,13 +1717,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_msgkd {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_RunAsChild_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_RunAsChild_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file RunAsChild_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2178,13 +1734,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_RunAsChild_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_Gen_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level3_dll_x64"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2200,13 +1751,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_6 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_PC_Level3_http_flav_dll_x64 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level3_http_flav_dll_x64 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PC_Level3_http_flav_dll_x64"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2224,13 +1770,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_PC_Level3_http_flav_dll_x64 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and ( all of ($s*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_Gen_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file mssld.dll"
       author = "Auto Generated"
@@ -2245,13 +1786,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_GetAdmin_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_GetAdmin_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file GetAdmin_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2265,14 +1801,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_GetAdmin_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-
-rule EquationGroup_ModifyGroup_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_ModifyGroup_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file ModifyGroup_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2287,13 +1817,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_ModifyGroup_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_pwdump_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_pwdump_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file pwdump_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2307,13 +1832,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_pwdump_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EventLogEdit_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EventLogEdit_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file EventLogEdit_Implant.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2329,13 +1849,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EventLogEdit_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_PortMap_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_PortMap_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PortMap_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2351,13 +1866,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_PortMap_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_ProcessOptions_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_ProcessOptions_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file ProcessOptions_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2371,13 +1881,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_ProcessOptions_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_PassFreely_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_PassFreely_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware - file PassFreely_Lp.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2395,13 +1900,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_PassFreely_Lp {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationGroup_EquationDrug_Gen_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
    meta:
       description = "EquationGroup Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2433,13 +1933,8 @@ rule Neo23x0_apt_eqgrp_EquationGroup_EquationDrug_Gen_1 {
 }
 
 /* The Cherry on the Cake */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp.yar
-
-rule EquationDrug_MS_Identifier {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_EquationDrug_MS_Identifier {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp.yar
 	meta:
 		description = "Microsoft Identifier used in EquationDrug Platform"
 		author = "Florian Roth (Nextron Systems) @4nc4p"

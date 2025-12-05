@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_wsus_cve_2025_59287.yar
-
-
-rule Neo23x0_exp_EXPL_WSUS_Exploitation_Indicators_Oct25 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_wsus_cve_2025_59287_EXPL_WSUS_Exploitation_Indicators_Oct25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_wsus_cve_2025_59287.yar
    meta:
       description = "Detects indicators related to the exploitation of the Windows Server Update Services (WSUS) Remote Code Execution Vulnerability (CVE-2025-59287)"
       author = "Florian Roth"

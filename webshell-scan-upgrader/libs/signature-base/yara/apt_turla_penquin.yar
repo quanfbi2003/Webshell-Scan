@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_penquin.yar
-
-rule APT_MAL_LNX_Turla_Apr202004_1 { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_penquin_APT_MAL_LNX_Turla_Apr202004_1 { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_penquin.yar
    meta:
       description = "Detects Turla Linux malware x64 x32"
       date = "2020-04-24"
@@ -36,13 +31,8 @@ rule Neo23x0_apt_turla_penquin_APT_MAL_LNX_Turla_Apr202004_1 {
       uint16(0) == 0x457f and filesize < 5000KB and
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_penquin.yar
-
-rule APT_MAL_LNX_Turla_Apr202004_1_opcode { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_penquin_APT_MAL_LNX_Turla_Apr202004_1_opcode { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_penquin.yar
    meta:
       description = "Detects Turla Linux malware x64 x32"
       date = "2020-04-24"

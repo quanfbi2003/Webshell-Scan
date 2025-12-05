@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-06-26
-   Identifier: RANCOR
-   Reference: https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rancor.yar
-rule APT_RANCOR_JS_Malware {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_rancor_APT_RANCOR_JS_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rancor.yar
    meta:
       description = "Rancor Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +28,8 @@ rule Neo23x0_apt_rancor_APT_RANCOR_JS_Malware {
    condition:
       uint16(0) == 0x533c and filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rancor.yar
-
-rule APT_RANCOR_PLAINTEE_Variant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rancor_APT_RANCOR_PLAINTEE_Variant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rancor.yar
    meta:
       description = "Detects PLAINTEE malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +49,8 @@ rule Neo23x0_apt_rancor_APT_RANCOR_PLAINTEE_Variant {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rancor.yar
-
-rule APT_RANCOR_PLAINTEE_Malware_Exports {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rancor_APT_RANCOR_PLAINTEE_Malware_Exports {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rancor.yar
    meta:
       description = "Detects PLAINTEE malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +62,8 @@ rule Neo23x0_apt_rancor_APT_RANCOR_PLAINTEE_Malware_Exports {
    condition:
       uint16(0) == 0x5a4d and pe.exports("Add") and pe.exports("Sub") and pe.exports("DllEntryPoint") and pe.number_of_exports == 3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rancor.yar
-
-rule APT_RANCOR_DDKONG_Malware_Exports {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rancor_APT_RANCOR_DDKONG_Malware_Exports {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rancor.yar
    meta:
       description = "Detects DDKONG malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

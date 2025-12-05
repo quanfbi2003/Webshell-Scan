@@ -1,12 +1,7 @@
 import "pe"
 import "hash"
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_crime_win_pe_godrat_aug25.yar
-
-rule Neo23x0_mal_MAL_CRIME_RAT_WIN_PE_GodRat_Aug25: GodRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_crime_win_pe_godrat_aug25_MAL_CRIME_RAT_WIN_PE_GodRat_Aug25: GodRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_crime_win_pe_godrat_aug25.yar
    meta:
       description = "Detects GodRAT malware targeting Windows systems"
       author = "Arda Buyukkaya"

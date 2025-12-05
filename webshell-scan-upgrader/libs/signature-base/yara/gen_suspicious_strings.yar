@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule Ping_Command_in_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_Ping_Command_in_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects an suspicious ping command execution in an executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -18,13 +13,8 @@ rule Neo23x0_gen_suspicious_strings_Ping_Command_in_EXE {
    condition:
       uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule GoogleBot_UserAgent {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_GoogleBot_UserAgent {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects the GoogleBot UserAgent String in an Executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -40,13 +30,8 @@ rule Neo23x0_gen_suspicious_strings_GoogleBot_UserAgent {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and $x1 and not 1 of ($fp*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule Gen_Net_LocalGroup_Administrators_Add_Command {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_Gen_Net_LocalGroup_Administrators_Add_Command {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects an executable that contains a command to add a user account to the local administrators group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -59,13 +44,8 @@ rule Neo23x0_gen_suspicious_strings_Gen_Net_LocalGroup_Administrators_Add_Comman
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule Suspicious_Script_Running_from_HTTP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_Suspicious_Script_Running_from_HTTP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects a suspicious "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -82,13 +62,8 @@ rule Neo23x0_gen_suspicious_strings_Suspicious_Script_Running_from_HTTP {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule ReconCommands_in_File : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_ReconCommands_in_File : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects various recon commands in a single file"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -109,13 +84,8 @@ rule Neo23x0_gen_suspicious_strings_ReconCommands_in_File : FILE {
    condition:
       filesize < 5KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule VBS_dropper_script_Dec17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_VBS_dropper_script_Dec17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects a supicious VBS script that drops an executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -135,13 +105,8 @@ rule Neo23x0_gen_suspicious_strings_VBS_dropper_script_Dec17_1 {
    condition:
       filesize < 600KB and $a1 and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_PDB_Strings_Keylogger_Backdoor : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_PDB_Strings_Keylogger_Backdoor : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects PDB strings used in backdoors or keyloggers"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -163,13 +128,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_PDB_Strings_Keylogger_Backdoor : HIGHVO
       uint16(0) == 0x5a4d and filesize < 1000KB
       and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Microsoft_Copyright_String_Anomaly_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Microsoft_Copyright_String_Anomaly_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects Floxif Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -184,13 +144,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Microsoft_Copyright_String_Anomaly_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_LNK_File_AppData_Roaming {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_LNK_File_AppData_Roaming {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects a suspicious link file that references to AppData Roaming"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -211,13 +166,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_LNK_File_AppData_Roaming {
          all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_LNK_File_PathTraversal {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_LNK_File_PathTraversal {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects a suspicious link file that references a file multiple folders lower than the link itself"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -234,13 +184,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_LNK_File_PathTraversal {
          all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Script_Obfuscation_Char_Concat {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Script_Obfuscation_Char_Concat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects strings found in sample from CN group repo leak in October 2018"
       author = "Florian Roth (Nextron Systems)"
@@ -253,13 +198,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Script_Obfuscation_Char_Concat {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_PowerShell_IEX_Download_Combo {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_PowerShell_IEX_Download_Combo {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects strings found in sample from CN group repo leak in October 2018"
       author = "Florian Roth (Nextron Systems)"
@@ -276,13 +216,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_PowerShell_IEX_Download_Combo {
    condition:
       $x1 and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Win32dll_String {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Win32dll_String {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects suspicious string in executables"
       author = "Florian Roth (Nextron Systems)"
@@ -295,13 +230,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Win32dll_String {
    condition:
       filesize < 60KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Modified_SystemExeFileName_in_File {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Modified_SystemExeFileName_in_File {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detecst a variant of a system file name often used by attackers to cloak their activity"
       author = "Florian Roth (Nextron Systems)"
@@ -316,13 +246,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Modified_SystemExeFileName_in_File {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_JAVA_Class_with_VBS_Content {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_JAVA_Class_with_VBS_Content {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects a JAVA class file with strings known from VBS files"
       author = "Florian Roth"
@@ -331,30 +256,13 @@ rule Neo23x0_gen_suspicious_strings_SUSP_JAVA_Class_with_VBS_Content {
       modified = "2025-03-20"
       score = 70
       hash1 = "e0112efb63f2b2ac3706109a233963c19750b4df0058cc5b9d3fa1f1280071eb"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-=======
       id = "472cbeaf-28e7-51a2-b2e6-96c1d9d05b26"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    strings:
       $a1 = "java/lang/String" ascii
 
       $s1 = ".vbs" ascii
       $s2 = "createNewFile" fullword ascii
       $s3 = "wscript" fullword ascii nocase
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-      $fp1 = "com/smm/"
-      $fp2 = "install"
-   condition:
-      ( uint16(0) == 0xfeca or uint16(0) == 0xfacf or uint32(0) == 0xbebafeca ) 
-      and filesize < 100KB 
-      and $a1 
-      and all of ($s*)
-      and not 1 of ($fp*)
-}
-
-rule SUSP_RAR_with_PDF_Script_Obfuscation {
-=======
 
       $fp1 = "com/smm/"
       $fp2 = "install"
@@ -367,7 +275,6 @@ rule SUSP_RAR_with_PDF_Script_Obfuscation {
 }
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_RAR_with_PDF_Script_Obfuscation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects RAR file with suspicious .pdf extension prefix to trick users"
       author = "Florian Roth (Nextron Systems)"
@@ -384,13 +291,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_RAR_with_PDF_Script_Obfuscation {
    condition:
       uint32(0) == 0x21726152 and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Netsh_PortProxy_Command {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Netsh_PortProxy_Command {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects a suspicious command line with netsh and the portproxy command"
       author = "Florian Roth (Nextron Systems)"
@@ -404,13 +306,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Netsh_PortProxy_Command {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_DropperBackdoor_Keywords {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_DropperBackdoor_Keywords {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects suspicious keywords that indicate a backdoor"
       author = "Florian Roth (Nextron Systems)"
@@ -423,13 +320,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_DropperBackdoor_Keywords {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_SFX_cmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_SFX_cmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects suspicious SFX as used by Gamaredon group"
       author = "Florian Roth (Nextron Systems)"
@@ -442,13 +334,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_SFX_cmd {
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_XMRIG_Reference {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_XMRIG_Reference {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects an executable with a suspicious XMRIG crypto miner reference"
       author = "Florian Roth (Nextron Systems)"
@@ -461,13 +348,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_XMRIG_Reference {
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Just_EICAR {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Just_EICAR {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Just an EICAR test file - this is boring but users asked for it"
       author = "Florian Roth (Nextron Systems)"
@@ -481,13 +363,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Just_EICAR {
    condition:
       uint16(0) == 0x3558 and filesize < 70 and $s1 at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_PDB_Path_Keywords {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_PDB_Path_Keywords {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects suspicious PDB paths"
       author = "Florian Roth (Nextron Systems)"
@@ -514,13 +391,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_PDB_Path_Keywords {
    condition:
       uint16(0) == 0x5a4d and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Disable_ETW_Jun20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Disable_ETW_Jun20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects method to disable ETW in ENV vars before executing a program"
       author = "Florian Roth (Nextron Systems)"
@@ -539,13 +411,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_Disable_ETW_Jun20_1 {
    condition:
       1 of ($x*) or 3 of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_PE_Discord_Attachment_Oct21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_PE_Discord_Attachment_Oct21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects suspicious executable with reference to a Discord attachment (often used for malware hosting on a legitimate FQDN)"
       author = "Florian Roth (Nextron Systems)"
@@ -560,13 +427,8 @@ rule Neo23x0_gen_suspicious_strings_SUSP_PE_Discord_Attachment_Oct21_1 {
       and filesize < 5000KB 
       and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_suspicious_strings.yar
-
-rule SUSP_Encoded_Discord_Attachment_Oct21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_suspicious_strings_SUSP_Encoded_Discord_Attachment_Oct21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_suspicious_strings.yar
    meta:
       description = "Detects suspicious encoded URL to a Discord attachment (often used for malware hosting on a legitimate FQDN)"
       author = "Florian Roth (Nextron Systems)"

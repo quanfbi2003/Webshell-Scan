@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_gopuram.yar
-rule MAL_Gopuram_Apr23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_gopuram_MAL_Gopuram_Apr23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_gopuram.yar
     meta:
         description = "Detects Lazarus Gopuram malware"
         reference = "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/"
@@ -19,4 +15,3 @@ rule Neo23x0_apt_lazarus_gopuram_MAL_Gopuram_Apr23 {
     condition:
         uint16(0) == 0x5A4D and $path and filesize < 10MB
 }
-

@@ -263,15 +263,6 @@ rule Neo23x0_gen_github_net_redteam_tools_names_HKTL_NET_NAME_AmsiBypass {
     strings:
         $s_name = "AmsiBypass" ascii wide
         $s_compile = "AssemblyTitle" ascii wide
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
-
-        $fp1 = "Adaptive Threat Protection" wide
-    condition:
-        (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of ($s*)
-        and not 1 of ($fp*)
-}
-=======
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_names.yar
 
         $fp1 = "Adaptive Threat Protection" wide
     condition:

@@ -16,31 +16,22 @@ RUN pip3 install --break-system-packages \
 ARG CACHEBUST=1 
 
 # 3. Copy toàn bộ source code vào container
-COPY . /app
+COPY upgrader.py /app/upgrader.py
+COPY libs/logger.py /app/libs/logger.py
 WORKDIR /app
 
 # 4. Tự động tìm và chuẩn hóa cấu trúc cần thiết
-RUN mkdir -p libs config logs quarantine && \
-    # Tìm upgrader.py
-    find /app -name "upgrader.py" -type f -exec cp {} /app/upgrader.py \; -quit && \
-    [ -f /app/upgrader.py ] || { echo "[ERROR] Không tìm thấy upgrader.py!"; exit 1; } && \
-    \
-    # Tìm và copy logger.py vào /app/libs/
-    find /app -name "logger.py" -path "*/libs/*" -type f -exec cp {} /app/libs/logger.py \; -quit 2>/dev/null || true && \
+RUN [ -f /app/upgrader.py ] || { echo "[ERROR] Không tìm thấy upgrader.py!"; exit 1; } && \
     [ -f /app/libs/logger.py ] || { echo "[ERROR] Không tìm thấy libs/logger.py!"; exit 1; } && \
-    \
-    # Tìm và copy toàn bộ signature-base
-    find /app -type d -name "signature-base" -exec cp -r {} /app/libs/ \; -quit 2>/dev/null || true && \
+    mkdir -p libs/signature-base && \
     [ -d /app/libs/signature-base ] || { echo "[ERROR] Không tìm thấy libs/signature-base/!"; exit 1; } && \
-    \
-    touch /app/libs/__init__.py && \
     echo "[OK] Source code đã sẵn sàng, bắt đầu build binary..."
 
 # 5. Build binary bằng PyInstaller
 RUN python3 -m PyInstaller --onefile --clean \
-    --add-data "libs/signature-base:libs/signature-base" \
-    --collect-all libs \
-    --hidden-import=libs.logger \
+    --paths /app \
+    --hidden-import libs.logger \
+    --runtime-tmpdir ./ \
     upgrader.py && \
     cp dist/upgrader ./upgrader && \
     chmod +x upgrader && \

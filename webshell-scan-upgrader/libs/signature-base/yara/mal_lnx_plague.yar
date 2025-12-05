@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_lnx_plague.yar
-
-
-rule Neo23x0_mal_MAL_LNX_PLAGUE_BACKDOOR_Jul25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_plague_MAL_LNX_PLAGUE_BACKDOOR_Jul25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lnx_plague.yar
    meta:
       description = "Detects Plague backdoor ELF binaries, related to PAM authentication alteration."
       reference = "Internal Research"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sharptongue.yar
-rule APT_SharpTongue_JS_SharpExt_Chrome_Extension : SharpTongue {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sharptongue_APT_SharpTongue_JS_SharpExt_Chrome_Extension : SharpTongue {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sharptongue.yar
     meta:
         author = "threatintel@volexity.com"
         date = "2021-09-14"

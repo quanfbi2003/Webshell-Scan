@@ -14,13 +14,9 @@ rule LSASS_memory_dump_file {
         uint32(0) == 0x504D444D and all of them
 } */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/generic_dumps.yar
-rule NTLM_Dump_Output {
-=======
 
 //===SUCCESS===
 rule Neo23x0_generic_dumps_NTLM_Dump_Output {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/generic_dumps.yar
    meta:
       description = "NTML Hash Dump output file - John/LC format"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +30,8 @@ rule Neo23x0_generic_dumps_NTLM_Dump_Output {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/generic_dumps.yar
-
-rule Gsecdump_password_dump_file {
-=======
 //===SUCCESS===
 rule Neo23x0_generic_dumps_Gsecdump_password_dump_file {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/generic_dumps.yar
    meta:
       description = "Detects a gsecdump output file"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +45,8 @@ rule Neo23x0_generic_dumps_Gsecdump_password_dump_file {
    condition:
       uint32be(0) == 0x41646d69 and filesize < 3000 and $x1 at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/generic_dumps.yar
-
-rule SUSP_ZIP_NtdsDIT : T1003_003 {
-=======
 //===SUCCESS===
 rule Neo23x0_generic_dumps_SUSP_ZIP_NtdsDIT : T1003_003 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/generic_dumps.yar
    meta:
       description = "Detects ntds.dit files in ZIP archives that could be a left over of administrative activity or traces of data exfiltration"
       author = "Florian Roth (Nextron Systems)"

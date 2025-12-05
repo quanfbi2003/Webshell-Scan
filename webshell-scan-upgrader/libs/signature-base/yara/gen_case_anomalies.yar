@@ -1,15 +1,4 @@
 /* This is an extract from THOR's anomaly detection rule set */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_case_anomalies.yar
-=======
-
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-11
-   Identifier: PowerShell Anomalies
-   Reference: https://twitter.com/danielhbohannon/status/905096106924761088
-*/
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_case_anomalies.yar
 
 /*
    Yara Rule Set
@@ -19,12 +8,9 @@
    Reference: https://twitter.com/danielhbohannon/status/905096106924761088
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_case_anomalies.yar
-rule PowerShell_Case_Anomaly {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_case_anomalies_PowerShell_Case_Anomaly {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_case_anomalies.yar
    meta:
       description = "Detects obfuscated PowerShell hacktools"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -74,13 +60,8 @@ rule Neo23x0_gen_case_anomalies_PowerShell_Case_Anomaly {
          ( #k1 > #kn1 + #kn2 + #kn3 + #kn4 + #kn5 )
       ) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_case_anomalies.yar
-
-rule WScriptShell_Case_Anomaly {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_case_anomalies_WScriptShell_Case_Anomaly {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_case_anomalies.yar
    meta:
       description = "Detects obfuscated wscript.shell commands"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -5,13 +5,9 @@
 	Identifier: GlassRAT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_glassRAT.yar
-rule glassRAT
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_glassRAT_glassRAT
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_glassRAT.yar
 {
 	meta:
 		author = "RSA RESEARCH"
@@ -47,13 +43,8 @@ rule Neo23x0_apt_glassRAT_glassRAT
 	condition:
 		all of ($bin*) and $hs and 3 of ($s*) //The conditions can be adjusted for hunting for different variants
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_glassRAT.yar
-
-rule GlassRAT_Generic {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_glassRAT_GlassRAT_Generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_glassRAT.yar
 	meta:
 		description = "Detects GlassRAT Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

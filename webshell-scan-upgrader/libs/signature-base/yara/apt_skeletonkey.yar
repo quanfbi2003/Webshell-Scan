@@ -1,12 +1,8 @@
 /* SKELETON KEY ---------------------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_skeletonkey.yar
-rule skeleton_key_patcher
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_skeletonkey_skeleton_key_patcher
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_skeletonkey.yar
 {
 	meta:
 		description = "Skeleton Key Patcher from Dell SecureWorks Report http://goo.gl/aAk3lN"
@@ -28,13 +24,8 @@ rule Neo23x0_apt_skeletonkey_skeleton_key_patcher
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_skeletonkey.yar
-
-rule skeleton_key_injected_code
-=======
 //===SUCCESS===
 rule Neo23x0_apt_skeletonkey_skeleton_key_injected_code
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_skeletonkey.yar
 {
 	meta:
 		description = "Skeleton Key injected Code http://goo.gl/aAk3lN"

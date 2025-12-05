@@ -5,13 +5,9 @@
 	Identifier: CN Keylogger APT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_keylogger_cn.yar
-rule Keylogger_CN_APT {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_keylogger_cn_Keylogger_CN_APT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_keylogger_cn.yar
 	meta:
 		description = "Keylogger - generic rule for a Chinese variant"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

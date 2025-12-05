@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_khepri.yar
-
-rule HKTL_Khepri_Beacon_Sep21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_khepri_HKTL_Khepri_Beacon_Sep21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_khepri.yar
    meta:
       description = "Detects Khepri C2 framework beacons"
       author = "Florian Roth (Nextron Systems)"

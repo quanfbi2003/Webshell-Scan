@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2546_dewmode.yar
-
-rule WEBSHELL_APT_PHP_DEWMODE_UNC2546_Feb21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2546_dewmode_WEBSHELL_APT_PHP_DEWMODE_UNC2546_Feb21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc2546_dewmode.yar
    meta:
       description = "Detects DEWMODE webshells"
       author = "Florian Roth (Nextron Systems)"

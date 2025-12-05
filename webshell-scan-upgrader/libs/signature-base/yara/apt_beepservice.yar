@@ -4,20 +4,12 @@
 	Date: 2016-05-12
 	Identifier:
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_beepservice.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_beepservice.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_beepservice.yar
-rule BeepService_Hacktool {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_beepservice_BeepService_Hacktool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_beepservice.yar
 	meta:
 		description = "Detects BeepService Hacktool used by Chinese APT groups"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

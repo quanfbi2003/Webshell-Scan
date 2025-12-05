@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_apr22.yar
-rule M_APT_Downloader_BEATDROP {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_apr22_M_APT_Downloader_BEATDROP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_apr22.yar
    meta:
       author = "Mandiant"
       description = "Rule looking for BEATDROP malware"
@@ -20,13 +16,8 @@ rule Neo23x0_apt_apt29_nobelium_apr22_M_APT_Downloader_BEATDROP {
    condition:
       uint16(0) == 0x5a4d and uint32(uint32(0x3C)) == 0x00004550 and filesize < 1MB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_apr22.yar
-
-rule M_APT_Downloader_BOOMMIC {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_apr22_M_APT_Downloader_BOOMMIC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_apr22.yar
    meta:
       author = "Mandiant"
       description = "Rule looking for BOOMMIC malware"

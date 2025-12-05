@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
-
-rule PUA_AnyDesk_Compromised_Certificate_Revoked_Jan24 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_anydesk_compromised_cert_feb23_PUA_AnyDesk_Compromised_Certificate_Revoked_Jan24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
    meta:
       description = "Detects binaries signed with a compromised signing certificate of AnyDesk (philandro Software GmbH, 0DBF152DEAF0B981A8A938D53F769DB8) after it was revoked. This is not a threat detection. It detects an outdated version of AnyDesk that was signed with a certificate that has been revoked."
       date = "2024-02-05"
@@ -20,13 +15,8 @@ rule Neo23x0_gen_anydesk_compromised_cert_feb23_PUA_AnyDesk_Compromised_Certific
          pe.signatures[i].serial == "0d:bf:15:2d:ea:f0:b9:81:a8:a9:38:d5:3f:76:9d:b8"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
-
-rule SUSP_AnyDesk_Compromised_Certificate_Jan24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_anydesk_compromised_cert_feb23_SUSP_AnyDesk_Compromised_Certificate_Jan24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
    meta:
       description = "Detects binaries signed with a compromised signing certificate of AnyDesk that aren't AnyDesk itself (philandro Software GmbH, 0DBF152DEAF0B981A8A938D53F769DB8; strict version)"
       date = "2024-02-02"
@@ -44,13 +34,8 @@ rule Neo23x0_gen_anydesk_compromised_cert_feb23_SUSP_AnyDesk_Compromised_Certifi
          pe.signatures[i].serial == "0d:bf:15:2d:ea:f0:b9:81:a8:a9:38:d5:3f:76:9d:b8"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
-
-rule SUSP_AnyDesk_Compromised_Certificate_Jan24_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_anydesk_compromised_cert_feb23_SUSP_AnyDesk_Compromised_Certificate_Jan24_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
    meta:
       description = "Detects binaries signed with a compromised signing certificate of AnyDesk that aren't AnyDesk itself (philandro Software GmbH, 0DBF152DEAF0B981A8A938D53F769DB8; permissive version)"
       date = "2024-02-02"
@@ -69,13 +54,8 @@ rule Neo23x0_gen_anydesk_compromised_cert_feb23_SUSP_AnyDesk_Compromised_Certifi
       and all of ($s*)
       and not 1 of ($f*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
-
-rule SUSP_AnyDesk_Compromised_Certificate_Jan24_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_anydesk_compromised_cert_feb23_SUSP_AnyDesk_Compromised_Certificate_Jan24_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_anydesk_compromised_cert_feb23.yar
    meta:
       description = "Detects binaries signed with a compromised signing certificate of AnyDesk after it was revoked (philandro Software GmbH, 0DBF152DEAF0B981A8A938D53F769DB8; version that uses dates for validation)"
       date = "2024-02-02"

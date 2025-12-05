@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_indicators.yar
-
-rule SUSP_ENV_Folder_Root_File_Jan23_1 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_indicators_SUSP_ENV_Folder_Root_File_Jan23_1 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_indicators.yar
    meta:
       description = "Detects suspicious file path pointing to the root of a folder easily accessible via environment variables"
       author = "Florian Roth (Nextron Systems)"

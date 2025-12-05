@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_ta397_dec24.yar
-
-
-rule Neo23x0_apt_APT_IN_TA397_wmRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta397_dec24_APT_IN_TA397_wmRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta397_dec24.yar
     meta:
         author = "Proofpoint"
         description = "track wmRAT based on socket usage, odd error handling, and reused strings"
@@ -84,13 +78,8 @@ rule Neo23x0_apt_ta397_dec24_APT_IN_TA397_wmRAT {
           (2 of ($code*) or 10 of ($str*))
 
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_ta397_dec24.yar
-
-rule Neo23x0_apt_SUSP_RAR_NTFS_ADS {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta397_dec24_SUSP_RAR_NTFS_ADS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta397_dec24.yar
     meta:
         description = "Detects RAR archive with NTFS alternate data stream"
         author = "Proofpoint"

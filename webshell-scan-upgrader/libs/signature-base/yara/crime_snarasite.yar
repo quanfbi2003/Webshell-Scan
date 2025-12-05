@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_snarasite.yar
-
-rule BKDR_Snarasite_Oct17 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_snarasite_BKDR_Snarasite_Oct17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_snarasite.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_hacktool.yar
-
-rule HKTL_Keyword_InjectDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_hacktool_HKTL_Keyword_InjectDLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_hacktool.yar
    meta:
       description = "Detects suspicious InjectDLL keyword found in hacktools or possibly unwanted applications"
       author = "Florian Roth (Nextron Systems)"
@@ -19,13 +14,8 @@ rule Neo23x0_gen_susp_hacktool_HKTL_Keyword_InjectDLL {
    condition:
       uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_hacktool.yar
-
-rule HKTL_Python_sectools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_hacktool_HKTL_Python_sectools {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_hacktool.yar
     meta:
         description = "Detects code which uses the python lib sectools"
         author = "Arnim Rupp"

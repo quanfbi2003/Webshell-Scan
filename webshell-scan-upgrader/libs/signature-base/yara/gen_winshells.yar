@@ -4,20 +4,12 @@
 	Date: 2016-03-26
 	Identifier: Windows Shells
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winshells.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winshells.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winshells.yar
-rule WindowsShell_s3 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_winshells_WindowsShell_s3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winshells.yar
 	meta:
 		description = "Detects simple Windows shell - file s3.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_gen_winshells_WindowsShell_s3 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 150KB and 2 of them ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winshells.yar
-
-rule WindosShell_s1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_winshells_WindosShell_s1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winshells.yar
 	meta:
 		description = "Detects simple Windows shell - file s1.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -66,13 +53,8 @@ rule Neo23x0_gen_winshells_WindosShell_s1 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 150KB and 2 of them ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winshells.yar
-
-rule WindowsShell_s4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_winshells_WindowsShell_s4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winshells.yar
 	meta:
 		description = "Detects simple Windows shell - file s4.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -95,13 +77,8 @@ rule Neo23x0_gen_winshells_WindowsShell_s4 {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winshells.yar
-
-rule WindowsShell_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_winshells_WindowsShell_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winshells.yar
 	meta:
 		description = "Detects simple Windows shell - from files keygen.exe, s1.exe, s2.exe, s3.exe, s4.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -122,13 +99,8 @@ rule Neo23x0_gen_winshells_WindowsShell_Gen {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 175KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winshells.yar
-
-rule WindowsShell_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_winshells_WindowsShell_Gen2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winshells.yar
 	meta:
 		description = "Detects simple Windows shell - from files s3.exe, s4.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

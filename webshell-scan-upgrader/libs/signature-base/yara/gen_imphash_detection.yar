@@ -1,13 +1,9 @@
 import "pe"
 //import "hash"
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_imphash_detection.yar
-rule MAL_Malware_Imphash_Mar23_1 : HIGHVOL {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_imphash_detection_MAL_Malware_Imphash_Mar23_1 : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_imphash_detection.yar
     meta:
         description = "Detects malware by known bad imphash or rich_pe_header_hash"
         reference = "https://yaraify.abuse.ch/statistics/"
@@ -94,14 +90,8 @@ rule Neo23x0_gen_imphash_detection_MAL_Malware_Imphash_Mar23_1 : HIGHVOL {
         )
         and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_imphash_detection.yar
-
-
-rule HKTL_Imphashes_Aug22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_imphash_detection_HKTL_Imphashes_Aug22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_imphash_detection.yar
    meta:
       description = "Detects different hacktools based on their imphash"
       author = "Florian Roth"
@@ -201,13 +191,8 @@ rule Neo23x0_gen_imphash_detection_HKTL_Imphashes_Aug22_1 {
             pe.imphash() == "330768a4f172e10acb6287b87289d83b" // ShaprEvtMute Hook
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_imphash_detection.yar
-
-rule SUSP_Imphash_Mar23_2 : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_imphash_detection_SUSP_Imphash_Mar23_2 : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_imphash_detection.yar
     meta:
         description = "Detects imphash often found in malware samples (Zero hits with with search for 'imphash:x p:0' on Virustotal)"
         license = "Detection Rule License 1.1 https://github.com/SigmaHQ/Detection-Rule-License"
@@ -309,13 +294,8 @@ rule Neo23x0_gen_imphash_detection_SUSP_Imphash_Mar23_2 : HIGHVOL {
             pe.imphash() == "dc73a9bd8de0fd640549c85ac4089b87"
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_imphash_detection.yar
-
-rule SUSP_Imphash_Mar23_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_imphash_detection_SUSP_Imphash_Mar23_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_imphash_detection.yar
     meta:
         description = "Detects imphash often found in malware samples (Maximum 0,25% hits with search for 'imphash:x p:0' on Virustotal) = 99,75% hits"
         license = "Detection Rule License 1.1 https://github.com/SigmaHQ/Detection-Rule-License"

@@ -1,3 +1,4 @@
+import "pe"
 
 /*
    Yara Rule Set
@@ -7,13 +8,9 @@
    Reference: https://www.us-cert.gov/ncas/alerts/TA17-318A
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318A.yar
-rule TA17_318A_rc4_stack_key_fallchill {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ta17_318A_TA17_318A_rc4_stack_key_fallchill {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_318A.yar
    meta:
       description = "HiddenCobra FallChill - rc4_stack_key"
       author = "US CERT"
@@ -25,13 +22,8 @@ rule Neo23x0_apt_ta17_318A_TA17_318A_rc4_stack_key_fallchill {
    condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and $stack_key
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318A.yar
-
-rule TA17_318A_success_fail_codes_fallchill {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_318A_TA17_318A_success_fail_codes_fallchill {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_318A.yar
    meta:
       description = "HiddenCobra FallChill - success_fail_codes"
       author = "US CERT"
@@ -55,18 +47,10 @@ rule Neo23x0_apt_ta17_318A_TA17_318A_success_fail_codes_fallchill {
    Reference: https://www.us-cert.gov/ncas/alerts/TA17-318A
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318A.yar
-import "pe"
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule HiddenCobra_FallChill_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 //===SUCCESS===
 rule Neo23x0_apt_ta17_318A_HiddenCobra_FallChill_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_318A.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -93,13 +77,8 @@ rule Neo23x0_apt_ta17_318A_HiddenCobra_FallChill_1 {
         4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_318A.yar
-
-rule HiddenCobra_FallChill_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_318A_HiddenCobra_FallChill_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_318A.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

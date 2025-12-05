@@ -1,14 +1,9 @@
 
 /* LENOVO Superfish -------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/threat_lenovo_superfish.yar
-
-rule VisualDiscovery_Lonovo_Superfish_SSL_Hijack {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_threat_lenovo_superfish_VisualDiscovery_Lonovo_Superfish_SSL_Hijack {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/threat_lenovo_superfish.yar
 	meta:
 		description = "Lenovo Superfish SSL Interceptor - file VisualDiscovery.exe"
 		author = "Florian Roth (Nextron Systems) / improved by kbandla"

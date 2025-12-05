@@ -5,20 +5,12 @@
 	Identifier: Codoso
 	Comment: Reduced signature set for LOKI integration
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PlugX_3 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PlugX_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PlugX Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -35,12 +27,8 @@ rule Neo23x0_apt_codoso_Codoso_PlugX_3 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PlugX_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PlugX_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PlugX Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,12 +46,8 @@ rule Neo23x0_apt_codoso_Codoso_PlugX_2 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 400KB and 3 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_CustomTCP_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_CustomTCP_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT CustomTCP Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -89,12 +73,8 @@ rule Neo23x0_apt_codoso_Codoso_CustomTCP_4 {
 		( uint16(0) == 0x5a4d and filesize < 400KB and 5 of them ) or
 		( $x1 and 2 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_CustomTCP_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_CustomTCP_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT CustomTCP Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -116,12 +96,8 @@ rule Neo23x0_apt_codoso_Codoso_CustomTCP_3 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 500KB and 5 of them ) or 7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_CustomTCP_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_CustomTCP_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT CustomTCP Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -142,12 +118,8 @@ rule Neo23x0_apt_codoso_Codoso_CustomTCP_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 406KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PGV_PVID_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PGV_PVID_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PGV_PVID Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -162,12 +134,8 @@ rule Neo23x0_apt_codoso_Codoso_PGV_PVID_6 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 6000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_Gh0st_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_Gh0st_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT Gh0st Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -189,12 +157,8 @@ rule Neo23x0_apt_codoso_Codoso_Gh0st_3 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 195KB and $x1 or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_Gh0st_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_Gh0st_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT Gh0st Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -213,12 +177,8 @@ rule Neo23x0_apt_codoso_Codoso_Gh0st_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_CustomTCP {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_CustomTCP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Codoso CustomTCP Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -238,13 +198,8 @@ rule Neo23x0_apt_codoso_Codoso_CustomTCP {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-
-rule Codoso_PGV_PVID_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PGV_PVID_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PGV PVID Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -261,12 +216,8 @@ rule Neo23x0_apt_codoso_Codoso_PGV_PVID_5 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_Gh0st_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_Gh0st_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT Gh0st Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -305,12 +256,8 @@ rule Neo23x0_apt_codoso_Codoso_Gh0st_1 {
 		1 of ($x*) or
 		6 of ($c*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PGV_PVID_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PGV_PVID_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PlugX Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -338,12 +285,8 @@ rule Neo23x0_apt_codoso_Codoso_PGV_PVID_4 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 900KB and 2 of ($x*) and 2 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PlugX_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PlugX_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PlugX Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -362,12 +305,8 @@ rule Neo23x0_apt_codoso_Codoso_PlugX_1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 800KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PGV_PVID_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PGV_PVID_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PGV PVID Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -387,12 +326,8 @@ rule Neo23x0_apt_codoso_Codoso_PGV_PVID_3 {
 	condition:
 		$x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-rule Codoso_PGV_PVID_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PGV_PVID_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
 	meta:
 		description = "Detects Codoso APT PGV PVID Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -415,13 +350,8 @@ rule Neo23x0_apt_codoso_Codoso_PGV_PVID_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 907KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_codoso.yar
-
-rule Codoso_PGV_PVID_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_codoso_Codoso_PGV_PVID_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_codoso.yar
    meta:
       description = "Detects Codoso APT PGV PVID Malware"
       author = "Florian Roth (Nextron Systems)"

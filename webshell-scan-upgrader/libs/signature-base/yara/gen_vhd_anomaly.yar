@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_vhd_anomaly.yar
-
-rule SUSP_VHD_Suspicious_Small_Size {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_vhd_anomaly_SUSP_VHD_Suspicious_Small_Size {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_vhd_anomaly.yar
    meta:
       description = "Detects suspicious VHD files"
       author = "Florian Roth (Nextron Systems)"

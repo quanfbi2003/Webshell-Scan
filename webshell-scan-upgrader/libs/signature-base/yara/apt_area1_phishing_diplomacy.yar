@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_area1_phishing_diplomacy.yar
-
-rule APT_Area1_SSF_PlugX {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_area1_phishing_diplomacy_APT_Area1_SSF_PlugX {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_area1_phishing_diplomacy.yar
    meta:
       description = "Detects send tool used in phishing campaign reported by Area 1 in December 2018"
       reference = "https://cdn.area1security.com/reports/Area-1-Security-PhishingDiplomacy.pdf"
@@ -30,13 +25,8 @@ rule Neo23x0_apt_area1_phishing_diplomacy_APT_Area1_SSF_PlugX {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_area1_phishing_diplomacy.yar
-
-rule APT_Area1_SSF_GoogleSend_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_area1_phishing_diplomacy_APT_Area1_SSF_GoogleSend_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_area1_phishing_diplomacy.yar
    meta:
       description = "Detects send tool used in phishing campaign reported by Area 1 in December 2018"
       reference = "https://cdn.area1security.com/reports/Area-1-Security-PhishingDiplomacy.pdf"

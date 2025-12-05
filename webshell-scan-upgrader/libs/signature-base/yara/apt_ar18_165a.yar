@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ar18_165a.yar
-
-rule APT_HiddenCobra_enc_PK_header {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ar18_165a_APT_HiddenCobra_enc_PK_header {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ar18_165a.yar
    meta:
       author = "NCCIC trusted 3rd party - Edit: Tobias Michalski"
       incident = "10135536"
@@ -22,13 +17,8 @@ rule Neo23x0_apt_ar18_165a_APT_HiddenCobra_enc_PK_header {
    condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ar18_165a.yar
-
-rule APT_HiddenCobra_import_obfuscation_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ar18_165a_APT_HiddenCobra_import_obfuscation_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ar18_165a.yar
    meta:
       author = "NCCIC trusted 3rd party - Edit: Tobias Michalski"
       incident = "10135536"
@@ -49,13 +39,8 @@ rule Neo23x0_apt_ar18_165a_APT_HiddenCobra_import_obfuscation_2 {
   condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ar18_165a.yar
-
-rule APT_NK_AR18_165A_HiddenCobra_import_deob {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ar18_165a_APT_NK_AR18_165A_HiddenCobra_import_deob {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ar18_165a.yar
    meta:
       author = "NCCIC trusted 3rd party - Edit: Tobias Michalski"
       incident = "10135536"
@@ -73,13 +58,8 @@ rule Neo23x0_apt_ar18_165a_APT_NK_AR18_165A_HiddenCobra_import_deob {
    condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ar18_165a.yar
-
-rule APT_NK_AR18_165A_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ar18_165a_APT_NK_AR18_165A_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ar18_165a.yar
    meta:
       description = "Detects APT malware from AR18-165A report by US CERT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

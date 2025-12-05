@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_hermetic_wiper.yar
-
-rule APT_UA_Hermetic_Wiper_Feb22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_hermetic_wiper_APT_UA_Hermetic_Wiper_Feb22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_hermetic_wiper.yar
    meta:
       description = "Detects Hermetic Wiper malware"
       author = "Florian Roth (Nextron Systems)"
@@ -41,13 +36,8 @@ rule Neo23x0_apt_ua_hermetic_wiper_APT_UA_Hermetic_Wiper_Feb22_1 {
       ( uint16(0) == 0x5a53 or uint16(0) == 0x5a4d ) and
       filesize < 400KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_hermetic_wiper.yar
-
-rule APT_UA_Hermetic_Wiper_Artefacts_Feb22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_hermetic_wiper_APT_UA_Hermetic_Wiper_Artefacts_Feb22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_hermetic_wiper.yar
    meta:
       description = "Detects artefacts found in Hermetic Wiper malware related intrusions"
       author = "Florian Roth (Nextron Systems)"
@@ -78,13 +68,8 @@ rule Neo23x0_apt_ua_hermetic_wiper_APT_UA_Hermetic_Wiper_Artefacts_Feb22_1 {
       1 of ($sx*) or all of ($sa*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_hermetic_wiper.yar
-
-rule APT_UA_Hermetic_Wiper_Scheduled_Task_Feb22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_hermetic_wiper_APT_UA_Hermetic_Wiper_Scheduled_Task_Feb22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_hermetic_wiper.yar
    meta:
       description = "Detects scheduled task pattern found in Hermetic Wiper malware related intrusions"
       author = "Florian Roth (Nextron Systems)"

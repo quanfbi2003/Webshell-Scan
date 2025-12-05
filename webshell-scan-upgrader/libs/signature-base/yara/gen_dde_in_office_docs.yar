@@ -31,13 +31,9 @@ rule Office_DDE_field {
 }
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_dde_in_office_docs.yar
-rule Office_OLE_DDEAUTO {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_dde_in_office_docs_Office_OLE_DDEAUTO {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_dde_in_office_docs.yar
    meta:
       description = "Detects DDE in MS Office documents"
       author = "NVISO Labs"
@@ -50,13 +46,8 @@ rule Neo23x0_gen_dde_in_office_docs_Office_OLE_DDEAUTO {
    condition:
       uint32be(0) == 0xD0CF11E0 and $a
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_dde_in_office_docs.yar
-
-rule Office_OLE_DDE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_dde_in_office_docs_Office_OLE_DDE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_dde_in_office_docs.yar
    meta:
       description = "Detects DDE in MS Office documents"
       author = "NVISO Labs"

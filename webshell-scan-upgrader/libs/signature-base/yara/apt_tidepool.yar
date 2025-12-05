@@ -5,13 +5,9 @@
 	Identifier: TidePool (Ke3chang)
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tidepool.yar
-rule TidePool_Malware {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_tidepool_TidePool_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tidepool.yar
 	meta:
 		description = "Detects TidePool malware mentioned in Ke3chang report by Palo Alto Networks"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

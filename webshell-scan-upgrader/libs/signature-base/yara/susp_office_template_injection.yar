@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/susp_office_template_injection.yar
-
-
-rule Neo23x0_sus_EXPL_Office_TemplateInjection_Aug19 {
-=======
 //===SUCCESS===
 rule Neo23x0_susp_office_template_injection_EXPL_Office_TemplateInjection_Aug19 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_office_template_injection.yar
    meta:
       old_rule_name = "EXPL_Office_TemplateInjection"
       description = "Detects possible template injections in Office documents, particularly those that load content from external sources"

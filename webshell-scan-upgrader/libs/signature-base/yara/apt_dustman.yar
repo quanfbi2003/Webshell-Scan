@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dustman.yar
-
-rule MAL_ME_RawDisk_Agent_Jan20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dustman_MAL_ME_RawDisk_Agent_Jan20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_dustman.yar
    meta:
       description = "Detects suspicious malware using ElRawDisk"
       author = "Florian Roth (Nextron Systems)"
@@ -27,13 +22,8 @@ rule Neo23x0_apt_dustman_MAL_ME_RawDisk_Agent_Jan20_1 {
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and ( 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dustman.yar
-
-rule MAL_ME_RawDisk_Agent_Jan20_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dustman_MAL_ME_RawDisk_Agent_Jan20_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_dustman.yar
    meta:
       description = "Detects suspicious malware using ElRawDisk"
       author = "Florian Roth (Nextron Systems)"

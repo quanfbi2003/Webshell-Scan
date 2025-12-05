@@ -5,13 +5,9 @@
 	Identifier: RWMC Powershell Credential Dumper
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rwmc_powershell_creddump.yar
-rule Reveal_MemoryCredentials {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_rwmc_powershell_creddump_Reveal_MemoryCredentials {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rwmc_powershell_creddump.yar
 	meta:
 		description = "Auto-generated rule - file Reveal-MemoryCredentials.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -28,13 +24,8 @@ rule Neo23x0_apt_rwmc_powershell_creddump_Reveal_MemoryCredentials {
 	condition:
 		filesize < 200KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rwmc_powershell_creddump.yar
-
-rule MiniDumpTest_msdsc {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rwmc_powershell_creddump_MiniDumpTest_msdsc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rwmc_powershell_creddump.yar
 	meta:
 		description = "Auto-generated rule - file msdsc.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -51,4 +42,3 @@ rule Neo23x0_apt_rwmc_powershell_creddump_MiniDumpTest_msdsc {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 20KB and all of them
 }
-

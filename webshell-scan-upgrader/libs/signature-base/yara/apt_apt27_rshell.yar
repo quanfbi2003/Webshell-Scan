@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_apt27_rshell.yar
-
-
-rule Neo23x0_apt_APT_MAL_APT27_Rshell_Jul24 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt27_rshell.yar
-
-rule APT_MAL_APT27_Rshell_Jul24 {
-========
 //===SUCCESS===
 rule Neo23x0_apt_apt27_rshell_APT_MAL_APT27_Rshell_Jul24 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt27_rshell.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt27_rshell.yar
    meta:		
       sharing = "TLP:WHITE"
       source = "BUNDESAMT FUER VERFASSUNGSSCHUTZ"

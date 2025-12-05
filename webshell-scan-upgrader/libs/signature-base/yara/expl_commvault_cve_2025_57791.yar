@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
-
-
-rule Neo23x0_exp_SUSP_EXPL_CommVault_CVE_2025_57791_Aug25_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_commvault_cve_2025_57791_SUSP_EXPL_CommVault_CVE_2025_57791_Aug25_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
    meta:
       description = "Detects potential exploit for WT-2025-0050, authentication bypass through QCommand argument injection"
       reference = "https://labs.watchtowr.com/guess-who-would-be-stupid-enough-to-rob-the-same-vault-twice-pre-auth-rce-chains-in-commvault/"
@@ -19,13 +13,8 @@ rule Neo23x0_expl_commvault_cve_2025_57791_SUSP_EXPL_CommVault_CVE_2025_57791_Au
       not uint16(0) == 0x5a4d and
       filesize < 20MB and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
-
-rule Neo23x0_exp_SUSP_EXPL_CommVault_CVE_2025_57791_Aug25_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_commvault_cve_2025_57791_SUSP_EXPL_CommVault_CVE_2025_57791_Aug25_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
    meta:
       description = "Detects potential exploit for WT-2025-0050, authentication bypass through QCommand argument injection"
       reference = "https://labs.watchtowr.com/guess-who-would-be-stupid-enough-to-rob-the-same-vault-twice-pre-auth-rce-chains-in-commvault/"
@@ -38,13 +27,8 @@ rule Neo23x0_expl_commvault_cve_2025_57791_SUSP_EXPL_CommVault_CVE_2025_57791_Au
    condition:
       filesize < 20MB and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
-
-rule Neo23x0_exp_SUSP_EXPL_CommVault_CVE_2025_57791_Artifact_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_commvault_cve_2025_57791_SUSP_EXPL_CommVault_CVE_2025_57791_Artifact_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
    meta:
       description = "Detects exploit artifact for WT-2025-0050, authentication bypass through QCommand argument injection"
       reference = "https://labs.watchtowr.com/guess-who-would-be-stupid-enough-to-rob-the-same-vault-twice-pre-auth-rce-chains-in-commvault/"
@@ -60,13 +44,8 @@ rule Neo23x0_expl_commvault_cve_2025_57791_SUSP_EXPL_CommVault_CVE_2025_57791_Ar
    condition:
       filesize < 20MB and all of ($sa*) and 1 of ($sb*)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
-
-rule Neo23x0_exp_EXPL_JSP_CommVault_CVE_2025_57791_Aug25_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_commvault_cve_2025_57791_EXPL_JSP_CommVault_CVE_2025_57791_Aug25_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
    meta:
       description = "Detects potential exploit for WT-2025-0049, Post-Auth RCE with QCommand Path Traversal"
       author = "X__Junior"
@@ -79,13 +58,8 @@ rule Neo23x0_expl_commvault_cve_2025_57791_EXPL_JSP_CommVault_CVE_2025_57791_Aug
    condition:
       filesize < 50KB and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
-
-rule Neo23x0_exp_EXPL_JSP_CommVault_CVE_2025_57791_Aug25_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_commvault_cve_2025_57791_EXPL_JSP_CommVault_CVE_2025_57791_Aug25_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
    meta:
       description = "Detects potential exploit for WT-2025-0049, Post-Auth RCE with QCommand Path Traversal"
       author = "X__Junior"
@@ -99,13 +73,8 @@ rule Neo23x0_expl_commvault_cve_2025_57791_EXPL_JSP_CommVault_CVE_2025_57791_Aug
    condition:
       filesize < 50KB and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
-
-rule Neo23x0_exp_EXPL_LOG_CommVault_CVE_2025_57791_Indicator_Shell_Drop_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_commvault_cve_2025_57791_EXPL_LOG_CommVault_CVE_2025_57791_Indicator_Shell_Drop_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_commvault_cve_2025_57791.yar
    meta:
       description = "Detects suspicious log lines that indicate web shell drops into the Apache root folder of a Commvault installation"
       author = "Florian Roth"

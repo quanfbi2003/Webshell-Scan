@@ -4,20 +4,12 @@
 	Date: 2016-07-09
 	Identifier: Stuxnet
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-rule StuxNet_Malware_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_StuxNet_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample - file malware.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -49,13 +41,8 @@ rule Neo23x0_apt_stuxnet_StuxNet_Malware_1 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule Stuxnet_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_Stuxnet_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -70,13 +57,8 @@ rule Neo23x0_apt_stuxnet_Stuxnet_Malware_2 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 70KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule StuxNet_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_StuxNet_dll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample - file dll.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -90,13 +72,8 @@ rule Neo23x0_apt_stuxnet_StuxNet_dll {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule Stuxnet_Shortcut_to {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_Stuxnet_Shortcut_to {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample - file Copy of Shortcut to.lnk"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -110,13 +87,8 @@ rule Neo23x0_apt_stuxnet_Stuxnet_Shortcut_to {
 	condition:
 		uint16(0) == 0x004c and filesize < 10KB and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule Stuxnet_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_Stuxnet_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample - file ~WTR4141.tmp"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -138,13 +110,8 @@ rule Neo23x0_apt_stuxnet_Stuxnet_Malware_3 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 150KB and ( $x1 or 3 of ($s*) ) ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule Stuxnet_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_Stuxnet_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -161,13 +128,8 @@ rule Neo23x0_apt_stuxnet_Stuxnet_Malware_4 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 80KB and 1 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule Stuxnet_maindll_decrypted_unpacked {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_Stuxnet_maindll_decrypted_unpacked {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample - file maindll.decrypted.unpacked.dll_"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -188,13 +150,8 @@ rule Neo23x0_apt_stuxnet_Stuxnet_maindll_decrypted_unpacked {
 	condition:
 		 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stuxnet.yar
-
-rule Stuxnet_s7hkimdb {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stuxnet_Stuxnet_s7hkimdb {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stuxnet.yar
 	meta:
 		description = "Stuxnet Sample - file s7hkimdb.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

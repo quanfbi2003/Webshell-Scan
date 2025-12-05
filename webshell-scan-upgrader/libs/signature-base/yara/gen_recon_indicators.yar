@@ -6,19 +6,12 @@
    Identifier: Hacking Attempts
    Reference: https://blogs.rsa.com/wp-content/uploads/2017/07/Fig8-netstat_dropped_more.png
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_recon_indicators.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Recon_Commands_Windows_Gen1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_gen_recon_indicators_Recon_Commands_Windows_Gen1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_recon_indicators.yar
    meta:
       description = "Detects a set of reconnaissance commands on Windows systems"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -57,13 +50,8 @@ rule Neo23x0_gen_recon_indicators_Recon_Commands_Windows_Gen1 {
       filesize < 1000KB and 4 of them
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_recon_indicators.yar
-
-rule SUSP_Recon_Outputs_Jun20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_recon_indicators_SUSP_Recon_Outputs_Jun20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_recon_indicators.yar
    meta:
       description = "Detects outputs of many different commands often used for reconnaissance purposes"
       author = "Florian Roth (Nextron Systems)"

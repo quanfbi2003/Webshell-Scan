@@ -147,6 +147,87 @@ def removeBinaryZero(string):
     return re.sub(r'\x00', '', string)
 
 
+def get_cpu_count():
+    """
+    Get the number of CPU cores available on the system.
+    Returns the number of logical CPUs (including hyperthreading).
+    """
+    try:
+        # Try os.cpu_count() first (Python 3.4+)
+        cpu_count = os.cpu_count()
+        if cpu_count is not None:
+            return cpu_count
+    except AttributeError:
+        pass
+    
+    try:
+        # Fallback to multiprocessing
+        import multiprocessing
+        cpu_count = multiprocessing.cpu_count()
+        if cpu_count is not None:
+            return cpu_count
+    except Exception:
+        pass
+    
+    try:
+        # Fallback to psutil if available
+        cpu_count = psutil.cpu_count(logical=True)
+        if cpu_count is not None:
+            return cpu_count
+    except Exception:
+        pass
+    
+    # Default fallback
+    return 1
+
+
+def get_optimal_thread_count(cpu_count=None, logger=None):
+    """
+    Calculate optimal number of threads for I/O-bound tasks like file scanning.
+    
+    For I/O-bound tasks, we can use more threads than CPU cores because threads
+    spend time waiting for I/O operations. A common formula is:
+    - CPU-bound: threads = cpu_count
+    - I/O-bound: threads = cpu_count * 2 (or cpu_count + 4 for small systems)
+    
+    Args:
+        cpu_count: Number of CPU cores (if None, will auto-detect)
+        logger: Optional logger instance for logging
+    
+    Returns:
+        tuple: (optimal_threads, cpu_count, recommendation_message)
+    """
+    if cpu_count is None:
+        cpu_count = get_cpu_count()
+    
+    # For file scanning (I/O-bound), we can use more threads than CPU cores
+    # because threads spend time waiting for I/O operations (disk reads, YARA scans, etc.)
+    # Formula explanation:
+    # - Small systems (≤2 cores): Use 2x cores to maximize I/O overlap
+    # - Medium systems (3-4 cores): Add 2 extra threads for I/O waiting
+    # - Large systems (>4 cores): Use cpu_count * 2, but cap at reasonable limit
+    #   to avoid excessive context switching overhead
+    if cpu_count <= 2:
+        optimal_threads = cpu_count * 2  # 1 core -> 2 threads, 2 cores -> 4 threads
+    elif cpu_count <= 4:
+        optimal_threads = cpu_count + 2  # 3 cores -> 5 threads, 4 cores -> 6 threads
+    else:
+        # For larger systems, use cpu_count * 2 but cap at 32 threads max
+        # to balance performance and overhead (too many threads cause context switching overhead)
+        optimal_threads = min(cpu_count * 2, 32)
+    
+    # Ensure at least 1 thread
+    optimal_threads = max(1, optimal_threads)
+    
+    recommendation = f"Detected {cpu_count} CPU core(s). Recommended threads: {optimal_threads} (I/O-bound task optimization)"
+    
+    if logger:
+        logger.log("INFO", "System", f"CPU Information: {cpu_count} logical core(s) detected")
+        logger.log("INFO", "System", f"Optimal thread count for file scanning: {optimal_threads} (recommended)")
+    
+    return optimal_threads, cpu_count, recommendation
+
+
 def print_progress(i, total, logger=None):
     """
     Print progress indicator with animated spinner and RAM usage.

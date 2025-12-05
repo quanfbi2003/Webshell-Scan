@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_cannon.yar
-
-rule APT_APT28_Cannon_Trojan_Nov18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_cannon_APT_APT28_Cannon_Trojan_Nov18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sofacy_cannon.yar
    meta:
       description = "Detects Cannon Trojan used by Sofacy"
       author = "Florian Roth (Nextron Systems)"

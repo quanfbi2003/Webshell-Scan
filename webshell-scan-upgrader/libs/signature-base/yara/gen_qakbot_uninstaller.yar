@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_qakbot_uninstaller.yar
-
-rule SUSP_Qakbot_Uninstaller_ShellCode_Aug23 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_qakbot_uninstaller_SUSP_Qakbot_Uninstaller_ShellCode_Aug23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_qakbot_uninstaller.yar
    meta:
       description = "Detects Qakbot Uninstaller files used by the FBI and Dutch National Police in a disruption operation against the Qakbot in August 2023"
       author = "Florian Roth"
@@ -17,13 +12,8 @@ rule Neo23x0_gen_qakbot_uninstaller_SUSP_Qakbot_Uninstaller_ShellCode_Aug23 {
    condition:
       $xc1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_qakbot_uninstaller.yar
-
-rule SUSP_QakBot_Uninstaller_FBI_Aug23 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_qakbot_uninstaller_SUSP_QakBot_Uninstaller_FBI_Aug23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_qakbot_uninstaller.yar
    meta:
       description = "Detects Qakbot uninstaller used by the FBI / Dutch Police"
       author = "Florian Roth"

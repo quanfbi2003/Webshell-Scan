@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mal_grandcrab.yar
-
-rule MAL_GandCrab_Apr18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mal_grandcrab_MAL_GandCrab_Apr18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mal_grandcrab.yar
    meta:
       description = "Detects GandCrab malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

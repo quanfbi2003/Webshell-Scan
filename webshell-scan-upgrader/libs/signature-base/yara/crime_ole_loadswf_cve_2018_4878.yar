@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ole_loadswf_cve_2018_4878.yar
-
-rule crime_ole_loadswf_cve_2018_4878 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ole_loadswf_cve_2018_4878_crime_ole_loadswf_cve_2018_4878 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_ole_loadswf_cve_2018_4878.yar
    meta:
       description = "Detects CVE-2018-4878"
       vuln_type = "Remote Code Execution"

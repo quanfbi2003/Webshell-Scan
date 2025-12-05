@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-rule dubseven_file_set
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_dubseven_file_set
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -32,13 +28,8 @@ rule Neo23x0_apt_between_hk_and_burma_dubseven_file_set
 		//Just a few of these as they differ
 		3 of ($file*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-rule dubseven_dropper_registry_checks
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_dubseven_dropper_registry_checks
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -65,13 +56,8 @@ rule Neo23x0_apt_between_hk_and_burma_dubseven_dropper_registry_checks
 
 		all of ($reg*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-rule dubseven_dropper_dialog_remains
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_dubseven_dropper_dialog_remains
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -93,14 +79,8 @@ rule Neo23x0_apt_between_hk_and_burma_dubseven_dropper_dialog_remains
 
 		any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-
-rule maindll_mutex
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_maindll_mutex
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -121,14 +101,8 @@ rule Neo23x0_apt_between_hk_and_burma_maindll_mutex
 
 		$mutex
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-
-rule SLServer_dialog_remains
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_SLServer_dialog_remains
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks / modified by Florian Roth"
@@ -159,13 +133,8 @@ rule Neo23x0_apt_between_hk_and_burma_SLServer_dialog_remains
 
 		$slserver
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-rule SLServer_mutex
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_SLServer_mutex
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -186,13 +155,8 @@ rule Neo23x0_apt_between_hk_and_burma_SLServer_mutex
 
 		$mutex
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-rule SLServer_command_and_control
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_SLServer_command_and_control
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -213,13 +177,8 @@ rule Neo23x0_apt_between_hk_and_burma_SLServer_command_and_control
 
 		$c2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-rule SLServer_campaign_code
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_SLServer_campaign_code
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"
@@ -240,13 +199,8 @@ rule Neo23x0_apt_between_hk_and_burma_SLServer_campaign_code
 
 		$campaign
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_between-hk-and-burma.yar
-
-rule SLServer_unknown_string
-=======
 //===SUCCESS===
 rule Neo23x0_apt_between_hk_and_burma_SLServer_unknown_string
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_between-hk-and-burma.yar
 {
 	meta:
 		author = "Matt Brooks, @cmatthewbrooks"

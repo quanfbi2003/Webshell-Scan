@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_susp_svg_js_phish_mar25.yar
-
-
-rule Neo23x0_gen_SUSP_SVG_JS_Payload_Mar25 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_svg_js_phish_mar25_SUSP_SVG_JS_Payload_Mar25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_svg_js_phish_mar25.yar
    meta:
       description = "Detects a suspicious SVG file that contains a JavaScript payload. This rule is a generic rule that might generate false positives. A match should be further investigated."
       author = "Florian Roth"

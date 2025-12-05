@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_zebrocy.yar
-rule apt28_win_zebrocy_golang_loader_modified {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_zebrocy_apt28_win_zebrocy_golang_loader_modified {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sofacy_zebrocy.yar
    meta:
       description = "Detects unpacked modified APT28/Sofacy Zebrocy Golang."
       author = "@VK_Intel"

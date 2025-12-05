@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Trojan.ChinaZ.yara
-
-
-rule reversinglabs_Lin_Linux_Trojan_ChinaZ : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Trojan.ChinaZ.yara
-rule Linux_Trojan_ChinaZ : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_Linux_Trojan_ChinaZ_Linux_Trojan_ChinaZ : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Trojan.ChinaZ.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Trojan.ChinaZ.yara
 {
     meta:
 
@@ -254,8 +244,4 @@ rule reversinglabs_Linux_Trojan_ChinaZ_Linux_Trojan_ChinaZ : tc_detection malici
                 )
             )
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Trojan.ChinaZ.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Trojan.ChinaZ.yara

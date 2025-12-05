@@ -5,19 +5,12 @@
    Date: 2017-02-03
    Identifier: ZeroT CN APT
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule PP_CN_APT_ZeroT_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -31,13 +24,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -51,13 +39,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -76,13 +59,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_3 {
    condition:
       ( uint16(0) == 0x5449 and filesize < 1000KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -97,13 +75,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -122,13 +95,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_5 {
    condition:
       ( uint16(0) == 0x5449 and filesize < 1000KB and 1 of ($x*) and 1 of ($s*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -143,13 +111,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_6 {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -166,13 +129,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_7 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -189,13 +147,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_8 {
    condition:
       ( uint16(0) == 0x5449 and filesize < 1000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule PP_CN_APT_ZeroT_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Detects malware from the Proofpoint CN APT ZeroT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -210,13 +163,8 @@ rule Neo23x0_apt_cn_pp_zerot_PP_CN_APT_ZeroT_9 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule CN_APT_ZeroT_nflogger {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_nflogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Chinese APT by Proofpoint ZeroT RAT  - file nflogger.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -230,13 +178,8 @@ rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_nflogger {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule CN_APT_ZeroT_extracted_Go {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_extracted_Go {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Chinese APT by Proofpoint ZeroT RAT  - file Go.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -260,13 +203,8 @@ rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_extracted_Go {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and ( 1 of ($x*) or 3 of ($s*) ) ) or ( 7 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule CN_APT_ZeroT_extracted_Mcutil {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_extracted_Mcutil {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Chinese APT by Proofpoint ZeroT RAT  - file Mcutil.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -285,13 +223,8 @@ rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_extracted_Mcutil {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 90KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_pp_zerot.yar
-
-rule CN_APT_ZeroT_extracted_Zlh {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_pp_zerot_CN_APT_ZeroT_extracted_Zlh {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_pp_zerot.yar
    meta:
       description = "Chinese APT by Proofpoint ZeroT RAT - file Zlh.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -9,6 +9,7 @@ import stat
 import time
 import threading
 import queue
+import traceback
 from bisect import bisect_left
 import zipfile
 import tarfile
@@ -112,6 +113,9 @@ class Scanner(object):
     def __init__(self):
         # Get application path
         self.app_path = self.get_application_path()
+        self.progress_lock = threading.Lock()
+        self.result_lock = threading.Lock()
+        self.processed_files = 0
 
         # Kiểm tra các thư mục bắt buộc (config, libs)
         config_dir = os.path.join(self.app_path, "config".replace("/", os.sep))
@@ -536,9 +540,369 @@ class Scanner(object):
             logger.log("ERROR", "Archive", f"Error in scan_archive_recursive for {archive_path}: {str(e)}")
             return findings
 
+    def _increment_progress(self, filePath, file_size, total):
+        """Thread-safe progress increment and console output."""
+        local_logger = logger if 'logger' in globals() else None
+        with self.progress_lock:
+            self.processed_files += 1
+            current = self.processed_files
+            print_progress(current, total, local_logger)
+            try:
+                print(f"{filePath}\t Size: {file_size / 1024 / 1024} MB")
+            except Exception:
+                pass
+
+    def _worker_process_file(self, file_queue, args, app_path_lower, total):
+        """Worker thread to process files from queue."""
+        thread_name = threading.current_thread().name
+        thread_id = threading.current_thread().ident
+        files_processed = 0
+        
+        if 'logger' in globals():
+            logger.log("INFO", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) started and waiting for files")
+        
+        while True:
+            file_path = file_queue.get()
+            if file_path is None:
+                # Shutdown signal received
+                file_queue.task_done()
+                if 'logger' in globals():
+                    logger.log("INFO", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) received shutdown signal. Processed {files_processed} file(s)")
+                break
+            
+            try:
+                if 'logger' in globals():
+                    logger.log("DEBUG", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) processing file: {file_path}")
+                self.process_single_file(file_path, args, app_path_lower, total)
+                files_processed += 1
+            except Exception as e:
+                if 'logger' in globals():
+                    logger.log("ERROR", "FileScan", f"Unhandled error scanning file {file_path}: {str(e)}")
+                traceback.print_exc()
+            finally:
+                file_queue.task_done()
+        
+        if 'logger' in globals():
+            logger.log("INFO", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) finished. Total files processed: {files_processed}")
+
+    def process_single_file(self, filePath, args, app_path_lower, total):
+        """Process a single file path (hashing, YARA, etc.)."""
+        try:
+            reasons = []
+            total_score = 0
+            yara_timeout_occurred = False
+
+            fpath = os.path.split(filePath)[0]
+            filePathCleaned = fpath.encode('ascii', errors='replace')
+            filename = os.path.basename(filePath)
+            fileNameCleaned = filename.encode('ascii', errors='replace')
+            extension = os.path.splitext(filePath)[1].lower()
+
+            skipIt = False
+
+            try:
+                file_stat = os.stat(filePath)
+                file_size = file_stat.st_size
+            except (OSError, IOError) as e:
+                logger.log("DEBUG", "FileScan", f"Cannot stat file {filePath}: {str(e)}")
+                return
+
+            is_archive, archive_ext = self.is_archive_file(filePath)
+            if is_archive and file_size <= self.MAX_ARCHIVE_SIZE:
+                temp_dir = tempfile.mkdtemp(prefix='webshell_scan_archive_')
+                try:
+                    logger.log("INFO", "Archive", f"Scanning archive: {filePath} (size: {file_size} bytes)")
+                    archive_findings = self.scan_archive_recursive(filePath, temp_dir, "", args)
+
+                    if archive_findings:
+                        for finding_file, finding_score, finding_reasons, original_archive in archive_findings:
+                            archive_path_info = f"\n ARCHIVE: {filePath}\n"
+                            fileInfo = "===========================================================\n" \
+                                       "FILE: %s%s SCORE: %s%s\n " % (
+                                           finding_file, archive_path_info, finding_score, getAgeString(filePath))
+
+                            message_type = "INFO"
+                            if finding_score >= 100:
+                                message_type = "ALERT"
+                            elif finding_score >= 60:
+                                message_type = "WARNING"
+                            elif finding_score >= 40:
+                                message_type = "NOTICE"
+
+                            reason_lines = []
+                            reason_csv_lines = []
+                            for i, r in enumerate(finding_reasons):
+                                reason_lines.append("\tREASON_{0}: {1}\n ".format(i + 1, r))
+                                reason_csv_lines.append("REASON_{0}: {1}\n ".format(i + 1, r))
+
+                            message_body = fileInfo + "".join(reason_lines)
+                            message_csv = "".join(reason_csv_lines)
+
+                            with self.result_lock:
+                                MESSAGE.append([finding_score, message_type, message_body])
+                                fileInfo_csv["FILE"].append(f"{finding_file} [ARCHIVE: {filePath}]")
+                                fileInfo_csv["SCORE"].append(finding_score)
+                                fileInfo_csv["TIME"].append(getAgeString(filePath))
+                                fileInfo_csv["DESCRIPTION"].append(message_csv)
+                                fileInfo_csv["EXTENSION"].append(extension)
+
+                            logger.log("INFO", "Archive", f"Found webshell in archive: {finding_file} (score: {finding_score}) in archive: {filePath}")
+
+                except Exception as e:
+                    logger.log("ERROR", "Archive", f"Error processing archive {filePath}: {str(e)}")
+                finally:
+                    try:
+                        shutil.rmtree(temp_dir, ignore_errors=True)
+                        logger.log("DEBUG", "Archive", f"Cleaned up temporary directory: {temp_dir}")
+                    except Exception as e:
+                        logger.log("WARNING", "Archive", f"Cannot cleanup temporary directory {temp_dir}: {str(e)}")
+
+                return
+
+            for skip in self.fullExcludes:
+                if skip.search(filePath):
+                    skipIt = True
+
+            if os_platform == "linux":
+                for skip in self.LINUX_PATH_SKIPS_END:
+                    if filePath.endswith(skip):
+                        skipIt = True
+                        break
+
+                mode = file_stat.st_mode
+                if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(mode) or stat.S_ISSOCK(mode):
+                    return
+
+            if skipIt:
+                return
+
+            self._increment_progress(filePath, file_size, total)
+
+            if app_path_lower in filePath.lower():
+                return
+
+            for fioc in self.filename_iocs:
+                match = fioc['regex'].search(filePath)
+                if match:
+                    if fioc['regex_fp']:
+                        match_fp = fioc['regex_fp'].search(filePath)
+                        if match_fp:
+                            continue
+                    reasons.append("File Name IOC matched PATTERN: %s SUBSCORE: %s DESC: %s" % (
+                        fioc['regex'].pattern, fioc['score'], fioc['description']))
+                    total_score += int(fioc['score'])
+
+            fileType = get_file_type(filePath, self.filetype_magics, self.max_filetype_magics, logger)
+
+            fileData = self.get_file_data(filePath)
+
+            matchType = None
+            matchDesc = None
+            matchHash = None
+            md5 = 0
+            sha1 = 0
+            sha256 = 0
+
+            md5, sha1, sha256 = generateHashes(fileData)
+            md5_num = int(md5, 16)
+            sha1_num = int(sha1, 16)
+            sha256_num = int(sha256, 16)
+
+            EMPTY_FILE_MD5 = int('d41d8cd98f00b204e9800998ecf8427e', 16)
+            EMPTY_FILE_SHA1 = int('da39a3ee5e6b4b0d3255bfef95601890afd80709', 16)
+            EMPTY_FILE_SHA256 = int('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 16)
+            if md5_num == EMPTY_FILE_MD5 or sha1_num == EMPTY_FILE_SHA1 or sha256_num == EMPTY_FILE_SHA256:
+                logger.log("DEBUG", "FileScan", f"Skipping empty file: {filePath}")
+                return
+
+            if md5_num in self.false_hashes or sha1_num in self.false_hashes or sha256_num in self.false_hashes:
+                return
+
+            if self.ioc_contains(self.hashes_md5_list, md5_num):
+                matchType = "MD5"
+                matchDesc = self.hashes_md5[md5_num]
+                matchHash = md5
+            if self.ioc_contains(self.hashes_sha1_list, sha1_num):
+                matchType = "SHA1"
+                matchDesc = self.hashes_sha1[sha1_num]
+                matchHash = sha1
+            if self.ioc_contains(self.hashes_sha256_list, sha256_num):
+                matchType = "SHA256"
+                matchDesc = self.hashes_sha256[sha256_num]
+                matchHash = sha256
+
+            if matchType:
+                reasons.append("Malware Hash TYPE: %s HASH: %s SUBSCORE: 100 DESC: %s" % (
+                    matchType, matchHash, matchDesc))
+                total_score += 100
+
+            if ssdeep is not None and self.ssdeep_signatures and fileData:
+                try:
+                    logger.log("DEBUG", "SSDeep", f"Checking file with SSDeep: {filePath}")
+                    file_ssdeep_hash = ssdeep.hash(fileData)
+                    logger.log("DEBUG", "SSDeep", f"Generated SSDeep hash: {file_ssdeep_hash}")
+
+                    if file_ssdeep_hash:
+                        best_match_score = 0
+                        best_match_hash = None
+                        best_match_filename = None
+                        comparisons_count = 0
+
+                        for known_hash, known_filename in self.ssdeep_signatures:
+                            try:
+                                similarity = ssdeep.compare(file_ssdeep_hash, known_hash)
+                                comparisons_count += 1
+                                if similarity > best_match_score:
+                                    best_match_score = similarity
+                                    best_match_hash = known_hash
+                                    best_match_filename = known_filename
+                            except Exception as e:
+                                logger.log("DEBUG", "SSDeep", f"Error comparing hash: {str(e)}")
+                                continue
+
+                        logger.log("DEBUG", "SSDeep", f"Compared with {comparisons_count} known signatures, best match: {best_match_score}%")
+
+                        if best_match_score >= 50:
+                            logger.log("DEBUG", "SSDeep", f"SSDeep match found: {best_match_score}% similarity with {best_match_filename}")
+                            reason_text = "SSDeep Match SCORE: %d%% HASH: %s SUBSCORE: 85 DESC: Similar to known webshell: %s" % (
+                                best_match_score, best_match_hash, best_match_filename)
+                            reasons.append(reason_text)
+                            total_score += best_match_score
+                            logger.log("DEBUG", "SSDeep", f"Added SSDeep match to reasons. Total score now: {total_score}")
+                        else:
+                            logger.log("DEBUG", "SSDeep", f"No SSDeep match (best: {best_match_score}%, threshold: 50%)")
+                    else:
+                        logger.log("DEBUG", "SSDeep", "Failed to generate SSDeep hash (empty result)")
+                except Exception as e:
+                    logger.log("WARNING", "SSDeep", f"SSDeep check failed for {filePath}: {str(e)}")
+
+            YARA_SCAN_TIMEOUT = 20.0
+            yara_scan_start_time = time.time()
+
+            try:
+                result_queue = queue.Queue()
+                exception_queue = queue.Queue()
+
+                def yara_scan_worker():
+                    try:
+                        matches_list = []
+                        for (score, rule, description, reference, matched_strings, author) in \
+                                self.scan_data(fileData=fileData,
+                                               fileType=fileType,
+                                               fileName=fileNameCleaned,
+                                               filePath=filePathCleaned,
+                                               extension=extension,
+                                               md5=md5):
+                            matches_list.append((score, rule, description, reference, matched_strings, author))
+                        result_queue.put(matches_list)
+                    except Exception as e_inner:
+                        exception_queue.put(e_inner)
+
+                scan_thread = threading.Thread(target=yara_scan_worker, daemon=True)
+                scan_thread.start()
+                scan_thread.join(timeout=YARA_SCAN_TIMEOUT)
+
+                if scan_thread.is_alive():
+                    elapsed_time = time.time() - yara_scan_start_time
+                    yara_timeout_occurred = True
+                    timeout_message = f"YARA SCAN TIMEOUT: YARA rule matching exceeded {YARA_SCAN_TIMEOUT}s (actual: {elapsed_time:.2f}s). File requires manual review."
+                    logger.log("WARNING", "FileScan",
+                               f"YARA scan timeout ({elapsed_time:.2f}s > {YARA_SCAN_TIMEOUT}s) for file: {filePath}")
+                    reasons.append(timeout_message)
+                else:
+                    if not exception_queue.empty():
+                        exception = exception_queue.get()
+                        raise exception
+
+                    if not result_queue.empty():
+                        yara_matches = result_queue.get()
+
+                        for (score, rule, description, reference, matched_strings, author) in yara_matches:
+                            message = "Yara Rule MATCH: %s SUBSCORE: %s DESCRIPTION: %s REF: %s AUTHOR: %s" % \
+                                      (rule, score, description, reference, author)
+                            if matched_strings:
+                                message += " MATCHES: %s" % matched_strings
+
+                            total_score += score
+                            reasons.append(message)
+
+            except Exception as e:
+                logger.log("ERROR", "FileScan", f"Cannot YARA scan file: {filePathCleaned}. Error: {str(e)}")
+
+            fileInfo = "===========================================================\n" \
+                       "FILE: %s\n SCORE: %s%s\n " % (
+                           filePath, total_score, getAgeString(filePath))
+            if yara_timeout_occurred:
+                fileInfo += "*** YARA SCAN TIMEOUT - REQUIRES MANUAL REVIEW ***\n "
+
+            message_type = "INFO"
+            if total_score >= 100:
+                message_type = "ALERT"
+            elif total_score >= 60:
+                message_type = "WARNING"
+            elif total_score >= 40:
+                message_type = "NOTICE"
+            if yara_timeout_occurred and message_type == "INFO":
+                message_type = "WARNING"
+
+            logger.log("DEBUG", "FileScan", f"File {filePath}: total_score={total_score}, reasons_count={len(reasons)}, yara_timeout={yara_timeout_occurred}")
+            if total_score < 40 and not yara_timeout_occurred:
+                logger.log("DEBUG", "FileScan", f"Skipping file {filePath} (score {total_score} < 40)")
+                return
+
+            message_body = fileInfo
+            reason_lines = []
+            reason_csv_lines = []
+            for i, r in enumerate(reasons):
+                reason_lines.append("\tREASON_{0}: {1}\n ".format(i + 1, r))
+                reason_csv_lines.append("REASON_{0}: {1}\n ".format(i + 1, r))
+            message_body += "".join(reason_lines)
+            message_csv = "".join(reason_csv_lines)
+            logger.log("DEBUG", "FileScan", f"Adding file to report: {filePath}, score={total_score}, message_type={message_type}, reasons={len(reasons)}")
+
+            if args and getattr(args, 'quarantine', False) and total_score >= 100:
+                src = filePath
+                # Use timestamp with microseconds to avoid filename collision in multi-thread
+                filename_only = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time() * 1000000))
+                quarantine_dir = os.path.join(self.app_path, "quarantine")
+
+                try:
+                    # Thread-safe directory creation with exist_ok=True
+                    os.makedirs(quarantine_dir, exist_ok=True)
+                except Exception as e:
+                    logger.log("ERROR", "FileScan", f"Cannot create quarantine directory {quarantine_dir}: {e}")
+                    message_body += "FILE CAN NOT MOVED TO QUARANTINE (cannot create directory)!!!\n "
+                else:
+                    dst = os.path.join(quarantine_dir, filename_only)
+                    try:
+                        if os.path.exists(src):
+                            shutil.move(src, dst)
+                            message_body += "FILE MOVED TO QUARANTINE: %s\n " % dst
+                        else:
+                            logger.log("WARNING", "FileScan", f"Source file does not exist: {src}")
+                            message_body += "FILE CAN NOT MOVED TO QUARANTINE (source file not found)!!!\n "
+                    except Exception as e:
+                        logger.log("ERROR", "FileScan", f"Cannot move file to quarantine {src} -> {dst}: {e}")
+                        message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n "
+
+            with self.result_lock:
+                MESSAGE.append([total_score, message_type, message_body])
+                fileInfo_csv["FILE"].append(filePath)
+                fileInfo_csv["SCORE"].append(total_score)
+                fileInfo_csv["TIME"].append(getAgeString(filePath))
+                fileInfo_csv["DESCRIPTION"].append(message_csv)
+                fileInfo_csv["EXTENSION"].append(extension)
+            logger.log("DEBUG", "FileScan", f"Added to MESSAGE and CSV: {filePath}, score={total_score}, has_ssdeep={any('SSDeep' in r for r in reasons)}")
+
+        except Exception as e:
+            logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
+            traceback.print_exc()
+
     def scan_path(self, path, args=None):
-        global MESSAGE
+        global MESSAGE, fileInfo_csv
         MESSAGE = []
+        # Reset fileInfo_csv for new scan
+        fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": [], "EXTENSION": []}
         # Check if path exists
         if not os.path.exists(path):
             logger.log("ERROR", "FileScan", "None Existing Scanning Path %s ...  " % path)
@@ -556,15 +920,48 @@ class Scanner(object):
         # Cache app_path.lower() để tránh gọi lại nhiều lần
         app_path_lower = self.app_path.lower()
 
-        # Counter
-        c = 0
-
         # Pre-count total files for accurate progress display
         try:
             total = sum(len(filenames) for _, _, filenames in os.walk(path, onerror=self.walk_error, followlinks=False))
         except Exception as e:
             logger.log("DEBUG", "FileScan", f"Cannot pre-count files in {path}: {str(e)}")
             total = 0
+        self.processed_files = 0
+
+        num_threads = getattr(args, 'threads', 1) if args else 1
+        if num_threads is None or num_threads < 1:
+            num_threads = 1
+        
+        # Log system information
+        cpu_count = get_cpu_count()
+        logger.log("INFO", "FileScan", f"System Information: {cpu_count} CPU core(s) detected")
+        logger.log("INFO", "FileScan", f"Configured thread count: {num_threads}")
+        
+        # Show recommendation if using manual thread count
+        if num_threads > 1:
+            optimal_threads, _, recommendation = get_optimal_thread_count(cpu_count)
+            if num_threads != optimal_threads:
+                logger.log("NOTICE", "FileScan", f"Recommendation: Optimal thread count for this system is {optimal_threads} (current: {num_threads})")
+        
+        use_threads = num_threads > 1
+        file_queue = None
+        workers = []
+
+        if use_threads:
+            logger.log("INFO", "FileScan", f"Initializing multi-threaded scanning with {num_threads} worker thread(s)")
+            logger.log("INFO", "FileScan", f"Queue size: {num_threads * 2} files")
+            file_queue = queue.Queue(maxsize=num_threads * 2)
+            for i in range(num_threads):
+                worker = threading.Thread(target=self._worker_process_file,
+                                           args=(file_queue, args, app_path_lower, total),
+                                           name=f"Worker-{i+1}",
+                                           daemon=True)
+                worker.start()
+                workers.append(worker)
+                logger.log("INFO", "FileScan", f"Worker thread {i+1}/{num_threads} started (Thread ID: {worker.ident}, Name: {worker.name})")
+            logger.log("INFO", "FileScan", f"All {num_threads} worker thread(s) initialized and ready")
+        else:
+            logger.log("INFO", "FileScan", "Running in single-threaded mode")
 
         for root, directories, files in os.walk(path, onerror=self.walk_error, followlinks=False):
             # Skip paths that start with ..
@@ -585,391 +982,34 @@ class Scanner(object):
             directories[:] = newDirectories
 
             # Loop through files
+            if use_threads and len(files) > 0:
+                logger.log("DEBUG", "FileScan", f"Queueing {len(files)} file(s) from directory: {root}")
             for filename in files:
+                filePath = os.path.join(root, filename)
                 try:
-                    # Findings
-                    reasons = []
-                    # Total Score
-                    total_score = 0
-                    yara_timeout_occurred = False  # Flag để đánh dấu YARA timeout
-
-                    # Get the file and path
-                    filePath = os.path.join(root, filename)
-                    fpath = os.path.split(filePath)[0]
-                    # Clean the values for YARA matching
-                    # > due to errors when Unicode characters are passed to the match function as
-                    #   external variables
-                    filePathCleaned = fpath.encode('ascii', errors='replace')
-                    fileNameCleaned = filename.encode('ascii', errors='replace')
-
-                    # Get Extension
-                    extension = os.path.splitext(filePath)[1].lower()
-
-                    skipIt = False
-
-                    # Cache file stat để tránh gọi lại nhiều lần (dùng cho size check và Linux file mode)
-                    try:
-                        file_stat = os.stat(filePath)
-                        file_size = file_stat.st_size
-                    except (OSError, IOError) as e:
-                        logger.log("DEBUG", "FileScan", f"Cannot stat file {filePath}: {str(e)}")
-                        continue
-                    
-                    # Check if file is an archive and should be extracted
-                    is_archive, archive_ext = self.is_archive_file(filePath)
-                    if is_archive and file_size <= self.MAX_ARCHIVE_SIZE:
-                        # Create temporary directory for archive extraction
-                        temp_dir = tempfile.mkdtemp(prefix='webshell_scan_archive_')
-                        try:
-                            logger.log("INFO", "Archive", f"Scanning archive: {filePath} (size: {file_size} bytes)")
-                            # Scan archive recursively
-                            archive_findings = self.scan_archive_recursive(filePath, temp_dir, "", args)
-                            
-                            # Process findings from archive
-                            if archive_findings:
-                                for finding_file, finding_score, finding_reasons, original_archive in archive_findings:
-                                    # Create file info for the finding - include archive path
-                                    archive_path_info = f"\n ARCHIVE: {filePath}\n"
-                                    fileInfo = "===========================================================\n" \
-                                               "FILE: %s%s SCORE: %s%s\n " % (
-                                                   finding_file, archive_path_info, finding_score, getAgeString(filePath))
-                                    
-                                    message_type = "INFO"
-                                    if finding_score >= 100:
-                                        message_type = "ALERT"
-                                    elif finding_score >= 60:
-                                        message_type = "WARNING"
-                                    elif finding_score >= 40:
-                                        message_type = "NOTICE"
-                                    
-                                    # Build reasons - add archive info to first reason
-                                    reason_lines = []
-                                    reason_csv_lines = []
-                                    for i, r in enumerate(finding_reasons):
-                                        reason_lines.append("\tREASON_{0}: {1}\n ".format(i + 1, r))
-                                        reason_csv_lines.append("REASON_{0}: {1}\n ".format(i + 1, r))
-                                    
-                                    message_body = fileInfo + "".join(reason_lines)
-                                    message_csv = "".join(reason_csv_lines)
-                                    
-                                    # Add to MESSAGE and CSV
-                                    MESSAGE.append([finding_score, message_type, message_body])
-                                    fileInfo_csv["FILE"].append(f"{finding_file} [ARCHIVE: {filePath}]")
-                                    fileInfo_csv["SCORE"].append(finding_score)
-                                    fileInfo_csv["TIME"].append(getAgeString(filePath))
-                                    fileInfo_csv["DESCRIPTION"].append(message_csv)
-                                    fileInfo_csv["EXTENSION"].append(extension)
-                                    
-                                    logger.log("INFO", "Archive", f"Found webshell in archive: {finding_file} (score: {finding_score}) in archive: {filePath}")
-                            
-                        except Exception as e:
-                            logger.log("ERROR", "Archive", f"Error processing archive {filePath}: {str(e)}")
-                        finally:
-                            # Cleanup temporary directory
-                            try:
-                                shutil.rmtree(temp_dir, ignore_errors=True)
-                                logger.log("DEBUG", "Archive", f"Cleaned up temporary directory: {temp_dir}")
-                            except Exception as e:
-                                logger.log("WARNING", "Archive", f"Cannot cleanup temporary directory {temp_dir}: {str(e)}")
-                        
-                        # Continue to next file (archive already processed)
-                        continue
-
-                    # File size check (sử dụng file_stat đã cache)
-                    # if file_size > 100*(1024*1024):
-                    #     skipIt = True
-
-                    # User defined excludes
-                    for skip in self.fullExcludes:
-                        if skip.search(filePath):
-                            skipIt = True
-
-                    # Linux directory skip
-                    if os_platform == "linux":
-
-                        # Skip paths that end with ..
-                        for skip in self.LINUX_PATH_SKIPS_END:
-                            if filePath.endswith(skip):
-                                skipIt = True
-                                break
-
-                        # File mode (sử dụng file_stat đã cache)
-                        mode = file_stat.st_mode
-                        if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(
-                                mode) or stat.S_ISSOCK(mode):
-                            continue
-
-                    # Skip
-                    if skipIt:
-                        continue
-
-                    # Counter
-                    c += 1
-
-                    print_progress(c, total, logger)
-                    print(filePath + "\t Size: {0} MB".format(file_size / 1024 / 1024))
-                    # Skip program directory
-                    # print appPath.lower() +" - "+ filePath.lower()
-                    if app_path_lower in filePath.lower():
-                        continue
-
-                    # File Name Checks -------------------------------------------------
-                    for fioc in self.filename_iocs:
-                        match = fioc['regex'].search(filePath)
-                        if match:
-                            # Check for False Positive
-                            if fioc['regex_fp']:
-                                match_fp = fioc['regex_fp'].search(filePath)
-                                if match_fp:
-                                    continue
-                            # Create Reason
-                            reasons.append("File Name IOC matched PATTERN: %s SUBSCORE: %s DESC: %s" % (
-                                fioc['regex'].pattern, fioc['score'], fioc['description']))
-                            total_score += int(fioc['score'])
-
-                    # Evaluate Type
-                    fileType = get_file_type(filePath, self.filetype_magics, self.max_filetype_magics, logger)
-
-                    # Hash Check -------------------------------------------------------
-                    # Do the check
-                    fileData = self.get_file_data(filePath)
-
-                    # Hash Eval
-                    matchType = None
-                    matchDesc = None
-                    matchHash = None
-                    md5 = 0
-                    sha1 = 0
-                    sha256 = 0
-
-                    md5, sha1, sha256 = generateHashes(fileData)
-                    md5_num = int(md5, 16)
-                    sha1_num = int(sha1, 16)
-                    sha256_num = int(sha256, 16)
-
-                    # Skip empty file (hashes of empty file)
-                    EMPTY_FILE_MD5 = int('d41d8cd98f00b204e9800998ecf8427e', 16)
-                    EMPTY_FILE_SHA1 = int('da39a3ee5e6b4b0d3255bfef95601890afd80709', 16)
-                    EMPTY_FILE_SHA256 = int('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 16)
-                    if md5_num == EMPTY_FILE_MD5 or sha1_num == EMPTY_FILE_SHA1 or sha256_num == EMPTY_FILE_SHA256:
-                        logger.log("DEBUG", "FileScan", f"Skipping empty file: {filePath}")
-                        continue
-
-                    # False Positive Hash check
-                    if md5_num in self.false_hashes or sha1_num in self.false_hashes or sha256_num in self.false_hashes:
-                        continue
-
-                    # Malware Hash
-                    if self.ioc_contains(self.hashes_md5_list, md5_num):
-                        matchType = "MD5"
-                        matchDesc = self.hashes_md5[md5_num]
-                        matchHash = md5
-                    if self.ioc_contains(self.hashes_sha1_list, sha1_num):
-                        matchType = "SHA1"
-                        matchDesc = self.hashes_sha1[sha1_num]
-                        matchHash = sha1
-                    if self.ioc_contains(self.hashes_sha256_list, sha256_num):
-                        matchType = "SHA256"
-                        matchDesc = self.hashes_sha256[sha256_num]
-                        matchHash = sha256
-
-                    # Hash string
-                    if matchType:
-                        reasons.append("Malware Hash TYPE: %s HASH: %s SUBSCORE: 100 DESC: %s" % (
-                            matchType, matchHash, matchDesc))
-                        total_score += 100
-
-                    # SSDeep Check -------------------------------------------------------
-                    if ssdeep is not None and self.ssdeep_signatures and fileData:
-                        try:
-                            # Log to file only (DEBUG), not to stdout
-                            logger.log("DEBUG", "SSDeep", f"Checking file with SSDeep: {filePath}")
-                            # Generate SSDeep hash for the current file
-                            file_ssdeep_hash = ssdeep.hash(fileData)
-                            logger.log("DEBUG", "SSDeep", f"Generated SSDeep hash: {file_ssdeep_hash[:50]}... (truncated)")
-                            
-                            if file_ssdeep_hash:
-                                # Compare with known webshells
-                                best_match_score = 0
-                                best_match_hash = None
-                                best_match_filename = None
-                                comparisons_count = 0
-                                
-                                for known_hash, known_filename in self.ssdeep_signatures:
-                                    try:
-                                        # Compare hashes (returns similarity score 0-100)
-                                        similarity = ssdeep.compare(file_ssdeep_hash, known_hash)
-                                        comparisons_count += 1
-                                        if similarity > best_match_score:
-                                            best_match_score = similarity
-                                            best_match_hash = known_hash
-                                            best_match_filename = known_filename
-                                    except Exception as e:
-                                        # Skip invalid hash comparisons
-                                        logger.log("DEBUG", "SSDeep", f"Error comparing hash: {str(e)}")
-                                        continue
-                                
-                                logger.log("DEBUG", "SSDeep", f"Compared with {comparisons_count} known signatures, best match: {best_match_score}%")
-                                
-                                # If similarity >= 50, consider it a match (ssdeep threshold)
-                                if best_match_score >= 50:
-                                    logger.log("DEBUG", "SSDeep", f"SSDeep match found: {best_match_score}% similarity with {best_match_filename}")
-                                    reason_text = "SSDeep Match SCORE: %d%% HASH: %s SUBSCORE: 85 DESC: Similar to known webshell: %s" % (
-                                        best_match_score, best_match_hash, best_match_filename)
-                                    reasons.append(reason_text)
-                                    total_score += best_match_score
-                                    logger.log("DEBUG", "SSDeep", f"Added SSDeep match to reasons. Total score now: {total_score}")
-                                else:
-                                    logger.log("DEBUG", "SSDeep", f"No SSDeep match (best: {best_match_score}%, threshold: 50%)")
-                            else:
-                                logger.log("DEBUG", "SSDeep", "Failed to generate SSDeep hash (empty result)")
-                        except Exception as e:
-                            # SSDeep hashing failed
-                            logger.log("WARNING", "SSDeep", f"SSDeep check failed for {filePath}: {str(e)}")
-
-                    # Yara Check -------------------------------------------------------
-                    # Scan the read data với timeout protection (20 giây)
-                    YARA_SCAN_TIMEOUT = 20.0  # 20 giây timeout cho YARA scan
-                    yara_scan_start_time = time.time()
-                    
-                    try:
-                        # Sử dụng queue để lấy kết quả từ thread
-                        result_queue = queue.Queue()
-                        exception_queue = queue.Queue()
-                        
-                        def yara_scan_worker():
-                            """Worker function để chạy YARA scan trong thread riêng"""
-                            try:
-                                matches_list = []
-                                for (score, rule, description, reference, matched_strings, author) in \
-                                        self.scan_data(fileData=fileData,
-                                                       fileType=fileType,
-                                                       fileName=fileNameCleaned,
-                                                       filePath=filePathCleaned,
-                                                       extension=extension,
-                                                       md5=md5  # legacy rule support
-                                                       ):
-                                    matches_list.append((score, rule, description, reference, matched_strings, author))
-                                result_queue.put(matches_list)
-                            except Exception as e:
-                                exception_queue.put(e)
-                        
-                        # Chạy YARA scan trong thread riêng
-                        scan_thread = threading.Thread(target=yara_scan_worker, daemon=True)
-                        scan_thread.start()
-                        
-                        # Đợi thread hoàn thành hoặc timeout (20 giây)
-                        scan_thread.join(timeout=YARA_SCAN_TIMEOUT)
-                        
-                        # Kiểm tra xem thread có còn chạy không
-                        if scan_thread.is_alive():
-                            # Thread vẫn chạy, có nghĩa là timeout
-                            elapsed_time = time.time() - yara_scan_start_time
-                            yara_timeout_occurred = True
-                            timeout_message = f"YARA SCAN TIMEOUT: YARA rule matching exceeded {YARA_SCAN_TIMEOUT}s (actual: {elapsed_time:.2f}s). File requires manual review."
-                            logger.log("WARNING", "FileScan", 
-                                      f"YARA scan timeout ({elapsed_time:.2f}s > {YARA_SCAN_TIMEOUT}s) for file: {filePath}")
-                            # Thêm thông tin timeout vào reasons để ghi vào output
-                            reasons.append(timeout_message)
-                        else:
-                            # Thread đã hoàn thành, lấy kết quả
-                            if not exception_queue.empty():
-                                exception = exception_queue.get()
-                                raise exception
-                            
-                            if not result_queue.empty():
-                                yara_matches = result_queue.get()
-                                
-                                # Xử lý kết quả YARA
-                                for (score, rule, description, reference, matched_strings, author) in yara_matches:
-                                    # Message
-                                    message = "Yara Rule MATCH: %s SUBSCORE: %s DESCRIPTION: %s REF: %s AUTHOR: %s" % \
-                                              (rule, score, description, reference, author)
-                                    # Matches
-                                    if matched_strings:
-                                        message += " MATCHES: %s" % matched_strings
-
-                                    total_score += score
-                                    reasons.append(message)
-
-                    except Exception as e:
-                        logger.log("ERROR", "FileScan", f"Cannot YARA scan file: {filePathCleaned}. Error: {str(e)}")
-
-                    # Info Line -----------------------------------------------------------------------
-                    # Nếu YARA timeout, vẫn ghi vào output để đánh giá thủ công
-                    # Thêm flag vào fileInfo nếu có YARA timeout
-                    fileInfo = "===========================================================\n" \
-                               "FILE: %s\n SCORE: %s%s\n " % (
-                                   filePath, total_score, getAgeString(filePath))
-                    if yara_timeout_occurred:
-                        fileInfo += "*** YARA SCAN TIMEOUT - REQUIRES MANUAL REVIEW ***\n "
-                    
-                    message_type = "INFO"
-                    # Now print the total result
-                    if total_score >= 100:
-                        message_type = "ALERT"
-                    elif total_score >= 60:
-                        message_type = "WARNING"
-                    elif total_score >= 40:
-                        message_type = "NOTICE"
-                    # Nếu YARA timeout, đánh dấu là WARNING để dễ nhận biết
-                    if yara_timeout_occurred and message_type == "INFO":
-                        message_type = "WARNING"
-
-                    # Nếu YARA timeout, vẫn ghi vào output ngay cả khi score < 40
-                    logger.log("DEBUG", "FileScan", f"File {filePath}: total_score={total_score}, reasons_count={len(reasons)}, yara_timeout={yara_timeout_occurred}")
-                    if total_score < 40 and not yara_timeout_occurred:
-                        logger.log("DEBUG", "FileScan", f"Skipping file {filePath} (score {total_score} < 40)")
-                        continue
-
-                    # Reasons to message body (tối ưu: dùng list join thay vì string concatenation)
-                    message_body = fileInfo
-                    reason_lines = []
-                    reason_csv_lines = []
-                    for i, r in enumerate(reasons):
-                        reason_lines.append("\tREASON_{0}: {1}\n ".format(i + 1, r))
-                        reason_csv_lines.append("REASON_{0}: {1}\n ".format(i + 1, r))
-                    message_body += "".join(reason_lines)
-                    message_csv = "".join(reason_csv_lines)
-                    logger.log("DEBUG", "FileScan", f"Adding file to report: {filePath}, score={total_score}, message_type={message_type}, reasons={len(reasons)}")
-                    
-                    # Quarantine logic: move file nếu có quarantine flag và file có score >= 100 (ALERT)
-                    if args and args.quarantine and total_score >= 100:
-                        src = filePath
-                        filename = os.path.basename(filePath.replace("/", os.sep)) + "." + str(int(time.time()))
-                        quarantine_dir = os.path.join(self.app_path, "quarantine")
-                        
-                        # Tạo thư mục quarantine nếu chưa tồn tại
-                        try:
-                            if not os.path.exists(quarantine_dir):
-                                os.makedirs(quarantine_dir)
-                                logger.log("INFO", "FileScan", f"Created quarantine directory: {quarantine_dir}")
-                        except Exception as e:
-                            logger.log("ERROR", "FileScan", f"Cannot create quarantine directory {quarantine_dir}: {e}")
-                            message_body += "FILE CAN NOT MOVED TO QUARANTINE (cannot create directory)!!!\n "
-                        else:
-                            dst = os.path.join(quarantine_dir, filename)
-                            try:
-                                # Kiểm tra file có tồn tại không trước khi move
-                                if os.path.exists(src):
-                                    shutil.move(src, dst)
-                                    message_body += "FILE MOVED TO QUARANTINE: %s\n " % dst
-                                else:
-                                    logger.log("WARNING", "FileScan", f"Source file does not exist: {src}")
-                                    message_body += "FILE CAN NOT MOVED TO QUARANTINE (source file not found)!!!\n "
-                            except Exception as e:
-                                logger.log("ERROR", "FileScan", f"Cannot move file to quarantine {src} -> {dst}: {e}")
-                                message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n "
-                    MESSAGE.append([total_score, message_type, message_body])
-                    fileInfo_csv["FILE"].append(filePath)
-                    fileInfo_csv["SCORE"].append(total_score)
-                    fileInfo_csv["TIME"].append(getAgeString(filePath))
-                    fileInfo_csv["DESCRIPTION"].append(message_csv)
-                    fileInfo_csv["EXTENSION"].append(extension)
-                    logger.log("DEBUG", "FileScan", f"Added to MESSAGE and CSV: {filePath}, score={total_score}, has_ssdeep={any('SSDeep' in r for r in reasons)}")
+                    if use_threads:
+                        # Put file to queue (may block if queue is full, but that's acceptable)
+                        file_queue.put(filePath, block=True, timeout=None)
+                    else:
+                        self.process_single_file(filePath, args, app_path_lower, total)
+                except queue.Full:
+                    logger.log("ERROR", "FileScan", f"Queue full, cannot schedule file {filePath}")
                 except Exception as e:
-                    logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
+                    logger.log("ERROR", "FileScan", f"Error scheduling file {filePath}: {str(e)}")
                     traceback.print_exc()
+
+        if use_threads:
+            logger.log("INFO", "FileScan", f"All files queued. Waiting for {num_threads} worker thread(s) to complete processing...")
+            file_queue.join()
+            logger.log("INFO", "FileScan", f"All files processed. Sending shutdown signals to {num_threads} worker thread(s)...")
+            for i in range(num_threads):
+                file_queue.put(None)
+            logger.log("INFO", "FileScan", f"Waiting for all worker thread(s) to finish...")
+            for i, worker in enumerate(workers, 1):
+                worker.join()
+                logger.log("INFO", "FileScan", f"Worker thread {i}/{num_threads} ({worker.name}) has finished")
+            logger.log("INFO", "FileScan", f"All {num_threads} worker thread(s) have completed successfully")
+        
         MESSAGE.sort(key=lambda x: x[0], reverse=True)
         logger.log("INFO", "FileScan", f"Total files to report: {len(MESSAGE)}")
         # Log individual files - DEBUG messages won't print to console
@@ -1616,7 +1656,28 @@ def main():
                         action='store_true')
     parser.add_argument('-d', '--debug', help='Enable debug mode to show all DEBUG messages on console', 
                         default=False, action='store_true')
+    parser.add_argument('-t', '--threads', 
+                       help='Number of worker threads for file scanning. Use 0 or "auto" to auto-detect optimal count based on CPU cores. Default: 1 (single-threaded)',
+                       default='1')
     args = parser.parse_args()
+    
+    # Parse threads argument - support "auto", "0", or integer (as string or int)
+    threads_input = str(args.threads).lower().strip()
+    
+    if threads_input in ['auto', '0']:
+        # Auto-detect optimal thread count
+        optimal_threads, cpu_count, recommendation = get_optimal_thread_count()
+        args.threads = optimal_threads
+        print(f"\n[INFO] Auto-detecting optimal thread count...")
+        print(f"[INFO] {recommendation}")
+        print(f"[INFO] Using {args.threads} thread(s) for scanning\n")
+    else:
+        try:
+            args.threads = int(threads_input)
+            if args.threads < 1:
+                parser.error("--threads must be >= 1, or use 'auto'/'0' for auto-detection")
+        except ValueError:
+            parser.error(f"Invalid --threads value: '{args.threads}'. Use an integer >= 1, or 'auto'/'0' for auto-detection")
     
     # Nếu không chỉ định --out_file, tạo tên file log với tên thư mục được quét
     if args.out_file is None:

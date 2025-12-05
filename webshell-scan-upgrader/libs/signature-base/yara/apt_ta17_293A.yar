@@ -1,14 +1,3 @@
-/*
-   Yara Rule Set
-   Author: US-CERT
-   Date: 2017-10-21
-   Identifier: TA17-293A
-   Reference: https://www.us-cert.gov/ncas/alerts/TA17-293A
-
-   Beware: Rules have been modified to reduce complexity and false positives as well as to
-           improve the overall performance
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,9 +6,6 @@ import "pe"
    Identifier: TA17-293A
    Reference: https://www.us-cert.gov/ncas/alerts/TA17-293A
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-rule TA17_293A_malware_1 {
-=======
    Beware: Rules have been modified to reduce complexity and false positives as well as to
            improve the overall performance
 */
@@ -28,7 +14,6 @@ rule TA17_293A_malware_1 {
 
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
     meta:
         description = "inveigh pen testing tools & related artifacts"
         author = "US-CERT Code Analysis Team (modified by Florian Roth)"
@@ -90,13 +75,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_malware_1 {
         2 of ($s*) or
         1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_energetic_bear_api_hashing_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_energetic_bear_api_hashing_tool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
    meta:
       description = "Energetic Bear API Hashing Tool"
       assoc_report = "DHS Report TA17-293A"
@@ -113,13 +93,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_energetic_bear_api_hashing_tool {
    condition:
       $api_hash_func_v1 or $api_hash_func_v2 or $api_hash_func_x64 and (uint16(0) == 0x5a4d or $http_push or $http_pop)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_Query_XML_Code_MAL_DOC_PT_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_Query_XML_Code_MAL_DOC_PT_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
     meta:
         name= "Query_XML_Code_MAL_DOC_PT_2"
         author = "other (modified by Florian Roth)"
@@ -131,13 +106,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_Query_XML_Code_MAL_DOC_PT_2 {
     condition:
         uint32(0) == 0x04034b50 and $dir1 and $bytes
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_Query_XML_Code_MAL_DOC {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_Query_XML_Code_MAL_DOC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
     meta:
         name= "Query_XML_Code_MAL_DOC"
         author = "other (modified by Florian Roth)"
@@ -150,13 +120,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_Query_XML_Code_MAL_DOC {
     condition:
         uint32(0) == 0x04034b50 and $dir at 0x0145 and $dir2 at 0x02b7 and $style at 0x08fd
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_Query_Javascript_Decode_Function {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_Query_Javascript_Decode_Function {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
     meta:
         name= "Query_Javascript_Decode_Function"
         author = "other (modified by Florian Roth)"
@@ -185,13 +150,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_Query_Javascript_Decode_Function {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_Hacktool_PS_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_Hacktool_PS_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -206,13 +166,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_Hacktool_PS_1 {
    condition:
       ( filesize < 80KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_Hacktool_Touch_MAC_modification {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_Hacktool_Touch_MAC_modification {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -229,13 +184,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_Hacktool_Touch_MAC_modification {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule TA17_293A_Hacktool_Exploit_MS16_032 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_TA17_293A_Hacktool_Exploit_MS16_032 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -254,13 +204,8 @@ rule Neo23x0_apt_ta17_293A_TA17_293A_Hacktool_Exploit_MS16_032 {
 }
 
 /* Extra Rules based on Imphash of involved malware - Generic approach */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule Imphash_UPX_Packed_Malware_1_TA17_293A {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_Imphash_UPX_Packed_Malware_1_TA17_293A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
    meta:
       description = "Detects malware based on Imphash of malware used in TA17-293A"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -272,13 +217,8 @@ rule Neo23x0_apt_ta17_293A_Imphash_UPX_Packed_Malware_1_TA17_293A {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 5000KB and pe.imphash() == "d7d745ea39c8c5b82d5e153d3313096c" )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta17_293A.yar
-
-rule Imphash_Malware_2_TA17_293A : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta17_293A_Imphash_Malware_2_TA17_293A : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta17_293A.yar
    meta:
       description = "Detects malware based on Imphash of malware used in TA17-293A"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

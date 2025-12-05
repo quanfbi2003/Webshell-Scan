@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sharepoint_jul25.yar
-
-
-rule Neo23x0_exp_WEBSHELL_ASPX_Sharepoint_Drop_CVE_2025_53770_Jul25 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_jul25_WEBSHELL_ASPX_Sharepoint_Drop_CVE_2025_53770_Jul25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sharepoint_jul25.yar
    meta:
       description = "Detects ASPX web shell dropped during the exploitation of SharePoint RCE vulnerability CVE-2025-53770"
       author = "Florian Roth"
@@ -25,13 +19,8 @@ rule Neo23x0_expl_sharepoint_jul25_WEBSHELL_ASPX_Sharepoint_Drop_CVE_2025_53770_
       and 1 of ($x*)
       or all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sharepoint_jul25.yar
-
-rule Neo23x0_exp_WEBSHELL_ASPX_Compiled_Sharepoint_Drop_CVE_2025_53770_Jul25_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_jul25_WEBSHELL_ASPX_Compiled_Sharepoint_Drop_CVE_2025_53770_Jul25_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sharepoint_jul25.yar
    meta:
       description = "Detects compiled ASPX web shell dropped during the exploitation of SharePoint RCE vulnerability CVE-2025-53770"
       author = "Florian Roth, Marius Benthin"
@@ -61,13 +50,8 @@ rule Neo23x0_expl_sharepoint_jul25_WEBSHELL_ASPX_Compiled_Sharepoint_Drop_CVE_20
       or 2 of ($x*)
       or 4 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sharepoint_jul25.yar
-
-rule Neo23x0_exp_APT_EXPL_Sharepoint_CVE_2025_53770_ForensicArtefact_Jul25_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_jul25_APT_EXPL_Sharepoint_CVE_2025_53770_ForensicArtefact_Jul25_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sharepoint_jul25.yar
    meta:
       description = "Detects URIs accessed during the exploitation of SharePoint RCE vulnerability CVE-2025-53770"
       author = "Florian Roth"
@@ -86,13 +70,8 @@ rule Neo23x0_expl_sharepoint_jul25_APT_EXPL_Sharepoint_CVE_2025_53770_ForensicAr
       or (@sb2 - @sb1) < 700  // specific combination
       or (@sb2 - @sa1) < 700  // most generic combination
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sharepoint_jul25.yar
-
-rule Neo23x0_exp_APT_EXPL_Sharepoint_CVE_2025_53770_ForensicArtefact_Jul25_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sharepoint_jul25_APT_EXPL_Sharepoint_CVE_2025_53770_ForensicArtefact_Jul25_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sharepoint_jul25.yar
    meta:
       description = "Detects URIs accessed during the exploitation of SharePoint RCE vulnerability CVE-2025-53770"
       author = "Florian Roth"

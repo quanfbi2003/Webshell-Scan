@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule SUSP_LNK_Embedded_WordDoc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_SUSP_LNK_Embedded_WordDoc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Greg Lesnewich"
 		description = "check for LNK files with indications of the Word program or an embedded doc"
@@ -23,13 +18,8 @@ rule Neo23x0_gen_100days_of_yara_2023_SUSP_LNK_Embedded_WordDoc {
 		filesize > 10KB and
 		any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule SUSP_LNK_SmallScreenSize {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_SUSP_LNK_SmallScreenSize {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Greg Lesnewich"
 		description = "check for LNKs that have a screen buffer size and WindowSize dimensions of 1x1"
@@ -52,13 +42,8 @@ rule Neo23x0_gen_100days_of_yara_2023_SUSP_LNK_SmallScreenSize {
 	condition:
 		uint32be(0x0) == 0x4c000000 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_Janicab_LNK {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_Janicab_LNK {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Greg Lesnewich"
 		description = "detect LNK files used in Janicab infection chain"
@@ -81,13 +66,8 @@ rule Neo23x0_gen_100days_of_yara_2023_MAL_Janicab_LNK {
 	condition:
 		uint32be(0x0) == 0x4C000000 and $dimensions and 2 of ($j_*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule SUSP_ELF_Invalid_Version {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_SUSP_ELF_Invalid_Version {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
    meta:
       desc = "Identify ELF file that has mangled header info."
       author = "@shellcromancer"
@@ -104,13 +84,8 @@ rule Neo23x0_gen_100days_of_yara_2023_SUSP_ELF_Invalid_Version {
          and uint8(0x6) > 1 // ELF Version is greater value than in spec.
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_ELF_TorchTriton {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_ELF_TorchTriton {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Silas Cutler"
 		description = "Detection for backdoor (TorchTriton) distributed with a nightly build of PyTorch"
@@ -140,13 +115,8 @@ rule Neo23x0_gen_100days_of_yara_2023_MAL_ELF_TorchTriton {
 			($domain and 2 of them)
 			)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_GOLDBACKDOOR_LNK {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_GOLDBACKDOOR_LNK {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Greg Lesnewich"
 		date = "2023-01-02"
@@ -170,13 +140,8 @@ rule Neo23x0_gen_100days_of_yara_2023_MAL_GOLDBACKDOOR_LNK {
 		1 of ($doc*) and
 		2 of ($script*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_EXE_LockBit_v2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_EXE_LockBit_v2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 {
 	meta:
 		author = "Silas Cutler, modified by Florian Roth"
@@ -202,13 +167,8 @@ rule Neo23x0_gen_100days_of_yara_2023_MAL_EXE_LockBit_v2
 	condition:
 		uint16(0) == 0x5A4D and ( 1 of ($x*) or 2 of them ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_EXE_PrestigeRansomware {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_EXE_PrestigeRansomware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Silas Cutler, modfied by Florian Roth"
 		description = "Detection for Prestige Ransomware"
@@ -233,13 +193,8 @@ rule Neo23x0_gen_100days_of_yara_2023_MAL_EXE_PrestigeRansomware {
 		uint16(0) == 0x5A4D and 
 			(1 of ($x*) or 2 of them or pe.imphash() == "a32bbc5df4195de63ea06feb46cd6b55")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_EXE_RoyalRansomware {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_EXE_RoyalRansomware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Silas Cutler, modfied by Florian Roth"
 		description = "Detection for Royal Ransomware seen Dec 2022"
@@ -265,13 +220,8 @@ rule Neo23x0_gen_100days_of_yara_2023_MAL_EXE_RoyalRansomware {
 		   5 of them
 		)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_100days_of_yara_2023.yar
-
-rule MAL_PY_Dimorf {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_100days_of_yara_2023_MAL_PY_Dimorf {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_100days_of_yara_2023.yar
 	meta:
 		author = "Silas Cutler"
 		description = "Detection for Dimorf ransomeware"

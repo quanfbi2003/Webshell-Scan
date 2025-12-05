@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_invocation.yar
-
-rule PowerShell_Susp_Parameter_Combo : HIGHVOL FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_invocation_PowerShell_Susp_Parameter_Combo : HIGHVOL FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_invocation.yar
    meta:
       description = "Detects PowerShell invocation with suspicious parameters"
       author = "Florian Roth (Nextron Systems)"

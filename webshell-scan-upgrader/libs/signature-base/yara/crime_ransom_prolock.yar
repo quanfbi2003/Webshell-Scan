@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_prolock.yar
-rule MAL_Prolock_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_prolock_MAL_Prolock_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_ransom_prolock.yar
 	meta:
 		description = "Detects Prolock malware in encrypted and decrypted mode"
 		author = "Frank Boldewin (@r3c0nst)"

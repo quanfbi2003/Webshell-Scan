@@ -4,20 +4,12 @@
    Date: 2017-01-10
    Identifier: Venom Rootkit
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_venom_linux_rootkit.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_venom_linux_rootkit.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_venom_linux_rootkit.yar
-rule Venom_Rootkit {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_venom_linux_rootkit_Venom_Rootkit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_venom_linux_rootkit.yar
    meta:
       description = "Venom Linux Rootkit"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

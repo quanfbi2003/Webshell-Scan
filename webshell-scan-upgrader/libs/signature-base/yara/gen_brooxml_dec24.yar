@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_brooxml_dec24.yar
-
-
-rule Neo23x0_gen_Brooxml_Hunting {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_brooxml_dec24_Brooxml_Hunting {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_brooxml_dec24.yar
     meta:
         description = "Detects Microsoft OOXML files with prepended data/manipulated header"
         author = "Proofpoint"
@@ -43,13 +37,8 @@ rule Neo23x0_gen_brooxml_dec24_Brooxml_Hunting {
         not (uint16(0) == 0x5a4d) and
         not ($tef at 0)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_brooxml_dec24.yar
-
-rule Neo23x0_gen_Brooxml_Phishing {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_brooxml_dec24_Brooxml_Phishing {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_brooxml_dec24.yar
     meta:
         description = "Detects PDF and OOXML files leading to AiTM phishing"
         author = "Proofpoint"

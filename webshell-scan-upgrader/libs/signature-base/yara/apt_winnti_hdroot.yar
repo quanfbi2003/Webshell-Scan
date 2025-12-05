@@ -5,20 +5,12 @@
    Identifier: HDRoot
    Reference: Winnti HDRoot VT
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_hdroot.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_hdroot.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_hdroot.yar
-rule HDRoot_Sample_Jul17_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_winnti_hdroot_HDRoot_Sample_Jul17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_hdroot.yar
    meta:
       description = "Detects HDRoot samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +26,8 @@ rule Neo23x0_apt_winnti_hdroot_HDRoot_Sample_Jul17_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 60KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_hdroot.yar
-
-rule HDRoot_Sample_Jul17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_hdroot_HDRoot_Sample_Jul17_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_hdroot.yar
    meta:
       description = "Detects HDRoot samples"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -77,13 +64,8 @@ rule Neo23x0_apt_winnti_hdroot_HDRoot_Sample_Jul17_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and ( 1 of ($x*) or all of ($u*) or 8 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_hdroot.yar
-
-rule Unspecified_Malware_Jul17_1A {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_hdroot_Unspecified_Malware_Jul17_1A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_hdroot.yar
    meta:
       description = "Detects samples of an unspecified malware - July 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_triangulation_jun23.yar
-
-rule APT_Equation_Group_Op_Triangulation_TriangleDB_Implant_Jun23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_triangulation_jun23_APT_Equation_Group_Op_Triangulation_TriangleDB_Implant_Jun23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_triangulation_jun23.yar
    meta:
       description = "Detects TriangleDB implant found being used in Operation Triangulation on iOS devices (maybe also used on macOS systems)"
       author = "Florian Roth"

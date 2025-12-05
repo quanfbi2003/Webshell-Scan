@@ -5,15 +5,6 @@
    Date: 2017-12-24
    Identifier: Armitage
    Reference: Internal Research
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_armitage.yar
-
-   This is a subset of the Armitage rule set included in THOR APT Scanner
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Armitage_msfconsole {
-=======
 
    This is a subset of the Armitage rule set included in THOR APT Scanner
 */
@@ -23,7 +14,6 @@ rule Armitage_msfconsole {
 
 //===SUCCESS===
 rule Neo23x0_gen_armitage_Armitage_msfconsole {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_armitage.yar
    meta:
       description = "Detects Armitage component"
       author = "Florian Roth (Nextron Systems)"
@@ -41,13 +31,8 @@ rule Neo23x0_gen_armitage_Armitage_msfconsole {
 }
 
 /* Removed 7 rules */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_armitage.yar
-
-rule Armitage_MeterpreterSession_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_armitage_Armitage_MeterpreterSession_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_armitage.yar
    meta:
       description = "Detects Armitage component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -65,13 +50,8 @@ rule Neo23x0_gen_armitage_Armitage_MeterpreterSession_Strings {
    condition:
       filesize < 30KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_armitage.yar
-
-rule Armitage_OSX {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_armitage_Armitage_OSX {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_armitage.yar
    meta:
       description = "Detects Armitage component"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

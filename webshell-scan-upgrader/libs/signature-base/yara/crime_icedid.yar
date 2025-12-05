@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_icedid.yar
-rule MAL_IcedID_Fake_GZIP_Bokbot_202104 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_icedid_MAL_IcedID_Fake_GZIP_Bokbot_202104 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_icedid.yar
    meta:
       author = "Thomas Barabosch, Telekom Security"
       date = "2021-04-20"
@@ -15,13 +11,8 @@ rule Neo23x0_crime_icedid_MAL_IcedID_Fake_GZIP_Bokbot_202104 {
    condition:
       $gzip at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_icedid.yar
-
-rule MAL_IcedID_GZIP_LDR_202104 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_icedid_MAL_IcedID_GZIP_LDR_202104 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_icedid.yar
    meta:
       author = "Thomas Barabosch, Telekom Security"
       date = "2021-04-12"
@@ -48,13 +39,8 @@ rule Neo23x0_crime_icedid_MAL_IcedID_GZIP_LDR_202104 {
       ( $internal_name or all of ($s*) )
       or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_icedid.yar
-
-rule MAL_IcedId_Core_LDR_202104 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_icedid_MAL_IcedId_Core_LDR_202104 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_icedid.yar
    meta:
       author = "Thomas Barabosch, Telekom Security"
       date = "2021-04-13"
@@ -79,13 +65,8 @@ rule Neo23x0_crime_icedid_MAL_IcedId_Core_LDR_202104 {
       ( $internal_name and 5 of them )
       or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_icedid.yar
-
-rule MAL_IceId_Core_202104 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_icedid_MAL_IceId_Core_202104 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_icedid.yar
    meta:
       author = "Thomas Barabosch, Telekom Security"
       date = "2021-04-12"

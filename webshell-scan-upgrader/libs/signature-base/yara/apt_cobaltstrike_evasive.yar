@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike_evasive.yar
-rule CobaltStrike_C2_Host_Indicator {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_C2_Host_Indicator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike_evasive.yar
 	meta:
 		description = "Detects CobaltStrike C2 host artifacts"
 		author = "yara@s3c.za.net"
@@ -17,13 +13,8 @@ rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_C2_Host_Indicator {
 		and not uint32(0) == 0x0a786564
 		and not uint32(0) == 0x0a796564
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike_evasive.yar
-
-rule CobaltStrike_Sleep_Decoder_Indicator {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_Sleep_Decoder_Indicator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike_evasive.yar
 	meta:
 		description = "Detects CobaltStrike sleep_mask decoder"
 		author = "yara@s3c.za.net"
@@ -34,13 +25,8 @@ rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_Sleep_Decoder_Indicator {
 	condition:
 		$sleep_decoder
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike_evasive.yar
-
-rule CobaltStrike_C2_Encoded_XOR_Config_Indicator {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_C2_Encoded_XOR_Config_Indicator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike_evasive.yar
 	meta:
 		description = "Detects CobaltStrike C2 encoded profile configuration"
 		author = "yara@s3c.za.net"
@@ -308,13 +294,8 @@ rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_C2_Encoded_XOR_Config_Indicat
     condition:
 		any of ($s*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike_evasive.yar
-
-rule CobaltStrike_MZ_Launcher {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_MZ_Launcher {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike_evasive.yar
 	meta:
 		description = "Detects CobaltStrike MZ header ReflectiveLoader launcher"
 		author = "yara@s3c.za.net"
@@ -325,13 +306,8 @@ rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_MZ_Launcher {
 	condition:
 		$mz_launcher
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike_evasive.yar
-
-rule CobaltStrike_Unmodifed_Beacon {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_evasive_CobaltStrike_Unmodifed_Beacon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike_evasive.yar
 	meta:
 		description = "Detects unmodified CobaltStrike beacon DLL"
 		author = "yara@s3c.za.net"

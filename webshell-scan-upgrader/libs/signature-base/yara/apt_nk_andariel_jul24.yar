@@ -1,16 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_ScheduledTask_Loader {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_ScheduledTask_Loader {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_ScheduledTask_Loader {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a scheduled task loader used by Andariel"
@@ -26,18 +16,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_ScheduledTask_Loader {
       uint16(0) == 0x5A4D 
       and $obfuscation1 and $obfuscation2 and $obfuscation3
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_KaosRAT_Yamabot {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_KaosRAT_Yamabot {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_KaosRAT_Yamabot {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects the KaosRAT variant"
@@ -60,18 +40,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_KaosRAT_Yamabot {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_TriFaux_EasyRAT_JUPITER {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_TriFaux_EasyRAT_JUPITER {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_TriFaux_EasyRAT_JUPITER {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the EasyRAT malware family"
@@ -87,18 +57,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_TriFaux_EasyRAT_JUPITER {
       uint16(0) == 0x5a4d 
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_CutieDrop_MagicRAT {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_CutieDrop_MagicRAT {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_CutieDrop_MagicRAT {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov (modified by Florian Roth, Nextron Systems)"
       description = "Detects the MagicRAT variant used by Andariel"
@@ -123,18 +83,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_CutieDrop_MagicRAT {
       uint16(0) == 0x5a4d 
       and 7 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_HHSD_FileTransferTool {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_HHSD_FileTransferTool {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_HHSD_FileTransferTool {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the HHSD File Transfer Tool"
@@ -172,24 +122,10 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_HHSD_FileTransferTool {
       uint16(0) == 0x5a4d
       and 1 of ($handshake, $err_xor_str) 
       and 1 of ($hash_call_*)
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-      or 2 of ($handshake, $err_xor_str)
-}
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_Atharvan_3RAT {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-      or 2 of ($handshake, $err_xor_str, $buf_add_cmp_1f)
-} 
-
-rule MAL_APT_NK_Andariel_Atharvan_3RAT {
-========
       or 2 of ($handshake, $err_xor_str)
 }
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_Atharvan_3RAT {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the Atharvan 3RAT malware family"
@@ -204,18 +140,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_Atharvan_3RAT {
       uint16(0) == 0x5a4d 
       and 1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_LilithRAT_Variant {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_LilithRAT_Variant {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_LilithRAT_Variant {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov (modified by Florian Roth, Nextron Systems)"
       description = "Detects a variant of the Lilith RAT malware family"
@@ -251,18 +177,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_LilithRAT_Variant {
          or 1 of ($lilith_4, $unique_2) // both strings are very specific - let's use them as a unique indicator, F.R.
       ) 
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_SocksTroy_Strings_OpCodes {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_SocksTroy_Strings_OpCodes {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_SocksTroy_Strings_OpCodes {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the SocksTroy malware family"
@@ -282,18 +198,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_SocksTroy_Strings_OpCodes
          or all of ($Socks*)
       )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_Agni {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_Agni {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_Agni {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects samples of the Agni malware family"
@@ -309,18 +215,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_Agni {
       and #xor > 100 
       and #stackstrings > 5
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_GoLang_Validalpha_Handshake {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_GoLang_Validalpha_Handshake {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_GoLang_Validalpha_Handshake {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the GoLang Validalpha malware"
@@ -333,18 +229,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_GoLang_Validalpha_Handsha
    condition:
       all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_GoLang_Validalpha_Tasks {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_GoLang_Validalpha_Tasks {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_GoLang_Validalpha_Tasks {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the GoLang Validalpha malware"
@@ -360,18 +246,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_GoLang_Validalpha_Tasks {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_GoLang_Validalpha_BlackString {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_GoLang_Validalpha_BlackString {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_GoLang_Validalpha_BlackString {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a variant of the GoLang Validalpha malware based on a file path found in the samples"
@@ -385,12 +261,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_GoLang_Validalpha_BlackSt
       uint16(0) == 0x5A4D and all of them
 }
 
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-rule Neo23x0_apt_MAL_APT_NK_INDICATOR_EXE_Packed_VMProtect {
-=======
 /* yeah, YOLO ... triggers on a lot of stuff - we don't do that here to not freak out the users for no reason
 rule MAL_APT_NK_INDICATOR_EXE_Packed_VMProtect {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
         strings:
         $s1 = ".vmp0" fullword ascii
         $s2 = ".vmp1" fullword ascii
@@ -404,11 +276,7 @@ rule MAL_APT_NK_INDICATOR_EXE_Packed_VMProtect {
         )
 }
 
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-rule Neo23x0_apt_MAL_APT_NK_INDICATOR_EXE_Packed_Themida {
-=======
 rule MAL_APT_NK_INDICATOR_EXE_Packed_Themida {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
         strings:
         $s1 = ".themida" fullword ascii
     condition:
@@ -419,19 +287,9 @@ rule MAL_APT_NK_INDICATOR_EXE_Packed_Themida {
             )
         )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_ELF_Backdoor_Fipps {
-=======
 */
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_ELF_Backdoor_Fipps {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_ELF_Backdoor_Fipps {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a Linux backdoor named Fipps used by Andariel"
@@ -448,18 +306,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_ELF_Backdoor_Fipps {
       uint32(0) == 0x464c457f 
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_BindShell {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_BindShell {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_BindShell {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects a BindShell used by Andariel"
@@ -478,18 +326,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_BindShell {
       uint16(0) == 0x5A4D 
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_Grease2 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_Grease2 {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_Grease2 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov (modified by Florian Roth, Nextron Systems)"
       description = "Detects the Grease2 malware family used by Andariel"
@@ -511,18 +349,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_Grease2 {
       uint16(0) == 0x5A4D and
       all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_NoPineapple_Dtrack_Unpacked {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_NoPineapple_Dtrack_Unpacked {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_NoPineapple_Dtrack_Unpacked {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects the Dtrack variant used by Andariel"
@@ -538,18 +366,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_NoPineapple_Dtrack_Unpack
       uint16(0) == 0x5A4D
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_DTrack_Unpacked {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_DTrack_Unpacked {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_DTrack_Unpacked {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov (modified by Florian Roth, Nextron Systems)"
       description = "Detects DTrack variant used by Andariel"
@@ -573,18 +391,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_DTrack_Unpacked {
          or 3 of them
       )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_Andariel_TigerRAT_Crowdsourced_Rule {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_Andariel_TigerRAT_Crowdsourced_Rule {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_TigerRAT_Crowdsourced_Rule {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov (modified by Florian Roth, Nextron Systems)"
       description = "Detects the Tiger RAT variant used by Andariel"
@@ -614,18 +422,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_Andariel_TigerRAT_Crowdsourced_Rul
          )
       )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_WIN_Tiger_RAT_Auto {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_WIN_Tiger_RAT_Auto {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_WIN_Tiger_RAT_Auto {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects the Tiger RAT variant used by Andariel"
@@ -766,18 +564,8 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_WIN_Tiger_RAT_Auto {
     condition:
         filesize < 600KB and 7 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule Neo23x0_apt_MAL_APT_NK_WIN_DTrack_Auto {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_andariel_jul24.yar
-
-rule MAL_APT_NK_WIN_DTrack_Auto {
-========
 //===SUCCESS===
 rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_WIN_DTrack_Auto {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar
    meta:
       author = "CISA.gov"
       description = "Detects DTrack variant used by Andariel"
@@ -918,7 +706,3 @@ rule Neo23x0_apt_nk_andariel_jul24_MAL_APT_NK_WIN_DTrack_Auto {
    condition:
       filesize < 1700KB and 7 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nk_andariel_jul24.yar
-=======
-
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_andariel_jul24.yar

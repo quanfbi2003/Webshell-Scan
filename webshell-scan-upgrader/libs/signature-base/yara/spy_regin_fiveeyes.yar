@@ -3,8 +3,6 @@
 	Author: Florian Roth
 	Date: 2014-11-23
 	Identifier: Regin
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-=======
 
 	Warning: Don't use this rule set without excluding the false positive hashes listed in
 	         the file falsepositive-hashes.txt
@@ -12,21 +10,10 @@
 */
 
 /* REGIN ---------------------------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 
-	Warning: Don't use this rule set without excluding the false positive hashes listed in
-	         the file falsepositive-hashes.txt
 
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-*/
-
-/* REGIN ---------------------------------------------------------------------------------- */
-
-rule Regin_APT_KernelDriver_Generic_A {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_APT_KernelDriver_Generic_A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Generic rule for Regin APT kernel driver Malware - Symantec http://t.co/qu53359Cb2"
 		author = "@Malwrsignatures - included in APT Scanner THOR"
@@ -54,13 +41,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_APT_KernelDriver_Generic_A {
 		uint16(0) == 0x5a4d and $m0 at 0 and $m1 and
 		all of ($s*) and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_APT_KernelDriver_Generic_B {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_APT_KernelDriver_Generic_B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Generic rule for Regin APT kernel driver Malware - Symantec http://t.co/qu53359Cb2"
 		author = "@Malwrsignatures - included in APT Scanner THOR"
@@ -112,13 +94,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_APT_KernelDriver_Generic_B {
 		( all of ($v*) or all of ($w*) or all of ($x*) or all of ($y*) or all of ($z*) )
 		and filesize < 20KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_APT_KernelDriver_Generic_C {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_APT_KernelDriver_Generic_C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Generic rule for Regin APT kernel driver Malware - Symantec http://t.co/qu53359Cb2"
 		author = "@Malwrsignatures - included in APT Scanner THOR"
@@ -147,13 +124,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_APT_KernelDriver_Generic_C {
 }
 
 /* Update 27.11.14 */
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_sig_svcsstat {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_sig_svcsstat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Detects svcstat from Regin report - file svcsstat.exe_sample"
 		author = "@MalwrSignatures"
@@ -171,13 +143,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_sig_svcsstat {
 	condition:
 		all of them and filesize < 15KB and filesize > 10KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_Sample_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
    meta:
       description = "Semiautomatically generated YARA rule - file-3665415_sys"
       author = "Florian Roth"
@@ -207,13 +174,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_1 {
    condition:
       all of them and filesize < 110KB and filesize > 80KB and not $fp1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Auto-generated rule - file hiddenmod_hookdisk_and_kdbg_8949d000.bin"
 		author = "@MalwrSignatures"
@@ -241,13 +203,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_2 {
 	condition:
 		all of them and filesize < 40KB and filesize > 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Detects Regin Backdoor sample fe1419e9dde6d479bd7cda27edd39fafdab2668d498931931a2769b370727129"
 		author = "@Malwrsignatures"
@@ -273,13 +230,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_3 {
 	condition:
 		uint32(0) == 0xfedcbafe and all of ($s*) and filesize > 160KB and filesize < 200KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_Sample_Set_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_Set_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Auto-generated rule - file SHF-000052 and ndisips.sys"
 		author = "@MalwrSignatures"
@@ -312,13 +264,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_Set_2 {
 	condition:
 		filesize < 40KB and filesize > 30KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_Sample_Set_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_Set_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Detects Regin Backdoor sample"
 		author = "@MalwrSignatures"
@@ -349,13 +296,8 @@ rule Neo23x0_spy_regin_fiveeyes_Regin_Sample_Set_1 {
 	condition:
 		( $hd at 0 ) and all of ($s*) and filesize < 450KB and filesize > 360KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule apt_regin_legspin {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_apt_regin_legspin {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 	    copyright = "Kaspersky Lab"
 	    description = "Rule to detect Regin's Legspin module"
@@ -377,13 +319,8 @@ rule Neo23x0_spy_regin_fiveeyes_apt_regin_legspin {
 	condition:
 	    uint16(0) == 0x5A4D and all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule apt_regin_hopscotch {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_apt_regin_hopscotch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 	    copyright = "Kaspersky Lab"
 	    description = "Rule to detect Regin's Hopscotch module"
@@ -405,13 +342,8 @@ rule Neo23x0_spy_regin_fiveeyes_apt_regin_hopscotch {
 	condition:
 	    uint16(0) == 0x5A4D  and all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_regin_fiveeyes.yar
-
-rule Regin_Related_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_regin_fiveeyes_Regin_Related_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_regin_fiveeyes.yar
 	meta:
 		description = "Malware Sample - maybe Regin related"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

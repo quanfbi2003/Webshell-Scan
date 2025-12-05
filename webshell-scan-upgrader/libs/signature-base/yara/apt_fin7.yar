@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-08-01
-   Identifier: FIN7
-   Reference: https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule APT_FIN7_Strings_Aug18_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_Strings_Aug18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects strings from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -44,13 +30,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_Strings_Aug18_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_Sample_Aug18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_Sample_Aug18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects FIN7 malware sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +49,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_Sample_Aug18_2 {
    condition:
       uint16(0) == 0xcfd0 and filesize < 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_MalDoc_Aug18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_MalDoc_Aug18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects malicious Doc from FIN7 campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -88,13 +64,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_MalDoc_Aug18_1 {
    condition:
       filesize < 800KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_Sample_Aug18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_Sample_Aug18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects FIN7 samples mentioned in FireEye report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -122,13 +93,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_Sample_Aug18_1 {
    condition:
       uint16(0) == 0x5c7b and filesize < 3000KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -142,13 +108,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 800KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -163,13 +124,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -184,13 +140,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 50KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -206,13 +157,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_4 {
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -227,13 +173,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_5 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -257,13 +198,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_6 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -278,13 +214,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_7 {
    condition:
       uint16(0) == 0x5a4d and filesize < 800KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -298,13 +229,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_8 {
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_EXE_Sample_Aug18_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects sample from FIN7 report in August 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -322,13 +248,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_EXE_Sample_Aug18_10 {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_Sample_EXE_Aug18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_Sample_EXE_Aug18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects FIN7 Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -354,13 +275,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_Sample_EXE_Aug18_1 {
       and all of ($s*)
       and $co1 at 0x015D
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule APT_FIN7_MsDoc_Sep21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_APT_FIN7_MsDoc_Sep21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects MalDocs used by FIN7 group"
       author = "Florian Roth (Nextron Systems)"
@@ -385,13 +301,8 @@ rule Neo23x0_apt_fin7_APT_FIN7_MsDoc_Sep21_1 {
          3 of them 
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fin7.yar
-
-rule SUSP_OBFUSC_JS_Sept21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_fin7_SUSP_OBFUSC_JS_Sept21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fin7.yar
    meta:
       description = "Detects JavaScript obfuscation as used in MalDocs by FIN7 group"
       author = "Florian Roth (Nextron Systems)"

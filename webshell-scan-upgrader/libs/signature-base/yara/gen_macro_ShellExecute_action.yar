@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_macro_ShellExecute_action.yar
-rule gen_macro_ShellExecute_action
-=======
 //===SUCCESS===
 rule Neo23x0_gen_macro_ShellExecute_action_gen_macro_ShellExecute_action
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_macro_ShellExecute_action.yar
 {
 	meta:
 		description = "VBA macro technique to call ShellExecute to launch payload"

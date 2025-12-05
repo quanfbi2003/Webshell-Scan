@@ -722,15 +722,21 @@ class Updater(object):
                               "DarkenCode_Surtr*",
                               "DarkenCode_malware_Surtr*",
                               "DarkenCode_APT1*",
-                              "DarkenCode_malware_APT1*",
-                              "nsacyber_extended_webshell_detection_obfuscatedFunctionality*",
-                              "nsacyber_extended_webshell_detection_possibleIndicator*"]
+                              "DarkenCode_malware_APT1*",      
+                              "nsacyber_extended_webshell_detection_possibleIndicator*",
+                              "DarkenCode_Miscelanea_Linux_ldpreload*",
+                              "DarkenCode_crypto*",
+                              "DarkenCode_Cerberus_Cerberus*",
+                              "DarkenCode_malware_Cerberus*",
+
+                              ]
 
     UPDATE_URL_SIGS = [
         "https://github.com/Neo23x0/signature-base/archive/master.zip",
         "https://github.com/reversinglabs/reversinglabs-yara-rules/archive/develop.zip",
         "https://github.com/DarkenCode/yara-rules/archive/refs/heads/master.zip",
-        "https://github.com/nsacyber/Mitigating-Web-Shells/archive/refs/heads/master.zip"
+        "https://github.com/nsacyber/Mitigating-Web-Shells/archive/refs/heads/master.zip",
+        "https://github.com/tenable/yara-rules/archive/refs/heads/master.zip"
     ]
 
     def __init__(self, debug, logger, application_path, debug_log=None):

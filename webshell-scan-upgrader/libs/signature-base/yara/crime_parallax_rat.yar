@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_parallax_rat.yar
-
-rule crime_win32_parallax_loader_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_parallax_rat_crime_win32_parallax_loader_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_parallax_rat.yar
    meta:
       description = "Detects Parallax Loader"
       author = "@VK_Intel"
@@ -21,13 +16,8 @@ rule Neo23x0_crime_parallax_rat_crime_win32_parallax_loader_1 {
       uint16(0) == 0x5a4d and filesize < 2000KB and
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_parallax_rat.yar
-
-rule crime_win32_parallax_payload_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_parallax_rat_crime_win32_parallax_payload_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_parallax_rat.yar
    meta:
       description = "Detects Parallax Injected Payload v1.01"
       author = "@VK_Intel"

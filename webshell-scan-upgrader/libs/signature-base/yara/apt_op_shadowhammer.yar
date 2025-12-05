@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_shadowhammer.yar
-
-rule MAL_APT_Operation_ShadowHammer_MalSetup {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_shadowhammer_MAL_APT_Operation_ShadowHammer_MalSetup {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_shadowhammer.yar
    meta:
       description = "Detects a malicious file used by BARIUM group in Operation ShadowHammer"
       date = "2019-03-25"

@@ -5,13 +5,9 @@
 	Identifier: Kerberoast
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_kerberoast.yar
-rule GetUserSPNs_VBS {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_kerberoast_GetUserSPNs_VBS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_kerberoast.yar
 	meta:
 		description = "Auto-generated rule - file GetUserSPNs.vbs"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -27,13 +23,8 @@ rule Neo23x0_gen_kerberoast_GetUserSPNs_VBS {
 	condition:
 		2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_kerberoast.yar
-
-rule GetUserSPNs_PS1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_kerberoast_GetUserSPNs_PS1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_kerberoast.yar
 	meta:
 		description = "Auto-generated rule - file GetUserSPNs.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -50,13 +41,8 @@ rule Neo23x0_gen_kerberoast_GetUserSPNs_PS1 {
 	condition:
 		2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_kerberoast.yar
-
-rule kerberoast_PY {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_kerberoast_kerberoast_PY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_kerberoast.yar
 	meta:
 		description = "Auto-generated rule - file kerberoast.py"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

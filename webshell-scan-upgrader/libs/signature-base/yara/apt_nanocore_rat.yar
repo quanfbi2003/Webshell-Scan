@@ -5,13 +5,9 @@
    Identifier: Nanocore RAT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nanocore_rat.yar
-rule Nanocore_RAT_Gen_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Gen_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nanocore_rat.yar
    meta:
       description = "Detetcs the Nanocore RAT and similar malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -30,13 +26,8 @@ rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Gen_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and ( 1 of them ) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nanocore_rat.yar
-
-rule Nanocore_RAT_Gen_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Gen_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nanocore_rat.yar
    meta:
       description = "Detetcs the Nanocore RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -53,13 +44,8 @@ rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Gen_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 1 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nanocore_rat.yar
-
-rule Nanocore_RAT_Sample_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nanocore_rat.yar
    meta:
       description = "Detetcs a certain Nanocore RAT sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -76,13 +62,8 @@ rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Sample_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 900KB and ( 1 of ($x*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nanocore_rat.yar
-
-rule Nanocore_RAT_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nanocore_rat.yar
    meta:
       description = "Detetcs a certain Nanocore RAT sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -109,13 +90,8 @@ rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Sample_2 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nanocore_rat.yar
-
-rule Nanocore_RAT_Feb18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nanocore_rat.yar
    meta:
       description = "Detects Nanocore RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -139,13 +115,8 @@ rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Feb18_1 {
         5 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nanocore_rat.yar
-
-rule Nanocore_RAT_Feb18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nanocore_rat_Nanocore_RAT_Feb18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nanocore_rat.yar
    meta:
       description = "Detects Nanocore RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

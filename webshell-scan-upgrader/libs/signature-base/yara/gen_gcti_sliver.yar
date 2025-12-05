@@ -1,6 +1,4 @@
 import "pe"
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_gcti_sliver.yar
-=======
 /* 
 	SOURCE: https://github.com/chronicle/GCTI
 	
@@ -24,7 +22,6 @@ import "pe"
  * limitations under the License.
  */
 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_sliver.yar
 
 
 //===SUCCESS===

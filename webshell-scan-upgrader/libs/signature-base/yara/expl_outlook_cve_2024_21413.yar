@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_outlook_cve_2024_21413.yar
-
-rule EXPL_CVE_2024_21413_Microsoft_Outlook_RCE_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_outlook_cve_2024_21413_EXPL_CVE_2024_21413_Microsoft_Outlook_RCE_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_outlook_cve_2024_21413.yar
    meta:
       description = "Detects emails that contain signs of a method to exploit CVE-2024-21413 in Microsoft Outlook"
       author = "X__Junior, Florian Roth"

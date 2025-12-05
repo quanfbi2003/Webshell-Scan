@@ -1,11 +1,7 @@
 /* minimal modifications by Florian Roth */
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2021_1647.yar
-rule EXPL_CVE_2021_1647_Apr21_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_expl_cve_2021_1647_EXPL_CVE_2021_1647_Apr21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_cve_2021_1647.yar
    meta:
         description = "Detects samples that exploit CVE-2021-1647"
         author = "Arkbird_SOLG"

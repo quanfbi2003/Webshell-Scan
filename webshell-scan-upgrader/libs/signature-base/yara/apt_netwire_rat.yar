@@ -5,20 +5,12 @@
    Identifier: NetWire
    Reference: https://pastebin.com/8qaiyPxs
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_netwire_rat.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_netwire_rat.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_netwire_rat.yar
-rule Susp_Indicators_EXE {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_netwire_rat_Susp_Indicators_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_netwire_rat.yar
    meta:
       description = "Detects packed NullSoft Inst EXE with characteristics of NetWire RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -38,13 +30,8 @@ rule Neo23x0_apt_netwire_rat_Susp_Indicators_EXE {
    condition:
    uint16(0) == 0x5A4D and uint32(uint32(0x3c)) == 0x4550 and filesize < 700KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_netwire_rat.yar
-
-rule Suspicious_BAT_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_netwire_rat_Suspicious_BAT_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_netwire_rat.yar
    meta:
       description = "Detects a string also used in Netwire RAT auxilliary"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +45,8 @@ rule Neo23x0_apt_netwire_rat_Suspicious_BAT_Strings {
    condition:
       filesize < 600KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_netwire_rat.yar
-
-rule Malicious_BAT_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_netwire_rat_Malicious_BAT_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_netwire_rat.yar
    meta:
       description = "Detects a string also used in Netwire RAT auxilliary"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/hktl_edr_freeze_sep25.yar
-
-
-rule Neo23x0_hkt_HKTL_EDR_Freeze_Sep25_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_edr_freeze_sep25_HKTL_EDR_Freeze_Sep25_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/hktl_edr_freeze_sep25.yar
    meta:
       description = "Detects EDR-Freeze hacktool"
       author = "Florian Roth"

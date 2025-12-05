@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_bad_pdf.yar
-rule SUSP_Bad_PDF {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_bad_pdf_SUSP_Bad_PDF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_bad_pdf.yar
    meta:
       description = "Detects PDF that embeds code to steal NTLM hashes"
       author = "Florian Roth (Nextron Systems), Markus Neis"

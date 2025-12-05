@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cloudatlas.yar
-
-rule APT_MAL_MalDoc_CloudAtlas_Oct20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cloudatlas_APT_MAL_MalDoc_CloudAtlas_Oct20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cloudatlas.yar
    meta:
       description = "Detects unknown maldoc dropper noticed in October 2020"
       author = "Florian Roth (Nextron Systems)"
@@ -19,13 +14,8 @@ rule Neo23x0_apt_cloudatlas_APT_MAL_MalDoc_CloudAtlas_Oct20_1 {
       filesize < 300KB and
       1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cloudatlas.yar
-
-rule APT_MAL_URL_CloudAtlas_Oct20_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cloudatlas_APT_MAL_URL_CloudAtlas_Oct20_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cloudatlas.yar
    meta:
       description = "Detects unknown maldoc dropper noticed in October 2020 - file morgue6visible5bunny6culvert7ambo5nun1illuminate4.url"
       author = "Florian Roth (Nextron Systems)"

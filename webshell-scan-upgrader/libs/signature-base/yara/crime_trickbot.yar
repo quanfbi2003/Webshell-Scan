@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_trickbot.yar
-
-rule MAL_Trickbot_Oct19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_trickbot.yar
    meta:
       description = "Detects Trickbot malware"
       author = "Florian Roth (Nextron Systems)"
@@ -25,13 +20,8 @@ rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_1 {
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_trickbot.yar
-
-rule MAL_Trickbot_Oct19_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_trickbot.yar
    meta:
       description = "Detects Trickbot malware"
       author = "Florian Roth (Nextron Systems)"
@@ -46,13 +36,8 @@ rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_2 {
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_trickbot.yar
-
-rule MAL_Trickbot_Oct19_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_trickbot.yar
    meta:
       description = "Detects Trickbot malware"
       author = "Florian Roth (Nextron Systems)"
@@ -69,13 +54,8 @@ rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_3 {
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and ( 1 of them or pe.imphash() == "4e3fbfbf1fc23f646cd40a6fe09385a7" )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_trickbot.yar
-
-rule MAL_Trickbot_Oct19_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_trickbot.yar
    meta:
       description = "Detects Trickbot malware"
       author = "Florian Roth (Nextron Systems)"
@@ -95,13 +75,8 @@ rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_4 {
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_trickbot.yar
-
-rule MAL_Trickbot_Oct19_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_trickbot.yar
    meta:
       description = "Detects Trickbot malware"
       author = "Florian Roth (Nextron Systems)"
@@ -119,13 +94,8 @@ rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_5 {
    condition:
       uint16(0) == 0x5a4d and filesize <= 2000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_trickbot.yar
-
-rule MAL_Trickbot_Oct19_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_trickbot_MAL_Trickbot_Oct19_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_trickbot.yar
    meta:
       description = "Detects Trickbot malware"
       author = "Florian Roth (Nextron Systems)"

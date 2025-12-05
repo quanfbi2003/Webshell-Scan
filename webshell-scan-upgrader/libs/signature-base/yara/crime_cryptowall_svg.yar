@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cryptowall_svg.yar
-
-rule SVG_LoadURL {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cryptowall_svg_SVG_LoadURL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cryptowall_svg.yar
 	meta:
 		description = "Detects a tiny SVG file that loads an URL (as seen in CryptoWall malware infections)"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -24,6 +19,3 @@ rule Neo23x0_crime_cryptowall_svg_SVG_LoadURL {
 	condition:
 		all of ($s*) and filesize < 600
 }
-
-		
-		

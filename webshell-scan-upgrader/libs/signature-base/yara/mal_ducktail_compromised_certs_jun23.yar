@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_ducktail_compromised_certs_jun23.yar
-
-rule MAL_Compromised_Cert_DuckTail_Stealer_Jun23 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ducktail_compromised_certs_jun23_MAL_Compromised_Cert_DuckTail_Stealer_Jun23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_ducktail_compromised_certs_jun23.yar
    meta:
       author = "dr4k0nia"
       description = "Detects binaries signed with compromised certificates used by DuckTail stealer - identified in June 2023"

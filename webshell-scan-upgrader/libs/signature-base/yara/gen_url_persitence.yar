@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_Local_URL
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_Local_URL
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr), @QW5kcmV3 (Andrew Thompson)"
@@ -22,13 +17,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_Local_URL
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_SMB_URL
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_SMB_URL
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr), @QW5kcmV3 (Andrew Thompson)"
@@ -67,13 +57,8 @@ rule Methodology_Suspicious_Shortcut_IconRemote_HTTP
     and filesize < 30KB
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_IconRemote_SMBorLocal
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_IconRemote_SMBorLocal
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -91,13 +76,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_IconRemote_SMBor
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Shortcut_HotKey
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Shortcut_HotKey
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -115,13 +95,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Shortcut_HotKey
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_BaseURLSyntax
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_BaseURLSyntax
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -140,13 +115,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_BaseURLSyntax
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Contains_Shortcut_OtherURIhandlers
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Contains_Shortcut_OtherURIhandlers
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -187,13 +157,8 @@ rule Methodology_Suspicious_Shortcut_IconShenanigans_dotDL
     and filesize < 30KB
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_IconNotFromExeOrDLLOrICO
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_IconNotFromExeOrDLLOrICO
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -212,13 +177,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_IconNotFromExeOr
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_Evasion
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_Evasion
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -238,12 +198,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_Evasion
 }
 
 // the below rule hasn't been seen, but I still want to explore whether this format can be abused to launch commands in unstructured .URL space
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-rule Methodology_Suspicious_Shortcut_LOLcommand
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_LOLcommand
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -264,12 +220,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_LOLcommand
 }
 
 // NONE of the following rules have been seen itw, but they are searching for unique (possible?) .URL syntax - leaving here for transparency
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-rule Methodology_Suspicious_Shortcut_WebDAV
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_WebDAV
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -287,13 +239,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_WebDAV
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_ScriptURL
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_ScriptURL
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -312,13 +259,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_ScriptURL
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_WorkingDirRemote_HTTP
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_WorkingDirRemote_HTTP
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"
@@ -336,13 +278,8 @@ rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_WorkingDirRemote
     and uint16(0) != 0x5A4D and uint32(0) != 0x464c457f and uint32(0) != 0xBEBAFECA and uint32(0) != 0xFEEDFACE and uint32(0) != 0xFEEDFACF and uint32(0) != 0xCEFAEDFE
     and filesize < 30KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_url_persitence.yar
-
-rule Methodology_Suspicious_Shortcut_WorkingDirRemote_SMB
-=======
 //===SUCCESS===
 rule Neo23x0_gen_url_persitence_Methodology_Suspicious_Shortcut_WorkingDirRemote_SMB
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_url_persitence.yar
 {
   meta:
     author = "@itsreallynick (Nick Carr)"

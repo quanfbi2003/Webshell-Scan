@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/susp_email_redirection_spoofing.yar
-
-
-rule Neo23x0_sus_SUSP_Email_Redirection_Spoofing_Feb25 {
-=======
 //===SUCCESS===
 rule Neo23x0_susp_email_redirection_spoofing_SUSP_Email_Redirection_Spoofing_Feb25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_email_redirection_spoofing.yar
    meta:
       description = "Detects redirect spoofing in embedded URLs. This technique is used by threat actors to obscure the actual destination of a link"
       author = "Jonathan Peters (cod3nym)"

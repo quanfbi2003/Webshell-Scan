@@ -5,13 +5,9 @@
 	Identifier: Emissary Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_emissary.yar
-rule Emissary_APT_Malware_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_emissary_Emissary_APT_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_emissary.yar
 	meta:
 		description = "Detects Emissary Malware - from samples A08E81B411.DAT, ishelp.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

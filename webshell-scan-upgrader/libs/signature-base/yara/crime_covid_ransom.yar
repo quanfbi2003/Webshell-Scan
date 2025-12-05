@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_covid_ransom.yar
-
-rule MAL_RANSOM_COVID19_Apr20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_covid_ransom_MAL_RANSOM_COVID19_Apr20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_covid_ransom.yar
    meta:
       description = "Detects ransomware distributed in COVID-19 theme"
       author = "Florian Roth (Nextron Systems)"

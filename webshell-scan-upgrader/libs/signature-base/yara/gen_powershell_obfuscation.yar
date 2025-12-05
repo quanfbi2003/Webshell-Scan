@@ -5,20 +5,12 @@
    Identifier: ISESteroids
    Reference: https://twitter.com/danielhbohannon/status/877953970437844993
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_obfuscation.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_obfuscation.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_obfuscation.yar
-rule PowerShell_ISESteroids_Obfuscation {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_powershell_obfuscation_PowerShell_ISESteroids_Obfuscation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_obfuscation.yar
    meta:
       description = "Detects PowerShell ISESteroids obfuscation"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +26,8 @@ rule Neo23x0_gen_powershell_obfuscation_PowerShell_ISESteroids_Obfuscation {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_obfuscation.yar
-
-rule SUSP_Obfuscted_PowerShell_Code {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_obfuscation_SUSP_Obfuscted_PowerShell_Code {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_obfuscation.yar
    meta:
       description = "Detects obfuscated PowerShell Code"
       date = "2018-12-13"
@@ -54,13 +41,8 @@ rule Neo23x0_gen_powershell_obfuscation_SUSP_Obfuscted_PowerShell_Code {
    condition:
       #s1 > 11 and #s2 > 10 and #s3 > 10
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_obfuscation.yar
-
-rule SUSP_PowerShell_Caret_Obfuscation_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_obfuscation_SUSP_PowerShell_Caret_Obfuscation_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_obfuscation.yar
    meta:
       description = "Detects powershell keyword obfuscated with carets"
       author = "Florian Roth (Nextron Systems)"
@@ -73,13 +55,8 @@ rule Neo23x0_gen_powershell_obfuscation_SUSP_PowerShell_Caret_Obfuscation_2 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_obfuscation.yar
-
-rule SUSP_OBFUSC_PowerShell_True_Jun20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_obfuscation_SUSP_OBFUSC_PowerShell_True_Jun20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_obfuscation.yar
    meta:
       description = "Detects indicators often found in obfuscated PowerShell scripts. Note: This detection is based on common characteristics typically associated with the mentioned threats, must be considered a clue and does not conclusively prove maliciousness."
       author = "Florian Roth (Nextron Systems)"

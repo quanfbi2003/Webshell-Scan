@@ -5,20 +5,12 @@
 	Identifier: Cheshire Cat
 	Version: 0.1
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cheshirecat.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/APT_CheshireCat.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cheshirecat.yar
-rule CheshireCat_Sample2 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_cheshirecat_CheshireCat_Sample2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/APT_CheshireCat.yar
 	meta:
 		description = "Auto-generated rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +33,8 @@ rule Neo23x0_apt_cheshirecat_CheshireCat_Sample2 {
 
 /* Generic Rules ----------------------------------------------------------- */
 /* Gen1 is more exact than Gen2 - until now I had no FPs with Gen2 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cheshirecat.yar
-
-rule CheshireCat_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cheshirecat_CheshireCat_Gen1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/APT_CheshireCat.yar
 	meta:
 		description = "Auto-generated rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -87,13 +74,8 @@ rule Neo23x0_apt_cheshirecat_CheshireCat_Gen1 {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 350KB and 7 of ($s*) and 2 of ($a*) and 1 of ($b*) and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cheshirecat.yar
-
-rule CheshireCat_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cheshirecat_CheshireCat_Gen2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/APT_CheshireCat.yar
 	meta:
 		description = "Cheshire Cat Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

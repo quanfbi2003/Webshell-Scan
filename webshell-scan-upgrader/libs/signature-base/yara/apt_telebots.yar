@@ -4,20 +4,12 @@
    Date: 2016-12-14
    Identifier: TeleBots
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-rule TeleBots_IntercepterNG {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_IntercepterNG {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - IntercepterNG"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -38,13 +30,8 @@ rule Neo23x0_apt_telebots_TeleBots_IntercepterNG {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and 1 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-
-rule TeleBots_KillDisk_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_KillDisk_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - KillDisk"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -64,13 +51,8 @@ rule Neo23x0_apt_telebots_TeleBots_KillDisk_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and 4 of them ) or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-
-rule TeleBots_KillDisk_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_KillDisk_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - KillDisk"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +68,8 @@ rule Neo23x0_apt_telebots_TeleBots_KillDisk_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-
-rule TeleBots_CredRaptor_Password_Stealer {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_CredRaptor_Password_Stealer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - CredRaptor Password Stealer"
       author = "Florian Roth (Nextron Systems)"
@@ -111,13 +88,8 @@ rule Neo23x0_apt_telebots_TeleBots_CredRaptor_Password_Stealer {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 2 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-
-rule TeleBots_VBS_Backdoor_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_VBS_Backdoor_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - VBS Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -134,13 +106,8 @@ rule Neo23x0_apt_telebots_TeleBots_VBS_Backdoor_1 {
    condition:
       ( uint16(0) == 0x6553 and filesize < 8KB and 1 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-
-rule TeleBots_VBS_Backdoor_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_VBS_Backdoor_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - VBS Backdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -156,13 +123,8 @@ rule Neo23x0_apt_telebots_TeleBots_VBS_Backdoor_2 {
    condition:
       ( uint16(0) == 0x6944 and filesize < 30KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_telebots.yar
-
-rule TeleBots_Win64_Spy_KeyLogger_G {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_telebots_TeleBots_Win64_Spy_KeyLogger_G {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_telebots.yar
    meta:
       description = "Detects TeleBots malware - Win64 Spy KeyLogger G"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

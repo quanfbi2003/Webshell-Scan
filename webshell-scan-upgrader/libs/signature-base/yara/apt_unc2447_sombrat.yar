@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2447_sombrat.yar
-
-rule APT_UNC2447_MAL_SOMBRAT_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_MAL_SOMBRAT_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc2447_sombrat.yar
    meta:
       description = "Detects SombRAT samples from UNC2447 campaign"
       author = "Florian Roth (Nextron Systems)"
@@ -39,13 +34,8 @@ rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_MAL_SOMBRAT_May21_1 {
          3 of them
       ) or 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2447_sombrat.yar
-
-rule APT_UNC2447_MAL_RANSOM_HelloKitty_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_MAL_RANSOM_HelloKitty_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc2447_sombrat.yar
    meta:
       description = "Detects HelloKitty Ransomware samples from UNC2447 campaign"
       author = "Florian Roth (Nextron Systems)"
@@ -80,13 +70,8 @@ rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_MAL_RANSOM_HelloKitty_May21_1 {
       filesize < 800KB and
       1 of ($x*) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2447_sombrat.yar
-
-rule APT_UNC2447_MAL_RANSOM_HelloKitty_May21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_MAL_RANSOM_HelloKitty_May21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc2447_sombrat.yar
    meta:
       description = "Detects HelloKitty Ransomware samples from UNC2447 campaign"
       author = "Florian Roth (Nextron Systems)"
@@ -112,13 +97,8 @@ rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_MAL_RANSOM_HelloKitty_May21_2 {
       filesize < 600KB and
       1 of ($x*) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2447_sombrat.yar
-
-rule APT_UNC2447_PS1_WARPRISM_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_PS1_WARPRISM_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc2447_sombrat.yar
    meta:
       description = "Detects WARPRISM PowerShell samples from UNC2447 campaign"
       author = "Florian Roth (Nextron Systems)"
@@ -137,13 +117,8 @@ rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_PS1_WARPRISM_May21_1 {
    condition:
       filesize < 5000KB and 1 of ($x*) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc2447_sombrat.yar
-
-rule APT_UNC2447_BAT_Runner_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc2447_sombrat_APT_UNC2447_BAT_Runner_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc2447_sombrat.yar
    meta:
       description = "Detects Batch script runners from UNC2447 campaign"
       author = "Florian Roth (Nextron Systems)"

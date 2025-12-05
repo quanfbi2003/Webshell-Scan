@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_credstealer_generic.yar
-
-rule CredentialStealer_Generic_Backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_credstealer_generic_CredentialStealer_Generic_Backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_credstealer_generic.yar
    meta:
       description = "Detects credential stealer byed on many strings that indicate password store access"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/hktl_bruteratel_c4_badger.yar
-
-rule HKTL_BruteRatel_Badger_Indicators_Oct22_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_bruteratel_c4_badger_HKTL_BruteRatel_Badger_Indicators_Oct22_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/hktl_bruteratel_c4_badger.yar
    meta:
       description = "Detects Brute Ratel C4 badger indicators"
       author = "Matthew @embee_research, Florian Roth"

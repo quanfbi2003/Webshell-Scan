@@ -4,20 +4,12 @@
    Date: 2016-12-14
    Identifier: PROMETHIUM and NEODYMIUM
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-rule PROMETHIUM_NEODYMIUM_Malware_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
    meta:
       description = "Detects PROMETHIUM and NEODYMIUM malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -35,13 +27,8 @@ rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 10000KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-
-rule PROMETHIUM_NEODYMIUM_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
    meta:
       description = "Detects PROMETHIUM and NEODYMIUM malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +45,8 @@ rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-
-rule PROMETHIUM_NEODYMIUM_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
    meta:
       description = "Detects PROMETHIUM and NEODYMIUM malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -81,13 +63,8 @@ rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-
-rule PROMETHIUM_NEODYMIUM_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
    meta:
       description = "Detects PROMETHIUM and NEODYMIUM malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -108,13 +85,8 @@ rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and 4 of them ) or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-
-rule PROMETHIUM_NEODYMIUM_Malware_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
    meta:
       description = "Detects PROMETHIUM and NEODYMIUM malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -133,13 +105,8 @@ rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_5 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 5000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_promethium_neodymium.yar
-
-rule PROMETHIUM_NEODYMIUM_Malware_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_promethium_neodymium_PROMETHIUM_NEODYMIUM_Malware_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_promethium_neodymium.yar
    meta:
       description = "Detects PROMETHIUM and NEODYMIUM malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

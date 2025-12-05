@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_osx_evilosx.yar
-rule OSX_backdoor_EvilOSX {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_osx_evilosx_OSX_backdoor_EvilOSX {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_osx_evilosx.yar
     meta:
         description = "EvilOSX MacOS/OSX backdoor"
         author = "John Lambert @JohnLaTwC"

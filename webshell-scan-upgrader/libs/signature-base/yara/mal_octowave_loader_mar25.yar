@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_octowave_loader_mar25.yar
-
-
-rule Neo23x0_mal_Octowave_Loader_03_2025 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_03_2025 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_octowave_loader_mar25.yar
     meta:
         description = "Detects opcodes found in Octowave loader DLLs and WAV steganography files"
         author = "Jai Minton (@CyberRaiju) - HuntressLabs"
@@ -290,13 +284,8 @@ rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_03_2025 {
 		and all of them
 
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_octowave_loader_mar25.yar
-
-rule Neo23x0_mal_Octowave_Loader_Supporting_File_03_2025
-=======
 //===SUCCESS===
 rule Neo23x0_mal_octowave_loader_mar25_Octowave_Loader_Supporting_File_03_2025
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_octowave_loader_mar25.yar
 {
     meta:
         description = "Detects supporting file used by Octowave loader containing hardcoded values"

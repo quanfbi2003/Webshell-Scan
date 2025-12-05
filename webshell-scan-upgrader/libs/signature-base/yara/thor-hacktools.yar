@@ -1,26 +1,7 @@
-/*
-
-   THOR APT Scanner - Hack Tool Extract
-   This rulset is a subset of all hack tool rules included in our
-   APT Scanner THOR - the full featured APT scanner.
-
-   We will frequently update this file with new rules rated TLP:WHITE
-
-   Florian Roth
-   Nextron Systems GmbH
-
-   revision: 20170620
-
-*/
-
+import "pe"
 import "pe"
 /*
 
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-/* WCE */
-
-rule WindowsCredentialEditor
-=======
    THOR APT Scanner - Hack Tool Extract
    This rulset is a subset of all hack tool rules included in our
    APT Scanner THOR - the full featured APT scanner.
@@ -40,7 +21,6 @@ rule WindowsCredentialEditor
 
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WindowsCredentialEditor
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
     meta:
        description = "Windows Credential Editor"
@@ -53,13 +33,8 @@ rule Neo23x0_thor_hacktools_WindowsCredentialEditor
     condition:
        all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_Amplia_Security_Tool
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_Amplia_Security_Tool
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
     meta:
       description = "Detects Amplia Security Tool like Windows Credential Editor"
@@ -82,13 +57,8 @@ rule Neo23x0_thor_hacktools_HKTL_Amplia_Security_Tool
       ) or 3 of them
 }
 /* pwdump/fgdump */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PwDump
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PwDump
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
    meta:
       description = "PwDump 6 variant"
@@ -103,13 +73,8 @@ rule Neo23x0_thor_hacktools_PwDump
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PScan_Portscan_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PScan_Portscan_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "PScan - Port Scanner"
       author = "F. Roth"
@@ -122,13 +87,8 @@ rule Neo23x0_thor_hacktools_PScan_Portscan_1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HackTool_Samples {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HackTool_Samples {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Hacktool"
       score = 50
@@ -165,13 +125,8 @@ rule Neo23x0_thor_hacktools_HackTool_Samples {
 }
 
 /* Disclosed hack tool set */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Fierce2
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Fierce2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -185,13 +140,8 @@ rule Neo23x0_thor_hacktools_Fierce2
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Ncrack
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Ncrack
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -205,13 +155,8 @@ rule Neo23x0_thor_hacktools_Ncrack
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SQLMap
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SQLMap
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -225,13 +170,8 @@ rule Neo23x0_thor_hacktools_SQLMap
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_PortScanner_Simple_Jan14 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_PortScanner_Simple_Jan14 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file PortScanner.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -244,13 +184,8 @@ rule Neo23x0_thor_hacktools_HKTL_PortScanner_Simple_Jan14 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule DomainScanV1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_DomainScanV1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file DomainScanV1_0.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -268,13 +203,8 @@ rule Neo23x0_thor_hacktools_DomainScanV1_0 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_MooreR_Port_Scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_MooreR_Port_Scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file MooreR Port Scanner.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -288,13 +218,8 @@ rule Neo23x0_thor_hacktools_HKTL_MooreR_Port_Scanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule NetBIOS_Name_Scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_NetBIOS_Name_Scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file NetBIOS Name Scanner.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -307,13 +232,8 @@ rule Neo23x0_thor_hacktools_NetBIOS_Name_Scanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule FeliksPack3___Scanners_ipscan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_FeliksPack3___Scanners_ipscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file ipscan.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -326,13 +246,8 @@ rule Neo23x0_thor_hacktools_FeliksPack3___Scanners_ipscan {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CGISscan_CGIScan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CGISscan_CGIScan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file CGIScan.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -345,13 +260,8 @@ rule Neo23x0_thor_hacktools_CGISscan_CGIScan {
    condition:
       all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule IP_Stealing_Utilities {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_IP_Stealing_Utilities {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file IP Stealing Utilities.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -363,13 +273,8 @@ rule Neo23x0_thor_hacktools_IP_Stealing_Utilities {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SuperScan4 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SuperScan4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file SuperScan4.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -383,12 +288,8 @@ rule Neo23x0_thor_hacktools_SuperScan4 {
       all of them
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-rule PortRacer {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PortRacer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file PortRacer.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -401,13 +302,8 @@ rule Neo23x0_thor_hacktools_PortRacer {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule scanarator {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_scanarator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file scanarator.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -418,13 +314,8 @@ rule Neo23x0_thor_hacktools_scanarator {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aolipsniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aolipsniffer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file aolipsniffer.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -443,13 +334,8 @@ rule Neo23x0_thor_hacktools_aolipsniffer {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule _Bitchin_Threads_ {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools__Bitchin_Threads_ {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file =Bitchin Threads=.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -461,13 +347,8 @@ rule Neo23x0_thor_hacktools__Bitchin_Threads_ {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule cgis4_cgis4 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_cgis4_cgis4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file cgis4.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -483,13 +364,8 @@ rule Neo23x0_thor_hacktools_cgis4_cgis4 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule portscan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_portscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file portscan.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -501,13 +377,8 @@ rule Neo23x0_thor_hacktools_portscan {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ProPort_zip_Folder_ProPort {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ProPort_zip_Folder_ProPort {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file ProPort.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -525,13 +396,8 @@ rule Neo23x0_thor_hacktools_ProPort_zip_Folder_ProPort {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule StealthWasp_s_Basic_PortScanner_v1_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_StealthWasp_s_Basic_PortScanner_v1_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file StealthWasp's Basic PortScanner v1.2.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -543,13 +409,8 @@ rule Neo23x0_thor_hacktools_StealthWasp_s_Basic_PortScanner_v1_2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BluesPortScan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BluesPortScan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file BluesPortScan.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -561,13 +422,8 @@ rule Neo23x0_thor_hacktools_BluesPortScan {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule scanarator_iis {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_scanarator_iis {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file iis.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -579,13 +435,8 @@ rule Neo23x0_thor_hacktools_scanarator_iis {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule stealth_Stealth {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_stealth_Stealth {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file Stealth.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -597,13 +448,8 @@ rule Neo23x0_thor_hacktools_stealth_Stealth {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Angry_IP_Scanner_v2_08_ipscan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Angry_IP_Scanner_v2_08_ipscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file ipscan.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -616,13 +462,8 @@ rule Neo23x0_thor_hacktools_Angry_IP_Scanner_v2_08_ipscan {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule crack_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_crack_Loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule on file Loader.exe"
       author = "yarGen Yara Rule Generator by Florian Roth"
@@ -634,13 +475,8 @@ rule Neo23x0_thor_hacktools_crack_Loader {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_GUI_Scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_GUI_Scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects an unknown GUI scanner tool - CN background"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -658,13 +494,8 @@ rule Neo23x0_thor_hacktools_CN_GUI_Scanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Packed_Scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Packed_Scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Suspiciously packed executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -681,13 +512,8 @@ rule Neo23x0_thor_hacktools_CN_Packed_Scanner {
    condition:
       all of them and filesize < 180KB and filesize > 70KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Tiny_Network_Tool_Generic : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Tiny_Network_Tool_Generic : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Tiny tool with suspicious function imports. (Rule based on WinEggDrop Scanner samples)"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -721,13 +547,8 @@ rule Neo23x0_thor_hacktools_Tiny_Network_Tool_Generic : FILE {
    condition:
       uint16(0) == 0x5a4d and all of ($s*) and ( all of ($y*) or all of ($x*) or all of ($z*) ) and filesize < 15KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Beastdoor_Backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Beastdoor_Backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects the backdoor Beastdoor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -748,13 +569,8 @@ rule Neo23x0_thor_hacktools_Beastdoor_Backdoor {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Powershell_Netcat {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Powershell_Netcat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a Powershell version of the Netcat network hacking tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -769,13 +585,8 @@ rule Neo23x0_thor_hacktools_Powershell_Netcat {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Chinese_Hacktool_1014 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Chinese_Hacktool_1014 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese hacktool with unknown use"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -793,13 +604,8 @@ rule Neo23x0_thor_hacktools_Chinese_Hacktool_1014 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_BAT_PortsOpen {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_BAT_PortsOpen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese BAT hacktool for local port evaluation"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -814,13 +620,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_BAT_PortsOpen {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_SSPort_Portscanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_SSPort_Portscanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese Portscanner named SSPort"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -835,13 +636,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_SSPort_Portscanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_ScanPort_Portscanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_ScanPort_Portscanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese Portscanner named ScanPort"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -856,13 +652,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_ScanPort_Portscanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_S_EXE_Portscanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_S_EXE_Portscanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese Portscanner named s.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -877,13 +668,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_S_EXE_Portscanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_MilkT_BAT {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_MilkT_BAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese Portscanner named MilkT - shipped BAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -897,13 +683,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_MilkT_BAT {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_MilkT_Scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_MilkT_Scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese Portscanner named MilkT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -922,13 +703,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_MilkT_Scanner {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_1433_Scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_1433_Scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese MSSQL scanner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -946,13 +722,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_1433_Scanner {
    condition:
       uint16(0) == 0x5a4d and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Hacktool_1433_Scanner_Comp2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Hacktool_1433_Scanner_Comp2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a chinese MSSQL scanner - component 2"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -967,13 +738,8 @@ rule Neo23x0_thor_hacktools_CN_Hacktool_1433_Scanner_Comp2 {
    condition:
       uint16(0) == 0x5a4d and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WCE_Modified_1_1014 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WCE_Modified_1_1014 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Modified (packed) version of Windows Credential Editor"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -988,13 +754,8 @@ rule Neo23x0_thor_hacktools_WCE_Modified_1_1014 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ReactOS_cmd_valid {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ReactOS_cmd_valid {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "ReactOS cmd.exe with correct file name - maybe packed with software or part of hacker toolset"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1012,13 +773,8 @@ rule Neo23x0_thor_hacktools_ReactOS_cmd_valid {
    condition:
       all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_wmi_rundll {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_wmi_rundll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "This exe will attempt to use WMI to Call the Win32_Process event to spawn rundll - file wmi_rundll.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1040,13 +796,8 @@ rule Neo23x0_thor_hacktools_iKAT_wmi_rundll {
    condition:
       all of them and filesize < 15KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_revelations {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_revelations {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "iKAT hack tool showing the content of password fields - file revelations.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1064,13 +815,8 @@ rule Neo23x0_thor_hacktools_iKAT_revelations {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_priv_esc_tasksch {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_priv_esc_tasksch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Task Schedulder Local Exploit - Windows local priv-esc using Task Scheduler, published by webDevil. Supports Windows 7 and Vista."
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1097,13 +843,8 @@ rule Neo23x0_thor_hacktools_iKAT_priv_esc_tasksch {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_command_lines_agent {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_command_lines_agent {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "iKAT hack tools set agent - file ikat.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1125,13 +866,8 @@ rule Neo23x0_thor_hacktools_iKAT_command_lines_agent {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_cmd_as_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_cmd_as_dll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "iKAT toolset file cmd.dll ReactOS file cloaked"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1150,13 +886,8 @@ rule Neo23x0_thor_hacktools_iKAT_cmd_as_dll {
    condition:
       all of ($s*) and $ext
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_tools_nmap {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_tools_nmap {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Generic rule for NMAP - based on NMAP 4 standalone"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1174,13 +905,8 @@ rule Neo23x0_thor_hacktools_iKAT_tools_nmap {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_startbar {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_startbar {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Tool to hide unhide the windows startbar from command line - iKAT hack tools - file startbar.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1201,13 +927,8 @@ rule Neo23x0_thor_hacktools_iKAT_startbar {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule iKAT_Tool_Generic {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_iKAT_Tool_Generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Generic Rule for hack tool iKAT files gpdisable.exe, kitrap0d.exe, uacpoc.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1234,13 +955,8 @@ rule Neo23x0_thor_hacktools_iKAT_Tool_Generic {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BypassUac2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BypassUac2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file BypassUac2.zip"
       author = "yarGen Yara Rule Generator"
@@ -1253,13 +969,8 @@ rule Neo23x0_thor_hacktools_BypassUac2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BypassUac_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BypassUac_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file BypassUacDll.dll"
       author = "yarGen Yara Rule Generator"
@@ -1273,13 +984,8 @@ rule Neo23x0_thor_hacktools_BypassUac_3 {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BypassUac_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BypassUac_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file BypassUac.zip"
       author = "yarGen Yara Rule Generator"
@@ -1294,13 +1000,8 @@ rule Neo23x0_thor_hacktools_BypassUac_9 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BypassUacDll_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BypassUacDll_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file BypassUacDll.aps"
       author = "yarGen Yara Rule Generator"
@@ -1312,13 +1013,8 @@ rule Neo23x0_thor_hacktools_BypassUacDll_6 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BypassUac_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BypassUac_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file BypassUacDll.aps"
       author = "yarGen Yara Rule Generator"
@@ -1333,13 +1029,8 @@ rule Neo23x0_thor_hacktools_BypassUac_EXE {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule APT_Proxy_Malware_Packed_dev
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_APT_Proxy_Malware_Packed_dev
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
    meta:
       author = "FRoth"
@@ -1355,13 +1046,8 @@ rule Neo23x0_thor_hacktools_APT_Proxy_Malware_Packed_dev
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Tzddos_DDoS_Tool_CN {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Tzddos_DDoS_Tool_CN {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file tzddos"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1381,13 +1067,8 @@ rule Neo23x0_thor_hacktools_Tzddos_DDoS_Tool_CN {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Ncat_Hacktools_CN {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Ncat_Hacktools_CN {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file nc.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1406,13 +1087,8 @@ rule Neo23x0_thor_hacktools_Ncat_Hacktools_CN {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule MS08_067_Exploit_Hacktools_CN {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_MS08_067_Exploit_Hacktools_CN {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file cs.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1432,13 +1108,8 @@ rule Neo23x0_thor_hacktools_MS08_067_Exploit_Hacktools_CN {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Burst_sql {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_sql {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file sql.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1460,13 +1131,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_sql {
    condition:
       6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Panda_445TOOL {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_445TOOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file 445TOOL.rar"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1483,13 +1149,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_445TOOL {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Panda_445 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_445 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file 445.rar"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1510,13 +1171,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_445 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_WinEggDrop {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_WinEggDrop {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file s.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1540,13 +1196,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_WinEggDrop {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Scan_BAT {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Scan_BAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file scan.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1565,13 +1216,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Scan_BAT {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Panda_Burst {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_Burst {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file Burst.rar"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1585,13 +1231,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_Burst {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_445_cmd {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_445_cmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file cmd.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1607,13 +1248,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_445_cmd {
    condition:
       uint32(0) == 0x68636540 and $bat at 0 and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_GOGOGO_Bat {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_GOGOGO_Bat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file GOGOGO.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1639,13 +1275,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_GOGOGO_Bat {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Burst_pass {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_pass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file pass.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1669,13 +1300,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_pass {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_JoHor_Posts_Killer {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_JoHor_Posts_Killer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file JoHor_Posts_Killer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1697,13 +1323,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_JoHor_Posts_Killer {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Panda_tesksd {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_tesksd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file tesksd.jpg"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1719,13 +1340,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_tesksd {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Http {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Http {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file Http.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1742,13 +1358,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Http {
    condition:
       all of them and filesize < 10KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Burst_Start {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Start {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file Start.bat - DoS tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1771,13 +1382,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Start {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Panda_tasksvr {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_tasksvr {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file tasksvr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1793,12 +1399,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Panda_tasksvr {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-rule Hacktools_CN_Burst_Clear {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Clear {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file Clear.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1820,13 +1422,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Clear {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Burst_Thecard {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Thecard {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file Thecard.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1844,13 +1441,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Thecard {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Hacktools_CN_Burst_Blast {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Blast {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set - file Blast.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1865,13 +1457,8 @@ rule Neo23x0_thor_hacktools_Hacktools_CN_Burst_Blast {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule VUBrute_VUBrute {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_VUBrute_VUBrute {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "PoS Scammer Toolbox - http://goo.gl/xiIphp - file VUBrute.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1888,13 +1475,8 @@ rule Neo23x0_thor_hacktools_VUBrute_VUBrute {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule DK_Brute {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_DK_Brute {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "PoS Scammer Toolbox - http://goo.gl/xiIphp - file DK Brute.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1912,13 +1494,8 @@ rule Neo23x0_thor_hacktools_DK_Brute {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule VUBrute_config {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_VUBrute_config {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "PoS Scammer Toolbox - http://goo.gl/xiIphp - file config.ini"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1939,13 +1516,8 @@ rule Neo23x0_thor_hacktools_VUBrute_config {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_hunt {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_hunt {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file hunt.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1965,13 +1537,8 @@ rule Neo23x0_thor_hacktools_sig_238_hunt {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_listip {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_listip {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file listip.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1990,13 +1557,8 @@ rule Neo23x0_thor_hacktools_sig_238_listip {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ArtTrayHookDll {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ArtTrayHookDll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file ArtTrayHookDll.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2011,13 +1573,8 @@ rule Neo23x0_thor_hacktools_ArtTrayHookDll {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_eee {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_eee {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file eee.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2037,13 +1594,8 @@ rule Neo23x0_thor_hacktools_sig_238_eee {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_asp4 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_asp4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file asp4.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2064,13 +1616,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_asp4 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspfile1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspfile1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file aspfile1.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2089,13 +1636,8 @@ rule Neo23x0_thor_hacktools_aspfile1 {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule EditServer {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_EditServer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file EditServer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2118,13 +1660,8 @@ rule Neo23x0_thor_hacktools_EditServer {
    condition:
       5 of ($s*) or $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_letmein {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_letmein {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file letmein.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2141,13 +1678,8 @@ rule Neo23x0_thor_hacktools_sig_238_letmein {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_token {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_token {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file token.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2165,13 +1697,8 @@ rule Neo23x0_thor_hacktools_sig_238_token {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_TELNET {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_TELNET {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file TELNET.EXE from Windows ME"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2188,13 +1715,8 @@ rule Neo23x0_thor_hacktools_sig_238_TELNET {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule snifferport {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_snifferport {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file snifferport.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2212,13 +1734,8 @@ rule Neo23x0_thor_hacktools_snifferport {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_webget {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_webget {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file webget.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2235,13 +1752,8 @@ rule Neo23x0_thor_hacktools_sig_238_webget {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule XYZCmd_zip_Folder_XYZCmd {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_XYZCmd_zip_Folder_XYZCmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file XYZCmd.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2258,13 +1770,8 @@ rule Neo23x0_thor_hacktools_XYZCmd_zip_Folder_XYZCmd {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ASPack_Chinese {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ASPack_Chinese {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file ASPack Chinese.ini"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2282,13 +1789,8 @@ rule Neo23x0_thor_hacktools_ASPack_Chinese {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_EDIR {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_EDIR {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file EDIR.ASP"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2306,13 +1808,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_EDIR {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ByPassFireWall_zip_Folder_Ie {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ByPassFireWall_zip_Folder_Ie {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Ie.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2329,13 +1826,8 @@ rule Neo23x0_thor_hacktools_ByPassFireWall_zip_Folder_Ie {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule EditKeyLogReadMe {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_EditKeyLogReadMe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file EditKeyLogReadMe.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2354,13 +1846,8 @@ rule Neo23x0_thor_hacktools_EditKeyLogReadMe {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PassSniffer_zip_Folder_readme {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PassSniffer_zip_Folder_readme {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file readme.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2376,13 +1863,8 @@ rule Neo23x0_thor_hacktools_PassSniffer_zip_Folder_readme {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_gina {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_gina {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file gina.reg"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2398,13 +1880,8 @@ rule Neo23x0_thor_hacktools_sig_238_gina {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule splitjoin {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_splitjoin {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file splitjoin.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2421,13 +1898,8 @@ rule Neo23x0_thor_hacktools_splitjoin {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule EditKeyLog {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_EditKeyLog {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file EditKeyLog.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2444,13 +1916,8 @@ rule Neo23x0_thor_hacktools_EditKeyLog {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PassSniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PassSniffer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file PassSniffer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2469,13 +1936,8 @@ rule Neo23x0_thor_hacktools_PassSniffer {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspfile2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspfile2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file aspfile2.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2492,13 +1954,8 @@ rule Neo23x0_thor_hacktools_aspfile2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule UnPack_rar_Folder_InjectT {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_UnPack_rar_Folder_InjectT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file InjectT.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2522,13 +1979,8 @@ rule Neo23x0_thor_hacktools_UnPack_rar_Folder_InjectT {
    condition:
       ( 1 of ($x*) ) and ( 3 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Jc_WinEggDrop_Shell {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Jc_WinEggDrop_Shell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Jc.WinEggDrop Shell.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2548,13 +2000,8 @@ rule Neo23x0_thor_hacktools_Jc_WinEggDrop_Shell {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_asp1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_asp1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file asp1.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2573,13 +2020,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_asp1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule QQ_zip_Folder_QQ {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_QQ_zip_Folder_QQ {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file QQ.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2600,13 +2042,8 @@ rule Neo23x0_thor_hacktools_QQ_zip_Folder_QQ {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule UnPack_rar_Folder_TBack {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_UnPack_rar_Folder_TBack {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file TBack.DLL"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2635,13 +2072,8 @@ rule Neo23x0_thor_hacktools_UnPack_rar_Folder_TBack {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_cmd_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_cmd_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file cmd.jsp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2659,13 +2091,8 @@ rule Neo23x0_thor_hacktools_sig_238_cmd_2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule RangeScan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_RangeScan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file RangeScan.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2683,13 +2110,8 @@ rule Neo23x0_thor_hacktools_RangeScan {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule XYZCmd_zip_Folder_Readme {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_XYZCmd_zip_Folder_Readme {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Readme.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2704,13 +2126,8 @@ rule Neo23x0_thor_hacktools_XYZCmd_zip_Folder_Readme {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ByPassFireWall_zip_Folder_Inject {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ByPassFireWall_zip_Folder_Inject {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Inject.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2726,13 +2143,8 @@ rule Neo23x0_thor_hacktools_ByPassFireWall_zip_Folder_Inject {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_sqlcmd {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_sqlcmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file sqlcmd.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2752,13 +2164,8 @@ rule Neo23x0_thor_hacktools_sig_238_sqlcmd {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ASPack_ASPACK {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ASPack_ASPACK {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file ASPACK.EXE"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2774,13 +2181,8 @@ rule Neo23x0_thor_hacktools_ASPack_ASPACK {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_2323 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_2323 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file 2323.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2799,13 +2201,8 @@ rule Neo23x0_thor_hacktools_sig_238_2323 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Jc_ALL_WinEggDropShell_rar_Folder_Install_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Jc_ALL_WinEggDropShell_rar_Folder_Install_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Install.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2824,13 +2221,8 @@ rule Neo23x0_thor_hacktools_Jc_ALL_WinEggDropShell_rar_Folder_Install_2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_TFTPD32 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_TFTPD32 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file TFTPD32.EXE"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2852,13 +2244,8 @@ rule Neo23x0_thor_hacktools_sig_238_TFTPD32 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_iecv {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_iecv {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file iecv.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2876,13 +2263,8 @@ rule Neo23x0_thor_hacktools_sig_238_iecv {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Antiy_Ports_1_21 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Antiy_Ports_1_21 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Antiy Ports 1.21.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2898,13 +2280,8 @@ rule Neo23x0_thor_hacktools_Antiy_Ports_1_21 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule perlcmd_zip_Folder_cmd {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_perlcmd_zip_Folder_cmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file cmd.cgi"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2925,13 +2302,8 @@ rule Neo23x0_thor_hacktools_perlcmd_zip_Folder_cmd {
    condition:
       6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_asp3 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_asp3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file asp3.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2952,13 +2324,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_asp3 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_FPipe {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_FPipe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file FPipe.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2977,13 +2344,8 @@ rule Neo23x0_thor_hacktools_sig_238_FPipe {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_concon {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_concon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file concon.com"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2997,13 +2359,8 @@ rule Neo23x0_thor_hacktools_sig_238_concon {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_regdll {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_regdll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file regdll.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3020,13 +2377,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_regdll {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CleanIISLog {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CleanIISLog {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file CleanIISLog.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3048,13 +2400,8 @@ rule Neo23x0_thor_hacktools_CleanIISLog {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sqlcheck {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sqlcheck {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file sqlcheck.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3072,13 +2419,8 @@ rule Neo23x0_thor_hacktools_sqlcheck {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_RunAsEx {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_RunAsEx {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file RunAsEx.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3097,13 +2439,8 @@ rule Neo23x0_thor_hacktools_sig_238_RunAsEx {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_nbtdump {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_nbtdump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file nbtdump.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3123,13 +2460,8 @@ rule Neo23x0_thor_hacktools_sig_238_nbtdump {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_Glass2k {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_Glass2k {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file Glass2k.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3147,13 +2479,8 @@ rule Neo23x0_thor_hacktools_sig_238_Glass2k {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SplitJoin_V1_3_3_rar_Folder_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SplitJoin_V1_3_3_rar_Folder_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file splitjoin.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3169,13 +2496,8 @@ rule Neo23x0_thor_hacktools_SplitJoin_V1_3_3_rar_Folder_3 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_EDIT {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_EDIT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file EDIT.ASP"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3195,13 +2517,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_EDIT {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_entice {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_entice {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file entice.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3219,13 +2536,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_entice {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule FPipe2_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_FPipe2_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file FPipe2.0.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3244,13 +2556,8 @@ rule Neo23x0_thor_hacktools_FPipe2_0 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule InstGina {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_InstGina {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file InstGina.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3266,13 +2573,8 @@ rule Neo23x0_thor_hacktools_InstGina {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ArtTray_zip_Folder_ArtTray {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ArtTray_zip_Folder_ArtTray {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file ArtTray.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3289,13 +2591,8 @@ rule Neo23x0_thor_hacktools_ArtTray_zip_Folder_ArtTray {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_findoor {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_findoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file findoor.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3313,13 +2610,8 @@ rule Neo23x0_thor_hacktools_sig_238_findoor {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule aspbackdoor_ipclear {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_aspbackdoor_ipclear {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file ipclear.vbs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3337,13 +2629,8 @@ rule Neo23x0_thor_hacktools_aspbackdoor_ipclear {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WinEggDropShellFinal_zip_Folder_InjectT {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WinEggDropShellFinal_zip_Folder_InjectT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file InjectT.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3361,13 +2648,8 @@ rule Neo23x0_thor_hacktools_WinEggDropShellFinal_zip_Folder_InjectT {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule gina_zip_Folder_gina {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_gina_zip_Folder_gina {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file gina.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3388,13 +2670,8 @@ rule Neo23x0_thor_hacktools_gina_zip_Folder_gina {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule superscan3_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_superscan3_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file superscan3.0.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3416,13 +2693,8 @@ rule Neo23x0_thor_hacktools_superscan3_0 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_xsniff {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_xsniff {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file xsniff.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3444,13 +2716,8 @@ rule Neo23x0_thor_hacktools_sig_238_xsniff {
    condition:
       6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule sig_238_fscan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_sig_238_fscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - file fscan.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3472,13 +2739,8 @@ rule Neo23x0_thor_hacktools_sig_238_fscan {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule _iissample_nesscan_twwwscan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools__iissample_nesscan_twwwscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - from files iissample.exe, nesscan.exe, twwwscan.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3505,13 +2767,8 @@ rule Neo23x0_thor_hacktools__iissample_nesscan_twwwscan {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule _FsHttp_FsPop_FsSniffer {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools__FsHttp_FsPop_FsSniffer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Disclosed hacktool set (old stuff) - from files FsHttp.exe, FsPop.exe, FsSniffer.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3538,13 +2795,8 @@ rule Neo23x0_thor_hacktools__FsHttp_FsPop_FsSniffer {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Ammyy_Admin_AA_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Ammyy_Admin_AA_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Remote Admin Tool used by APT group Anunak (ru) - file AA_v3.4.exe and AA_v3.5.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3571,13 +2823,8 @@ rule Neo23x0_thor_hacktools_Ammyy_Admin_AA_v3 {
 }
 
 /* Other dumper and custom hack tools */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule LinuxHacktool_eyes_scanssh {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_scanssh {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Linux hack tools - file scanssh"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3603,13 +2850,8 @@ rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_scanssh {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule LinuxHacktool_eyes_pscan2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_pscan2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Linux hack tools - file pscan2"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3628,13 +2870,8 @@ rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_pscan2 {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule LinuxHacktool_eyes_a {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_a {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Linux hack tools - file a"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3653,13 +2890,8 @@ rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_a {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule LinuxHacktool_eyes_mass {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_mass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Linux hack tools - file mass"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3677,13 +2909,8 @@ rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_mass {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule LinuxHacktool_eyes_pscan2_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_pscan2_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Linux hack tools - file pscan2.c"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3701,13 +2928,8 @@ rule Neo23x0_thor_hacktools_LinuxHacktool_eyes_pscan2_2 {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Portscan : APT
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Portscan : APT
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
     meta:
         description = "CN Port Scanner"
@@ -3722,13 +2944,8 @@ rule Neo23x0_thor_hacktools_CN_Portscan : APT
     condition:
         uint16(0) == 0x5A4D and $s2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WMI_vbs : APT
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WMI_vbs : APT
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
     meta:
         description = "WMI Tool - APT"
@@ -3743,13 +2960,8 @@ rule Neo23x0_thor_hacktools_WMI_vbs : APT
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Toolset__XScanLib_XScanLib_XScanLib {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Toolset__XScanLib_XScanLib_XScanLib {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - from files XScanLib.dll, XScanLib.dll, XScanLib.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3771,13 +2983,8 @@ rule Neo23x0_thor_hacktools_CN_Toolset__XScanLib_XScanLib_XScanLib {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Toolset_NTscan_PipeCmd {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Toolset_NTscan_PipeCmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - file PipeCmd.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3802,13 +3009,8 @@ rule Neo23x0_thor_hacktools_CN_Toolset_NTscan_PipeCmd {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Toolset_LScanPortss_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Toolset_LScanPortss_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - file LScanPortss.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3829,13 +3031,8 @@ rule Neo23x0_thor_hacktools_CN_Toolset_LScanPortss_2 {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule CN_Toolset_sig_1433_135_sqlr {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_CN_Toolset_sig_1433_135_sqlr {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a Chinese hacktool from a disclosed toolset - file sqlr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3853,13 +3050,8 @@ rule Neo23x0_thor_hacktools_CN_Toolset_sig_1433_135_sqlr {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule DarkComet_Keylogger_File
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_DarkComet_Keylogger_File
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
 {
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3874,13 +3066,8 @@ rule Neo23x0_thor_hacktools_DarkComet_Keylogger_File
    condition:
       uint16(0) == 0x3A3A and #entry > 10 and #timestamp > 10
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule VSSown_VBS {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_VSSown_VBS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects VSSown.vbs script - used to export shadow copy elements like NTDS to take away and crack elsewhere"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3898,13 +3085,8 @@ rule Neo23x0_thor_hacktools_VSSown_VBS {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Netview_Hacktool {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Netview_Hacktool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Network domain enumeration tool - often used by attackers - file Nv.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3928,13 +3110,8 @@ rule Neo23x0_thor_hacktools_Netview_Hacktool {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and 2 of them ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Netview_Hacktool_Output {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Netview_Hacktool_Output {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Network domain enumeration tool output - often used by attackers - file filename.txt"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3959,13 +3136,8 @@ rule Neo23x0_thor_hacktools_Netview_Hacktool_Output {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PSAttack_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PSAttack_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "PSAttack - Powershell attack tool - file PSAttack.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3986,13 +3158,8 @@ rule Neo23x0_thor_hacktools_PSAttack_EXE {
    condition:
       ( uint16(0) == 0x5a4d and ( $x1 or 2 of ($s*) ) ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Powershell_Attack_Scripts {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Powershell_Attack_Scripts {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Powershell Attack Scripts"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4008,13 +3175,8 @@ rule Neo23x0_thor_hacktools_Powershell_Attack_Scripts {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PSAttack_ZIP {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PSAttack_ZIP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "PSAttack - Powershell attack tool - file PSAttack.zip"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4038,13 +3200,8 @@ rule Neo23x0_thor_hacktools_PSAttack_ZIP {
 */
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Linux_Portscan_Shark_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Linux_Portscan_Shark_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Linux Port Scanner Shark"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4062,13 +3219,8 @@ rule Neo23x0_thor_hacktools_Linux_Portscan_Shark_1 {
    condition:
       ( uint16(0) == 0x7362 and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Linux_Portscan_Shark_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Linux_Portscan_Shark_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Linux Port Scanner Shark"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4093,13 +3245,8 @@ rule Neo23x0_thor_hacktools_Linux_Portscan_Shark_2 {
    Date: 2016-05-15
    Identifier: dnscat2
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule dnscat2_Hacktool {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_dnscat2_Hacktool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects dnscat2 - from files dnscat, dnscat2.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4119,13 +3266,8 @@ rule Neo23x0_thor_hacktools_dnscat2_Hacktool {
    condition:
       ( ( uint16(0) == 0x457f or uint16(0) == 0x5a4d ) and filesize < 400KB and ( 2 of ($s*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WCE_in_memory {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WCE_in_memory {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Windows Credential Editor (WCE) in memory (and also on disk)"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4140,13 +3282,8 @@ rule Neo23x0_thor_hacktools_WCE_in_memory {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule pstgdump {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_pstgdump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a tool used by APT groups - file pstgdump.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4165,13 +3302,8 @@ rule Neo23x0_thor_hacktools_pstgdump {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of ($x*) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule lsremora {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_lsremora {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a tool used by APT groups"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4194,13 +3326,8 @@ rule Neo23x0_thor_hacktools_lsremora {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of ($x*) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule servpw {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_servpw {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a tool used by APT groups - file servpw.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4220,13 +3347,8 @@ rule Neo23x0_thor_hacktools_servpw {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule fgexec {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_fgexec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a tool used by APT groups - file fgexec.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4243,13 +3365,8 @@ rule Neo23x0_thor_hacktools_fgexec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of ($x*) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule cachedump {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_cachedump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a tool used by APT groups - from files cachedump.exe, cachedump64.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4270,13 +3387,8 @@ rule Neo23x0_thor_hacktools_cachedump {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PwDump_B {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PwDump_B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a tool used by APT groups - file PwDump.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4306,13 +3418,8 @@ rule Neo23x0_thor_hacktools_PwDump_B {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule MSBuild_Mimikatz_Execution_via_XML {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_MSBuild_Mimikatz_Execution_via_XML {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects an XML that executes Mimikatz on an endpoint via MSBuild"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4341,13 +3448,8 @@ rule Neo23x0_thor_hacktools_MSBuild_Mimikatz_Execution_via_XML {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Fscan_Portscanner {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Fscan_Portscanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Fscan port scanner scan output / strings"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4372,13 +3474,8 @@ rule Neo23x0_thor_hacktools_Fscan_Portscanner {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WPR_loader_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WPR_loader_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Windows Password Recovery - file loader.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4399,13 +3496,8 @@ rule Neo23x0_thor_hacktools_WPR_loader_EXE {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WPR_loader_DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WPR_loader_DLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Windows Password Recovery - file loader64.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4439,13 +3531,8 @@ rule Neo23x0_thor_hacktools_WPR_loader_DLL {
          ( 1 of ($s*) and all of ($op*) )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WPR_Passscape_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WPR_Passscape_Loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Windows Password Recovery - file ast.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4464,13 +3551,8 @@ rule Neo23x0_thor_hacktools_WPR_Passscape_Loader {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WPR_Asterisk_Hook_Library {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WPR_Asterisk_Hook_Library {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Windows Password Recovery - file ast64.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4493,13 +3575,8 @@ rule Neo23x0_thor_hacktools_WPR_Asterisk_Hook_Library {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WPR_WindowsPasswordRecovery_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WPR_WindowsPasswordRecovery_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Windows Password Recovery - file wpr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4529,13 +3606,8 @@ rule Neo23x0_thor_hacktools_WPR_WindowsPasswordRecovery_EXE {
          all of ($op*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule WPR_WindowsPasswordRecovery_EXE_64 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_WPR_WindowsPasswordRecovery_EXE_64 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Windows Password Recovery - file ast64.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4563,13 +3635,8 @@ rule Neo23x0_thor_hacktools_WPR_WindowsPasswordRecovery_EXE_64 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule BeyondExec_RemoteAccess_Tool {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_BeyondExec_RemoteAccess_Tool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects BeyondExec Remote Access Tool - file rexesvr.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4588,13 +3655,8 @@ rule Neo23x0_thor_hacktools_BeyondExec_RemoteAccess_Tool {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and ( 1 of ($x*) or all of ($op*) ) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Mimikatz_Gen_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Mimikatz_Gen_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Mimikatz by using some special strings"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4627,13 +3689,8 @@ rule Neo23x0_thor_hacktools_Mimikatz_Gen_Strings {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_lpe {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_lpe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4655,13 +3712,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_lpe {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 70KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_exploit {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_exploit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4676,13 +3728,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_exploit {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_InjectDll {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_InjectDll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4701,13 +3748,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_InjectDll {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_payload_MSI {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_payload_MSI {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4724,13 +3766,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_payload_MSI {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_injector {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_injector {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4751,13 +3788,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_injector {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 90KB and 1 of them ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_lpe_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_lpe_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4773,13 +3805,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_lpe_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Disclosed_0day_POCs_shellcodegenerator {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_shellcodegenerator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects POC code from disclosed 0day hacktool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4793,13 +3820,8 @@ rule Neo23x0_thor_hacktools_Disclosed_0day_POCs_shellcodegenerator {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SecurityXploded_Producer_String {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SecurityXploded_Producer_String {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects hacktools by SecurityXploded"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4824,13 +3846,8 @@ rule Neo23x0_thor_hacktools_SecurityXploded_Producer_String {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Kekeo_Hacktool {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Kekeo_Hacktool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Kekeo Hacktool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4852,15 +3869,6 @@ rule Neo23x0_thor_hacktools_Kekeo_Hacktool {
    Yara Rule Set
    Author: Florian Roth
    Date: 2017-07-27
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-   Identifier: AllTheThings
-   Reference: https://github.com/subTee/AllTheThings
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule AllTheThings {
-=======
    Identifier: Neo23x0_thor_hacktools_AllTheThings
    Reference: https://github.com/subTee/Neo23x0_thor_hacktools_AllTheThings
 */
@@ -4868,7 +3876,6 @@ rule AllTheThings {
 /* Rule Set ----------------------------------------------------------------- */
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_AllTheThings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects AllTheThings"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4888,13 +3895,8 @@ rule Neo23x0_thor_hacktools_AllTheThings {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Impacket_Keyword {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Impacket_Keyword {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Impacket Keyword in Executable"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4921,15 +3923,8 @@ rule Neo23x0_thor_hacktools_Impacket_Keyword {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-import "pe"
-
-rule PasswordsPro {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PasswordsPro {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file PasswordsPro.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4948,13 +3943,8 @@ rule Neo23x0_thor_hacktools_PasswordsPro {
          1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PasswordPro_NTLM_DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PasswordPro_NTLM_DLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file NTLM.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4983,13 +3973,8 @@ rule Neo23x0_thor_hacktools_PasswordPro_NTLM_DLL {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule KeeThief_PS {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_KeeThief_PS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects component of KeeTheft - KeePass dump tool - file KeeThief.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5007,13 +3992,8 @@ rule Neo23x0_thor_hacktools_KeeThief_PS {
         ( 1 of ($x*) )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule KeeTheft_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_KeeTheft_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects component of KeeTheft - KeePass dump tool - file KeeTheft.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5033,13 +4013,8 @@ rule Neo23x0_thor_hacktools_KeeTheft_EXE {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule KeeTheft_Out_Shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_KeeTheft_Out_Shellcode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects component of KeeTheft - KeePass dump tool - file Out-Shellcode.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5059,19 +4034,11 @@ rule Neo23x0_thor_hacktools_KeeTheft_Out_Shellcode {
    Yara Rule Set
    Author: Florian Roth
    Date: 2017-09-23
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-   Identifier: Sharpire
-   Reference: https://github.com/0xbadjuju/Sharpire
-*/
-
-rule Sharpire {
-=======
    Identifier: Neo23x0_thor_hacktools_Sharpire
    Reference: https://github.com/0xbadjuju/Neo23x0_thor_hacktools_Sharpire
 */
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Sharpire {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Auto-generated rule - file Sharpire.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5103,13 +4070,8 @@ rule Neo23x0_thor_hacktools_Sharpire {
    Identifier: Invoke-Metasploit
    Reference: https://github.com/jaredhaight/Invoke-MetasploitPayload/blob/master/Invoke-MetasploitPayload.ps1
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Invoke_Metasploit {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Invoke_Metasploit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Invoke-Metasploit Payload"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5125,13 +4087,8 @@ rule Neo23x0_thor_hacktools_Invoke_Metasploit {
    condition:
       ( filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PowerShell_Mal_HackTool_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PowerShell_Mal_HackTool_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects PowerShell hack tool samples - generic PE loader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5148,13 +4105,8 @@ rule Neo23x0_thor_hacktools_PowerShell_Mal_HackTool_Gen {
    condition:
       filesize < 8000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Sig_RemoteAdmin_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Sig_RemoteAdmin_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects strings from well-known APT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5169,13 +4121,8 @@ rule Neo23x0_thor_hacktools_Sig_RemoteAdmin_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule RemCom_RemoteCommandExecution {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_RemCom_RemoteCommandExecution {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects strings from RemCom tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5191,13 +4138,8 @@ rule Neo23x0_thor_hacktools_RemCom_RemoteCommandExecution {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Crackmapexec_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Crackmapexec_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects CrackMapExec hack tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5214,13 +4156,8 @@ rule Neo23x0_thor_hacktools_Crackmapexec_EXE {
    condition:
       uint16(0) == 0x5a4d and filesize < 10000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SUSP_Imphash_PassRevealer_PY_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SUSP_Imphash_PassRevealer_PY_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects an imphash used by password revealer and hack tools (some false positives with hardware driver installers)"
       author = "Florian Roth (Nextron Systems)"
@@ -5239,13 +4176,8 @@ rule Neo23x0_thor_hacktools_SUSP_Imphash_PassRevealer_PY_EXE {
       and pe.imphash() == "ed61beebc8d019dd9bec823e2d694afd"
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule MAL_Unknown_PWDumper_Apr18_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_MAL_Unknown_PWDumper_Apr18_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects sample from unknown sample set - IL origin"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5265,13 +4197,8 @@ rule Neo23x0_thor_hacktools_MAL_Unknown_PWDumper_Apr18_3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule ProcessInjector_Gen : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_ProcessInjector_Gen : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a process injection utility that can be used ofr good and bad purposes"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5293,13 +4220,8 @@ rule Neo23x0_thor_hacktools_ProcessInjector_Gen : HIGHVOL {
          1 of them
       ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule Lazagne_PW_Dumper {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_Lazagne_PW_Dumper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Lazagne PW Dumper"
       author = "Markus Neis / Florian Roth"
@@ -5314,13 +4236,8 @@ rule Neo23x0_thor_hacktools_Lazagne_PW_Dumper {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_TCLsh {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_TCLsh {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspicious TCLsh popshell"
       author = "Tobias Michalski"
@@ -5333,13 +4250,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_TCLsh {
    condition:
       filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_ruby {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_ruby {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspicious ruby shellpop"
       author = "Tobias Michalski"
@@ -5352,13 +4264,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_ruby {
    condition:
       filesize < 1KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_awk {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_awk {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspicious AWK Shellpop"
       author = "Tobias Michalski"
@@ -5372,13 +4279,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_awk {
    condition:
       filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_Netcat_UDP {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_Netcat_UDP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspicious netcat popshell"
       author = "Tobias Michalski"
@@ -5392,13 +4294,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_Netcat_UDP {
    condition:
       filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_socat {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_socat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspicious socat popshell"
       author = "Tobias Michalski"
@@ -5412,13 +4309,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_socat {
    condition:
       filesize < 1KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_Perl {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_Perl {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Shellpop Perl script"
       author = "Tobias Michalski"
@@ -5432,13 +4324,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_Perl {
    condition:
       filesize < 2KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_Python {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_Python {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects malicious python shell"
       author = "Tobias Michalski"
@@ -5451,13 +4338,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_Python {
    condition:
       filesize < 2KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_PHP_TCP {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_PHP_TCP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects malicious PHP shell"
       author = "Tobias Michalski"
@@ -5471,13 +4353,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_PHP_TCP {
    condition:
       filesize < 3KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_Powershell_TCP {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_Powershell_TCP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects malicious powershell"
       author = "Tobias Michalski"
@@ -5491,13 +4368,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_Powershell_TCP {
    condition:
       filesize < 3KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SUSP_Powershell_ShellCommand_May18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SUSP_Powershell_ShellCommand_May18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects a supcicious powershell commandline"
       author = "Tobias Michalski"
@@ -5511,13 +4383,8 @@ rule Neo23x0_thor_hacktools_SUSP_Powershell_ShellCommand_May18_1 {
       filesize < 3KB and 1 of them
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_shellpop_Telnet_TCP {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_Telnet_TCP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects malicious telnet shell"
       author = "Tobias Michalski"
@@ -5531,37 +4398,19 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_Telnet_TCP {
    condition:
       filesize < 3KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SUSP_shellpop_Bash {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SUSP_shellpop_Bash {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects susupicious bash command"
       author = "Tobias Michalski"
       reference = "https://github.com/0x00-0x00/ShellPop"
       date = "2018-05-18"
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-      modified = "2021-01-25"
-=======
       modified = "2025-04-11"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
       score = 70
       hash1 = "36fad575a8bc459d0c2e3ad626e97d5cf4f5f8bedc56b3cc27dd2f7d88ed889b"
       id = "771b7d01-272a-5986-af07-7417b84c52ed"
    strings:
       $x1 = "bash -i >& /dev/tcp/" ascii
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-      $fp1 = "bash -i >& /dev/tcp/IP/PORT" ascii
-   condition:
-      $x1 and not 1 of ($fp*)
-}
-
-rule HKTL_shellpop_netcat {
-=======
       $x2 = "bash -i >& /dev/tcp/" ascii base64
 
       $fp1 = "bash -i >& /dev/tcp/IP/PORT" ascii
@@ -5570,7 +4419,6 @@ rule HKTL_shellpop_netcat {
 }
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_shellpop_netcat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspcious netcat shellpop"
       author = "Tobias Michalski"
@@ -5586,14 +4434,8 @@ rule Neo23x0_thor_hacktools_HKTL_shellpop_netcat {
     condition:
       filesize < 2KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-
-rule HKTL_beRootexe {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_beRootexe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects beRoot.exe which checks common Windows missconfigurations"
       author = "yarGen Rule Generator"
@@ -5610,13 +4452,8 @@ rule Neo23x0_thor_hacktools_HKTL_beRootexe {
         filesize < 18000KB and
         1 of them)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_beRootexe_output {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_beRootexe_output {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects the output of beRoot.exe"
       author = "Tobias Michalski"
@@ -5631,13 +4468,8 @@ rule Neo23x0_thor_hacktools_HKTL_beRootexe_output {
    condition:
       filesize < 400KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_EmbeddedPDF {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_EmbeddedPDF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Embedded PDFs which can start malicious content"
       author = "Tobias Michalski"
@@ -5655,13 +4487,8 @@ rule Neo23x0_thor_hacktools_HKTL_EmbeddedPDF {
       uint16(0) == 0x5025 and
       2 of ($s*) and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HTKL_BlackBone_DriverInjector {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HTKL_BlackBone_DriverInjector {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects BlackBone Driver injector"
       author = "Florian Roth (Nextron Systems)"
@@ -5688,13 +4515,8 @@ rule Neo23x0_thor_hacktools_HTKL_BlackBone_DriverInjector {
    condition:
       uint16(0) == 0x5a4d and filesize < 8000KB and ( 3 of them or 1 of ($x*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_SqlMap {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_SqlMap {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects sqlmap hacktool"
       author = "Florian Roth (Nextron Systems)"
@@ -5708,13 +4530,8 @@ rule Neo23x0_thor_hacktools_HKTL_SqlMap {
    condition:
       filesize < 50KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_SqlMap_backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_SqlMap_backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects SqlMap backdoors"
       author = "Florian Roth (Nextron Systems)"
@@ -5731,13 +4548,8 @@ rule Neo23x0_thor_hacktools_HKTL_SqlMap_backdoor {
          uint32(0) == 0x2b859c07 or
          uint32(0) == 0x28b59c07 ) and filesize < 2KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_Lazagne_PasswordDumper_Dec18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_Lazagne_PasswordDumper_Dec18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects password dumper Lazagne often used by middle eastern threat groups"
       author = "Florian Roth (Nextron Systems)"
@@ -5758,13 +4570,8 @@ rule Neo23x0_thor_hacktools_HKTL_Lazagne_PasswordDumper_Dec18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 17000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_Lazagne_Gen_18 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_Lazagne_Gen_18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Lazagne password extractor hacktool"
       author = "Florian Roth (Nextron Systems)"
@@ -5782,13 +4589,8 @@ rule Neo23x0_thor_hacktools_HKTL_Lazagne_Gen_18 {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_NoPowerShell {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_NoPowerShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects NoPowerShell hack tool"
       author = "Florian Roth (Nextron Systems)"
@@ -5806,12 +4608,8 @@ rule Neo23x0_thor_hacktools_HKTL_NoPowerShell {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-rule HKTL_htran_go {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_htran_go {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       author = "Jeff Beley"
       hash1 = "4acbefb9f7907c52438ebb3070888ddc8cddfe9e3849c9d0196173a422b9035f"
@@ -5825,13 +4623,8 @@ rule Neo23x0_thor_hacktools_HKTL_htran_go {
    condition:
       uint16(0) == 0x5a4d and filesize < 7000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule SUSP_Katz_PDB {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_SUSP_Katz_PDB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects suspicious PDB in file"
       author = "Florian Roth (Nextron Systems)"
@@ -5845,13 +4638,8 @@ rule Neo23x0_thor_hacktools_SUSP_Katz_PDB {
    condition:
       uint16(0) == 0x5a4d and filesize < 6000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_LNX_Pnscan {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_LNX_Pnscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects Pnscan port scanner"
       author = "Florian Roth (Nextron Systems)"
@@ -5865,13 +4653,8 @@ rule Neo23x0_thor_hacktools_HKTL_LNX_Pnscan {
    condition:
       filesize < 6000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule PAExec {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_PAExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects remote access tool PAEXec (like PsExec) - file PAExec.exe"
       author = "Florian Roth (Nextron Systems)"
@@ -5892,13 +4675,8 @@ rule Neo23x0_thor_hacktools_PAExec {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 1 of ($x*) ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_DomainPasswordSpray {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_DomainPasswordSpray {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
       description = "Detects the Powershell password spray tool DomainPasswordSpray"
       author = "Arnim Rupp"
@@ -5914,13 +4692,8 @@ rule Neo23x0_thor_hacktools_HKTL_DomainPasswordSpray {
       filesize < 100KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor-hacktools.yar
-
-rule HKTL_RustHound {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_hacktools_HKTL_RustHound {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor-hacktools.yar
    meta:
         description = "Detect hacktool RustHound (Sharphound clone)"
         author = "Arnim Rupp (https://github.com/ruppde)"
@@ -5948,4 +4721,3 @@ rule Neo23x0_thor_hacktools_HKTL_RustHound {
         ) and
         1 of ( $rh* )
 }
-

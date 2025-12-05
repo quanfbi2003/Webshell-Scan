@@ -1,8 +1,6 @@
 /*
 	Operation WoolenGoldfish Rules (Trendmicro Report)
 	v0.1 25.03.2015
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_woolengoldfish.yar
-=======
 
 	These rules detect 26 of the samples mentioned in the report
 	Reference: http://blog.trendmicro.com/trendlabs-security-intelligence/operation-woolen-goldfish-when-kittens-go-phishing/
@@ -11,22 +9,10 @@
 	on LOKI's github page https://github.com/Neo23x0/Loki/issues
 
 */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_woolengoldfish.yar
 
-	These rules detect 26 of the samples mentioned in the report
-	Reference: http://blog.trendmicro.com/trendlabs-security-intelligence/operation-woolen-goldfish-when-kittens-go-phishing/
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_woolengoldfish.yar
-	Tested against 20GB goodware sample archiv - pls report back false positives
-	on LOKI's github page https://github.com/Neo23x0/Loki/issues
-
-*/
-
-rule WoolenGoldfish_Sample_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_woolengoldfish.yar
 	meta:
 		description = "Detects a operation Woolen-Goldfish sample - http://goo.gl/NpJpVZ"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +28,8 @@ rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Sample_1 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_woolengoldfish.yar
-
-rule WoolenGoldfish_Generic_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Generic_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_woolengoldfish.yar
 	meta:
 		description = "Detects a operation Woolen-Goldfish sample - http://goo.gl/NpJpVZ"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -79,13 +60,8 @@ rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Generic_1 {
 		( 1 of ($x*) and 2 of ($s*) ) or
 		( 6 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_woolengoldfish.yar
-
-rule WoolenGoldfish_Generic_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Generic_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_woolengoldfish.yar
 	meta:
 		description = "Detects a operation Woolen-Goldfish sample - http://goo.gl/NpJpVZ"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -103,13 +79,8 @@ rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Generic_2 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_woolengoldfish.yar
-
-rule WoolenGoldfish_Generic_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_woolengoldfish_WoolenGoldfish_Generic_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_woolengoldfish.yar
 	meta:
 		description = "Detects a operation Woolen-Goldfish sample - http://goo.gl/NpJpVZ"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

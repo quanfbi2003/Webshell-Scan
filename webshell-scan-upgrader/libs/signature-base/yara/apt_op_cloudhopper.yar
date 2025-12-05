@@ -4,20 +4,12 @@
    Date: 2017-04-03
    Identifier: Operation Cloud Hopper
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-rule OpCloudHopper_Malware_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +26,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects Operation CloudHopper malware samples"
       author = "Florian Roth (Nextron Systems)"
@@ -70,13 +57,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 900KB and ( 1 of ($x*) or 3 of ($s*) ) or all of ($op*) ) or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -97,13 +79,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and ( all of ($s*) and 1 of ($op*) ) or all of ($op*) ) or ( 5 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Dropper_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Dropper_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +94,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Dropper_1 {
    condition:
       ( uint16(0) == 0x5c7b and filesize < 700KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -140,13 +112,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 800KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -167,13 +134,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_5 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and ( 1 of ($x*) or 2 of them ) ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -190,13 +152,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_6 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -211,13 +168,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_7 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -237,13 +189,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_8 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 900KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -258,13 +205,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_9 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -280,13 +222,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_10 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_Malware_11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Detects malware from Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -312,13 +249,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_Malware_11 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_lockdown {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_lockdown {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Tools related to Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -333,13 +265,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_lockdown {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_WindowXarBot {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_WindowXarBot {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Malware related to Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -352,13 +279,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_WindowXarBot {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule OpCloudHopper_WmiDLL_inMemory {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_WmiDLL_inMemory {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Malware related to Operation Cloud Hopper - Page 25"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -371,13 +293,8 @@ rule Neo23x0_apt_op_cloudhopper_OpCloudHopper_WmiDLL_inMemory {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_op_cloudhopper.yar
-
-rule VBS_WMIExec_Tool_Apr17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_op_cloudhopper_VBS_WMIExec_Tool_Apr17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_op_cloudhopper.yar
    meta:
       description = "Tools related to Operation Cloud Hopper"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

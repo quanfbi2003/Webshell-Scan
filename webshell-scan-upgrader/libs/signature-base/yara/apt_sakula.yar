@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sakula.yar
-rule malware_sakula_xorloop {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sakula_malware_sakula_xorloop {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sakula.yar
   meta:
     description = "XOR loops from Sakula malware"
     author = "David Cannings"
@@ -21,13 +17,8 @@ rule Neo23x0_apt_sakula_malware_sakula_xorloop {
   condition:
     uint16(0) == 0x5A4D and any of ($opcodes*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sakula.yar
-
-rule malware_sakula_memory {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sakula_malware_sakula_memory {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sakula.yar
   meta:
     description = "Sakula malware - strings after unpacking (memory rule)"
     author = "David Cannings"
@@ -53,13 +44,8 @@ rule Neo23x0_apt_sakula_malware_sakula_memory {
   condition:
     4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sakula.yar
-
-rule malware_sakula_shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sakula_malware_sakula_shellcode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sakula.yar
   meta:
     description = "Sakula shellcode - taken from decoded setup.msi but may not be unique enough to identify Sakula"
     author = "David Cannings"

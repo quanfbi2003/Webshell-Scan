@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_cve_2022_46169_cacti.yar
-rule EXPL_LOG_Cacti_CommandInjection_CVE_2022_46169_Dec22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cve_2022_46169_cacti_EXPL_LOG_Cacti_CommandInjection_CVE_2022_46169_Dec22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_cve_2022_46169_cacti.yar
    meta:
       description = "Detects potential exploitation attempts that target the Cacti Command Injection CVE-2022-46169"
       author = "Nasreddine Bencherchali"

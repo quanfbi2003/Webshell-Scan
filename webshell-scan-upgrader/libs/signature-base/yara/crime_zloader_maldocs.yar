@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_zloader_maldocs.yar
-
-rule MAL_DOC_ZLoader_Oct20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_zloader_maldocs_MAL_DOC_ZLoader_Oct20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_zloader_maldocs.yar
    meta:
       description = "Detects weaponized ZLoader documents"
       author = "Florian Roth (Nextron Systems)"

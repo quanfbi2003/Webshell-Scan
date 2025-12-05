@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_bernhard_pos.yar
-rule BernhardPOS {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_bernhard_pos_BernhardPOS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_bernhard_pos.yar
      meta:
           author = "Nick Hoffman / Jeremy Humble"
           last_update = "2015-07-14"

@@ -6,20 +6,12 @@
    Reference: https://goo.gl/h6iaGj
               https://gist.github.com/vulnersCom/65fe44d27d29d7a5de4c176baba45759
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nopetya_jun17.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_nopetya_jun17.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nopetya_jun17.yar
-rule NotPetya_Ransomware_Jun17 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_nopetya_jun17_NotPetya_Ransomware_Jun17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_nopetya_jun17.yar
    meta:
       description = "Detects new NotPetya Ransomware variant from June 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_cve_2020_0688.yar
-
-rule VUL_Exchange_CVE_2020_0688 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_cve_2020_0688_VUL_Exchange_CVE_2020_0688 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vul_cve_2020_0688.yar
    meta:
       description = "Detects static validation key used by Exchange server in web.config"
       author = "Florian Roth (Nextron Systems)"

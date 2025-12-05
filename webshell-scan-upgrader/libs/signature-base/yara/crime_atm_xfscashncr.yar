@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_atm_xfscashncr.yar
-
-rule ATM_Malware_XFSCashNCR {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_atm_xfscashncr_ATM_Malware_XFSCashNCR {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_atm_xfscashncr.yar
 	meta:
 		description = "Detects ATM Malware XFSCashNCR"
 		author = "Frank Boldewin (@r3c0nst), modified by Florian Roth"

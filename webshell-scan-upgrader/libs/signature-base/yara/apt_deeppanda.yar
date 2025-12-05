@@ -1,12 +1,8 @@
 /* Deep Panda APT */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_deeppanda.yar
-rule DeepPanda_sl_txt_packed {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_deeppanda_DeepPanda_sl_txt_packed {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_deeppanda.yar
 	meta:
 		description = "Hack Deep Panda - ScanLine sl-txt-packed"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -26,13 +22,8 @@ rule Neo23x0_apt_deeppanda_DeepPanda_sl_txt_packed {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_deeppanda.yar
-
-rule DeepPanda_lot1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_deeppanda_DeepPanda_lot1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_deeppanda.yar
 	meta:
 		description = "Hack Deep Panda - lot1.tmp-pwdump"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -58,13 +49,8 @@ rule Neo23x0_apt_deeppanda_DeepPanda_lot1 {
 	condition:
 		10 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_deeppanda.yar
-
-rule DeepPanda_htran_exe {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_deeppanda_DeepPanda_htran_exe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_deeppanda.yar
 	meta:
 		description = "Hack Deep Panda - htran-exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -84,13 +70,8 @@ rule Neo23x0_apt_deeppanda_DeepPanda_htran_exe {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_deeppanda.yar
-
-rule DeepPanda_Trojan_Kakfum {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_deeppanda_DeepPanda_Trojan_Kakfum {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_deeppanda.yar
 	meta:
 		description = "Hack Deep Panda - Trojan.Kakfum sqlsrv32.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

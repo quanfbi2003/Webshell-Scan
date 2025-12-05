@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_duqu1_5_modules.yar
-
-rule Duqu1_5_modules {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_duqu1_5_modules_Duqu1_5_modules {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_duqu1_5_modules.yar
    meta:
       author = "Silas Cutler (havex@chronicle.security)"
       desc = "Detection for Duqu 1.5 modules"

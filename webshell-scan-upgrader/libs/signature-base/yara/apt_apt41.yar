@@ -1,14 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2019-08-07
-   Identifier: APT41
-   Reference: https://www.fireeye.com/blog/threat-research/2019/08/apt41-dual-espionage-and-cyber-crime-operation.html
-   License: https://creativecommons.org/licenses/by-nc/4.0/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -19,16 +8,12 @@ import "pe"
    License: https://creativecommons.org/licenses/by-nc/4.0/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-rule APT_APT41_POISONPLUG_3 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware POISONPLUG"
       author = "Florian Roth (Nextron Systems)"
@@ -46,13 +31,8 @@ rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG_3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 900KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_POISONPLUG_SHADOW {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG_SHADOW {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware POISONPLUG SHADOW"
       author = "Florian Roth (Nextron Systems)"
@@ -64,13 +44,8 @@ rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG_SHADOW {
    condition:
       uint16(0) == 0x5a4d and filesize < 500KB and pe.imphash() == "c67de089f2009b21715744762fc484e8"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_CRACKSHOT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_CRACKSHOT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware CRACKSHOT"
       author = "Florian Roth (Nextron Systems)"
@@ -89,13 +64,8 @@ rule Neo23x0_apt_apt41_APT_APT41_CRACKSHOT {
    condition:
       uint16(0) == 0x5a4d and filesize < 250KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_POISONPLUG_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware POISONPLUG"
       author = "Florian Roth (Nextron Systems)"
@@ -112,13 +82,8 @@ rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 11000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_POISONPLUG {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware POISONPLUG"
       author = "Florian Roth (Nextron Systems)"
@@ -141,13 +106,8 @@ rule Neo23x0_apt_apt41_APT_APT41_POISONPLUG {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_HIGHNOON {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware HIGHNOON"
       author = "Florian Roth (Nextron Systems)"
@@ -175,13 +135,8 @@ rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON {
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and ( 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_HIGHNOON_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware HIGHNOON"
       author = "Florian Roth (Nextron Systems)"
@@ -202,13 +157,8 @@ rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON_2 {
          $x1 or 3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_HIGHNOON_BIN {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON_BIN {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware HIGHNOON.BIN"
       author = "Florian Roth (Nextron Systems)"
@@ -230,13 +180,8 @@ rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON_BIN {
          3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_HIGHNOON_BIN_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON_BIN_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects APT41 malware HIGHNOON.BIN"
       author = "Florian Roth (Nextron Systems)"
@@ -255,13 +200,8 @@ rule Neo23x0_apt_apt41_APT_APT41_HIGHNOON_BIN_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_RevokedCert_Aug19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_RevokedCert_Aug19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects revoked certificates used by APT41 group"
       author = "Florian Roth (Nextron Systems)"
@@ -291,13 +231,8 @@ rule Neo23x0_apt_apt41_APT_APT41_RevokedCert_Aug19_1 {
          pe.signatures[i].serial == "67:24:34:0d:db:c7:25:2f:7f:b7:14:b8:12:a5:c0:4d"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt41.yar
-
-rule APT_APT41_CN_ELF_Speculoos_Backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt41_APT_APT41_CN_ELF_Speculoos_Backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt41.yar
    meta:
       description = "Detects Speculoos Backdoor used by APT41"
       author = "Florian Roth (Nextron Systems)"

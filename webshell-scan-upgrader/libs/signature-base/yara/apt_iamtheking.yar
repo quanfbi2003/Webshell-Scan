@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_iamtheking.yar
-
-rule APT_MAL_SLOTHFULMEDIA_Oct20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_iamtheking_APT_MAL_SLOTHFULMEDIA_Oct20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_iamtheking.yar
    meta:
       description = "Detects SLOTHFULMEDIA malware"
       author = "Florian Roth (Nextron Systems)"

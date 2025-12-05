@@ -6,19 +6,12 @@
    Identifier: WinPayloads
    Reference: https://github.com/nccgroup/Winpayloads
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winpayloads.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule WinPayloads_PowerShell {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_gen_winpayloads_WinPayloads_PowerShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winpayloads.yar
    meta:
       description = "Detects WinPayloads PowerShell Payload"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -35,13 +28,8 @@ rule Neo23x0_gen_winpayloads_WinPayloads_PowerShell {
    condition:
       filesize < 10KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_winpayloads.yar
-
-rule WinPayloads_Payload {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_winpayloads_WinPayloads_Payload {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_winpayloads.yar
    meta:
       description = "Detects WinPayloads Payload"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

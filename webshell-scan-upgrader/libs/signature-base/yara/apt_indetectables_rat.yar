@@ -5,13 +5,9 @@
 	Identifier: Indetectables RAT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_indetectables_rat.yar
-rule Indetectables_RAT {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_indetectables_rat_Indetectables_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_indetectables_rat.yar
 	meta:
 		description = "Detects Indetectables RAT based on strings found in research by Paul Rascagneres & Ronan Mouchoux"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +33,8 @@ rule Neo23x0_apt_indetectables_rat_Indetectables_RAT {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 5000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_indetectables_rat.yar
-
-rule BergSilva_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_indetectables_rat_BergSilva_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_indetectables_rat.yar
 	meta:
 		description = "Detects a malware from the same author as the Indetectables RAT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

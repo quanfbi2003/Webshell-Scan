@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_NK_3CX_Malicious_Samples_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious DLLs related to 3CX compromise"
       author = "X__Junior, Florian Roth (Nextron Systems)"
@@ -33,13 +28,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23
       and pe.characteristics & pe.DLL
       and ( 2 of ($opa*) or 2 of ($opb*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_NK_3CX_Malicious_Samples_Mar23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious DLLs related to 3CX compromise (decrypted payload)"
       author = "Florian Roth (Nextron Systems)"
@@ -62,13 +52,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23
       filesize < 900KB and 3 of them
       or 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_NK_3CX_Malicious_Samples_Mar23_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious DLLs related to 3CX compromise (decrypted payload)"
       author = "Florian Roth , X__Junior (Nextron Systems)"
@@ -92,13 +77,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23
       or
       ( 3 of ($opb*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule SUSP_APT_MAL_NK_3CX_Malicious_Samples_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_APT_MAL_NK_3CX_Malicious_Samples_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects marker found in malicious DLLs related to 3CX compromise"
       author = "X__Junior, Florian Roth (Nextron Systems)"
@@ -116,13 +96,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_APT_MAL_NK_3CX_Malicious_Samples_
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_SUSP_NK_3CX_RC4_Key_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_SUSP_NK_3CX_RC4_Key_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects RC4 key used in 3CX binaries known to be malicious"
       author = "Florian Roth (Nextron Systems)"
@@ -140,13 +115,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_SUSP_NK_3CX_RC4_Key_Mar23_1 {
       ( uint16(0) == 0xcfd0 or uint16(0) == 0x5a4d )
       and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule SUSP_3CX_App_Signed_Binary_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_3CX_App_Signed_Binary_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects 3CX application binaries signed with a certificate and created in a time frame in which other known malicious binaries have been created"
       author = "Florian Roth (Nextron Systems)"
@@ -167,13 +137,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_3CX_App_Signed_Binary_Mar23_1 {
       and all of ($sa*)
       and $sc1 // serial number of known compromised certificate
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule SUSP_3CX_MSI_Signed_Binary_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_3CX_MSI_Signed_Binary_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects 3CX MSI installers signed with a known compromised certificate and signed in a time frame in which other known malicious binaries have been signed"
       author = "Florian Roth (Nextron Systems)"
@@ -199,13 +164,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_3CX_MSI_Signed_Binary_Mar23_1 {
          and $s2 in (filesize-20000..filesize)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_macOS_NK_3CX_Malicious_Samples_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_macOS_NK_3CX_Malicious_Samples_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious macOS application related to 3CX compromise (decrypted payload)"
       author = "Florian Roth (Nextron Systems)"
@@ -224,13 +184,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_macOS_NK_3CX_Malicious_Samples
 }
 
 /* 30.03.2023 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_MacOS_NK_3CX_DYLIB_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_MacOS_NK_3CX_DYLIB_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious DYLIB files related to 3CX compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -257,13 +212,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_MacOS_NK_3CX_DYLIB_Mar23_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_SUSP_NK_3CX_Malicious_Samples_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_SUSP_NK_3CX_Malicious_Samples_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects indicator (event name) found in samples related to 3CX compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -280,13 +230,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_SUSP_NK_3CX_Malicious_Samples_Mar2
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_NK_3CX_Malicious_Samples_Mar23_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
     meta:
         author = "MalGamy (Nextron Systems)"
         reference = "https://twitter.com/WhichbufferArda/status/1641404343323688964?s=20"
@@ -302,13 +247,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_Malicious_Samples_Mar23
     condition: 
         2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule MAL_3CXDesktopApp_MacOS_Backdoor_Mar23 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_MAL_3CXDesktopApp_MacOS_Backdoor_Mar23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
     meta:
       author = "X__Junior (Nextron Systems)"
         reference = "https://www.volexity.com/blog/2023/03/30/3cx-supply-chain-compromise-leads-to-iconic-incident/"
@@ -335,13 +275,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_MAL_3CXDesktopApp_MacOS_Backdoor_Mar23
 }
 
 /* 31.03.2023 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_NK_3CX_ICONIC_Stealer_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_ICONIC_Stealer_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects ICONIC stealer payload used in the 3CX incident"
       author = "Florian Roth (Nextron Systems)"
@@ -367,13 +302,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_ICONIC_Stealer_Mar23_1 
       and 4 of them
       or 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_NK_3CX_macOS_Elextron_App_Mar23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_macOS_Elextron_App_Mar23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects macOS malware used in the 3CX incident"
       author = "Florian Roth (Nextron Systems)"
@@ -396,13 +326,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_NK_3CX_macOS_Elextron_App_Mar2
          and 1 of ($s*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule MAL_3CXDesktopApp_MacOS_UpdateAgent_Mar23 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_MAL_3CXDesktopApp_MacOS_UpdateAgent_Mar23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects 3CXDesktopApp MacOS UpdateAgent backdoor component"
       author = "Florian Roth (Nextron Systems)"
@@ -427,13 +352,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_MAL_3CXDesktopApp_MacOS_UpdateAgent_Ma
          or ( $a1 and all of ($s*) )
       ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule SUSP_APT_3CX_Regtrans_Anomaly_Apr23 : METARULE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_APT_3CX_Regtrans_Anomaly_Apr23 : METARULE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects suspicious .regtrans-ms files with suspicious size or contents"
       author = "Florian Roth"
@@ -449,13 +369,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_SUSP_APT_3CX_Regtrans_Anomaly_Apr23 : 
          and not 1 of ($fp*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious VEILEDSIGNAL backdoor"
       author = "X__Junior"
@@ -475,13 +390,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_2 
    condition:
       all of ($op*) or all of ($sa*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious VEILEDSIGNAL backdoor"
       author = "X__Junior"
@@ -498,13 +408,8 @@ rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_3 
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
-
-rule APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_3cx_compromise_mar23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_3cx_compromise_mar23.yar
    meta:
       description = "Detects malicious VEILEDSIGNAL backdoor"
       author = "X__Junior"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_naikon.yar
-
-rule MAL_Backdoor_Naikon_APT_Sample1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_naikon_MAL_Backdoor_Naikon_APT_Sample1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_naikon.yar
    meta:
       description = "Detects backdoors related to the Naikon APT"
       author = "Florian Roth (Nextron Systems)"

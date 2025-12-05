@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mixed_open_source_export.yar
-
-
-rule Neo23x0_mix_SUSP_LNK_Suspicious_Folders_Jan25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mixed_open_source_export_SUSP_LNK_Suspicious_Folders_Jan25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mixed_open_source_export.yar
    meta:
       description = "Detects link files (.LNK) with suspicious folders mentioned in the target path"
       author = "Florian Roth"

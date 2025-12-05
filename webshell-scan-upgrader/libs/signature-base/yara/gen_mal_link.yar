@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mal_link.yar
-
-rule LNK_Malicious_Nov1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mal_link_LNK_Malicious_Nov1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mal_link.yar
    meta:
       description = "Detects a suspicious LNK file"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

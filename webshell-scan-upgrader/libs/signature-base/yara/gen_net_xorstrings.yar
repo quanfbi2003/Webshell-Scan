@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_net_xorstrings.yar
-
-rule MSIL_SUSP_OBFUSC_XorStringsNet {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_net_xorstrings_MSIL_SUSP_OBFUSC_XorStringsNet {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_net_xorstrings.yar
     meta:
         description = "Detects XorStringsNET string encryption, and other obfuscators derived from it"
         author = "dr4k0nia"
@@ -30,4 +25,3 @@ rule Neo23x0_gen_net_xorstrings_MSIL_SUSP_OBFUSC_XorStringsNet {
         and $pattern 
         and 2 of ($a*)
 }
-

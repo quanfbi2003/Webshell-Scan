@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_plead_downloader.yar
-rule PLEAD_Downloader_Jun18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_plead_downloader_PLEAD_Downloader_Jun18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_plead_downloader.yar
    meta:
       description = "Detects PLEAD Downloader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

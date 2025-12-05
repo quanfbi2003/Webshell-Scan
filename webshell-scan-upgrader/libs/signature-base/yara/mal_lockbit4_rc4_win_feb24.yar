@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_lockbit4_rc4_win_feb24.yar
-
-
-rule Neo23x0_mal_mal_lockbit4_rc4_win_feb24
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lockbit4_rc4_win_feb24_mal_lockbit4_rc4_win_feb24
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lockbit4_rc4_win_feb24.yar
 {
     meta:
         author = "0x0d4y"

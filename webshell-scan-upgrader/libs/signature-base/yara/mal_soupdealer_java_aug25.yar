@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
-
-
-rule Neo23x0_mal_SUSP_Scheduled_Task_Java_JAR_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_soupdealer_java_aug25_SUSP_Scheduled_Task_Java_JAR_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
    meta:
       description = "Detects scheduled tasks that execute Java JAR files, which is suspicious but not necessarily malicious"
       author = "Florian Roth"
@@ -28,13 +22,8 @@ rule Neo23x0_mal_soupdealer_java_aug25_SUSP_Scheduled_Task_Java_JAR_Aug25 {
       and 1 of ($sa*)
       and 1 of ($sb*)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
-
-rule Neo23x0_mal_SUSP_JAVA_Loader_Indicators_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_soupdealer_java_aug25_SUSP_JAVA_Loader_Indicators_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
    meta:
       description = "Detects indicators of a Java loader used in phishing campaigns"
       author = "Florian Roth"
@@ -53,13 +42,8 @@ rule Neo23x0_mal_soupdealer_java_aug25_SUSP_JAVA_Loader_Indicators_Aug25 {
       and $s2 in (filesize - 224..filesize)
       and $s3 in (filesize - 224..filesize)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
-
-rule Neo23x0_mal_MAL_JAVA_Loader_Final_Jar_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_soupdealer_java_aug25_MAL_JAVA_Loader_Final_Jar_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
    meta:
       description = "Detects a final Java loader JAR file used in phishing campaigns"
       author = "Florian Roth"
@@ -75,13 +59,8 @@ rule Neo23x0_mal_soupdealer_java_aug25_MAL_JAVA_Loader_Final_Jar_Aug25 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
-
-rule Neo23x0_mal_SUSP_JAVA_Class_Allatori_Obfuscator_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_soupdealer_java_aug25_SUSP_JAVA_Class_Allatori_Obfuscator_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_soupdealer_java_aug25.yar
    meta:
       description = "Detects a relatively small Java class file obfuscated by Allatori Obfuscator"
       author = "Florian Roth"

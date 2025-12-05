@@ -8,13 +8,9 @@
 /* Rule Set ----------------------------------------------------------------- */
 
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shellcrew_streamex.yar
-rule StreamEx_ShellCrew {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_shellcrew_streamex_StreamEx_ShellCrew {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_shellcrew_streamex.yar
    meta:
       description = "Detects a "
       author = "Cylance"
@@ -42,13 +38,8 @@ rule Neo23x0_apt_shellcrew_streamex_StreamEx_ShellCrew {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shellcrew_streamex.yar
-
-rule ShellCrew_StreamEx_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_shellcrew_streamex_ShellCrew_StreamEx_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_shellcrew_streamex.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +59,8 @@ rule Neo23x0_apt_shellcrew_streamex_ShellCrew_StreamEx_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shellcrew_streamex.yar
-
-rule ShellCrew_StreamEx_1_msi {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_shellcrew_streamex_ShellCrew_StreamEx_1_msi {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_shellcrew_streamex.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -94,13 +80,8 @@ rule Neo23x0_apt_shellcrew_streamex_ShellCrew_StreamEx_1_msi {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 20KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_shellcrew_streamex.yar
-
-rule ShellCrew_StreamEx_1_msi_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_shellcrew_streamex_ShellCrew_StreamEx_1_msi_dll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_shellcrew_streamex.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

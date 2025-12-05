@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_darkbit_feb23.yar
-
-rule MAL_RANSOM_DarkBit_Feb23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_darkbit_feb23_MAL_RANSOM_DarkBit_Feb23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_darkbit_feb23.yar
    meta:
       description = "Detects indicators found in DarkBit ransomware"
       author = "Florian Roth"
@@ -26,13 +21,8 @@ rule Neo23x0_apt_ransom_darkbit_feb23_MAL_RANSOM_DarkBit_Feb23_1 {
       ) or 4 of them
       or ( filesize < 10MB and $xn1 ) // Ransom note
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_darkbit_feb23.yar
-
-rule MAL_RANSOM_DarkBit_Feb23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_darkbit_feb23_MAL_RANSOM_DarkBit_Feb23_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_darkbit_feb23.yar
    meta:
       description = "Detects Go based DarkBit ransomware (garbled code; could trigger on other obfuscated samples, too)"
       author = "Florian Roth"

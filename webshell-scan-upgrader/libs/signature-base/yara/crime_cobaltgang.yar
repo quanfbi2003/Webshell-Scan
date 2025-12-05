@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-09
-   Identifier: Cobalt Gang
-   Reference: Internal Research
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,21 +7,14 @@ import "pe"
    Reference: Internal Research
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cobaltgang.yar
-=======
 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cobaltgang.yar
 /* Rule Set ----------------------------------------------------------------- */
 
 /* Removed Beacon rules - only in THOR */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cobaltgang.yar
-rule CobaltStrike_CN_Group_BeaconDropper_Aug17 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_cobaltgang_CobaltStrike_CN_Group_BeaconDropper_Aug17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cobaltgang.yar
    meta:
       description = "Detects Script Dropper of Cobalt Gang used in August 2017"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +39,8 @@ rule Neo23x0_crime_cobaltgang_CobaltStrike_CN_Group_BeaconDropper_Aug17 {
    condition:
       ( filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cobaltgang.yar
-
-rule CobaltGang_Malware_Aug17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cobaltgang_CobaltGang_Malware_Aug17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cobaltgang.yar
    meta:
       description = "Detects a Cobalt Gang malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -77,13 +57,8 @@ rule Neo23x0_crime_cobaltgang_CobaltGang_Malware_Aug17_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cobaltgang.yar
-
-rule CobaltGang_Malware_Aug17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cobaltgang_CobaltGang_Malware_Aug17_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cobaltgang.yar
    meta:
       description = "Detects a Cobalt Gang malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -97,13 +72,8 @@ rule Neo23x0_crime_cobaltgang_CobaltGang_Malware_Aug17_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cobaltgang.yar
-
-rule MAL_CRIME_CobaltGang_Malware_Oct19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cobaltgang_MAL_CRIME_CobaltGang_Malware_Oct19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cobaltgang.yar
    meta:
       description = "Detects CobaltGang malware"
       author = "Florian Roth (Nextron Systems)"

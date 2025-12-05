@@ -1,10 +1,3 @@
-/*
-   Yara Rule Set
-   Author: US CERT
-   Date: 2017-02-10
-   Identifier: US CERT Report on Grizzly Steppe - APT28/APT29
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -13,18 +6,12 @@ import "pe"
    Identifier: US CERT Report on Grizzly Steppe - APT28/APT29
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule IMPLANT_1_v1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Downrage Implant by APT28"
       author = "US CERT"
@@ -39,13 +26,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v1 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_1_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Downrage Implant by APT28"
       author = "US CERT"
@@ -61,13 +43,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v2 {
    condition:
       (uint16(0) == 0x5A4D) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_1_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Downrage Implant by APT28"
       author = "US CERT"
@@ -81,13 +58,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v3 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_1_v4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Downrage Implant by APT28"
       author = "US CERT"
@@ -101,13 +73,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v4 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_1_v5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Downrage Implant by APT28"
       author = "US CERT"
@@ -143,13 +110,8 @@ rule IMPLANT_1_v6 {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_1_v7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Downrage Implant by APT28"
       author = "US CERT"
@@ -162,13 +124,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_1_v7 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -181,13 +138,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v1 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -203,13 +155,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v3 {
    condition:
       (uint16(0) == 0x5A4D) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -224,13 +171,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v5 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -244,13 +186,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v6 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -271,13 +208,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v7 {
    condition:
       (uint16(0) == 0x5A4D) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -304,13 +236,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v9 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -324,13 +251,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v10 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -345,13 +267,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v11 {
    condition:
       (uint16(0) == 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v14 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v14 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -376,13 +293,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v14 {
    condition:
       (uint16(0) == 0x5A4D) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v15 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v15 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -398,13 +310,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v15 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v16 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v16 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -422,13 +329,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v16 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and $OBF_FUNCT
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v17  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v17  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -445,13 +347,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v17  {
    condition:
       (uint16(0) == 0x5A4D) and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -479,13 +376,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v18 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v19 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v19 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -512,13 +404,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v19 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_2_v20 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v20 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CORESHELL/SOURFACE Implant by APT28"
       author = "US CERT"
@@ -536,13 +423,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_2_v20 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_3_v1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_3_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "X-Agent/CHOPSTICK Implant by APT28"
       author = "US CERT"
@@ -560,13 +442,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_3_v1 {
    condition:
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_3_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_3_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "X-Agent/CHOPSTICK Implant by APT28"
       author = "US CERT"
@@ -587,13 +464,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_3_v2 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_3_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_3_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "X-Agent/CHOPSTICK Implant by APT28"
       author = "US CERT"
@@ -613,13 +485,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_3_v3 {
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and 1 of ($STR*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -636,13 +503,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v1 {
       (uint16(0)== 0x5A4D or uint16(0) == 0xCFD0 or uint16(0)== 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -924,13 +786,8 @@ rule IMPLANT_4_v3 {
 */
 
 /* Alternative Rule Set ---------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v3_AlternativeRule : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v3_AlternativeRule : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Detects a group of different malware samples"
       comment = "Alternative rule - not based on the original samples but samples on which the original rule matched"
@@ -948,13 +805,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v3_AlternativeRule : HIGHVOL {
 }
 
 /* Alternative Rule Set ---------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -970,13 +822,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v4 {
    condition:
       uint16(0) == 0x5A4D and all of ($DK*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1010,13 +857,8 @@ rule IMPLANT_4_v6 {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1039,13 +881,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v7 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1074,13 +911,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v8 {
    condition:
       $a1 at pe.entry_point or any of ($f*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1101,13 +933,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v9 {
    condition:
       ($a and $b) or $c or $d or ($openPhysicalDiskOverwriteWithZeros and $f)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1139,13 +966,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v10 {
    condition:
       uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550 and 15 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1187,13 +1009,8 @@ rule IMPLANT_4_v12 {
    and ($SUB1 or $SUB2) and $OUT and $HAL
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_4_v13 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v13 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "BlackEnergy / Voodoo Bear Implant by APT28"
       author = "US CERT"
@@ -1215,13 +1032,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_4_v13 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_5_v1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "XTunnel Implant by APT28"
       author = "US CERT"
@@ -1239,13 +1051,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v1 {
    condition:
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_5_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "XTunnel Implant by APT28"
       author = "US CERT"
@@ -1385,13 +1192,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v2 {
    condition:
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_5_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "XTunnel Implant by APT28"
       author = "US CERT"
@@ -1405,13 +1207,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v3 {
    condition:
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_5_v4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "XTunnel Implant by APT28"
       author = "US CERT"
@@ -1428,13 +1225,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_5_v4 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_6_v1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
 {
    meta:
       description = "Sednit / EVILTOSS Implant by APT28"
@@ -1451,13 +1243,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v1
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_6_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Sednit / EVILTOSS Implant by APT28"
       author = "US CERT"
@@ -1471,13 +1258,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v2 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_6_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Sednit / EVILTOSS Implant by APT28"
       author = "US CERT"
@@ -1493,13 +1275,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v3 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_6_v4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Sednit / EVILTOSS Implant by APT28"
       author = "US CERT"
@@ -1514,13 +1291,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v4 {
    (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
    uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_6_v5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Sednit / EVILTOSS Implant by APT28"
       author = "US CERT"
@@ -1555,13 +1327,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v5 {
       (uint16(0) == 0x5A4D or uint16(0) == 0xCFD0 or uint16(0) == 0xC3D4 or
       uint32(0) == 0x46445025 or uint32(1) == 0x6674725C) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_6_v6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_6_v6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Sednit / EVILTOSS Implant by APT28"
       author = "US CERT"
@@ -1599,13 +1366,8 @@ rule IMPLANT_6_v7 {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_7_v1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_7_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Implant 7 by APT29"
       author = "US CERT"
@@ -1619,13 +1381,8 @@ rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_7_v1 {
    condition:
       (uint16(0) == 0x5A4D) and ($STR1 or $STR2)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_8_v1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_8_v1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
 {
    meta:
       description = "HAMMERTOSS / HammerDuke Implant by APT29"
@@ -1672,13 +1429,8 @@ rule IMPLANT_8_v2 {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_9_v1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_9_v1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Onion Duke Implant by APT29"
       author = "US CERT"
@@ -1715,13 +1467,8 @@ rule IMPLANT_10_v1 {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule IMPLANT_10_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_IMPLANT_10_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "CozyDuke / CozyCar / CozyBear Implant by APT29"
       author = "US CERT"
@@ -1772,13 +1519,8 @@ rule IMPLANT_12_v1 {
 }
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_grizzlybear_uscert.yar
-
-rule Unidentified_Malware_Two {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_grizzlybear_uscert_Unidentified_Malware_Two {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_grizzlybear_uscert.yar
    meta:
       description = "Unidentified Implant by APT29"
       author = "US CERT"

@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-
-rule Neo23x0_apt_MAL_Cisco_RayInitiator_Stage_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_RayInitiator_Stage_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects RayInitiator GRUB bootkit stage 1 code that searches for the 'Booting the kernel' string."
@@ -24,13 +18,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_RayInitiator_S
    condition:
       $xc1
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_RayInitiator_Stage_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_RayInitiator_Stage_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects RayInitiator GRUB bootkit stage 2 code that identifies the Linux kernel syscall table."
@@ -47,13 +36,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_RayInitiator_S
    condition:
       $xc1
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_RayInitiator_Stage_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_RayInitiator_Stage_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects RayInitiator GRUB bootkit stage 3 install phase code that searches for the 'client-cert-fail' string."
@@ -70,13 +54,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_RayInitiator_S
    condition:
       $xc1
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_RayInitiator_Stage_3_LINE_VIPER_ShellCode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator__MAL_Cisco_RayInitiator_Stage_3_LINE_VIPER_ShellCode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects RayInitiator GRUB bootkit stage 3 deploy phase code that copies LINE VIPER shellcode stub and marks executable."
@@ -92,13 +71,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator__MAL_Cisco_RayInitiator_Stage_
    condition:
       $xc1
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_LINE_VIPER_Shellcode_Deobfuscation_Routine {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator__MAL_Cisco_LINE_VIPER_Shellcode_Deobfuscation_Routine {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects LINE VIPER Cisco ASA malware code as part of a shellcode deobfuscation routine."
@@ -118,13 +92,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator__MAL_Cisco_LINE_VIPER_Shellcod
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_LINE_VIPER_Shellcode_Initial_Execution {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_se_MAL_Cisco_LINE_VIPER_Shellcode_Initial_Execution {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC (modifier by Florian Roth)"
       description = "Detects LINE VIPER Cisco ASA malware code as part of shellcode initial execution."
@@ -147,13 +116,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_se_MAL_Cisco_LINE_VIPER_Shellc
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_LINE_VIPER_RSA_Enc_Random_AES_Key_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_se_MAL_Cisco_LINE_VIPER_RSA_Enc_Random_AES_Key_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects LINE VIPER Cisco ASA malware code as part of RSA encrypted random AES key generation."
@@ -182,13 +146,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_se_MAL_Cisco_LINE_VIPER_RSA_En
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_LINE_VIPER_AES_Enc_Tasking_Exfil {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_LINE_VIPER_AES_Enc_Tasking_Exfil {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects LINE VIPER Cisco ASA malware code as part of AES encrypted tasking and exfiltration."
@@ -217,13 +176,8 @@ rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator_sep25_MAL_Cisco_LINE_VIPER_AES
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
-
-rule Neo23x0_apt_MAL_Cisco_LINE_VIPER_ICMP_Tasking_Shellcode_Payloads {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_lineviper_rayinitiator__MAL_Cisco_LINE_VIPER_ICMP_Tasking_Shellcode_Payloads {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_lineviper_rayinitiator_sep25.yar
    meta:
       author = "NCSC"
       description = "Detects LINE VIPER Cisco ASA malware code as part of ICMP tasking shellcode payloads."

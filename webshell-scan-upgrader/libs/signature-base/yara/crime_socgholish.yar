@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_socgholish.yar
-rule MAL_ZIP_SocGholish_Mar21_1 : zip js socgholish {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_socgholish_MAL_ZIP_SocGholish_Mar21_1 : zip js socgholish {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_socgholish.yar
     meta:
         description = "Triggers on small zip files with typical SocGholish JS files in it"
         author = "Nils Kuhnert"
@@ -27,12 +23,8 @@ rule Neo23x0_crime_socgholish_MAL_ZIP_SocGholish_Mar21_1 : zip js socgholish {
 }
 
 /* modified rule: too many matches with 'try' */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_socgholish.yar
-rule EXT_MAL_JS_SocGholish_Mar21_1 : js socgholish {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_socgholish_EXT_MAL_JS_SocGholish_Mar21_1 : js socgholish {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_socgholish.yar
     meta:
         description = "Triggers on SocGholish JS files"
         author = "Nils Kuhnert"
@@ -59,13 +51,8 @@ rule Neo23x0_crime_socgholish_EXT_MAL_JS_SocGholish_Mar21_1 : js socgholish {
         //$try in (0 .. 10) and 
         filesize > 3KB and filesize < 5KB and 8 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_socgholish.yar
-
-rule SocGholish_JS_22_02_2022 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_socgholish_SocGholish_JS_22_02_2022 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_socgholish.yar
     meta:
         description = "Detects SocGholish fake update Javascript files 22.02.2022"
         author = "Wojciech Cieślak"
@@ -85,4 +72,3 @@ rule Neo23x0_crime_socgholish_SocGholish_JS_22_02_2022 {
     condition:
         filesize < 5KB and all of them
 }
-

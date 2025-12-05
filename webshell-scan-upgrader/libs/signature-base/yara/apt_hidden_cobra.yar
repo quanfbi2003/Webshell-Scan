@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-=======
 import "pe"
 import "pe"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -13,13 +10,9 @@ import "pe"
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-rule HiddenCobra_Rule_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_HiddenCobra_Rule_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects Hidden Cobra Malware"
       author = "US CERT"
@@ -59,13 +52,8 @@ rule HiddenCobra_Rule_2 {
       ) and all of them
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-
-rule HiddenCobra_Rule_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_HiddenCobra_Rule_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects Hidden Cobra Malware"
       author = "US CERT"
@@ -96,16 +84,8 @@ rule Neo23x0_apt_hidden_cobra_HiddenCobra_Rule_3 {
    condition:
       $randomUrlBuilder
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-
-
-import "pe"
-
-rule APT_HiddenCobra_GhostSecret_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_APT_HiddenCobra_GhostSecret_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects Hidden Cobra Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -120,13 +100,8 @@ rule Neo23x0_apt_hidden_cobra_APT_HiddenCobra_GhostSecret_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-
-rule APT_HiddenCobra_GhostSecret_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_APT_HiddenCobra_GhostSecret_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects Hidden Cobra Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -143,16 +118,8 @@ rule Neo23x0_apt_hidden_cobra_APT_HiddenCobra_GhostSecret_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-
-
-import "pe"
-
-rule APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects HOPLIGHT malware used by HiddenCobra APT group"
       author = "Florian Roth (Nextron Systems)"
@@ -166,13 +133,8 @@ rule Neo23x0_apt_hidden_cobra_APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_1 {
    condition:
       filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-
-rule APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects HOPLIGHT malware used by HiddenCobra APT group"
       author = "Florian Roth (Nextron Systems)"
@@ -188,13 +150,8 @@ rule Neo23x0_apt_hidden_cobra_APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 800KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hidden_cobra.yar
-
-rule APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hidden_cobra_APT_MAL_HOPLIGHT_NK_HiddenCobra_Apr19_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hidden_cobra.yar
    meta:
       description = "Detects HOPLIGHT malware used by HiddenCobra APT group"
       author = "Florian Roth (Nextron Systems)"

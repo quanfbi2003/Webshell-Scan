@@ -1,26 +1,15 @@
 /*
 	Yara Rule to detect Backspace Malware mentioned in FireEye APT30 Report
 	https://www.fireeye.com/blog/threat-research/2015/04/apt_30_and_the_mecha.html
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-=======
-
-	13.04.2015
-	v1.0
-	please report back false positives via the 'issue' section of the LOKI github page
-*/
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 
 	13.04.2015
 	v1.0
 	please report back false positives via the 'issue' section of the LOKI github page
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-rule APT30_Generic_H {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_H {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +26,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_H {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -61,13 +45,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_2 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -85,13 +64,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_3 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_C {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -114,13 +88,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_C {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -139,13 +108,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_4 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -163,13 +127,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_5 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -184,13 +143,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_6 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -209,13 +163,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_7 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_E {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -234,13 +183,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_E {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -257,13 +201,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_8 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_B {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -283,13 +222,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_B {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_I {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_I {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -306,13 +240,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_I {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -334,12 +263,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_9 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-rule APT30_Sample_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -359,13 +284,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_10 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -393,13 +313,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_11 {
 	condition:
 		filesize < 250KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_12 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_12 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -415,13 +330,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_12 {
 	condition:
 		filesize < 250KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_13 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_13 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -440,13 +350,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_13 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_14 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_14 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -463,13 +368,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_14 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_15 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_15 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -488,13 +388,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_15 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_16 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_16 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -513,13 +408,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_16 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_A {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -540,13 +430,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_A {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -561,12 +446,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_17 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-rule APT30_Sample_18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -587,13 +468,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_18 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_G {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_G {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -615,13 +491,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_G {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_19 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_19 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
    meta:
       description = "FireEye APT30 Report Sample"
       author = "Florian Roth (Nextron Systems)"
@@ -648,13 +519,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_19 {
    condition:
       filesize < 100KB and uint16(0) == 0x5A4D and 8 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_E_v2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_E_v2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -671,13 +537,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_E_v2 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_20 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_20 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -698,13 +559,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_20 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_21 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_21 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -721,13 +577,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_21 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_22 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_22 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -746,13 +597,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_22 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_F {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -771,13 +617,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_F {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -798,13 +639,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_23 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_24 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -824,13 +660,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_24 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_25 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -850,13 +681,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_25 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_26 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_26 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -876,13 +702,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_26 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_D {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -906,13 +727,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_D {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_27 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_27 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -932,13 +748,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_27 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_28 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_28 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -967,13 +778,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_28 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and 7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_29 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_29 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -994,13 +800,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_29 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_30 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_30 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1018,13 +819,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_30 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_31 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_31 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1042,13 +838,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_31 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_J {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_J {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1080,13 +871,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_J {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Microfost {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Microfost {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1101,13 +887,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Microfost {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_K {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_K {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
    meta:
       description = "FireEye APT30 Report Sample"
       author = "Florian Roth (Nextron Systems)"
@@ -1138,13 +919,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_K {
    condition:
       filesize < 100KB and uint16(0) == 0x5A4D and ( all of ($x*) and 3 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_33 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_33 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1165,13 +941,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_33 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_34 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_34 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1191,13 +962,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_34 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_35 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_35 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1213,13 +979,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_35 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Sample_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1237,13 +998,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Sample_1 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1277,12 +1033,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_1 {
 	condition:
 		filesize < 250KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-rule APT30_Generic_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample - from many files"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1359,13 +1111,8 @@ rule APT30_Generic_3 {
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1396,13 +1143,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_4 {
 	condition:
 		filesize < 250KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1424,13 +1166,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_5 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1452,13 +1189,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_6 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1477,12 +1209,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_7 {
 	condition:
 		filesize < 100KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-rule APT30_Generic_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1508,13 +1236,8 @@ rule Neo23x0_apt_apt30_backspace_APT30_Generic_8 {
 	condition:
 		filesize < 250KB and uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt30_backspace.yar
-
-rule APT30_Generic_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt30_backspace_APT30_Generic_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt30_backspace.yar
 	meta:
 		description = "FireEye APT30 Report Sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

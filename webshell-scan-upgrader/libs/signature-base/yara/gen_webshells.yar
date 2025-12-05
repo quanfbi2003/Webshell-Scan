@@ -80,26 +80,17 @@ False positives in 8gb of common webapps plus yara-ci: 2
 
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-rule WEBSHELL_PHP_Generic
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "php webshell having some kind of input and some kind of payload. restricted to small files or big ones including suspicious strings"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
         author = "Arnim Rupp (https://github.com/ruppde)"
         reference = "Internal Research"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-        score = 75
-        date = "2021/01/14"
-=======
         score = 70
         date = "2021-01-14"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
         modified = "2024-12-09"
         hash = "bee1b76b1455105d4bfe2f45191071cf05e83a309ae9defcf759248ca9bceddd"
         hash = "6bf351900a408120bee3fc6ea39905c6a35fe6efcf35d0a783ee92062e63a854"
@@ -420,13 +411,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic
         )
         ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Generic_Callback
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic_Callback
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "php webshell having some kind of input and using a callback to execute the payload. restricted to small files or would give lots of false positives"
@@ -2036,13 +2022,8 @@ rule WEBSHELL_PHP_Dynamic
         and not any of ( $pd_fp* )
         and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Dynamic_Big
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Dynamic_Big
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "PHP webshell using $a($code) for kind of eval with encoded blob to decode, e.g. b374k"
@@ -2364,13 +2345,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Dynamic_Big
         )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Encoded_Big
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Encoded_Big
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "PHP webshell using some kind of eval with encoded blob to decode, which is checked with YARAs math.entropy module"
@@ -2457,13 +2433,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Encoded_Big
         )
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Generic_Backticks
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic_Backticks
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic PHP webshell which uses backticks directly on user input"
@@ -2512,13 +2483,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic_Backticks
         )
         and $backtick and filesize < 200
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Generic_Backticks_OBFUSC
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic_Backticks_OBFUSC
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic PHP webshell which uses backticks directly on user input"
@@ -2565,13 +2531,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Generic_Backticks_OBFUSC
         )
         and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_By_String_Known_Webshell
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_By_String_Known_Webshell
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Known PHP Webshells which contain unique strings, lousy rule for low hanging fruits. Most are catched by other rules in here but maybe these catch different versions."
@@ -2708,13 +2669,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_By_String_Known_Webshell
         and
         ( any of ( $pbs* ) or $front1 in ( 0 .. 60 ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Strings_SUSP
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Strings_SUSP
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "typical webshell strings, suspicious"
@@ -2801,13 +2757,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Strings_SUSP
         )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_In_Htaccess
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_In_Htaccess
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Use Apache .htaccess to execute php code inside .htaccess"
@@ -2830,13 +2781,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_In_Htaccess
     condition:
         filesize <100KB and $hta
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Function_Via_Get
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Function_Via_Get
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell which sends eval/assert via GET"
@@ -2881,13 +2827,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Function_Via_Get
         )
         and any of ( $sr* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_PHP_Writer
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_PHP_Writer
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "PHP webshell which only writes an uploaded file to disk"
@@ -2978,13 +2919,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_PHP_Writer
             )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Writer
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Writer
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "ASP webshell which only writes an uploaded file to disk"
@@ -3155,13 +3091,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Writer
         ( filesize < 400 or
         ( filesize < 6000 and 1 of ( $sus* ) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_OBFUSC
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_OBFUSC
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "ASP webshell obfuscated"
@@ -3437,13 +3368,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_OBFUSC
         )
         and not any of ( $m_fp* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Generic_Eval_On_Input
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic_Eval_On_Input
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic ASP webshell which uses any eval/exec function directly on user input"
@@ -3548,13 +3474,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic_Eval_On_Input
         and any of ( $payload_and_input* ) ) or
         ( filesize < 100 and any of ( $payload_and_input* ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Nano
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Nano
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic ASP webshell which uses any eval/exec function"
@@ -3746,13 +3667,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Nano
         ( filesize < 200 or
         ( filesize < 1000 and any of ( $susasp* ) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Encoded
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Encoded
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell in VBscript or JScript encoded using *.Encode plus a suspicious string"
@@ -3863,13 +3779,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Encoded
         ( filesize < 20KB and #data1 > 4 ) or
         ( filesize < 700 and #data1 > 0 ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Encoded_AspCoding
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Encoded_AspCoding
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "ASP Webshell encoded using ASPEncodeDLL.AspCoding"
@@ -3976,13 +3887,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Encoded_AspCoding
         )
         and all of ( $encoded* ) and any of ( $data* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_By_String
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_By_String
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Known ASP Webshells which contain unique strings, lousy rule for low hanging fruits. Most are catched by other rules in here but maybe these catch different versions."
@@ -4161,13 +4067,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_By_String
         )
         and any of ( $asp_string* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Sniffer
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Sniffer
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "ASP webshell which can sniff local traffic"
@@ -4303,13 +4204,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Sniffer
         )
         and filesize < 30KB and all of ( $sniff* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Generic_Tiny
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic_Tiny
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic tiny ASP webshell which uses any eval/exec function indirectly on user input or writes a file"
@@ -4519,13 +4415,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic_Tiny
         )
         ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Generic : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
     meta:
         description = "Generic ASP webshell which uses any eval/exec function indirectly on user input or writes a file"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4827,13 +4718,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic : FILE {
         )
         ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Generic_Registry_Reader
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic_Registry_Reader
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic ASP webshell which reads the registry (might look for passwords, license keys, database settings, general recon, ..."
@@ -4981,13 +4867,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Generic_Registry_Reader
         )
         ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASPX_Regeorg_CSHARP
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASPX_Regeorg_CSHARP
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell regeorg aspx c# version"
@@ -5098,13 +4979,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASPX_Regeorg_CSHARP
         ( $georg or
         ( all of ( $sa* ) and any of ( $input_sa* ) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_CSHARP_Generic
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_CSHARP_Generic
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell in c#"
@@ -5213,13 +5089,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_CSHARP_Generic
         and filesize < 300KB and
         ( $input_http or all of ( $input_form* ) ) and all of ( $exec_proc* ) and any of ( $exec_shell* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Runtime_Compile : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Runtime_Compile : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
     meta:
         description = "ASP webshell compiling payload in memory at runtime, e.g. sharpyshell"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -5318,13 +5189,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Runtime_Compile : FILE {
             or all of ( $payload_powershell* )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_SQL
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_SQL
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "ASP webshell giving SQL access. Might also be a dual use tool."
@@ -5506,13 +5372,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_SQL
         ( ( filesize < 150KB and any of ( $sus* ) ) or
         ( filesize < 5KB and any of ( $slightly_sus* ) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_ASP_Scan_Writable
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_ASP_Scan_Writable
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "ASP webshell searching for writable directories (to hide more webshells ...)"
@@ -5656,13 +5517,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_ASP_Scan_Writable
         )
         and 6 of ( $scan* ) and any of ( $sus* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_ReGeorg
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_ReGeorg
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell regeorg JSP version"
@@ -5713,13 +5569,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_ReGeorg
         )
         and all of ( $jgeorg* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_HTTP_Proxy
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_HTTP_Proxy
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell JSP HTTP proxy"
@@ -5768,13 +5619,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_HTTP_Proxy
         )
         and all of ( $jh* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Writer_Nano
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Writer_Nano
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "JSP file writer"
@@ -5856,13 +5702,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Writer_Nano
             all of ( $logger* )
             )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule EXT_WEBSHELL_JSP_Generic_Tiny
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_EXT_WEBSHELL_JSP_Generic_Tiny
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell tiny"
@@ -5948,13 +5789,8 @@ rule Neo23x0_gen_webshells_EXT_WEBSHELL_JSP_Generic_Tiny
         ( 1 of ( $payload* ) or all of ( $payload_rt* ) )
         and not any of ( $fp* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Generic
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell"
@@ -5963,11 +5799,7 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic
         reference = "Internal Research"
         score = 75
         date = "2021/01/07"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-        modified = "2024-12-09"
-=======
         modified = "2025-08-18"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
         hash = "4762f36ca01fb9cda2ab559623d2206f401fc0b1"
         hash = "bdaf9279b3d9e07e955d0ce706d9c42e4bdf9aa1"
         hash = "ee9408eb923f2d16f606a5aaac7e16b009797a07"
@@ -6053,13 +5885,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic
         )
         and not any of ( $fp* ) and any of ( $susp* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Generic_Base64
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Base64
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell with base64 encoded payload"
@@ -6068,11 +5895,7 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Base64
         reference = "Internal Research"
         score = 75
         date = "2021/01/24"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-        modified = "2024-12-09"
-=======
         modified = "2025-08-18"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
         hash = "8b5fe53f8833df3657ae2eeafb4fd101c05f0db0"
         hash = "1b916afdd415dfa4e77cecf47321fd676ba2184d"
 
@@ -6141,13 +5964,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Base64
         and filesize < 300KB and
         ( any of ( $one* ) and any of ( $two* ) or any of ( $three* ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Generic_ProcessBuilder
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_ProcessBuilder
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell which uses processbuilder to execute user input"
@@ -6185,13 +6003,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_ProcessBuilder
         )
         and $exec and $start
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Generic_Reflection
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Reflection
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell which uses reflection to execute user input"
@@ -6274,13 +6087,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Reflection
         )
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Generic_Classloader
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Classloader
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell which uses classloader to execute user input"
@@ -6358,13 +6166,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Classloader
             )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Generic_Encoded_Shell
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Encoded_Shell
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Generic JSP webshell which contains cmd or /bin/bash encoded in ascii ord"
@@ -6391,13 +6194,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Generic_Encoded_Shell
     condition:
         filesize <300KB and any of ($sj*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_NetSpy
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_NetSpy
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "JSP netspy webshell"
@@ -6464,13 +6262,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_NetSpy
         )
         and 4 of ( $scan* ) and 1 of ( $write* ) and $http
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_By_String
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_By_String
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "JSP Webshells which contain unique strings, lousy rule for low hanging fruits. Most are catched by other rules in here but maybe these catch different versions."
@@ -6479,11 +6272,7 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_By_String
         reference = "Internal Research"
         score = 75
         date = "2021/01/09"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-        modified = "2024-12-09"
-=======
         modified = "2025-08-18"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
         hash = "e9060aa2caf96be49e3b6f490d08b8a996c4b084"
         hash = "4c2464503237beba54f66f4a099e7e75028707aa"
         hash = "06b42d4707e7326aff402ecbb585884863c6351a"
@@ -6574,13 +6363,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_By_String
             )
         )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_JSP_Input_Upload_Write
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_JSP_Input_Upload_Write
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "JSP uploader which gets input, writes files and contains \"upload\""
@@ -6641,13 +6425,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_JSP_Input_Upload_Write
         )
         and $upload and 1 of ( $write* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_Generic_OS_Strings : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_Generic_OS_Strings : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
     meta:
         description = "typical webshell strings"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -6817,13 +6596,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_Generic_OS_Strings : FILE {
         )
         and not any of ( $fp* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_In_Image
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_In_Image
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
 {
     meta:
         description = "Webshell in GIF, PNG or JPG"
@@ -7084,13 +6858,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_In_Image
         )
         ) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_Mixed_OBFUSC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_Mixed_OBFUSC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
    meta:
       description = "Detects webshell with mixed obfuscation commands"
       author = "Arnim Rupp (https://github.com/ruppde)"
@@ -7115,13 +6884,8 @@ rule Neo23x0_gen_webshells_WEBSHELL_Mixed_OBFUSC {
    condition:
       ( uint16(0) == 0x3f3c and filesize < 200KB and ( 4 of them ))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_webshells.yar
-
-rule WEBSHELL_Cookie_Post_Obfuscation {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_webshells_WEBSHELL_Cookie_Post_Obfuscation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_webshells.yar
     meta:
         description = "Detects webshell using cookie POST"
         author = "Arnim Rupp (https://github.com/ruppde)"

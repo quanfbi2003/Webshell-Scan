@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/susp_vulndriver_hp_hardware_diagnostics_etdsupp_may23.yar
-rule SUSP_VulnDriver_HP_Hardware_Diagnostics_Etdsupp_May23 {
-=======
 //===SUCCESS===
 rule Neo23x0_susp_vulndriver_hp_hardware_diagnost_SUSP_VulnDriver_HP_Hardware_Diagnostics_Etdsupp_May23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/susp_vulndriver_hp_hardware_diagnostics_etdsupp_may23.yar
    meta:
       description = "Detects vulnerable versions of the HP Hardware Diagnostics driver (etdsupp.sys) based on PE metadata info"
       author = "X__Junior (Nextron Systems)"

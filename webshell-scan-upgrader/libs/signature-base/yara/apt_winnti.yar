@@ -1,9 +1,3 @@
-/*
-	Yara Rule Set
-	Author: Florian Roth
-	Date: 2015-10-10
-	Identifier: Winnti Malware
-*/
 import "pe"
 /*
 	Yara Rule Set
@@ -12,13 +6,9 @@ import "pe"
 	Identifier: Winnti Malware
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-rule Winnti_signing_cert {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_winnti_Winnti_signing_cert {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
 	meta:
 		description = "Detects a signing certificate used by the Winnti APT group"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +26,8 @@ rule Neo23x0_apt_winnti_Winnti_signing_cert {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 700KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule Winnti_malware_Nsiproxy {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_Winnti_malware_Nsiproxy {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
 	meta:
 		description = "Detects a Winnti rootkit"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -69,13 +54,8 @@ rule Neo23x0_apt_winnti_Winnti_malware_Nsiproxy {
 	condition:
 		uint16(0) == 0x5a4d and $x1 and 1 of ($a*) and 2 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule Winnti_malware_UpdateDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_Winnti_malware_UpdateDLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
 	meta:
 		description = "Detects a Winnti malware - Update.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -109,12 +89,8 @@ rule Neo23x0_apt_winnti_Winnti_malware_UpdateDLL {
 			( 1 of ($c*) and 3 of ($s*) ) or all of ($s*)
 		)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-rule Winnti_malware_FWPK {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_Winnti_malware_FWPK {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects a Winnti malware - FWPKCLNT.SYS"
       author = "Florian Roth (Nextron Systems)"
@@ -142,13 +118,8 @@ rule Neo23x0_apt_winnti_Winnti_malware_FWPK {
    condition:
       uint16(0) == 0x5a4d and filesize < 642KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule Winnti_malware_StreamPortal_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_Winnti_malware_StreamPortal_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
 	meta:
 		description = "Detects a Winnti malware - Streamportal"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -171,13 +142,8 @@ rule Neo23x0_apt_winnti_Winnti_malware_StreamPortal_Gen {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 275KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule WINNTI_KingSoft_Moz_Confustion {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_WINNTI_KingSoft_Moz_Confustion {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects Barium sample with Copyright confusion"
       author = "Markus Neis"
@@ -194,12 +160,8 @@ rule Neo23x0_apt_winnti_WINNTI_KingSoft_Moz_Confustion {
          )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-rule APT_Winnti_MAL_Dec19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects Winnti malware"
       author = "Unknown"
@@ -215,9 +177,6 @@ rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_1 {
       $e4 = "\\BaseNamedObjects\\{B2B87CCA-66BC-4C24-89B2-C23C9EAC2A66}" wide
       $e5 = "BFE_Notify_Event_{7D00FA3C-FBDC-4A8D-AEEB-3F55A4890D2A}" nocase
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-rule APT_Winnti_MAL_Dec19_2 {
-=======
       $fp1 = "also increase possible memory usage of THOR."
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and
@@ -226,7 +185,6 @@ rule APT_Winnti_MAL_Dec19_2 {
 }
 //===SUCCESS===
 rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects Winnti malware"
       author = "Unknown"
@@ -250,13 +208,8 @@ rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_2 {
    condition:
       (6 of ($a*)) and (2 of ($b*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule APT_Winnti_MAL_Dec19_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects Winnti malware"
       author = "Unknown"
@@ -273,13 +226,8 @@ rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_3 {
    condition:
       (4 of ($b*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule APT_Winnti_MAL_Dec19_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects Winnti malware"
       author = "Unknown"
@@ -294,13 +242,8 @@ rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_4 {
    condition:
       (2 of ($b*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule APT_Winnti_MAL_Dec19_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects Winnti malware"
       author = "Unknown"
@@ -328,13 +271,8 @@ rule Neo23x0_apt_winnti_APT_Winnti_MAL_Dec19_5 {
    condition:
       (12 of ($a*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule APT_CN_Group_Loader_Jan20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_APT_CN_Group_Loader_Jan20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       description = "Detects loaders used by Chinese groups"
       author = "Vitali Kremez"
@@ -347,13 +285,8 @@ rule Neo23x0_apt_winnti_APT_CN_Group_Loader_Jan20_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule winnti_dropper_x64_libtomcrypt_fns : TAU CN APT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_winnti_dropper_x64_libtomcrypt_fns : TAU CN APT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       author = "CarbonBlack Threat Research" // tharuyama
       date = "2019-08-26"
@@ -401,13 +334,8 @@ rule Neo23x0_apt_winnti_winnti_dropper_x64_libtomcrypt_fns : TAU CN APT {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti.yar
-
-rule winnti_dropper_x86_libtomcrypt_fns : TAU CN APT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_winnti_dropper_x86_libtomcrypt_fns : TAU CN APT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti.yar
    meta:
       author = "CarbonBlack Threat Research" // tharuyama
       date = "2019-08-26"

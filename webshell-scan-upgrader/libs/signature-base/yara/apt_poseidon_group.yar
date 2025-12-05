@@ -5,13 +5,9 @@
 	Identifier: Poseidon Group APT
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poseidon_group.yar
-rule PoseidonGroup_Malware {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_poseidon_group_PoseidonGroup_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_poseidon_group.yar
 	meta:
 		description = "Detects Poseidon Group Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -52,13 +48,8 @@ rule Neo23x0_apt_poseidon_group_PoseidonGroup_Malware {
 		( uint16(0) == 0x5a4d and filesize < 650KB and 6 of ($s*) ) or
 		( 4 of ($s*) and 1 of ($a*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poseidon_group.yar
-
-rule PoseidonGroup_MalDoc_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poseidon_group_PoseidonGroup_MalDoc_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_poseidon_group.yar
 	meta:
 		description = "Detects Poseidon Group - Malicious Word Document"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -73,13 +64,8 @@ rule Neo23x0_apt_poseidon_group_PoseidonGroup_MalDoc_1 {
 	condition:
 		uint16(0) == 0xcfd0 and filesize < 500KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poseidon_group.yar
-
-rule PoseidonGroup_MalDoc_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poseidon_group_PoseidonGroup_MalDoc_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_poseidon_group.yar
 	meta:
 		description = "Detects Poseidon Group - Malicious Word Document"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

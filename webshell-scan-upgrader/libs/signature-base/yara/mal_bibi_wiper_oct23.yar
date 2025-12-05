@@ -21,13 +21,9 @@ rule MAL_LNX_BiBi_Linux_Wiper {
 }
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_bibi_wiper_oct23.yar
-rule MAL_WIPER_BiBi_Oct23 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_mal_bibi_wiper_oct23_MAL_WIPER_BiBi_Oct23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_bibi_wiper_oct23.yar
    meta:
       description = "Detects BiBi wiper samples for Windows and Linux"
       author = "Florian Roth"

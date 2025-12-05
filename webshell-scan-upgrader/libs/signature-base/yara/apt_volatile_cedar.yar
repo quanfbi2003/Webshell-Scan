@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_volatile_cedar.yar
-rule Explosive_EXE : APT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_volatile_cedar_Explosive_EXE : APT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volatile_cedar.yar
 	meta:
 		description = "Explosion/Explosive Malware - Volatile Cedar APT"
 		author = "Check Point Software Technologies Inc."
@@ -15,13 +11,8 @@ rule Neo23x0_apt_volatile_cedar_Explosive_EXE : APT {
 		all of them and
         uint16(0) == 0x5A4D
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_volatile_cedar.yar
-
-rule Explosion_Sample_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_volatile_cedar_Explosion_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volatile_cedar.yar
 	meta:
 		description = "Explosion/Explosive Malware - Volatile Cedar APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -46,13 +37,8 @@ rule Neo23x0_apt_volatile_cedar_Explosion_Sample_1 {
 		all of them and
         uint16(0) == 0x5A4D
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_volatile_cedar.yar
-
-rule Explosion_Sample_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_volatile_cedar_Explosion_Sample_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volatile_cedar.yar
 	meta:
 		description = "Explosion/Explosive Malware - Volatile Cedar APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -70,13 +56,8 @@ rule Neo23x0_apt_volatile_cedar_Explosion_Sample_2 {
 		all of them and
         uint16(0) == 0x5A4D
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_volatile_cedar.yar
-
-rule Explosion_Generic_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_volatile_cedar_Explosion_Generic_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volatile_cedar.yar
 	meta:
 		description = "Generic Rule for Explosion/Explosive Malware - Volatile Cedar APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -106,13 +87,8 @@ rule Neo23x0_apt_volatile_cedar_Explosion_Generic_1 {
 		7 of them and
         uint16(0) == 0x5A4D
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_volatile_cedar.yar
-
-rule Explosive_UA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_volatile_cedar_Explosive_UA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volatile_cedar.yar
 	meta:
 		description = "Explosive Malware Embedded User Agent - Volatile Cedar APT http://goo.gl/HQRCdw"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -127,13 +103,8 @@ rule Neo23x0_apt_volatile_cedar_Explosive_UA {
 		$x1 and
         uint16(0) == 0x5A4D
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_volatile_cedar.yar
-
-rule Webshell_Caterpillar_ASPX {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_volatile_cedar_Webshell_Caterpillar_ASPX {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volatile_cedar.yar
 	meta:
 		description = "Volatile Cedar Webshell - from file caterpillar.aspx"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

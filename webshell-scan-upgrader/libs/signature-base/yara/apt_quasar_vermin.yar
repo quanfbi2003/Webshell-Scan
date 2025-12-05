@@ -5,20 +5,12 @@
    Identifier: Vermin Keylogger and Quasar RAT
    Reference: https://researchcenter.paloaltonetworks.com/2018/01/unit42-vermin-quasar-rat-custom-malware-used-ukraine/
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_vermin.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_quasar_vermin.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_vermin.yar
-rule Quasar_RAT_Jan18_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_quasar_vermin_Quasar_RAT_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_quasar_vermin.yar
    meta:
       description = "Detects Quasar RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +33,8 @@ rule Neo23x0_apt_quasar_vermin_Quasar_RAT_Jan18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and $a1 and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quasar_vermin.yar
-
-rule Vermin_Keylogger_Jan18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_quasar_vermin_Vermin_Keylogger_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_quasar_vermin.yar
    meta:
       description = "Detects Vermin Keylogger"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

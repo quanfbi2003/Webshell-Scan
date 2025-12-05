@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_unsigned_thor.yar
-
-rule SUSP_THOR_Unsigned_Oct23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_unsigned_thor_SUSP_THOR_Unsigned_Oct23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_unsigned_thor.yar
    meta:
       description = "Detects unsigned version of THOR scanner, which could be a backdoored / modified version of the scanner"
       author = "Florian Roth"

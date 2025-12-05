@@ -5,20 +5,12 @@
    Identifier: VPNFilter
    Reference: https://blog.talosintelligence.com/2018/05/VPNFilter.html
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_vpnfilter.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_vpnfilter.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_vpnfilter.yar
-rule MAL_ELF_VPNFilter_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_vpnfilter_MAL_ELF_VPNFilter_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_vpnfilter.yar
    meta:
       description = "Detects VPNFilter malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_apt_vpnfilter_MAL_ELF_VPNFilter_1 {
    condition:
       uint16(0) == 0x457f and filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_vpnfilter.yar
-
-rule MAL_ELF_VPNFilter_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_vpnfilter_MAL_ELF_VPNFilter_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_vpnfilter.yar
    meta:
       description = "Detects VPNFilter malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -61,13 +48,8 @@ rule Neo23x0_apt_vpnfilter_MAL_ELF_VPNFilter_2 {
    condition:
       uint16(0) == 0x457f and filesize < 1000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_vpnfilter.yar
-
-rule MAL_ELF_VPNFilter_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_vpnfilter_MAL_ELF_VPNFilter_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_vpnfilter.yar
    meta:
       description = "Detects VPNFilter malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -96,13 +78,8 @@ rule Neo23x0_apt_vpnfilter_MAL_ELF_VPNFilter_3 {
    condition:
       uint16(0) == 0x457f and filesize < 1000KB and ( 1 of ($sx*) or 2 of ($s*) or 2 of ($a*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_vpnfilter.yar
-
-rule SUSP_ELF_Tor_Client {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_vpnfilter_SUSP_ELF_Tor_Client {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_vpnfilter.yar
    meta:
       description = "Detects VPNFilter malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

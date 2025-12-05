@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_peach_sandstorm.yar
-rule APT_MAL_FalseFont_Backdoor_Jan24 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_peach_sandstorm_APT_MAL_FalseFont_Backdoor_Jan24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_peach_sandstorm.yar
    meta:
       description = "Detects FalseFont backdoor, related to Peach Sandstorm APT"
       author = "X__Junior, Jonathan Peters"

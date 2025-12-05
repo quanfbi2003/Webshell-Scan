@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turbo_campaign.yar
-rule apt_nix_elf_derusbi {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turbo_campaign_apt_nix_elf_derusbi {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turbo_campaign.yar
    meta:
       description = "Detects Derusbi Backdoor ELF"
       author = "Fidelis Cybersecurity"
@@ -52,13 +48,8 @@ rule Neo23x0_apt_turbo_campaign_apt_nix_elf_derusbi {
    condition:
       uint32(0) == 0x464c457f and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turbo_campaign.yar
-
-rule apt_nix_elf_derusbi_kernelModule
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turbo_campaign_apt_nix_elf_derusbi_kernelModule
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turbo_campaign.yar
 {
    meta:
       description = "Detects Derusbi Backdoor ELF Kernel Module"
@@ -91,13 +82,8 @@ rule Neo23x0_apt_turbo_campaign_apt_nix_elf_derusbi_kernelModule
    condition:
       uint32(0) == 0x464c457f and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turbo_campaign.yar
-
-rule apt_nix_elf_Derusbi_Linux_SharedMemCreation {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turbo_campaign_apt_nix_elf_Derusbi_Linux_SharedMemCreation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turbo_campaign.yar
    meta:
       description = "Detects Derusbi Backdoor ELF Shared Memory Creation"
       author = "Fidelis Cybersecurity"
@@ -109,13 +95,8 @@ rule Neo23x0_apt_turbo_campaign_apt_nix_elf_Derusbi_Linux_SharedMemCreation {
    condition:
       uint32(0) == 0x464C457F and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turbo_campaign.yar
-
-rule apt_nix_elf_Derusbi_Linux_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turbo_campaign_apt_nix_elf_Derusbi_Linux_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turbo_campaign.yar
    meta:
       description = "Detects Derusbi Backdoor ELF Strings"
       author = "Fidelis Cybersecurity"
@@ -146,13 +127,8 @@ rule Neo23x0_apt_turbo_campaign_apt_nix_elf_Derusbi_Linux_Strings {
          all of ($b*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turbo_campaign.yar
-
-rule apt_win_exe_trojan_derusbi {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turbo_campaign_apt_win_exe_trojan_derusbi {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turbo_campaign.yar
    meta:
       description = "Detects Derusbi Backdoor Win32"
       author = "Fidelis Cybersecurity"

@@ -29,20 +29,6 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_triton_mal_sshdoor.yar
-
-// MODIFIED VERSION
-// Mofificaton applied by Florian Roth 05.12.2018
-// Reasons for the changes:
-//    - Cleaner rule structure (no inter-dependencies)
-//    - Performance
-//    - Limited rules to ELF files to reduce false positive rate
-// Disadvantage:
-//    - Lost family identification (see the original rules)
-//    - Missing rule (the one with the expected & relevant performance impact)
-
-rule MAL_LNX_SSHDOOR_Triton {
-=======
 
 // MODIFIED VERSION
 // Mofificaton applied by Florian Roth 05.12.2018
@@ -57,7 +43,6 @@ rule MAL_LNX_SSHDOOR_Triton {
 
 //===SUCCESS===
 rule Neo23x0_apt_triton_mal_sshdoor_MAL_LNX_SSHDOOR_Triton {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_triton_mal_sshdoor.yar
    meta:
       description = "Signature detecting "
       author = "Marc-Etienne M.Leveille, modified by Florian Roth"

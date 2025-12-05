@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.GTPDOOR.yara
-
-
-rule reversinglabs_Lin_Linux_Backdoor_GTPDOOR : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.GTPDOOR.yara
-rule Linux_Backdoor_GTPDOOR : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_GTPDOOR_Linux_Backdoor_GTPDOOR : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.GTPDOOR.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.GTPDOOR.yara
 {
     meta:
 
@@ -272,8 +262,4 @@ rule reversinglabs_Linux_Backdoor_GTPDOOR_Linux_Backdoor_GTPDOOR : tc_detection 
                 )
             )
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.GTPDOOR.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.GTPDOOR.yara

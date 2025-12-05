@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_atm_javadipcash.yar
-rule ATM_Malware_JavaDispCash {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_atm_javadipcash_ATM_Malware_JavaDispCash {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_atm_javadipcash.yar
 	meta:
 		description = "Detects ATM Malware JavaDispCash"
 		author = "Frank Boldewin (@r3c0nst)"

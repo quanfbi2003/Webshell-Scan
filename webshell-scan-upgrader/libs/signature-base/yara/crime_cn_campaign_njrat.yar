@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-02-08
-   Identifier: Disclosed Chinese Malware Set - mostly NjRAT
-   Reference: https://twitter.com/cyberintproject/status/961714165550342146
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://twitter.com/cyberintproject/status/961714165550342146
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule CN_disclosed_20180208_lsls {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_lsls {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -40,13 +26,8 @@ rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_lsls {
    condition:
       uint16(0) == 0x457f and filesize < 3000KB and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-
-rule CN_disclosed_20180208_c {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_c {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -74,13 +55,8 @@ rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_c {
         4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-
-rule CN_disclosed_20180208_System3 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_System3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -98,14 +74,8 @@ rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_System3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and $a1 and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-
-
-rule CN_disclosed_20180208_Mal1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_Mal1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -132,13 +102,8 @@ rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_Mal1 {
         3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-
-rule CN_disclosed_20180208_KeyLogger_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_KeyLogger_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -156,13 +121,8 @@ rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_KeyLogger_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-
-rule CN_disclosed_20180208_Mal4 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_Mal4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -177,13 +137,8 @@ rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_Mal4 {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them and pe.exports("SPACE")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_cn_campaign_njrat.yar
-
-rule CN_disclosed_20180208_Mal5 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_cn_campaign_njrat_CN_disclosed_20180208_Mal5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_cn_campaign_njrat.yar
    meta:
       description = "Detects malware from disclosed CN malware set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

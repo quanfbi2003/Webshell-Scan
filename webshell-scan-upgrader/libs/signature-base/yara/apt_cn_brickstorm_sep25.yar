@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-
-rule Neo23x0_apt_MAL_G_APT_Backdoor_BRICKSTORM_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_APT_Backdoor_BRICKSTORM_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects BRICKSTORM backdoor used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -22,13 +16,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_APT_Backdoor_BRICKSTORM_3 {
    condition:
       uint16(0) == 0x457F and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_MAL_G_Backdoor_BRICKSTORM_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Backdoor_BRICKSTORM_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects BRICKSTORM backdoor used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -61,13 +50,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Backdoor_BRICKSTORM_2 {
          or 5 of ($str*)
       )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_MAL_G_APT_Backdoor_BRICKSTORM_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_APT_Backdoor_BRICKSTORM_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects BRICKSTORM backdoor used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -93,13 +77,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_APT_Backdoor_BRICKSTORM_1 {
    condition:
       uint32(0) == 0x464c457f and 5 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_MAL_G_APT_Backdoor_BRICKSTORM_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_APT_Backdoor_BRICKSTORM_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects BRICKSTORM backdoor used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -112,13 +91,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_APT_Backdoor_BRICKSTORM_2 {
    condition:
       uint32be(0) == 0x7F454C46 and any of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_WEBSHELL_G_APT_BackdoorWebshell_SLAYSTYLE_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_WEBSHELL_G_APT_BackdoorWebshell_SLAYSTYLE_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects webshell used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -137,13 +111,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_WEBSHELL_G_APT_BackdoorWebshell_SLAYSTYLE_1
    condition:
       filesize < 5MB and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_WEBSHELL_G_APT_BackdoorWebshell_SLAYSTYLE_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_WEBSHELL_G_APT_BackdoorWebshell_SLAYSTYLE_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects webshell used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -159,13 +128,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_WEBSHELL_G_APT_BackdoorWebshell_SLAYSTYLE_2
    condition:
       (uint16(0) != 0x5A4D and uint32(0) != 0x464C457F) and filesize < 7KB and all of them and @str4 > @str2
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_MAL_G_Backdoor_BRICKSTEAL_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Backdoor_BRICKSTEAL_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects backdoor BRICKSTEAL used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -181,13 +145,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Backdoor_BRICKSTEAL_1 {
    condition:
       all of them and filesize < 10KB
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_MAL_G_Dropper_BRICKSTEAL_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Dropper_BRICKSTEAL_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects backdoor BRICKSTEAL dropper used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"
@@ -205,13 +164,8 @@ rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Dropper_BRICKSTEAL_1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
-
-rule Neo23x0_apt_MAL_G_Dropper_BRICKSTEAL_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_brickstorm_sep25_MAL_G_Dropper_BRICKSTEAL_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_brickstorm_sep25.yar
    meta:
       description = "Detects backdoor BRICKSTEAL dropper used by APT group UNC5221 (China Nexus)"
       author = "Google Threat Intelligence Group (GTIG) (modified by Florian Roth)"

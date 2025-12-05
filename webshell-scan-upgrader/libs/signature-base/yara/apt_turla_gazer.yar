@@ -1,12 +1,3 @@
-/*
-   Yara Rule Set
-   Author: ESET
-   Date: 2017-08-30
-   Identifier: Turla Gazer
-   Reference: https://www.welivesecurity.com/2017/08/30/eset-research-cyberespionage-gazer/
-*/
-
-
 import "pe"
 /*
    Yara Rule Set
@@ -16,15 +7,11 @@ import "pe"
    Reference: https://www.welivesecurity.com/2017/08/30/eset-research-cyberespionage-gazer/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_gazer.yar
-rule Gazer_certificate_subject {
-=======
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_turla_gazer_Gazer_certificate_subject {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_gazer.yar
    meta:
       description = "Detects Tura's Gazer malware"
       author = "ESET"
@@ -38,13 +25,8 @@ rule Neo23x0_apt_turla_gazer_Gazer_certificate_subject {
             pe.signatures[i].subject contains "Ultimate Computer Support"
          )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_gazer.yar
-
-rule Gazer_certificate {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_gazer_Gazer_certificate {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_gazer.yar
    meta:
       description = "Detects Tura's Gazer malware"
       author = "ESET"
@@ -57,13 +39,8 @@ rule Neo23x0_apt_turla_gazer_Gazer_certificate {
    condition:
       uint16(0) == 0x5a4d and 1 of them and filesize < 2MB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_gazer.yar
-
-rule Gazer_logfile_name {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_gazer_Gazer_logfile_name {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_gazer.yar
    meta:
       description = "Detects Tura's Gazer malware"
       author = "ESET"

@@ -1,14 +1,9 @@
 
 /* State-sponsored Casper Malware Rules by @4nc4p - attribution and analysis by @pinkflawd @r00tbsd @circl_lu */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_casper.yar
-
-rule Casper_Backdoor_x86 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_casper_Casper_Backdoor_x86 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_casper.yar
    meta:
       description = "Casper French Espionage Malware - Win32/ProxyBot.B - x86 Payload http://goo.gl/VRJNLo"
       author = "Florian Roth (Nextron Systems)"
@@ -40,13 +35,8 @@ rule Neo23x0_apt_casper_Casper_Backdoor_x86 {
       ( filesize < 250KB and all of ($s*) ) or
       ( 3 of ($x*) and 2 of ($y*) and 2 of ($z*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_casper.yar
-
-rule Casper_EXE_Dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_casper_Casper_EXE_Dropper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_casper.yar
 	meta:
 		description = "Casper French Espionage Malware - Win32/ProxyBot.B - Dropper http://goo.gl/VRJNLo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +58,8 @@ rule Neo23x0_apt_casper_Casper_EXE_Dropper {
 	condition:
 		7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_casper.yar
-
-rule Casper_Included_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_casper_Casper_Included_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_casper.yar
 	meta:
 		description = "Casper French Espionage Malware - String Match in File - http://goo.gl/VRJNLo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -98,13 +83,8 @@ rule Neo23x0_apt_casper_Casper_Included_Strings {
 		all of ($a*) or
 		uint16(0) == 0x5a4d and ( 1 of ($c*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_casper.yar
-
-rule Casper_SystemInformation_Output {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_casper_Casper_SystemInformation_Output {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_casper.yar
 	meta:
 		description = "Casper French Espionage Malware - System Info Output - http://goo.gl/VRJNLo"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

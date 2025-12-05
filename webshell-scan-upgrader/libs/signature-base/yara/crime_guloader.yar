@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_guloader.yar
-
-rule MAL_crime_win32_loader_guloader_1_experimental {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_guloader_MAL_crime_win32_loader_guloader_1_experimental {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_guloader.yar
    meta:
       description = "Detects injected GuLoader shellcode bin"
       author = "@VK_Intel"

@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_cisco_asa_line_dancer_apr24.yar
-
-
-rule Neo23x0_apt_Line_Dancer {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_cisco_asa_line_dancer_apr24.yar
-
-rule Line_Dancer {
-========
 //===SUCCESS===
 rule Neo23x0_apt_cisco_asa_line_dancer_apr24_Line_Dancer {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_line_dancer_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cisco_asa_line_dancer_apr24.yar
    meta:
       author = "NCSC"
       description = "Targets code sections of Line Dancer, a shellcode loader targeting Cisco ASA devices."

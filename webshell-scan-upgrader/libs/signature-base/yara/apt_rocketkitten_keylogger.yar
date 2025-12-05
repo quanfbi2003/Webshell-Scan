@@ -5,13 +5,9 @@
 	Identifier: Rocket Kitten Keylogger
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rocketkitten_keylogger.yar
-rule RocketKitten_Keylogger {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_rocketkitten_keylogger_RocketKitten_Keylogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rocketkitten_keylogger.yar
 	meta:
 		description = "Detects Keylogger used in Rocket Kitten APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

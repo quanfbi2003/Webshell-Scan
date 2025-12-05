@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_strings_in_ole.yar
-
-rule MAL_RTF_Embedded_OLE_PE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_strings_in_ole_MAL_RTF_Embedded_OLE_PE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_strings_in_ole.yar
    meta:
       description = "Detects a suspicious string often used in PE files in a hex encoded object stream"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

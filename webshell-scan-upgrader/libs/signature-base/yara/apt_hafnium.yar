@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_ASP_Embedded_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_ASP_Embedded_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects ASP webshells"
       author = "Florian Roth (Nextron Systems)"
@@ -19,13 +14,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_ASP_Embedded_Mar21_1 {
    condition:
       filesize < 100KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_WEBSHELL_HAFNIUM_SecChecker_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_WEBSHELL_HAFNIUM_SecChecker_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects HAFNIUM SecChecker webshell"
       author = "Florian Roth (Nextron Systems)"
@@ -41,13 +31,8 @@ rule Neo23x0_apt_hafnium_APT_WEBSHELL_HAFNIUM_SecChecker_Mar21_1 {
       filesize < 1KB and
       1 of them or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_HAFNIUM_Forensic_Artefacts_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_HAFNIUM_Forensic_Artefacts_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects forensic artefacts found in HAFNIUM intrusions"
       author = "Florian Roth (Nextron Systems)"
@@ -61,13 +46,8 @@ rule Neo23x0_apt_hafnium_APT_HAFNIUM_Forensic_Artefacts_Mar21_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_WEBSHELL_HAFNIUM_Chopper_WebShell: APT Hafnium WebShell {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_WEBSHELL_HAFNIUM_Chopper_WebShell: APT Hafnium WebShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects Chopper WebShell Injection Variant (not only Hafnium related)"
       author = "Markus Neis,Swisscom"
@@ -83,13 +63,8 @@ rule Neo23x0_apt_hafnium_APT_WEBSHELL_HAFNIUM_Chopper_WebShell: APT Hafnium WebS
    condition:
       filesize < 10KB and $x1 and 1 of ($s*) 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_WEBSHELL_Tiny_WebShell : APT Hafnium WebShell {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_WEBSHELL_Tiny_WebShell : APT Hafnium WebShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects WebShell Injection"
       author = "Markus Neis,Swisscom"
@@ -104,15 +79,9 @@ rule Neo23x0_apt_hafnium_APT_WEBSHELL_Tiny_WebShell : APT Hafnium WebShell {
       $s2 = "eval("
    condition:
       filesize < 300 and all of ($s*) and $x1
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-} 
-
-rule HKTL_PS1_PowerCat_Mar21 {
-=======
 }
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_HKTL_PS1_PowerCat_Mar21 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects PowerCat hacktool"
       author = "Florian Roth (Nextron Systems)"
@@ -132,13 +101,8 @@ rule Neo23x0_apt_hafnium_HKTL_PS1_PowerCat_Mar21 {
       filesize < 200KB and
       1 of ($x*) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule HKTL_Nishang_PS1_Invoke_PowerShellTcpOneLine {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_HKTL_Nishang_PS1_Invoke_PowerShellTcpOneLine {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects PowerShell Oneliner in Nishang's repository"
       author = "Florian Roth (Nextron Systems)"
@@ -153,13 +117,8 @@ rule Neo23x0_apt_hafnium_HKTL_Nishang_PS1_Invoke_PowerShellTcpOneLine {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_ASPX_SimpleSeeSharp : Webshell Unclassified {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_SimpleSeeSharp : Webshell Unclassified {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       author = "threatintel@volexity.com"
       date = "2021-03-01"
@@ -175,13 +134,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_SimpleSeeSharp : Webshell Unclassified {
       $body and
       filesize < 1KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_ASPX_reGeorgTunnel : Webshell Commodity {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_reGeorgTunnel : Webshell Commodity {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       author = "threatintel@volexity.com"
       date = "2021-03-01"
@@ -201,13 +155,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_reGeorgTunnel : Webshell Commodity {
       all of ($s*) or
       all of ($t*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_ASPX_SportsBall {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_SportsBall {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       author = "threatintel@volexity.com"
       date = "2021-03-01"
@@ -229,13 +178,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_SportsBall {
       any of ($uniq*) or
       all of ($var*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_CVE_2021_27065_Webshells {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_CVE_2021_27065_Webshells {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects web shells dropped by CVE-2021-27065. All actors, not specific to HAFNIUM. TLP:WHITE"
       author = "Joe Hannon, Microsoft Threat Intelligence Center (MSTIC)"
@@ -254,13 +198,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_CVE_2021_27065_Webshells {
    condition:
       filesize < 50KB and any of ($script*) and ($externalurl or $internalurl) and $internalauthenticationmethods and $extendedprotectiontokenchecking
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_MAL_ASPX_HAFNIUM_Chopper_Mar21_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_MAL_ASPX_HAFNIUM_Chopper_Mar21_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects HAFNIUM ASPX files dropped on compromised servers"
       author = "Florian Roth (Nextron Systems)"
@@ -275,13 +214,8 @@ rule Neo23x0_apt_hafnium_APT_MAL_ASPX_HAFNIUM_Chopper_Mar21_3 {
       filesize < 50KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_MAL_ASPX_HAFNIUM_Chopper_Mar21_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_MAL_ASPX_HAFNIUM_Chopper_Mar21_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects HAFNIUM ASPX files dropped on compromised servers"
       author = "Florian Roth (Nextron Systems)"
@@ -297,13 +231,8 @@ rule Neo23x0_apt_hafnium_APT_MAL_ASPX_HAFNIUM_Chopper_Mar21_4 {
       filesize < 850 and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_HAFNIUM_ForensicArtefacts_WER_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_HAFNIUM_ForensicArtefacts_WER_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects a Windows Error Report (WER) that indicates and exploitation attempt of the Exchange server as described in CVE-2021-26857 after the corresponding patches have been applied. WER files won't be written upon successful exploitation before applying the patch. Therefore, this indicates an unsuccessful attempt."
       author = "Florian Roth (Nextron Systems)"
@@ -319,13 +248,8 @@ rule Neo23x0_apt_hafnium_APT_HAFNIUM_ForensicArtefacts_WER_Mar21_1 {
       filesize < 8KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_HAFNIUM_ForensicArtefacts_Cab_Recon_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_HAFNIUM_ForensicArtefacts_Cab_Recon_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects suspicious CAB files used by HAFNIUM for recon activity"
       author = "Florian Roth (Nextron Systems)"
@@ -347,13 +271,8 @@ rule Neo23x0_apt_hafnium_APT_HAFNIUM_ForensicArtefacts_Cab_Recon_Mar21_1 {
          $s4 in (0..200)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_Compiled_Webshell_Mar2021_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_Compiled_Webshell_Mar2021_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Triggers on temporary pe files containing strings commonly used in webshells."
       author = "Bundesamt fuer Sicherheit in der Informationstechnik"
@@ -374,13 +293,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_Compiled_Webshell_Mar2021_1 {
    condition:
       uint16(0) == 0x5a4d and filesize > 5KB and filesize < 40KB and all of ($x*) and 1 of ($a*) and ( all of ($b*) or all of ($c*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule APT_MAL_ASP_DLL_HAFNIUM_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_APT_MAL_ASP_DLL_HAFNIUM_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects HAFNIUM compiled ASP.NET DLLs dropped on compromised servers"
       author = "Florian Roth (Nextron Systems)"
@@ -409,14 +323,8 @@ rule Neo23x0_apt_hafnium_APT_MAL_ASP_DLL_HAFNIUM_Mar21_1 {
       filesize < 50KB and
       all of ($s*) or all of ($op*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-
-rule WEBSHELL_HAFNIUM_CISA_10328929_01 : trojan webshell exploit CVE_2021_27065 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_HAFNIUM_CISA_10328929_01 : trojan webshell exploit CVE_2021_27065 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
        author = "CISA Code & Media Analysis"
        date = "2021-03-17"
@@ -433,13 +341,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_HAFNIUM_CISA_10328929_01 : trojan webshell exp
    condition:
        $s0 or ($s1 and $s2) or ($s3 and $s4)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_HAFNIUM_CISA_10328929_02 : trojan webshell exploit CVE_2021_27065 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_HAFNIUM_CISA_10328929_02 : trojan webshell exploit CVE_2021_27065 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
        author = "CISA Code & Media Analysis"
        date = "2021-03-17"
@@ -454,14 +357,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_HAFNIUM_CISA_10328929_02 : trojan webshell exp
    condition:
        $s0 and $s1 and $s2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-
-rule WEBSHELL_ASPX_FileExplorer_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_FileExplorer_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects Chopper like ASPX Webshells"
       author = "Florian Roth (Nextron Systems)"
@@ -496,13 +393,8 @@ rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_FileExplorer_Mar21_1 {
       filesize < 100KB and
       ( 1 of ($x*) or 2 of them ) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hafnium.yar
-
-rule WEBSHELL_ASPX_Chopper_Like_Mar21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hafnium_WEBSHELL_ASPX_Chopper_Like_Mar21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hafnium.yar
    meta:
       description = "Detects Chopper like ASPX Webshells"
       author = "Florian Roth (Nextron Systems)"

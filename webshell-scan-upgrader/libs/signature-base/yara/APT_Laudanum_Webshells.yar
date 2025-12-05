@@ -22,7 +22,7 @@ rule Neo23x0_apt_laudanum_webshells_asp_file {
 		$s3 = "Response.Write(Response.Status & Request.ServerVariables(\"REMOTE_ADDR\"))" fullword ascii /* PEStudio Blacklist: strings */
 		$s4 = "%><a href=\"<%=Request.ServerVariables(\"URL\")%>\">web root</a><br/><%" fullword ascii /* PEStudio Blacklist: strings */
 		$s5 = "set folder = fso.GetFolder(path)" fullword ascii
-		$s6 = "Set file = fso.GetFile(file_path)" fullword ascii
+		$s6 = "Set file = fso.GetFile(filepath)" fullword ascii
 	condition:
 		uint16(0) == 0x253c and filesize < 30KB and 5 of them
 }

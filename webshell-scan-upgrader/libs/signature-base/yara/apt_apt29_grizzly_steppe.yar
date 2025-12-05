@@ -4,20 +4,12 @@
    Date: 2016-12-29
    Identifier: GRIZZLY STEPPE
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-rule GRIZZLY_STEPPE_Malware_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_GRIZZLY_STEPPE_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Auto-generated rule - file HRDG022184_certclint.dll"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +28,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_GRIZZLY_STEPPE_Malware_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule GRIZZLY_STEPPE_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_GRIZZLY_STEPPE_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +50,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_GRIZZLY_STEPPE_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule PAS_TOOL_PHP_WEB_KIT_mod {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_PAS_TOOL_PHP_WEB_KIT_mod {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Detects PAS Tool PHP Web Kit"
       reference = "https://www.us-cert.gov/security-publications/GRIZZLY-STEPPE-Russian-Malicious-Cyber-Activity"
@@ -92,13 +74,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_PAS_TOOL_PHP_WEB_KIT_mod {
       #isset == 3 and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule WebShell_PHP_Web_Kit_v3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_WebShell_PHP_Web_Kit_v3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Detects PAS Tool PHP Web Kit"
       reference = "https://github.com/wordfence/grizzly"
@@ -118,13 +95,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_WebShell_PHP_Web_Kit_v3 {
       filesize > 8KB and filesize < 100KB and
       all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule WebShell_PHP_Web_Kit_v4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_WebShell_PHP_Web_Kit_v4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Detects PAS Tool PHP Web Kit"
       reference = "https://github.com/wordfence/grizzly"
@@ -144,15 +116,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_WebShell_PHP_Web_Kit_v4 {
       filesize > 8KB and filesize < 100KB and
       2 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-
-
-rule APT_APT29_wellmess_dotnet_unique_strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_wellmess_dotnet_unique_strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect WellMess .NET samples based on unique strings and function/variable names"
       author = "NCSC"
@@ -169,13 +134,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_wellmess_dotnet_unique_strings {
    condition:
       uint16(0) == 0x5a4d and uint16(uint16(0x3c)) == 0x4550 and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_encryption_key_schedule { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_encryption_key_schedule { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on the key schedule used for encryption"
       author = "NCSC"
@@ -191,13 +151,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_encryption_key_schedule
    condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_encryption_key_2b62 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_encryption_key_2b62 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
   meta:
       description = "Rule to detect SoreFang based on hardcoded encryption key"
       author = "NCSC"
@@ -210,13 +165,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_encryption_key_2b62 {
       ( uint16(0) == 0x5A4D and uint16(uint32(0x3c) ) == 0x4550) 
       and any of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_directory_enumeration_output_strings { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_directory_enumeration_output_strings { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on formatted string output for directory enumeration"
       author = "NCSC"
@@ -231,13 +181,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_directory_enumeration_o
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) 
       and 2 of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_command_elem_cookie_ga_boundary_string { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_command_elem_cookie_ga_boundary_string { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on scheduled task element and Cookie header/boundary strings"
       author = "NCSC"
@@ -252,13 +197,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_command_elem_cookie_ga_
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) 
       and 2 of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_encryption_round_function { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_encryption_round_function { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on the encryption round function"
       author = "NCSC"
@@ -272,13 +212,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_encryption_round_functi
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550)
       and any of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_add_random_commas_spaces { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_add_random_commas_spaces { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on function that adds commas and spaces"
       author = "NCSC"
@@ -292,13 +227,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_add_random_commas_space
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) 
       and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_modify_alphabet_custom_encode { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_modify_alphabet_custom_encode { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on arguments passed into custom encoding algorithm function"
       author = "NCSC"
@@ -311,13 +241,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_modify_alphabet_custom_
    condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_custom_encode_decode {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_custom_encode_decode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on the custom encoding/decoding algorithm function"
       author = "NCSC"
@@ -347,13 +272,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_custom_encode_decode {
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) 
       and any of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_remove_chars_comma_space_dot { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_remove_chars_comma_space_dot { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on function that removes commas, spaces and dots"
       author = "NCSC"
@@ -367,13 +287,8 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_remove_chars_comma_spac
    condition:
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) and all of them 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
-
-rule APT_APT29_sorefang_disk_enumeration_strings { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_disk_enumeration_strings { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_grizzly_steppe.yar
    meta:
       description = "Rule to detect SoreFang based on disk enumeration strings"
       author = "NCSC"
@@ -393,4 +308,3 @@ rule Neo23x0_apt_apt29_grizzly_steppe_APT_APT29_sorefang_disk_enumeration_string
       (uint16(0) == 0x5A4D and uint16(uint32(0x3c)) == 0x4550) 
       and all of them 
 }
-

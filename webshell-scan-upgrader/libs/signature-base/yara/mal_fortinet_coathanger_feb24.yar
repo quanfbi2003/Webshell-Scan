@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_fortinet_coathanger_feb24.yar
-
-rule MAL_Fortinet_COATHANGER_Beacon {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_fortinet_coathanger_feb24_MAL_Fortinet_COATHANGER_Beacon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_fortinet_coathanger_feb24.yar
    meta:
       description = "Detects COATHANGER beaconing code"
       malware = "COATHANGER"
@@ -18,13 +13,8 @@ rule Neo23x0_mal_fortinet_coathanger_feb24_MAL_Fortinet_COATHANGER_Beacon {
       uint32(0) == 0x464c457f and filesize < 5MB and
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_fortinet_coathanger_feb24.yar
-
-rule MAL_Fortinet_COATHANGER_Files {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_fortinet_coathanger_feb24_MAL_Fortinet_COATHANGER_Files {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_fortinet_coathanger_feb24.yar
    meta:
       description = "Detects COATHANGER files by used filenames"
       malware = "COATHANGER"

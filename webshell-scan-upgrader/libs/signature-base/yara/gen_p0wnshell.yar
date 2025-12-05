@@ -4,20 +4,12 @@
    Date: 2017-01-14
    Identifier: p0wnedShell
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-rule p0wnedPowerCat {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedPowerCat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedPowerCat.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +29,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedPowerCat {
    condition:
       ( uint16(0) == 0x7375 and filesize < 150KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule Hacktool_Strings_p0wnedShell : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_Hacktool_Strings_p0wnedShell : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "Detects strings found in Runspace Post Exploitation Toolkit"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -75,13 +62,8 @@ rule Neo23x0_gen_p0wnshell_Hacktool_Strings_p0wnedShell : FILE {
       and 1 of ($x*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedPotato {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedPotato {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedPotato.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -99,13 +81,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedPotato {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedExploits {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedExploits {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedExploits.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -120,13 +97,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedExploits {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedShellx64 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedShellx64 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedShellx64.exe"
       author = "Florian Roth (Nextron Systems)"
@@ -146,13 +118,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedShellx64 {
    condition:
       1 of ($x*) and not 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedListenerConsole {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedListenerConsole {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedListenerConsole.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -173,13 +140,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedListenerConsole {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedBinaries {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedBinaries {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedBinaries.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -199,13 +161,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedBinaries {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedAmsiBypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedAmsiBypass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - file p0wnedAmsiBypass.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -221,13 +178,8 @@ rule Neo23x0_gen_p0wnshell_p0wnedAmsiBypass {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_p0wnshell.yar
-
-rule p0wnedShell_outputs {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_p0wnshell_p0wnedShell_outputs {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_p0wnshell.yar
    meta:
       description = "p0wnedShell Runspace Post Exploitation Toolkit - from files p0wnedShell.cs, p0wnedShell.cs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

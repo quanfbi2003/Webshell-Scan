@@ -5,20 +5,12 @@
    Identifier: LokiBot Dropper
    Reference: https://app.any.run/tasks/401df4d9-098b-4fd0-86e0-7a52ce6ddbf5
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_loki_bot.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_loki_bot.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_loki_bot.yar
-rule LokiBot_Dropper_ScanCopyPDF_Feb18 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_loki_bot_LokiBot_Dropper_ScanCopyPDF_Feb18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_loki_bot.yar
    meta:
       description = "Auto-generated rule - file Scan Copy.pdf.com"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_crime_loki_bot_LokiBot_Dropper_ScanCopyPDF_Feb18 {
       uint16(0) == 0x5a4d and filesize < 1000KB and $x1 or
       ( $a1 and 1 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_loki_bot.yar
-
-rule LokiBot_Dropper_Packed_R11_Feb18 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_loki_bot_LokiBot_Dropper_Packed_R11_Feb18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_loki_bot.yar
    meta:
       description = "Auto-generated rule - file scan copy.pdf.r11"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -4,20 +4,12 @@
 	Date: 2016-09-05
 	Identifier: Buckeye
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_buckeye.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_buckeye.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_buckeye.yar
-rule HKTL_Buckeye_Osinfo {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_buckeye_HKTL_Buckeye_Osinfo {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_buckeye.yar
 	meta:
 		description = "Detects OSinfo tool used by the Buckeye APT group"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +29,8 @@ rule Neo23x0_apt_buckeye_HKTL_Buckeye_Osinfo {
 	condition:
 		uint16(0) == 0x5a4d and 3 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_buckeye.yar
-
-rule HKTL_RemoteCmd {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_buckeye_HKTL_RemoteCmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_buckeye.yar
 	meta:
 		description = "Detects a remote access tool used by APT groups - file RemoteCmd.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -64,13 +51,8 @@ rule Neo23x0_apt_buckeye_HKTL_RemoteCmd {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 50KB and 2 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_buckeye.yar
-
-rule HKTL_ChromePass {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_buckeye_HKTL_ChromePass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_buckeye.yar
 	meta:
 		description = "Detects a tool used by APT groups - file ChromePass.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

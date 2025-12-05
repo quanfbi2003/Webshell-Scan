@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_darkside.yar
-
-rule MAL_RANSOM_Darkside_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_darkside_MAL_RANSOM_Darkside_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_ransom_darkside.yar
    meta:
       description = "Detects Darkside Ransomware"
       author = "Florian Roth (Nextron Systems)"
@@ -26,13 +21,8 @@ rule Neo23x0_crime_ransom_darkside_MAL_RANSOM_Darkside_May21_1 {
       filesize < 200KB and
       3 of them or all of ($op*) or all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_darkside.yar
-
-rule MAL_Ransomware_Win_DARKSIDE_v1_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_darkside_MAL_Ransomware_Win_DARKSIDE_v1_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_ransom_darkside.yar
     meta:
         author = "FireEye"
         date = "2021-03-22"
@@ -45,13 +35,8 @@ rule Neo23x0_crime_ransom_darkside_MAL_Ransomware_Win_DARKSIDE_v1_1 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $consts
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_darkside.yar
-
-rule MAL_Dropper_Win_Darkside_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_darkside_MAL_Dropper_Win_Darkside_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_ransom_darkside.yar
     meta:
         author = "FireEye"
         date_created = "2021-05-11"
@@ -69,13 +54,8 @@ rule Neo23x0_crime_ransom_darkside_MAL_Dropper_Win_Darkside_1 {
     condition:
         filesize < 2MB and filesize > 500KB and uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and (all of ($CommonDLLs*)) and (all of ($KeyString*)) and $Slashes
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_ransom_darkside.yar
-
-rule MAL_Backdoor_Win_C3_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_ransom_darkside_MAL_Backdoor_Win_C3_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_ransom_darkside.yar
     meta:
         author = "FireEye"
         date_created = "2021-05-11"

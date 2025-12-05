@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_unicorn_obfuscated_powershell.yar
-rule gen_unicorn_obfuscated_powershell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_unicorn_obfuscated_powershell_gen_unicorn_obfuscated_powershell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_unicorn_obfuscated_powershell.yar
     meta:
         description = "PowerShell payload obfuscated by Unicorn toolkit"
         author = "John Lambert @JohnLaTwC"

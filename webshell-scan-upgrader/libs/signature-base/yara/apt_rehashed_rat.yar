@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-09-08
-   Identifier: Rehashed RAT
-   Reference: https://blog.fortinet.com/2017/09/05/rehashed-rat-used-in-apt-campaign-against-vietnamese-organizations
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://blog.fortinet.com/2017/09/05/rehashed-rat-used-in-apt-campaign-against-vietnamese-organizations
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rehashed_rat.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Rehashed_RAT_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_rehashed_rat_Rehashed_RAT_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rehashed_rat.yar
    meta:
       description = "Detects malware from Rehashed RAT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -53,13 +39,8 @@ rule Neo23x0_apt_rehashed_rat_Rehashed_RAT_1 {
          )
       ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rehashed_rat.yar
-
-rule Rehashed_RAT_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rehashed_rat_Rehashed_RAT_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rehashed_rat.yar
    meta:
       description = "Detects malware from Rehashed RAT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +67,8 @@ rule Neo23x0_apt_rehashed_rat_Rehashed_RAT_2 {
         )
       ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_rehashed_rat.yar
-
-rule Rehashed_RAT_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_rehashed_rat_Rehashed_RAT_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_rehashed_rat.yar
    meta:
       description = "Detects malware from Rehashed RAT incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

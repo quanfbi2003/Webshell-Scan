@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_hospitality.yar
-
-rule APT28_HospitalityMalware_document {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_hospitality_APT28_HospitalityMalware_document {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sofacy_hospitality.yar
    meta:
       description = "Yara Rule for APT28_Hospitality_Malware document identification"
       author = "CSE CybSec Enterprise - Z-Lab"
@@ -21,13 +16,8 @@ rule Neo23x0_apt_sofacy_hospitality_APT28_HospitalityMalware_document {
    condition:
       all of them and filesize > 75KB and filesize < 82KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sofacy_hospitality.yar
-
-rule APT28_HospitalityMalware_mvtband_file {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sofacy_hospitality_APT28_HospitalityMalware_mvtband_file {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sofacy_hospitality.yar
    meta:
       description = "Yara Rule for mvtband.dll malware"
       author = "CSE CybSec Enterprise - Z-Lab"

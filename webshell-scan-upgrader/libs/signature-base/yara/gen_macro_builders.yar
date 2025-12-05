@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_macro_builders.yar
-
-rule SUSP_MalDoc_ExcelMacro {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_macro_builders_SUSP_MalDoc_ExcelMacro {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_macro_builders.yar
   meta:
     description = "Detects malicious Excel macro Artifacts"
     author = "James Quinn"

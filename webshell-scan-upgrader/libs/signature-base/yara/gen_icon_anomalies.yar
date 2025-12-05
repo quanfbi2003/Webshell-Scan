@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_icon_anomalies.yar
-
-rule SUSP_AdobePDF_SFX_Bitmap_Combo_Executable {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_icon_anomalies_SUSP_AdobePDF_SFX_Bitmap_Combo_Executable {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_icon_anomalies.yar
    meta:
       description = "Detects a suspicious executable that contains both a SFX icon and an Adobe PDF icon"
       author = "Florian Roth (Nextron Systems)"
@@ -40,13 +35,8 @@ rule Neo23x0_gen_icon_anomalies_SUSP_AdobePDF_SFX_Bitmap_Combo_Executable {
       all of them
       and pe.number_of_signatures < 1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_icon_anomalies.yar
-
-rule SUSP_AdobePDF_Bitmap_Executable {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_icon_anomalies_SUSP_AdobePDF_Bitmap_Executable {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_icon_anomalies.yar
    meta:
       description = "Detects a suspicious executable that contains a Adobe PDF icon and no shows no sign of actual Adobe software"
       author = "Florian Roth (Nextron Systems)"

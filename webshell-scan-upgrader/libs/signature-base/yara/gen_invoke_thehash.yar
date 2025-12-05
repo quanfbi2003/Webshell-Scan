@@ -6,19 +6,12 @@
    Identifier: Invoke-Hash / Invoke-WMIExec
    Reference: https://github.com/Kevin-Robertson/Invoke-TheHash
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_thehash.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Invoke_SMBExec {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_gen_invoke_thehash_Invoke_SMBExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_invoke_thehash.yar
    meta:
       description = "Detects Invoke-WmiExec or Invoke-SmbExec"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +30,8 @@ rule Neo23x0_gen_invoke_thehash_Invoke_SMBExec {
    condition:
       ( filesize < 400KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_thehash.yar
-
-rule Invoke_WMIExec_Gen_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_invoke_thehash_Invoke_WMIExec_Gen_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_invoke_thehash.yar
    meta:
       description = "Detects Invoke-WmiExec or Invoke-SmbExec"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +51,8 @@ rule Neo23x0_gen_invoke_thehash_Invoke_WMIExec_Gen_1 {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_thehash.yar
-
-rule Invoke_SMBExec_Invoke_WMIExec_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_invoke_thehash_Invoke_SMBExec_Invoke_WMIExec_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_invoke_thehash.yar
    meta:
       description = "Auto-generated rule - from files Invoke-SMBExec.ps1, Invoke-WMIExec.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -87,13 +70,8 @@ rule Neo23x0_gen_invoke_thehash_Invoke_SMBExec_Invoke_WMIExec_1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_invoke_thehash.yar
-
-rule Invoke_WMIExec_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_invoke_thehash_Invoke_WMIExec_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_invoke_thehash.yar
    meta:
       description = "Auto-generated rule - from files Invoke-SMBClient.ps1, Invoke-SMBExec.ps1, Invoke-WMIExec.ps1, Invoke-WMIExec.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

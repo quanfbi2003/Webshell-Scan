@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_alienspy_rat.yar
-
-rule crime_win_rat_AlienSpy
-=======
 //===SUCCESS===
 rule Neo23x0_apt_alienspy_rat_crime_win_rat_AlienSpy
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/APT_alienspy_RAT.yar
 {
 meta:
 	description = "Alien Spy Remote Access Trojan"

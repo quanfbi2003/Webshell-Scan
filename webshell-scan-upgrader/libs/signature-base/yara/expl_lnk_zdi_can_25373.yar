@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_lnk_zdi_can_25373.yar
-
-
-rule Neo23x0_exp_EXT_EXPL_ZTH_LNK_EXPLOIT_A
-=======
 //===SUCCESS===
 rule Neo23x0_expl_lnk_zdi_can_25373_EXT_EXPL_ZTH_LNK_EXPLOIT_A
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_lnk_zdi_can_25373.yar
 {
     meta:
         author = "Peter Girnus"

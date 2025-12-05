@@ -4,20 +4,12 @@
    Date: 2016-10-20
    Identifier: PassCV Group (Cylance)
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-rule PassCV_Sabre_Malware_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +34,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and ( 1 of ($x*) and 5 of ($s*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Malware_Signing_Cert {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_Signing_Cert {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -70,13 +57,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_Signing_Cert {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 3000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -100,13 +82,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 4000KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Malware_Excalibur_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_Excalibur_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -128,13 +105,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_Excalibur_1 {
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of ($x*) or all of ($s*) )
       or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Malware_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -152,13 +124,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 8000KB and $x1 and 2 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Malware_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -174,13 +141,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Tool_NTScan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Tool_NTScan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -197,13 +159,8 @@ rule Neo23x0_apt_passcv_PassCV_Sabre_Tool_NTScan {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_passcv.yar
-
-rule PassCV_Sabre_Malware_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_passcv_PassCV_Sabre_Malware_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_passcv.yar
    meta:
       description = "PassCV Malware mentioned in Cylance Report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

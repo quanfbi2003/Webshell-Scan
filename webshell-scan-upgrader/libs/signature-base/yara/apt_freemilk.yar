@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-10-05
-   Identifier: FreeMilk
-   Reference: https://researchcenter.paloaltonetworks.com/2017/10/unit42-freemilk-highly-targeted-spear-phishing-campaign/
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2017/10/unit42-freemilk-highly-targeted-spear-phishing-campaign/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_freemilk.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule FreeMilk_APT_Mal_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_freemilk.yar
    meta:
       description = "Detects malware from FreeMilk campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -53,13 +39,8 @@ rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_1 {
             4 of them
          )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_freemilk.yar
-
-rule FreeMilk_APT_Mal_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_freemilk.yar
    meta:
       description = "Detects malware from FreeMilk campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -79,13 +60,8 @@ rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_2 {
          all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_freemilk.yar
-
-rule FreeMilk_APT_Mal_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_freemilk.yar
    meta:
       description = "Detects malware from FreeMilk campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -102,13 +78,8 @@ rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_3 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 900KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_freemilk.yar
-
-rule FreeMilk_APT_Mal_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_freemilk_FreeMilk_APT_Mal_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_freemilk.yar
    meta:
       description = "Detects malware from FreeMilk campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

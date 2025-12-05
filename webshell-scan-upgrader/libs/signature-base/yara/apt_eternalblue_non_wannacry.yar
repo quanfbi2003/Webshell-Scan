@@ -6,19 +6,12 @@
    Identifier: FireEye EternalBlue - Non-Wannacry Attacks
    Reference: https://goo.gl/OOB3mH
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eternalblue_non_wannacry.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Backdoor_Redosdru_Jun17 : HIGHVOL {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_eternalblue_non_wannacry_Backdoor_Redosdru_Jun17 : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eternalblue_non_wannacry.yar
    meta:
       description = "Detects malware Redosdru - file systemHome.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +36,8 @@ rule Neo23x0_apt_eternalblue_non_wannacry_Backdoor_Redosdru_Jun17 : HIGHVOL {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eternalblue_non_wannacry.yar
-
-rule Backdoor_Nitol_Jun17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eternalblue_non_wannacry_Backdoor_Nitol_Jun17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eternalblue_non_wannacry.yar
    meta:
       description = "Detects malware backdoor Nitol - file wyawou.exe - Attention: this rule also matches on Upatre Downloader"
       author = "Florian Roth (Nextron Systems)"

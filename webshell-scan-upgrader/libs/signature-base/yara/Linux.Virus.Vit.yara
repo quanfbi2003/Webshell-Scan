@@ -1,11 +1,6 @@
 import "elf"
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Virus.Vit.yara
-
-rule Linux_Virus_Vit : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Virus_Vit_Linux_Virus_Vit : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Virus.Vit.yara
 {
     meta:
 

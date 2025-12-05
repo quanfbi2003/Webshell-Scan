@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powersploit_dropper.yar
-rule HKTL_PowerSploit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powersploit_dropper_HKTL_PowerSploit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powersploit_dropper.yar
    meta:
       description = "Detects default strings used by PowerSploit to establish persistence"
       author = "Markus Neis"

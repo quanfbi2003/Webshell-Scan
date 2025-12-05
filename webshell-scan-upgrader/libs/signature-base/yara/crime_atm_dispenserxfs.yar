@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_atm_dispenserxfs.yar
-
-rule ATM_Malware_DispenserXFS {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_atm_dispenserxfs_ATM_Malware_DispenserXFS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_atm_dispenserxfs.yar
    meta:
       description = "Detects ATM Malware DispenserXFS"
       author = "@Xylit0l @r3c0nst / Modified by Florian Roth"

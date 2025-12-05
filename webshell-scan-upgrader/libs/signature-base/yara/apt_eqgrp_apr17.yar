@@ -4,17 +4,6 @@
    Author: Florian Roth
    Date: 2017-04-08
    Identifier: Equation Group hack tools leaked by ShadowBrokers
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-   Notice: Avoiding false positives is difficult with almost no antivirus
-   coverage during the rule testing phase. Please report back false positives
-   via https://github.com/Neo23x0/signature-base/issues
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule EquationGroup_emptycriss {
-=======
 
    Notice: Avoiding false positives is difficult with almost no antivirus
    coverage during the rule testing phase. Please report back false positives
@@ -26,7 +15,6 @@ rule EquationGroup_emptycriss {
 
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_emptycriss {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file emptycriss"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +30,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_emptycriss {
    condition:
       ( filesize < 50KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_scripme {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_scripme {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file scripme"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -65,13 +48,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_scripme {
    condition:
       ( filesize < 30KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cryptTool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cryptTool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file cryptTool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +64,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cryptTool {
    condition:
       ( uint16(0) == 0x457f and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_dumppoppy {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_dumppoppy {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file dumppoppy"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -109,13 +82,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_dumppoppy {
    condition:
       ( filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Auditcleaner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Auditcleaner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file Auditcleaner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -134,13 +102,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Auditcleaner {
    condition:
       ( filesize < 300KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_reverse_shell {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_reverse_shell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file reverse.shell.script"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -155,13 +118,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_reverse_shell {
    condition:
       ( filesize < 1KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_tnmunger {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_tnmunger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file tnmunger"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -176,13 +134,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_tnmunger {
    condition:
       ( uint16(0) == 0x457f and filesize < 10KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_ys_ratload {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ys_ratload {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file ys.ratload.sh"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -198,13 +151,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ys_ratload {
    condition:
       ( uint16(0) == 0x2123 and filesize < 3KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_eh_1_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_eh_1_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file eh.1.1.0.0"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -220,13 +168,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_eh_1_1_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_evolvingstrategy_1_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_evolvingstrategy_1_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file evolvingstrategy.1.0.1.1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -245,13 +188,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_evolvingstrategy_1_0_1 {
    condition:
       ( filesize < 4KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_toast_v3_2_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_toast_v3_2_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file toast_v3.2.0.1-linux"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -267,13 +205,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_toast_v3_2_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 50KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_sshobo {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_sshobo {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file sshobo"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -290,13 +223,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_sshobo {
    condition:
       ( uint16(0) == 0x457f and filesize < 600KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_magicjack_v1_1_0_0_client_1_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_magicjack_v1_1_0_0_client_1_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file magicjack_v1.1.0.0_client-1.1.0.0.py"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -311,13 +239,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_magicjack_v1_1_0_0_client_1_1_0_0 {
    condition:
       ( uint16(0) == 0x2123 and filesize < 80KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_packrat {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_packrat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file packrat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -333,13 +256,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_packrat {
    condition:
       ( filesize < 70KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_telex {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_telex {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file telex"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -356,13 +274,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_telex {
    condition:
       ( uint16(0) == 0x457f and filesize < 50KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_calserver {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_calserver {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file calserver"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -378,13 +291,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_calserver {
    condition:
       ( uint16(0) == 0x457f and filesize < 30KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_porkclient {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_porkclient {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file porkclient"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -400,13 +308,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_porkclient {
    condition:
       ( uint16(0) == 0x457f and filesize < 30KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_electricslide {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_electricslide {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file electricslide"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -423,13 +326,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_electricslide {
    condition:
       ( uint16(0) == 0x457f and filesize < 2000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_libXmexploit2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_libXmexploit2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file libXmexploit2.8"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -445,13 +343,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_libXmexploit2 {
    condition:
       ( uint16(0) == 0x457f and filesize < 40KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_wrap_telnet {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_wrap_telnet {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file wrap-telnet.sh"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -467,13 +360,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_wrap_telnet {
    condition:
       ( uint16(0) == 0x2123 and filesize < 4KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_elgingamble {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_elgingamble {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file elgingamble"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -490,13 +378,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_elgingamble {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cmsd {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cmsd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file cmsd"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -514,13 +397,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cmsd {
    condition:
       ( uint16(0) == 0x457f and filesize < 30KB and 1 of ($x*) ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_ebbshave {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ebbshave {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file ebbshave.v5"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -537,13 +415,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ebbshave {
    condition:
       ( uint16(0) == 0x457f and filesize < 20KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_eggbasket {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_eggbasket {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file eggbasket"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -559,13 +432,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_eggbasket {
    condition:
       ( uint16(0) == 0x457f and filesize < 90KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_jparsescan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_jparsescan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file jparsescan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -580,13 +448,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_jparsescan {
    condition:
       ( filesize < 40KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_sambal {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_sambal {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file sambal"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -604,13 +467,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_sambal {
    condition:
       ( uint16(0) == 0x457f and filesize < 90KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_pclean_v2_1_1_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_pclean_v2_1_1_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file pclean.v2.1.1.0-linux-i386"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -625,13 +483,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_pclean_v2_1_1_2 {
    condition:
       ( uint16(0) == 0x457f and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_envisioncollision {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_envisioncollision {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file envisioncollision"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -648,13 +501,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_envisioncollision {
    condition:
       ( uint16(0) == 0x2123 and filesize < 20KB and 1 of ($x*) ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cmsex {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cmsex {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file cmsex"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -672,13 +520,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cmsex {
    condition:
       ( uint16(0) == 0x457f and filesize < 50KB and 1 of ($x*) ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_exze {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_exze {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file exze"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -694,13 +537,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_exze {
    condition:
       ( uint16(0) == 0x457f and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_DUL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_DUL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file DUL"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -715,13 +553,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_DUL {
    condition:
       ( uint16(0) == 0x457f and filesize < 80KB and 1 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_slugger2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_slugger2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file slugger2"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -741,13 +574,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_slugger2 {
    condition:
       ( uint16(0) == 0x457f and filesize < 50KB and ( 4 of them and 1 of ($x*) ) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_ebbisland {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ebbisland {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file ebbisland"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -766,13 +594,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ebbisland {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_jackpop {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_jackpop {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file jackpop"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -791,13 +614,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_jackpop {
    condition:
       ( uint16(0) == 0x457f and filesize < 30KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_parsescan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_parsescan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file parsescan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -812,13 +630,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_parsescan {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_jscan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_jscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file jscan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -833,13 +646,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_jscan {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_promptkill {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_promptkill {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file promptkill"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -854,13 +662,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_promptkill {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_epoxyresin_v1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_epoxyresin_v1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file epoxyresin.v1.0.0.1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -878,13 +681,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_epoxyresin_v1_0_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 30KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_estopmoonlit {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_estopmoonlit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file estopmoonlit"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -901,13 +699,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_estopmoonlit {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_envoytomato {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_envoytomato {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file envoytomato"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -922,13 +715,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_envoytomato {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_smash {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_smash {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file smash"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -944,13 +732,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_smash {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_ratload {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ratload {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file ratload"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -966,13 +749,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ratload {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_ys {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ys {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file ys.auto"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -988,13 +766,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ys {
    condition:
       filesize < 250KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_ewok {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ewok {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file ewok"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1011,13 +784,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_ewok {
    condition:
       ( uint16(0) == 0x457f and filesize < 80KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_xspy {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_xspy {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file xspy"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1031,13 +799,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_xspy {
    condition:
       ( uint16(0) == 0x457f and filesize < 60KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_estesfox {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_estesfox {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file estesfox"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1051,13 +814,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_estesfox {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_elatedmonkey_1_0_1_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_elatedmonkey_1_0_1_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file elatedmonkey.1.0.1.1.sh"
       author = "Florian Roth (Nextron Systems)"
@@ -1074,13 +832,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_elatedmonkey_1_0_1_1 {
    condition:
       filesize < 15KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- file scanner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1098,13 +851,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_scanner {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__ftshell_ftshell_v3_10_3_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__ftshell_ftshell_v3_10_3_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files ftshell, ftshell.v3.10.3.7"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1123,13 +871,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__ftshell_ftshell_v3_10_3_0 {
    condition:
       ( uint16(0) == 0x2123 and filesize < 100KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__scanner_scanner_v2_1_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__scanner_scanner_v2_1_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files scanner, scanner.v2.1.2"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1149,13 +892,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__scanner_scanner_v2_1_2 {
    condition:
       ( uint16(0) == 0x457f and filesize < 100KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__ghost_sparc_ghost_x86_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__ghost_sparc_ghost_x86_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files ghost_sparc, ghost_x86"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1174,13 +912,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__ghost_sparc_ghost_x86_3 {
    condition:
       ( uint16(0) == 0x457f and filesize < 70KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__pclean_v2_1_1_pclean_v2_1_1_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__pclean_v2_1_1_pclean_v2_1_1_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files pclean.v2.1.1.0-linux-i386, pclean.v2.1.1.0-linux-x86_64"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1197,13 +930,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__pclean_v2_1_1_pclean_v2_1_1_4 {
    condition:
       ( uint16(0) == 0x457f and filesize < 50KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__jparsescan_parsescan_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__jparsescan_parsescan_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files jparsescan, parsescan"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1222,13 +950,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__jparsescan_parsescan_5 {
    condition:
       ( uint16(0) == 0x2123 and filesize < 40KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__funnelout_v4_1_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__funnelout_v4_1_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files funnelout.v4.1.0.1.pl"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1246,13 +969,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__funnelout_v4_1_0_1 {
    condition:
       ( uint16(0) == 0x2123 and filesize < 100KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__magicjack_v1_1_0_0_client {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__magicjack_v1_1_0_0_client {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files magicjack_v1.1.0.0_client-1.1.0.0.py"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1270,13 +988,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__magicjack_v1_1_0_0_client {
    condition:
       ( uint16(0) == 0x2123 and filesize < 80KB and 3 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup__ftshell {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup__ftshell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool leaked by ShadowBrokers- from files ftshell, ftshell.v3.10.3.7"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1303,13 +1016,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup__ftshell {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_store_linux_i386_v_3_3_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_store_linux_i386_v_3_3_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1325,13 +1033,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_store_linux_i386_v_3_3_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 60KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_morerats_client_genkey {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_genkey {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1346,13 +1049,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_genkey {
    condition:
       ( filesize < 3KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cursetingle_2_0_1_2_mswin32_v_2_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursetingle_2_0_1_2_mswin32_v_2_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1367,13 +1065,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursetingle_2_0_1_2_mswin32_v_2_0_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cursesleepy_mswin32_v_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursesleepy_mswin32_v_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1389,13 +1082,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursesleepy_mswin32_v_1_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cursehelper_win2k_i686_v_2_2_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursehelper_win2k_i686_v_2_2_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1412,13 +1100,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursehelper_win2k_i686_v_2_2_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_morerats_client_addkey {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_addkey {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1434,13 +1117,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_addkey {
    condition:
       ( filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_noclient_3_3_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_noclient_3_3_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1458,13 +1136,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_noclient_3_3_2 {
    condition:
       ( filesize < 1000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_curseflower_mswin32_v_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_curseflower_mswin32_v_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1480,13 +1153,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_curseflower_mswin32_v_1_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_tmpwatch {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_tmpwatch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1501,13 +1169,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_tmpwatch {
    condition:
       ( filesize < 1KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_orleans_stride_sunos5_9_v_2_4_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_orleans_stride_sunos5_9_v_2_4_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1523,13 +1186,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_orleans_stride_sunos5_9_v_2_4_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_morerats_client_noprep {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_noprep {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1545,13 +1203,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_noprep {
    condition:
       ( filesize < 9KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cursezinger_linuxrh7_3_v_2_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursezinger_linuxrh7_3_v_2_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1568,13 +1221,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursezinger_linuxrh7_3_v_2_0_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_seconddate_ImplantStandalone_3_0_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_seconddate_ImplantStandalone_3_0_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1590,13 +1238,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_seconddate_ImplantStandalone_3_0_3 {
    condition:
       ( uint16(0) == 0x457f and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_watcher_solaris_i386_v_3_3_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_watcher_solaris_i386_v_3_3_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1613,13 +1256,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_watcher_solaris_i386_v_3_3_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 700KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_gr_dev_bin_now {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_gr_dev_bin_now {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1634,13 +1272,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_gr_dev_bin_now {
    condition:
       ( filesize < 1KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_gr_dev_bin_post {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_gr_dev_bin_post {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1654,13 +1287,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_gr_dev_bin_post {
    condition:
       ( filesize < 1KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_curseyo_win2k_v_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_curseyo_win2k_v_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1678,13 +1306,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_curseyo_win2k_v_1_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_gr {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_gr {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1699,13 +1322,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_gr {
    condition:
       ( filesize < 1KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_curseroot_win2k_v_2_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_curseroot_win2k_v_2_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1722,13 +1340,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_curseroot_win2k_v_2_1_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and $s1 and 2 of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cursewham_curserazor_cursezinger_curseroot_win2k {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursewham_curserazor_cursezinger_curseroot_win2k {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1749,13 +1362,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursewham_curserazor_cursezinger_curs
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_watcher_linux_i386_v_3_3_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_watcher_linux_i386_v_3_3_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1773,13 +1381,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_watcher_linux_i386_v_3_3_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 700KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_charm_saver_win2k_v_2_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_charm_saver_win2k_v_2_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1796,13 +1399,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_charm_saver_win2k_v_2_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_cursehappy_win2k_v_6_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursehappy_win2k_v_6_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1817,13 +1415,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_cursehappy_win2k_v_6_1_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_morerats_client_Store {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_Store {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1840,13 +1433,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_morerats_client_Store {
    condition:
       ( uint16(0) == 0x457f and filesize < 60KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_watcher_linux_x86_64_v_3_3_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_watcher_linux_x86_64_v_3_3_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1862,13 +1450,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_watcher_linux_x86_64_v_3_3_0 {
    condition:
       ( uint16(0) == 0x457f and filesize < 900KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_linux_exactchange {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_linux_exactchange {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1889,13 +1472,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_linux_exactchange {
    condition:
       ( uint16(0) == 0x457f and filesize < 2000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_x86_linux_exactchange {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_x86_linux_exactchange {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Equation Group hack tool set"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1922,13 +1500,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_x86_linux_exactchange {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Eclipsedwing_Rpcproxy_Pcdlllauncher {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eclipsedwing_Rpcproxy_Pcdlllauncher {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1946,13 +1519,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eclipsedwing_Rpcproxy_P
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Explodingcantouch_1_2_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Explodingcantouch_1_2_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1968,13 +1536,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Explodingcantouch_1_2_1
    condition:
       ( uint16(0) == 0x5a4d and filesize < 150KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Architouch_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Architouch_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -1988,13 +1551,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Architouch_1_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Erraticgopher_1_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Erraticgopher_1_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2011,13 +1569,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Erraticgopher_1_0_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 150KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Esteemaudit_2_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Esteemaudit_2_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2032,13 +1585,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Esteemaudit_2_1_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Darkpulsar_1_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Darkpulsar_1_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2053,13 +1601,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Darkpulsar_1_1_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Educatedscholar_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Educatedscholar_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2074,13 +1617,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Educatedscholar_1_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 150KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Doublepulsar_1_3_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Doublepulsar_1_3_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2096,13 +1634,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Doublepulsar_1_3_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Erraticgophertouch_1_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Erraticgophertouch_1_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2118,13 +1651,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Erraticgophertouch_1_0_
    condition:
       ( uint16(0) == 0x5a4d and filesize < 30KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Smbtouch_1_1_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Smbtouch_1_1_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2138,13 +1666,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Smbtouch_1_1_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Educatedscholartouch_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Educatedscholartouch_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2159,13 +1682,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Educatedscholartouch_1_
    condition:
       ( uint16(0) == 0x5a4d and filesize < 30KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Esteemaudittouch_2_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Esteemaudittouch_2_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2180,13 +1698,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Esteemaudittouch_2_1_0 
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Rpctouch_2_1_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Rpctouch_2_1_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2201,13 +1714,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Rpctouch_2_1_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Mofconfig_1_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Mofconfig_1_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2221,13 +1729,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Mofconfig_1_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Easypi_Explodingcan {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Easypi_Explodingcan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2244,13 +1747,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Easypi_Explodingcan {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Eclipsedwingtouch_1_0_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eclipsedwingtouch_1_0_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2265,13 +1763,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eclipsedwingtouch_1_0_4
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Iistouch_1_2_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Iistouch_1_2_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2286,13 +1779,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Iistouch_1_2_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 60KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Namedpipetouch_2_0_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Namedpipetouch_2_0_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2312,13 +1800,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Namedpipetouch_2_0_0 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 40KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Easybee_1_0_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Easybee_1_0_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2333,13 +1816,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Easybee_1_0_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Regread_1_1_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Regread_1_1_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2354,13 +1832,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Regread_1_1_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Englishmansdentist_1_2_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Englishmansdentist_1_2_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2375,13 +1848,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Englishmansdentist_1_2_
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Architouch_Eternalsynergy_Smbtouch {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Architouch_Eternalsynergy_Smbtouch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2402,13 +1870,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Architouch_Eternalsyner
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Eternalromance_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eternalromance_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2426,13 +1889,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eternalromance_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__Emphasismine {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__Emphasismine {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2452,13 +1910,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__Emphasismine {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Eternalromance {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eternalromance {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2477,13 +1930,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Eternalromance {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them ) or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Gen4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2515,13 +1963,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen4 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 150KB and ( 1 of ($x*) or 2 of them ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Gen1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2541,13 +1984,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2574,13 +2012,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and 1 of ($s*) and 1 of ($op*) ) or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Gen3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2619,13 +2052,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Gen3 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_yak {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_yak {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2642,13 +2070,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_yak {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 800KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_AdUser_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_AdUser_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2663,13 +2086,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_AdUser_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_RemoteExecute_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_RemoteExecute_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2694,13 +2112,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_RemoteExecute_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 40KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Banner_Implant9x {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Banner_Implant9x {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2716,13 +2129,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Banner_Implant9x {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 20KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_greatdoc_dll_config {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_greatdoc_dll_config {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2739,13 +2147,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_greatdoc_dll_config {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_scanner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_scanner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2763,13 +2166,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_scanner {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 90KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Mcl_NtMemory_Std {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Mcl_NtMemory_Std {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2785,13 +2183,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Mcl_NtMemory_Std {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_tacothief {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_tacothief {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2805,13 +2198,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_tacothief {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_ntevt {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ntevt {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2831,13 +2219,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ntevt {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and $x1 or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Processes_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Processes_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2853,13 +2236,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Processes_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_st_lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_st_lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2876,13 +2254,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_st_lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_EpWrapper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_EpWrapper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2898,13 +2271,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_EpWrapper {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DiBa_Target_2000 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target_2000 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2922,13 +2290,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target_2000 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DllLoad_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DllLoad_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2946,13 +2309,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DllLoad_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_EXPA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_EXPA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2969,13 +2327,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_EXPA {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 12000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_RemoteExecute_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_RemoteExecute_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -2992,13 +2345,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_RemoteExecute_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DS_ParseLogs {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DS_ParseLogs {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3014,13 +2362,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DS_ParseLogs {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Oracle_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Oracle_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3036,13 +2379,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Oracle_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 500KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DmGz_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DmGz_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3057,13 +2395,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DmGz_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SetResourceName {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetResourceName {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3080,13 +2413,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetResourceName {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_drivers_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_drivers_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3103,13 +2431,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_drivers_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 30KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Shares_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Shares_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3126,13 +2449,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Shares_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_ntfltmgr {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ntfltmgr {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3157,13 +2475,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ntfltmgr {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DiBa_Target_BH {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target_BH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3179,13 +2492,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target_BH {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PC_LP {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_LP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3200,13 +2508,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_LP {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_RemoteCommand_Lp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_RemoteCommand_Lp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3221,13 +2524,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_RemoteCommand_Lp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_lp_mstcp {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_lp_mstcp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3247,13 +2545,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_lp_mstcp {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and ( all of ($s*) or all of ($op*) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_renamer {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_renamer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3268,13 +2561,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_renamer {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PC_Exploit {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Exploit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3291,13 +2579,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Exploit {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PC_Level3_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Level3_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3317,13 +2600,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Level3_Gen {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_put_Implant9x {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_put_Implant9x {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3340,13 +2618,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_put_Implant9x {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 20KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_promiscdetect_safe {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_promiscdetect_safe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3362,13 +2635,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_promiscdetect_safe {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PacketScan_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PacketScan_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3384,13 +2652,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PacketScan_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 30KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SetPorts {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetPorts {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3405,13 +2668,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetPorts {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_GrDo_FileScanner_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GrDo_FileScanner_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3428,13 +2686,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GrDo_FileScanner_Implan
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_msgks_mskgu {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_msgks_mskgu {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3451,13 +2704,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_msgks_mskgu {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Ifconfig_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Ifconfig_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3474,13 +2722,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Ifconfig_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DiBa_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3496,13 +2739,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Dsz_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Dsz_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3517,13 +2755,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Dsz_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_GenKey {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GenKey {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3537,13 +2770,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GenKey {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_wmi_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_wmi_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3557,13 +2785,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_wmi_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_clocksvc {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_clocksvc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3584,13 +2807,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_clocksvc {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and ( 1 of ($x*) or 2 of ($s*) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_xxxRIDEAREA {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_xxxRIDEAREA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3607,13 +2825,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_xxxRIDEAREA {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_yak_min_install {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_yak_min_install {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3629,13 +2842,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_yak_min_install {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SetOurAddr {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetOurAddr {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3650,13 +2858,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetOurAddr {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_GetAdmin_LSADUMP_ModifyPrivilege_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GetAdmin_LSADUMP_ModifyPrivilege_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3679,13 +2882,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GetAdmin_LSADUMP_Modify
    condition:
       ( uint16(0) == 0x5a4d and filesize < 80KB and ( 4 of ($s*) or all of ($op*) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SendPKTrigger {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SendPKTrigger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3699,13 +2897,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SendPKTrigger {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DmGz_Target_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DmGz_Target_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3723,13 +2916,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DmGz_Target_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_mstcp32_DXGHLP16_tdip {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_mstcp32_DXGHLP16_tdip {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       author = "Florian Roth (Nextron Systems)"
@@ -3750,13 +2938,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_mstcp32_DXGHLP16_tdip {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_regprobe {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_regprobe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3772,13 +2955,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_regprobe {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DoubleFeatureDll_dll_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DoubleFeatureDll_dll_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3796,13 +2974,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DoubleFeatureDll_dll_2 
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_GangsterThief_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GangsterThief_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3820,13 +2993,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_GangsterThief_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SetCallbackPorts {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetCallbackPorts {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3841,13 +3009,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetCallbackPorts {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_DiBa_Target_BH_2000 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target_BH_2000 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3862,13 +3025,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_DiBa_Target_BH_2000 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_rc5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_rc5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3885,13 +3043,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_rc5 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PC_Level_Generic {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Level_Generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3922,13 +3075,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Level_Generic {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and ( 2 of ($s*) or all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PC_Level3_http_exe {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Level3_http_exe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3946,13 +3094,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Level3_http_exe {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_ParseCapture {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ParseCapture {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3968,13 +3111,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ParseCapture {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_ActiveDirectory_Target {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ActiveDirectory_Target {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -3989,13 +3127,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_ActiveDirectory_Target 
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_PC_Legacy_dll : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Legacy_dll : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4011,13 +3144,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_PC_Legacy_dll : HIGHVOL
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_svctouch {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_svctouch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4031,13 +3159,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_svctouch {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 10KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_pwd_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_pwd_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4053,13 +3176,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_pwd_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_KisuComms_Target_2000 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_KisuComms_Target_2000 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4080,13 +3198,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_KisuComms_Target_2000 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and ( all of ($s*) or all of ($op*) ) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SlDecoder {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SlDecoder {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4101,13 +3214,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SlDecoder {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_Windows_Implant {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Windows_Implant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4121,13 +3229,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_Windows_Implant {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_msgkd_msslu64_msgki_mssld {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_msgkd_msslu64_msgki_mssld {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4153,13 +3256,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_msgkd_msslu64_msgki_mss
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 2 of ($s*) or all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17_SetCallback {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetCallback {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4174,13 +3272,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17_SetCallback {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__DoubleFeatureReader_DoubleFeatureReader_0 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__DoubleFeatureReader_DoubleFeatureReader_0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4200,13 +3293,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__DoubleFeatureReader_Do
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__vtuner_vtuner_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__vtuner_vtuner_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4227,13 +3315,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__vtuner_vtuner_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ecwi_ESKE_EVFR_RPC2_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ecwi_ESKE_EVFR_RPC2_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4253,13 +3336,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ecwi_ESKE_EVFR_RPC2_2 
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__EAFU_ecwi_ESKE_EVFR_RPC2_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__EAFU_ecwi_ESKE_EVFR_RPC2_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4283,13 +3361,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__EAFU_ecwi_ESKE_EVFR_RP
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of ($s*) or 1 of ($x*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__SendCFTrigger_SendPKTrigger_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__SendCFTrigger_SendPKTrigger_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4306,13 +3379,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__SendCFTrigger_SendPKTr
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__AddResource {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__AddResource {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4330,13 +3398,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__AddResource {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ESKE_RPC2_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ESKE_RPC2_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4353,13 +3416,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ESKE_RPC2_8 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__LSADUMP_Lp_ModifyPrivilege_Lp_PacketScan_Lp_put_Lp_RemoteExecute_Lp_Windows_Lp_wmi_Lp_9 {
-=======
 //===SUCCESS===
 rule Neo23_apt_e_EquationGroup_Toolset_Apr17__LSADUMP_Lp_ModifyPrivilege_Lp_PacketScan_Lp_put_Lp_RemoteExecute_Lp_Windows_Lp_wmi_Lp_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4381,13 +3439,8 @@ rule Neo23_apt_e_EquationGroup_Toolset_Apr17__LSADUMP_Lp_ModifyPrivilege_Lp_Pack
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ETBL_ETRE_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ETBL_ETRE_10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4405,13 +3458,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ETBL_ETRE_10 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ELV_ESKE_ETBL_ETRE_EVFR_11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_ETBL_ETRE_EVFR_11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4431,13 +3479,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_ETBL_ETRE_EVF
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_RideArea2_12 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_RideArea2_12 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4455,13 +3498,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_RideArea
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ELV_ESKE_13 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_13 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4478,13 +3516,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_13 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 600KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__NameProbe_SMBTOUCH_14 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__NameProbe_SMBTOUCH_14 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4502,13 +3535,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__NameProbe_SMBTOUCH_14 
    condition:
       ( uint16(0) == 0x5a4d and filesize < 300KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_RPC2_15 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_RPC2_15 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4527,13 +3555,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_RPC2_15 
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_16 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_16 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4555,13 +3578,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ELV_ESKE_EVFR_16 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 2000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_Toolset_Apr17__ETBL_ETRE_SMBTOUCH_17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ETBL_ETRE_SMBTOUCH_17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects EquationGroup Tool - April Leak"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -4589,13 +3607,8 @@ rule Neo23x0_apt_eqgrp_apr17_EquationGroup_Toolset_Apr17__ETBL_ETRE_SMBTOUCH_17 
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_eqgrp_apr17.yar
-
-rule EquationGroup_scanner_output {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_eqgrp_apr17_EquationGroup_scanner_output {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_eqgrp_apr17.yar
    meta:
       description = "Detects output generated by EQGRP scanner.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

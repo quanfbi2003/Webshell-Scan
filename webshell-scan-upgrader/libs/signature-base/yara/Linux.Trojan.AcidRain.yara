@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Trojan.AcidRain.yara
-
-
-rule reversinglabs_Lin_Linux_Trojan_AcidRain : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Trojan.AcidRain.yara
-rule Linux_Trojan_AcidRain : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_Linux_Trojan_AcidRain_Linux_Trojan_AcidRain : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Trojan.AcidRain.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Trojan.AcidRain.yara
 {
     meta:
 
@@ -75,8 +65,4 @@ rule reversinglabs_Linux_Trojan_AcidRain_Linux_Trojan_AcidRain : tc_detection ma
         (
             $redundant_reboot_attempts
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Trojan.AcidRain.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Trojan.AcidRain.yara

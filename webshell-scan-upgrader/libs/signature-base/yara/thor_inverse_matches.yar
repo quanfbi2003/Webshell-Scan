@@ -1,19 +1,3 @@
-/*
-	THOR Yara Inverse Matches
-	> Detect system file manipulations and common APT anomalies
-
-	This is an extract from the THOR signature database
-
-	Reference:
-	http://www.bsk-consulting.de/2014/05/27/inverse-yara-signature-matching/
-	https://www.bsk-consulting.de/2014/08/28/scan-system-files-manipulations-yara-inverse-matching-22/
-
-	Notice: These rules require an external variable called "filename"
-
-   License: Detetction Rule License 1.1 (https://github.com/SigmaHQ/sigma/blob/master/LICENSE.Detection.Rules.md)
-
-*/
-
 import "pe"
 /*
 	THOR Yara Inverse Matches
@@ -31,14 +15,10 @@ import "pe"
 
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-private rule WINDOWS_UPDATE_BDC
-=======
 
 
 //===SUCCESS===
 private rule Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 {
 meta:
    score = 0
@@ -51,13 +31,8 @@ condition:
 }
 
 /* Rules -------------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule iexplore_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_iexplore_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       author = "Florian Roth (Nextron Systems)"
       description = "Abnormal iexplore.exe - typical strings not found in file"
@@ -78,13 +53,8 @@ rule Neo23x0_thor_inverse_matches_iexplore_ANOMALY {
       and filepath contains "C:\\"
       and not filepath contains "Package_for_RollupFix"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule svchost_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_svchost_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -105,13 +75,8 @@ rule Neo23x0_thor_inverse_matches_svchost_ANOMALY {
 }
 
 /* removed 1 rule here */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule explorer_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_explorer_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -128,13 +93,8 @@ rule Neo23x0_thor_inverse_matches_explorer_ANOMALY {
       and not filepath contains "teamviewer"
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule sethc_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_sethc_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Sethc.exe has been replaced - Indicates Remote Access Hack RDP"
 		author = "F. Roth"
@@ -152,13 +112,8 @@ rule Neo23x0_thor_inverse_matches_sethc_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule Utilman_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_Utilman_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -175,13 +130,8 @@ rule Neo23x0_thor_inverse_matches_Utilman_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($win*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule osk_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_osk_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -199,13 +149,8 @@ rule Neo23x0_thor_inverse_matches_osk_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule magnify_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_magnify_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -222,13 +167,8 @@ rule Neo23x0_thor_inverse_matches_magnify_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($win*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule narrator_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_narrator_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -247,13 +187,8 @@ rule Neo23x0_thor_inverse_matches_narrator_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($win*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule notepad_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_notepad_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
 		author = "Florian Roth (Nextron Systems)"
@@ -274,13 +209,8 @@ rule Neo23x0_thor_inverse_matches_notepad_ANOMALY {
 }
 
 /* NEW ---------------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule csrss_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_csrss_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file csrss.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -299,13 +229,8 @@ rule Neo23x0_thor_inverse_matches_csrss_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule conhost_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_conhost_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file conhost.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -321,13 +246,8 @@ rule Neo23x0_thor_inverse_matches_conhost_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule wininit_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_wininit_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file wininit.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -343,13 +263,8 @@ rule Neo23x0_thor_inverse_matches_wininit_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule winlogon_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_winlogon_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file winlogon.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -368,13 +283,8 @@ rule Neo23x0_thor_inverse_matches_winlogon_ANOMALY {
 		and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 		and not filepath contains "Malwarebytes"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule SndVol_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_SndVol_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file SndVol.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -390,13 +300,8 @@ rule Neo23x0_thor_inverse_matches_SndVol_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule doskey_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_doskey_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file doskey.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -412,13 +317,8 @@ rule Neo23x0_thor_inverse_matches_doskey_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule lsass_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_lsass_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	meta:
 		description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file lsass.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -437,13 +337,8 @@ rule Neo23x0_thor_inverse_matches_lsass_ANOMALY {
       and uint16(0) == 0x5a4d
       and not 1 of ($s*) and not Neo23x0_thor_inverse_matches_WINDOWS_UPDATE_BDC
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule taskmgr_ANOMALY {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_taskmgr_ANOMALY {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Anomaly rule looking for certain strings in a system file (maybe false positive on certain systems) - file taskmgr.exe"
       author = "Florian Roth (Nextron Systems)"
@@ -468,13 +363,8 @@ rule Neo23x0_thor_inverse_matches_taskmgr_ANOMALY {
 /* removed 22 rules here */
 
 /* APT ---------------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule APT_Cloaked_PsExec
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_APT_Cloaked_PsExec
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	{
 	meta:
 		description = "Looks like a cloaked PsExec. This may be APT group activity."
@@ -493,13 +383,8 @@ rule Neo23x0_thor_inverse_matches_APT_Cloaked_PsExec
 }
 
 /* removed 6 rules here */
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule APT_Cloaked_SuperScan
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_APT_Cloaked_SuperScan
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	{
 	meta:
 		description = "Looks like a cloaked SuperScan Port Scanner. This may be APT group activity."
@@ -514,13 +399,8 @@ rule Neo23x0_thor_inverse_matches_APT_Cloaked_SuperScan
 	condition:
 		uint16(0) == 0x5a4d and $s0 and $s1 and not filename contains "superscan"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule APT_Cloaked_ScanLine
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_APT_Cloaked_ScanLine
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
 	{
 	meta:
 		description = "Looks like a cloaked ScanLine Port Scanner. This may be APT group activity."
@@ -536,13 +416,8 @@ rule Neo23x0_thor_inverse_matches_APT_Cloaked_ScanLine
 	condition:
 		uint16(0) == 0x5a4d and $s0 and $s1 and $s2 and not filename == "sl.exe"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule SUSP_Renamed_Dot1Xtray {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_SUSP_Renamed_Dot1Xtray {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects a legitimate renamed dot1ctray.exe, which is often used by PlugX for DLL side-loading"
       author = "Florian Roth (Nextron Systems)"
@@ -559,13 +434,8 @@ rule Neo23x0_thor_inverse_matches_SUSP_Renamed_Dot1Xtray {
       and not filename matches /dot1xtray.exe/i
       and not filepath matches /Recycle.Bin/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule APT_Cloaked_CERTUTIL {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_APT_Cloaked_CERTUTIL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects a renamed certutil.exe utility that is often used to decode encoded payloads"
       author = "Florian Roth (Nextron Systems)"
@@ -584,13 +454,8 @@ rule Neo23x0_thor_inverse_matches_APT_Cloaked_CERTUTIL {
       and not filename contains "Certutil"
       and not filepath contains "\\Bromium\\"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule APT_SUSP_Solarwinds_Orion_Config_Anomaly_Dec20 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_APT_SUSP_Solarwinds_Orion_Config_Anomaly_Dec20 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects a suspicious renamed Afind.exe as used by different attackers"
       author = "Florian Roth (Nextron Systems)"
@@ -608,13 +473,8 @@ rule Neo23x0_thor_inverse_matches_APT_SUSP_Solarwinds_Orion_Config_Anomaly_Dec20
       and $s1 
       and not $fp1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule PAExec_Cloaked {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_PAExec_Cloaked {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects a renamed remote access tool PAEXec (like PsExec)"
       author = "Florian Roth (Nextron Systems)"
@@ -640,13 +500,8 @@ rule Neo23x0_thor_inverse_matches_PAExec_Cloaked {
       and not filename matches /Install/
       and not filename matches /uninstall/
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule SUSP_VULN_DRV_PROCEXP152_May23 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_SUSP_VULN_DRV_PROCEXP152_May23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects vulnerable process explorer driver (original file name: PROCEXP152.SYS), often used by attackers to elevate privileges (false positives are possible in cases in which old versions of process explorer are still present on the system)"
       author = "Florian Roth"
@@ -665,13 +520,8 @@ rule Neo23x0_thor_inverse_matches_SUSP_VULN_DRV_PROCEXP152_May23 {
       and filesize < 200KB 
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule SUSP_VULN_DRV_PROCEXP152_Renamed_May23 {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_SUSP_VULN_DRV_PROCEXP152_Renamed_May23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects vulnerable process explorer driver (original file name: PROCEXP152.SYS) that has been renamed (often used by attackers to elevate privileges)"
       author = "Florian Roth"
@@ -690,13 +540,8 @@ rule Neo23x0_thor_inverse_matches_SUSP_VULN_DRV_PROCEXP152_Renamed_May23 {
       and all of them
       and not filename matches /PROCEXP152\.SYS/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule SUSP_ANOMALY_Teams_Binary_Nov23 : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_SUSP_ANOMALY_Teams_Binary_Nov23 : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects a suspicious binary with the name teams.exe, update.exe or squirrel.exe in the AppData folder of Microsoft Teams that is unsigned or signed by a different CA"
       author = "Florian Roth"
@@ -717,13 +562,8 @@ rule Neo23x0_thor_inverse_matches_SUSP_ANOMALY_Teams_Binary_Nov23 : FILE {
       and pe.number_of_signatures == 0
       and not $a1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/thor_inverse_matches.yar
-
-rule SAM_Hive_Backup {
-=======
 //===SUCCESS===
 rule Neo23x0_thor_inverse_matches_SAM_Hive_Backup {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/thor_inverse_matches.yar
    meta:
       description = "Detects a SAM hive backup file - SAM is the Security Account Manager - contains password hashes"
       author = "Florian Roth"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hawkeye.yar
-
-rule HawkEye_Keylogger_Feb18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_hawkeye_HawkEye_Keylogger_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_hawkeye.yar
    meta:
       description = "Semiautomatically generated YARA rule"
       author = "Florian Roth (Nextron Systems)"
@@ -21,13 +16,8 @@ rule Neo23x0_gen_hawkeye_HawkEye_Keylogger_Feb18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 2000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hawkeye.yar
-
-rule MAL_HawkEye_Keylogger_Gen_Dec18 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_hawkeye_MAL_HawkEye_Keylogger_Gen_Dec18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_hawkeye.yar
    meta:
       description = "Detects HawkEye Keylogger Reborn"
       author = "Florian Roth (Nextron Systems)"

@@ -1,12 +1,3 @@
-/*
-   Yara Rule Set
-   Copyright: Florian Roth
-   Date: 2017-06-25
-   Identifier: Rules that detect different malware characteristics
-   Reference: Internal Research
-   License: GPL
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,18 +8,12 @@ import "pe"
    License: GPL
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_loaders.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule ReflectiveLoader {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_gen_loaders_ReflectiveLoader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_loaders.yar
    meta:
       description = "Detects a unspecified hack tool, crack or malware using a reflective loader - no hard match - further investigation recommended"
       reference = "Internal Research"
@@ -66,13 +51,8 @@ rule Neo23x0_gen_loaders_ReflectiveLoader {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_loaders.yar
-
-rule Reflective_DLL_Loader_Aug17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_loaders.yar
    meta:
       description = "Detects Reflective DLL Loader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -96,13 +76,8 @@ rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_1 {
         )
       ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_loaders.yar
-
-rule DLL_Injector_Lynx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_loaders_DLL_Injector_Lynx {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_loaders.yar
    meta:
       description = "Detects Lynx DLL Injector"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -125,13 +100,8 @@ rule Neo23x0_gen_loaders_DLL_Injector_Lynx {
         1 of them
       ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_loaders.yar
-
-rule Reflective_DLL_Loader_Aug17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_loaders.yar
    meta:
       description = "Detects Reflective DLL Loader - suspicious - Possible FP could be program crack"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -158,13 +128,8 @@ rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_2 {
         )
       ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_loaders.yar
-
-rule Reflective_DLL_Loader_Aug17_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_loaders.yar
    meta:
       description = "Detects Reflective DLL Loader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -189,13 +154,8 @@ rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_3 {
         )
       ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_loaders.yar
-
-rule Reflective_DLL_Loader_Aug17_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_loaders_Reflective_DLL_Loader_Aug17_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_loaders.yar
    meta:
       description = "Detects Reflective DLL Loader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

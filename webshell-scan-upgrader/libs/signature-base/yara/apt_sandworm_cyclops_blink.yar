@@ -28,9 +28,9 @@ rule Neo23x0_apt_sandworm_cyclops_blink_APT_Sandworm_CyclopsBlink_notable_string
       $sys_recon2 = "uptime: %lu mem_size: %lu mem_free: %lu"
       $sys_recon3 = "disk_size: %lu disk_free: %lu"
       $sys_recon4 = "hw: %02x:%02x:%02x:%02x:%02x:%02x"
-      // Format string for file_path used to test access to device filesystem
+      // Format string for filepath used to test access to device filesystem
       $testpath = "%s/214688dsf46"
-      // Format string for implant configuration file_path
+      // Format string for implant configuration filepath
       $confpath = "%s/rootfs_cfg"
       // Default file download path
       $downpath = "/var/tmp/a.tmp"
@@ -73,9 +73,9 @@ rule Neo23x0_apt_sandworm_cyclops_blink_APT_Sandworm_CyclopsBlink_modified_insta
       $ = "/pending/sysa_code_dir/test_%d_%d_%d_%d_%d_%d"
       // Hard-coded key used to initialise HMAC calculation
       $ = "etaonrishdlcupfm"
-      // file_path used to store the patched firmware image
+      // Filepath used to store the patched firmware image
       $ = "/pending/WGUpgrade-dl.new"
-      // file_path of legitimate install_upgrade executable
+      // Filepath of legitimate install_upgrade executable
       $ = "/pending/bin/install_upgraded"
       // Loop device IOCTL LOOP_SET_FD
       $ = {38 80 4C 00}
@@ -187,7 +187,7 @@ rule Neo23x0_apt_sandworm_cyclops_blink_APT_Sandworm_CyclopsBlink_handle_mod_0x5
    strings:
       // Check for module command ID equals 0x1, 0x2 or 0x3
       $cmd_check = {88 1F [2] 54 00 06 3E 2F 80 00 (01|02|03) }
-      // Legitimate WatchGuard file_paths relating to device configuration
+      // Legitimate WatchGuard filepaths relating to device configuration
       $path1 = "/etc/wg/configd-hash.xml"
       $path2 = "/etc/wg/config.xml"
       // Mount arguments used to remount root filesystem as RW or RO

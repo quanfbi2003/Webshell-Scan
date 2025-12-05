@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-05-30
-   Identifier: TA-18-149A
-   Reference: https://www.us-cert.gov/ncas/alerts/TA18-149A
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://www.us-cert.gov/ncas/alerts/TA18-149A
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta18_149A.yar
-rule APT_TA18_149A_Joanap_Sample1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_ta18_149A_APT_TA18_149A_Joanap_Sample1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta18_149A.yar
    meta:
       description = "Detects malware from TA18-149A report by US-CERT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -48,13 +34,8 @@ rule Neo23x0_apt_ta18_149A_APT_TA18_149A_Joanap_Sample1 {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta18_149A.yar
-
-rule APT_TA18_149A_Joanap_Sample2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta18_149A_APT_TA18_149A_Joanap_Sample2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta18_149A.yar
    meta:
       description = "Detects malware from TA18-149A report by US-CERT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -74,13 +55,8 @@ rule Neo23x0_apt_ta18_149A_APT_TA18_149A_Joanap_Sample2 {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ta18_149A.yar
-
-rule APT_TA18_149A_Joanap_Sample3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ta18_149A_APT_TA18_149A_Joanap_Sample3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ta18_149A.yar
    meta:
       description = "Detects malware from TA18-149A report by US-CERT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

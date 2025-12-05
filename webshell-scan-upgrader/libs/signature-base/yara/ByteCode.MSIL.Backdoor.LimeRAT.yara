@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/ByteCode.MSIL.Backdoor.LimeRAT.yara
-rule ByteCode_MSIL_Backdoor_LimeRAT : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Backdoor_LimeRAT_ByteCode_MSIL_Backdoor_LimeRAT : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.LimeRAT.yara
 {
     meta:
 

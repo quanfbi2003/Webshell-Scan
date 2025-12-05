@@ -1,19 +1,5 @@
-
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-11-11
-   Identifier: SunOrcal
-   Reference: https://researchcenter.paloaltonetworks.com/2017/11/unit42-new-malware-with-ties-to-sunorcal-discovered/
-*/
-
 import "pe"
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_reaver_sunorcal.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Reaver3_Malware_Nov17_1 {
-=======
 /*
    Yara Rule Set
    Author: Florian Roth
@@ -28,7 +14,6 @@ rule Reaver3_Malware_Nov17_1 {
 
 //===SUCCESS===
 rule Neo23x0_apt_reaver_sunorcal_Reaver3_Malware_Nov17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_reaver_sunorcal.yar
    meta:
       description = "Detects Reaver malware mentioned in PaloAltoNetworks report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +27,8 @@ rule Neo23x0_apt_reaver_sunorcal_Reaver3_Malware_Nov17_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 100KB and pe.imphash() == "e722dd50a0e2bc0cab8ca35fc4bf6d99" and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_reaver_sunorcal.yar
-
-rule Reaver3_Malware_Nov17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_reaver_sunorcal_Reaver3_Malware_Nov17_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_reaver_sunorcal.yar
    meta:
       description = "Detects Reaver malware mentioned in PaloAltoNetworks report"
       author = "Florian Roth (Nextron Systems)"
@@ -73,13 +53,8 @@ rule Neo23x0_apt_reaver_sunorcal_Reaver3_Malware_Nov17_2 {
          3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_reaver_sunorcal.yar
-
-rule Reaver3_Malware_Nov17_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_reaver_sunorcal_Reaver3_Malware_Nov17_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_reaver_sunorcal.yar
    meta:
       description = "Detects Reaver malware mentioned in PaloAltoNetworks report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -105,13 +80,8 @@ rule Neo23x0_apt_reaver_sunorcal_Reaver3_Malware_Nov17_3 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_reaver_sunorcal.yar
-
-rule SunOrcal_Malware_Nov17_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_reaver_sunorcal_SunOrcal_Malware_Nov17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_reaver_sunorcal.yar
    meta:
       description = "Detects Reaver malware mentioned in PaloAltoNetworks report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

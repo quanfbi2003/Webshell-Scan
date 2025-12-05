@@ -1,12 +1,7 @@
 import "pe"
 import "math"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_pipe_backdoor  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_pipe_backdoor  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 	meta:
 		copyright = "Kaspersky Lab"
 		description = "Rule to detect ProjectSauron pipe backdoors"
@@ -24,13 +19,8 @@ rule Neo23x0_apt_project_sauron_apt_ProjectSauron_pipe_backdoor  {
 		and (all of ($a*))
 		and filesize < 100000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_encrypted_LSA  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_encrypted_LSA  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 meta:
 	copyright = "Kaspersky Lab"
 	description = "Rule to detect ProjectSauron encrypted LSA samples"
@@ -55,13 +45,8 @@ condition:
 	))
 	and filesize < 1000000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_encrypted_SSPI  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_encrypted_SSPI  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 meta:
 	copyright = "Kaspersky Lab"
 	description = "Rule to detect encrypted ProjectSauron SSPI samples"
@@ -76,13 +61,8 @@ condition:
 	(pe.machine == pe.MACHINE_AMD64 or pe.machine == pe.MACHINE_IA64) and
 	math.entropy(0x400, filesize) >= 7.5
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_MyTrampoline  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_MyTrampoline  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 meta:
 	copyright = "Kaspersky Lab"
 	description = "Rule to detect ProjectSauron MyTrampoline module"
@@ -101,13 +81,8 @@ condition:
 	filesize < 5000000 and
 	(all of ($a*) or any of ($b*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_encrypted_container  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_encrypted_container  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 meta:
 	copyright = "Kaspersky Lab"
 	description = "Rule to detect ProjectSauron samples encrypted container"
@@ -126,13 +101,8 @@ condition:
 	math.entropy(0x400, filesize) >= 6.5 and
 	(filesize > 0x400) and filesize < 10000000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_encryption  {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_encryption  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 meta:
 	copyright = "Kaspersky Lab"
 	description = "Rule to detect ProjectSauron string encryption"
@@ -151,13 +121,8 @@ condition:
 	filesize < 5000000 and
 	any of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron.yara
-
-rule apt_ProjectSauron_generic_pipe_backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_apt_ProjectSauron_generic_pipe_backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron.yara
 meta:
 	copyright = "Kaspersky Lab"
 	description = "Rule to detect ProjectSauron generic pipe backdoors"

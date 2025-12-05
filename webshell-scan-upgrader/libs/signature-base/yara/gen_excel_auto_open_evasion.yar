@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_excel_auto_open_evasion.yar
-rule gen_excel_auto_open_evasion
-=======
 //===SUCCESS===
 rule Neo23x0_gen_excel_auto_open_evasion_gen_excel_auto_open_evasion
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_excel_auto_open_evasion.yar
 {
     meta:
         description = "Detects an obfuscated Auto_Open cell names in Excel files"

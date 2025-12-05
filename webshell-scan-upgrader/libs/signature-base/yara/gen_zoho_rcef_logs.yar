@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_zoho_rcef_logs.yar
-
-rule EXPL_Zoho_RCE_Fix_Lines_Dec21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_zoho_rcef_logs_EXPL_Zoho_RCE_Fix_Lines_Dec21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_zoho_rcef_logs.yar
    meta:
       description = "Detects lines in log lines of Zoho products that indicate RCE fixes (silent removal of evidence)"
       author = "Florian Roth (Nextron Systems)"

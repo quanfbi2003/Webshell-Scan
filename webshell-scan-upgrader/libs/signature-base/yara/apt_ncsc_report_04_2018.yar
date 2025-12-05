@@ -6,13 +6,9 @@
    Reference: https://www.ncsc.gov.uk/alerts/hostile-state-actors-compromising-uk-organisations-focus-engineering-and-industrial-control
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-rule Bytes_used_in_AES_key_generation {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_Bytes_used_in_AES_key_generation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects Backdoor.goodor"
@@ -26,13 +22,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_Bytes_used_in_AES_key_generation {
    condition:
       uint16(0) == 0x5a4d and filesize < 5000KB and all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule Partial_Implant_ID {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_Partial_Implant_ID {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects implant from NCSC report"
@@ -46,13 +37,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_Partial_Implant_ID {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule Sleep_Timer_Choice {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_Sleep_Timer_Choice {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects malware from NCSC report"
@@ -66,13 +52,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_Sleep_Timer_Choice {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule User_Function_String {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_User_Function_String {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects user function string from NCSC report"
@@ -90,13 +71,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_User_Function_String {
    condition:
       /* $b1 and */ 4 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule generic_shellcode_downloader_specific {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_generic_shellcode_downloader_specific {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
   meta:
     author = "NCSC"
     description = "Detects Doorshell from NCSC report"
@@ -113,13 +89,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_generic_shellcode_downloader_specific {
   condition:
     (uint16(0) == 0x5A4D and uint16(uint32(0x3C)) == 0x4550) and ($a or $b) and @push1 < @push2 and @push2 < @push3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule Batch_Script_To_Run_PsExec {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_Batch_Script_To_Run_PsExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects malicious batch file from NCSC report"
@@ -136,13 +107,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_Batch_Script_To_Run_PsExec {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule Batch_Powershell_Invoke_Inveigh {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_Batch_Powershell_Invoke_Inveigh {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects malicious batch file from NCSC report"
@@ -158,13 +124,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_Batch_Powershell_Invoke_Inveigh {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule lnk_detect {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_lnk_detect {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects malicious LNK file from NCSC report"
@@ -188,13 +149,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_lnk_detect {
       uint32be(4) == 0x01140200 and
       (($lnk_magic at 0) and $lnk_target) and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule RDP_Brute_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_RDP_Brute_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects RDP brute forcer from NCSC report"
@@ -218,13 +174,8 @@ rule Neo23x0_apt_ncsc_report_04_2018_RDP_Brute_Strings {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ncsc_report_04_2018.yar
-
-rule WEBSHELL_Z_WebShell_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ncsc_report_04_2018_WEBSHELL_Z_WebShell_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ncsc_report_04_2018.yar
    meta:
       author = "NCSC"
       description = "Detects Z Webshell from NCSC report"

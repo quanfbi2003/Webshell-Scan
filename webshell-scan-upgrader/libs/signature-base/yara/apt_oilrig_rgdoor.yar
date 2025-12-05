@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-01-27
-   Identifier: RGDoor
-   Reference: https://researchcenter.paloaltonetworks.com/2018/01/unit42-oilrig-uses-rgdoor-iis-backdoor-targets-middle-east/
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2018/01/unit42-oilrig-uses-rgdoor-iis-backdoor-targets-middle-east/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_oilrig_rgdoor.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule OilRig_RGDoor_Gen1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_oilrig_rgdoor_OilRig_RGDoor_Gen1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_oilrig_rgdoor.yar
    meta:
       description = "Detects RGDoor backdoor used by OilRig group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

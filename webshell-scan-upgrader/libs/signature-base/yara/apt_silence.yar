@@ -10,13 +10,9 @@ import "pe"
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_silence.yar
-rule Silence_malware_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_silence_Silence_malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_silence.yar
    meta:
       description = "Detects malware sample mentioned in the Silence report on Securelist"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +38,8 @@ rule Neo23x0_apt_silence_Silence_malware_1 {
         3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_silence.yar
-
-rule Silence_malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_silence_Silence_malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_silence.yar
    meta:
       description = "Detects malware sample mentioned in the Silence report on Securelist"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

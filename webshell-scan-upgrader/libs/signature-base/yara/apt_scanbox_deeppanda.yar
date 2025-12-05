@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_scanbox_deeppanda.yar
-
-rule ScanBox_Malware_Generic {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_scanbox_deeppanda_ScanBox_Malware_Generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_scanbox_deeppanda.yar
 	meta:
 		description = "Scanbox Chinese Deep Panda APT Malware http://goo.gl/MUUfjv and http://goo.gl/WXUQcP"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

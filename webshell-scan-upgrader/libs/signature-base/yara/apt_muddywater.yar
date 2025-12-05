@@ -4,20 +4,12 @@
    Date: 2018-02-26
    Identifier: MuddyWater samples
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_muddywater.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_muddywater.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_muddywater.yar
-rule MuddyWater_Mal_Doc_Feb18_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_muddywater_MuddyWater_Mal_Doc_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_muddywater.yar
    meta:
       description = "Detects malicious document used by MuddyWater"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -34,13 +26,8 @@ rule Neo23x0_apt_muddywater_MuddyWater_Mal_Doc_Feb18_1 {
    condition:
       uint16(0) == 0xcfd0 and filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_muddywater.yar
-
-rule MuddyWater_Mal_Doc_Feb18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_muddywater_MuddyWater_Mal_Doc_Feb18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_muddywater.yar
    meta:
       description = "Detects malicious document used by MuddyWater"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -59,13 +46,8 @@ rule Neo23x0_apt_muddywater_MuddyWater_Mal_Doc_Feb18_2 {
    condition:
       uint16(0) == 0xcfd0 and filesize < 6000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_muddywater.yar
-
-rule MAL_MuddyWater_DroppedTask_Jun18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_muddywater_MAL_MuddyWater_DroppedTask_Jun18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_muddywater.yar
    meta:
       description = "Detects a dropped Windows task as used by MudyWater in June 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,12 +1,8 @@
 /* Equation APT ------------------------------------------------------------ */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-rule apt_equation_exploitlib_mutexes {
-=======
 
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_apt_equation_exploitlib_mutexes {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
     meta:
         copyright = "Kaspersky Lab"
         description = "Rule to detect Equation group's Exploitation library http://goo.gl/ivt8EW"
@@ -42,13 +38,8 @@ rule apt_equation_doublefantasy_genericresource {
         (($mz at 0) and all of ($a*)) and filesize < 500000
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule apt_equation_equationlaser_runtimeclasses {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_apt_equation_equationlaser_runtimeclasses {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 	    copyright = "Kaspersky Lab"
 	    description = "Rule to detect the EquationLaser malware"
@@ -66,13 +57,8 @@ rule Neo23x0_spy_equation_fiveeyes_apt_equation_equationlaser_runtimeclasses {
 	condition:
 	    any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule apt_equation_cryptotable {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_apt_equation_cryptotable {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 	    copyright = "Kaspersky Lab"
 	    description = "Rule to detect the crypto library used in Equation group malware"
@@ -87,13 +73,8 @@ rule Neo23x0_spy_equation_fiveeyes_apt_equation_cryptotable {
 }
 
 /* Equation Group - Kaspersky ---------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_TripleFantasy_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_TripleFantasy_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - TripleFantasy http://goo.gl/ivt8EW"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -126,13 +107,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_TripleFantasy_1 {
 			( all of ($s*) and 1 of ($x*) )
 		)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_DoubleFantasy_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_DoubleFantasy_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - DoubleFantasy"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -162,13 +138,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_DoubleFantasy_1 {
 			( all of ($s*) and 6 of ($x*) )
 		)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_GROK_Keylogger {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_GROK_Keylogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - GROK keylogger"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -201,13 +172,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_GROK_Keylogger {
 			( 6 of ($x*) and all of ($z*) )
 		)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_GreyFishInstaller {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_GreyFishInstaller {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - Grey Fish"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -223,13 +189,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_GreyFishInstaller {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_EquationDrugInstaller {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_EquationDrugInstaller {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - EquationDrug installer LUTEUSOBSTOS"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -252,13 +213,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_EquationDrugInstaller {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500000 and all of ($s*) and 5 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_EquationLaserInstaller {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_EquationLaserInstaller {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
    meta:
       description = "Equation Group Malware - EquationLaser Installer"
       author = "Florian Roth (Nextron Systems)"
@@ -280,13 +236,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_EquationLaserInstaller {
    condition:
       ( uint16(0) == 0x5a4d ) and filesize < 250000 and 6 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_FannyWorm {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_FannyWorm {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
    meta:
       description = "Equation Group Malware - Fanny Worm"
       author = "Florian Roth (Nextron Systems)"
@@ -326,13 +277,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_FannyWorm {
          ( 14 of ($x*) )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_HDD_reprogramming_module {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_HDD_reprogramming_module {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - HDD reprogramming module"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -351,13 +297,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_HDD_reprogramming_module {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300000 and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_EOP_Package {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_EOP_Package {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - EoP package and malware launcher"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -377,13 +318,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_EOP_Package {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100000 and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_TripleFantasy_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_TripleFantasy_Loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - TripleFantasy Loader"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -408,13 +344,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_TripleFantasy_Loader {
 }
 
 /* Rule generated from the mentioned keywords */
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule Equation_Kaspersky_SuspiciousString {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_SuspiciousString {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "Equation Group Malware - suspicious string found in sample"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -435,13 +366,8 @@ rule Neo23x0_spy_equation_fiveeyes_Equation_Kaspersky_SuspiciousString {
 }
 
 /* EquationDrug Update 11.03.2015 - http://securelist.com/blog/research/69203/inside-the-equationdrug-espionage-platform/ */
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_NetworkSniffer1 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
    meta:
       description = "EquationDrug - Backdoor driven by network sniffer - mstcp32.sys, fat32.sys"
       author = "Florian Roth (Nextron Systems)"
@@ -462,13 +388,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer1 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_CompatLayer_UnilayDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_CompatLayer_UnilayDLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Unilay.DLL"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -482,23 +403,6 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_CompatLayer_UnilayDLL {
 		uint16(0) == 0x5a4d and $s0
 }
 
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-rule EquationDrug_HDDSSD_Op {
-	meta:
-		description = "EquationDrug - HDD/SSD firmware operation - nls_933w.dll"
-		author = "Florian Roth (Nextron Systems) @4nc4p"
-		reference = "http://securelist.com/blog/research/69203/inside-the-equationdrug-espionage-platform/"
-		date = "2015/03/11"
-		hash = "ff2b50f371eb26f22eb8a2118e9ab0e015081500"
-		id = "e2698f10-49e8-55da-bddc-e5c887f11bc7"
-	strings:
-		$s0 = "nls_933w.dll" fullword ascii
-	condition:
-		all of them
-}
-
-rule EquationDrug_NetworkSniffer2 {
-=======
 // shitty rule
 // rule EquationDrug_HDDSSD_Op : FILE {
 //    meta:
@@ -515,7 +419,6 @@ rule EquationDrug_NetworkSniffer2 {
 // }
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Network Sniffer - tdip.sys"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -535,13 +438,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer2 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_NetworkSniffer3 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Network Sniffer - tdip.sys"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -557,13 +455,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer3 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_VolRec_Driver {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_VolRec_Driver {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Collector plugin for Volrec - msrstd.sys"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -578,13 +471,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_VolRec_Driver {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_KernelRootkit {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_KernelRootkit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
    meta:
       description = "EquationDrug - Kernel mode stage 0 and rootkit (Windows 2000 and above) - msndsrv.sys"
       author = "Florian Roth (Nextron Systems)"
@@ -605,13 +493,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_KernelRootkit {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_Keylogger {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_Keylogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Key/clipboard logger driver - msrtvd.sys"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -627,13 +510,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_Keylogger {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_NetworkSniffer4 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
    meta:
       description = "EquationDrug - Network-sniffer/patcher - atmdkdrv.sys"
       author = "Florian Roth (Nextron Systems)"
@@ -658,13 +536,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer4 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_PlatformOrchestrator {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_PlatformOrchestrator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Platform orchestrator - mscfg32.dll, svchost32.dll"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -682,13 +555,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_PlatformOrchestrator {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_NetworkSniffer5 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
    meta:
       description = "EquationDrug - Network-sniffer/patcher - atmdkdrv.sys"
       author = "Florian Roth (Nextron Systems)"
@@ -707,13 +575,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_NetworkSniffer5 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule EquationDrug_FileSystem_Filter {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_EquationDrug_FileSystem_Filter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
 	meta:
 		description = "EquationDrug - Filesystem filter driver - volrec.sys, scsi2mgr.sys"
 		author = "Florian Roth (Nextron Systems) @4nc4p"
@@ -728,13 +591,8 @@ rule Neo23x0_spy_equation_fiveeyes_EquationDrug_FileSystem_Filter {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_equation_fiveeyes.yar
-
-rule apt_equation_keyword {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_equation_fiveeyes_apt_equation_keyword {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_equation_fiveeyes.yar
     meta:
         description = "Rule to detect Equation group's keyword in executable file"
         last_modified = "2015-09-26"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rat_parallax.yar
-
-rule MAL_crime_win32_rat_parallax_shell_bin {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_rat_parallax_MAL_crime_win32_rat_parallax_shell_bin {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rat_parallax.yar
    meta:
       description = "Detects Parallax injected code"
       author = "@VK_Intel"

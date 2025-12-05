@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_cve_2020_1938.yar
-
-rule VUL_Tomcat_Catalina_CVE_2020_1938 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_cve_2020_1938_VUL_Tomcat_Catalina_CVE_2020_1938 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vul_cve_2020_1938.yar
    meta:
       description = "Detects a possibly active and vulnerable Tomcat configuration that includes an accessible and unprotected AJP connector (you can ignore backup files or files that are not actively used)"
       author = "Florian Roth (Nextron Systems)"

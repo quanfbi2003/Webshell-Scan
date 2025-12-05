@@ -4,20 +4,12 @@
    Date: 2017-02-09
    Identifier: MSF Payloads
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-rule Msfpayloads_msf {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.sh"
       author = "Florian Roth (Nextron Systems)"
@@ -31,13 +23,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf {
    condition:
       filesize < 5MB and $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.asp"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -53,13 +40,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_psh {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_psh {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf-psh.vba"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -75,13 +57,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_psh {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_exe {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_exe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf-exe.vba"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -100,13 +77,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_exe {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.psh"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -130,13 +102,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_3 {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.aspx"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -154,13 +121,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_4 {
    condition:
       4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_exe_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_exe_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf-exe.aspx"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -177,13 +139,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_exe_2 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.msi"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -199,13 +156,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_5 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.vbs"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -225,13 +177,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_6 {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.vba"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -247,13 +194,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_7 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -273,13 +215,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_8 {
    condition:
       6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_cmd {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_cmd {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf-cmd.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -293,13 +230,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_cmd {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.war - contents"
       author = "Florian Roth (Nextron Systems)"
@@ -320,13 +252,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_9 {
          uint32(0) == 0x61356434 and $x1 at 0
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -342,13 +269,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_10 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_svc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_svc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf-svc.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -363,13 +285,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_svc {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 50KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_11 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf.hta"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -385,13 +302,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_11 {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule Msfpayloads_msf_ref {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_ref {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Metasploit Payloads - file msf-ref.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -411,13 +323,8 @@ rule Neo23x0_gen_metasploit_payloads_Msfpayloads_msf_ref {
    condition:
       5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule MAL_Metasploit_Framework_UA {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_MAL_Metasploit_Framework_UA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Detects User Agent used in Metasploit Framework"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -432,13 +339,8 @@ rule Neo23x0_gen_metasploit_payloads_MAL_Metasploit_Framework_UA {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_metasploit_payloads.yar
-
-rule HKTL_Meterpreter_inMemory {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_metasploit_payloads_HKTL_Meterpreter_inMemory {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_metasploit_payloads.yar
    meta:
       description = "Detects Meterpreter in-memory"
       author = "netbiosX, Florian Roth"

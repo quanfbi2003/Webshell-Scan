@@ -5,20 +5,12 @@
 	Identifier: FourElementSword
 	Reference: https://www.arbornetworks.com/blog/asert/four-element-sword-engagement/
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-rule FourElementSword_Config_File {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_Config_File {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +28,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_Config_File {
 	condition:
 		4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_T9000 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_T9000 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -62,13 +49,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_T9000 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 500KB and 1 of ($x*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_32DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_32DLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +68,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_32DLL {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 660KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_Keyainst_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_Keyainst_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -110,13 +87,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_Keyainst_EXE {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 48KB and $x1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_ElevateDLL_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_ElevateDLL_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -132,13 +104,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_ElevateDLL_2 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 25KB and $s1 ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_fslapi_dll_gui {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_fslapi_dll_gui {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -154,13 +121,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_fslapi_dll_gui {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 12KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_PowerShell_Start {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_PowerShell_Start {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -175,13 +137,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_PowerShell_Start {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_ResN32DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_ResN32DLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -199,13 +156,8 @@ rule Neo23x0_apt_four_element_sword_FourElementSword_ResN32DLL {
 }
 
 /* Super Rules ------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_four_element_sword.yar
-
-rule FourElementSword_ElevateDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_four_element_sword_FourElementSword_ElevateDLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_four_element_sword.yar
 	meta:
 		description = "Detects FourElementSword Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

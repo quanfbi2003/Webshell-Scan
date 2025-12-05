@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_34BE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_34BE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -33,14 +28,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_0E85 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_0E85 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -70,14 +59,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Wisecleanercom_Wiseunlosys_Wiseunlo_786F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Wisecleanercom_Wiseunlosys_Wiseunlo_786F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WiseUnlo.sys"
 		author = "Florian Roth"
@@ -102,14 +85,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Wisecleaner
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /WiseUnlo/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_A397 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_A397 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -144,14 +121,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_D7E0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_D7E0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -170,14 +141,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_2298 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_2298 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -204,14 +169,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asrockincorporation_Asrdrvsys_Asrockiodriver_4D03 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Asrockincorporation_Asrdrvsys_Asrockiodriver_4D03 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AsrDrv.sys"
 		author = "Florian Roth"
@@ -242,14 +201,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Asrockincorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AsrDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_0ABC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_0ABC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GtcKmdfBs.sys"
 		author = "Florian Roth"
@@ -270,14 +223,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GtcKmdfBs/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_D7B7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_D7B7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -301,14 +248,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Netfiltersys_Windowsrwinddkdriver_9DBC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Netfiltersys_Windowsrwinddkdriver_9DBC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - netfilter2.sys"
 		author = "Florian Roth"
@@ -335,14 +276,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /netfilter2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Lgdatacatchersys_Gameacc_07FB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Lgdatacatchersys_Gameacc_07FB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - LgDataCatcher.sys"
 		author = "Florian Roth"
@@ -365,14 +300,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Windowsrwinddkpro
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /LgDataCatcher/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxguest_Virtualboxguestadditions_D53F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxguest_Virtualboxguestadditions_D53F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - vboxguest.sys"
 		author = "Florian Roth"
@@ -393,14 +322,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxg
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /vboxguest/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Eldoscorporation_Elrawdsksys_Rawdisk_4744 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Eldoscorporation_Elrawdsksys_Rawdisk_4744 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elrawdsk.sys"
 		author = "Florian Roth"
@@ -422,14 +345,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Eldoscorpora
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elrawdsk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_81AA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_81AA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -450,14 +367,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_F6CD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_F6CD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDRyzenMasterDriver.sys"
 		author = "Florian Roth"
@@ -478,14 +389,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDRyzenMasterDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_2594 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_2594 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -506,14 +411,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_8473 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_8473 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nicm.sys"
 		author = "Florian Roth"
@@ -537,14 +436,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Highresolutionenterpriseswwwhighrezcouk_Inpoutsys_Inpoutdriverversion_CFAB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Highresolutionenterpriseswwwhighrezcouk_Inpoutsys_Inpoutdriverversion_CFAB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - inpout32.sys"
 		author = "Florian Roth"
@@ -569,14 +462,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Highresolutionenterpriseswww
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /inpout32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_4CD8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_4CD8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -598,14 +485,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxguest_Virtualboxguestadditions_9833 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxguest_Virtualboxguestadditions_9833 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - vboxguest.sys"
 		author = "Florian Roth"
@@ -626,14 +507,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxg
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /vboxguest/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Rweverything_Rwdrvsys_Rwdrvdriver_45BA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Rweverything_Rwdrvsys_Rwdrvdriver_45BA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - RwDrv.sys"
 		author = "Florian Roth"
@@ -661,14 +536,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Rweverythi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /RwDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Vmdrvsys_Windowsrwinddkdriver_5C0B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Vmdrvsys_Windowsrwinddkdriver_5C0B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - vmdrv.sys"
 		author = "Florian Roth"
@@ -691,14 +560,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Windowsrwinddkprovid
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /vmdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_A130 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_A130 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDRyzenMasterDriver.sys"
 		author = "Florian Roth"
@@ -720,14 +583,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDRyzenMasterDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfoisys_Hwinfoiakerneldriver_33C6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Realixtm_Hwinfoisys_Hwinfoiakerneldriver_33C6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO64I.SYS"
 		author = "Florian Roth"
@@ -748,14 +605,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Realixtm_Hwinf
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO64I/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys_Usbcpowerdeliveryfirmwareupdateutilitydriver_6945 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rul_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys_Usbcpowerdeliveryfirmwareupdateutilitydriver_6945 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PDFWKRNL.sys"
 		author = "Florian Roth"
@@ -776,14 +627,8 @@ rule Neo23x0_yara_rul_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PDFWKRNL/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Fintekcorp_Fintekcorpfintekpcieuart_32BD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Fintekcorp_Fintekcorpfintekpcieuart_32BD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - FPCIE2COM.sys"
 		author = "Florian Roth"
@@ -805,14 +650,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Fintekcorp_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /FPCIE2COM/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_42B3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_42B3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -834,14 +673,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_5BD4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_5BD4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -862,14 +695,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxusbsys_Virtualboxusbdriver_C509 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxusbsys_Virtualboxusbdriver_C509 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxUSB.Sys"
 		author = "Florian Roth"
@@ -890,14 +717,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Innotekgmbh_Vbo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxUSB/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Netfiltersys_F171 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netfiltersys_F171 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - netfilter2.sys"
 		author = "Florian Roth"
@@ -918,14 +739,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netf
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /netfilter2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_DD4F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_DD4F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NICM.sys"
 		author = "Florian Roth"
@@ -949,14 +764,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NICM/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_7627 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_7627 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nicm.sys"
 		author = "Florian Roth"
@@ -977,14 +786,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_16AE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_16AE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -1006,14 +809,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Computerz_Computerzsys_Computerzsystemdriver_61F3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Computerz_Computerzsys_Computerzsystemdriver_61F3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -1034,14 +831,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Computerz_Comput
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_88E2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_88E2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -1072,14 +863,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Cpuzsys_Windowsrwinddkdriver_1F4D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Cpuzsys_Windowsrwinddkdriver_1F4D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -1111,14 +896,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Windowsrwinddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Mitactechnologycorporation_Vdbsvsys_Mitacsystemserviceprovider_91AF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Mitactechnologycorporation_Vdbsvsys_Mitacsystemserviceprovider_91AF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VdBSv64.sys"
 		author = "Florian Roth"
@@ -1139,14 +918,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Mitactechnologycorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VdBSv64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_00B3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_00B3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nicm.sys"
 		author = "Florian Roth"
@@ -1170,14 +943,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_B50F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_B50F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -1201,14 +968,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Openlibsysorg_Winringsys_Winring_11BD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Openlibsysorg_Winringsys_Winring_11BD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WinRing0.sys, WinRing0x64"
 		author = "Florian Roth"
@@ -1230,14 +991,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Openlibsys
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /WinRing0/i and not filename matches /WinRing0x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowswinowsdriverkitsprovider_Hwrwdrvsys_Hardwarereadwritedriver_21CC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_PUA_VULN_Renamed_Driver_Windowswinowsdriverkitsprovider_Hwrwdrvsys_Hardwarereadwritedriver_21CC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HwRwDrv.sys"
 		author = "Florian Roth"
@@ -1258,14 +1013,8 @@ rule Neo23x0_yara_rules_vuln_PUA_VULN_Renamed_Driver_Windowswinowsdriverkitsprov
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HwRwDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_AD8F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_AD8F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -1286,14 +1035,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftwar
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_3124 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_3124 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -1314,14 +1057,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_FF55 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_FF55 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -1342,14 +1079,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_A855 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_A855 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -1371,14 +1102,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_DB71 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_DB71 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -1399,14 +1124,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Iobit_Monitorsys_Advancedsystemcare_E4A7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Iobit_Monitorsys_Advancedsystemcare_E4A7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Monitor_win10_x64.sys"
 		author = "Florian Roth"
@@ -1427,14 +1146,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Iobit_Monit
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Monitor_win10_x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Iobit_Iobitunlockersys_Iobitunlocker_2B33 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Iobit_Iobitunlockersys_Iobitunlocker_2B33 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iobitunlocker.sys"
 		author = "Florian Roth"
@@ -1467,14 +1180,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Iobit_Iobitu
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iobitunlocker/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Phoenixtechnologiesltd_Phlashnt_Winphlash_65DB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Phoenixtechnologiesltd_Phlashnt_Winphlash_65DB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PhlashNT.sys"
 		author = "Florian Roth"
@@ -1495,14 +1202,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Phoenixtechnol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PhlashNT/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Arthurliberman_Alsysiosys_Alsysio_7196 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Arthurliberman_Alsysiosys_Alsysio_7196 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ALSysIO64.sys"
 		author = "Florian Roth"
@@ -1523,14 +1224,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Arthurlibe
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ALSysIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Aoddriversys_Amdoverdriveservicedriver_F4DC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Aoddriversys_Amdoverdriveservicedriver_F4DC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AODDriver.sys"
 		author = "Florian Roth"
@@ -1552,14 +1247,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Ao
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AODDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkprovider_8FE4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkprovider_8FE4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtport.sys"
 		author = "Florian Roth"
@@ -1581,14 +1270,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Windowsrddkprovide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtport/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Anticheatexpertcom_Acebase_Anticheatexpert_7326 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Anticheatexpertcom_Acebase_Anticheatexpert_7326 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ACE-BASE.sys"
 		author = "Florian Roth"
@@ -1608,14 +1291,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Anticheatexpert
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1900KB and all of them and not filename matches /ACE-BASE/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_133E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_133E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -1636,14 +1313,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_1072 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_1072 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -1665,14 +1336,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_8A07 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_8A07 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -1703,14 +1368,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_0D37 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_0D37 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -1749,14 +1408,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Proxydrvsys_Nn_C0E7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Proxydrvsys_Nn_C0E7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ProxyDrv.sys"
 		author = "Florian Roth"
@@ -1777,14 +1430,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Prox
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /ProxyDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_5381 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_5381 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -1806,14 +1453,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Netfiltersys_26D6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netfiltersys_26D6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - netfilter2.sys"
 		author = "Florian Roth"
@@ -1836,14 +1477,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netf
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /netfilter2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustek_Driversys_Ectool_927C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renam_PUA_VULN_Renamed_Driver_Asustek_Driversys_Ectool_927C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - driver7-x86-withoutdbg.sys"
 		author = "Florian Roth"
@@ -1867,14 +1502,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renam_PUA_VULN_Renamed_Driver_Asuste
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /driver7-x86-withoutdbg/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Trendmicroearlylaunchantimalwaredriver_DD62 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Trendmicroearlylaunchantimalwaredriver_DD62 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Tmel.sys"
 		author = "Florian Roth"
@@ -1895,14 +1524,8 @@ rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Tr
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Tmel/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorp_Stdcdrvwssys_Selftestdatacollectordriverforwindowsx_70AF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Intelcorp_Stdcdrvwssys_Selftestdatacollectordriverforwindowsx_70AF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - stdcdrvws64.sys"
 		author = "Florian Roth"
@@ -1923,14 +1546,8 @@ rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Intelcorp_Stdcdrvwssys_S
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /stdcdrvws64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realteksemiconductorcorp_Rtportsys_Realtekportio_FF32 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Realteksemiconductorcorp_Rtportsys_Realtekportio_FF32 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtport.sys"
 		author = "Florian Roth"
@@ -1951,14 +1568,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Realteksemiconduct
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtport/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_A6F7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_A6F7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -1979,14 +1590,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_834A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_834A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -2007,14 +1612,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Eiosys_Asusvgakernelmodedriver_F4C7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Asustekcomputerinc_Eiosys_Asusvgakernelmodedriver_F4C7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - EIO.sys"
 		author = "Florian Roth"
@@ -2037,14 +1636,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Asustekcomputerinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /EIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_F42E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_F42E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -2065,14 +1658,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_CF4B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_CF4B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -2093,14 +1680,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_3867 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_3867 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -2122,14 +1703,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzs
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_D783 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_D783 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -2150,14 +1725,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_4B52 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_4B52 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys"
 		author = "Florian Roth"
@@ -2178,14 +1747,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftwar
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_38D6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_38D6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - segwindrvx64.sys"
 		author = "Florian Roth"
@@ -2206,14 +1769,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /segwindrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Biostargroup_Iodriver_Biostariodriverfle_42E1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Biostargroup_Iodriver_Biostariodriverfle_42E1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - BS_I2cIo.sys"
 		author = "Florian Roth"
@@ -2236,14 +1793,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Biostargroup_I
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /BS_I2cIo/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytes_Elbycdio_Cdrtools_07AF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Elaboratebytes_Elbycdio_Cdrtools_07AF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -2264,14 +1815,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Elaborateb
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Mitactechnologycorporation_Mtcbsvsys_Mitacsystemserviceprovider_C9CF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Mitactechnologycorporation_Mtcbsvsys_Mitacsystemserviceprovider_C9CF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mtcBSv64.sys"
 		author = "Florian Roth"
@@ -2292,14 +1837,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Mitactechnologycorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /mtcBSv64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_7125 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_7125 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -2320,14 +1859,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_5F65 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_5F65 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -2348,14 +1881,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_58A7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_58A7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viraglt64.sys, viragt64.sys"
 		author = "Florian Roth"
@@ -2376,14 +1903,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viraglt64/i and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Panmonfltxsys_Pancafemanager_0650 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Panmonfltxsys_Pancafemanager_0650 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PanMonFltX64.sys"
 		author = "Florian Roth"
@@ -2404,14 +1925,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojile
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PanMonFltX64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_D633 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_D633 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -2433,14 +1948,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_0F17 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_0F17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -2461,14 +1970,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Bsmisys_5962 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Bsmisys_5962 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - BSMI.sys, BSMIXP64.sys"
 		author = "Florian Roth"
@@ -2488,14 +1991,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Bsmi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /BSMI/i and not filename matches /BSMIXP64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_C6FE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_C6FE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -2518,14 +2015,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_AF16 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_AF16 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -2546,14 +2037,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_99F4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_99F4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -2604,14 +2089,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ncrcorporation_Radhwmgrsys_Ncrcorporationhardwaremanagerdriver_7C8A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Ncrcorporation_Radhwmgrsys_Ncrcorporationhardwaremanagerdriver_7C8A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - RadHwMgr.sys"
 		author = "Florian Roth"
@@ -2632,14 +2111,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Ncrcorporation_Radhwmgrsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /RadHwMgr/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avaluetechnologyinc_Avalueio_Avalueio_A5A4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avaluetechnologyinc_Avalueio_Avalueio_A5A4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - avalueio.sys"
 		author = "Florian Roth"
@@ -2661,14 +2134,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avaluetechno
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /avalueio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Bsdefsys_Supportsstsfssteeatftatcamfntamfnbvctvcbmftwc_5F5E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Asustekcomputerinc_Bsdefsys_Supportsstsfssteeatftatcamfntamfnbvctvcbmftwc_5F5E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Bs_Def.sys"
 		author = "Florian Roth"
@@ -2692,14 +2159,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Asustekcomputerinc_Bsdefsys_Su
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Bs_Def/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_F27F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_F27F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -2724,14 +2185,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_965D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_965D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sfdrvx64.sys"
 		author = "Florian Roth"
@@ -2752,14 +2207,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sfdrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_5A66 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_5A66 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -2784,14 +2233,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Panioxsys_Paniolibrary_6B83 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Panioxsys_Paniolibrary_6B83 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PanIOx64.sys"
 		author = "Florian Roth"
@@ -2812,14 +2255,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknoloj
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PanIOx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_82FB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_82FB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -2840,14 +2277,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Entechtaiwan_Seasys_Softenginex_6CB5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Entechtaiwan_Seasys_Softenginex_6CB5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Se64a.sys"
 		author = "Florian Roth"
@@ -2868,14 +2299,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Entechtai
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Se64a/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_0B54 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_0B54 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -2896,14 +2321,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_F159 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_F159 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -2927,14 +2346,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_1273 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_1273 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -2955,14 +2368,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_3854 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_3854 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -2984,14 +2391,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Aoddriversys_Amdoverdriveservicedriver_3C11 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Aoddriversys_Amdoverdriveservicedriver_3C11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AODDriver.sys"
 		author = "Florian Roth"
@@ -3014,14 +2415,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Ao
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AODDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Cpuzsys_Windowsrcodenamelonghornddkdriver_EAA5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Cpuzsys_Windowsrcodenamelonghornddkdriver_EAA5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -3042,14 +2437,8 @@ rule Neo23x0_yara_rules_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_8FE9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_8FE9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -3067,14 +2456,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Cpuzsys_Windowsrcodenamelonghornddkdriver_4932 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Cpuzsys_Windowsrcodenamelonghornddkdriver_4932 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -3103,14 +2486,8 @@ rule Neo23x0_yara_rules_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_3D9E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_3D9E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -3131,14 +2508,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Logitech_Lgcoretempsys_Lgcoretemp_E0CB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Logitech_Lgcoretempsys_Lgcoretemp_E0CB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - LgCoreTemp.sys"
 		author = "Florian Roth"
@@ -3159,14 +2530,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Logitech_L
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /LgCoreTemp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Stdcdrvsys_Selftestdatacollector_3702 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Intelcorporation_Stdcdrvsys_Selftestdatacollector_3702 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - stdcdrv64.sys"
 		author = "Florian Roth"
@@ -3187,14 +2552,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Intelcorporation_S
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /stdcdrv64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_2BBE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_2BBE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -3216,14 +2575,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_092D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_092D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -3245,14 +2598,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkprovider_3C0A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkprovider_3C0A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtport.sys"
 		author = "Florian Roth"
@@ -3273,14 +2620,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Windowsrddkprovide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtport/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_5FAE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_5FAE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -3301,14 +2642,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxusbmonsys_Virtualboxusbmonitordriver_3D05 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxusbmonsys_Virtualboxusbmonitordriver_3D05 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxUSBMon.sys"
 		author = "Florian Roth"
@@ -3329,14 +2664,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxusbm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxUSBMon/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_1A45 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_1A45 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -3357,14 +2686,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_62F5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_62F5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -3386,14 +2709,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Yyinc_Dianhu_80CB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Yyinc_Dianhu_80CB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Dh_Kernel_10.sys"
 		author = "Florian Roth"
@@ -3413,14 +2730,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Yyin
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Dh_Kernel_10/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_8F68 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_8F68 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -3444,14 +2755,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_A5A5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_A5A5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -3472,14 +2777,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Wnbiossys_Windowsrwinddkdriver_530D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Wnbiossys_Windowsrwinddkdriver_530D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - wnbios.sys"
 		author = "Florian Roth"
@@ -3500,14 +2799,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Windowsrwinddkprovid
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /wnbios/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytes_Elbycdio_Cdrtools_98EC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Elaboratebytes_Elbycdio_Cdrtools_98EC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -3528,14 +2821,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Elaborateb
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_591B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_591B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -3556,14 +2843,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Openlibsysorg_Winringsys_Winring_47EA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Openlibsysorg_Winringsys_Winring_47EA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WinRing0.sys, WinRing0x64"
 		author = "Florian Roth"
@@ -3585,14 +2866,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Openlibsys
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /WinRing0/i and not filename matches /WinRing0x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_6532 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_6532 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - segwindrvx64.sys"
 		author = "Florian Roth"
@@ -3613,14 +2888,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /segwindrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_909D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_909D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDRyzenMasterDriver.sys"
 		author = "Florian Roth"
@@ -3641,14 +2910,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDRyzenMasterDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Atitechnologiesinc_Atillksys_Atidiagnostics_AD40 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Atitechnologiesinc_Atillksys_Atidiagnostics_AD40 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - atillk64.sys"
 		author = "Florian Roth"
@@ -3674,14 +2937,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Atitechnologies
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /atillk64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_E502 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_E502 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -3705,14 +2962,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzs
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_0CD4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_0CD4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -3733,14 +2984,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroaegis_3FA6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroaegis_3FA6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -3761,14 +3006,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_3E1D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_3E1D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -3789,14 +3028,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_6FB5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_6FB5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -3817,14 +3050,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_3B71 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_3B71 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -3847,14 +3074,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_0BD1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_0BD1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sfdrvx32.sys"
 		author = "Florian Roth"
@@ -3875,14 +3096,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sfdrvx32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_1E94 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_1E94 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sfdrvx32.sys"
 		author = "Florian Roth"
@@ -3903,14 +3118,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sfdrvx32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Hpdevelopmentcompany_Etdsuppsys_Hpetdidriverdll_F744 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Hpdevelopmentcompany_Etdsuppsys_Hpetdidriverdll_F744 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - etdsupp.sys"
 		author = "Florian Roth"
@@ -3931,14 +3140,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Hpdevelopmentcomp
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /etdsupp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Netfiltersys_Windowsrwinddkdriver_DB1D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Netfiltersys_Windowsrwinddkdriver_DB1D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - netfilter2.sys"
 		author = "Florian Roth"
@@ -3966,14 +3169,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /netfilter2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_4ED2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_4ED2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -3994,14 +3191,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Netfiltersys_1265 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netfiltersys_1265 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - netfilter2.sys"
 		author = "Florian Roth"
@@ -4024,14 +3215,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netf
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /netfilter2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_1F81 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_1F81 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -4052,14 +3237,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Iobit_Iobitunlockersys_Iobitunlocker_C79A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Iobit_Iobitunlockersys_Iobitunlocker_C79A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iobitunlocker.sys"
 		author = "Florian Roth"
@@ -4080,14 +3259,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Iobit_Iobitu
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iobitunlocker/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_16B5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_16B5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -4108,14 +3281,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Phoenixtechnologies_Agentsys_Driveragent_4045 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Phoenixtechnologies_Agentsys_Driveragent_4045 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Agent64.sys"
 		author = "Florian Roth"
@@ -4141,14 +3308,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Phoenixtechnol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Agent64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_FA77 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_FA77 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -4170,14 +3331,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_D0E2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_D0E2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -4198,14 +3353,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Openlibsysorg_Openlibsyssys_Openlibsys_F060 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Openlibsysorg_Openlibsyssys_Openlibsys_F060 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - OpenLibSys.sys"
 		author = "Florian Roth"
@@ -4226,14 +3375,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Openlibsysorg
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /OpenLibSys/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_4AC0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_4AC0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -4254,14 +3397,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Rweverything_Rwdrvsys_Rweverythingreadwritedriver_2A65 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Rweverything_Rwdrvsys_Rweverythingreadwritedriver_2A65 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AsrIbDrv.sys"
 		author = "Florian Roth"
@@ -4287,14 +3424,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Rweverything_Rwdrv
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AsrIbDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_5027 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_5027 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -4315,14 +3446,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_2203 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_2203 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -4343,14 +3468,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_442C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_442C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -4372,14 +3491,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_468B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_468B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -4401,14 +3514,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_19D0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_19D0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -4429,14 +3536,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_9B1A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_9B1A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDRyzenMasterDriver.sys"
 		author = "Florian Roth"
@@ -4457,14 +3558,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDRyzenMasterDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Panmonfltsys_Pancafemanager_7E01 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Panmonfltsys_Pancafemanager_7E01 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PanMonFlt.sys"
 		author = "Florian Roth"
@@ -4485,14 +3580,8 @@ rule Neo23x0_yara_rules_vuln_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojil
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PanMonFlt/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_F4E5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_F4E5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -4514,14 +3603,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Lenovogrouplimitedr_Lenovodiagnosticsdriversys_Lenovodiagnostics_F05B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln__PUA_VULN_Renamed_Driver_Lenovogrouplimitedr_Lenovodiagnosticsdriversys_Lenovodiagnostics_F05B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - LenovoDiagnosticsDriver.sys"
 		author = "Florian Roth"
@@ -4542,14 +3625,8 @@ rule Neo23x0_yara_rules_vuln__PUA_VULN_Renamed_Driver_Lenovogrouplimitedr_Lenovo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /LenovoDiagnosticsDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_3F20 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_3F20 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - pchunter.sys"
 		author = "Florian Roth"
@@ -4567,14 +3644,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_3F20
 	condition:
 		uint16(0) == 0x5a4d and filesize < 700KB and all of them and not filename matches /pchunter/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Toshibacorporation_Nchgbiosxsys_Toshibabiospackage_7D4C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Toshibacorporation_Nchgbiosxsys_Toshibabiospackage_7D4C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NCHGBIOS2x64.SYS"
 		author = "Florian Roth"
@@ -4595,14 +3666,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Toshibacorporation_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NCHGBIOS2x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Dell_Dbutil_71FE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Dell_Dbutil_71FE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DBUtilDrv2.sys"
 		author = "Florian Roth"
@@ -4620,14 +3685,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Dell
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DBUtilDrv2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_6D2C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_6D2C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -4649,14 +3708,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Atszio_Atsziodriver_673B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Atszio_Atsziodriver_673B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ATSZIO.sys"
 		author = "Florian Roth"
@@ -4677,14 +3730,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Atsz
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ATSZIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asus_Asmmapsys_Atkgenericfunctionservice_025E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asus_Asmmapsys_Atkgenericfunctionservice_025E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - asmmap64.sys"
 		author = "Florian Roth"
@@ -4705,14 +3752,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asus_Asmmapsys
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /asmmap64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_9724 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_9724 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -4736,14 +3777,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_7133 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_7133 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -4764,14 +3799,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Lgelectronicsinc_Lhasys_Microsoftwindowsoperatingsystem_23BA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Lgelectronicsinc_Lhasys_Microsoftwindowsoperatingsystem_23BA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - LHA.sys"
 		author = "Florian Roth"
@@ -4793,14 +3822,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Lgelectronicsinc_Lhas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /LHA/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elitegroupcomputersystems_Ecsiodriversys_Ecsiodriver_2705 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Elitegroupcomputersystems_Ecsiodriversys_Ecsiodriver_2705 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ecsiodriverx64.sys"
 		author = "Florian Roth"
@@ -4821,14 +3844,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Elitegroupcomputersy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ecsiodriverx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_8D33 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_8D33 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -4850,14 +3867,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_C586 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_C586 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -4879,14 +3890,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzs
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Logmeininc_Lmiinfosys_Logmein_453B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Logmeininc_Lmiinfosys_Logmein_453B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - LMIinfo.sys"
 		author = "Florian Roth"
@@ -4907,14 +3912,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Logmeini
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /LMIinfo/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_76AF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_76AF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -4935,14 +3934,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_1284 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_1284 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sandra.sys"
 		author = "Florian Roth"
@@ -4963,14 +3956,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sandra/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Rweverything_Asrsetupdrvsys_Asrsetupdrvdriver_9D93 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Rweverything_Asrsetupdrvsys_Asrsetupdrvdriver_9D93 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AsrSetupDrv103.sys"
 		author = "Florian Roth"
@@ -4992,14 +3979,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Rweverything_Asr
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AsrSetupDrv103/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_C628 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_C628 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - segwindrvx64.sys"
 		author = "Florian Roth"
@@ -5022,14 +4003,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /segwindrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Trendmicroearlylaunchantimalwaredriver_D0EB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Trendmicroearlylaunchantimalwaredriver_D0EB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Tmel.sys"
 		author = "Florian Roth"
@@ -5050,14 +4025,8 @@ rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Tr
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Tmel/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_EDBB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_EDBB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GtcKmdfBs.sys"
 		author = "Florian Roth"
@@ -5079,14 +4048,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GtcKmdfBs/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_2FBB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_2FBB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -5107,14 +4070,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_BCED {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_BCED {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -5135,14 +4092,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_082C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_082C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -5163,14 +4114,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtk
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_1493 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_1493 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -5195,14 +4140,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Powertool_Kevpsys_Powertool_7C0F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Powertool_Kevpsys_Powertool_7C0F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - kEvP64.sys"
 		author = "Florian Roth"
@@ -5231,14 +4170,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Powerto
 	condition:
 		uint16(0) == 0x5a4d and filesize < 2900KB and all of them and not filename matches /kEvP64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_D1F4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_D1F4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -5259,14 +4192,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_BC45 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_BC45 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -5288,14 +4215,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_7CB4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_7CB4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -5316,14 +4237,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Safenetinc_Hostnt_Hostnt_07B6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renam_PUA_VULN_Renamed_Driver_Safenetinc_Hostnt_Hostnt_07B6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HOSTNT.sys"
 		author = "Florian Roth"
@@ -5344,14 +4259,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renam_PUA_VULN_Renamed_Driver_Safene
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HOSTNT/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Rivetnetworksllc_Kfecodrvsys_Killertrafficcontrol_9A91 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Rivetnetworksllc_Kfecodrvsys_Killertrafficcontrol_9A91 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - KfeCo11X64.sys"
 		author = "Florian Roth"
@@ -5372,14 +4281,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Rivetnetworksllc_K
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /KfeCo11X64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_848B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_848B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -5400,14 +4303,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_7CB5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_7CB5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -5426,14 +4323,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asrockincorporation_Asrautochkupddrvsys_Asrautochkupddrvdriver_2AA1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Asrockincorporation_Asrautochkupddrvsys_Asrautochkupddrvdriver_2AA1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AsrAutoChkUpdDrv.sys"
 		author = "Florian Roth"
@@ -5454,14 +4345,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Asrockincorporation_Asrau
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AsrAutoChkUpdDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_97B3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_97B3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -5483,14 +4368,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_0EAB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_0EAB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sandra.sys"
 		author = "Florian Roth"
@@ -5511,14 +4390,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sandra/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_8EF5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_8EF5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -5539,14 +4412,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_1F15 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_1F15 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -5567,14 +4434,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_0452 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_0452 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - segwindrvx64.sys"
 		author = "Florian Roth"
@@ -5595,14 +4456,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /segwindrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_818E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_818E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -5623,14 +4478,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_6FFD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_6FFD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -5651,14 +4500,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_7710 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_Cpuzsys_Cpuidservice_7710 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -5684,14 +4527,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Cpuid_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_AD8F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_AD8F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -5713,14 +4550,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_71C0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_71C0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -5746,14 +4577,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Speedfansys_Windowsrserverddkdriver_22BE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Speedfansys_Windowsrserverddkdriver_22BE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - speedfan.sys"
 		author = "Florian Roth"
@@ -5774,14 +4599,8 @@ rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Windowsrserverddkprovide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /speedfan/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Openlibsysorg_Openlibsyssys_Openlibsys_9131 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Openlibsysorg_Openlibsyssys_Openlibsys_9131 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - OpenLibSys.sys"
 		author = "Florian Roth"
@@ -5802,14 +4621,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Openlibsysorg
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /OpenLibSys/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_E4EC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_E4EC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -5830,14 +4643,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Atsziosys_Atsziodriver_FB6B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asustekcomputerinc_Atsziosys_Atsziodriver_FB6B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ATSZIO.sys"
 		author = "Florian Roth"
@@ -5858,14 +4665,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asustekcompute
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ATSZIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_075D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_075D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -5887,14 +4688,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Micsystechnologycoltd_Msiosys_Msiodriverversion_X_AE42 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Micsystechnologycoltd_Msiosys_Msiodriverversion_X_AE42 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - MsIo64.sys"
 		author = "Florian Roth"
@@ -5917,14 +4712,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Micsystechnologyco
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /MsIo64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Vektortsecurityservice_Vboxdrv_Antidetectpublic_3724 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Vektortsecurityservice_Vboxdrv_Antidetectpublic_3724 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxDrv.sys"
 		author = "Florian Roth"
@@ -5945,14 +4734,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Vektortsecurityse
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /VBoxDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_2380 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_2380 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -5973,14 +4756,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_D7C9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_D7C9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -6002,14 +4779,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_A97B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_A97B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -6031,14 +4802,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibxsys_Ntiolibx_1E8B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renam_PUA_VULN_Renamed_Driver_Msi_Ntiolibxsys_Ntiolibx_1E8B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -6060,14 +4825,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renam_PUA_VULN_Renamed_Driver_Msi_Nt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Featureintegrationtechnologyinc_Fintekpciecom_81FB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Featureintegrationtechnologyinc_Fintekpciecom_81FB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - FPCIE2COM.sys"
 		author = "Florian Roth"
@@ -6088,14 +4847,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Featureintegrati
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /FPCIE2COM/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_6BFC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_6BFC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -6118,14 +4871,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_7A48 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_7A48 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -6146,14 +4893,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_45F4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_45F4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -6171,14 +4912,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_4D05 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_4D05 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -6206,14 +4941,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_86A1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_86A1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -6234,14 +4963,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_61BE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_61BE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -6262,14 +4985,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmic
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Gdrvsys_Windowsrserverddkdriver_8899 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Gdrvsys_Windowsrserverddkdriver_8899 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -6293,14 +5010,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrserverddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Filseclabcorporation_Fildds_Filseclabdynamicdefensesystem_F8C0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Filseclabcorporation_Fildds_Filseclabdynamicdefensesystem_F8C0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - fildds.sys"
 		author = "Florian Roth"
@@ -6321,14 +5032,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Filseclabcorporation_F
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /fildds/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_BE8D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_BE8D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -6349,14 +5054,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_3E85 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_3E85 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -6377,14 +5076,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_3070 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_3070 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -6405,14 +5098,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_CC58 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_CC58 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -6433,14 +5120,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Rtkiosys_Windowsrcodenamelonghornddkdriver_916C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rule_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Rtkiosys_Windowsrcodenamelonghornddkdriver_916C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -6463,14 +5144,8 @@ rule Neo23x0_yara_rule_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovid
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nmscommunications_Cgkwinksys_Ctaccess_223F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Nmscommunications_Cgkwinksys_Ctaccess_223F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cg6kwin2k.sys"
 		author = "Florian Roth"
@@ -6491,14 +5166,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Nmscommunica
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cg6kwin2k/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_E4D9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_E4D9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -6519,14 +5188,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_B9AE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_Segwindrvxsys_Segwindowsdriverx_B9AE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - segwindrvx64.sys"
 		author = "Florian Roth"
@@ -6547,14 +5210,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Insydesoftwarecorp_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /segwindrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Cupfixerxsys_Windowsrwinddkdriver_8C74 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Cupfixerxsys_Windowsrwinddkdriver_8C74 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CupFixerx64.sys"
 		author = "Florian Roth"
@@ -6575,14 +5232,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CupFixerx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys_Usbcpowerdeliveryfirmwareupdatetoolkerneldriver_0CF8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_ru_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys_Usbcpowerdeliveryfirmwareupdatetoolkerneldriver_0CF8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PDFWKRNL.sys"
 		author = "Florian Roth"
@@ -6604,14 +5255,8 @@ rule Neo23x0_yara_ru_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PDFWKRNL/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Eiosys_Asusvgakernelmodedriver_B175 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Asustekcomputerinc_Eiosys_Asusvgakernelmodedriver_B175 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - EIO.sys"
 		author = "Florian Roth"
@@ -6632,14 +5277,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Asustekcomputerinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /EIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_4D77 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_4D77 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -6660,14 +5299,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_2AFD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_2AFD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -6688,14 +5321,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_00D9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_00D9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -6716,14 +5343,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_C35C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_C35C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -6744,14 +5365,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Iomapsys_Asuskernelmodedriverfornt_EA85 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Asustekcomputerinc_Iomapsys_Asuskernelmodedriverfornt_EA85 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - IOMap64.sys"
 		author = "Florian Roth"
@@ -6772,14 +5387,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Asustekcomputerinc_I
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /IOMap64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_E05E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_E05E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt.sys"
 		author = "Florian Roth"
@@ -6800,14 +5409,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_E452 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_E452 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -6828,14 +5431,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Marvintestsolutionsinc_Hwsys_Hw_5596 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Marvintestsolutionsinc_Hwsys_Hw_5596 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - hw.sys"
 		author = "Florian Roth"
@@ -6857,14 +5454,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Marvintes
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /hw/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_E602 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_E602 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GtcKmdfBs.sys"
 		author = "Florian Roth"
@@ -6885,14 +5476,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GtcKmdfBs/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Genitlkiwibenjaminxxxxx_Titidrv_Titidrvtiticatz_208E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Genitlkiwibenjaminxxxxx_Titidrv_Titidrvtiticatz_208E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - titidrv.sys"
 		author = "Florian Roth"
@@ -6913,14 +5498,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Genitlkiwibenjami
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /titidrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys_Usbcpowerdeliveryfirmwareupdateutilitydriver_5DF6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rul_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsys_Usbcpowerdeliveryfirmwareupdateutilitydriver_5DF6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PDFWKRNL.sys"
 		author = "Florian Roth"
@@ -6941,14 +5520,8 @@ rule Neo23x0_yara_rul_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Pdfwkrnlsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PDFWKRNL/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_B9AD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_B9AD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -6969,14 +5542,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_348D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_348D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -6998,14 +5565,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Mydriverscom_Hwm_Drivergenius_08EB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Mydriverscom_Hwm_Drivergenius_08EB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mydrivers.sys"
 		author = "Florian Roth"
@@ -7026,14 +5587,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Mydriver
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /mydrivers/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_3E27 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_3E27 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SANDRA.sys"
 		author = "Florian Roth"
@@ -7054,14 +5609,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SANDRA/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Evgatechnologyinc_Windowsvistasmartiodevice_Windowsvistasmartiodevice_3C95 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Evgatechnologyinc_Windowsvistasmartiodevice_Windowsvistasmartiodevice_3C95 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SMARTEIO64.SYS"
 		author = "Florian Roth"
@@ -7082,14 +5631,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Evgatechnologyinc_Windowsvis
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SMARTEIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_033C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_033C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -7110,14 +5653,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxusbsys_Virtualboxusbdriver_5B26 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxusbsys_Virtualboxusbdriver_5B26 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxUSB.Sys"
 		author = "Florian Roth"
@@ -7138,14 +5675,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Sunmicrosystemsinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxUSB/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_3B6E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_3B6E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -7166,14 +5697,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftwar
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_7C73 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_7C73 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -7195,14 +5720,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Wistroncorporation_Wirwadrvsys_Wistronrwadriver_D8FC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Wistroncorporation_Wirwadrvsys_Wistronrwadriver_D8FC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WiRwaDrv.sys"
 		author = "Florian Roth"
@@ -7223,14 +5742,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Wistroncorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /WiRwaDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_1A42 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_1A42 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -7251,14 +5764,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_F14D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_F14D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -7280,14 +5787,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_EC5F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_EC5F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -7308,14 +5809,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_34E0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_34E0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -7336,14 +5831,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_D0BD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_D0BD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -7364,14 +5853,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Atlaccesssys_Windowsrwinddkdriver_0B57 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Atlaccesssys_Windowsrwinddkdriver_0B57 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - atlAccess.sys"
 		author = "Florian Roth"
@@ -7392,14 +5875,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /atlAccess/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_909F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_909F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -7420,14 +5897,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_3C18 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_3C18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -7445,14 +5916,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_2B4C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_2B4C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -7473,14 +5938,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Innotekgmbh_Iprt_Virtualboxguestadditions_BBF5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Innotekgmbh_Iprt_Virtualboxguestadditions_BBF5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxMouseNT.sys"
 		author = "Florian Roth"
@@ -7501,14 +5960,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Innotekgmbh_Ip
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxMouseNT/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_9399 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_9399 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtif.sys"
 		author = "Florian Roth"
@@ -7530,14 +5983,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscor
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rtif/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Dtresearchinc_Iomemsys_Iomemsys_3D23 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Dtresearchinc_Iomemsys_Iomemsys_3D23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iomem64.sys"
 		author = "Florian Roth"
@@ -7558,14 +6005,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Dtresearc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iomem64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_496F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_496F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SANDRA.sys"
 		author = "Florian Roth"
@@ -7586,14 +6027,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SANDRA/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_1B00 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_1B00 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -7615,14 +6050,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Multitheftauto_Mtasanandreas_9F4C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Multitheftauto_Mtasanandreas_9F4C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - FairplayKD.sys"
 		author = "Florian Roth"
@@ -7641,14 +6070,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Multithe
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /FairplayKD/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_2732 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_2732 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -7669,14 +6092,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_A153 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_A153 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nicm.sys"
 		author = "Florian Roth"
@@ -7698,14 +6115,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_3F36 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_3F36 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -7727,14 +6138,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_7702 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_7702 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -7755,14 +6160,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_EF6D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_EF6D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -7783,14 +6182,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Microfocus_Microfocusxtier_95D5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Microfocus_Microfocusxtier_95D5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -7810,14 +6203,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Microfo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Z_Computerzsys_Zwuqisystemdriver_61E7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Z_Computerzsys_Zwuqisystemdriver_61E7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -7838,14 +6225,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Z_Computer
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_8DCE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_8DCE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -7866,14 +6247,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_E3EF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_E3EF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -7894,14 +6269,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Arthurliberman_Alsysiosys_Alsysio_7F37 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Arthurliberman_Alsysiosys_Alsysio_7F37 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ALSysIO64.sys"
 		author = "Florian Roth"
@@ -7922,14 +6291,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Arthurlibe
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ALSysIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Paniosys_Paniolibrary_F596 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolojileriticltdsti_Paniosys_Paniolibrary_F596 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PanIO.sys"
 		author = "Florian Roth"
@@ -7950,14 +6313,8 @@ rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Panyazilimbilisimteknolo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /PanIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_6C5A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_6C5A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nicm.sys"
 		author = "Florian Roth"
@@ -7978,14 +6335,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_1768 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_1768 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -8006,14 +6357,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftwar
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_3913 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_3913 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -8036,14 +6381,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_767E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_767E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -8065,14 +6404,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_9A54 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_9A54 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -8093,14 +6426,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Oti_Otipcibussys_Kernelmodedrivertoaccessphysicalmemoryandports_4E3E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Oti_Otipcibussys_Kernelmodedrivertoaccessphysicalmemoryandports_4E3E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - otipcibus.sys"
 		author = "Florian Roth"
@@ -8120,14 +6447,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Oti_Otipcibussys_Kernelmo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /otipcibus/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_DCB8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_DCB8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -8148,14 +6469,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Micsystechnologycoltd_Msiosys_Msiodriverversion_X_CFCF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Micsystechnologycoltd_Msiosys_Msiodriverversion_X_CFCF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - MsIo64.sys"
 		author = "Florian Roth"
@@ -8176,14 +6491,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Micsystechnologyco
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /MsIo64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_F8D4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_F8D4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -8204,14 +6513,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_D0E4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_D0E4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -8233,14 +6536,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_77DA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_77DA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -8262,14 +6559,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_0368 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_0368 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -8291,14 +6582,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_B0DC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_B0DC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvaudio.sys"
 		author = "Florian Roth"
@@ -8319,14 +6604,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvaudio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsys_Radiantsystemsinchardwaremanagerdriver_7C79 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsys_Radiantsystemsinchardwaremanagerdriver_7C79 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - RadHwMgr.sys"
 		author = "Florian Roth"
@@ -8347,14 +6626,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /RadHwMgr/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Dtresearchinc_Iomemsys_Iomemsys_DD4A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Dtresearchinc_Iomemsys_Iomemsys_DD4A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iomem64.sys"
 		author = "Florian Roth"
@@ -8375,14 +6648,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Dtresearc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iomem64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Pchuntersys_Pchunter_1B7F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Pchuntersys_Pchunter_1B7F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PCHunter.sys"
 		author = "Florian Roth"
@@ -8403,14 +6670,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Pchu
 	condition:
 		uint16(0) == 0x5a4d and filesize < 800KB and all of them and not filename matches /PCHunter/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_6500 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_6500 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -8431,14 +6692,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_0FC3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_0FC3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -8460,14 +6715,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Netfiltersys_EDC6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netfiltersys_EDC6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - netfilter2.sys"
 		author = "Florian Roth"
@@ -8490,14 +6739,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Netf
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /netfilter2/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_E428 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_E428 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -8515,14 +6758,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Cpuzsys_Windowsrserverddkdriver_BE68 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Cpuzsys_Windowsrserverddkdriver_BE68 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz.sys"
 		author = "Florian Roth"
@@ -8543,14 +6780,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrserverddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_0909 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_0909 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -8571,14 +6802,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_3CB1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_3CB1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -8600,14 +6825,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Watchdogdevelopmentcomllc_Wsdkdsys_Wsdkd_6278 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Watchdogdevelopmentcomllc_Wsdkdsys_Wsdkd_6278 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - wsdkd.sys"
 		author = "Florian Roth"
@@ -8628,14 +6847,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Watchdogdevelo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /wsdkd/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Huawei_Hwosec_Huaweimatebook_B179 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Huawei_Hwosec_Huaweimatebook_B179 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HwOs2Ec7x64.sys"
 		author = "Florian Roth"
@@ -8657,14 +6870,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Huawei_H
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HwOs2Ec7x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Hpinc_Hpportioxsys_Hpportio_A468 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Hpinc_Hpportioxsys_Hpportio_A468 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HpPortIox64.sys"
 		author = "Florian Roth"
@@ -8684,14 +6891,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Hpinc_H
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HpPortIox64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_7661 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_7661 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -8709,14 +6910,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_8B92 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_8B92 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -8737,14 +6932,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_881B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_881B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SANDRA.sys"
 		author = "Florian Roth"
@@ -8765,14 +6954,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SANDRA/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_5192 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_5192 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -8793,14 +6976,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsys_Radiantsystemsinchardwaremanagerdriver_0F30 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsys_Radiantsystemsinchardwaremanagerdriver_0F30 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - RadHwMgr.sys"
 		author = "Florian Roth"
@@ -8822,14 +6999,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /RadHwMgr/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Insydesoftware_Insydeflash_Insydeflashutilitybitdriver_CE0A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Insydesoftware_Insydeflash_Insydeflashutilitybitdriver_CE0A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iscflashx64.sys"
 		author = "Florian Roth"
@@ -8850,14 +7021,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Insydesoftware_Insyde
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iscflashx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_80A5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_80A5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -8878,14 +7043,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Microfocus_Microfocusxtier_5351 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Microfocus_Microfocusxtier_5351 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -8905,14 +7064,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Microfo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxdrvsys_Sunvirtualbox_R_7882 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxdrvsys_Sunvirtualbox_R_7882 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - vboxdrv.sys"
 		author = "Florian Roth"
@@ -8934,14 +7087,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Sunmicrosystemsi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /vboxdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Corsairmemoryinc_Corsairllaccess_Corsairllaccess_5FAD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Corsairmemoryinc_Corsairllaccess_Corsairllaccess_5FAD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CorsairLLAccess64.sys"
 		author = "Florian Roth"
@@ -8963,14 +7110,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Corsairmemoryinc_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CorsairLLAccess64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_16E2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_16E2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -8992,14 +7133,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_060D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_060D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -9021,14 +7156,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_7553 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludashicom_Computerzsys_7553 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -9050,14 +7179,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Ludas
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Overclockingtool_Atillksys_Overclockingtool_11A9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Overclockingtool_Atillksys_Overclockingtool_11A9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - atillk64.sys"
 		author = "Florian Roth"
@@ -9079,14 +7202,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Overclockingtoo
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /atillk64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_2A62 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_2A62 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -9107,14 +7224,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_AAA3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_AAA3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -9135,14 +7246,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswvmmsys_Avastantivirus_3650 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Avastsoftware_Aswvmmsys_Avastantivirus_3650 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswVmm.sys"
 		author = "Florian Roth"
@@ -9163,14 +7268,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Avastsoftware
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswVmm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gdrv_FF67 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gdrv_FF67 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -9191,14 +7290,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Gigabytetech
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_4408 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_4408 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -9219,14 +7312,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Rivetnetworksllc_Kfecodrvsys_Killertrafficcontrol_B583 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Rivetnetworksllc_Kfecodrvsys_Killertrafficcontrol_B583 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - KfeCo10X64.sys"
 		author = "Florian Roth"
@@ -9247,14 +7334,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Rivetnetworksllc_K
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /KfeCo10X64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_3D00 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_3D00 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -9275,14 +7356,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroaegis_ED2F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroaegis_ED2F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -9303,14 +7378,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibxsys_Ntiolib_09BE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibxsys_Ntiolib_09BE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -9331,14 +7400,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_A802 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_A802 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -9359,14 +7422,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmic
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_0F01 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_0F01 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -9387,14 +7444,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxdrvsys_Sunvirtualbox_R_7539 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxdrvsys_Sunvirtualbox_R_7539 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxDrv.sys"
 		author = "Florian Roth"
@@ -9415,14 +7466,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Sunmicrosystemsi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /VBoxDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Interfacecorporation_Cpxcsys_Gpcxc_1183 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Interfacecorporation_Cpxcsys_Gpcxc_1183 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CP2X72C.SYS"
 		author = "Florian Roth"
@@ -9443,14 +7488,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Interfaceco
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CP2X72C/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_478D {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_478D {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -9471,14 +7510,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Activeclean_A903 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Activeclean_A903 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -9499,14 +7532,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Trendmicroi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_3FF3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_3FF3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -9528,14 +7555,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_1B17 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_1B17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -9556,14 +7577,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_6CF1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_6CF1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -9583,14 +7598,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_EAE5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_EAE5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtif.sys"
 		author = "Florian Roth"
@@ -9611,14 +7620,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscor
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtif/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_BDBC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_BDBC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -9639,14 +7642,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Databaseharborsoftware_Sysinfodetectorxsys_Sysinfodetector_45E5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Databaseharborsoftware_Sysinfodetectorxsys_Sysinfodetector_45E5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SysInfoDetectorX64.sys"
 		author = "Florian Roth"
@@ -9667,14 +7664,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Databaseharborsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SysInfoDetectorX64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_7048 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_7048 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -9697,14 +7688,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_7837 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_7837 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -9725,14 +7710,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Trendmicroearlylaunchantimalwaredriver_E505 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Trendmicroearlylaunchantimalwaredriver_E505 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Tmel.sys"
 		author = "Florian Roth"
@@ -9753,14 +7732,8 @@ rule Neo23x0_yara_rules_vuln_dr_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmelsys_Tr
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /Tmel/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ncrcorporation_Radhwmgrsys_Ncrcorporationhardwaremanagerdriver_Dev_DF96 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_PUA_VULN_Renamed_Driver_Ncrcorporation_Radhwmgrsys_Ncrcorporationhardwaremanagerdriver_Dev_DF96 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - RadHwMgr.sys"
 		author = "Florian Roth"
@@ -9781,14 +7754,8 @@ rule Neo23x0_yara_rules_vuln_PUA_VULN_Renamed_Driver_Ncrcorporation_Radhwmgrsys_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /RadHwMgr/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_0B2A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_0B2A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -9809,14 +7776,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_BA40 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_BA40 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtif.sys"
 		author = "Florian Roth"
@@ -9837,14 +7798,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscor
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtif/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_828A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_828A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -9865,14 +7820,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxusbmonsys_Virtualboxusbmonitordriver_8A24 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxusbmonsys_Virtualboxusbmonitordriver_8A24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxUSBMon.sys"
 		author = "Florian Roth"
@@ -9893,14 +7842,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vbox
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxUSBMon/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Copyright_Advancedmalwareprotection_6F55 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Copyright_Advancedmalwareprotection_6F55 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - amsdk.sys"
 		author = "Florian Roth"
@@ -9920,14 +7863,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Copyright_A
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /amsdk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_0DC4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_0DC4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -9948,14 +7885,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_3670 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_3670 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtif.sys"
 		author = "Florian Roth"
@@ -9977,14 +7908,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscor
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rtif/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_EEA5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_EEA5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -10005,14 +7930,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_9CA5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_9CA5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -10033,14 +7952,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_4E54 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_4E54 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -10061,14 +7974,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_2D2C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_2D2C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -10089,14 +7996,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_F4EE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_F4EE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sfdrvx64.sys"
 		author = "Florian Roth"
@@ -10117,14 +8018,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sfdrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_5CFA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_5CFA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -10145,14 +8040,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_898E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzsys_Ludashisystemdriver_898E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -10174,14 +8063,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Computerzs
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_AFDA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_AFDA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -10203,14 +8086,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Interfacecorporation_Cpxcsys_Gpcxcdiobmpcicpci_6386 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Interfacecorporation_Cpxcsys_Gpcxcdiobmpcicpci_6386 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CP2X72C.SYS"
 		author = "Florian Roth"
@@ -10232,14 +8109,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Interfacecorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CP2X72C/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkdriver_C490 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkdriver_C490 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtport.sys"
 		author = "Florian Roth"
@@ -10262,14 +8133,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Windowsrddkprovid
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtport/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Arthurliberman_Alsysiosys_Alsysio_119C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Arthurliberman_Alsysiosys_Alsysio_119C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ALSysIO64.sys"
 		author = "Florian Roth"
@@ -10290,14 +8155,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Arthurlibe
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ALSysIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_263E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_263E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -10318,14 +8177,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_88FB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_88FB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sfdrvx64.sys"
 		author = "Florian Roth"
@@ -10346,14 +8199,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sfdrvx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_E839 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_E839 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -10374,14 +8221,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Hilschergesellschaftfrsystemaoutomationmbh_Physmemsys_Physicalmemoryaccessdriver_C299 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rul_PUA_VULN_Renamed_Driver_Hilschergesellschaftfrsystemaoutomationmbh_Physmemsys_Physicalmemoryaccessdriver_C299 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - physmem.sys"
 		author = "Florian Roth"
@@ -10402,14 +8243,8 @@ rule Neo23x0_yara_rul_PUA_VULN_Renamed_Driver_Hilschergesellschaftfrsystemaoutom
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /physmem/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_4CE8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscorporation_Rtifsys_Intime_4CE8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtif.sys"
 		author = "Florian Roth"
@@ -10430,14 +8265,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Tenasyscor
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtif/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_AF10 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_AF10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDRyzenMasterDriver.sys"
 		author = "Florian Roth"
@@ -10458,14 +8287,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDRyzenMasterDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_ADA4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_ADA4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -10486,14 +8309,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_9B2F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_9B2F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -10514,14 +8331,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_F629 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_F629 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -10542,14 +8353,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cyreninc_Amp_Cyrenamp_CBB8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cyreninc_Amp_Cyrenamp_CBB8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - amp.sys"
 		author = "Florian Roth"
@@ -10570,14 +8375,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cyre
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /amp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Netfiltersdkcom_Lgdcatchersys_Netfiltersdk_0C42 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Netfiltersdkcom_Lgdcatchersys_Netfiltersdk_0C42 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - LgDCatcher.sys"
 		author = "Florian Roth"
@@ -10598,14 +8397,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Netfiltersdkcom
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /LgDCatcher/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Supermicrocomputerinc_Superbmc_Superbmc_F843 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Supermicrocomputerinc_Superbmc_Superbmc_F843 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - superbmc.sys"
 		author = "Florian Roth"
@@ -10626,14 +8419,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Supermicrocom
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /superbmc/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_1023 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_1023 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -10654,14 +8441,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_F877 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_F877 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -10683,14 +8464,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_AE3A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_AE3A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -10711,14 +8486,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_AD23 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftware_Sfdrvxsys_Speedfan_X_AD23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sfdrvx32.sys"
 		author = "Florian Roth"
@@ -10739,14 +8508,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Almicosoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sfdrvx32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkdriver_6F80 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Windowsrddkprovider_Rtportsys_Windowsrddkdriver_6F80 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtport.sys"
 		author = "Florian Roth"
@@ -10767,14 +8530,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Windowsrddkprovid
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtport/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_B205 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_B205 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkiow8x64.sys "
 		author = "Florian Roth"
@@ -10795,14 +8552,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtk
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkiow8x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Filseclabcorporation_Filnk_Filseclabdynamicdefensesystem_AE55 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Filseclabcorporation_Filnk_Filseclabdynamicdefensesystem_AE55 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - filnk.sys"
 		author = "Florian Roth"
@@ -10823,14 +8574,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Filseclabcorporation_F
 	condition:
 		uint16(0) == 0x5a4d and filesize < 900KB and all of them and not filename matches /filnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_CBF7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_CBF7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sandra.sys"
 		author = "Florian Roth"
@@ -10851,14 +8596,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sandra/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_A475 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_A475 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -10879,14 +8618,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_66F8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Novellinc_Novellxtier_66F8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -10907,14 +8640,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Nove
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_55B5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_55B5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -10935,14 +8662,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Atsziosys_Atsziodriver_1A4F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asustekcomputerinc_Atsziosys_Atsziodriver_1A4F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ATSZIO.sys"
 		author = "Florian Roth"
@@ -10967,14 +8688,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asustekcompute
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ATSZIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Filseclabcorporation_Filwfp_Filseclabfirewall_490C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Filseclabcorporation_Filwfp_Filseclabfirewall_490C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - filwfp.sys"
 		author = "Florian Roth"
@@ -10995,14 +8710,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Filseclabcorpora
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /filwfp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asrockincorporation_Asrautochkupddrvsys_Asrautochkupddrvdriver_4AE4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Asrockincorporation_Asrautochkupddrvsys_Asrautochkupddrvdriver_4AE4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AsrAutoChkUpdDrv_1_0_32.sys"
 		author = "Florian Roth"
@@ -11023,14 +8732,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Asrockincorporation_Asrau
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AsrAutoChkUpdDrv_1_0_32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_9E34 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_9E34 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -11051,14 +8754,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Wisecleanercom_Wiseunlosys_Wiseunlo_9D53 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Wisecleanercom_Wiseunlosys_Wiseunlo_9D53 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WiseUnlo.sys"
 		author = "Florian Roth"
@@ -11080,14 +8777,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Wisecleaner
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /WiseUnlo/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_BCFC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_BCFC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11108,14 +8799,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrddkprovider_Gdrvsys_Windowsrddkdriver_F4FF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Windowsrddkprovider_Gdrvsys_Windowsrddkdriver_F4FF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -11137,14 +8822,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Windowsrddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_DBC6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_DBC6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11165,14 +8844,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Corsairmemoryinc_Corsairllaccess_Corsairllaccess_F15A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Corsairmemoryinc_Corsairllaccess_Corsairllaccess_F15A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CorsairLLAccess64.sys"
 		author = "Florian Roth"
@@ -11193,14 +8866,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Corsairmemoryinc_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CorsairLLAccess64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_4E37 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_4E37 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11221,14 +8888,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_ECD0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_ECD0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11249,14 +8910,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_6701 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_6701 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -11277,14 +8932,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsys_Radiantsystemsinchardwaremanagerdriver_00C3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsys_Radiantsystemsinchardwaremanagerdriver_00C3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - RadHwMgr.sys"
 		author = "Florian Roth"
@@ -11305,14 +8954,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Radiantsystemsinc_Radhwmgrsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /RadHwMgr/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Cn_Computerzsys_DEE3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_Computerzsys_DEE3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ComputerZ.Sys"
 		author = "Florian Roth"
@@ -11334,14 +8977,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Cn_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ComputerZ/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_36E3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_36E3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -11362,14 +8999,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftwar
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_FDA9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_FDA9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11390,14 +9021,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_6E9E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_6E9E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -11418,14 +9043,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_1228 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_1228 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -11446,14 +9065,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Biostargroup_Iodriver_Biostariodriver_D205 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Biostargroup_Iodriver_Biostariodriver_D205 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - BS_RCIO64.sys"
 		author = "Florian Roth"
@@ -11474,14 +9087,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Biostargroup
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /BS_RCIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Amifldrvsys_Windowsrwinddkdriver_38D8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Amifldrvsys_Windowsrwinddkdriver_38D8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - amifldrv64.sys, amifldrv.sys"
 		author = "Florian Roth"
@@ -11503,14 +9110,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Windowsrwinddkprovide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /amifldrv64/i and not filename matches /amifldrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Inferre_Hwdetectngsys_Hwdetectngsys_D456 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Inferre_Hwdetectngsys_Hwdetectngsys_D456 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - hwdetectng.sys"
 		author = "Florian Roth"
@@ -11533,14 +9134,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Inferre_Hwd
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /hwdetectng/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Adlicesoftware_Truesight_Truesight_BFC2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Adlicesoftware_Truesight_Truesight_BFC2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - truesight.sys"
 		author = "Florian Roth"
@@ -11561,14 +9156,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Adlicesoftw
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /truesight/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_87B4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_87B4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -11589,14 +9178,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Highresolutionenterpriseswwwhighrezcouk_Inpoutxsys_Inpoutxdriverversion_X_F581 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Highresolutionenterpriseswwwhighrezcouk_Inpoutxsys_Inpoutxdriverversion_X_F581 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - inpoutx64.sys"
 		author = "Florian Roth"
@@ -11619,14 +9202,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Highresolutionenterpriseswwwhi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /inpoutx64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_12ED {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_12ED {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11647,14 +9224,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_FF1C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_FF1C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -11675,14 +9246,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_EBE2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_EBE2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -11703,14 +9268,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtierforwindows_V_CA34 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Novellinc_Novellxtierforwindows_V_CA34 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nscm.sys"
 		author = "Florian Roth"
@@ -11730,14 +9289,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Novellinc_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nscm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_46D1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Razerinc_Rzpnk_Rzpnk_46D1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rzpnk.sys"
 		author = "Florian Roth"
@@ -11761,14 +9314,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Raze
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /rzpnk/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Corsairmemoryinc_Corsairllaccess_Corsairllaccess_A334 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Corsairmemoryinc_Corsairllaccess_Corsairllaccess_A334 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CorsairLLAccess64.sys"
 		author = "Florian Roth"
@@ -11790,14 +9337,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Corsairmemoryinc_C
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CorsairLLAccess64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_1C12 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_1C12 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11818,14 +9359,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroaegis_4BC0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroaegis_4BC0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -11846,14 +9381,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Iobitinformationtechnology_Iobitunlockersys_Unlocker_F85C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Iobitinformationtechnology_Iobitunlockersys_Unlocker_F85C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iobitunlocker.sys"
 		author = "Florian Roth"
@@ -11874,14 +9403,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Iobitinformationtech
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iobitunlocker/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtierforwindows_V_C190 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Novellinc_Novellxtierforwindows_V_C190 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - libnicm.sys"
 		author = "Florian Roth"
@@ -11901,14 +9424,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Novellinc_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /libnicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_9B6A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_9B6A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -11929,14 +9446,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_7D43 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_7D43 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -11957,14 +9468,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_7337 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_7337 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -11986,14 +9491,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_ADC1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_ADC1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -12014,14 +9513,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmic
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Sbiosiosys_Samsungrbiosiodriver_1E24 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Sbiosiosys_Samsungrbiosiodriver_1E24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SBIOSIO64.sys"
 		author = "Florian Roth"
@@ -12043,14 +9536,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Windowsrwinddkprovide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SBIOSIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_9491 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_9491 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -12071,14 +9558,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Fujitsulimited_Advdrvsys_Microsoftrwindowsroperatingsystem_04A8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Fujitsulimited_Advdrvsys_Microsoftrwindowsroperatingsystem_04A8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ADV64DRV.sys"
 		author = "Florian Roth"
@@ -12098,14 +9579,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Fujitsulimited_Advdrvsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ADV64DRV/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_FF96 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenmasterdriversys_Amdryzenmasterservicedriver_FF96 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDRyzenMasterDriver.sys"
 		author = "Florian Roth"
@@ -12126,14 +9601,8 @@ rule Neo23x0_yara_rules_v_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Amdryzenm
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDRyzenMasterDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxtapsys_Virtualboxhostinterfacenetworkingdriver_CFA2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxtapsys_Virtualboxhostinterfacenetworkingdriver_CFA2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxTAP.sys"
 		author = "Florian Roth"
@@ -12154,14 +9623,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxtapsy
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxTAP/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Generalelectriccompany_Gedevicedriver_Proficymachineedition_Build_A369 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln__PUA_VULN_Renamed_Driver_Generalelectriccompany_Gedevicedriver_Proficymachineedition_Build_A369 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GEDevDrv.SYS"
 		author = "Florian Roth"
@@ -12183,14 +9646,8 @@ rule Neo23x0_yara_rules_vuln__PUA_VULN_Renamed_Driver_Generalelectriccompany_Ged
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GEDevDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_85FD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_85FD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -12211,14 +9668,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_7CF7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_7CF7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -12239,14 +9690,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_7795 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_7795 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -12267,14 +9712,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Sysinternalsww
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_B019 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_B019 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SANDRA.sys"
 		author = "Florian Roth"
@@ -12295,14 +9734,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SANDRA/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Amdpowerprofilersys_Amduprof_0AF5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Advancedmicrodevicesinc_Amdpowerprofilersys_Amduprof_0AF5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AMDPowerProfiler.sys"
 		author = "Florian Roth"
@@ -12323,14 +9756,8 @@ rule Neo23x0_yara_rules_vuln_driver_PUA_VULN_Renamed_Driver_Advancedmicrodevices
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AMDPowerProfiler/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_074A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rtkiosys_Realtekiodriver_074A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -12351,14 +9778,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Realtek_Rt
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_98B7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_98B7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -12379,14 +9800,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Novellinc_Novellxtierforwindows_V_7A2C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Novellinc_Novellxtierforwindows_V_7A2C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nicm.sys"
 		author = "Florian Roth"
@@ -12406,14 +9821,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_r_PUA_VULN_Renamed_Driver_Novellinc_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nicm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_9A95 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_9A95 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -12431,14 +9840,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_19BF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_19BF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -12459,14 +9862,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_2BBC {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_2BBC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -12484,14 +9881,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Logitechinc_Lvavsys_Logitechwebcamsoftware_E86C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Logitechinc_Lvavsys_Logitechwebcamsoftware_E86C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Lv561av.sys"
 		author = "Florian Roth"
@@ -12512,14 +9903,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Logitechinc_Lva
 	condition:
 		uint16(0) == 0x5a4d and filesize < 600KB and all of them and not filename matches /Lv561av/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_E6D1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporation_Mtcbsvsys_Getacsystemserviceprovider_E6D1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GtcKmdfBs.sys"
 		author = "Florian Roth"
@@ -12540,14 +9925,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Getactechnologycorporatio
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GtcKmdfBs/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Hpinc_Hpportioxsys_Hpportio_C505 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Hpinc_Hpportioxsys_Hpportio_C505 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HpPortIox64.sys"
 		author = "Florian Roth"
@@ -12568,14 +9947,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rena_PUA_VULN_Renamed_Driver_Hpinc_H
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HpPortIox64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_AB8F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_AB8F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -12596,14 +9969,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtk
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_2CE8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpot_Avginternetsecuritysystem_2CE8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -12624,14 +9991,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxtapsys_Virtualboxhostinterfacenetworkingdriver_994F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxtapsys_Virtualboxhostinterfacenetworkingdriver_994F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxTAP.sys"
 		author = "Florian Roth"
@@ -12652,14 +10013,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Innotekgmbh_Vboxtapsys_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VBoxTAP/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_9254 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_9254 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -12680,14 +10035,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_3AF9 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_3AF9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -12708,14 +10057,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_4429 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_4429 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iqvw64e.sys, iQVW64.SYS, NalDrv.sys"
 		author = "Florian Roth"
@@ -12737,14 +10080,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iqvw64e/i and not filename matches /iQVW64/i and not filename matches /NalDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_32E1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtkiowxsys_Realtekiodriver_32E1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - rtkio.sys, rtkio64.sys, rtkiow8x64.sys, rtkiow10x64.sys"
 		author = "Florian Roth"
@@ -12765,14 +10102,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Realtek_Rtk
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /rtkio/i and not filename matches /rtkio64/i and not filename matches /rtkiow8x64/i and not filename matches /rtkiow10x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Micsystechnologycoltd_Msiosys_Msiodriverversion_X_43BA {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Micsystechnologycoltd_Msiosys_Msiodriverversion_X_43BA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - MsIo64.sys"
 		author = "Florian Roth"
@@ -12793,14 +10124,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Micsystechnologyco
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /MsIo64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_1078 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_1078 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -12821,14 +10146,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_26C2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycoltd_Gdrvsys_Gigabytesoftwaredriver_26C2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gdrv.sys"
 		author = "Florian Roth"
@@ -12849,14 +10168,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Gigabytetechnologycol
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /gdrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Interfacecorporation_Cpxcsys_Gpcxcdiobmpcicpci_05C1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Interfacecorporation_Cpxcsys_Gpcxcdiobmpcicpci_05C1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CP2X72C.SYS"
 		author = "Florian Roth"
@@ -12878,14 +10191,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Interfacecorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CP2X72C/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_CC68 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_CC68 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -12906,14 +10213,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 500KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_A209 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_A209 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt.sys"
 		author = "Florian Roth"
@@ -12934,14 +10235,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Cpudriver_Windowsrcodenamelonghornddkdriver_159E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rule_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovider_Cpudriver_Windowsrcodenamelonghornddkdriver_159E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WCPU.sys"
 		author = "Florian Roth"
@@ -12962,14 +10257,8 @@ rule Neo23x0_yara_rule_PUA_VULN_Renamed_Driver_Windowsrcodenamelonghornddkprovid
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /WCPU/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Proxydrvsys_Nn_0B20 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Proxydrvsys_Nn_0B20 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ProxyDrv.sys"
 		author = "Florian Roth"
@@ -12990,14 +10279,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Prox
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ProxyDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_1DDF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_Ntiolibsys_Ntiolib_1DDF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NTIOLib.sys"
 		author = "Florian Roth"
@@ -13018,14 +10301,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_rename_PUA_VULN_Renamed_Driver_Msi_N
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NTIOLib/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_654C {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_654C {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -13046,14 +10323,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Marvintestsolutionsinc_Hwsys_Hw_FD38 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Marvintestsolutionsinc_Hwsys_Hw_FD38 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HW.sys"
 		author = "Florian Roth"
@@ -13075,14 +10346,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_re_PUA_VULN_Renamed_Driver_Marvintes
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HW/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_6E0A {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_6E0A {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -13103,14 +10368,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_A2F4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_A2F4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -13131,14 +10390,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Advancedmicrodevices_Aoddriversys_Amdoverdriveservicedriver_81D5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Aoddriversys_Amdoverdriveservicedriver_81D5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AODDriver.sys"
 		author = "Florian Roth"
@@ -13159,14 +10412,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Advancedmicrodevices_Ao
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AODDriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_EC9B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwinfosys_Hwinfokerneldriver_EC9B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - HWiNFO32.SYS"
 		author = "Florian Roth"
@@ -13187,14 +10434,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Realixtm_Hwi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /HWiNFO32/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_D7C7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_D7C7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sandra.sys"
 		author = "Florian Roth"
@@ -13215,14 +10456,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sandra/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorporation_Nvflash_Nvidiaflashdriver_AFDD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Nvidiacorporation_Nvflash_Nvidiaflashdriver_AFDD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvflash.sys"
 		author = "Florian Roth"
@@ -13243,14 +10478,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Nvidiacorporati
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvflash/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_F85E {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_F85E {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -13271,14 +10500,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Vektortsecurityservice_Vboxdrv_Antidetectpublicbyvektortrev_26F4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Vektortsecurityservice_Vboxdrv_Antidetectpublicbyvektortrev_26F4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxDrv.sys"
 		author = "Florian Roth"
@@ -13299,14 +10522,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Vektortsecurityservice_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /VBoxDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_3C42 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_3C42 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -13327,14 +10544,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asustekcomputerinc_Atsziosys_Atsziodriver_55A1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asustekcomputerinc_Atsziosys_Atsziodriver_55A1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ATSZIO.sys"
 		author = "Florian Roth"
@@ -13356,14 +10567,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Asustekcompute
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ATSZIO/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Sbiosiosys_Samsungrbiosiodriver_B3D1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Sbiosiosys_Samsungrbiosiodriver_B3D1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SBIOSIO64.sys"
 		author = "Florian Roth"
@@ -13385,14 +10590,8 @@ rule Neo23x0_yara_rules_vuln_drive_PUA_VULN_Renamed_Driver_Windowsrwinddkprovide
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SBIOSIO64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_1AAF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_Sandra_Sisoftwaresandra_1AAF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - sandra.sys"
 		author = "Florian Roth"
@@ -13413,14 +10612,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Sisoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /sandra/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_1698 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_1698 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -13441,14 +10634,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_C901 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Aegis_C901 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -13469,14 +10656,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_ren_PUA_VULN_Renamed_Driver_Trendmic
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Symanteccorporation_Vproeventmonitorsys_Symanteceventmonitorsdriverdevelopmentedition_7877 {
-=======
 //===SUCCESS===
 rule Neo23x_yara_r_PUA_VULN_Renamed_Driver_Symanteccorporation_Vproeventmonitorsys_Symanteceventmonitorsdriverdevelopmentedition_7877 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VProEventMonitor.sys"
 		author = "Florian Roth"
@@ -13497,14 +10678,8 @@ rule Neo23x_yara_r_PUA_VULN_Renamed_Driver_Symanteccorporation_Vproeventmonitors
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /VProEventMonitor/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Wj_Kprocesshacker_C725 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Wj_Kprocesshacker_C725 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - kprocesshacker.sys"
 		author = "Florian Roth"
@@ -13524,14 +10699,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Wj_K
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /kprocesshacker/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_7AD0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpot_Avastantivirus_7AD0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -13552,14 +10721,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Avastsoftwar
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_83A1 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_83A1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -13580,14 +10743,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_C082 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_C082 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -13608,14 +10765,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Creativetechnologyinnovationcoltd_Ctiiosys_Ctiiodriverversion_X_2121 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Creativetechnologyinnovationcoltd_Ctiiosys_Ctiiodriverversion_X_2121 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - CtiIo64.sys"
 		author = "Florian Roth"
@@ -13636,14 +10787,8 @@ rule Neo23x0_yara_rules_vuln_d_PUA_VULN_Renamed_Driver_Creativetechnologyinnovat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /CtiIo64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Ssmartsoftwaresolutionsgmbh_Sysdrvs_Sysdrvs_0E53 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Ssmartsoftwaresolutionsgmbh_Sysdrvs_Sysdrvs_0E53 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - SysDrv3S.sys"
 		author = "Florian Roth"
@@ -13664,14 +10809,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Ssmartsoftwares
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /SysDrv3S/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_14AD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_14AD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -13692,14 +10831,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Geintelligentplatformsinc_Gedevicedriver_Proficymachineedition_Build_CAC5 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Geintelligentplatformsinc_Gedevicedriver_Proficymachineedition_Build_CAC5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GEDevDrv.SYS"
 		author = "Florian Roth"
@@ -13721,14 +10854,8 @@ rule Neo23x0_yara_rules_vul_PUA_VULN_Renamed_Driver_Geintelligentplatformsinc_Ge
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GEDevDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Cpuzsys_Windowsrserverddkdriver_3871 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrserverddkprovider_Cpuzsys_Windowsrserverddkdriver_3871 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - cpuz_x64.sys"
 		author = "Florian Roth"
@@ -13749,14 +10876,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrserverddkprovi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /cpuz_x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Lowleveldriver_F941 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Lowleveldriver_F941 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - GPU-Z.sys"
 		author = "Florian Roth"
@@ -13774,14 +10895,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Lowl
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /GPU-Z/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_37C6 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_37C6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -13802,14 +10917,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Toshibacorporation_Nchgbiosxsys_Toshibabiospackage_3143 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Toshibacorporation_Nchgbiosxsys_Toshibabiospackage_3143 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - NCHGBIOS2x64.SYS"
 		author = "Florian Roth"
@@ -13830,14 +10939,8 @@ rule Neo23x0_yara_rules_vuln_drivers_PUA_VULN_Renamed_Driver_Toshibacorporation_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /NCHGBIOS2x64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_5439 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_5439 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -13856,14 +10959,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_30AB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_30AB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -13884,14 +10981,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Zemanaltd_Zam_DE8F {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zemanaltd_Zam_DE8F {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - zam64.sys, zamguard32.sys, zamguard64.sys"
 		author = "Florian Roth"
@@ -13909,14 +11000,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Zema
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /zam64/i and not filename matches /zamguard32/i and not filename matches /zamguard64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_0FC0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvoclocksys_Nvidiasystemutilitydriver_0FC0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - nvoclock.sys"
 		author = "Florian Roth"
@@ -13937,14 +11022,8 @@ rule Neo23x0_yara_rules_vuln_drivers__PUA_VULN_Renamed_Driver_Nvidiacorp_Nvocloc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /nvoclock/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Supermicrocomputerinc_Phymem_Phymem_1963 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Supermicrocomputerinc_Phymem_Phymem_1963 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - phymem64.sys"
 		author = "Florian Roth"
@@ -13965,14 +11044,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Supermicroc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /phymem64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_16A2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinternalscom_Procexpsys_Processexplorer_16A2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - procexp.Sys"
 		author = "Florian Roth"
@@ -13994,14 +11067,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Sysinternalswwwsysinte
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /procexp/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Vektortsecurityservice_Vboxdrv_Antidetectpublic_CFB7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Vektortsecurityservice_Vboxdrv_Antidetectpublic_CFB7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxDrv.sys"
 		author = "Florian Roth"
@@ -14022,14 +11089,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Vektortsecurityse
 	condition:
 		uint16(0) == 0x5a4d and filesize < 400KB and all of them and not filename matches /VBoxDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxdrvsys_Sunvirtualbox_R_C894 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Sunmicrosystemsinc_Vboxdrvsys_Sunvirtualbox_R_C894 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxDrv.sys"
 		author = "Florian Roth"
@@ -14050,14 +11111,8 @@ rule Neo23x0_yara_rules_vuln_drivers_st_PUA_VULN_Renamed_Driver_Sunmicrosystemsi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /VBoxDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Pinduoduoltdcorp_Vboxdrv_Pinduoduosecurevdi_9DAB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Pinduoduoltdcorp_Vboxdrv_Pinduoduosecurevdi_9DAB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - VBoxDrv.sys"
 		author = "Florian Roth"
@@ -14078,14 +11133,8 @@ rule Neo23x0_yara_rules_vuln_drivers_str_PUA_VULN_Renamed_Driver_Pinduoduoltdcor
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and all of them and not filename matches /VBoxDrv/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_18DE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Viragtsys_Viritagentsystem_18DE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - viragt64.sys"
 		author = "Florian Roth"
@@ -14106,14 +11155,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Tgsoftsas_Vi
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /viragt64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_8CFD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_8CFD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -14134,14 +11177,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_D5C4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_D5C4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -14162,14 +11199,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_
 	condition:
 		uint16(0) == 0x5a4d and filesize < 200KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Wj_Kprocesshacker_7021 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Wj_Kprocesshacker_7021 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - kprocesshacker.sys"
 		author = "Florian Roth"
@@ -14189,14 +11220,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_renamed_PUA_VULN_Renamed_Driver_Wj_K
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /kprocesshacker/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_76E8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc_Tmcommsys_Trendmicroeyes_76E8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - TmComm.sys"
 		author = "Florian Roth"
@@ -14217,14 +11242,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Trendmicroinc
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /TmComm/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_5148 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_5148 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -14245,14 +11264,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Biostargroup_Iodriver_Biostariodriver_1D03 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Biostargroup_Iodriver_Biostariodriver_1D03 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - BS_HWMIO64_W10.sys"
 		author = "Florian Roth"
@@ -14273,14 +11286,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict_PUA_VULN_Renamed_Driver_Biostargroup
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /BS_HWMIO64_W10/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_E2E7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_Aswarpotsys_Avginternetsecuritysystem_E2E7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"
@@ -14301,14 +11308,8 @@ rule Neo23x0_yara_rules_vuln_dri_PUA_VULN_Renamed_Driver_Avgtechnologiesczsro_As
 	condition:
 		uint16(0) == 0x5a4d and filesize < 300KB and all of them and not filename matches /aswArPot/i and not filename matches /avgArPot/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_B224 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_B224 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -14329,14 +11330,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_5F69 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporation_Iqvwsys_Intelriqvwsys_5F69 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - iQVW64.SYS"
 		author = "Florian Roth"
@@ -14357,14 +11352,8 @@ rule Neo23x0_yara_rules_vuln_drivers_stric_PUA_VULN_Renamed_Driver_Intelcorporat
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /iQVW64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_5E3B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftware_Ngiodriversys_Avastng_5E3B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ngiodriver.sys"
 		author = "Florian Roth"
@@ -14385,14 +11374,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Avastsoftwa
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /ngiodriver/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_9DEE {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider_Dcprotectsys_Dcprotectrwinxdriver_9DEE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - DcProtect.sys"
 		author = "Florian Roth"
@@ -14413,14 +11396,8 @@ rule Neo23x0_yara_rules_vuln_driv_PUA_VULN_Renamed_Driver_Windowsrwinddkprovider
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /DcProtect/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_9679 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_9679 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -14441,14 +11418,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_8137 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaboratebytesag_Elbycdio_Cdrtools_8137 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - elbycdio.sys"
 		author = "Florian Roth"
@@ -14469,14 +11440,8 @@ rule Neo23x0_yara_rules_vuln_drivers_strict__PUA_VULN_Renamed_Driver_Elaborateby
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /elbycdio/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Asmediatechnologyinc_Asmiosys_Asmediapcidriver_E465 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Asmediatechnologyinc_Asmiosys_Asmediapcidriver_E465 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - AsmIo64.sys"
 		author = "Florian Roth"
@@ -14497,14 +11462,8 @@ rule Neo23x0_yara_rules_vuln_drivers_s_PUA_VULN_Renamed_Driver_Asmediatechnology
 	condition:
 		uint16(0) == 0x5a4d and filesize < 100KB and all of them and not filename matches /AsmIo64/i
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
-
-
-rule PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_4DA0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_vuln_drivers_stri_PUA_VULN_Renamed_Driver_Avastsoftware_Aswarpotsys_Avastantivirus_4DA0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_vuln_drivers_strict_renamed.yar
 	meta:
 		description = "Detects renamed vulnerable driver mentioned in LOLDrivers project using VersionInfo values from the PE header - aswArPot.sys, avgArPot.sys"
 		author = "Florian Roth"

@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_br.yar
-
-rule MAL_Winnti_BR_Report_TwinPeaks {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_br_MAL_Winnti_BR_Report_TwinPeaks {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_br.yar
    meta:
       description = "Detects Winnti samples"
       author = "@br_data repo"
@@ -18,13 +13,8 @@ rule Neo23x0_apt_winnti_br_MAL_Winnti_BR_Report_TwinPeaks {
    condition:
       uint16(0) == 0x5a4d and $cooper and ($pattern in (@cooper[1]..@cooper[1]+100))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_br.yar
-
-rule MAL_BR_Report_TheDao {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_br_MAL_BR_Report_TheDao {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_br.yar
    meta:
       description = "Detects indicator in malicious UPX packed samples"
       author = "@br_data repo"
@@ -36,13 +26,8 @@ rule Neo23x0_apt_winnti_br_MAL_BR_Report_TheDao {
   condition:
     uint16(0) == 0x5a4d and $b at pe.overlay.offset and pe.overlay.size > 100
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_winnti_br.yar
-
-rule MAL_Winnti_BR_Report_MockingJay {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_winnti_br_MAL_Winnti_BR_Report_MockingJay {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_winnti_br.yar
    meta:
       description = "Detects Winnti samples"
       author = "@br_data repo"

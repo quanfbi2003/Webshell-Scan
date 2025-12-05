@@ -1,26 +1,15 @@
 /*
     Reworked YARA rules as provided by FR/ANSSI/SDO in report on Sandworm activity 
     https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-005.pdf
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-=======
-
-    - simplified structure (removed private rules)
-    - performance / memory tuning by removal of unnecessary regular expressions
-    - removal of overapping rules (rules that contained the specific socket path '/tmp/.applocktx')
-*/
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
 
     - simplified structure (removed private rules)
     - performance / memory tuning by removal of unnecessary regular expressions
     - removal of overapping rules (rules that contained the specific socket path '/tmp/.applocktx')
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-rule WEBSHELL_PAS_webshell {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO (modified by Florian Roth)"
       description = "Detects P.A.S. PHP webshell - Based on DHS/FBI JAR-16-2029 (Grizzly  Steppe)"
@@ -39,13 +28,8 @@ rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell {
       ( filesize > 20KB and filesize < 200KB ) and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule WEBSHELL_PAS_webshell_ZIPArchiveFile {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell_ZIPArchiveFile {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO (modified by Florian Roth)"
       description = "Detects an archive file created by P.A.S. for download operation"
@@ -58,13 +42,8 @@ rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell_ZIPArchiveFile {
    condition:
       $s1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule WEBSHELL_PAS_webshell_PerlNetworkScript {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell_PerlNetworkScript {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects PERL scripts created by P.A.S. webshell"
@@ -83,13 +62,8 @@ rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell_PerlNetworkScript {
       ( $pl_start at 0 and all of ($pl*) ) or
       any of ($msg*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule WEBSHELL_PAS_webshell_SQLDumpFile {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell_SQLDumpFile {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects SQL dump file created by P.A.S. webshell"
@@ -102,13 +76,8 @@ rule Neo23x0_apt_sandworm_centreon_WEBSHELL_PAS_webshell_SQLDumpFile {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Configuration_Key {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_Key {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects the encryption key for the configuration file used by Exaramel malware as seen in sample e1ff72[...]"
@@ -121,13 +90,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_Key {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Configuration_Name_Encrypted {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_Name_Encrypted {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects the specific name of the configuration file in Exaramel malware as seen in sample e1ff72[...]"
@@ -140,13 +104,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_Name_
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Configuration_File_Plaintext {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_File_Plaintext {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects contents of the configuration file used by Exaramel (plaintext)"
@@ -159,13 +118,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_File_
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Configuration_File_Ciphertext {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_File_Ciphertext {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects contents of the configuration file used by Exaramel (encrypted with key odhyrfjcnfkdtslt, sample e1ff72[...]"
@@ -178,13 +132,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Configuration_File_
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Socket_Path {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Socket_Path {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects path of the unix socket created to prevent concurrent executions in Exaramel malware"
@@ -197,13 +146,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Socket_Path {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Task_Names {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Task_Names {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects names of the tasks received from the CC server in Exaramel malware"
@@ -223,13 +167,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Task_Names {
    condition:
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Struct {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Struct {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects the beginning of type _type struct for some of the most important structs in Exaramel malware"
@@ -246,13 +185,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Struct {
    condition:
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Strings_Typo {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Strings_Typo {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO"
       description = "Detects misc strings in Exaramel malware with typos"
@@ -268,13 +202,8 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Strings_Typo {
    condition:
       3 of ($typo*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sandworm_centreon.yar
-
-rule APT_MAL_Sandworm_Exaramel_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sandworm_centreon.yar
    meta:
       author = "FR/ANSSI/SDO (composed from 4 saparate rules by Florian Roth)"
       description = "Detects Strings used by Exaramel malware"
@@ -303,4 +232,3 @@ rule Neo23x0_apt_sandworm_centreon_APT_MAL_Sandworm_Exaramel_Strings {
       ( all of ($persistence*) and all of ($report*) ) or 
       ( 5 of ($url*) and all of ($report*) )
 }
-

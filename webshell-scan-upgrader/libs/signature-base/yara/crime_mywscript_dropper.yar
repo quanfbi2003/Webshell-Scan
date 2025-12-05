@@ -4,20 +4,12 @@
    Date: 2017-07-27
    Identifier: MyWScript
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mywscript_dropper.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mywscript_dropper.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mywscript_dropper.yar
-rule MyWScript_CompiledScript {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_mywscript_dropper_MyWScript_CompiledScript {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mywscript_dropper.yar
    meta:
       description = "Detects a scripte with default name Mywscript compiled with Script2Exe (can also be a McAfee tool https://community.mcafee.com/docs/DOC-4124)"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mofang.yar
-rule shimrat {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mofang_shimrat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mofang.yar
    meta:
       description = "Detects ShimRat and the ShimRat loader"
       author = "Yonathan Klijnsma (yonathan.klijnsma@fox-it.com)"
@@ -29,13 +25,8 @@ rule Neo23x0_apt_mofang_shimrat {
       ($cmdlineformat and $demoproject_keyword1 and $demoproject_keyword2 and $comspec) or
       ($dll and $dat and $shim_func1 and $shim_func2 and $shim_func3)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mofang.yar
-
-rule shimratreporter {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mofang_shimratreporter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mofang.yar
    meta:
       description = "Detects ShimRatReporter"
       author = "Yonathan Klijnsma (yonathan.klijnsma@fox-it.com)"

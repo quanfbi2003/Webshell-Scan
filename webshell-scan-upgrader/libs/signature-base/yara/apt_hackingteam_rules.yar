@@ -4,20 +4,12 @@
 	Date: 2015-07-07
 	Identifier: HackingTeam
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hackingteam_rules.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hackingteam_rules.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hackingteam_rules.yar
-rule bin_ndisk {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_hackingteam_rules_bin_ndisk {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hackingteam_rules.yar
 	meta:
 		description = "Hacking Team Disclosure Sample - file ndisk.sys"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_apt_hackingteam_rules_bin_ndisk {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 30KB and 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hackingteam_rules.yar
-
-rule Hackingteam_Elevator_DLL {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hackingteam_rules_Hackingteam_Elevator_DLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hackingteam_rules.yar
 	meta:
 		description = "Hacking Team Disclosure Sample - file elevator.dll"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -69,13 +56,8 @@ rule Neo23x0_apt_hackingteam_rules_Hackingteam_Elevator_DLL {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 1000KB and 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hackingteam_rules.yar
-
-rule HackingTeam_Elevator_EXE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hackingteam_rules_HackingTeam_Elevator_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hackingteam_rules.yar
 	meta:
 		description = "Hacking Team Disclosure Sample - file elevator.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -104,5 +86,3 @@ rule Neo23x0_apt_hackingteam_rules_HackingTeam_Elevator_EXE {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 3000KB and all of ($x*) and 3 of ($s*)
 }
-
-

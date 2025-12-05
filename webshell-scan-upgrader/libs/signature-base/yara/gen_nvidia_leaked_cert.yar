@@ -1,12 +1,6 @@
-
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_nvidia_leaked_cert.yar
-
-rule SUSP_NVIDIA_LAPSUS_Leak_Compromised_Cert_Mar22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_nvidia_leaked_cert_SUSP_NVIDIA_LAPSUS_Leak_Compromised_Cert_Mar22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_nvidia_leaked_cert.yar
    meta:
       description = "Detects a binary signed with the leaked NVIDIA certifcate and compiled after March 1st 2022"
       author = "Florian Roth (Nextron Systems)"

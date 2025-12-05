@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_backdoor_ssh_python.yar
-
-rule custom_ssh_backdoor_server {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_backdoor_ssh_python_custom_ssh_backdoor_server {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_backdoor_ssh_python.yar
    meta:
       description = "Custome SSH backdoor based on python and paramiko - file server.py"
       author = "Florian Roth (Nextron Systems)"

@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_nobellium_rdp_phish.yar
-
-
-rule Neo23x0_apt_SUSP_RDP_File_Indicators_Oct24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nobellium_rdp_phish_SUSP_RDP_File_Indicators_Oct24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nobellium_rdp_phish.yar
    meta:
       description = "Detects characteristics found in malicious RDP files used as email attachments in spear phishing campaigns"
       author = "Florian Roth"

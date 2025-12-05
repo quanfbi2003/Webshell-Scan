@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-10-14
-   Identifier: Bronze Butler
-   Reference: https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-rule BronzeButler_Daserf_Delphi_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_BronzeButler_Daserf_Delphi_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects malware / hacktool sample from Bronze Butler incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -50,13 +36,8 @@ rule Neo23x0_apt_bronze_butler_BronzeButler_Daserf_Delphi_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 400KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-
-rule BronzeButler_Daserf_C_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_BronzeButler_Daserf_C_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects malware / hacktool sample from Bronze Butler incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -97,13 +78,8 @@ rule Neo23x0_apt_bronze_butler_BronzeButler_Daserf_C_1 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-
-rule BronzeButler_DGet_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_BronzeButler_DGet_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects malware / hacktool sample from Bronze Butler incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +93,8 @@ rule Neo23x0_apt_bronze_butler_BronzeButler_DGet_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 10KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-
-rule BronzeButler_UACBypass_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_BronzeButler_UACBypass_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects malware / hacktool sample from Bronze Butler incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -142,13 +113,8 @@ rule Neo23x0_apt_bronze_butler_BronzeButler_UACBypass_1 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 1000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-
-rule BronzeButler_xxmm_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_BronzeButler_xxmm_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects malware / hacktool sample from Bronze Butler incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -174,13 +140,8 @@ rule Neo23x0_apt_bronze_butler_BronzeButler_xxmm_1 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-
-rule BronzeButler_RarStar_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_BronzeButler_RarStar_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects malware / hacktool sample from Bronze Butler incident"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -207,13 +168,8 @@ rule Neo23x0_apt_bronze_butler_BronzeButler_RarStar_1 {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bronze_butler.yar
-
-rule Daserf_Nov1_BronzeButler {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bronze_butler_Daserf_Nov1_BronzeButler {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bronze_butler.yar
    meta:
       description = "Detects Daserf malware used by Bronze Butler"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -240,4 +196,3 @@ rule Neo23x0_apt_bronze_butler_Daserf_Nov1_BronzeButler {
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and ( 1 of ($x*) or 5 of them )
 }
-

@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-02-12
-   Identifier: Olympic Destroyer
-   Reference: http://blog.talosintelligence.com/2018/02/olympic-destroyer.html
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: http://blog.talosintelligence.com/2018/02/olympic-destroyer.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_olympic_destroyer.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Destructive_Ransomware_Gen1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_olympic_destroyer_Destructive_Ransomware_Gen1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_olympic_destroyer.yar
    meta:
       description = "Detects destructive malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -42,13 +28,8 @@ rule Neo23x0_apt_olympic_destroyer_Destructive_Ransomware_Gen1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_olympic_destroyer.yar
-
-rule OlympicDestroyer_Gen2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_olympic_destroyer_OlympicDestroyer_Gen2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_olympic_destroyer.yar
    meta:
       description = "Detects Olympic Destroyer malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

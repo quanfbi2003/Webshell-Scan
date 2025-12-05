@@ -6,19 +6,12 @@
    Identifier: WannaCry
    Reference: https://goo.gl/HG2j5T
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wannacry.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule WannaCry_Ransomware {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_wannacry_WannaCry_Ransomware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_wannacry.yar
    meta:
       description = "Detects WannaCry Ransomware"
       author = "Florian Roth (Nextron Systems) (with the help of binar.ly)"
@@ -53,13 +46,8 @@ rule Neo23x0_crime_wannacry_WannaCry_Ransomware {
    condition:
       uint16(0) == 0x5a4d and filesize < 10000KB and ( 1 of ($x*) and 1 of ($s*) or 3 of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wannacry.yar
-
-rule WannaCry_Ransomware_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_wannacry_WannaCry_Ransomware_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_wannacry.yar
    meta:
       description = "Detects WannaCry Ransomware"
       author = "Florian Roth (Nextron Systems) (based on rule by US CERT)"
@@ -78,13 +66,8 @@ rule Neo23x0_crime_wannacry_WannaCry_Ransomware_Gen {
    condition:
       uint16(0) == 0x5a4d and filesize < 5000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wannacry.yar
-
-rule WannCry_m_vbs {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_wannacry_WannCry_m_vbs {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_wannacry.yar
    meta:
       description = "Detects WannaCry Ransomware VBS"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -100,13 +83,8 @@ rule Neo23x0_crime_wannacry_WannCry_m_vbs {
    condition:
       ( uint16(0) == 0x4553 and filesize < 1KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wannacry.yar
-
-rule WannCry_BAT {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_wannacry_WannCry_BAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_wannacry.yar
    meta:
       description = "Detects WannaCry Ransomware BATCH File"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -123,13 +101,8 @@ rule Neo23x0_crime_wannacry_WannCry_BAT {
    condition:
       ( uint16(0) == 0x6540 and filesize < 1KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wannacry.yar
-
-rule WannaCry_RansomNote {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_wannacry_WannaCry_RansomNote {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_wannacry.yar
    meta:
       description = "Detects WannaCry Ransomware Note"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -146,13 +119,8 @@ rule Neo23x0_crime_wannacry_WannaCry_RansomNote {
 }
 
 /* Kaspersky Rule */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_wannacry.yar
-
-rule APT_lazaruswannacry {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_wannacry_APT_lazaruswannacry {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_wannacry.yar
    meta:
       description = "Rule based on shared code between Feb 2017 Wannacry sample and Lazarus backdoor from Feb 2015 discovered by Neel Mehta"
       date = "2017-05-15"

@@ -33,7 +33,6 @@ if [[ -f "$SCRIPT_DIR/upgrader" && -s "$SCRIPT_DIR/upgrader" ]]; then
     echo "Kích thước: $(du -h "$SCRIPT_DIR/upgrader" | cut -f1)"
     echo ""
     echo "Chạy thử: ./upgrader --help"
-    echo "Hoặc:    ./upgrader --update"
 else
     echo ""
     echo "LỖI: Không tạo được file upgrader!"

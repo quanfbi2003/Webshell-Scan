@@ -5,20 +5,12 @@
    Identifier: IceFog
    Reference: https://twitter.com/ClearskySec/status/968104465818669057
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_icefog.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_icefog.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_icefog.yar
-rule IceFog_Malware_Feb18_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_icefog_IceFog_Malware_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_icefog.yar
    meta:
       description = "Detects IceFog malware"
       author = "Florian Roth (Nextron Systems)"

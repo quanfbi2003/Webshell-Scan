@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mal_ransom_wadharma.yar
-
-rule MAL_Ransomware_Wadhrama {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mal_ransom_wadharma_MAL_Ransomware_Wadhrama {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mal_ransom_wadharma.yar
    meta:
       description = "Detects Wadhrama Ransomware via Imphash"
       author = "Florian Roth (Nextron Systems)"

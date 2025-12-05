@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_stealer_exfil_zip.yar
-
-rule SUSP_MAL_EXFIL_Stealer_Output_Characteristics_Sep22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_stealer_exfil_zip_SUSP_MAL_EXFIL_Stealer_Output_Characteristics_Sep22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_stealer_exfil_zip.yar
    meta:
       description = "Detects typical stealer output files as created by RedLine or Racoon stealer"
       author = "Florian Roth (Nextron Systems)"

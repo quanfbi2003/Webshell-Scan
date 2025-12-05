@@ -1,8 +1,6 @@
 /*
    LICENSE
    Copyright (C) 2015 JPCERT Coordination Center. All Rights Reserved.
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike.yar
-=======
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are met:
@@ -38,49 +36,10 @@
 
    This software has been approved for public release and unlimited distribution.
 */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike.yar
 
-   Redistribution and use in source and binary forms, with or without
-   modification, are permitted provided that the following conditions are met:
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike.yar
-   1. Redistributions of source code must retain the above copyright notice,
-      this list of conditions and the following acknowledgments and disclaimers.
-   2. Redistributions in binary form must reproduce the above copyright notice,
-      this list of conditions and the following acknowledgments and disclaimers
-      in the documentation and/or other materials provided with the distribution.
-   3. Products derived from this software may not include "JPCERT Coordination
-      Center" in the name of such derived product, nor shall "JPCERT
-      Coordination Center"  be used to endorse or promote products derived
-      from this software without prior written permission. For written
-      permission, please contact pr@jpcert.or.jp.
-
-   ACKNOWLEDGMENTS AND DISCLAIMERS
-   Copyright (C) 2015 JPCERT Coordination Center
-
-   This software is based upon work funded and supported by the Ministry of
-   Economy, Trade and Industry.
-
-   Any opinions, findings and conclusions or recommendations expressed in this
-   software are those of the author(s) and do not necessarily reflect the views
-   of the Ministry of Economy, Trade and Industry.
-
-   NO WARRANTY. THIS JPCERT COORDINATION CENTER SOFTWARE IS FURNISHED ON
-   AN "AS-IS" BASIS. JPCERT COORDINATION CENTER MAKES NO WARRANTIES OF
-   ANY KIND, EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER INCLUDING, BUT
-   NOT LIMITED TO, WARRANTY OF FITNESS FOR PURPOSE OR MERCHANTABILITY,
-   EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE SOFTWARE. JPCERT
-   COORDINATION CENTER DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH
-   RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
-
-   This software has been approved for public release and unlimited distribution.
-*/
-
-rule APT_CobaltStrike_Beacon_Indicator {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_APT_CobaltStrike_Beacon_Indicator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike.yar
    meta:
       description = "Detects CobaltStrike beacons"
       author = "JPCERT"
@@ -93,13 +52,8 @@ rule Neo23x0_apt_cobaltstrike_APT_CobaltStrike_Beacon_Indicator {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike.yar
-
-rule HKTL_CobaltStrike_Beacon_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_HKTL_CobaltStrike_Beacon_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike.yar
    meta:
       author = "Elastic"
       description = "Identifies strings used in Cobalt Strike Beacon DLL"
@@ -113,13 +67,8 @@ rule Neo23x0_apt_cobaltstrike_HKTL_CobaltStrike_Beacon_Strings {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike.yar
-
-rule HKTL_CobaltStrike_Beacon_XOR_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_HKTL_CobaltStrike_Beacon_XOR_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike.yar
    meta:
       author = "Elastic"
       description = "Identifies XOR'd strings used in Cobalt Strike Beacon DLL"
@@ -139,13 +88,8 @@ rule Neo23x0_apt_cobaltstrike_HKTL_CobaltStrike_Beacon_XOR_Strings {
    condition:
       2 of ($s*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike.yar
-
-rule HKTL_CobaltStrike_Beacon_4_2_Decrypt {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_HKTL_CobaltStrike_Beacon_4_2_Decrypt {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike.yar
    meta:
       author = "Elastic"
       description = "Identifies deobfuscation routine used in Cobalt Strike Beacon DLL version 4.2"
@@ -158,13 +102,8 @@ rule Neo23x0_apt_cobaltstrike_HKTL_CobaltStrike_Beacon_4_2_Decrypt {
    condition:
       any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cobaltstrike.yar
-
-rule HKTL_Win_CobaltStrike : Commodity {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cobaltstrike_HKTL_Win_CobaltStrike : Commodity {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cobaltstrike.yar
    meta:
       author = "threatintel@volexity.com"
       date = "2021-05-25"

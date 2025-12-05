@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_wipers_jun25.yar
-
-
-rule Neo23x0_mal_MAL_WIPER_Unknown_Jun25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_wipers_jun25_MAL_WIPER_Unknown_Jun25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_wipers_jun25.yar
    meta:
       description = "Detects unknown disk wiper first spotted in June 2025 and uploaded from Israel"
       author = "Florian Roth"
@@ -26,13 +20,8 @@ rule Neo23x0_mal_wipers_jun25_MAL_WIPER_Unknown_Jun25 {
          or all of ($s*)
       )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_wipers_jun25.yar
-
-rule Neo23x0_mal_SUSP_LNX_SH_Disk_Wiper_Script_Jun25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_wipers_jun25_SUSP_LNX_SH_Disk_Wiper_Script_Jun25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_wipers_jun25.yar
    meta:
       description = "Detects unknown disk wiper script for Linux systems"
       author = "Florian Roth"
@@ -49,13 +38,8 @@ rule Neo23x0_mal_wipers_jun25_SUSP_LNX_SH_Disk_Wiper_Script_Jun25 {
       and filesize < 2KB
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_wipers_jun25.yar
-
-rule Neo23x0_mal_SUSP_PY_PYInstaller_Swiper_Jun25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_wipers_jun25_SUSP_PY_PYInstaller_Swiper_Jun25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_wipers_jun25.yar
    meta:
       description = "Detects suspicious Python based executable with similarities to a known disk wiper"
       author = "Florian Roth"
@@ -74,13 +58,8 @@ rule Neo23x0_mal_wipers_jun25_SUSP_PY_PYInstaller_Swiper_Jun25 {
       and filesize < 40000KB
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_wipers_jun25.yar
-
-rule Neo23x0_mal_APT_MAL_IR_DruidFly_Wiper_Jun25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_wipers_jun25_APT_MAL_IR_DruidFly_Wiper_Jun25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_wipers_jun25.yar
    meta:
       description = "Detects Wiper used by the Iranian DruidFly group"
       author = "Florian Roth"

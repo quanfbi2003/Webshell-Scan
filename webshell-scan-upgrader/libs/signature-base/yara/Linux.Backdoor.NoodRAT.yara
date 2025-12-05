@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.NoodRAT.yara
-
-
-rule reversinglabs_Lin_Linux_Backdoor_NoodRAT : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.NoodRAT.yara
-rule Linux_Backdoor_NoodRAT : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_NoodRAT_Linux_Backdoor_NoodRAT : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.NoodRAT.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.NoodRAT.yara
 {
     meta:
 
@@ -170,8 +160,4 @@ rule reversinglabs_Linux_Backdoor_NoodRAT_Linux_Backdoor_NoodRAT : tc_detection 
                 $receive_and_decrypt_data
             )
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.NoodRAT.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.NoodRAT.yara

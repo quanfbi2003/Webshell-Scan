@@ -5,20 +5,12 @@
    Identifier: Snake / Turla
    Reference: https://goo.gl/QaOh4V
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snaketurla_osx.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snaketurla_osx.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snaketurla_osx.yar
-rule SnakeTurla_Malware_May17_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Malware_May17_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snaketurla_osx.yar
    meta:
       description = "Detects Snake / Turla Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -33,13 +25,8 @@ rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Malware_May17_1 {
    condition:
       ( uint16(0) == 0xfacf and filesize < 200KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snaketurla_osx.yar
-
-rule SnakeTurla_Malware_May17_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Malware_May17_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snaketurla_osx.yar
    meta:
       description = "Detects Snake / Turla Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -55,13 +42,8 @@ rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Malware_May17_2 {
    condition:
       ( uint16(0) == 0xfacf and filesize < 6000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snaketurla_osx.yar
-
-rule SnakeTurla_Malware_May17_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Malware_May17_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snaketurla_osx.yar
    meta:
       description = "Detects Snake / Turla Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -75,13 +57,8 @@ rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Malware_May17_4 {
    condition:
       ( uint16(0) == 0x4b50 and filesize < 5000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snaketurla_osx.yar
-
-rule SnakeTurla_Installd_SH {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Installd_SH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snaketurla_osx.yar
    meta:
       description = "Detects Snake / Turla Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -95,13 +72,8 @@ rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Installd_SH {
    condition:
       ( uint16(0) == 0x2123 and filesize < 20KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snaketurla_osx.yar
-
-rule SnakeTurla_Install_SH {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_snaketurla_osx_SnakeTurla_Install_SH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snaketurla_osx.yar
    meta:
       description = "Detects Snake / Turla Sample"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

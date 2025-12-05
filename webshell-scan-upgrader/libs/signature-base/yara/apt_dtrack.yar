@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_dtrack.yar
-
-rule APT_MAL_DTRACK_Oct19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_dtrack_APT_MAL_DTRACK_Oct19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_dtrack.yar
    meta:
       description = "Detects DTRACK malware"
       author = "Florian Roth (Nextron Systems)"

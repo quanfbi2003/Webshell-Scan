@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_babbleloader_win_jan24.yar
-
-
-rule Neo23x0_mal_mal_babbleloader_win_jan24 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_babbleloader_win_jan24_mal_babbleloader_win_jan24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_babbleloader_win_jan24.yar
   meta:
       author = "0x0d4y"
       description = "This rule detects intrinsic patterns of BabbleLoader."

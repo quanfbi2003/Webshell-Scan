@@ -6,13 +6,9 @@ import "pe"
     Reference: https://www.volexity.com/blog/2021/05/27/suspected-apt29-operation-launches-election-fraud-themed-phishing-campaigns/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-rule APT_APT29_Win_FlipFlop_LDR : APT29 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_Win_FlipFlop_LDR : APT29 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       author = "threatintel@volexity.com"
       date = "2021-05-25"
@@ -27,13 +23,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_Win_FlipFlop_LDR : APT29 {
    condition:
       all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT28_Win_FreshFire : APT29 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT28_Win_FreshFire : APT29 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       author = "threatintel@volexity.com"
       date = "2021-05-27"
@@ -63,13 +54,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT28_Win_FreshFire : APT29 {
     Not shared publicly: rules for CobaltStrike loader samples, ISOs, specifc msiexec method found in some samples
     only available in THOR and VALHALLA
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_JS_EnvyScout_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_JS_EnvyScout_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects EnvyScout deobfuscator code as used by NOBELIUM group"
       author = "Florian Roth (Nextron Systems)"
@@ -81,13 +67,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_JS_EnvyScout_May21_1 {
    condition:
       filesize < 5000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_JS_EnvyScout_May21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_JS_EnvyScout_May21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects EnvyScout deobfuscator code as used by NOBELIUM group"
       author = "Florian Roth (Nextron Systems)"
@@ -102,13 +83,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_JS_EnvyScout_May21_2 {
    condition:
       filesize < 5000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_LNK_NV_Link_May21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_LNK_NV_Link_May21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects NV Link as used by NOBELIUM group"
       author = "Florian Roth (Nextron Systems)"
@@ -121,13 +97,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_LNK_NV_Link_May21_2 {
    condition:
       filesize < 5000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_LNK_Samples_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_LNK_Samples_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects link file characteristics as described in APT29 NOBELIUM report"
       author = "Florian Roth (Nextron Systems)"
@@ -157,13 +128,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_LNK_Samples_May21_1 {
       filesize < 4KB and $a1 and 
       ( all of ($sa*) or all of ($sb*) or all of ($sc*) or all of ($sd*) or all of ($se*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_BoomBox_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects BoomBox malware as described in APT29 NOBELIUM report"
       author = "Florian Roth"
@@ -172,36 +138,13 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_May21_1 {
       modified = "2025-03-20"
       score = 85
       hash = "8199f309478e8ed3f03f75e7574a3e9bce09b4423bd7eb08bb5bff03af2b7c27"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-=======
       id = "1a14dcf7-81be-5a74-a530-caf6268d1976"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    strings:
       // PowerShell tool - e1765eafb68fc6034575f126b014fcad6bb043c2961823b7cef5f711e9e01d1c
       $a1 = "]::FromBase64String($" ascii wide
 
       $xa1 = "123do3y4r378o5t34onf7t3o573tfo73" ascii wide fullword
       $xa2 = "1233t04p7jn3n4rg" ascii wide fullword
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-      $s1 = "\\Release\\BOOM.pdb" ascii
-      $s2 = "/files/upload" ascii
-      $s3 = "/tmp/readme.pdf" ascii fullword
-      $s4 = "/new/{0}" ascii fullword
-      $s5 = "(&(objectClass=user)(objectCategory=person))"
-   condition:
-      ( 
-         uint16(0) == 0x5a4d 
-         or 1 of ($a*) 
-      )
-      and (
-         1 of ($x*)
-         or 3 of ($s*)
-      )
-}
-
-rule APT_APT29_NOBELIUM_BoomBox_PDF_Masq_May21_1 {
-=======
 
       $s1 = "\\Release\\BOOM.pdb" ascii
       $s2 = "/files/upload" ascii
@@ -220,7 +163,6 @@ rule APT_APT29_NOBELIUM_BoomBox_PDF_Masq_May21_1 {
 }
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_PDF_Masq_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects PDF documents as used by BoomBox as described in APT29 NOBELIUM report"
       author = "Florian Roth (Nextron Systems)"
@@ -240,13 +182,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_PDF_Masq_May21_
       and not 1 of ($fp*)
       and math.entropy(16,filesize) > 7
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_NativeZone_Loader_May21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_NativeZone_Loader_May21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects NativeZone loader as described in APT29 NOBELIUM report"
       author = "Florian Roth (Nextron Systems)"
@@ -267,13 +204,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_NativeZone_Loader_May21
       uint16(0) == 0x5a4d and
       filesize < 3000KB and 3 of them or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_BoomBox_May21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_May21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects BoomBox malware used by APT29 / NOBELIUM"
       author = "Florian Roth (Nextron Systems)"
@@ -302,13 +234,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_BoomBox_May21_2 {
       filesize < 40KB and
       3 of them or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_Malware_May21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Malware_May21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects malware used by APT29 / NOBELIUM"
       author = "Florian Roth (Nextron Systems)"
@@ -325,13 +252,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Malware_May21_2 {
       filesize < 2200KB and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_Stageless_Loader_May21_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Stageless_Loader_May21_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects stageless loader as used by APT29 / NOBELIUM"
       author = "Florian Roth (Nextron Systems)"
@@ -354,13 +276,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Stageless_Loader_May21_
       filesize < 900KB and
       2 of them or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_Malware_May21_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Malware_May21_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects malware used by APT29 / NOBELIUM"
       author = "Florian Roth (Nextron Systems)"
@@ -383,13 +300,8 @@ rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Malware_May21_3 {
       filesize < 3000KB and
       ( $xc1 or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt29_nobelium_may21.yar
-
-rule APT_APT29_NOBELIUM_Malware_May21_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt29_nobelium_may21_APT_APT29_NOBELIUM_Malware_May21_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt29_nobelium_may21.yar
    meta:
       description = "Detects malware used by APT29 / NOBELIUM"
       author = "Florian Roth (Nextron Systems)"

@@ -5,26 +5,6 @@
 	Generated with:
 	cat ./GCTI/YARA/CobaltStrike/* >> ./signature-base/yara/gen_gcti_cobaltstrike.yar
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-/*
- * Copyright 2022 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-rule CobaltStrike_Resources_Artifact32_and_Resources_Dropper_v1_49_to_v3_14
-=======
 
 /*
  * Copyright 2022 Google LLC
@@ -45,7 +25,6 @@ rule CobaltStrike_Resources_Artifact32_and_Resources_Dropper_v1_49_to_v3_14
 
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32_and_Resources_Dropper_v1_49_to_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact32{.exe,.dll,big.exe,big.dll} and resources/dropper.exe signature for versions 1.49 to 3.14"
@@ -62,13 +41,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32_and_Resourc
 	condition:
 		any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Artifact32_v3_1_and_v3_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32_v3_1_and_v3_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact32{.dll,.exe,svc.exe,big.exe,big.dll,bigsvc.exe} and resources/artifact32uac(alt).dll signature for versions 3.1 and 3.2"
@@ -96,13 +70,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32_v3_1_and_v3
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Artifact32_v3_14_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32_v3_14_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact32{.dll,.exe,big.exe,big.dll,bigsvc.exe} signature for versions 3.14 to 4.x and resources/artifact32svc.exe for 3.14 to 4.x and resources/artifact32uac.dll for v3.14 and v4.0"
@@ -183,13 +152,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32_v3_14_to_v4
 // 	condition:
 // 		any of them
 // }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Artifact32svc_Exe_v3_1_v3_2_v3_14_and_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32svc_Exe_v3_1_v3_2_v3_14_and_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact32svc(big).exe signature for versions 3.1 and 3.2 (with overlap with v3.14 through v4.x)"
@@ -230,13 +194,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact32svc_Exe_v3_1
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Artifact64_v1_49_v2_x_v3_0_v3_3_thru_v3_14
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact64_v1_49_v2_x_v3_0_v3_3_thru_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact64{.dll,.exe,big.exe,big.dll,bigsvc.exe,big.x64.dll} and resources/rtifactuac(alt)64.dll signature for versions v1.49, v2.x, v3.0, and v3.3 through v3.14"
@@ -275,13 +234,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact64_v1_49_v2_x_
 	condition:
 		$a
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Artifact64_v3_1_v3_2_v3_14_and_v4_0
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact64_v3_1_v3_2_v3_14_and_v4_0
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact64{svcbig.exe,.dll,big.dll,svc.exe} and resources/artifactuac(big)64.dll signature for versions 3.14 to 4.x and resources/artifact32svc.exe for 3.14 to 4.x"
@@ -311,13 +265,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact64_v3_1_v3_2_v
 	condition:
 		$decoderFunction
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Artifact64_v3_14_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact64_v3_14_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/artifact64{.exe,.dll,svc.exe,svcbig.exe,big.exe,big.dll,.x64.dll,big.x64.dll} and resource/artifactuac(alt)64.exe signature for versions v3.14 through v4.x"
@@ -376,13 +325,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Artifact64_v3_14_to_v4
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v1_44
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_44
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 1.44"
@@ -416,13 +360,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_44
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v1_45
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_45
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 1.45"
@@ -457,13 +396,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_45
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v1_46
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_46
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 1.46"
@@ -494,13 +428,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_46
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v1_47
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_47
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 1.47"
@@ -529,13 +458,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_47
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v1_48
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_48
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 1.48"
@@ -569,13 +493,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_48
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v1_49
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_49
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 1.49"
@@ -608,13 +527,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v1_49
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v2_0_49
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_0_49
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Version 2.0.49"
@@ -646,13 +560,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_0_49
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v2_1_and_v2_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_1_and_v2_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   // v2.1 and v2.2 use the exact same beacon binary (matching hashes)
   meta:
@@ -685,13 +594,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_1_and_v2
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v2_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 2.3"
@@ -723,13 +627,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_3
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v2_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 2.4"
@@ -761,13 +660,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_4
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v2_5
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_5
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 2.5"
@@ -799,13 +693,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v2_5
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_0
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_0
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.0"
@@ -837,13 +726,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_0
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.1"
@@ -900,13 +784,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_1
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.2"
@@ -973,13 +852,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_2
   condition:
     $version_sig and $decoder and not $version3_1_sig
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.3"
@@ -1011,13 +885,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_3
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.4"
@@ -1049,13 +918,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_4
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_5_hf1_and_3_5_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_5_hf1_and_3_5_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   // Version 3.5-hf1 and 3.5.1 use the exact same beacon binary (same hash)
   meta:
@@ -1088,13 +952,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_5_hf1_an
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.6"
@@ -1126,13 +985,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_6
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_7
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_7
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.7"
@@ -1164,13 +1018,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_7
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_8
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_8
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.8"
@@ -1218,13 +1067,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_8
   missing specific signatures for 3.9 and 3.10 since we don't have samples
 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_11
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_11
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.11"
@@ -1257,13 +1101,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_11
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_11_bugfix_and_v3_12
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_11_bugfix_and_v3_12
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.11-bugfix and 3.12"
@@ -1297,13 +1136,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_11_bugfi
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_13
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_13
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.13"
@@ -1335,13 +1169,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_13
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_Dll_v3_14
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's resources/beacon.dll Versions 3.14"
@@ -1371,13 +1200,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_Dll_v3_14
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_Dll_v4_0_suspected
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_0_suspected
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.dll Versions 4.0 (suspected, not confirmed)"
@@ -1412,13 +1236,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_0_suspected
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_Dll_v4_1_and_v4_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_1_and_v4_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.dll Versions 4.1 and 4.2"
@@ -1451,13 +1270,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_1_and_v4_2
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_Dll_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.dll Versions 4.3 and 4.4"
@@ -1490,13 +1304,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_3_v4_4_v4_5
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_Dll_v4_7_suspected
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_7_suspected
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.dll Versions 4.7 (suspected, not confirmed)"
@@ -1555,14 +1364,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_v4_7_suspected
   
  Be very careful if you modify the $version_sig field for either of those rules. 
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-
-rule CobaltStrike_Resources_Beacon_x64_v3_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.2"
@@ -1603,13 +1406,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_2
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.3"
@@ -1650,13 +1448,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_3
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.4"
@@ -1695,13 +1488,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_4
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_5_hf1_and_v3_5_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_5_hf1_and_v3_5_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.5-hf1 and 3.5.1"
@@ -1742,13 +1530,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_5_hf1_an
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.6"
@@ -1792,13 +1575,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_6
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_7
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_7
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.7"
@@ -1839,13 +1617,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_7
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_8
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_8
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.8"
@@ -1881,13 +1654,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_8
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_11
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_11
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.11 (two subversions)"
@@ -1943,13 +1711,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_11
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_12
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_12
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.12"
@@ -1987,14 +1750,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_12
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-
-rule CobaltStrike_Resources_Beacon_x64_v3_13
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_13
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.13"
@@ -2029,13 +1786,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_13
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Beacon_x64_v3_14
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 3.14"
@@ -2072,14 +1824,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Beacon_x64_v3_14
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-
-rule CobaltStrike_Sleeve_Beacon_Dll_x86_v4_0_suspected
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_x86_v4_0_suspected
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 4.0 (suspected, not confirmed)"
@@ -2116,13 +1862,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_Dll_x86_v4_0_suspe
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_x64_v4_1_and_v_4_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_1_and_v_4_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 4.1 and 4.2"
@@ -2160,13 +1901,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_1_and_v_4_2
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_x64_v4_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Version 4.3"
@@ -2203,14 +1939,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_3
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-
-rule CobaltStrike_Sleeve_Beacon_x64_v4_4_v_4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_4_v_4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 4.4 through at least 4.6"
@@ -2247,13 +1977,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_4_v_4_5_and
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_Beacon_x64_v4_5_variant
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_5_variant
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/beacon.x64.dll Versions 4.5 (variant)"
@@ -2305,13 +2030,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_Beacon_x64_v4_5_variant
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Bind64_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bind64_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/bind64.bin signature for versions v2.5 to v4.x"
@@ -2420,13 +2140,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bind64_Bin_v2_5_throug
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Bind_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bind_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/bind.bin signature for versions 2.5 to 4.x"
@@ -2597,13 +2312,8 @@ rule Neo23x0_gen_gcti_cobalt_CobaltStrike__Resources_Browserpivot_Bin_v1_48_to_v
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Browserpivot_x64_Bin_v1_48_to_v3_14_and_Sleeve_Browserpivot_x64_Dll_v4_0_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_co_CobaltStrike_Resources_Browserpivot_x64_Bin_v1_48_to_v3_14_and_Sleeve_Browserpivot_x64_Dll_v4_0_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/browserpivot.x64.bin from v1.48 to v3.14 and sleeve/browserpivot.x64.dll from v4.0 to at least v4.4"
@@ -2667,13 +2377,8 @@ rule Neo23x0_gen_gcti_co_CobaltStrike_Resources_Browserpivot_x64_Bin_v1_48_to_v3
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Bypassuac_Dll_v1_49_to_v3_14_and_Sleeve_Bypassuac_Dll_v4_0_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstr_CobaltStrike_Resources_Bypassuac_Dll_v1_49_to_v3_14_and_Sleeve_Bypassuac_Dll_v4_0_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/bypassuac(-x86).dll from v1.49 to v3.14 (32-bit version) and sleeve/bypassuac.dll from v4.0 to at least v4.4"
@@ -2767,13 +2472,8 @@ rule Neo23x0_gen_gcti_cobaltstr_CobaltStrike_Resources_Bypassuac_Dll_v1_49_to_v3
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Bypassuac_x64_Dll_v3_3_to_v3_14_and_Sleeve_Bypassuac_x64_Dll_v4_0_and_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobal_CobaltStrike_Resources_Bypassuac_x64_Dll_v3_3_to_v3_14_and_Sleeve_Bypassuac_x64_Dll_v4_0_and_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/bypassuac-x64.dll from v3.3 to v3.14 (64-bit version) and sleeve/bypassuac.x64.dll from v4.0 to at least v4.4"
@@ -2859,13 +2559,8 @@ rule Neo23x0_gen_gcti_cobal_CobaltStrike_Resources_Bypassuac_x64_Dll_v3_3_to_v3_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Bypassuactoken_Dll_v3_11_to_v3_14
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bypassuactoken_Dll_v3_11_to_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/bypassuactoken.dll from v3.11 to v3.14 (32-bit version)"
@@ -3015,13 +2710,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bypassuactoken_Dll_v3_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Bypassuactoken_x64_Dll_v3_11_to_v3_14
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bypassuactoken_x64_Dll_v3_11_to_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/bypassuactoken.x64.dll from v3.11 to v3.14 (64-bit version)"
@@ -3139,13 +2829,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Bypassuactoken_x64_Dll
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Command_Ps1_v2_5_to_v3_7_and_Resources_Compress_Ps1_v3_8_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstri_CobaltStrike_Resources_Command_Ps1_v2_5_to_v3_7_and_Resources_Compress_Ps1_v3_8_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/command.ps1 for versions 2.5 to v3.7 and resources/compress.ps1 from v3.8 to v4.x"
@@ -3177,13 +2862,8 @@ rule Neo23x0_gen_gcti_cobaltstri_CobaltStrike_Resources_Command_Ps1_v2_5_to_v3_7
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Covertvpn_Dll_v2_1_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Covertvpn_Dll_v2_1_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/covertvpn.dll signature for version v2.2 to v4.4"
@@ -3302,13 +2982,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Covertvpn_Dll_v2_1_to_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Covertvpn_injector_Exe_v1_44_to_v2_0_49
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Covertvpn_injector_Exe_v1_44_to_v2_0_49
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/covertvpn-injector.exe signature for version v1.44 to v2.0.49"
@@ -3424,13 +3099,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Covertvpn_injector_Exe
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Dnsstager_Bin_v1_47_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Dnsstager_Bin_v1_47_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/dnsstager.bin signature for versions 1.47 to 4.x"
@@ -3508,13 +3178,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Dnsstager_Bin_v1_47_th
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Elevate_Dll_v3_0_to_v3_14_and_Sleeve_Elevate_Dll_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Elevate_Dll_v3_0_to_v3_14_and_Sleeve_Elevate_Dll_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/elevate.dll signature for v3.0 to v3.14 and sleeve/elevate.dll for v4.x"
@@ -3582,13 +3247,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Elevate_Dll_v3_0_to_v3
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Elevate_X64_Dll_v3_0_to_v3_14_and_Sleeve_Elevate_X64_Dll_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Elevate_X64_Dll_v3_0_to_v3_14_and_Sleeve_Elevate_X64_Dll_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/elevate.x64.dll signature for v3.0 to v3.14 and sleeve/elevate.x64.dll for v4.x"
@@ -3659,13 +3319,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Elevate_X64_Dll_v3_0_t
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Httpsstager64_Bin_v3_2_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpsstager64_Bin_v3_2_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/httpsstager64.bin signature for versions v3.2 to v4.x"
@@ -3755,13 +3410,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpsstager64_Bin_v3_2
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Httpsstager_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpsstager_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/httpsstager.bin signature for versions 2.5 to 4.x"
@@ -3856,13 +3506,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpsstager_Bin_v2_5_t
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Httpstager64_Bin_v3_2_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpstager64_Bin_v3_2_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/httpstager64.bin signature for versions v3.2 to v4.x"
@@ -3947,13 +3592,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpstager64_Bin_v3_2_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Httpstager_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpstager_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/httpstager.bin signature for versions 2.5 to 4.x"
@@ -4046,13 +3686,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Httpstager_Bin_v2_5_th
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Reverse64_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Reverse64_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/reverse64.bin signature for versions v2.5 to v4.x"
@@ -4151,13 +3786,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Reverse64_Bin_v2_5_thr
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Reverse_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Reverse_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/reverse.bin signature for versions 2.5 to 4.x"
@@ -4261,13 +3891,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Reverse_Bin_v2_5_throu
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Smbstager_Bin_v2_5_through_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Smbstager_Bin_v2_5_through_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/smbstager.bin signature for versions 2.5 to 4.x"
@@ -4362,13 +3987,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Smbstager_Bin_v2_5_thr
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Template_Py_v3_3_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_Py_v3_3_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/template.py signature for versions v3.3 to v4.x"
@@ -4403,13 +4023,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_Py_v3_3_to_v4
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Template_Sct_v3_3_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_Sct_v3_3_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/template.sct signature for versions v3.3 to v4.x"
@@ -4446,13 +4061,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_Sct_v3_3_to_v
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources__Template_Vbs_v3_3_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources__Template_Vbs_v3_3_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/btemplate.vbs signature for versions v3.3 to v4.x"
@@ -4492,13 +4102,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources__Template_Vbs_v3_3_to_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Template__x32_x64_Ps1_v1_45_to_v2_5_and_v3_11_to_v3_14
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template__x32_x64_Ps1_v1_45_to_v2_5_and_v3_11_to_v3_14
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/template.x64.ps1, resources/template.x32 from v3.11 to v3.14 and resources/template.ps1 from v1.45 to v2.5 "
@@ -4540,13 +4145,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template__x32_x64_Ps1_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Template_x64_Ps1_v3_0_to_v4_x_excluding_3_12_3_13
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_x64_Ps1_v3_0_to_v4_x_excluding_3_12_3_13
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/template.x64.ps1, resources/template.hint.x64.ps1 and resources/template.hint.x32.ps1 from v3.0 to v4.x except 3.12 and 3.13"
@@ -4582,13 +4182,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_x64_Ps1_v3_0_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Template_x86_Vba_v3_8_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_x86_Vba_v3_8_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resources/template.x86.vba signature for versions v3.8 to v4.x"
@@ -4624,13 +4219,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Template_x86_Vba_v3_8_
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Xor_Bin_v2_x_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Xor_Bin_v2_x_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resource/xor.bin signature for version 2.x through 4.x"
@@ -4668,13 +4258,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Xor_Bin_v2_x_to_v4_x
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Resources_Xor_Bin__64bit_v3_12_to_v4_x
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Xor_Bin__64bit_v3_12_to_v4_x
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
 	meta:
 		description = "Cobalt Strike's resource/xor64.bin signature for version 3.12 through 4.x"
@@ -4712,13 +4297,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Resources_Xor_Bin__64bit_v3_12_t
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_BeaconLoader_HA_x86_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_HA_x86_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.HA.x86.o (HeapAlloc) Versions 4.3 through at least 4.6"
@@ -4762,13 +4342,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_HA_x86_o_v4_
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_BeaconLoader_MVF_x86_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_MVF_x86_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.MVF.x86.o (MapViewOfFile) Versions 4.3 through at least 4.6"
@@ -4820,14 +4395,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_MVF_x86_o_v4
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-
-rule CobaltStrike_Sleeve_BeaconLoader_VA_x86_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_VA_x86_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.VA.x86.o (VirtualAlloc) Versions 4.3 through at least 4.6"
@@ -4909,13 +4478,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_VA_x86_o_v4_
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_BeaconLoader_x86_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_x86_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.x86.o Versions 4.3 through at least 4.6"
@@ -5000,13 +4564,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_x86_o_v4_3_v
 
 
 // 64-bit BeaconLoaders
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_BeaconLoader_HA_x64_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_HA_x64_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.HA.x64.o (HeapAlloc) Versions 4.3 through at least 4.6"
@@ -5050,14 +4609,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_HA_x64_o_v4_
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-
-rule CobaltStrike_Sleeve_BeaconLoader_MVF_x64_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_MVF_x64_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.MVF.x64.o (MapViewOfFile) Versions 4.3 through at least 4.6"
@@ -5107,13 +4660,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_MVF_x64_o_v4
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_BeaconLoader_VA_x64_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_VA_x64_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.VA.x64.o (VirtualAlloc) Versions 4.3 through at least 4.6"
@@ -5195,13 +4743,8 @@ rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_VA_x64_o_v4_
   condition:
     all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gcti_cobaltstrike.yar
-
-rule CobaltStrike_Sleeve_BeaconLoader_x64_o_v4_3_v4_4_v4_5_and_v4_6
-=======
 //===SUCCESS===
 rule Neo23x0_gen_gcti_cobaltstrike_CobaltStrike_Sleeve_BeaconLoader_x64_o_v4_3_v4_4_v4_5_and_v4_6
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gcti_cobaltstrike.yar
 {
   meta:
     description = "Cobalt Strike's sleeve/BeaconLoader.x64.o (Base) Versions 4.3 through at least 4.6"

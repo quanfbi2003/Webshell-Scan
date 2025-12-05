@@ -1,18 +1,11 @@
-// These rules have room for false positives if e.g. a dual use tool is contained within a hack tool repo.
-// Could also be done with https://yara.readthedocs.io/en/stable/modules/dotnet.html#c.typelib but that needs an extra module.
-
 import "pe"
 // These rules have room for false positives if e.g. a dual use tool is contained within a hack tool repo.
 // Could also be done with https://yara.readthedocs.io/en/stable/modules/dotnet.html#c.typelib but that needs an extra module.
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-rule HKTL_NET_GUID_CSharpSetThreadContext {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CSharpSetThreadContext {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/CSharpSetThreadContext"
@@ -27,13 +20,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CSharpSetThreadCon
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DLL_Injection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DLL_Injection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ihack4falafel/DLL-Injection"
@@ -47,13 +35,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DLL_Injection {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_LimeUSB_Csharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LimeUSB_Csharp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/LimeUSB-Csharp"
@@ -67,13 +50,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LimeUSB_Csharp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Ladon {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Ladon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/k8gege/Ladon"
@@ -87,13 +65,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Ladon {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_WhiteListEvasion {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WhiteListEvasion {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/khr0x40sh/WhiteListEvasion"
@@ -107,13 +80,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WhiteListEvasion {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Lime_Downloader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_Downloader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Lime-Downloader"
@@ -127,13 +95,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_Downloader {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DarkEye {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DarkEye {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/K1ngSoul/DarkEye"
@@ -147,13 +110,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DarkEye {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpKatz {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpKatz {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/b4rtik/SharpKatz"
@@ -167,13 +125,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpKatz {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ExternalC2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ExternalC2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ryhanson/ExternalC2"
@@ -188,13 +141,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ExternalC2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Povlsomware {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Povlsomware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/povlteksttv/Povlsomware"
@@ -208,13 +156,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Povlsomware {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RunShellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RunShellcode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/zerosum0x0/RunShellcode"
@@ -228,13 +171,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RunShellcode {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpLoginPrompt {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLoginPrompt {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/shantanu561993/SharpLoginPrompt"
@@ -248,13 +186,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLoginPrompt {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Adamantium_Thief {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Adamantium_Thief {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/LimerBoy/Adamantium-Thief"
@@ -268,13 +201,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Adamantium_Thief {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PSByPassCLM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PSByPassCLM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/padovah4ck/PSByPassCLM"
@@ -288,13 +216,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PSByPassCLM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_physmem2profit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_physmem2profit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FSecureLABS/physmem2profit"
@@ -308,13 +231,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_physmem2profit {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_NoAmci {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_NoAmci {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/med0x2e/NoAmci"
@@ -328,13 +246,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_NoAmci {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpBlock {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpBlock {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/CCob/SharpBlock"
@@ -348,13 +261,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpBlock {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_nopowershell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_nopowershell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/bitsadmin/nopowershell"
@@ -368,13 +276,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_nopowershell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_LimeLogger {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LimeLogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/LimeLogger"
@@ -388,13 +291,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LimeLogger {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AggressorScripts {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AggressorScripts {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/harleyQu1nn/AggressorScripts"
@@ -408,13 +306,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AggressorScripts {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Gopher {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Gopher {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/EncodeGroup/Gopher"
@@ -428,13 +321,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Gopher {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AVIator {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AVIator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Ch0pin/AVIator"
@@ -448,13 +336,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AVIator {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_njCrypter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_njCrypter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xPh0enix/njCrypter"
@@ -469,13 +352,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_njCrypter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpMiniDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpMiniDump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/b4rtik/SharpMiniDump"
@@ -489,13 +367,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpMiniDump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CinaRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CinaRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/wearelegal/CinaRAT"
@@ -510,13 +383,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CinaRAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ToxicEye {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ToxicEye {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/LimerBoy/ToxicEye"
@@ -530,13 +398,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ToxicEye {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Disable_Windows_Defender {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Disable_Windows_Defender {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Disable-Windows-Defender"
@@ -550,13 +413,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Disable_Windows_De
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DInvoke_PoC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DInvoke_PoC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/dtrizna/DInvoke_PoC"
@@ -570,13 +428,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DInvoke_PoC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ReverseShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ReverseShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/chango77747/ReverseShell"
@@ -591,13 +444,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ReverseShell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpC2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpC2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/SharpC2/SharpC2"
@@ -616,13 +464,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpC2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SneakyExec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SneakyExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/HackingThings/SneakyExec"
@@ -636,13 +479,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SneakyExec {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_UrbanBishopLocal {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UrbanBishopLocal {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/slyd0g/UrbanBishopLocal"
@@ -656,13 +494,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UrbanBishopLocal {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/cobbr/SharpShell"
@@ -677,13 +510,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_EvilWMIProvider {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EvilWMIProvider {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/sunnyc7/EvilWMIProvider"
@@ -697,13 +525,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EvilWMIProvider {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_GadgetToJScript {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_GadgetToJScript {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/med0x2e/GadgetToJScript"
@@ -718,13 +541,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_GadgetToJScript {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AzureCLI_Extractor {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AzureCLI_Extractor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0x09AL/AzureCLI-Extractor"
@@ -738,13 +556,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AzureCLI_Extractor
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_UAC_Escaper {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UAC_Escaper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/UAC-Escaper"
@@ -758,13 +571,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UAC_Escaper {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_HTTPSBeaconShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HTTPSBeaconShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/limbenjamin/HTTPSBeaconShell"
@@ -778,13 +586,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HTTPSBeaconShell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AmsiScanBufferBypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AmsiScanBufferBypass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/AmsiScanBufferBypass"
@@ -798,13 +601,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AmsiScanBufferBypa
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ShellcodeLoader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShellcodeLoader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Hzllaga/ShellcodeLoader"
@@ -818,13 +616,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShellcodeLoader {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_KeystrokeAPI {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KeystrokeAPI {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/fabriciorissetto/KeystrokeAPI"
@@ -839,13 +632,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KeystrokeAPI {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ShellCodeRunner {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShellCodeRunner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/antman1p/ShellCodeRunner"
@@ -860,13 +648,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShellCodeRunner {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_OffensiveCSharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_OffensiveCSharp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/diljith369/OffensiveCSharp"
@@ -891,13 +674,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_OffensiveCSharp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SHAPESHIFTER {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SHAPESHIFTER {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/matterpreter/SHAPESHIFTER"
@@ -911,13 +689,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SHAPESHIFTER {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Evasor {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Evasor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/cyberark/Evasor"
@@ -931,13 +704,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Evasor {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Stracciatella {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Stracciatella {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mgeeky/Stracciatella"
@@ -951,13 +719,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Stracciatella {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_logger {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_logger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/xxczaki/logger"
@@ -971,13 +734,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_logger {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Internal_Monologue {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Internal_Monologue {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/eladshamir/Internal-Monologue"
@@ -992,13 +750,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Internal_Monologue
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_GRAT2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_GRAT2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/r3nhat/GRAT2"
@@ -1012,13 +765,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_GRAT2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PowerShdll {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PowerShdll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/p3nt4/PowerShdll"
@@ -1032,13 +780,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PowerShdll {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CsharpAmsiBypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CsharpAmsiBypass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/WayneJLee/CsharpAmsiBypass"
@@ -1052,13 +795,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CsharpAmsiBypass {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_HastySeries {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HastySeries {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/obscuritylabs/HastySeries"
@@ -1081,13 +819,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HastySeries {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DreamProtectorFree {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DreamProtectorFree {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Paskowsky/DreamProtectorFree"
@@ -1101,13 +834,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DreamProtectorFree
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RedSharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RedSharp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/padovah4ck/RedSharp"
@@ -1121,13 +849,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RedSharp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ESC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ESC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NetSPI/ESC"
@@ -1142,13 +865,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ESC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Csharp_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Csharp_Loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Csharp-Loader"
@@ -1162,13 +880,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Csharp_Loader {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_bantam {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_bantam {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/gellin/bantam"
@@ -1182,13 +895,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_bantam {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpTask {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpTask {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jnqpblc/SharpTask"
@@ -1202,13 +910,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpTask {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_WindowsPlague {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WindowsPlague {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/RITRedteam/WindowsPlague"
@@ -1222,13 +925,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WindowsPlague {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Misc_CSharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Misc_CSharp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jnqpblc/Misc-CSharp"
@@ -1243,13 +941,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Misc_CSharp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSpray {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSpray {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jnqpblc/SharpSpray"
@@ -1263,13 +956,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSpray {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Obfuscator {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Obfuscator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/3xpl01tc0d3r/Obfuscator"
@@ -1283,13 +971,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Obfuscator {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SafetyKatz {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SafetyKatz {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/SafetyKatz"
@@ -1303,13 +986,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SafetyKatz {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Dropless_Malware {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Dropless_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Dropless-Malware"
@@ -1323,13 +1001,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Dropless_Malware {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_UAC_SilentClean {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UAC_SilentClean {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/EncodeGroup/UAC-SilentClean"
@@ -1343,13 +1016,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UAC_SilentClean {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DesktopGrabber {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DesktopGrabber {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/DesktopGrabber"
@@ -1363,13 +1031,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DesktopGrabber {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_wsManager {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_wsManager {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/guillaC/wsManager"
@@ -1383,13 +1046,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_wsManager {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_UglyEXe {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UglyEXe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/fashionproof/UglyEXe"
@@ -1403,13 +1061,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UglyEXe {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/SharpDump"
@@ -1423,13 +1076,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_EducationalRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EducationalRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/securesean/EducationalRAT"
@@ -1443,13 +1091,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EducationalRAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Stealth_Kid_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Stealth_Kid_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ctsecurity/Stealth-Kid-RAT"
@@ -1464,13 +1107,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Stealth_Kid_RAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCradle {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCradle {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/anthemtotheego/SharpCradle"
@@ -1484,13 +1122,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCradle {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BypassUAC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BypassUAC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/cnsimo/BypassUAC"
@@ -1505,13 +1138,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BypassUAC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_hanzoInjection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_hanzoInjection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/P0cL4bs/hanzoInjection"
@@ -1525,13 +1153,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_hanzoInjection {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_clr_meterpreter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_clr_meterpreter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/OJ/clr-meterpreter"
@@ -1550,13 +1173,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_clr_meterpreter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BYTAGE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BYTAGE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/KNIF/BYTAGE"
@@ -1570,13 +1188,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BYTAGE {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_MultiOS_ReverseShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MultiOS_ReverseShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/belane/MultiOS_ReverseShell"
@@ -1590,13 +1203,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MultiOS_ReverseShe
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_HideFromAMSI {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HideFromAMSI {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0r13lc0ch4v1/HideFromAMSI"
@@ -1610,13 +1218,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HideFromAMSI {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DotNetAVBypass_Master {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DotNetAVBypass_Master {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/lockfale/DotNetAVBypass-Master"
@@ -1630,13 +1233,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DotNetAVBypass_Mas
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpDPAPI {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDPAPI {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/SharpDPAPI"
@@ -1651,13 +1249,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDPAPI {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Telegra_Csharp_C2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Telegra_Csharp_C2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/sf197/Telegra_Csharp_C2"
@@ -1671,13 +1264,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Telegra_Csharp_C2 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCompile {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCompile {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/SpiderLabs/SharpCompile"
@@ -1691,13 +1279,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCompile {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Carbuncle {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Carbuncle {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/checkymander/Carbuncle"
@@ -1711,13 +1294,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Carbuncle {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_OSSFileTool {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_OSSFileTool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/B1eed/OSSFileTool"
@@ -1731,13 +1309,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_OSSFileTool {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Rubeus {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Rubeus {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/Rubeus"
@@ -1751,13 +1324,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Rubeus {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Simple_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Simple_Loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/cribdragg3r/Simple-Loader"
@@ -1771,13 +1339,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Simple_Loader {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Minidump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Minidump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/3xpl01tc0d3r/Minidump"
@@ -1791,13 +1354,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Minidump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpBypassUAC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpBypassUAC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FatRodzianko/SharpBypassUAC"
@@ -1811,13 +1369,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpBypassUAC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpPack {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpPack {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Lexus89/SharpPack"
@@ -1838,13 +1391,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpPack {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Salsa_tools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Salsa_tools {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Hackplayers/Salsa-tools"
@@ -1859,13 +1407,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Salsa_tools {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_WindowsDefender_Payload_Downloader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WindowsDefender_Payload_Downloader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/notkohlrexo/WindowsDefender-Payload-Downloader"
@@ -1879,13 +1422,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WindowsDefender_Pa
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Privilege_Escalation {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Privilege_Escalation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Mrakovic-ORG/Privilege_Escalation"
@@ -1899,13 +1437,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Privilege_Escalati
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Marauder {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Marauder {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/maraudershell/Marauder"
@@ -1919,13 +1452,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Marauder {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AV_Evasion_Tool {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AV_Evasion_Tool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/1y0n/AV_Evasion_Tool"
@@ -1940,13 +1468,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AV_Evasion_Tool {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Fenrir {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Fenrir {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/nccgroup/Fenrir"
@@ -1960,13 +1483,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Fenrir {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_StormKitty {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_StormKitty {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/LimerBoy/StormKitty"
@@ -1981,13 +1499,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_StormKitty {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Crypter_Runtime_AV_s_bypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Crypter_Runtime_AV_s_bypass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/netreverse/Crypter-Runtime-AV-s-bypass"
@@ -2001,13 +1514,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Crypter_Runtime_AV
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RunAsUser {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RunAsUser {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/atthacks/RunAsUser"
@@ -2021,13 +1529,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RunAsUser {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_HWIDbypass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HWIDbypass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/yunseok/HWIDbypass"
@@ -2041,13 +1544,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HWIDbypass {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_XORedReflectiveDLL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_XORedReflectiveDLL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/r3nhat/XORedReflectiveDLL"
@@ -2062,13 +1560,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_XORedReflectiveDLL
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Sharp_Suite {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharp_Suite {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FuzzySecurity/Sharp-Suite"
@@ -2103,13 +1596,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharp_Suite {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_rat_shell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_rat_shell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/stphivos/rat-shell"
@@ -2124,13 +1612,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_rat_shell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_dotnet_gargoyle {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_dotnet_gargoyle {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/countercept/dotnet-gargoyle"
@@ -2146,13 +1629,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_dotnet_gargoyle {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_aresskit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_aresskit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/BlackVikingPro/aresskit"
@@ -2166,13 +1644,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_aresskit {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DLL_Injector {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DLL_Injector {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/tmthrgd/DLL-Injector"
@@ -2187,13 +1660,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DLL_Injector {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_TruffleSnout {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TruffleSnout {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/dsnezhkov/TruffleSnout"
@@ -2207,13 +1675,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TruffleSnout {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Anti_Analysis {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Anti_Analysis {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Anti-Analysis"
@@ -2227,13 +1690,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Anti_Analysis {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BackNet {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BackNet {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/valsov/BackNet"
@@ -2250,13 +1708,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BackNet {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AllTheThings {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AllTheThings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/johnjohnsp1/AllTheThings"
@@ -2270,13 +1723,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AllTheThings {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AddReferenceDotRedTeam {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AddReferenceDotRedTeam {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ceramicskate0/AddReferenceDotRedTeam"
@@ -2290,13 +1738,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AddReferenceDotRed
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Lime_Crypter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_Crypter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Lime-Crypter"
@@ -2310,13 +1753,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_Crypter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BrowserGhost {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BrowserGhost {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/QAX-A-Team/BrowserGhost"
@@ -2332,13 +1770,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BrowserGhost {
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
         and not pe.is_dll()
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpShot {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShot {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/tothi/SharpShot"
@@ -2352,13 +1785,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShot {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Offensive__NET {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Offensive__NET {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mrjamiebowman/Offensive-.NET"
@@ -2372,13 +1800,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Offensive__NET {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RuralBishop {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RuralBishop {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/RuralBishop"
@@ -2392,13 +1815,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RuralBishop {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DeviceGuardBypasses {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DeviceGuardBypasses {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/tyranid/DeviceGuardBypasses"
@@ -2417,13 +1835,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DeviceGuardBypasse
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AMSI_Handler {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AMSI_Handler {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/two06/AMSI_Handler"
@@ -2440,13 +1853,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AMSI_Handler {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RAT_TelegramSpyBot {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RAT_TelegramSpyBot {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/SebastianEPH/RAT.TelegramSpyBot"
@@ -2460,13 +1868,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RAT_TelegramSpyBot
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_TheHackToolBoxTeek {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TheHackToolBoxTeek {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/teeknofil/TheHackToolBoxTeek"
@@ -2486,13 +1889,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TheHackToolBoxTeek
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_USBTrojan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_USBTrojan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mashed-potatoes/USBTrojan"
@@ -2506,13 +1904,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_USBTrojan {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_IIS_backdoor {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_IIS_backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/WBGlIl/IIS_backdoor"
@@ -2527,13 +1920,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_IIS_backdoor {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ShellGen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShellGen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jasondrawdy/ShellGen"
@@ -2547,13 +1935,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShellGen {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Mass_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Mass_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Mass-RAT"
@@ -2569,13 +1952,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Mass_RAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Browser_ExternalC2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Browser_ExternalC2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mdsecactivebreach/Browser-ExternalC2"
@@ -2589,13 +1967,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Browser_ExternalC2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_OffensivePowerShellTasking {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_OffensivePowerShellTasking {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/leechristensen/OffensivePowerShellTasking"
@@ -2610,13 +1983,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_OffensivePowerShel
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DoHC2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DoHC2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/SpiderLabs/DoHC2"
@@ -2630,13 +1998,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DoHC2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SyscallPOC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SyscallPOC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/SolomonSklash/SyscallPOC"
@@ -2651,13 +2014,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SyscallPOC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Pen_Test_Tools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Pen_Test_Tools {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/awillard1/Pen-Test-Tools"
@@ -2682,13 +2040,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Pen_Test_Tools {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_The_Collection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_The_Collection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Tlgyt/The-Collection"
@@ -2706,13 +2059,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_The_Collection {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Change_Lockscreen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Change_Lockscreen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/nccgroup/Change-Lockscreen"
@@ -2726,13 +2074,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Change_Lockscreen 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_LOLBITS {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LOLBITS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Kudaes/LOLBITS"
@@ -2746,13 +2089,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LOLBITS {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Keylogger {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Keylogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/BlackVikingPro/Keylogger"
@@ -2766,13 +2104,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Keylogger {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CVE_2020_1337 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2020_1337 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/neofito/CVE-2020-1337"
@@ -2786,13 +2119,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2020_1337 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpLogger {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/SharpLogger"
@@ -2806,13 +2134,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLogger {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AsyncRAT_C_Sharp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AsyncRAT_C_Sharp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp"
@@ -2836,13 +2159,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AsyncRAT_C_Sharp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DarkFender {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DarkFender {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xyg3n/DarkFender"
@@ -2874,13 +2192,8 @@ rule HKTL_NET_GUID_IronKit {
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_MinerDropper {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MinerDropper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/DylanAlloy/MinerDropper"
@@ -2895,13 +2208,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MinerDropper {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpDomainSpray {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDomainSpray {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/HunnicCyber/SharpDomainSpray"
@@ -2915,13 +2223,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDomainSpray {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_iSpyKeylogger {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_iSpyKeylogger {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mwsrc/iSpyKeylogger"
@@ -2938,13 +2241,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_iSpyKeylogger {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SolarFlare {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SolarFlare {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mubix/solarflare"
@@ -2958,13 +2256,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SolarFlare {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Snaffler {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Snaffler {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/SnaffCon/Snaffler"
@@ -2979,13 +2272,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Snaffler {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpShares {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShares {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/SharpShares/"
@@ -2999,13 +2287,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShares {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpEDRChecker {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpEDRChecker {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/PwnDexter/SharpEDRChecker"
@@ -3019,13 +2302,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpEDRChecker {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpClipHistory {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpClipHistory {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FSecureLABS/SharpClipHistory"
@@ -3039,13 +2317,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpClipHistory {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpGPO_RemoteAccessPolicies {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpGPO_RemoteAccessPolicies {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FSecureLABS/SharpGPO-RemoteAccessPolicies"
@@ -3059,13 +2332,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpGPO_RemoteAcc
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Absinthe {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Absinthe {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/cameronhotchkies/Absinthe"
@@ -3079,13 +2347,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Absinthe {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ExploitRemotingService {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ExploitRemotingService {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/tyranid/ExploitRemotingService"
@@ -3101,13 +2364,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ExploitRemotingSer
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Xploit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Xploit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/shargon/Xploit"
@@ -3131,13 +2389,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Xploit {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PoC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PoC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/thezdi/PoC"
@@ -3151,13 +2404,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PoC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpGPOAbuse {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpGPOAbuse {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FSecureLABS/SharpGPOAbuse"
@@ -3171,13 +2419,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpGPOAbuse {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Watson {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Watson {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/Watson"
@@ -3191,13 +2434,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Watson {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_StandIn {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_StandIn {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/FuzzySecurity/StandIn"
@@ -3211,13 +2449,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_StandIn {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_azure_password_harvesting {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_azure_password_harvesting {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/guardicore/azure_password_harvesting"
@@ -3231,13 +2464,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_azure_password_har
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PowerOPS {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PowerOPS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/fdiskyou/PowerOPS"
@@ -3251,13 +2479,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PowerOPS {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Random_CSharpTools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Random_CSharpTools {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/xorrior/Random-CSharpTools"
@@ -3277,13 +2500,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Random_CSharpTools
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CVE_2020_0668 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2020_0668 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/RedCursorSecurityConsulting/CVE-2020-0668"
@@ -3297,13 +2515,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2020_0668 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_WindowsRpcClients {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WindowsRpcClients {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/tyranid/WindowsRpcClients"
@@ -3323,13 +2536,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WindowsRpcClients 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpFruit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpFruit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rvrsh3ll/SharpFruit"
@@ -3343,13 +2551,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpFruit {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpWitness {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWitness {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/SharpWitness"
@@ -3363,13 +2566,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWitness {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RexCrypter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RexCrypter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/syrex1013/RexCrypter"
@@ -3383,13 +2581,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RexCrypter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharPersist {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharPersist {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/fireeye/SharPersist"
@@ -3403,13 +2596,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharPersist {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CVE_2019_1253 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2019_1253 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/padovah4ck/CVE-2019-1253"
@@ -3423,13 +2611,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2019_1253 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_scout {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_scout {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jaredhaight/scout"
@@ -3443,13 +2626,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_scout {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Grouper2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Grouper2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/l0ss/Grouper2/"
@@ -3463,13 +2641,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Grouper2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CasperStager {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CasperStager {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ustayready/CasperStager"
@@ -3484,13 +2657,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CasperStager {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_TellMeYourSecrets {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TellMeYourSecrets {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xbadjuju/TellMeYourSecrets"
@@ -3504,13 +2672,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TellMeYourSecrets 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpExcel4_DCOM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpExcel4_DCOM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rvrsh3ll/SharpExcel4-DCOM"
@@ -3524,13 +2687,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpExcel4_DCOM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpShooter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShooter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mdsecactivebreach/SharpShooter"
@@ -3544,13 +2702,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShooter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_NoMSBuild {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_NoMSBuild {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rvrsh3ll/NoMSBuild"
@@ -3565,13 +2718,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_NoMSBuild {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_TeleShadow2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TeleShadow2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ParsingTeam/TeleShadow2"
@@ -3586,13 +2734,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TeleShadow2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BadPotato {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BadPotato {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/BeichenDream/BadPotato"
@@ -3606,13 +2749,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BadPotato {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_LethalHTA {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LethalHTA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/codewhitesec/LethalHTA"
@@ -3627,13 +2765,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LethalHTA {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpStat {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpStat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Raikia/SharpStat"
@@ -3647,13 +2780,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpStat {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SneakyService {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SneakyService {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/malcomvetter/SneakyService"
@@ -3667,13 +2795,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SneakyService {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpExec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/anthemtotheego/SharpExec"
@@ -3687,13 +2810,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpExec {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCOM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCOM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rvrsh3ll/SharpCOM"
@@ -3707,13 +2825,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCOM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Inception {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Inception {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/two06/Inception"
@@ -3727,13 +2840,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Inception {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpWMI_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWMI_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/QAX-A-Team/sharpwmi"
@@ -3748,13 +2856,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWMI_1 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CVE_2019_1064 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2019_1064 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/RythmStick/CVE-2019-1064"
@@ -3768,13 +2871,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2019_1064 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Tokenvator {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Tokenvator {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xbadjuju/Tokenvator"
@@ -3788,13 +2886,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Tokenvator {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_WheresMyImplant {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WheresMyImplant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xbadjuju/WheresMyImplant"
@@ -3808,13 +2901,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WheresMyImplant {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Naga {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Naga {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/byt3bl33d3r/Naga"
@@ -3829,13 +2917,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Naga {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpBox {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpBox {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/P1CKLES/SharpBox"
@@ -3849,13 +2932,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpBox {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_rundotnetdll32 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_rundotnetdll32 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xbadjuju/rundotnetdll32"
@@ -3869,13 +2947,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_rundotnetdll32 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AntiDebug {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AntiDebug {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/malcomvetter/AntiDebug"
@@ -3889,13 +2962,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AntiDebug {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DInvisibleRegistry {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DInvisibleRegistry {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NVISO-BE/DInvisibleRegistry"
@@ -3909,13 +2977,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DInvisibleRegistry
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_TikiTorch {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TikiTorch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/TikiTorch"
@@ -3935,13 +2998,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TikiTorch {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_HiveJack {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HiveJack {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Viralmaniar/HiveJack"
@@ -3955,13 +3013,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_HiveJack {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DecryptAutoLogon {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DecryptAutoLogon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/securesean/DecryptAutoLogon"
@@ -3975,13 +3028,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DecryptAutoLogon {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_UnstoppableService {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UnstoppableService {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/malcomvetter/UnstoppableService"
@@ -3995,13 +3043,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UnstoppableService
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpWMI_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWMI_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/SharpWMI"
@@ -4016,13 +3059,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWMI_2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_EWSToolkit {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EWSToolkit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/EWSToolkit"
@@ -4036,13 +3074,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EWSToolkit {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SweetPotato {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SweetPotato {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/CCob/SweetPotato"
@@ -4057,13 +3090,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SweetPotato {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_memscan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_memscan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/nccgroup/memscan"
@@ -4077,13 +3105,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_memscan {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpStay {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpStay {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xthirteen/SharpStay"
@@ -4097,13 +3120,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpStay {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpLocker {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLocker {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Pickfordmatt/SharpLocker"
@@ -4117,13 +3135,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLocker {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SauronEye {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SauronEye {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/vivami/SauronEye"
@@ -4138,13 +3151,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SauronEye {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_sitrep {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_sitrep {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/mdsecactivebreach/sitrep"
@@ -4158,13 +3166,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_sitrep {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpClipboard {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpClipboard {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/slyd0g/SharpClipboard"
@@ -4178,13 +3181,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpClipboard {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCookieMonster {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCookieMonster {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/m0rv4i/SharpCookieMonster"
@@ -4198,13 +3196,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCookieMonster
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_p0wnedShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_p0wnedShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Cn33liz/p0wnedShell"
@@ -4218,13 +3211,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_p0wnedShell {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpMove {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpMove {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xthirteen/SharpMove"
@@ -4238,13 +3226,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpMove {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_C_Sharp_R_A_T_Client {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_C_Sharp_R_A_T_Client {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/AdvancedHacker101/C-Sharp-R.A.T-Client"
@@ -4258,13 +3241,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_C_Sharp_R_A_T_Clie
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpPrinter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpPrinter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rvrsh3ll/SharpPrinter"
@@ -4278,13 +3256,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpPrinter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_EvilFOCA {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EvilFOCA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/ElevenPaths/EvilFOCA"
@@ -4298,13 +3271,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EvilFOCA {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PoshC2_Misc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PoshC2_Misc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/nettitude/PoshC2_Misc"
@@ -4319,13 +3287,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PoshC2_Misc {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Sharpire {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharpire {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xbadjuju/Sharpire"
@@ -4339,13 +3302,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharpire {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Sharp_SMBExec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharp_SMBExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/checkymander/Sharp-SMBExec"
@@ -4359,13 +3317,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharp_SMBExec {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_MiscTools {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MiscTools {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/rasta-mouse/MiscTools"
@@ -4383,13 +3336,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MiscTools {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_MemoryMapper {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MemoryMapper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jasondrawdy/MemoryMapper"
@@ -4403,13 +3351,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MemoryMapper {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_VanillaRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_VanillaRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/DannyTheSloth/VanillaRAT"
@@ -4424,13 +3367,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_VanillaRAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_UnmanagedPowerShell {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UnmanagedPowerShell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/leechristensen/UnmanagedPowerShell"
@@ -4444,13 +3382,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_UnmanagedPowerShel
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Quasar {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Quasar {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/quasar/Quasar"
@@ -4465,13 +3398,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Quasar {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpAdidnsdump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpAdidnsdump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/b4rtik/SharpAdidnsdump"
@@ -4485,13 +3413,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpAdidnsdump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DotNetToJScript {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DotNetToJScript {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/tyranid/DotNetToJScript"
@@ -4505,13 +3428,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DotNetToJScript {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Inferno {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Inferno {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/LimerBoy/Inferno"
@@ -4525,13 +3443,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Inferno {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSearch {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSearch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/SharpSearch"
@@ -4545,13 +3458,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSearch {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSecDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSecDump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/G0ldenGunSec/SharpSecDump"
@@ -4565,13 +3473,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSecDump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Net_GPPPassword {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Net_GPPPassword {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/outflanknl/Net-GPPPassword"
@@ -4585,13 +3488,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Net_GPPPassword {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_FileSearcher {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_FileSearcher {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/NVISO-BE/FileSearcher"
@@ -4605,13 +3503,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_FileSearcher {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ADFSDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ADFSDump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/fireeye/ADFSDump"
@@ -4625,13 +3518,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ADFSDump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpRDP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpRDP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/0xthirteen/SharpRDP"
@@ -4645,13 +3533,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpRDP {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCall {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCall {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jhalon/SharpCall"
@@ -4665,13 +3548,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCall {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ysoserial_net {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ysoserial_net {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/pwntester/ysoserial.net"
@@ -4686,13 +3564,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ysoserial_net {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ManagedInjection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ManagedInjection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/malcomvetter/ManagedInjection"
@@ -4708,13 +3581,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ManagedInjection {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSocks {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSocks {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/nettitude/SharpSocks"
@@ -4729,13 +3597,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSocks {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Sharp_WMIExec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharp_WMIExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/checkymander/Sharp-WMIExec"
@@ -4749,13 +3612,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharp_WMIExec {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_KeeThief {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KeeThief {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/KeeThief"
@@ -4774,13 +3632,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KeeThief {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_fakelogonscreen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_fakelogonscreen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/bitsadmin/fakelogonscreen"
@@ -4794,13 +3647,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_fakelogonscreen {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PoshSecFramework {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PoshSecFramework {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/PoshSec/PoshSecFramework"
@@ -4815,13 +3663,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PoshSecFramework {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpAttack {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpAttack {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jaredhaight/SharpAttack"
@@ -4835,13 +3678,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpAttack {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Altman {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Altman {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/keepwn/Altman"
@@ -4872,13 +3710,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Altman {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BrowserPass {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BrowserPass {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/jabiel/BrowserPass"
@@ -4892,13 +3725,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BrowserPass {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Mythic {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Mythic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/its-a-feature/Mythic"
@@ -4913,13 +3741,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Mythic {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Nuages {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Nuages {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/p3nt4/Nuages"
@@ -4933,13 +3756,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Nuages {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSniper {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSniper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/HunnicCyber/SharpSniper"
@@ -4953,13 +3771,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSniper {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpHound3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpHound3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/BloodHoundAD/SharpHound3"
@@ -4973,13 +3786,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpHound3 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BlockEtw {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BlockEtw {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/Soledge/BlockEtw"
@@ -4993,13 +3801,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BlockEtw {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpWifiGrabber {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWifiGrabber {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/r3nhat/SharpWifiGrabber"
@@ -5013,13 +3816,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWifiGrabber {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpMapExec {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpMapExec {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/cube0x0/SharpMapExec"
@@ -5033,13 +3831,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpMapExec {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_k8fly {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_k8fly {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/zzwlpx/k8fly"
@@ -5053,13 +3846,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_k8fly {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Stealer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Stealer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/malwares/Stealer"
@@ -5075,13 +3863,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Stealer {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PortTran {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PortTran {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects c# red/black-team tools via typelibguid"
         reference = "https://github.com/k8gege/PortTran"
@@ -5096,14 +3879,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PortTran {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-
-rule HKTL_NET_GUID_gray_keylogger_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_gray_keylogger_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects VB.NET red/black-team tools via typelibguid"
         reference = "https://github.com/graysuit/gray-keylogger-2"
@@ -5118,13 +3895,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_gray_keylogger_2 {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Lime_Miner {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_Miner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects VB.NET red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Lime-Miner"
@@ -5138,13 +3910,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_Miner {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_BlackNET {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BlackNET {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects VB.NET red/black-team tools via typelibguid"
         reference = "https://github.com/BlackHacker511/BlackNET"
@@ -5161,13 +3928,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_BlackNET {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_PlasmaRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PlasmaRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects VB.NET red/black-team tools via typelibguid"
         reference = "https://github.com/mwsrc/PlasmaRAT"
@@ -5182,13 +3944,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_PlasmaRAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Lime_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects VB.NET red/black-team tools via typelibguid"
         reference = "https://github.com/NYAN-x-CAT/Lime-RAT"
@@ -5222,13 +3979,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Lime_RAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_njRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_njRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects VB.NET red/black-team tools via typelibguid"
         reference = "https://github.com/mwsrc/njRAT"
@@ -5247,13 +3999,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_njRAT {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Manager {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Manager {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/TheWover/Manager"
@@ -5268,13 +4015,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Manager {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_neo_ConfuserEx {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_neo_ConfuserEx {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/XenocodeRCE/neo-ConfuserEx"
@@ -5288,13 +4030,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_neo_ConfuserEx {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpAllowedToAct {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpAllowedToAct {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/pkb1s/SharpAllowedToAct"
@@ -5308,13 +4045,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpAllowedToAct 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SuperSQLInjectionV1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SuperSQLInjectionV1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/shack2/SuperSQLInjectionV1"
@@ -5328,13 +4060,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SuperSQLInjectionV
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ADSearch {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ADSearch {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/tomcarver16/ADSearch"
@@ -5348,13 +4075,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ADSearch {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_privilege_escalation_awesome_scripts_suite {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_privilege_escalation_awesome_scripts_suite {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite"
@@ -5368,13 +4090,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_privilege_escalati
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CVE_2020_1206_POC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2020_1206_POC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/ZecOps/CVE-2020-1206-POC"
@@ -5390,13 +4107,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CVE_2020_1206_POC 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DInvoke {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DInvoke {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/TheWover/DInvoke"
@@ -5410,13 +4122,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DInvoke {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpChisel {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpChisel {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/shantanu561993/SharpChisel"
@@ -5430,13 +4137,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpChisel {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpScribbles {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpScribbles {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/V1V1/SharpScribbles"
@@ -5451,13 +4153,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpScribbles {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpReg {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpReg {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/jnqpblc/SharpReg"
@@ -5471,13 +4168,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpReg {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_MemeVM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MemeVM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/TobitoFatitoRE/MemeVM"
@@ -5493,13 +4185,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MemeVM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpDir {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDir {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/jnqpblc/SharpDir"
@@ -5513,13 +4200,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpDir {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AtYourService {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AtYourService {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/mitchmoser/AtYourService"
@@ -5533,13 +4215,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AtYourService {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_LockLess {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LockLess {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/LockLess"
@@ -5553,13 +4230,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LockLess {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_EasyNet {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EasyNet {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/TheWover/EasyNet"
@@ -5575,13 +4247,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_EasyNet {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpByeBear {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpByeBear {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/S3cur3Th1sSh1t/SharpByeBear"
@@ -5596,13 +4263,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpByeBear {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpHide {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpHide {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/outflanknl/SharpHide"
@@ -5616,13 +4278,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpHide {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSvc {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSvc {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/jnqpblc/SharpSvc"
@@ -5636,13 +4293,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSvc {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCrashEventLog {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCrashEventLog {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/slyd0g/SharpCrashEventLog"
@@ -5656,13 +4308,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCrashEventLog
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_DotNetToJScript_LanguageModeBreakout {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DotNetToJScript_LanguageModeBreakout {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/FuzzySecurity/DotNetToJScript-LanguageModeBreakout"
@@ -5676,13 +4323,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_DotNetToJScript_La
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharPermission {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharPermission {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/mitchmoser/SharPermission"
@@ -5696,13 +4338,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharPermission {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RegistryStrikesBack {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RegistryStrikesBack {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/mdsecactivebreach/RegistryStrikesBack"
@@ -5716,13 +4353,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RegistryStrikesBac
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_CloneVault {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CloneVault {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/mdsecactivebreach/CloneVault"
@@ -5736,13 +4368,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_CloneVault {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_donut {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_donut {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/TheWover/donut"
@@ -5759,13 +4386,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_donut {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpHandler {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpHandler {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/jfmaes/SharpHandler"
@@ -5780,13 +4402,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpHandler {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Driver_Template {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Driver_Template {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/FuzzySecurity/Driver-Template"
@@ -5800,13 +4417,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Driver_Template {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_NashaVM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_NashaVM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/Mrakovic-ORG/NashaVM"
@@ -5820,13 +4432,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_NashaVM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSQLPwn {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSQLPwn {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/lefayjey/SharpSQLPwn.git"
@@ -5840,13 +4447,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSQLPwn {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Group3r {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Group3r {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/Group3r/Group3r.git"
@@ -5861,13 +4463,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Group3r {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_TokenStomp {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TokenStomp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/MartinIngesen/TokenStomp"
@@ -5881,13 +4478,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_TokenStomp {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_KrbRelay {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KrbRelay {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/cube0x0/KrbRelay"
@@ -5902,13 +4494,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KrbRelay {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SQLRecon {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SQLRecon {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/skahwah/SQLRecon"
@@ -5922,13 +4509,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SQLRecon {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Certify {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Certify {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/Certify"
@@ -5944,13 +4526,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Certify {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Aladdin {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Aladdin {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/nettitude/Aladdin"
@@ -5966,13 +4543,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Aladdin {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpLdapRelayScan {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLdapRelayScan {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/klezVirus/SharpLdapRelayScan"
@@ -5986,13 +4558,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpLdapRelayScan
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_LdapSignCheck {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LdapSignCheck {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/cube0x0/LdapSignCheck"
@@ -6006,13 +4573,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_LdapSignCheck {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSCCM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSCCM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/Mayyhem/SharpSCCM"
@@ -6027,13 +4589,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSCCM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Koh {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Koh {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/Koh"
@@ -6047,13 +4604,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Koh {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ForgeCert {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ForgeCert {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/ForgeCert"
@@ -6067,13 +4619,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ForgeCert {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Crassus {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Crassus {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/vu-ls/Crassus"
@@ -6087,13 +4634,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Crassus {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_RestrictedAdmin {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RestrictedAdmin {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/GhostPack/RestrictedAdmin"
@@ -6107,13 +4649,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_RestrictedAdmin {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_p2p {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_p2p {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid (p2p Remote Desktop is dual use but 100% flagged as malicious on VT)"
         reference = "https://github.com/miroslavpejic85/p2p"
@@ -6127,13 +4664,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_p2p {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpWSUS {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWSUS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/nettitude/SharpWSUS"
@@ -6147,13 +4679,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpWSUS {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpImpersonation {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpImpersonation {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/S3cur3Th1sSh1t/SharpImpersonation"
@@ -6167,13 +4694,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpImpersonation
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpCloud {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCloud {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/chrismaddalena/SharpCloud"
@@ -6187,13 +4709,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpCloud {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpSSDP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSSDP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/rvrsh3ll/SharpSSDP"
@@ -6207,13 +4724,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpSSDP {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_WireTap {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WireTap {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/WireTap"
@@ -6227,13 +4739,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_WireTap {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_KittyLitter {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KittyLitter {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/KittyLitter"
@@ -6249,13 +4756,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_KittyLitter {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpView {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpView {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/tevora-threat/SharpView"
@@ -6269,13 +4771,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpView {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Farmer {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Farmer {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/mdsecactivebreach/Farmer"
@@ -6292,13 +4789,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Farmer {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_AESShellCodeInjector {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AESShellCodeInjector {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/san3ncrypt3d/AESShellCodeInjector"
@@ -6312,13 +4804,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_AESShellCodeInject
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpChromium {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpChromium {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/djhohnstein/SharpChromium"
@@ -6332,13 +4819,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpChromium {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Get_RBCD_Threaded {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Get_RBCD_Threaded {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/FatRodzianko/Get-RBCD-Threaded"
@@ -6352,13 +4834,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Get_RBCD_Threaded 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Whisker {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Whisker {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/eladshamir/Whisker"
@@ -6372,13 +4849,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Whisker {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_ShadowSpray {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShadowSpray {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/Dec0ne/ShadowSpray"
@@ -6392,13 +4864,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_ShadowSpray {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_MalSCCM {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MalSCCM {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/nettitude/MalSCCM"
@@ -6412,13 +4879,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_MalSCCM {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SpoolSample {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SpoolSample {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/leechristensen/SpoolSample"
@@ -6432,13 +4894,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SpoolSample {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpOxidResolver {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpOxidResolver {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/S3cur3Th1sSh1t/SharpOxidResolver"
@@ -6452,13 +4909,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpOxidResolver 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_Sharpcat {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharpcat {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/theart42/Sharpcat"
@@ -6471,13 +4923,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_Sharpcat {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpNamedPipePTH {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpNamedPipePTH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/S3cur3Th1sSh1t/SharpNamedPipePTH"
@@ -6490,13 +4937,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpNamedPipePTH 
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpTokenFinder {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpTokenFinder {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/HuskyHacks/SharpTokenFinder"
@@ -6509,13 +4951,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpTokenFinder {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpRODC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpRODC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/wh0amitz/SharpRODC"
@@ -6528,13 +4965,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpRODC {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_GMSAPasswordReader {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_GMSAPasswordReader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/rvazarkar/GMSAPasswordReader"
@@ -6547,13 +4979,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_GMSAPasswordReader
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-rule HKTL_NET_GUID_SharpShareFinder {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShareFinder {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/mvelazc0/SharpShareFinder"
@@ -6566,14 +4993,8 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_SharpShareFinder {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
-
-
-rule HKTL_NET_GUID_POSTDump {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_POSTDump {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_github_net_redteam_tools_guids.yar
     meta:
         description = "Detects .NET red/black-team tools via typelibguid"
         reference = "https://github.com/YOLOP0wn/POSTDump"
@@ -6586,4 +5007,3 @@ rule Neo23x0_gen_github_net_redteam_tools_guids_HKTL_NET_GUID_POSTDump {
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-

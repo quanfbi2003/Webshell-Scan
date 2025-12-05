@@ -5,20 +5,12 @@
    Identifier: Zeus Panda
    Reference: https://cyberwtf.files.wordpress.com/2017/07/panda-whitepaper.pdf
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_zeus_panda.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_zeus_panda.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_zeus_panda.yar
-rule Zeus_Panda {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_zeus_panda_Zeus_Panda {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_zeus_panda.yar
    meta:
       description = "Detects ZEUS Panda Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

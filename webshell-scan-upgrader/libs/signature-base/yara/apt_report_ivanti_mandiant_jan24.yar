@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
-
-rule APT_UNC5221_Ivanti_ForensicArtifacts_Jan24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_report_ivanti_mandiant_jan24_APT_UNC5221_Ivanti_ForensicArtifacts_Jan24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
    meta:
       description = "Detects forensic artifacts found in the Ivanti VPN exploitation campaign by APT UNC5221"
       author = "Florian Roth"
@@ -19,13 +14,8 @@ rule Neo23x0_apt_report_ivanti_mandiant_jan24_APT_UNC5221_Ivanti_ForensicArtifac
    condition:
       filesize < 5MB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
-
-rule M_Hunting_Backdoor_ZIPLINE_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Backdoor_ZIPLINE_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
   meta:
     author = "Mandiant"
     description = "This rule detects unique strings in ZIPLINE, a passive ELF backdoor that waits for incoming TCP connections to receive commands from the threat actor."
@@ -46,13 +36,8 @@ rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Backdoor_ZIPLINE_1 {
     ((1 of ($s*)) or
     (3 of ($t*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
-
-rule M_Hunting_Dropper_WIREFIRE_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Dropper_WIREFIRE_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
   meta:
     author = "Mandiant"
     description = "This rule detects WIREFIRE, a web shell written in Python that exists as trojanized logic to a component of the pulse secure appliance."
@@ -71,13 +56,8 @@ rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Dropper_WIREFIRE_1 {
     filesize < 10KB
     and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
-
-rule M_Hunting_Webshell_LIGHTWIRE_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Webshell_LIGHTWIRE_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
   meta:
     author = "Mandiant (modified by Florian Roth)"
     description = "Detects LIGHTWIRE based on the RC4 decoding and execution 1-liner."
@@ -99,13 +79,8 @@ rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Webshell_LIGHTWIRE_2 {
     filesize < 10KB
     and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
-
-rule M_Hunting_Dropper_THINSPOOL_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Dropper_THINSPOOL_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
   meta:
     author = "Mandiant"
     description = "This rule detects THINSPOOL, a dropper that installs the LIGHTWIRE web shell onto a Pulse Secure system."
@@ -123,13 +98,8 @@ rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_Dropper_THINSPOOL_1 {
     filesize < 10KB
     and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
-
-rule M_Hunting_CredTheft_WARPWIRE_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_report_ivanti_mandiant_jan24_M_Hunting_CredTheft_WARPWIRE_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_report_ivanti_mandiant_jan24.yar
   meta:
     author = "Mandiant"
     description = "This rule detects WARPWIRE, a credential stealer written in JavaScript that is embedded into a legitimate Pulse Secure file."

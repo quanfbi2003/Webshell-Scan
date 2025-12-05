@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_quarkspwdump.yar
-
-rule QuarksPwDump_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_quarkspwdump_QuarksPwDump_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_quarkspwdump.yar
 	meta:
 		description = "Detects all QuarksPWDump versions"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

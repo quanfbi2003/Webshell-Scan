@@ -5,13 +5,9 @@
 */
 
 
-<<<<<<< Updated upstream:libs/signature-base/yara/configured_vulns_ext_vars.yar
-rule VULN_Linux_Sudoers_Commands {
-=======
 
 //===SUCCESS===
 rule Neo23x0_configured_vulns_ext_vars_VULN_Linux_Sudoers_Commands {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/configured_vulns_ext_vars.yar
 	meta:
 		description = "Detects sudoers config with commands which might allow privilege escalation to root"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -45,13 +41,8 @@ rule Neo23x0_configured_vulns_ext_vars_VULN_Linux_Sudoers_Commands {
 		( filename == "sudoers" or filepath contains "/etc/sudoers.d" ) and 
 		any of ($command*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/configured_vulns_ext_vars.yar
-
-rule VULN_Linux_NFS_Exports {
-=======
 //===SUCCESS===
 rule Neo23x0_configured_vulns_ext_vars_VULN_Linux_NFS_Exports {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/configured_vulns_ext_vars.yar
 	meta:
 		description = "Detects insecure /etc/exports NFS config which might allow privilege escalation to root or other users. The parameter insecure allows any non-root user to mount NFS shares via e.g. an SSH-tunnel. With no_root_squash SUID root binaries are allowed."
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -70,13 +61,8 @@ rule Neo23x0_configured_vulns_ext_vars_VULN_Linux_NFS_Exports {
 		filepath contains "/etc" and 
 		any of ($conf*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/configured_vulns_ext_vars.yar
-
-rule SUSP_AES_Key_in_MySql_History {
-=======
 //===SUCCESS===
 rule Neo23x0_configured_vulns_ext_vars_SUSP_AES_Key_in_MySql_History {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/configured_vulns_ext_vars.yar
 	meta:
 		description = "Detects AES key outside of key management in .mysql_history"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -92,13 +78,8 @@ rule Neo23x0_configured_vulns_ext_vars_SUSP_AES_Key_in_MySql_History {
 		filename == ".mysql_history" and 
 		any of ($c*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/configured_vulns_ext_vars.yar
-
-rule VULN_Slapd_Conf_with_Default_Password {
-=======
 //===SUCCESS===
 rule Neo23x0_configured_vulns_ext_vars_VULN_Slapd_Conf_with_Default_Password {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/configured_vulns_ext_vars.yar
 	meta:
 		description = "Detects an openldap slapd.conf with the default password test123"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -115,13 +96,8 @@ rule Neo23x0_configured_vulns_ext_vars_VULN_Slapd_Conf_with_Default_Password {
 		filename == "slapd.conf" and 
 		any of ($c*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/configured_vulns_ext_vars.yar
-
-rule VULN_Unencrypted_SSH_Private_Key : T1552_004 {
-=======
 //===SUCCESS===
 rule Neo23x0_configured_vulns_ext_vars_VULN_Unencrypted_SSH_Private_Key : T1552_004 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/configured_vulns_ext_vars.yar
     meta:
         description = "Detects unencrypted SSH private keys with DSA, RSA, ECDSA and ED25519 of openssh or Putty"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -192,14 +168,8 @@ rule Neo23x0_configured_vulns_ext_vars_VULN_Unencrypted_SSH_Private_Key : T1552_
         and not filepath contains "/root/"
         and not filename contains "ssh_host_"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/configured_vulns_ext_vars.yar
-
-
-rule VULN_Unencrypted_SSH_Private_Key_Root_Folder : T1552_004 {
-=======
 //===SUCCESS===
 rule Neo23x0_configured_vulns_ext_vars_VULN_Unencrypted_SSH_Private_Key_Root_Folder : T1552_004 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/configured_vulns_ext_vars.yar
     meta:
         description = "Detects unencrypted SSH private keys with DSA, RSA, ECDSA and ED25519 of openssh or Putty"
         license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

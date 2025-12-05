@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_cert_payloads.yar
-rule SUSP_certificate_payload {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_cert_payloads_SUSP_certificate_payload {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_cert_payloads.yar
    meta:
       description = "Detects payloads that pretend to be certificates"
       date = "2018/08/02"

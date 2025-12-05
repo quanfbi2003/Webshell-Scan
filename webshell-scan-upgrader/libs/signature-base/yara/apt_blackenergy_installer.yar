@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_blackenergy_installer.yar
-
-rule blackenergy3_installer
-=======
 //===SUCCESS===
 rule Neo23x0_apt_blackenergy_installer_blackenergy3_installer
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_blackenergy_installer.yar
 {
 	meta:
 		author = "Mike Schladt"

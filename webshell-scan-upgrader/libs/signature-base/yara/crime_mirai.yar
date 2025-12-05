@@ -4,20 +4,12 @@
 	Date: 2016-10-04
 	Identifier: Mirai
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-rule Mirai_Botnet_Malware {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_mirai_Mirai_Botnet_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
 	meta:
 		description = "Detects Mirai Botnet Malware"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +60,8 @@ rule Neo23x0_crime_mirai_Mirai_Botnet_Malware {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-
-rule Mirai_1_May17 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mirai_Mirai_1_May17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
    meta:
       description = "Detects Mirai Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -91,13 +78,8 @@ rule Neo23x0_crime_mirai_Mirai_1_May17 {
    condition:
       ( uint16(0) == 0x457f and filesize < 5000KB and all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-
-rule Miari_2_May17 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mirai_Miari_2_May17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
    meta:
       description = "Detects Mirai Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -117,13 +99,8 @@ rule Neo23x0_crime_mirai_Miari_2_May17 {
    condition:
       ( uint16(0) == 0x457f and filesize < 5000KB and 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-
-rule MAL_ELF_LNX_Mirai_Oct10_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mirai_MAL_ELF_LNX_Mirai_Oct10_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
    meta:
       description = "Detects ELF Mirai variant"
       author = "Florian Roth (Nextron Systems)"
@@ -145,13 +122,8 @@ rule Neo23x0_crime_mirai_MAL_ELF_LNX_Mirai_Oct10_1 {
          all of ($x*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-
-rule MAL_ELF_LNX_Mirai_Oct10_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mirai_MAL_ELF_LNX_Mirai_Oct10_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
    meta:
       description = "Detects ELF malware Mirai related"
       author = "Florian Roth (Nextron Systems)"
@@ -166,13 +138,8 @@ rule Neo23x0_crime_mirai_MAL_ELF_LNX_Mirai_Oct10_2 {
    condition:
       uint16(0) == 0x457f and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-
-rule MAL_Mirai_Nov19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mirai_MAL_Mirai_Nov19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
    meta:
       description = "Detects Mirai malware"
       author = "Florian Roth (Nextron Systems)"
@@ -190,13 +157,8 @@ rule Neo23x0_crime_mirai_MAL_Mirai_Nov19_1 {
    condition:
       uint16(0) == 0x457f and filesize <= 100KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_mirai.yar
-
-rule MAL_ARM_LNX_Mirai_Mar13_2022 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_mirai_MAL_ARM_LNX_Mirai_Mar13_2022 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_mirai.yar
    meta:
       description = "Detects new ARM Mirai variant"
       author = "Mehmet Ali Kerimoglu a.k.a. CYB3RMX"

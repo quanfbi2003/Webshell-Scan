@@ -1,19 +1,12 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-=======
 import "pe"
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 /*
     WARNING: Host-based security systems may DETECT this file as malicious!
     Because the text used in these signatures is also used in some malware definitions, this file may be detected as malicious. If this happens, it is recommended that the limited.yara.bin file be used instead. Because limited.yara.bin is a compiled yara ruleset, it is unlikely to trigger host-based security systems
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-private rule b374k
-=======
 
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_b374k
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "Blair Gillam (@blairgillam)"
@@ -26,13 +19,8 @@ private rule nsacyber_core_webshell_detection_b374k
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule pas_tool
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_pas_tool
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "US CERT"
@@ -52,13 +40,8 @@ private rule nsacyber_core_webshell_detection_pas_tool
         #isset == 3 and
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule pbot
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_pbot
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "Jacob Baines (Tenable)"
@@ -72,13 +55,8 @@ private rule nsacyber_core_webshell_detection_pbot
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule generic_jsp
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_generic_jsp
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         source = "https://www.tenable.com/blog/hunting-for-web-shells"
@@ -89,13 +67,8 @@ private rule nsacyber_core_webshell_detection_generic_jsp
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule eval
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_eval
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         source = "https://www.tenable.com/blog/hunting-for-web-shells"
@@ -106,13 +79,8 @@ private rule nsacyber_core_webshell_detection_eval
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule fopo
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_fopo
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         source = "https://github.com/tenable/yara-rules/blob/master/webshells/"
@@ -123,13 +91,8 @@ private rule nsacyber_core_webshell_detection_fopo
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule hardcoded_urldecode
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_hardcoded_urldecode
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         source = "https://github.com/tenable/yara-rules/blob/master/webshells/"
@@ -140,13 +103,8 @@ private rule nsacyber_core_webshell_detection_hardcoded_urldecode
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule chr_obfuscation
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_chr_obfuscation
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         source = "https://github.com/tenable/yara-rules/blob/master/webshells/"
@@ -157,13 +115,8 @@ private rule nsacyber_core_webshell_detection_chr_obfuscation
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule phpInImage
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_phpInImage
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         source = "Vlad https://github.com/vlad-s"
@@ -178,13 +131,8 @@ private rule nsacyber_core_webshell_detection_phpInImage
     condition:
         (($gif at 0) or ($jfif at 0) or ($png at 0) or ($jpeg at 0)) and $php_tag
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-rule hiddenFunctionality
-=======
 //===SUCCESS===
 rule nsacyber_core_webshell_detection_hiddenFunctionality
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "NSA Cybersecurity"
@@ -193,13 +141,8 @@ rule nsacyber_core_webshell_detection_hiddenFunctionality
     condition:
         nsacyber_core_webshell_detection_phpInImage
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-rule webshellArtifact 
-=======
 //===SUCCESS===
 rule nsacyber_core_webshell_detection_webshellArtifact
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "NSA Cybersecurity"
@@ -208,13 +151,8 @@ rule nsacyber_core_webshell_detection_webshellArtifact
     condition:
         nsacyber_core_webshell_detection_b374k or nsacyber_core_webshell_detection_pas_tool or nsacyber_core_webshell_detection_pbot or nsacyber_core_webshell_detection_generic_jsp
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-rule suspiciousFunctionality
-=======
 //===SUCCESS===
 rule nsacyber_core_webshell_detection_suspiciousFunctionality
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "NSA Cybersecurity"
@@ -223,13 +161,8 @@ rule nsacyber_core_webshell_detection_suspiciousFunctionality
     condition:
         nsacyber_core_webshell_detection_hardcoded_urldecode or nsacyber_core_webshell_detection_fopo or nsacyber_core_webshell_detection_eval
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-rule obfuscatedFunctionality
-=======
 //===SUCCESS===
 rule nsacyber_core_webshell_detection_obfuscatedFunctionality
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "NSA Cybersecurity"
@@ -238,13 +171,8 @@ rule nsacyber_core_webshell_detection_obfuscatedFunctionality
     condition:
         nsacyber_core_webshell_detection_chr_obfuscation
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule APT_Backdoor_MSIL_SUNBURST_1
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "FireEye"
@@ -264,13 +192,8 @@ private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_1
     condition:
         $fnv_xor and ($cmd_regex_encoded or $cmd_regex_plain) or ( ($fake_orion_event_encoded or $fake_orion_event_plain) and ($fake_orion_eventmanager_encoded or $fake_orion_eventmanager_plain) and ($fake_orion_message_encoded and $fake_orion_message_plain) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule APT_Backdoor_MSIL_SUNBURST_2
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "FireEye"
@@ -320,13 +243,8 @@ private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_2
     condition:
         ($a and $b and $c and $d and $e and $f and $h and $i) or ($j and $k and $l and $m and $n and $o and $p and $q and $r and $s and ($aa or $ab)) or ($t and $u and $v and $w and $x and $y and $z and ($aa or $ab)) or ($ac and $ad and $ae and $af and $ag and $ah and ($am or $an)) or ($ai and $aj and $ak and $al and ($am or $an))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule APT_Backdoor_MSIL_SUNBURST_3
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "FireEye"
@@ -343,13 +261,8 @@ private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_3
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule APT_Backdoor_MSIL_SUNBURST_4
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "FireEye"
@@ -368,13 +281,8 @@ private rule nsacyber_core_webshell_detection_APT_Backdoor_MSIL_SUNBURST_4
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule APT_Dropper_Raw64_TEARDROP_1
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_APT_Dropper_Raw64_TEARDROP_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "FireEye"
@@ -388,13 +296,8 @@ private rule nsacyber_core_webshell_detection_APT_Dropper_Raw64_TEARDROP_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-private rule APT_Dropper_Win64_TEARDROP_2
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_APT_Dropper_Win64_TEARDROP_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "FireEye"
@@ -410,14 +313,8 @@ private rule nsacyber_core_webshell_detection_APT_Dropper_Win64_TEARDROP_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-import "pe"
-private rule SentinelLabs_SUPERNOVA
-=======
 //===SUCCESS===
 private rule nsacyber_core_webshell_detection_SentinelLabs_SUPERNOVA
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         description = "Identifies potential versions of App_Web_logoimagehandler.ashx.b6031896.dll weaponized with SUPERNOVA"
@@ -439,13 +336,8 @@ private rule nsacyber_core_webshell_detection_SentinelLabs_SUPERNOVA
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and pe.imports("mscoree.dll")) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-rule SolarWindsArtifacts
-=======
 //===SUCCESS===
 rule nsacyber_core_webshell_detection_SolarWindsArtifacts
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
 {
     meta:
         author = "NSA Cybersecurity"
@@ -460,13 +352,8 @@ rule nsacyber_core_webshell_detection_SolarWindsArtifacts
         or nsacyber_core_webshell_detection_APT_Dropper_Win64_TEARDROP_2
         or nsacyber_core_webshell_detection_SentinelLabs_SUPERNOVA
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/core.webshell_detection.yara
-
-rule reGeorg_Variant_Web_shell {
-=======
 //===SUCCESS===
 rule nsacyber_core_webshell_detection_reGeorg_Variant_Web_shell {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/core.webshell_detection.yara
     meta:
         description = "Matches the reGeorg variant web shell used by the actors."
         date = "2021-07-01"

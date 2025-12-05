@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_npm_supply_chain_sep25.yar
-
-
-rule Neo23x0_mal_MAL_JS_NPM_SupplyChain_Attack_Sep25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_npm_supply_chain_sep25_MAL_JS_NPM_SupplyChain_Attack_Sep25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_npm_supply_chain_sep25.yar
    meta:
       description = "Detects obfuscated JavaScript in NPM packages used in supply chain crypto stealer attacks in September 2025"
       author = "Florian Roth"
@@ -23,13 +17,8 @@ rule Neo23x0_mal_npm_supply_chain_sep25_MAL_JS_NPM_SupplyChain_Attack_Sep25 {
       and 1 of ($x*)
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_npm_supply_chain_sep25.yar
-
-rule Neo23x0_mal_MAL_JS_NPM_SupplyChain_Compromise_Sep25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_npm_supply_chain_sep25_MAL_JS_NPM_SupplyChain_Compromise_Sep25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_npm_supply_chain_sep25.yar
    meta:
       description = "Detects a supply chain compromise in NPM packages (TinyColor, CrowdStrike etc.)"
       author = "Florian Roth"

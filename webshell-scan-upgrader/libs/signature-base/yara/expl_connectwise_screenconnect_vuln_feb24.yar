@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule ConnectWise_ScreenConnect_Authentication_Bypass_Feb_2024_Exploitation_IIS_Logs {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenc_ConnectWise_ScreenConnect_Authentication_Bypass_Feb_2024_Exploitation_IIS_Logs {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects an http request to '/SetupWizard.aspx/' with anything following it, which when found in IIS logs is a potential indicator of compromise of the 2024 ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability that allows an Authentication Bypass"
       author = "Huntress DE&TH Team (modified by Florian Roth)"
@@ -21,13 +16,8 @@ rule Neo23x0_expl_connectwise_screenc_ConnectWise_ScreenConnect_Authentication_B
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_ScreenConnect_User_PoC_Com_Unused_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_PoC_Com_Unused_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious ScreenConnect user with poc.com email address, which is a sign of exploitation of the ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability with the POC released by WatchTower and the account wasn't actually used yet to login"
       author = "Florian Roth"
@@ -46,13 +36,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_P
       and all of ($a*)
       and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_ScreenConnect_User_PoC_Com_Used_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_PoC_Com_Used_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious ScreenConnect user with poc.com email address, which is a sign of exploitation of the ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability with the POC released by WatchTower and the account was already used yet to login"
       author = "Florian Roth"
@@ -73,13 +58,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_P
       and $s1
       and not 1 of ($f*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_ScreenConnect_Exploitation_Artefacts_Feb24 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb_SUSP_ScreenConnect_Exploitation_Artefacts_Feb24 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects post exploitation indicators observed by HuntressLabs in relation to the ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability that allows an Authentication Bypass"
       author = "Florian Roth"
@@ -121,13 +101,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb_SUSP_ScreenConnect_Exploita
    condition:
       1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_Command_Line_Combos_Feb24_2 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_Command_Line_Combos_Feb24_2 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious command line combinations often found in post exploitation activities"
       author = "Florian Roth"
@@ -141,13 +116,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_Command_Line_Combos_
    condition:
       filesize < 2MB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_PS1_Combo_TransferSH_Feb24 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_PS1_Combo_TransferSH_Feb24 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious PowerShell command that downloads content from transfer.sh as often found in loaders"
       author = "Florian Roth"
@@ -163,13 +133,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_PS1_Combo_TransferSH
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule MAL_SUSP_RANSOM_LockBit_RansomNote_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_SUSP_RANSOM_LockBit_RansomNote_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects the LockBit ransom note file 'LockBit-DECRYPT.txt' which is a sign of a LockBit ransomware infection"
       author = "Florian Roth"
@@ -182,13 +147,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_SUSP_RANSOM_LockBit_R
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule MAL_SUSP_RANSOM_Lazy_RansomNote_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_SUSP_RANSOM_Lazy_RansomNote_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects the Lazy ransom note file 'HowToRestoreYourFiles.txt' which is a sign of a Lazy ransomware infection"
       author = "Florian Roth"
@@ -201,14 +161,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_SUSP_RANSOM_Lazy_Rans
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-
-rule SUSP_MAL_SigningCert_Feb24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_MAL_SigningCert_Feb24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects PE files signed with a certificate used to sign malware samples mentioned in a HuntressLabs report on the exploitation of ScreenConnect vulnerability CVE-2024-1708 and CVE-2024-1709"
       author = "Florian Roth"
@@ -227,13 +181,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_MAL_SigningCert_Feb2
       and filesize < 70000KB
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule MAL_CS_Loader_Feb24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_CS_Loader_Feb24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects Cobalt Strike malware samples mentioned in a HuntressLabs report on the exploitation of ScreenConnect vulnerability CVE-2024-1708 and CVE-2024-1709"
       author = "Florian Roth"
@@ -254,13 +203,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_CS_Loader_Feb24_1 {
          )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule MAL_RANSOM_LockBit_Indicators_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_RANSOM_LockBit_Indicators_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects Lockbit ransomware samples mentioned in a HuntressLabs report on the exploitation of ScreenConnect vulnerability CVE-2024-1708 and CVE-2024-1709"
       author = "Florian Roth"
@@ -281,13 +225,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_RANSOM_LockBit_Indica
          or 2 of them
       ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule MAL_MSI_Mpyutils_Feb24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_MSI_Mpyutils_Feb24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects malicious MSI package mentioned in a HuntressLabs report on the exploitation of ScreenConnect vulnerability CVE-2024-1708 and CVE-2024-1709"
       author = "Florian Roth"
@@ -305,13 +244,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_MSI_Mpyutils_Feb24_1 
       and filesize < 20000KB
       and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule MAL_Beacon_Unknown_Feb24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_Beacon_Unknown_Feb24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects malware samples mentioned in a HuntressLabs report on the exploitation of ScreenConnect vulnerability CVE-2024-1708 and CVE-2024-1709 "
       author = "Florian Roth"
@@ -334,13 +268,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_MAL_Beacon_Unknown_Feb24_
 
 /* --------------------------------------------------------------------------------- */
 /* only usable with THOR or THOR Lite, e.g. in THOR Cloud */
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_ScreenConnect_User_Gmail_2024_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_Gmail_2024_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious ScreenConnect user with Gmail address created in 2024, which could be a sign of exploitation of the ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability that allows an Authentication Bypass"
       author = "Florian Roth"
@@ -358,13 +287,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_G
       and all of them
       and filepath contains "\\ScreenConnect\\App_Data\\"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_ScreenConnect_New_User_2024_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_New_User_2024_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious new ScreenConnect user created in 2024, which could be a sign of exploitation of the ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability that allows an Authentication Bypass"
       author = "Florian Roth"
@@ -381,13 +305,8 @@ rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_New_Us
       and all of them
       and filepath contains "\\ScreenConnect\\App_Data\\"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
-
-rule SUSP_ScreenConnect_User_2024_No_Logon_Feb24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_connectwise_screenconnect_vuln_feb24_SUSP_ScreenConnect_User_2024_No_Logon_Feb24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_connectwise_screenconnect_vuln_feb24.yar
    meta:
       description = "Detects suspicious ScreenConnect user created in 2024 but without any login, which could be a sign of exploitation of the ConnectWise ScreenConnect (versions prior to 23.9.8) vulnerability that allows an Authentication Bypass"
       author = "Florian Roth"

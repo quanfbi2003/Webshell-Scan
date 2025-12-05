@@ -6,13 +6,9 @@
     Identifier: Sphinx Moth
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sphinx_moth.yar
-rule Sphinx_Moth_cudacrt { 
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_cudacrt { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sphinx_moth.yar
     meta:
         description = "sphinx moth threat group file cudacrt.dll" 
         author = "Kudelski Security - Nagravision SA"
@@ -30,13 +26,8 @@ rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_cudacrt {
     condition:
         uint16(0) == 0x5a4d and filesize < 243KB and all of ($s*) and 1 of ($op*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sphinx_moth.yar
-
-rule Sphinx_Moth_h2t { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_h2t { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sphinx_moth.yar
     meta:
         description = "sphinx moth threat group file h2t.dat" 
         author = "Kudelski Security - Nagravision SA (modified by Florian Roth)" 
@@ -54,13 +45,8 @@ rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_h2t {
     condition:
         uint16(0) == 0x5a4d and filesize < 156KB and ($x1 or all of ($s*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sphinx_moth.yar
-
-rule Sphinx_Moth_iastor32 { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_iastor32 { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sphinx_moth.yar
     meta:
         description = "sphinx moth threat group file iastor32.exe" 
         author = "Kudelski Security - Nagravision SA"
@@ -73,13 +59,8 @@ rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_iastor32 {
     condition:
         uint16(0) == 0x5a4d and filesize < 2000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sphinx_moth.yar
-
-rule Sphinx_Moth_kerberos32 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_kerberos32 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sphinx_moth.yar
     meta:
         description = "sphinx moth threat group file kerberos32.dll" 
         author = "Kudelski Security - Nagravision SA (modified by Florian Roth)"
@@ -104,13 +85,8 @@ rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_kerberos32 {
     condition:
         uint16(0) == 0x5a4d and filesize < 300KB and (2 of ($x*) or all of ($s*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sphinx_moth.yar
-
-rule Sphinx_Moth_kerberos64 { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_kerberos64 { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sphinx_moth.yar
     meta:
         description = "sphinx moth threat group file kerberos64.dll" 
         author = "Kudelski Security - Nagravision SA (modified by Florian Roth)"
@@ -128,13 +104,8 @@ rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_kerberos64 {
     condition:
         uint16(0) == 0x5a4d and filesize < 406KB and all of ($s*) and 1 of ($op*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_sphinx_moth.yar
-
-rule Sphinx_Moth_nvcplex { 
-=======
 //===SUCCESS===
 rule Neo23x0_apt_sphinx_moth_Sphinx_Moth_nvcplex { 
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_sphinx_moth.yar
     meta:
         description = "sphinx moth threat group file nvcplex.dat" 
         author = "Kudelski Security - Nagravision SA"

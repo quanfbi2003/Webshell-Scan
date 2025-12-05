@@ -5,13 +5,9 @@
 	Identifier: FakeM
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_fakem_backdoor.yar
-rule FakeM_Generic {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_fakem_backdoor_FakeM_Generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_fakem_backdoor.yar
 	meta:
 		description = "Detects FakeM malware samples"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

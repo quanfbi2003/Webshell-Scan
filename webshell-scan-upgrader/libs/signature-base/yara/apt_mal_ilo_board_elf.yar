@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_ilo_board_elf.yar
-
-rule APT_MAL_HP_iLO_Firmware_Dec21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mal_ilo_board_elf_APT_MAL_HP_iLO_Firmware_Dec21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_ilo_board_elf.yar
    meta:
       description = "Detects suspicios ELF files with sections as described in malicious iLO Board analysis by AmnPardaz in December 2021"
       author = "Florian Roth (Nextron Systems)"

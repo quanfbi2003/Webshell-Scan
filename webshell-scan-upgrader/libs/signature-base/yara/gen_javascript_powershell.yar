@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_javascript_powershell.yar
-
-rule Malware_JS_powershell_obfuscated {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_javascript_powershell_Malware_JS_powershell_obfuscated {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_javascript_powershell.yar
    meta:
       description = "Unspecified malware - file rechnung_3.js"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

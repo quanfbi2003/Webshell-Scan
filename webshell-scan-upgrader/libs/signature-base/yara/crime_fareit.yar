@@ -5,13 +5,9 @@
 	Identifier: Fareit Oct 2015
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_fareit.yar
-rule Fareit_Trojan_Oct15 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_crime_fareit_Fareit_Trojan_Oct15 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_fareit.yar
 	meta:
 		description = "Detects Fareit Trojan from Sep/Oct 2015 Wave"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

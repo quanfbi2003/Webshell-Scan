@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tetris.yar
-
-rule apt_CN_Tetris_JS_advanced_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_tetris_apt_CN_Tetris_JS_advanced_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tetris.yar
 {
     meta:
         author      = "@imp0rtp3 (modified by Florian Roth)"
@@ -34,14 +29,8 @@ rule Neo23x0_apt_tetris_apt_CN_Tetris_JS_advanced_1
       )
    )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tetris.yar
-
-
-rule apt_CN_Tetrisplugins_JS    
-=======
 //===SUCCESS===
 rule Neo23x0_apt_tetris_apt_CN_Tetrisplugins_JS
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tetris.yar
 {
 	meta:
 		author      = "@imp0rtp3"

@@ -5,20 +5,12 @@
    Identifier: Hidden Cobra - BANKSHOT
    Reference: https://www.us-cert.gov/HIDDEN-COBRA-North-Korean-Malicious-Cyber-Activity
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hiddencobra_bankshot.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hiddencobra_bankshot.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hiddencobra_bankshot.yar
-rule HiddenCobra_BANKSHOT_Gen {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_hiddencobra_bankshot_HiddenCobra_BANKSHOT_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hiddencobra_bankshot.yar
    meta:
       description = "Detects Hidden Cobra BANKSHOT trojan"
       author = "Florian Roth (Nextron Systems)"
@@ -73,13 +65,8 @@ rule Neo23x0_apt_hiddencobra_bankshot_HiddenCobra_BANKSHOT_Gen {
 }
 
 /* US CERT Rule */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hiddencobra_bankshot.yar
-
-rule Unauthorized_Proxy_Server_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hiddencobra_bankshot_Unauthorized_Proxy_Server_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hiddencobra_bankshot.yar
    meta:
       author = "US-CERT Code Analysis Team"
       reference = "https://www.us-cert.gov/HIDDEN-COBRA-North-Korean-Malicious-Cyber-Activity"

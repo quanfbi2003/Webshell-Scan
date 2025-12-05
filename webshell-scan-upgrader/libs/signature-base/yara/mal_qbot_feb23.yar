@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_qbot_feb23.yar
-
-rule MAL_QakBot_ConfigExtraction_Feb23
-=======
 //===SUCCESS===
 rule Neo23x0_mal_qbot_feb23_MAL_QakBot_ConfigExtraction_Feb23
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_qbot_feb23.yar
 {
     meta:
         author = "kevoreilly"
@@ -23,13 +18,8 @@ rule Neo23x0_mal_qbot_feb23_MAL_QakBot_ConfigExtraction_Feb23
     condition:
         uint16(0) == 0x5A4D and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_qbot_feb23.yar
-
-rule MAL_QakBotLoader_Export_Section_Feb23
-=======
 //===SUCCESS===
 rule Neo23x0_mal_qbot_feb23_MAL_QakBotLoader_Export_Section_Feb23
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_qbot_feb23.yar
 {
     meta:
         author = "kevoreilly"
@@ -46,13 +36,8 @@ rule Neo23x0_mal_qbot_feb23_MAL_QakBotLoader_Export_Section_Feb23
     condition:
         uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_qbot_feb23.yar
-
-rule MAL_QakBotAntiVM_AntiVM_Bypass_Feb23
-=======
 //===SUCCESS===
 rule Neo23x0_mal_qbot_feb23_MAL_QakBotAntiVM_AntiVM_Bypass_Feb23
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_qbot_feb23.yar
 {
     meta:
         author = "kevoreilly"

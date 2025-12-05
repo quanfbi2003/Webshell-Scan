@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_caddywiper.yar
-
-rule MAL_WIPER_CaddyWiper_Mar22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_caddywiper_MAL_WIPER_CaddyWiper_Mar22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_caddywiper.yar
    meta:
       description = "Detects CaddyWiper malware"
       author = "Florian Roth (Nextron Systems)"

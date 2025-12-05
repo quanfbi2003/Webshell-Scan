@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_google_anomaly.yar
-
-rule SUSP_Unsigned_GoogleUpdate {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_google_anomaly_SUSP_Unsigned_GoogleUpdate {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_google_anomaly.yar
    meta:
       description = "Detects suspicious unsigned GoogleUpdate.exe"
       author = "Florian Roth (Nextron Systems)"

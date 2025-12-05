@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_ralordv1_win_ap25.yar
-
-
-rule Neo23x0_mal_MAL_WIN_Ralordv1_Apr25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_ralordv1_win_ap25_MAL_WIN_Ralordv1_Apr25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_ralordv1_win_ap25.yar
     meta:
         description = "This ISH Tecnologia Yara rule, detects the main components of the first version of RALord Ransomware"
         author = "0x0d4y-Icaro Cesar"

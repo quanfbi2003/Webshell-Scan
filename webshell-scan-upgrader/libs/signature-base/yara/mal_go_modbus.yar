@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_go_modbus.yar
-
-
-rule Neo23x0_mal_MAL_Go_Modbus_Jul24_1 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/mal_go_modbus.yar
-
-rule MAL_Go_Modbus_Jul24_1 {
-========
 //===SUCCESS===
 rule Neo23x0_mal_go_modbus_MAL_Go_Modbus_Jul24_1 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_go_modbus.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_go_modbus.yar
    meta:
       description = "Detects characteristics reported by Dragos for FrostyGoop ICS malware"
       author = "Florian Roth"

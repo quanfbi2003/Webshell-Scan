@@ -1,12 +1,3 @@
-/*
-   YARA Rule Set
-   Author: Florian Roth
-   Date: 2018-10-21
-   Identifier: Grey Energy
-   Reference: https://www.welivesecurity.com/2018/10/17/greyenergy-updated-arsenal-dangerous-threat-actors/
-   License: Detetction Rule License 1.1 (https://github.com/SigmaHQ/sigma/blob/master/LICENSE.Detection.Rules.md)
-*/
-
 import "pe"
 /*
    YARA Rule Set
@@ -17,14 +8,10 @@ import "pe"
    License: Detetction Rule License 1.1 (https://github.com/SigmaHQ/sigma/blob/master/LICENSE.Detection.Rules.md)
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greyenergy.yar
-rule APT_GreyEnergy_Malware_Oct18_1 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_greyenergy.yar
    meta:
       description = "Detects samples from Grey Energy report"
       author = "Florian Roth (Nextron Systems)"
@@ -42,13 +29,8 @@ rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_1 {
       pe.imphash() == "98d1ad672d0db4b4abdcda73cc9835cb" and
       all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greyenergy.yar
-
-rule APT_GreyEnergy_Malware_Oct18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_greyenergy.yar
    meta:
       description = "Detects samples from Grey Energy report"
       author = "Florian Roth (Nextron Systems)"
@@ -62,13 +44,8 @@ rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greyenergy.yar
-
-rule APT_GreyEnergy_Malware_Oct18_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_greyenergy.yar
    meta:
       description = "Detects samples from Grey Energy report"
       author = "Florian Roth (Nextron Systems)"
@@ -83,13 +60,8 @@ rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 300KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greyenergy.yar
-
-rule APT_GreyEnergy_Malware_Oct18_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_greyenergy.yar
    meta:
       description = "Detects samples from Grey Energy report"
       author = "Florian Roth (Nextron Systems)"
@@ -110,13 +82,8 @@ rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_4 {
          1 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_greyenergy.yar
-
-rule APT_GreyEnergy_Malware_Oct18_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_greyenergy_APT_GreyEnergy_Malware_Oct18_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_greyenergy.yar
    meta:
       description = "Detects samples from Grey Energy report"
       author = "Florian Roth (Nextron Systems)"

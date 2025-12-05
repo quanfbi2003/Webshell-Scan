@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_passwordstate_backdoor.yar
-rule MAL_Passwordstate_Moserware_Backdoor_Apr21_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_passwordstate_backdoor_MAL_Passwordstate_Moserware_Backdoor_Apr21_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_passwordstate_backdoor.yar
    meta:
       description = "Detects backdoor used in Passwordstate incident"
       author = "Florian Roth (Nextron Systems)"

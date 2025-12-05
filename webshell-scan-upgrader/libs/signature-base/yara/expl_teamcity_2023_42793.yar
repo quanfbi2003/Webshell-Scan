@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_teamcity_2023_42793.yar
-
-rule LOG_EXPL_SUSP_TeamCity_CVE_2023_42793_Oct23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_teamcity_2023_42793_LOG_EXPL_SUSP_TeamCity_CVE_2023_42793_Oct23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_teamcity_2023_42793.yar
    meta:
       description = "Detects log entries that could indicate a successful exploitation of CVE-2023-42793 on TeamCity servers"
       author = "Florian Roth"
@@ -21,13 +16,8 @@ rule Neo23x0_expl_teamcity_2023_42793_LOG_EXPL_SUSP_TeamCity_CVE_2023_42793_Oct2
    condition:
       all of ($sa*) or all of ($sb*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_teamcity_2023_42793.yar
-
-rule LOG_EXPL_SUSP_TeamCity_Oct23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_teamcity_2023_42793_LOG_EXPL_SUSP_TeamCity_Oct23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_teamcity_2023_42793.yar
    meta:
       description = "Detects log entries that could indicate a successful exploitation of TeamCity servers"
       author = "Florian Roth"

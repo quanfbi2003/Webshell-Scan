@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_xor_hunting.yar
-
-rule SUSP_XORed_Mozilla_Oct19 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_xor_hunting_SUSP_XORed_Mozilla_Oct19 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_xor_hunting.yar
    meta:
       old_rule_name = "SUSP_XORed_Mozilla"
       description = "Detects suspicious single byte XORed keyword 'Mozilla/5.0' - it uses yara's XOR modifier and therefore cannot print the XOR key. You can use the CyberChef recipe linked in the reference field to brute force the used key."
@@ -28,13 +23,8 @@ rule Neo23x0_gen_xor_hunting_SUSP_XORed_Mozilla_Oct19 {
       and not 1 of ($fpa*)
       and not $fpb1 at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_xor_hunting.yar
-
-rule SUSP_XORed_MSDOS_Stub_Message {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_xor_hunting_SUSP_XORed_MSDOS_Stub_Message {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_xor_hunting.yar
    meta:
       description = "Detects suspicious XORed MSDOS stub message"
       author = "Florian Roth"
@@ -64,4 +54,3 @@ rule Neo23x0_gen_xor_hunting_SUSP_XORed_MSDOS_Stub_Message {
       and not uint16(0) == 0xb0b0 // AV sigs file
       and not uint16(0) == 0x5953 // AV sigs file
 }
-

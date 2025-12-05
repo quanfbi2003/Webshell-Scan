@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_jquery_fileupload_cve_2018_9206.yar
-rule VUL_JQuery_FileUpload_CVE_2018_9206 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_jquery_fileupload_cve_2018_9206_VUL_JQuery_FileUpload_CVE_2018_9206 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vul_jquery_fileupload_cve_2018_9206.yar
    meta:
       description = "Detects JQuery File Upload vulnerability CVE-2018-9206"
       author = "Florian Roth (Nextron Systems)"

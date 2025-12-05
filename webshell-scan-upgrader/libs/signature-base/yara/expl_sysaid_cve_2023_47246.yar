@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_sysaid_cve_2023_47246.yar
-
-rule APT_PS1_SysAid_EXPL_ForensicArtifacts_Nov23_1 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sysaid_cve_2023_47246_APT_PS1_SysAid_EXPL_ForensicArtifacts_Nov23_1 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sysaid_cve_2023_47246.yar
    meta:
       description = "Detects forensic artifacts found in attacks on SysAid on-prem software exploiting CVE-2023-47246"
       author = "Florian Roth"
@@ -18,13 +13,8 @@ rule Neo23x0_expl_sysaid_cve_2023_47246_APT_PS1_SysAid_EXPL_ForensicArtifacts_No
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_sysaid_cve_2023_47246.yar
-
-rule MAL_Loader_TurtleLoader_Nov23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sysaid_cve_2023_47246_MAL_Loader_TurtleLoader_Nov23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sysaid_cve_2023_47246.yar
    meta:
       description = "Detects Tutle loader used in attacks against SysAid CVE-2023-47246"
       author = "Florian Roth"
@@ -46,13 +36,8 @@ rule Neo23x0_expl_sysaid_cve_2023_47246_MAL_Loader_TurtleLoader_Nov23 {
       and filesize < 200KB
       and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_sysaid_cve_2023_47246.yar
-
-rule MAL_Grace_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sysaid_cve_2023_47246_MAL_Grace_Dec22 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sysaid_cve_2023_47246.yar
     meta:
       author = "X__Junior"
       reference = "https://blog.talosintelligence.com/breaking-the-silence-recent-truebot-activity/"

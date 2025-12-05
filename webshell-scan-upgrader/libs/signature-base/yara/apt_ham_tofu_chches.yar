@@ -5,19 +5,12 @@
    Date: 2017-02-28
    Identifier: Jap Threat
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ham_tofu_chches.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule Tofu_Backdoor {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_ham_tofu_chches_Tofu_Backdoor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ham_tofu_chches.yar
    meta:
       description = "Detects Tofu Trojan"
       author = "Cylance"

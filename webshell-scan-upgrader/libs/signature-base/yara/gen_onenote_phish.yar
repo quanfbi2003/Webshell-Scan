@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_onenote_phish.yar
-
-rule SUSP_Email_Suspicious_OneNote_Attachment_Jan23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_onenote_phish_SUSP_Email_Suspicious_OneNote_Attachment_Jan23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_onenote_phish.yar
    meta:
       description = "Detects suspicious OneNote attachment that embeds suspicious payload, e.g. an executable (FPs possible if the PE is attached separately)"
       author = "Florian Roth (Nextron Systems)"
@@ -42,13 +37,8 @@ rule Neo23x0_gen_onenote_phish_SUSP_Email_Suspicious_OneNote_Attachment_Jan23_1 
       and 1 of ($ge*)
       and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_onenote_phish.yar
-
-rule SUSP_Email_Suspicious_OneNote_Attachment_Jan23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_onenote_phish_SUSP_Email_Suspicious_OneNote_Attachment_Jan23_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_onenote_phish.yar
    meta:
       description = "Detects suspicious OneNote attachment that has a file name often used in phishing attacks"
       author = "Florian Roth (Nextron Systems)"
@@ -69,13 +59,8 @@ rule Neo23x0_gen_onenote_phish_SUSP_Email_Suspicious_OneNote_Attachment_Jan23_2 
       and $hc1 
       and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_onenote_phish.yar
-
-rule SUSP_OneNote_Embedded_FileDataStoreObject_Type_Jan23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_onenote_phish_SUSP_OneNote_Embedded_FileDataStoreObject_Type_Jan23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_onenote_phish.yar
    meta:
       description = "Detects suspicious embedded file types in OneNote files"
       author = "Florian Roth"
@@ -119,13 +104,8 @@ rule Neo23x0_gen_onenote_phish_SUSP_OneNote_Embedded_FileDataStoreObject_Type_Ja
    condition:
       filesize < 10MB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_onenote_phish.yar
-
-rule SUSP_OneNote_Embedded_FileDataStoreObject_Type_Jan23_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_onenote_phish_SUSP_OneNote_Embedded_FileDataStoreObject_Type_Jan23_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_onenote_phish.yar
    meta:
       description = "Detects suspicious embedded file types in OneNote files"
       author = "Florian Roth (Nextron Systems)"

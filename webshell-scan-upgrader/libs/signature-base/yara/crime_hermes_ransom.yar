@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_hermes_ransom.yar
-rule Hermes2_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_hermes_ransom_Hermes2_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_hermes_ransom.yar
    meta:
       description = "Detects Hermes Ransomware as used in BAE report on FEIB"
       date = "2017/10/11"

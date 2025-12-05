@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/ByteCode.MSIL.Infostealer.GomorrahStealer.yara
-
-
-rule reversinglabs_Byt_ByteCode_MSIL_Infostealer_GomorrahStealer : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Infostealer_GomorrahStealer_ByteCode_MSIL_Infostealer_GomorrahStealer : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Infostealer.GomorrahStealer.yara
 {
     meta:
 

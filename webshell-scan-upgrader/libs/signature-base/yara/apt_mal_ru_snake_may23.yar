@@ -1,21 +1,6 @@
 /* 
   Rule that uses the byte chains included in the Volatility Plugin published
   by CSA in a YARA rule
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_ru_snake_may23.yar
-=======
-
-  code from the plugin:
-  
-  strings_to_find = [
-    b'\x25\x73\x23\x31',
-    b'\x25\x73\x23\x32',
-    b'\x25\x73\x23\x33',
-    b'\x25\x73\x23\x34',
-    b'\x2e\x74\x6d\x70', 
-    b'\x2e\x73\x61\x76',
-    b'\x2e\x75\x70\x64']
-*/
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_ru_snake_may23.yar
 
   code from the plugin:
   
@@ -29,12 +14,9 @@
     b'\x2e\x75\x70\x64']
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_ru_snake_may23.yar
-rule APT_MAL_RU_WIN_Snake_Malware_May23_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_mal_ru_snake_may23_APT_MAL_RU_WIN_Snake_Malware_May23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_ru_snake_may23.yar
     meta:
         author = "Matt Suiche (Magnet Forensics)"
         description = "Hunting Russian Intelligence Snake Malware"
@@ -60,14 +42,8 @@ rule Neo23x0_apt_mal_ru_snake_may23_APT_MAL_RU_WIN_Snake_Malware_May23_1 {
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_mal_ru_snake_may23.yar
-
-
-rule APT_MAL_RU_Snake_Indicators_May23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_mal_ru_snake_may23_APT_MAL_RU_Snake_Indicators_May23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_mal_ru_snake_may23.yar
    meta:
       description = "Detects indicators found in Snake malware samples"
       author = "Florian Roth"
@@ -103,6 +79,3 @@ rule Neo23x0_apt_mal_ru_snake_may23_APT_MAL_RU_Snake_Indicators_May23_1 {
    condition:
       all of them
 }
-
-
-

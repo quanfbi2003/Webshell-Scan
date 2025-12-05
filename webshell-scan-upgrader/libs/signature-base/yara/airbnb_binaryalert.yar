@@ -5,26 +5,15 @@
    Sync Date: 2017-10-20
    Identifier: Binary Alert Rules
    Reference: https://github.com/airbnb/binaryalert
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-=======
 
    Note: Applied some modifications to avoid false positives during full disk file system scans
 */
 
 /* Private Rules */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 
-   Note: Applied some modifications to avoid false positives during full disk file system scans
-*/
 
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-/* Private Rules */
-
-private rule MachO
-=======
 //===SUCCESS===
 private rule Neo23x0_airbnb_binaryalert_MachO
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Mach-O binaries"
@@ -33,13 +22,8 @@ private rule Neo23x0_airbnb_binaryalert_MachO
 }
 
 /* ./rules/public/hacktool/macos */
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_exploit_cve_5889
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_exploit_cve_5889
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "http://www.cvedetails.com/cve/cve-2015-5889"
@@ -55,13 +39,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_exploit_cve_5889
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_exploit_tpwn
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_exploit_tpwn
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "tpwn exploits a null pointer dereference in XNU to escalate privileges to root."
@@ -75,13 +54,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_exploit_tpwn
     condition:
         2 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_juuso_keychaindump
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_juuso_keychaindump
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "For reading OS X keychain passwords as root."
@@ -97,13 +71,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_juuso_keychaindump
     condition:
         4 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_b4rsby_swiftlog
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_b4rsby_swiftlog
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Dirty user level command line keylogger hacked together in Swift."
@@ -114,13 +83,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_b4rsby_swiftlog
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_caseyscarborough
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_caseyscarborough
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "A simple and easy to use keylogger for macOS."
@@ -134,13 +98,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_caseyscarborough
     condition:
         2 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_dannvix
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_dannvix
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "A simple keylogger for macOS."
@@ -153,13 +112,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_dannvix
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_eldeveloper_keystats
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_eldeveloper_keystats
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "A simple keylogger for macOS."
@@ -172,13 +126,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_eldeveloper_keystats
     condition:
         2 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_giacomolaw
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_giacomolaw
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "A simple keylogger for macOS."
@@ -191,13 +140,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_giacomolaw
     condition:
         2 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_logkext
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_logkext
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "LogKext is an open source keylogger for Mac OS X, a product of FSB software."
@@ -222,13 +166,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_logkext
     condition:
         3 of ($a*) or all of ($b*) or all of ($c*) or all of ($d*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_roxlu_ofxkeylogger
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_roxlu_ofxkeylogger
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "ofxKeylogger keylogger."
@@ -241,13 +180,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_roxlu_ofxkeylogger
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_keylogger_skreweverything_swift
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_skreweverything_swift
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "It is a simple and easy to use keylogger for macOS written in Swift."
@@ -262,13 +196,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_keylogger_skreweverything_swift
     condition:
         4 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_macpmem
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_macpmem
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "MacPmem enables read/write access to physical memory on macOS. Can be used by CSIRT teams and attackers."
@@ -288,13 +217,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_macpmem
     condition:
         Neo23x0_airbnb_binaryalert_MachO and 2 of ($a*) or all of ($b*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_manwhoami_icloudcontacts
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_manwhoami_icloudcontacts
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Pulls iCloud Contacts for an account. No dependencies. No user notification."
@@ -308,13 +232,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_manwhoami_icloudcontacts
     condition:
         3 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_manwhoami_mmetokendecrypt
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_manwhoami_mmetokendecrypt
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "This program decrypts / extracts all authorization tokens on macOS / OS X / OSX."
@@ -329,13 +248,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_manwhoami_mmetokendecrypt
     condition:
         3 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_manwhoami_osxchromedecrypt
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_manwhoami_osxchromedecrypt
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Decrypt Google Chrome / Chromium passwords and credit cards on macOS / OS X."
@@ -351,13 +265,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_manwhoami_osxchromedecrypt
     condition:
         3 of ($a*) or all of ($b*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_n0fate_chainbreaker
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_n0fate_chainbreaker
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "chainbreaker can extract user credential in a Keychain file with Master Key or user password in forensically sound manner."
@@ -370,13 +279,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_n0fate_chainbreaker
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_macos_ptoomey3_keychain_dumper
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_macos_ptoomey3_keychain_dumper
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Keychain dumping utility."
@@ -393,13 +297,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_macos_ptoomey3_keychain_dumper
 }
 
 /* ./rules/public/hacktool/multi */
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_bloodhound_owned
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_bloodhound_owned
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Bloodhound: Custom queries to document a compromise, find collateral spread of owned nodes, and visualize deltas in privilege gains"
@@ -419,13 +318,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_bloodhound_owned
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_jtesta_ssh_mitm
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_jtesta_ssh_mitm
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "intercepts ssh connections to capture credentials"
@@ -437,13 +331,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_jtesta_ssh_mitm
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_masscan
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_masscan
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "masscan is a performant port scanner, it produces results similar to nmap"
@@ -460,13 +349,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_masscan
     condition:
         all of ($a*) or any of ($b*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_ncc_ABPTTS
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_ncc_ABPTTS
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Allows for TCP tunneling over HTTP"
@@ -485,13 +369,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_ncc_ABPTTS
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_ntlmrelayx
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_ntlmrelayx
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "https://www.fox-it.com/en/insights/blogs/blog/inside-windows-network/"
@@ -506,13 +385,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_ntlmrelayx
     condition:
         any of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_pyrasite_py
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_pyrasite_py
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "A tool for injecting arbitrary code into running Python processes."
@@ -536,13 +410,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_pyrasite_py
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_multi_responder_py
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_multi_responder_py
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Responder is a LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server"
@@ -561,13 +430,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_multi_responder_py
 }
 
 /* ./rules/public/hacktool/windows */
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_hot_potato
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_hot_potato
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "https://foxglovesecurity.com/2016/01/16/hot-potato/"
@@ -582,13 +446,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_hot_potato
     condition:
         any of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_moyix_creddump
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_moyix_creddump
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "creddump is a python tool to extract credentials and secrets from Windows registry hives."
@@ -604,13 +463,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_moyix_creddump
     condition:
         all of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_ncc_wmicmd : FILE {
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_ncc_wmicmd : FILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
     meta:
         description = "Command shell wrapper for WMI"
         reference = "https://github.com/nccgroup/WMIcmd"
@@ -627,13 +481,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_ncc_wmicmd : FILE {
     condition:
         any of ($a*) or all of ($b*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_rdp_cmd_delivery
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_rdp_cmd_delivery
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Delivers a text payload via RDP (rubber ducky)"
@@ -647,13 +496,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_rdp_cmd_delivery
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_wmi_implant
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_wmi_implant
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "A PowerShell based tool that is designed to act like a RAT"
@@ -674,13 +518,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_wmi_implant
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_mimikatz_copywrite
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_copywrite
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Mimikatz credential dump tool: Author copywrite"
@@ -705,13 +544,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_copywrite
         uint16(0) == 0x5a4d and filesize < 800KB and /* Added by Florian Roth to avoid false positives */
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_mimikatz_errors
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_errors
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Mimikatz credential dump tool: Error messages"
@@ -727,13 +561,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_errors
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_mimikatz_files
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_files
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Mimikatz credential dump tool: Files"
@@ -749,13 +578,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_files
         uint16(0) == 0x5a4d and filesize < 800KB and /* Added by Florian Roth to avoid false positives */
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_mimikatz_modules
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_modules
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Mimikatz credential dump tool: Modules"
@@ -779,13 +603,8 @@ rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_modules
         1 of ($s*) and 
         not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/airbnb_binaryalert.yar
-
-rule hacktool_windows_mimikatz_sekurlsa
-=======
 //===SUCCESS===
 rule Neo23x0_airbnb_binaryalert_hacktool_windows_mimikatz_sekurlsa
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/airbnb_binaryalert.yar
 {
     meta:
         description = "Mimikatz credential dump tool"

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
-rule MAL_Backdoor_DLL_Nov23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_Backdoor_DLL_Nov23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
    meta:
       author = "X__Junior"
       description = "Detects a backdoor DLL, that was seen being used by LockBit 3.0 affiliates exploiting CVE-2023-4966"
@@ -25,13 +21,8 @@ rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_Backdoor_DLL_Nov23_1 {
       uint16(0) == 0x5a4d
       and ( all of ($s*) or all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
-
-rule MAL_Trojan_DLL_Nov23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_Trojan_DLL_Nov23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
    meta:
       author = "X__Junior"
       description = "Detects a trojan DLL that installs other components - was seen being used by LockBit 3.0 affiliates exploiting CVE-2023-4966"
@@ -47,13 +38,8 @@ rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_Trojan_DLL_Nov23 {
    condition:
       uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
-
-rule MAL_DLL_Stealer_Nov23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_DLL_Stealer_Nov23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
    meta:
       author = "X__Junior"
       description = "Detects a DLL that steals authentication credentials - was seen being used by LockBit 3.0 affiliates exploiting CVE-2023-4966"
@@ -67,13 +53,8 @@ rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_DLL_Stealer_Nov23 {
    condition:
       uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
-
-rule MAL_Python_Backdoor_Script_Nov23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_Python_Backdoor_Script_Nov23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
    meta:
       author = "X__Junior"
       description = "Detects a trojan (written in Python) that communicates with c2 - was seen being used by LockBit 3.0 affiliates exploiting CVE-2023-4966"
@@ -89,13 +70,8 @@ rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_MAL_Python_Backdoor_Script_Nov
    condition:
       filesize < 50KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
-
-rule APT_RANSOM_Lockbit_ForensicArtifacts_Nov23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ransom_lockbit_citrixbleed_nov23_APT_RANSOM_Lockbit_ForensicArtifacts_Nov23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ransom_lockbit_citrixbleed_nov23.yar
    meta:
       description = "Detects patterns found in Lockbit TA attacks exploiting Citrixbleed vulnerability CVE 2023-4966"
       author = "Florian Roth"

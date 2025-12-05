@@ -4,6 +4,7 @@ import os
 import re
 import sys
 import traceback
+import threading
 import pandas as pd
 from colorama import Fore, Back, Style
 from colorama import init
@@ -98,6 +99,7 @@ class Logger:
         self.caller = caller
         self.log_file = "logs/".replace("/", os.sep) + log_file
         self.debug_mode = debug_mode
+        self._log_lock = threading.Lock()
         
         # Tạo thư mục logs nếu chưa tồn tại
         log_dir = os.path.dirname(self.log_file)
@@ -120,28 +122,29 @@ class Logger:
         Log message to file. Also print to console if mes_type is not DEBUG.
         All log types are written to file, but only non-DEBUG logs are printed to console.
         """
-        # Counter
-        if mes_type == "ALERT":
-            self.alerts += 1
-        if mes_type == "WARNING":
-            self.warnings += 1
-        if mes_type == "NOTICE":
-            self.notices += 1
-        self.messagecount += 1
+        with self._log_lock:
+            # Counter
+            if mes_type == "ALERT":
+                self.alerts += 1
+            if mes_type == "WARNING":
+                self.warnings += 1
+            if mes_type == "NOTICE":
+                self.notices += 1
+            self.messagecount += 1
 
-        # Always write to file
-        self.log_to_file(message, mes_type, module)
+            # Always write to file
+            self.log_to_file(message, mes_type, module)
 
-        # Print to stdout only if not DEBUG (or if debug_mode is enabled)
-        if mes_type != "DEBUG" or self.debug_mode:
-            try:
-                log_to_stdout(message, mes_type)
-            except Exception:
-                print("Cannot print certain characters to command line - see log file for full unicode encoded log line")
+            # Print to stdout only if not DEBUG (or if debug_mode is enabled)
+            if mes_type != "DEBUG" or self.debug_mode:
                 try:
                     log_to_stdout(message, mes_type)
                 except Exception:
-                    pass
+                    print("Cannot print certain characters to command line - see log file for full unicode encoded log line")
+                    try:
+                        log_to_stdout(message, mes_type)
+                    except Exception:
+                        pass
 
     def log_to_csv_file(self, message):
         df = pd.DataFrame(message)
@@ -167,17 +170,18 @@ class Logger:
         This method is kept for backward compatibility but is equivalent to log() for DEBUG messages.
         For non-DEBUG messages, use log() instead.
         """
-        # Counter
-        if mes_type == "ALERT":
-            self.alerts += 1
-        if mes_type == "WARNING":
-            self.warnings += 1
-        if mes_type == "NOTICE":
-            self.notices += 1
-        self.messagecount += 1
-        
-        # Write to file only (no console output)
-        self.log_to_file(message, mes_type, module)
+        with self._log_lock:
+            # Counter
+            if mes_type == "ALERT":
+                self.alerts += 1
+            if mes_type == "WARNING":
+                self.warnings += 1
+            if mes_type == "NOTICE":
+                self.notices += 1
+            self.messagecount += 1
+            
+            # Write to file only (no console output)
+            self.log_to_file(message, mes_type, module)
 
     def print_welcome(self, VERSION):
         if self.caller == 'main':

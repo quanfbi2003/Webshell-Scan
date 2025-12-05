@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-03-10
-   Identifier: APT15 Report
-   Reference: https://goo.gl/HZ5XMN
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://goo.gl/HZ5XMN
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-rule APT15_Malware_Mar18_RoyalCli {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_apt15_APT15_Malware_Mar18_RoyalCli {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       description = "Detects malware from APT 15 report by NCC Group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -46,13 +32,8 @@ rule Neo23x0_apt_apt15_APT15_Malware_Mar18_RoyalCli {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule APT15_Malware_Mar18_RoyalDNS {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_APT15_Malware_Mar18_RoyalDNS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       description = "Detects malware from APT 15 report by NCC Group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -78,13 +59,8 @@ rule Neo23x0_apt_apt15_APT15_Malware_Mar18_RoyalDNS {
         2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule APT15_Malware_Mar18_BS2005 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_APT15_Malware_Mar18_BS2005 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       description = "Detects malware from APT 15 report by NCC Group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -111,13 +87,8 @@ rule Neo23x0_apt_apt15_APT15_Malware_Mar18_BS2005 {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule APT15_Malware_Mar18_MSExchangeTool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_APT15_Malware_Mar18_MSExchangeTool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       description = "Detects malware from APT 15 report by NCC Group"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -145,13 +116,8 @@ rule Neo23x0_apt_apt15_APT15_Malware_Mar18_MSExchangeTool {
    Date: 2018-03-09
    Reference: https://github.com/nccgroup/Royal_APT/blob/master/signatures/apt15.yara
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule clean_apt15_patchedcmd{
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_clean_apt15_patchedcmd{
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       author = "Ahmed Zaki"
       description = "This is a patched CMD. This is the CMD that RoyalCli uses."
@@ -165,13 +131,8 @@ rule Neo23x0_apt_apt15_clean_apt15_patchedcmd{
    condition:
       uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule malware_apt15_royalcli_1{
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_malware_apt15_royalcli_1{
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       description = "Generic strings found in the Royal CLI tool"
       author = "David Cannings"
@@ -191,13 +152,8 @@ rule Neo23x0_apt_apt15_malware_apt15_royalcli_1{
    condition:
       uint16(0) == 0x5A4D and 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule malware_apt15_royalcli_2{
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_malware_apt15_royalcli_2{
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       author = "Nikolaos Pantazopoulos"
       description = "APT15 RoyalCli backdoor"
@@ -238,13 +194,8 @@ rule malware_apt15_bs2005{
       )
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule malware_apt15_royaldll {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_malware_apt15_royaldll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       author = "David Cannings"
       description = "DLL implant, originally rights.dll and runs as a service"
@@ -292,13 +243,8 @@ rule Neo23x0_apt_apt15_malware_apt15_royaldll {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule malware_apt15_royaldll_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_malware_apt15_royaldll_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       author = "Ahmed Zaki"
       sha256 = "bc937f6e958b339f6925023bc2af375d669084e9551fd3753e501ef26e36b39d"
@@ -315,13 +261,8 @@ rule Neo23x0_apt_apt15_malware_apt15_royaldll_2 {
       and pe.exports("ServiceMain")
       and filesize > 50KB and filesize < 600KB
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule malware_apt15_exchange_tool {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_malware_apt15_exchange_tool {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       author = "Ahmed Zaki"
       md5 = "d21a7e349e796064ce10f2f6ede31c71"
@@ -342,13 +283,8 @@ rule Neo23x0_apt_apt15_malware_apt15_exchange_tool {
    condition:
       uint16(0) == 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt15.yar
-
-rule malware_apt15_generic {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt15_malware_apt15_generic {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt15.yar
    meta:
       author = "David Cannings"
       description = "Find generic data potentially relating to AP15 tools"

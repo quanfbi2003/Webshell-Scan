@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-02-03
-   Identifier: Gold Dragon
-   Reference: https://goo.gl/rW1yvZ
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://goo.gl/rW1yvZ
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_golddragon.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule GoldDragon_malware_Feb18_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_golddragon_GoldDragon_malware_Feb18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_golddragon.yar
    meta:
       description = "Detects malware from Gold Dragon report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +29,8 @@ rule Neo23x0_apt_golddragon_GoldDragon_malware_Feb18_1 {
          pe.imphash() == "bb801224abd8562f9ee8fb261b75e32a"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_golddragon.yar
-
-rule GoldDragon_Aux_File {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_golddragon_GoldDragon_Aux_File {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_golddragon.yar
    meta:
       description = "Detects export from Gold Dragon - February 2018"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -63,13 +44,8 @@ rule Neo23x0_apt_golddragon_GoldDragon_Aux_File {
    condition:
       filesize < 500KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_golddragon.yar
-
-rule GoldDragon_Ghost419_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_golddragon_GoldDragon_Ghost419_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_golddragon.yar
    meta:
       description = "Detects Ghost419 RAT from Gold Dragon report"
       author = "Florian Roth (Nextron Systems)"
@@ -110,13 +86,8 @@ rule Neo23x0_apt_golddragon_GoldDragon_Ghost419_RAT {
          3 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_golddragon.yar
-
-rule GoldDragon_RunningRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_golddragon_GoldDragon_RunningRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_golddragon.yar
    meta:
       description = "Detects Running RAT from Gold Dragon report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -157,13 +128,8 @@ rule Neo23x0_apt_golddragon_GoldDragon_RunningRAT {
         3 of ($s*)
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_golddragon.yar
-
-rule GoldDragon_RunnignRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_golddragon_GoldDragon_RunnignRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_golddragon.yar
    meta:
       description = "Detects Running RAT malware from Gold Dragon report"
       author = "Florian Roth (Nextron Systems)"

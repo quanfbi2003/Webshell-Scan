@@ -4,20 +4,12 @@
    Date: 2016-12-06
    Identifier: GoldenEye Ransomware
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_goldeneye.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_goldeneye.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_goldeneye.yar
-rule GoldenEye_Ransomware_XLS {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_goldeneye_GoldenEye_Ransomware_XLS {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_goldeneye.yar
    meta:
       description = "GoldenEye XLS with Macro - file Schneider-Bewerbung.xls"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +24,8 @@ rule Neo23x0_crime_goldeneye_GoldenEye_Ransomware_XLS {
    condition:
       ( uint16(0) == 0xcfd0 and filesize < 4000KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_goldeneye.yar
-
-rule GoldenEyeRansomware_Dropper_MalformedZoomit {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_goldeneye_GoldenEyeRansomware_Dropper_MalformedZoomit {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_goldeneye.yar
    meta:
       description = "Auto-generated rule"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

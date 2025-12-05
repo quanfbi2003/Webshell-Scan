@@ -1,17 +1,6 @@
-
-/*
-   Yara Rule Set
-   Author: Kaspersky
-   Date: 2017-03-07
-   Identifier: Stone Drill Report by Kaspersky
-*/
-
 import "pe"
 import "math"
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-rule susp_file_enumerator_with_encrypted_resource_101 {
-=======
 /*
    Yara Rule Set
    Author: Kaspersky
@@ -23,7 +12,6 @@ rule susp_file_enumerator_with_encrypted_resource_101 {
 
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_susp_file_enumerator_with_encrypted_resource_101 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       copyright = "Kaspersky Lab"
       description = "Generic detection for samples that enumerate files with encrypted resource called 101"
@@ -53,13 +41,8 @@ rule Neo23x0_apt_stonedrill_susp_file_enumerator_with_encrypted_resource_101 {
             not ($mz in (pe.resources[i].offset..pe.resources[i].offset + pe.resources[i].length))
          )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill_main_sub {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill_main_sub {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       author = "Kaspersky Lab"
       description = "Rule to detect StoneDrill (decrypted) samples"
@@ -80,13 +63,8 @@ rule Neo23x0_apt_stonedrill_StoneDrill_main_sub {
    Date: 2017-03-07
    Identifier: Stone Drill Report by Kaspersky
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill_BAT_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill_BAT_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
       author = "Florian Roth (Nextron Systems)"
@@ -102,13 +80,8 @@ rule Neo23x0_apt_stonedrill_StoneDrill_BAT_1 {
    condition:
       uint32(0) == 0x68636540 and 2 of them and filesize < 500
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill_Service_Install {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill_Service_Install {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
       author = "Florian Roth (Nextron Systems)"
@@ -123,13 +96,8 @@ rule Neo23x0_apt_stonedrill_StoneDrill_Service_Install {
    condition:
       2 of them and filesize < 500
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill_ntssrvr32 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill_ntssrvr32 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       description = "Detects malware from StoneDrill threat report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -150,13 +118,8 @@ rule Neo23x0_apt_stonedrill_StoneDrill_ntssrvr32 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 4000KB and 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill_Malware_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill_Malware_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       description = "Detects malware from StoneDrill threat report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -182,13 +145,8 @@ rule Neo23x0_apt_stonedrill_StoneDrill_Malware_2 {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 700KB and ( 1 of ($x*) or 3 of ($s*) ) ) or 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       description = "Detects malware from StoneDrill threat report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -212,13 +170,8 @@ rule Neo23x0_apt_stonedrill_StoneDrill {
    condition:
       uint16(0) == 0x5a4d and filesize < 700KB and 1 of ($x*) or ( all of ($op*) and all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_stonedrill.yar
-
-rule StoneDrill_VBS_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_stonedrill_StoneDrill_VBS_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_stonedrill.yar
    meta:
       description = "Detects malware from StoneDrill threat report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

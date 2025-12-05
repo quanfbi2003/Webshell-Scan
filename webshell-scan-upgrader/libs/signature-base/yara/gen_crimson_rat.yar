@@ -5,20 +5,12 @@
    Identifier: CrimsonRAT
    Reference: Internal Research
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_crimson_rat.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_crimson_rat.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_crimson_rat.yar
-rule CrimsonRAT_Mar18_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_crimson_rat_CrimsonRAT_Mar18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_crimson_rat.yar
    meta:
       description = "Detects CrimsonRAT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

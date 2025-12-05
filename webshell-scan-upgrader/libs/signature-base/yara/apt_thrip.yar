@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-06-21
-   Identifier: Thrip APT
-   Reference: https://www.symantec.com/blogs/threat-intelligence/thrip-hits-satellite-telecoms-defense-targets
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://www.symantec.com/blogs/threat-intelligence/thrip-hits-satellite-telecoms-defense-targets
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-rule APT_Thrip_Sample_Jun18_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -43,13 +29,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -65,13 +46,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_2 {
    condition:
       uint16(0) == 0x5a4d and filesize < 60KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -86,13 +62,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_3 {
    condition:
       uint16(0) == 0x5a4d and filesize < 60KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -114,13 +85,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_4 {
    condition:
       uint16(0) == 0x5a4d and filesize < 400KB and 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -135,13 +101,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_5 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -155,13 +116,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_6 {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -175,13 +131,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_7 {
    condition:
       uint16(0) == 0x5a4d and filesize < 60KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_8 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -197,13 +148,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_8 {
    condition:
       filesize < 10KB and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_9 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_9 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -224,13 +170,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_9 {
          pe.imphash() == "a1f457c8c549c5c430556bfe5887a4e6"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_10 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_10 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -248,13 +189,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_10 {
    condition:
       uint16(0) == 0x5a4d and filesize < 200KB and ( $x1 or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_11 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_11 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -274,13 +210,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_11 {
       uint16(0) == 0x5a4d and filesize < 100KB
       and ( pe.imphash() == "6eef4394490378f32d134ab3bf4bf194" or all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_12 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_12 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -303,13 +234,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_12 {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and 6 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_13 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_13 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -328,13 +254,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_13 {
       uint16(0) == 0x5a4d and filesize < 500KB
       and ( pe.imphash() == "3dfad33b2fb66c083c99dc10341908b7" or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_14 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_14 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -355,13 +276,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_14 {
          all of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_15 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_15 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -383,13 +299,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_15 {
       uint16(0) == 0x5a4d and filesize < 200KB
       and ( pe.imphash() == "f6ec70a295000ab0a753aa708e9439b4" or 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_16 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_16 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -406,13 +317,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_16 {
       uint16(0) == 0x5a4d and filesize < 200KB
       and ( all of them or pe.imphash() == "c6a4c95d868a3327a62c9c45f5e15bbf" )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_17 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_17 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -437,13 +343,8 @@ rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_17 {
    condition:
       uint16(0) == 0x5a4d and filesize < 20KB and ( 1 of ($x*) and 1 of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_thrip.yar
-
-rule APT_Thrip_Sample_Jun18_18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_thrip_APT_Thrip_Sample_Jun18_18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_thrip.yar
    meta:
       description = "Detects sample found in Thrip report by Symantec "
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

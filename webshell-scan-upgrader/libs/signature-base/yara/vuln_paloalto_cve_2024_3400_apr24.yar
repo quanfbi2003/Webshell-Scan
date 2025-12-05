@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-
-rule Neo23x0_vul_APT_UTA028_ForensicArtefacts_PaloAlto_CVE_2024_3400_Apr24_1 : SCRIPT {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule APT_UTA028_ForensicArtefacts_PaloAlto_CVE_2024_3400_Apr24_1 : SCRIPT {
-========
 //===SUCCESS===
 rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_APT_UTA028_ForensicArtefacts_PaloAlto_CVE_2024_3400_Apr24_1 : SCRIPT {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
    meta:
       description = "Detects forensic artefacts of APT UTA028 as found in a campaign exploiting the Palo Alto CVE-2024-3400 vulnerability"
       author = "Florian Roth"
@@ -34,18 +23,8 @@ rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_APT_UTA028_ForensicArtefacts_Palo
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule Neo23x0_vul_EXPL_PaloAlto_CVE_2024_3400_Apr24_1 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule EXPL_PaloAlto_CVE_2024_3400_Apr24_1 {
-========
 //===SUCCESS===
 rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_EXPL_PaloAlto_CVE_2024_3400_Apr24_1 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
    meta:
       description = "Detects characteristics of the exploit code used in attacks against Palo Alto GlobalProtect CVE-2024-3400"
       author = "Florian Roth"
@@ -65,18 +44,8 @@ rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_EXPL_PaloAlto_CVE_2024_3400_Apr24
       1 of ($x*)
       or (1 of ($sa*) and $sb2)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule Neo23x0_vul_SUSP_LNX_Base64_Download_Exec_Apr24 : SCRIPT {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule SUSP_LNX_Base64_Download_Exec_Apr24 : SCRIPT {
-========
 //===SUCCESS===
 rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_LNX_Base64_Download_Exec_Apr24 : SCRIPT {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
    meta:
       description = "Detects suspicious base64 encoded shell commands used for downloading and executing further stages"
       author = "Paul Hager"
@@ -94,18 +63,8 @@ rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_LNX_Base64_Download_Exec_Apr
       1 of ($sa*)
       and all of ($sb*)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule Neo23x0_vul_SUSP_PY_Import_Statement_Apr24_1 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule SUSP_PY_Import_Statement_Apr24_1 {
-========
 //===SUCCESS===
 rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_PY_Import_Statement_Apr24_1 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
    meta:
       description = "Detects suspicious Python import statement and socket usage often found in Python reverse shells"
       author = "Florian Roth"
@@ -118,31 +77,13 @@ rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_PY_Import_Statement_Apr24_1 
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule Neo23x0_vul_SUSP_LNX_Base64_Exec_Apr24 : SCRIPT {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-
-rule SUSP_LNX_Base64_Exec_Apr24 : SCRIPT {
-========
 //===SUCCESS===
 rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_LNX_Base64_Exec_Apr24 : SCRIPT {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
    meta:
       description = "Detects suspicious base64 encoded shell commands (as seen in Palo Alto CVE-2024-3400 exploitation)"
       author = "Christian Burkard"
       date = "2024-04-18"
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
       modified = "2025-03-21"
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-      modified = "2025-01-17"
-========
-      modified = "2025-03-21"
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
       reference = "Internal Research"
       score = 75
       id = "2da3d050-86b0-5903-97eb-c5f39ce4f3a3"
@@ -153,14 +94,6 @@ rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_LNX_Base64_Exec_Apr24 : SCRI
       // $s4 = "/tmp/" base64 // prone to FPs
       
       $mirai = "country="
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-   condition:
-      filesize < 800KB
-      and 1 of ($s*) and not $mirai
-========
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
 
       $fp1 = "<html"
       $fp2 = "<?xml"
@@ -169,8 +102,4 @@ rule Neo23x0_vuln_paloalto_cve_2024_3400_apr24_SUSP_LNX_Base64_Exec_Apr24 : SCRI
       and 1 of ($s*) 
       and not $mirai
       and not 1 of ($fp*)
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
-=======
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vuln_paloalto_cve_2024_3400_apr24.yar
 }

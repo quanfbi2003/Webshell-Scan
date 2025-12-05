@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-08-24
-   Identifier: Lazarus - Operation Applejeus
-   Reference: https://securelist.com/operation-applejeus/87553/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://securelist.com/operation-applejeus/87553/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_applejeus.yar
-rule APT_Lazarus_Aug18_Downloader_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_applejeus_APT_Lazarus_Aug18_Downloader_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_applejeus.yar
    meta:
       description = "Detects Lazarus Group Malware Downloadery"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -51,13 +37,8 @@ rule Neo23x0_apt_lazarus_applejeus_APT_Lazarus_Aug18_Downloader_1 {
          ( 1 of ($x*) or 2 of them )
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_applejeus.yar
-
-rule APT_Lazarus_Aug18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_applejeus_APT_Lazarus_Aug18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_applejeus.yar
    meta:
       description = "Detects Lazarus Group Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -79,13 +60,8 @@ rule Neo23x0_apt_lazarus_applejeus_APT_Lazarus_Aug18_1 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_applejeus.yar
-
-rule APT_Lazarus_Aug18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_applejeus_APT_Lazarus_Aug18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_applejeus.yar
    meta:
       description = "Detects Lazarus Group Malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -106,13 +82,8 @@ rule Neo23x0_apt_lazarus_applejeus_APT_Lazarus_Aug18_2 {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_lazarus_applejeus.yar
-
-rule APT_FallChill_RC4_Keys {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_lazarus_applejeus_APT_FallChill_RC4_Keys {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_lazarus_applejeus.yar
    meta:
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
       author = "Florian Roth (Nextron Systems)"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
-
-rule BKDR_XZUtil_Script_CVE_2024_3094_Mar24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_bkdr_xz_util_cve_2024_3094_BKDR_XZUtil_Script_CVE_2024_3094_Mar24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
    meta:
       description = "Detects make file and script contents used by the backdoored XZ library (xzutil) CVE-2024-3094."
       author = "Florian Roth"
@@ -20,13 +15,8 @@ rule Neo23x0_bkdr_xz_util_cve_2024_3094_BKDR_XZUtil_Script_CVE_2024_3094_Mar24_1
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
-
-rule BKDR_XZUtil_Binary_CVE_2024_3094_Mar24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_bkdr_xz_util_cve_2024_3094_BKDR_XZUtil_Binary_CVE_2024_3094_Mar24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
    meta:
       description = "Detects injected code used by the backdoored XZ library (xzutil) CVE-2024-3094."
       author = "Florian Roth"
@@ -54,13 +44,8 @@ rule Neo23x0_bkdr_xz_util_cve_2024_3094_BKDR_XZUtil_Binary_CVE_2024_3094_Mar24_1
          or $xc1
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
-
-rule BKDR_XZUtil_KillSwitch_CVE_2024_3094_Mar24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_bkdr_xz_util_cve_2024_3094_BKDR_XZUtil_KillSwitch_CVE_2024_3094_Mar24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
    meta:
       description = "Detects kill switch used by the backdoored XZ library (xzutil) CVE-2024-3094."
       author = "Florian Roth"
@@ -73,13 +58,8 @@ rule Neo23x0_bkdr_xz_util_cve_2024_3094_BKDR_XZUtil_KillSwitch_CVE_2024_3094_Mar
    condition:
       $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
-
-rule SUSP_OBFUSC_SH_Indicators_Mar24_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_bkdr_xz_util_cve_2024_3094_SUSP_OBFUSC_SH_Indicators_Mar24_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/bkdr_xz_util_cve_2024_3094.yar
    meta:
       description = "Detects characteristics found in obfuscated script (used in the backdoored XZ package, but could match on others, too)"
       author = "Florian Roth"

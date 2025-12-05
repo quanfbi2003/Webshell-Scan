@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_cryptocoin_miner.yar
-
-rule CoinMiner_Strings : SCRIPT HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_cryptocoin_miner_CoinMiner_Strings : SCRIPT HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_cryptocoin_miner.yar
    meta:
       description = "Detects mining pool protocol string in Executable"
       author = "Florian Roth (Nextron Systems)"
@@ -21,13 +16,8 @@ rule Neo23x0_pua_cryptocoin_miner_CoinMiner_Strings : SCRIPT HIGHVOL {
    condition:
       filesize < 3000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_cryptocoin_miner.yar
-
-rule CoinHive_Javascript_MoneroMiner : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_cryptocoin_miner_CoinHive_Javascript_MoneroMiner : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_cryptocoin_miner.yar
    meta:
       description = "Detects CoinHive - JavaScript Crypto Miner"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +31,8 @@ rule Neo23x0_pua_cryptocoin_miner_CoinHive_Javascript_MoneroMiner : HIGHVOL {
    condition:
       filesize < 65KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_cryptocoin_miner.yar
-
-rule PUA_CryptoMiner_Jan19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_cryptocoin_miner_PUA_CryptoMiner_Jan19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_cryptocoin_miner.yar
    meta:
       description = "Detects Crypto Miner strings"
       author = "Florian Roth (Nextron Systems)"
@@ -65,13 +50,8 @@ rule Neo23x0_pua_cryptocoin_miner_PUA_CryptoMiner_Jan19_1 {
    condition:
       filesize < 1000KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_cryptocoin_miner.yar
-
-rule PUA_Crypto_Mining_CommandLine_Indicators_Oct21 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_cryptocoin_miner_PUA_Crypto_Mining_CommandLine_Indicators_Oct21 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_cryptocoin_miner.yar
    meta:
       description = "Detects command line parameters often used by crypto mining software"
       author = "Florian Roth (Nextron Systems)"

@@ -21,15 +21,6 @@ rule Impacket_Tools_tracer {
       $s1 = "btk85.dll" fullword ascii
       $s2 = "btcl85.dll" fullword ascii
       $s3 = "xtk\\unsupported.tcl" fullword ascii
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/gen_impacket_tools.yar
-
-      $fp1 = "Linden Research Inc" wide
-   condition:
-      ( uint16(0) == 0x5a4d and filesize < 21000KB and all of ($s*) )
-      and not 1 of ($fp*)
-}
-=======
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_impacket_tools.yar
 
       $fp1 = "Linden Research Inc" wide
    condition:

@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-rule APT_Project_Sauron_Scripts {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Scripts {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects scripts (mostly LUA) from Project Sauron report by Kaspersky"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -28,13 +24,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Scripts {
 	condition:
 		1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule HKTL_Dsniff {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_HKTL_Dsniff {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
    meta:
       description = "Detects Dsniff hack tool"
       author = "Florian Roth (Nextron Systems)"
@@ -47,13 +38,8 @@ rule Neo23x0_apt_project_sauron_extras_HKTL_Dsniff {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_arping_module {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_arping_module {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects strings from arping module - Project Sauron report by Kaspersky"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +54,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_arping_module {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_kblogi_module {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_kblogi_module {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects strings from kblogi module - Project Sauron report by Kaspersky"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -89,13 +70,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_kblogi_module {
 	condition:
 		$x1 or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_basex_module {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_basex_module {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects strings from basex module - Project Sauron report by Kaspersky"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -110,13 +86,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_basex_module {
 	condition:
 		$x1 or 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_dext_module {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_dext_module {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects strings from dext module - Project Sauron report by Kaspersky"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -132,13 +103,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_dext_module {
 	condition:
 		2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule Hacktool_This_Cruft {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_Hacktool_This_Cruft {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects string 'This cruft' often used in hack tools like netcat or cryptcat and also mentioned in Project Sauron report"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -161,13 +127,8 @@ rule Neo23x0_apt_project_sauron_extras_Hacktool_This_Cruft {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_Custom_M1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects malware from Project Sauron APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -186,13 +147,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M1 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 200KB and ( all of ($s*) ) and 1 of ($op*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_Custom_M2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects malware from Project Sauron APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -210,13 +166,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M2 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 400KB and ( all of ($s*) ) and all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_Custom_M3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects malware from Project Sauron APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -234,13 +185,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M3 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 1000KB and ( all of ($s*) ) and all of ($op*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_Custom_M4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects malware from Project Sauron APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -259,13 +205,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M4 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 90KB and ( all of ($s*) ) and 1 of ($op*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_Custom_M6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects malware from Project Sauron APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -284,13 +225,8 @@ rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M6 {
 	condition:
 		( uint16(0) == 0x5a4d and filesize < 200KB and ( all of ($s*) ) and 1 of ($op*) ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_project_sauron_extras.yar
-
-rule APT_Project_Sauron_Custom_M7 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_project_sauron_extras_APT_Project_Sauron_Custom_M7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_project_sauron_extras.yar
 	meta:
 		description = "Detects malware from Project Sauron APT"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/hktl_badsuccessor_helper_may25.yar
-
-
-rule Neo23x0_hkt_HKTL_EXPL_WIN_PS1_BadSuccessor_May25 {
-=======
 //===SUCCESS===
 rule Neo23x0_hktl_badsuccessor_helper_may25_HKTL_EXPL_WIN_PS1_BadSuccessor_May25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/hktl_badsuccessor_helper_may25.yar
    meta:
       description = "Detects PowerShell tool called Get-BadSuccessorOUPermissions.ps1 that helps exploit a vulnerability in Active Directory. Lists every principal that can perform a BadSuccessor attack and the OUs where it holds the required permissions."
       author = "Florian Roth"

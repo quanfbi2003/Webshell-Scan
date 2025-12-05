@@ -5,20 +5,12 @@
    Identifier: Envrial
    Reference: https://twitter.com/malwrhunterteam/status/953313514629853184
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_envrial.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_envrial.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_envrial.yar
-rule MAL_Envrial_Jan18_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_envrial_MAL_Envrial_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_envrial.yar
    meta:
       description = "Detects Encrial credential stealer malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

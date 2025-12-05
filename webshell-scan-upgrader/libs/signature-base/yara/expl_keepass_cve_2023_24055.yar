@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_keepass_cve_2023_24055.yar
-
-rule EXPL_Keepass_CVE_2023_24055_Jan23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_keepass_cve_2023_24055_EXPL_Keepass_CVE_2023_24055_Jan23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_keepass_cve_2023_24055.yar
    meta:
       description = "Detects suspicious entries in the Keepass configuration file, which could be indicator of the exploitation of CVE-2023-24055"
       author = "Florian Roth (Nextron Systems)"
@@ -23,13 +18,8 @@ rule Neo23x0_expl_keepass_cve_2023_24055_EXPL_Keepass_CVE_2023_24055_Jan23 {
    condition:
       filesize < 200KB and $a1 and 1 of ($x*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_keepass_cve_2023_24055.yar
-
-rule SUSP_Keepass_CVE_2023_24055_Jan23 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_keepass_cve_2023_24055_SUSP_Keepass_CVE_2023_24055_Jan23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_keepass_cve_2023_24055.yar
    meta:
       description = "Detects suspicious triggers defined in the Keepass configuration file, which could be indicator of the exploitation of CVE-2023-24055"
       author = "Florian Roth (Nextron Systems)"

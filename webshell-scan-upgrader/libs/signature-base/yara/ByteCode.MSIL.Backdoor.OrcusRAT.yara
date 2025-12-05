@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/ByteCode.MSIL.Backdoor.OrcusRAT.yara
-
-
-rule reversinglabs_Byt_ByteCode_MSIL_Backdoor_OrcusRAT : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/ByteCode.MSIL.Backdoor.OrcusRAT.yara
-rule ByteCode_MSIL_Backdoor_OrcusRAT : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_ByteCode_MSIL_Backdoor_OrcusRAT_ByteCode_MSIL_Backdoor_OrcusRAT : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.OrcusRAT.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.OrcusRAT.yara
 {
     meta:
 
@@ -142,8 +132,4 @@ rule reversinglabs_ByteCode_MSIL_Backdoor_OrcusRAT_ByteCode_MSIL_Backdoor_OrcusR
                 $process_key_action
             )
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/ByteCode.MSIL.Backdoor.OrcusRAT.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/ByteCode.MSIL.Backdoor.OrcusRAT.yara

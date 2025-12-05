@@ -4,20 +4,12 @@
 	Date: 2015-05-05
 	Identifier: CarbonGrabber
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rombertik_carbongrabber.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rombertik_carbongrabber.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rombertik_carbongrabber.yar
-rule Rombertik_CarbonGrabber {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rombertik_carbongrabber.yar
 	meta:
 		description = "Detects CarbonGrabber alias Rombertik - file Copy#064046.scr"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 5MB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rombertik_carbongrabber.yar
-
-rule Rombertik_CarbonGrabber_Panel_InstallScript {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Panel_InstallScript {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rombertik_carbongrabber.yar
 	meta:
 		description = "Detects CarbonGrabber alias Rombertik panel install script - file install.php"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -66,13 +53,8 @@ rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Panel_Install
 	condition:
 		filesize < 3KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rombertik_carbongrabber.yar
-
-rule Rombertik_CarbonGrabber_Panel {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Panel {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rombertik_carbongrabber.yar
 	meta:
 		description = "Detects CarbonGrabber alias Rombertik Panel - file index.php"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -91,13 +73,8 @@ rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Panel {
 	condition:
 		filesize < 46KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rombertik_carbongrabber.yar
-
-rule Rombertik_CarbonGrabber_Builder {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Builder {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rombertik_carbongrabber.yar
 	meta:
 		description = "Detects CarbonGrabber alias Rombertik Builder - file Builder.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -115,13 +92,8 @@ rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Builder {
 	condition:
 		uint16(0) == 0x5a4d and filesize < 35KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_rombertik_carbongrabber.yar
-
-rule Rombertik_CarbonGrabber_Builder_Server {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_rombertik_carbongrabber_Rombertik_CarbonGrabber_Builder_Server {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_rombertik_carbongrabber.yar
 	meta:
 		description = "Detects CarbonGrabber alias Rombertik Builder Server - file Server.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

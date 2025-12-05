@@ -1,14 +1,9 @@
 
 /* slightly modified to detect only samples with a size upt to 1 MB */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_netfilter.yar
-
-rule MAL_Netfilter_Dropper_Jun_2021_1 {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_cn_netfilter_MAL_Netfilter_Dropper_Jun_2021_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_netfilter.yar
    meta:
         description = "Detects the dropper of Netfilter rootkit"
         author = "Arkbird_SOLG"
@@ -31,13 +26,8 @@ rule Neo23x0_apt_cn_netfilter_MAL_Netfilter_Dropper_Jun_2021_1 {
         and filesize > 6KB and filesize < 1000KB
         and (all of ($seq*) or 2 of ($s*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_netfilter.yar
-
-rule MAL_Netfilter_May_2021_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_netfilter_MAL_Netfilter_May_2021_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_netfilter.yar
    meta:
         description = "Detects Netfilter rootkit"
         author = "Arkbird_SOLG"

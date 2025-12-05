@@ -6,13 +6,9 @@
    Reference: https://www.us-cert.gov/ncas/alerts/TA17-117A
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uscert_ta17-1117a.yar
-rule Dropper_DeploysMalwareViaSideLoading {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_uscert_ta17_1117a_Dropper_DeploysMalwareViaSideLoading {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_uscert_ta17-1117a.yar
     meta:
         description = "Detects a dropper used to deploy an implant via side loading. This dropper has specifically been observed deploying REDLEAVES & PlugX"
         author = "USG"
@@ -25,13 +21,8 @@ rule Neo23x0_apt_uscert_ta17_1117a_Dropper_DeploysMalwareViaSideLoading {
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uscert_ta17-1117a.yar
-
-rule REDLEAVES_DroppedFile_ImplantLoader_Starburn {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_uscert_ta17_1117a_REDLEAVES_DroppedFile_ImplantLoader_Starburn {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_uscert_ta17-1117a.yar
     meta:
         description = "Detects the DLL responsible for loading and deobfuscating the DAT file containing shellcode and core REDLEAVES RAT"
         author = "USG"
@@ -43,13 +34,8 @@ rule Neo23x0_apt_uscert_ta17_1117a_REDLEAVES_DroppedFile_ImplantLoader_Starburn 
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uscert_ta17-1117a.yar
-
-rule REDLEAVES_DroppedFile_ObfuscatedShellcodeAndRAT_handkerchief {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_uscert_ta17_1117a_REDLEAVES_DroppedFile_ObfuscatedShellcodeAndRAT_handkerchief {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_uscert_ta17-1117a.yar
     meta:
         description = "Detects obfuscated .dat file containing shellcode and core REDLEAVES RAT"
         author = "USG"
@@ -61,13 +47,8 @@ rule Neo23x0_apt_uscert_ta17_1117a_REDLEAVES_DroppedFile_ObfuscatedShellcodeAndR
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uscert_ta17-1117a.yar
-
-rule REDLEAVES_CoreImplant_UniqueStrings {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_uscert_ta17_1117a_REDLEAVES_CoreImplant_UniqueStrings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_uscert_ta17-1117a.yar
     meta:
         description = "Strings identifying the core REDLEAVES RAT in its deobfuscated state"
         reference = "https://www.us-cert.gov/ncas/alerts/TA17-117A"
@@ -83,13 +64,8 @@ rule Neo23x0_apt_uscert_ta17_1117a_REDLEAVES_CoreImplant_UniqueStrings {
         not uint32(0) == 0x66676572 // not regf (registry hives)
         and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_uscert_ta17-1117a.yar
-
-rule PLUGX_RedLeaves {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_uscert_ta17_1117a_PLUGX_RedLeaves {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_uscert_ta17-1117a.yar
     meta:
         author = "US-CERT Code Analysis Team"
         date = "03.04.2017"

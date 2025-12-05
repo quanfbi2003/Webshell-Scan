@@ -6865,7 +6865,7 @@ rule Neo23x0_thor_webshells_WebShell_JspWebshell_1_2_2 {
 	strings:
 		$s0 = "System.out.println(\"CreateAndDeleteFolder is error:\"+ex); " fullword
 		$s3 = "<%@ page contentType=\"text/html; charset=GBK\" language=\"java\" import=\"java."
-		$s4 = "// String tempfile_path=request.getParameter(\"file_path\");" fullword
+		$s4 = "// String tempfilepath=request.getParameter(\"filepath\");" fullword
 		$s15 = "endPoint=random1.getFilePointer();" fullword
 		$s20 = "if (request.getParameter(\"command\") != null) {" fullword
 	condition:

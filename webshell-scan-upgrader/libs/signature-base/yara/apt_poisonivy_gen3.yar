@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_poisonivy_gen3.yar
-
-rule PoisonIvy_Generic_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_poisonivy_gen3_PoisonIvy_Generic_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_poisonivy_gen3.yar
 	meta:
 		description = "PoisonIvy RAT Generic Rule"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

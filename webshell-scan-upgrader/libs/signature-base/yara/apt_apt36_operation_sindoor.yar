@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
-
-
-rule Neo23x0_apt_SUSP_LNX_Sindoor_ELF_Obfuscation_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt36_operation_sindoor_SUSP_LNX_Sindoor_ELF_Obfuscation_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
    meta:
       description = "Detects ELF obfuscation technique used by Sindoor dropper related to APT 36"
       author = "Pezier Pierre-Henri"
@@ -21,13 +15,8 @@ rule Neo23x0_apt_apt36_operation_sindoor_SUSP_LNX_Sindoor_ELF_Obfuscation_Aug25 
       and uint16(4) > 0
       and $s1 in (0xc0..0x100)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
-
-rule Neo23x0_apt_SUSP_LNX_Sindoor_DesktopFile_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt36_operation_sindoor_SUSP_LNX_Sindoor_DesktopFile_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
    meta:
       description = "Detects ELF obfuscation technique used by Sindoor dropper related to APT 36"
       author = "Pezier Pierre-Henri"
@@ -44,13 +33,8 @@ rule Neo23x0_apt_apt36_operation_sindoor_SUSP_LNX_Sindoor_DesktopFile_Aug25 {
       and $hdr
       and any of ($s*)
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
-
-rule Neo23x0_apt_MAL_Sindoor_Decryptor_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt36_operation_sindoor_MAL_Sindoor_Decryptor_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
    meta:
       description = "Detects AES decryptor used by Sindoor dropper related to APT 36"
       author = "Pezier Pierre-Henri"
@@ -75,13 +59,8 @@ rule Neo23x0_apt_apt36_operation_sindoor_MAL_Sindoor_Decryptor_Aug25 {
       )
       and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
-
-rule Neo23x0_apt_MAL_Sindoor_Downloader_Aug25 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt36_operation_sindoor_MAL_Sindoor_Downloader_Aug25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt36_operation_sindoor.yar
    meta:
       description = "Detects Sindoor downloader related to APT 36"
       author = "Pezier Pierre-Henri"

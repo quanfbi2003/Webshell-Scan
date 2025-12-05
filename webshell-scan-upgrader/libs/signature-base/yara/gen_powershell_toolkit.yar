@@ -4,20 +4,12 @@
 	Date: 2016-09-04
 	Identifier: PowerShell Toolset - Cloaked
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-rule ps1_toolkit_PowerUp {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_PowerUp {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - file PowerUp.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +31,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_PowerUp {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 4000KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Inveigh_BruteForce {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Inveigh_BruteForce {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - file Inveigh-BruteForce.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -62,13 +49,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Inveigh_BruteForce {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 300KB and 1 of them ) or ( 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Invoke_Shellcode {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_Shellcode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - file Invoke-Shellcode.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -87,13 +69,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_Shellcode {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 90KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Invoke_Mimikatz {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_Mimikatz {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - file Invoke-Mimikatz.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -113,13 +90,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_Mimikatz {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 10000KB and 1 of them ) or ( 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Invoke_RelfectivePEInjection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_RelfectivePEInjection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - file Invoke-RelfectivePEInjection.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -139,13 +111,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_RelfectivePEInjection {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 700KB and 2 of them ) or ( all of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Persistence {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Persistence {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - file Persistence.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -167,13 +134,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Persistence {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 200KB and 2 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Invoke_Mimikatz_RelfectivePEInjection {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_Mimikatz_RelfectivePEInjection {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - from files Invoke-Mimikatz.ps1, Invoke-RelfectivePEInjection.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -200,13 +162,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Invoke_Mimikatz_RelfectivePEInje
 	condition:
 		( uint16(0) == 0xbbef and filesize < 10000KB and 3 of them ) or ( 6 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Inveigh_BruteForce_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Inveigh_BruteForce_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - from files Inveigh-BruteForce.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -224,13 +181,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Inveigh_BruteForce_2 {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 200KB and 2 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_PowerUp_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_PowerUp_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - from files PowerUp.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -250,13 +202,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_PowerUp_2 {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 2000KB and 2 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Persistence_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Persistence_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - from files Persistence.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -279,13 +226,8 @@ rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Persistence_2 {
 	condition:
 		( uint16(0) == 0xbbef and filesize < 200KB and 2 of them ) or ( 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_powershell_toolkit.yar
-
-rule ps1_toolkit_Inveigh_BruteForce_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_powershell_toolkit_ps1_toolkit_Inveigh_BruteForce_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_powershell_toolkit.yar
 	meta:
 		description = "Auto-generated rule - from files Inveigh-BruteForce.ps1"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

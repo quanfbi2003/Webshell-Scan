@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc3886_virtualpita.yar
-
-rule M_APT_VIRTUALPITA_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc3886_virtualpita.yar
 {
        meta:
              author = "Mandiant"
@@ -18,13 +13,8 @@ rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_1
       condition:
             uint32(0) == 0x464c457f and all of them  
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc3886_virtualpita.yar
-
-rule M_APT_VIRTUALPITA_2
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc3886_virtualpita.yar
 {
        meta:
              author = "Mandiant"
@@ -36,13 +26,8 @@ rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_2
       condition:
             uint32(0) == 0x464c457f and all of them  
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc3886_virtualpita.yar
-
-rule M_APT_VIRTUALPITA_3
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc3886_virtualpita.yar
 {
        meta:
              author = "Mandiant"
@@ -54,13 +39,8 @@ rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_3
       condition:
             uint32(0) == 0x464c457f and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc3886_virtualpita.yar
-
-rule M_APT_VIRTUALPITA_4
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc3886_virtualpita.yar
 {
        meta:
              author = "Mandiant"
@@ -73,13 +53,8 @@ rule Neo23x0_apt_unc3886_virtualpita_M_APT_VIRTUALPITA_4
             uint32(0) == 0x464c457f and all of them
 
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_unc3886_virtualpita.yar
-
-rule M_Hunting_Python_Backdoor_CommandParser_1
-=======
 //===SUCCESS===
 rule Neo23x0_apt_unc3886_virtualpita_M_Hunting_Python_Backdoor_CommandParser_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_unc3886_virtualpita.yar
 {
       meta:
             author = "Mandiant"

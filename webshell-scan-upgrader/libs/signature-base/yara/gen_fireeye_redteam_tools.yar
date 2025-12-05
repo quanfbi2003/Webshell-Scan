@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-
-rule HackTool_MSIL_Rubeus_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_Rubeus_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public Rubeus project."
@@ -18,12 +13,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_Rubeus_1
     condition:
         uint16(0) == 0x5A4D and $typelibguid
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Trojan_Raw_Generic_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Raw_Generic_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -38,12 +29,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Raw_Generic_4
     condition:
         uint16(0) != 0x5A4D and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_Win32_AndrewSpecial_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_Win32_AndrewSpecial_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -59,12 +46,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_Win32_AndrewSpecial_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and $dump and any of ($shellcode*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_GORAT_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule uses the same logic as FE_APT_Trojan_Win_GORAT_1_FEBeta with the addition of one check, to look for strings that are known to be in the Gorat implant when a certain cleaning script is not run against it."
@@ -101,12 +84,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_3
     condition:
         uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10MB and all of ($go*) and all of ($json*) and all of ($str*) and #rat > 1000 and any of ($dirty*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_Win_EXCAVATOR_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_Win_EXCAVATOR_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for the binary signature of the 'Inject' method found in the main Excavator PE."
@@ -122,12 +101,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_Win_EXCAVATOR_1
     condition:
         uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and any of ($bytes*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -142,12 +117,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_REDFLARE_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Raw64_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Raw64_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -161,12 +132,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Raw64_REDFLARE_1
     condition:
         (uint16(0) != 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SHARPZEROLOGON_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SHARPZEROLOGON_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public 'sharpzerologon' project."
@@ -179,12 +146,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SHARPZEROLOGON_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_CoreHound_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_CoreHound_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'CoreHound' project."
@@ -197,12 +160,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_CoreHound_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_NETAssemblyInject_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_NETAssemblyInject_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'NET-Assembly-Inject' project."
@@ -217,12 +176,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_NETAssemblyInject_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Hunting_GadgetToJScript_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Hunting_GadgetToJScript_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule is looking for B64 offsets of LazyNetToJscriptLoader which is a namespace specific to the internal version of the GadgetToJScript tooling."
@@ -237,12 +192,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Hunting_GadgetToJScript_1
     condition:
         any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Trojan_MSIL_GORAT_Plugin_DOTNET_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Trojan_MSIL_GORAT_Plugin_DOTNET_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'RedFlare - Plugin - .NET' project."
@@ -276,12 +227,8 @@ rule APT_Trojan_Win_REDFLARE_1
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Dropper_Win64_MATRYOSHKA_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Dropper_Win64_MATRYOSHKA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -297,12 +244,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Dropper_Win64_MATRYOSHKA_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPGOPHER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPGOPHER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpgopher' project."
@@ -315,12 +258,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPGOPHER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_KeeFarce_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_KeeFarce_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'KeeFarce' project."
@@ -333,12 +272,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_KeeFarce_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_GORAT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This detects if a sample is less than 50KB and has a number of strings found in the Gorat shellcode (stage0 loader). The loader contains an embedded DLL (stage0.dll) that contains a number of unique strings. The 'Cookie' string found in this loader is important as this cookie is needed by the C2 server to download the Gorat implant (stage1 payload)."
@@ -359,12 +294,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_1
     condition:
         filesize < 50KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Dropper_Win_MATRYOSHKA_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Dropper_Win_MATRYOSHKA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -382,12 +313,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Dropper_Win_MATRYOSHKA_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_Win_Generic_20
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_20
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -404,12 +331,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_20
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_PGF_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -426,12 +349,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_REDTEAMMATERIALS_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_REDTEAMMATERIALS_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'red_team_materials' project."
@@ -445,12 +364,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_REDTEAMMATERIALS_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Win_REDFLARE_7
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_7
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -469,12 +384,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_7
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Win_REDFLARE_8
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_8
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -494,12 +405,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_8
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_GORAT_5
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_5
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -520,12 +427,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_5
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_GPOHUNT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_GPOHUNT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'gpohunt' project."
@@ -538,12 +441,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_GPOHUNT_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_JUSTASK_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_JUSTASK_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'justask' project."
@@ -556,12 +455,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_JUSTASK_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Win_REDFLARE_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -578,12 +473,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_4
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_TITOSPECIAL_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_TITOSPECIAL_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -601,12 +492,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_TITOSPECIAL_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of ($ind*) and any of ($shellcode* )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Dropper_LNK_LNKSmasher_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Dropper_LNK_LNKSmasher_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The LNKSmasher project contains a prebuilt LNK file that has pieces added based on various configuration items. Because of this, several artifacts are present in every single LNK file generated by LNKSmasher, including the Drive Serial #, the File Droid GUID, and the GUID CLSID."
@@ -622,12 +509,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Dropper_LNK_LNKSmasher_1
     condition:
         $header at 0 and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharpSchtask_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharpSchtask_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'SharpSchtask' project."
@@ -640,12 +523,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharpSchtask_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Controller_Linux_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Controller_Linux_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -662,12 +541,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Controller_Linux_REDFLARE_1
     condition:
         (uint32(0) == 0x464c457f) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_WMISPY_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_WMISPY_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "wql searches"
@@ -689,12 +564,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_WMISPY_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and $MSIL and all of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharPersist_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPersist_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         md5 = "98ecf58d48a3eae43899b45cec0fc6b7"
@@ -715,12 +586,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPersist_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and ((@pdb2[1] < @pdb1[1] + 50) or (1 of ($a*) and 2 of ($b*)))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win_MATRYOSHKA_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win_MATRYOSHKA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -742,12 +609,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win_MATRYOSHKA_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Builder_MSIL_SinfulOffice_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Builder_MSIL_SinfulOffice_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'SinfulOffice' project."
@@ -760,12 +623,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Builder_MSIL_SinfulOffice_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_SharPy_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_SharPy_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'SharPy' project."
@@ -778,12 +637,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_SharPy_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_MSIL_WILDCHILD_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_WILDCHILD_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -799,12 +654,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_WILDCHILD_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_Win_Generic_18
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_18
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -821,12 +672,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_18
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_HOLSTER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_HOLSTER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the a customized version of the 'DUEDLLIGENCE' project."
@@ -839,12 +686,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_HOLSTER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_MSIL_TRIMBISHOP_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_TRIMBISHOP_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-03"
@@ -864,12 +707,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_TRIMBISHOP_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (@sb1[1] < @sb2[1]) and (all of ($ss*)) and (all of ($tb*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_MSIL_TRIMBISHOP_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_TRIMBISHOP_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-03"
@@ -889,12 +728,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_TRIMBISHOP_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_DShell_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_DShell_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for strings specific to the D programming language in combination with sections of an integer array which contains the encoded payload found within DShell"
@@ -982,12 +817,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_DShell_3
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and filesize > 500KB and filesize < 1500KB and 40 of ($e*) and 1 of ($dlang*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPSTOMP_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSTOMP_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -1009,12 +840,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSTOMP_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPPATCHCHECK_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPPATCHCHECK_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharppatchcheck' project."
@@ -1027,12 +854,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPPATCHCHECK_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SAFETYKATZ_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SAFETYKATZ_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public SafetyKatz project."
@@ -1045,12 +868,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SAFETYKATZ_4
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_MacOS_GORAT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_MacOS_GORAT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule is looking for specific strings associated with network activity found within the MacOS generated variant of GORAT"
@@ -1067,12 +886,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_MacOS_GORAT_1
     condition:
         ((uint32(0) == 0xBEBAFECA) or (uint32(0) == 0xFEEDFACE) or (uint32(0) == 0xFEEDFACF) or (uint32(0) == 0xCEFAEDFE)) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_MSIL_ADPassHunt_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_ADPassHunt_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         md5 = "6efb58cf54d1bb45c057efcfbbd68a93"
@@ -1089,12 +904,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_ADPassHunt_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (@pdb2[1] < @pdb1[1] + 50) or 2 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_PGF_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-26"
@@ -1109,12 +920,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_4
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_PGF_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-26"
@@ -1129,12 +936,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_4
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_MSIL_ADPassHunt_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_ADPassHunt_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public ADPassHunt project."
@@ -1147,12 +950,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_ADPassHunt_1
     condition:
         uint16(0) == 0x5A4D and $typelibguid
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_GETDOMAINPASSWORDPOLICY_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_GETDOMAINPASSWORDPOLICY_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the recon utility 'getdomainpasswordpolicy' project."
@@ -1165,12 +964,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_GETDOMAINPASSWORDPOLICY_1
     condition:
         filesize < 10MB and (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharPivot_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -1186,12 +981,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_PGF_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "PGF payload, generated rule based on symfunc/c02594972dbab6d489b46c5dee059e66. Identifies dllmain_hook x86 payloads."
@@ -1209,12 +1000,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_3
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_REDFLARE_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_REDFLARE_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -1229,12 +1016,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_REDFLARE_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPSTOMP_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSTOMP_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -1254,12 +1037,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSTOMP_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_NetshShellCodeRunner_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_NetshShellCodeRunner_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'NetshShellCodeRunner' project."
@@ -1272,12 +1051,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_NetshShellCodeRunner_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharPivot_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the SharPivot project."
@@ -1290,12 +1065,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_4
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_GoRat_Memory
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GoRat_Memory
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Identifies GoRat malware in memory based on strings."
@@ -1322,12 +1093,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GoRat_Memory
         // #murica > 10 or 
         3 of ($rat*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_AllTheThings_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_AllTheThings_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'AllTheThings' project."
@@ -1340,12 +1107,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_AllTheThings_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_PGF_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -1362,12 +1125,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Win_REDFLARE_5
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_5
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -1385,12 +1144,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_5
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_MSIL_TitoSpecial_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_TitoSpecial_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for .NET PE files that have the strings of various method names in the TitoSpecial code."
@@ -1415,12 +1170,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_TitoSpecial_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Builder_MSIL_G2JS_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Builder_MSIL_G2JS_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the Gadget2JScript project."
@@ -1433,12 +1184,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Builder_MSIL_G2JS_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_DShell_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_DShell_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -1457,12 +1204,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_DShell_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharPivot_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for .NET PE files that have the strings of various method names in the SharPivot code."
@@ -1492,12 +1235,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_3
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $msil and all of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_FLUFFY_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_FLUFFY_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-04"
@@ -1516,12 +1255,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_FLUFFY_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_FLUFFY_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_FLUFFY_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-04"
@@ -1537,12 +1272,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_FLUFFY_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SEATBELT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SEATBELT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for .NET PE files that have regex and format strings found in the public tool SeatBelt. Due to the nature of the regex and format strings used for detection, this rule should detect custom variants of the SeatBelt project."
@@ -1566,12 +1297,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SEATBELT_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $msil and all of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_INVEIGHZERO_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_INVEIGHZERO_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'inveighzero' project."
@@ -1584,12 +1311,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_INVEIGHZERO_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_RURALBISHOP_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_RURALBISHOP_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-03"
@@ -1609,12 +1332,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_RURALBISHOP_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (@sb1[1] < @sb2[1]) and (all of ($ss*)) and (all of ($tb*))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_RURALBISHOP_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_RURALBISHOP_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-03"
@@ -1634,12 +1353,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_RURALBISHOP_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_PrepShellcode_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PrepShellcode_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'PrepShellcode' project."
@@ -1652,12 +1367,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PrepShellcode_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Downloader_Win32_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Downloader_Win32_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -1672,12 +1383,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Downloader_Win32_REDFLARE_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_WMIRunner_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_WMIRunner_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'WMIRunner' project."
@@ -1690,12 +1397,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_WMIRunner_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharpStomp_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharpStomp_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the SharpStomp project."
@@ -1708,12 +1411,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharpStomp_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Tool_MSIL_SharpGrep_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Tool_MSIL_SharpGrep_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'SharpGrep' project."
@@ -1726,12 +1425,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Tool_MSIL_SharpGrep_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Dropper_HTA_WildChild_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Dropper_HTA_WildChild_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for strings present in unobfuscated HTAs generated by the WildChild builder."
@@ -1753,12 +1448,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Dropper_HTA_WildChild_1
     condition:
         $script_header at 0 and all of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Builder_PY_REDFLARE_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_PY_REDFLARE_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -1774,12 +1465,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_PY_REDFLARE_2
     condition:
         all of them and #s2 == 2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_DShell_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_DShell_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -1796,12 +1483,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_DShell_3
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Linux_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Linux_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -1819,12 +1502,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Linux_REDFLARE_1
     condition:
         (uint32(0) == 0x464c457f) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_WildChild_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_WildChild_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the WildChild project."
@@ -1837,12 +1516,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_WildChild_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule MSIL_Launcher_DUEDLLIGENCE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_MSIL_Launcher_DUEDLLIGENCE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'DUEDLLIGENCE' project."
@@ -1855,12 +1530,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_MSIL_Launcher_DUEDLLIGENCE_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_GORAT_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Verifies that the sample is a Windows PE that is less than 10MB in size and has the Go build ID strings. Then checks for various strings known to be in the Gorat implant including strings used in C2 json, names of methods, and the unique string 'murica' used in C2 comms. A check is done to ensure the string 'rat' appears in the binary over 1000 times as it is the name of the project used by the implant and is present well over 2000 times."
@@ -1892,12 +1563,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_2
     condition:
         uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10MB and all of ($go*) and all of ($json*) and all of ($str*) and #rat > 1000
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_REDFLARE_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_REDFLARE_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -1913,12 +1580,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_REDFLARE_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharPersist_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPersist_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the SharPersist project."
@@ -2123,12 +1786,8 @@ rule APT_Backdoor_Win_DShell_1
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and filesize > 500KB and 105 of ($s*) and $s112 in (3000..4000) and 40 of ($e*)
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Backdoor_Win_GORAT_4
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_4
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Verifies that the sample is a Windows PE that is less than 10MB in size and exports numerous functions that are known to be exported by the Gorat implant. This is done in an effort to provide detection for packed samples that may not have other strings but will need to replicate exports to maintain functionality."
@@ -2139,12 +1798,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Backdoor_Win_GORAT_4
     condition:
         uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and filesize < 10MB and pe.exports("MemoryCallEntryPoint") and pe.exports("MemoryDefaultAlloc") and pe.exports("MemoryDefaultFree") and pe.exports("MemoryDefaultFreeLibrary") and pe.exports("MemoryDefaultGetProcAddress") and pe.exports("MemoryDefaultLoadLibrary") and pe.exports("MemoryFindResource") and pe.exports("MemoryFindResourceEx") and pe.exports("MemoryFreeLibrary") and pe.exports("MemoryGetProcAddress") and pe.exports("MemoryLoadLibrary") and pe.exports("MemoryLoadLibraryEx") and pe.exports("MemoryLoadResource") and pe.exports("MemoryLoadString") and pe.exports("MemoryLoadStringEx") and pe.exports("MemorySizeofResource") and pe.exports("callback") and pe.exports("crosscall2") and pe.exports("crosscall_386")
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPNFS_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPNFS_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpnfs' project."
@@ -2157,12 +1812,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPNFS_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_MSIL_CredSnatcher_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_CredSnatcher_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'CredSnatcher' project."
@@ -2175,12 +1826,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_CredSnatcher_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SEATBELT_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SEATBELT_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public SeatBelt project."
@@ -2193,12 +1840,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SEATBELT_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_DShell_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_DShell_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -2216,12 +1859,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_DShell_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_PGF_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -2238,12 +1877,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPDACL_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPDACL_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpdacl' project."
@@ -2256,12 +1891,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPDACL_1
     condition:
         filesize < 10MB and (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPZIPLIBZIPPER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPZIPLIBZIPPER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpziplibzipper' project."
@@ -2274,12 +1905,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPZIPLIBZIPPER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Downloader_Win64_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Downloader_Win64_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -2294,12 +1921,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Downloader_Win64_REDFLARE_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_MATRYOSHKA_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_MATRYOSHKA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -2316,12 +1939,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_MATRYOSHKA_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_WMIspy_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_WMIspy_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'WMIspy' project."
@@ -2334,12 +1953,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_WMIspy_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Win_REDFLARE_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -2356,12 +1971,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_3
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win_PGF_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win_PGF_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "PDB string used in some PGF DLL samples"
@@ -2376,12 +1987,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win_PGF_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and filesize < 15MB and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPDNS_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPDNS_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpdns' project."
@@ -2394,12 +2001,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPDNS_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_TrimBishop_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_TrimBishop_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for .NET PE files that have the string 'msg' more than 60 times as well as numerous function names unique to or used by the TrimBishop tool. All strings found in RuralBishop are reversed in TrimBishop and stored in a variable with the format 'msg##'. With the exception of 'msg', 'DTrim', and 'ReverseString' the other strings referenced in this rule may be shared with RuralBishop."
@@ -2423,12 +2026,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_TrimBishop_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $msil and #msg > 60 and all of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_Win_Generic_17
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_17
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -2445,12 +2044,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_17
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_PGF_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "PGF payload, generated rule based on symfunc/8a2f2236fdfaa3583ab89076025c6269. Identifies dllmain_hook x64 payloads."
@@ -2466,12 +2061,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_3
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_PY_ImpacketObfuscation_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_PY_ImpacketObfuscation_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -2491,12 +2082,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_PY_ImpacketObfuscation_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_Win64_EXCAVATOR_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_Win64_EXCAVATOR_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -2513,12 +2100,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_Win64_EXCAVATOR_2
     condition:
         ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B)) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Raw32_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Raw32_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -2532,12 +2115,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Raw32_REDFLARE_1
     condition:
         (uint16(0) != 0x5A4D) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_PGF_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -2554,12 +2133,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPTEMPLATE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPTEMPLATE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharptemplate' project."
@@ -2572,12 +2147,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPTEMPLATE_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_MODIFIEDSHARPVIEW_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_MODIFIEDSHARPVIEW_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'modifiedsharpview' project."
@@ -2590,12 +2161,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_MODIFIEDSHARPVIEW_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_PGF_5
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_5
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "PGF payload, generated rule based on symfunc/a86b004b5005c0bcdbd48177b5bac7b8"
@@ -2611,13 +2178,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_PGF_5
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-
-rule APT_HackTool_MSIL_LUALOADER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_LUALOADER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'lualoader' project."
@@ -2630,12 +2192,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_LUALOADER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_PXELOOT_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PXELOOT_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for .NET PE files that have the strings of various method names in the PXE And Loot code."
@@ -2661,12 +2219,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PXELOOT_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $msil and all of ($str*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_PRAT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_PRAT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'prat' project."
@@ -2682,12 +2236,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_PRAT_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPNATIVEZIPPER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPNATIVEZIPPER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpnativezipper' project."
@@ -2700,12 +2250,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPNATIVEZIPPER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win32_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-27"
@@ -2720,12 +2266,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win32_REDFLARE_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_MSIL_PGF_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_PGF_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-24"
@@ -2871,15 +2413,9 @@ rule APT_Backdoor_Win_DShell_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and filesize > 500KB and filesize > 700KB and all of ($s*) and 1 of ($dlang*) and not $ign1 and not $ign2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-*/ 
-
-rule CredTheft_Win_EXCAVATOR_2
-=======
 */
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_Win_EXCAVATOR_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This rule looks for the binary signature of the routine that calls PssFreeSnapshot found in the Excavator-Reflector DLL."
@@ -2895,12 +2431,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_Win_EXCAVATOR_2
     condition:
         uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and any of ($bytes*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Builder_MSIL_SharpGenerator_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Builder_MSIL_SharpGenerator_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'SharpGenerator' project."
@@ -2933,12 +2465,8 @@ rule APT_Trojan_Win_REDFLARE_6
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_Win64_AndrewSpecial_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_Win64_AndrewSpecial_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects AndrewSpecial process dumping tool"
@@ -2955,12 +2483,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_Win64_AndrewSpecial_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and $dump and any of ($shellcode*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_Generic_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_Generic_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects generic loader"
@@ -2980,12 +2504,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_Generic_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and $MSIL and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Keylogger_Win32_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Keylogger_Win32_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects REDFLARE Keylogger"
@@ -3001,12 +2521,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Keylogger_Win32_REDFLARE_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_InMemoryCompilation_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_InMemoryCompilation_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'In-MemoryCompilation' project."
@@ -3019,12 +2535,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_InMemoryCompilation_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_WMISharp_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_WMISharp_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'WMISharp' project."
@@ -3037,12 +2549,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_WMISharp_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win_PGF_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win_PGF_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "PE rich header matches PGF backdoor"
@@ -3061,12 +2569,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win_PGF_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and filesize < 15MB and (($rich1 at 128) or ($rich2 at 128) or ($rich3 at 128) or ($rich4 at 128))
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Trojan_Win_Generic_101
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Win_Generic_101
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye Windows trojan"
@@ -3106,12 +2610,8 @@ rule Trojan_Macro_RESUMEPLEASE_1
         all of them
 }
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_CSharpSectionInjection_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_CSharpSectionInjection_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'C_Sharp_SectionInjection' project."
@@ -3124,12 +2624,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_CSharpSectionInjection_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPWEBCRAWLER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPWEBCRAWLER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpwebcrawler' project."
@@ -3142,12 +2638,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPWEBCRAWLER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Trojan_Win64_Generic_22
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Win64_Generic_22
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's Windows Trojan"
@@ -3168,12 +2660,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Win64_Generic_22
     condition:
         ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B)) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_Win_Generic_19
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_19
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects generic Windows loader"
@@ -3191,12 +2679,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_Win_Generic_19
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Builder_PY_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_PY_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's Python Redflar"
@@ -3217,12 +2701,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_PY_REDFLARE_1
     condition:
         all of them and @1[1] < @2[1] and @2[1] < @3[1] and @3[1] < @4[1] and @4[1] < @5[1]
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_PY_ImpacketObfuscation_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_PY_ImpacketObfuscation_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's wmiexec impacket obfuscation"
@@ -3241,12 +2721,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_PY_ImpacketObfuscation_2
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_MSIL_PGF_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_PGF_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-25"
@@ -3264,12 +2740,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_MSIL_PGF_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPSQLCLIENT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSQLCLIENT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpsqlclient' project."
@@ -3282,12 +2754,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSQLCLIENT_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Methodology_OLE_CHARENCODING_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Methodology_OLE_CHARENCODING_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Looking for suspicious char encoding"
@@ -3308,12 +2776,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Methodology_OLE_CHARENCODING_2
     condition:
         (uint32(0) == 0xe011cfd0) and filesize < 10MB and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharpHound_3
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharpHound_3
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public SharpHound3 project."
@@ -3326,12 +2790,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharpHound_3
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_MSIL_TitoSpecial_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_TitoSpecial_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the TitoSpecial project. There are 2 GUIDs in this rule as the x86 and x64 versions of this tool use a different ProjectGuid."
@@ -3345,12 +2805,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_TitoSpecial_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and ($typelibguid1 or $typelibguid2)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule CredTheft_MSIL_WCMDump_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_WCMDump_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'WCMDump' project."
@@ -3363,12 +2819,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_CredTheft_MSIL_WCMDump_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Builder_Win64_MATRYOSHKA_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_Win64_MATRYOSHKA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"
@@ -3386,12 +2838,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_Win64_MATRYOSHKA_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Trojan_Win64_Generic_23
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Win64_Generic_23
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's Windows trojan"
@@ -3412,12 +2860,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Trojan_Win64_Generic_23
     condition:
         ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B)) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_KeePersist_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_KeePersist_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'KeePersist' project."
@@ -3430,12 +2874,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_KeePersist_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Tool_MSIL_CSharpUtils_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Tool_MSIL_CSharpUtils_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'CSharpUtils' project."
@@ -3452,12 +2892,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Tool_MSIL_CSharpUtils_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Trojan_MSIL_GORAT_Module_PowerShell_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Trojan_MSIL_GORAT_Module_PowerShell_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'RedFlare - Module - PowerShell' project."
@@ -3471,12 +2907,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Trojan_MSIL_GORAT_Module_PowerShell_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_PuppyHound_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PuppyHound_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "This is a modification of an existing FireEye detection for SharpHound. However, it looks for the string 'PuppyHound' instead of 'SharpHound' as this is all that was needed to detect the PuppyHound variant of SharpHound."
@@ -3493,12 +2925,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PuppyHound_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Builder_PY_MATRYOSHKA_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_PY_MATRYOSHKA_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's Python MATRYOSHKA tool"
@@ -3519,12 +2947,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Builder_PY_MATRYOSHKA_1
     condition:
         all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule Loader_MSIL_RuralBishop_1b
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_RuralBishop_1b
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the public RuralBishop project."
@@ -3537,12 +2961,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_Loader_MSIL_RuralBishop_1b
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_NOAMCI_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_NOAMCI_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'noamci' project."
@@ -3556,12 +2976,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_NOAMCI_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_PXELOOT_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PXELOOT_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the PXE And Loot project."
@@ -3574,12 +2990,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_PXELOOT_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and $typelibguid1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_ADPassHunt_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_ADPassHunt_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's ADPassHunt tool"
@@ -3601,12 +3013,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_ADPassHunt_2
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_ADPassHunt_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_ADPassHunt_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's ADPassHunt tool"
@@ -3622,12 +3030,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_ADPassHunt_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_SHARPSACK_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSACK_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'sharpsack' project."
@@ -3640,12 +3044,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_SHARPSACK_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_PGF_5
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_5
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "PGF payload, generated rule based on symfunc/8167a6d94baca72bac554299d7c7f83c"
@@ -3661,12 +3061,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_PGF_5
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Trojan_Win_REDFLARE_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's REDFLARE tool"
@@ -3685,12 +3081,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Trojan_Win_REDFLARE_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_DTRIM_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_DTRIM_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'dtrim' project, which is a modified version of SharpSploit."
@@ -3703,12 +3095,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_DTRIM_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule HackTool_MSIL_SharPivot_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "Detects FireEye's SharPivot tool"
@@ -3727,12 +3115,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_HackTool_MSIL_SharPivot_2
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_MSIL_REVOLVER_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_REVOLVER_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         description = "The TypeLibGUID present in a .NET binary maps directly to the ProjectGuid found in the '.csproj' file of a .NET project. This rule looks for .NET PE files that contain the ProjectGuid found in the 'revolver' project."
@@ -3746,12 +3130,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_MSIL_REVOLVER_1
     condition:
         (uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Keylogger_Win64_REDFLARE_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Keylogger_Win64_REDFLARE_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-01"
@@ -3766,12 +3146,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_Keylogger_Win64_REDFLARE_1
     condition:
         (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_HackTool_Win64_EXCAVATOR_1
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_Win64_EXCAVATOR_1
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-11-30"
@@ -3788,12 +3164,8 @@ rule Neo23x0_gen_fireeye_redteam_tools_APT_HackTool_Win64_EXCAVATOR_1
     condition:
         ((uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B)) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_fireeye_redteam_tools.yar
-rule APT_Loader_Win64_MATRYOSHKA_2
-=======
 //===SUCCESS===
 rule Neo23x0_gen_fireeye_redteam_tools_APT_Loader_Win64_MATRYOSHKA_2
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_fireeye_redteam_tools.yar
 {
     meta:
         date = "2020-12-02"

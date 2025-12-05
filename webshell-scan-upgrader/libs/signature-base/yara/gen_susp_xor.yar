@@ -1,14 +1,9 @@
-/* requires YARA 3.8 or higher */
 import "pe"
 /* requires YARA 3.8 or higher */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_xor.yar
-rule SUSP_XORed_URL_In_EXE {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_susp_xor_SUSP_XORed_URL_In_EXE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_xor.yar
    meta:
       description = "Detects an XORed URL in an executable"
       author = "Florian Roth (Nextron Systems)"
@@ -48,4 +43,3 @@ rule Neo23x0_gen_susp_xor_SUSP_XORed_URL_In_EXE {
       and not 1 of ($fp*)
       and not pe.number_of_signatures > 0
 }
-

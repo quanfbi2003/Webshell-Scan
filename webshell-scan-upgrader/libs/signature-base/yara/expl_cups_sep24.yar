@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_cups_sep24.yar
-
-
-rule Neo23x0_exp_EXPL_LNX_CUPS_CVE_2024_47177_Sep24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cups_sep24_EXPL_LNX_CUPS_CVE_2024_47177_Sep24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_cups_sep24.yar
    meta:
       description = "Detects exploit code for CUPS CVE-2024-47177"
       author = "Florian Roth"
@@ -19,13 +13,8 @@ rule Neo23x0_expl_cups_sep24_EXPL_LNX_CUPS_CVE_2024_47177_Sep24 {
    condition:
       filesize < 400KB and all of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_cups_sep24.yar
-
-rule Neo23x0_exp_SUSP_EXPL_LNX_CUPS_CVE_2024_47177_Sep24 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_cups_sep24_SUSP_EXPL_LNX_CUPS_CVE_2024_47177_Sep24 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_cups_sep24.yar
    meta:
       description = "Detects suspicious FoomaticRIPCommandLine command in printer config, which could be used to exploit CUPS CVE-2024-47177"
       author = "Florian Roth"

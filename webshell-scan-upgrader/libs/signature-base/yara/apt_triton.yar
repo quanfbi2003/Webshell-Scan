@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_triton.yar
-rule TRITON_ICS_FRAMEWORK {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_triton_TRITON_ICS_FRAMEWORK {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_triton.yar
       meta:
           author = "nicholas.carr @itsreallynick"
           hash = "0face841f7b2953e7c29c064d6886523"
@@ -71,13 +67,8 @@ rule Neo23x0_apt_triton_TRITON_ICS_FRAMEWORK {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_triton.yar
-
-rule Triton_trilog {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_triton_Triton_trilog {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_triton.yar
    meta:
       description = "Detects Triton APT malware - file trilog.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

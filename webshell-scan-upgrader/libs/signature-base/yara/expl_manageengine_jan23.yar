@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_manageengine_jan23.yar
-
-rule EXPL_ManageEngine_CVE_2022_47966_Jan23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_manageengine_jan23_EXPL_ManageEngine_CVE_2022_47966_Jan23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_manageengine_jan23.yar
    meta:
       description = "Detects indicators of exploitation of ManageEngine vulnerability as described by Horizon3"
       author = "Florian Roth (Nextron Systems)"
@@ -17,4 +12,3 @@ rule Neo23x0_expl_manageengine_jan23_EXPL_ManageEngine_CVE_2022_47966_Jan23_1 {
    condition:
       1 of them
 }
-

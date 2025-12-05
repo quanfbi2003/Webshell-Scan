@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_floxif.yar
-
-rule Malware_Floxif_mpsvc_dll : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_floxif_Malware_Floxif_mpsvc_dll : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_floxif.yar
    meta:
       description = "Malware - Floxif"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

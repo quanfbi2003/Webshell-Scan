@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_win_akira_apr25.yar
-
-
-rule Neo23x0_mal_MAL_WIN_Akira_Apr25 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_win_akira_apr25_MAL_WIN_Akira_Apr25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_win_akira_apr25.yar
     meta:
         description = "This Yara rule from ISH Tecnologia's Heimdall Security Research Team detects key components of Akira Ransomware"
         author = "0x0d4y-Icaro Cesar"

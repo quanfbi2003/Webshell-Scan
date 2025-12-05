@@ -6,19 +6,12 @@
    Identifier: APT 34
    Reference: https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt34.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule APT34_Malware_HTA {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_apt34_APT34_Malware_HTA {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt34.yar
    meta:
       description = "Detects APT 34 malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -39,13 +32,8 @@ rule Neo23x0_apt_apt34_APT34_Malware_HTA {
    condition:
       filesize < 60KB and ( 1 of ($x*) or all of ($s*) )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_apt34.yar
-
-rule APT34_Malware_Exeruner {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_apt34_APT34_Malware_Exeruner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_apt34.yar
    meta:
       description = "Detects APT 34 malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

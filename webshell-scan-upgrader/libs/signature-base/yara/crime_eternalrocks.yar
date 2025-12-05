@@ -6,19 +6,12 @@
    Identifier: EternalRocks
    Reference: https://twitter.com/stamparm/status/864865144748298242
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_eternalrocks.yar
-
-/* Rule Set ----------------------------------------------------------------- */
-
-rule EternalRocks_taskhost {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_crime_eternalrocks_EternalRocks_taskhost {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_eternalrocks.yar
    meta:
       description = "Detects EternalRocks Malware - file taskhost.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -37,13 +30,8 @@ rule Neo23x0_crime_eternalrocks_EternalRocks_taskhost {
    condition:
       ( uint16(0) == 0x5a4d and filesize < 15000KB and 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_eternalrocks.yar
-
-rule EternalRocks_svchost {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_eternalrocks_EternalRocks_svchost {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_eternalrocks.yar
    meta:
       description = "Detects EternalRocks Malware - file taskhost.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

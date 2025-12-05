@@ -1,12 +1,8 @@
 /* FIVE EYES ------------------------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-rule FiveEyes_QUERTY_Malwareqwerty_20121 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwareqwerty_20121 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20121.xml"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -30,13 +26,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwareqwerty_20121 {
 	condition:
 		9 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwaresig_20123_sys {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20123_sys {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20123.sys.bin"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -54,13 +45,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20123_sys {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwaresig_20123_cmdDef {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20123_cmdDef {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20123_cmdDef.xml"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -94,13 +80,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20123_cmdDef {
 	condition:
 		14 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwaresig_20121_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20121_dll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20121.dll.bin"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -115,12 +96,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20121_dll {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-rule FiveEyes_QUERTY_Malwareqwerty_20123 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwareqwerty_20123 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20123.xml"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -145,13 +122,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwareqwerty_20123 {
 	condition:
 		9 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwaresig_20120_dll {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20120_dll {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20120.dll.bin"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -185,13 +157,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20120_dll {
 	condition:
 		10 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwaresig_20120_cmdDef {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20120_cmdDef {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20120_cmdDef.xml"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -225,13 +192,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20120_cmdDef {
 	condition:
 		10 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwareqwerty_20120 {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwareqwerty_20120 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20120.xml"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -255,13 +217,8 @@ rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwareqwerty_20120 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/spy_querty_fiveeyes.yar
-
-rule FiveEyes_QUERTY_Malwaresig_20121_cmdDef {
-=======
 //===SUCCESS===
 rule Neo23x0_spy_querty_fiveeyes_FiveEyes_QUERTY_Malwaresig_20121_cmdDef {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/spy_querty_fiveeyes.yar
 	meta:
 		description = "FiveEyes QUERTY Malware - file 20121_cmdDef.xml"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

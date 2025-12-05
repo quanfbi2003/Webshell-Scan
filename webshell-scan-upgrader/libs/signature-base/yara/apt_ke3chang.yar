@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ke3chang.yar
-rule APT_KE3CHANG_TMPFILE: APT KE3CHANG TMPFILE {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ke3chang_APT_KE3CHANG_TMPFILE: APT KE3CHANG TMPFILE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ke3chang.yar
    meta:
       description = "Detects Strings left in TMP Files created by K3CHANG Backdoor Ketrican"
       author = "Markus Neis, Swisscom"
@@ -24,13 +20,8 @@ rule Neo23x0_apt_ke3chang_APT_KE3CHANG_TMPFILE: APT KE3CHANG TMPFILE {
    condition:
       uint16(0) == 0x5350 and filesize < 1KB and $psp1 and 1 of ($pps*) and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ke3chang.yar
-
-rule APT_MAL_Ke3chang_Ketrican_Jun20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ke3chang_APT_MAL_Ke3chang_Ketrican_Jun20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ke3chang.yar
    meta:
       description = "Detects Ketrican malware"
       author = "Florian Roth (Nextron Systems)"

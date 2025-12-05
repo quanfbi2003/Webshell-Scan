@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_reddelta.yar
-
-rule APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_reddelta_APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_reddelta.yar
    meta:
       description = "Detects Red Delta samples"
       author = "Florian Roth (Nextron Systems)"
@@ -32,13 +27,8 @@ rule Neo23x0_apt_cn_reddelta_APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_1 {
       filesize < 200KB and
       $x1 or 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_reddelta.yar
-
-rule APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_reddelta_APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_reddelta.yar
    meta:
       description = "Detects Red Delta samples"
       author = "Florian Roth (Nextron Systems)"
@@ -65,13 +55,8 @@ rule Neo23x0_apt_cn_reddelta_APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_2 {
       filesize < 3000KB and
       1 of ($x*) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_reddelta.yar
-
-rule APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_reddelta_APT_CN_MAL_RedDelta_Shellcode_Loader_Oct20_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_reddelta.yar
    meta:
       description = "Detects Red Delta samples"
       author = "Florian Roth (Nextron Systems)"

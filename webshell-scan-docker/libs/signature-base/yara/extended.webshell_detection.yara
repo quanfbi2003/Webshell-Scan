@@ -470,6 +470,16 @@ rule nsacyber_extended_webshell_detection_suspiciousFunctionality
         nsacyber_extended_webshell_detection_passwordProtection or nsacyber_extended_webshell_detection_hardcoded_urldecode or nsacyber_extended_webshell_detection_fopo or nsacyber_extended_webshell_detection_eval
 }
 //===SUCCESS===
+rule nsacyber_extended_webshell_detection_obfuscatedFunctionality
+{
+    meta:
+        author = "NSA Cybersecurity"
+        description = "Obfuscation sometimes hides malicious functionality"
+
+    condition:
+        nsacyber_extended_webshell_detection_ObfuscatedPhp or nsacyber_extended_webshell_detection_chr_obfuscation or nsacyber_extended_webshell_detection_SuspiciousEncoding
+}
+//===SUCCESS===
 private rule nsacyber_extended_webshell_detection_APT_Backdoor_MSIL_SUNBURST_1
 {
     meta:

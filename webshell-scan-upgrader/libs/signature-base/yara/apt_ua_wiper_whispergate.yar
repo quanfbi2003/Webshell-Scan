@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_wiper_whispergate.yar
-
-rule APT_HKTL_Wiper_WhisperGate_Jan22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_wiper_whispergate_APT_HKTL_Wiper_WhisperGate_Jan22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_wiper_whispergate.yar
    meta:
       description = "Detects unknown wiper malware"
       author = "Florian Roth (Nextron Systems)"
@@ -26,13 +21,8 @@ rule Neo23x0_apt_ua_wiper_whispergate_APT_HKTL_Wiper_WhisperGate_Jan22_1 {
       uint16(0) == 0x5a4d and
       filesize < 100KB and ( 1 of ($x*) or 2 of them ) or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_wiper_whispergate.yar
-
-rule APT_HKTL_Wiper_WhisperGate_Jan22_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_wiper_whispergate_APT_HKTL_Wiper_WhisperGate_Jan22_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_wiper_whispergate.yar
    meta:
       description = "Detects unknown wiper malware"
       author = "Florian Roth (Nextron Systems)"
@@ -65,13 +55,8 @@ rule Neo23x0_apt_ua_wiper_whispergate_APT_HKTL_Wiper_WhisperGate_Jan22_2 {
       filesize < 1000KB and 5 of them
       or 7 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_wiper_whispergate.yar
-
-rule APT_HKTL_Wiper_WhisperGate_Stage3_Jan22 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_wiper_whispergate_APT_HKTL_Wiper_WhisperGate_Stage3_Jan22 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_wiper_whispergate.yar
    meta:
       description = "Detects reversed stage3 related to Ukrainian wiper malware"
       author = "Florian Roth (Nextron Systems)"
@@ -87,13 +72,8 @@ rule Neo23x0_apt_ua_wiper_whispergate_APT_HKTL_Wiper_WhisperGate_Stage3_Jan22 {
       uint16(filesize-2) == 0x4d5a and
       filesize < 5000KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_wiper_whispergate.yar
-
-rule MAL_OBFUSC_Unknown_Jan22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_wiper_whispergate_MAL_OBFUSC_Unknown_Jan22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_wiper_whispergate.yar
    meta:
       description = "Detects samples similar to reversed stage3 found in Ukrainian wiper incident named WhisperGate"
       author = "Florian Roth (Nextron Systems)"
@@ -119,13 +99,8 @@ rule Neo23x0_apt_ua_wiper_whispergate_MAL_OBFUSC_Unknown_Jan22_1 {
       uint16(0) == 0x5a4d and
       filesize < 1000KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ua_wiper_whispergate.yar
-
-rule MAL_Unknown_Discord_Characteristics_Jan22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ua_wiper_whispergate_MAL_Unknown_Discord_Characteristics_Jan22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ua_wiper_whispergate.yar
    meta:
       description = "Detects unknown malware with a few indicators also found in Wiper malware"
       author = "Florian Roth (Nextron Systems)"

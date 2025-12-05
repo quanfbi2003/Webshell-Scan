@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_deviceguard_evasion.yar
-
-rule SUSP_DeviceGuard_WDS_Evasion {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_deviceguard_evasion_SUSP_DeviceGuard_WDS_Evasion {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_deviceguard_evasion.yar
    meta:
       author = "Florian Roth (Nextron Systems)"
       description = "Detects WDS file used to circumvent Device Guard"

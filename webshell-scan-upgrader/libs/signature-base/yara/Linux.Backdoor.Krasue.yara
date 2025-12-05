@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.Krasue.yara
-rule Linux_Backdoor_Krasue : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_Krasue_Linux_Backdoor_Krasue : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.Krasue.yara
 {
     meta:
 

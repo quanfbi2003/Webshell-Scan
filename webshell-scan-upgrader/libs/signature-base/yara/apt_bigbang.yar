@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bigbang.yar
-
-rule APT_ME_BigBang_Gen_Jul18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bigbang_APT_ME_BigBang_Gen_Jul18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bigbang.yar
    meta:
       description = "Detects malware from Big Bang campaign against Palestinian authorities"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -32,13 +27,8 @@ rule Neo23x0_apt_bigbang_APT_ME_BigBang_Gen_Jul18_1 {
          pe.imphash() == "0f09ea2a68d04f331df9a5d0f8641332"
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_bigbang.yar
-
-rule APT_ME_BigBang_Mal_Jul18_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_bigbang_APT_ME_BigBang_Mal_Jul18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_bigbang.yar
    meta:
       description = "Detects malware from Big Bang report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

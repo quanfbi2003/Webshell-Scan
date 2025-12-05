@@ -4,20 +4,12 @@
    Date: 2017-03-24
    Identifier: WMImplant
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_wmi_implant.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_wmi_implant.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_wmi_implant.yar
-rule WMImplant {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_wmi_implant_WMImplant {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_wmi_implant.yar
    meta:
       description = "Auto-generated rule - file WMImplant.ps1"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

@@ -6,20 +6,12 @@
    Reference: https://cyber.gov.au/government/news/parliament-house-network-compromise/
               https://twitter.com/cyb3rops/status/1097423665472376832
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-rule APT_WebShell_Tiny_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_Tiny_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a tiny webshell involved in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -31,13 +23,8 @@ rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_Tiny_1 {
    condition:
       ( uint16(0) == 0x3f3c or uint16(0) == 0x253c ) and filesize < 40 and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule APT_WebShell_AUS_Tiny_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_Tiny_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a tiny webshell involved in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -51,13 +38,8 @@ rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_Tiny_2 {
    condition:
       ( uint16(0) == 0x3f3c or uint16(0) == 0x253c ) and filesize < 1KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule APT_WebShell_AUS_JScript_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_JScript_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a webshell involved in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -71,14 +53,8 @@ rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_JScript_3 {
    condition:
       uint16(0) == 0x6568 and filesize < 1KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-
-rule APT_WebShell_AUS_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a webshell involved in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -94,13 +70,8 @@ rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_4 {
    condition:
       uint16(0) == 0x7566 and filesize < 10KB and 3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule APT_Script_AUS_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_APT_Script_AUS_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a script involved in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -118,13 +89,8 @@ rule Neo23x0_apt_aus_parl_compromise_APT_Script_AUS_4 {
    condition:
       filesize < 7KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule APT_WebShell_AUS_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a webshell involved in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -144,13 +110,8 @@ rule Neo23x0_apt_aus_parl_compromise_APT_WebShell_AUS_5 {
    condition:
       uint16(0) == 0x7566 and filesize < 2KB and 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule HKTL_LazyCat_LogEraser {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_HKTL_LazyCat_LogEraser {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a tool used in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -173,13 +134,8 @@ rule Neo23x0_apt_aus_parl_compromise_HKTL_LazyCat_LogEraser {
    condition:
       3 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule HKTL_PowerKatz_Feb19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_HKTL_PowerKatz_Feb19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a tool used in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"
@@ -195,13 +151,8 @@ rule Neo23x0_apt_aus_parl_compromise_HKTL_PowerKatz_Feb19_1 {
    condition:
       1 of ($x*) and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_aus_parl_compromise.yar
-
-rule HKTL_Unknown_Feb19_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_aus_parl_compromise_HKTL_Unknown_Feb19_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_aus_parl_compromise.yar
    meta:
       description = "Detetcs a tool used in the Australian Parliament House network compromise"
       author = "Florian Roth (Nextron Systems)"

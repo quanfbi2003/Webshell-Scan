@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-11-02
-   Identifier: Keyboys
-   Reference: http://www.pwc.co.uk/issues/cyber-security-data-privacy/research/the-keyboys-are-back-in-town.html
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: http://www.pwc.co.uk/issues/cyber-security-data-privacy/research/the-keyboys-are-back-in-town.html
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_keyboys.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule KeyBoys_malware_1 {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_keyboys_KeyBoys_malware_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_keyboys.yar
    meta:
       description = "Detects Keyboys malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -64,13 +50,8 @@ rule Neo23x0_apt_keyboys_KeyBoys_malware_1 {
 }
 
 /* Update March 2018 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_keyboys.yar
-
-rule KeyBoy_InstallClient {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_keyboys_KeyBoy_InstallClient {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_keyboys.yar
    meta:
       description = "Detects KeyBoy InstallClient"
       author = "Markus Neis, Florian Roth"
@@ -92,13 +73,8 @@ rule Neo23x0_apt_keyboys_KeyBoy_InstallClient {
    condition:
       uint16(0) == 0x5a4d and filesize < 3000KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_keyboys.yar
-
-rule KeyBoy_wab32res {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_keyboys_KeyBoy_wab32res {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_keyboys.yar
    meta:
       description = "Detects KeyBoy Loader wab32res.dll"
       author = "Markus Neis, Florian Roth"
@@ -120,13 +96,8 @@ rule Neo23x0_apt_keyboys_KeyBoy_wab32res {
    condition:
       uint16(0) == 0x5a4d and filesize < 1000KB and ( 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_keyboys.yar
-
-rule KeyBoy_rasauto {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_keyboys_KeyBoy_rasauto {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_keyboys.yar
    meta:
       description = "Detects KeyBoy ServiceClient"
       author = "Markus Neis, Florian Roth"
@@ -155,13 +126,8 @@ rule Neo23x0_apt_keyboys_KeyBoy_rasauto {
          4 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_keyboys.yar
-
-rule KeyBoy_876_0x4e20000 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_keyboys_KeyBoy_876_0x4e20000 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_keyboys.yar
    meta:
       description = "Detects KeyBoy Backdoor"
       author = "Markus Neis, Florian Roth"

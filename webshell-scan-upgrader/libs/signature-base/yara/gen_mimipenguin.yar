@@ -5,13 +5,9 @@
    Identifier: Mimipenguin
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mimipenguin.yar
-rule Mimipenguin_SH {
-=======
 
 //===SUCCESS===
 rule Neo23x0_gen_mimipenguin_Mimipenguin_SH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mimipenguin.yar
    meta:
       description = "Detects Mimipenguin Password Extractor - Linux"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -36,13 +32,8 @@ rule Neo23x0_gen_mimipenguin_Mimipenguin_SH {
 */
 
 /* Rule Set ----------------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mimipenguin.yar
-
-rule mimipenguin_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mimipenguin_mimipenguin_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mimipenguin.yar
    meta:
       description = "Detects Mimipenguin hack tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -59,13 +50,8 @@ rule Neo23x0_gen_mimipenguin_mimipenguin_1 {
    condition:
       ( uint16(0) == 0x2123 and filesize < 20KB and 1 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_mimipenguin.yar
-
-rule mimipenguin_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_mimipenguin_mimipenguin_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_mimipenguin.yar
    meta:
       description = "Detects Mimipenguin hack tool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

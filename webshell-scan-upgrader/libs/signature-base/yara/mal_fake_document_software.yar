@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_fake_document_software.yar
-rule MAL_Fake_Document_Software_Indicators_Nov23 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_fake_document_software_MAL_Fake_Document_Software_Indicators_Nov23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_fake_document_software.yar
    meta:
       description = "Detects indicators of fake document/image utility software that acts as a downloader for additional malware"
       author = "Jonathan Peters"

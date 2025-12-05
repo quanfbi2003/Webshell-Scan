@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_webmonitor_rat.yar
-rule MAL_WebMonitor_RAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_webmonitor_rat_MAL_WebMonitor_RAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_webmonitor_rat.yar
    meta:
       description = "Detects WebMonitor RAT"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

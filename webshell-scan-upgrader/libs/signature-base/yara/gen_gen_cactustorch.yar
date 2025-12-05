@@ -5,20 +5,12 @@
    Identifier: CactusTorch
    Reference: https://github.com/mdsecactivebreach/CACTUSTORCH
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gen_cactustorch.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gen_cactustorch.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_gen_cactustorch.yar
-rule CACTUSTORCH {
-=======
+
 //===SUCCESS===
 rule Neo23x0_gen_gen_cactustorch_CACTUSTORCH {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_gen_cactustorch.yar
    meta:
       description = "Detects CactusTorch Hacktool"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

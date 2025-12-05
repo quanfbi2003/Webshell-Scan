@@ -5,20 +5,12 @@
    Identifier: NK Miner Malware
    Reference: https://goo.gl/PChE1z
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nkminer.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_nkminer.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_nkminer.yar
-rule NK_Miner_Malware_Jan18_1 {
-=======
+
 //===SUCCESS===
 rule Neo23x0_crime_nkminer_NK_Miner_Malware_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_nkminer.yar
    meta:
       description = "Detects Noth Korean Monero Miner mentioned in AlienVault report"
       author = "Florian Roth (Nextron Systems) (original rule by Chris Doman)"

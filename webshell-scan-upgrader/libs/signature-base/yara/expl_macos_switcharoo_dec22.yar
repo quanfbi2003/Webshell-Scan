@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_macos_switcharoo_dec22.yar
-
-rule EXPL_HKTL_macOS_Switcharoo_CVE_2022_46689_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_macos_switcharoo_dec22_EXPL_HKTL_macOS_Switcharoo_CVE_2022_46689_Dec22 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_macos_switcharoo_dec22.yar
    meta:
       description = "Detects POCs that exploit privilege escalation vulnerability CVE-2022-46689 on macOS"
       author = "Florian Roth (Nextron Systems)"
@@ -43,13 +38,8 @@ rule Neo23x0_expl_macos_switcharoo_dec22_EXPL_HKTL_macOS_Switcharoo_CVE_2022_466
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/expl_macos_switcharoo_dec22.yar
-
-rule EXPL_macOS_Switcharoo_Indicator_Dec22 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_macos_switcharoo_dec22_EXPL_macOS_Switcharoo_Indicator_Dec22 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_macos_switcharoo_dec22.yar
    meta:
       description = "Detects indicators found after exploitations of CVE-2022-46689"
       author = "Florian Roth (Nextron Systems)"

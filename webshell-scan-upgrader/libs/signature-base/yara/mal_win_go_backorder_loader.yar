@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/mal_win_go_backorder_loader.yar
-
-
-rule Neo23x0_mal_MAL_BACKORDER_LOADER_WIN_Go_Jan23 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_win_go_backorder_loader_MAL_BACKORDER_LOADER_WIN_Go_Jan23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_win_go_backorder_loader.yar
    meta:
       description = "Detects the BACKORDER loader compiled in GO which download and executes a second stage payload from a remote server."
       author = "Arda Buyukkaya (modified by Florian Roth)"

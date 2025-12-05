@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Rootkit.Pumakit.yara
-
-
-rule reversinglabs_Lin_Linux_Rootkit_Pumakit : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Rootkit_Pumakit_Linux_Rootkit_Pumakit : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Rootkit.Pumakit.yara
 {
     meta:
 

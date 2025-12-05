@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sap_netweaver_apr25.yar
-
-
-rule Neo23x0_exp_APT_SAP_NetWeaver_Exploitation_Activity_Apr25_1 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sap_netweaver_apr25_APT_SAP_NetWeaver_Exploitation_Activity_Apr25_1 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sap_netweaver_apr25.yar
    meta:
       description = "Detects forensic artefacts related to exploitation activity of SAP NetWeaver CVE-2025-31324"
       reference = "https://reliaquest.com/blog/threat-spotlight-reliaquest-uncovers-vulnerability-behind-sap-netweaver-compromise/"
@@ -18,13 +12,8 @@ rule Neo23x0_expl_sap_netweaver_apr25_APT_SAP_NetWeaver_Exploitation_Activity_Ap
    condition:
       filesize < 20MB and 1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sap_netweaver_apr25.yar
-
-rule Neo23x0_exp_APT_SAP_NetWeaver_Exploitation_Activity_Apr25_2 : SCRIPT {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sap_netweaver_apr25_APT_SAP_NetWeaver_Exploitation_Activity_Apr25_2 : SCRIPT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sap_netweaver_apr25.yar
    meta:
       description = "Detects forensic artefacts related to exploitation activity of SAP NetWeaver CVE-2025-31324"
       reference = "https://reliaquest.com/blog/threat-spotlight-reliaquest-uncovers-vulnerability-behind-sap-netweaver-compromise/"
@@ -36,13 +25,8 @@ rule Neo23x0_expl_sap_netweaver_apr25_APT_SAP_NetWeaver_Exploitation_Activity_Ap
    condition:
       filesize < 20MB and 1 of them
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/expl_sap_netweaver_apr25.yar
-
-rule Neo23x0_exp_SUSP_WEBSHELL_Cmd_Indicator_Apr25 {
-=======
 //===SUCCESS===
 rule Neo23x0_expl_sap_netweaver_apr25_SUSP_WEBSHELL_Cmd_Indicator_Apr25 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/expl_sap_netweaver_apr25.yar
    meta:
       description = "Detects a pattern which is often related to web shell activity"
       reference = "https://regex101.com/r/N6oZ2h/2"

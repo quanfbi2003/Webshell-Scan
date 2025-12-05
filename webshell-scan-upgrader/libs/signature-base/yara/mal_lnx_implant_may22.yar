@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_implant_may22.yar
-
-
-rule MAL_LNX_RedMenshen_BPFDoor_May23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_implant_may22_MAL_LNX_RedMenshen_BPFDoor_May23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lnx_implant_may22.yar
    meta:
       description = "Detects BPFDoor malware"
       author = "Florian Roth"
@@ -45,14 +39,8 @@ rule Neo23x0_mal_lnx_implant_may22_MAL_LNX_RedMenshen_BPFDoor_May23_1 {
          or 5 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_implant_may22.yar
-
-
-rule APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lnx_implant_may22.yar
    meta:
       description = "Detects unknown Linux implants (uploads from KR and MO)"
       author = "Florian Roth (Nextron Systems)"
@@ -84,13 +72,8 @@ rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May
       uint16(0) == 0x457f and
       filesize < 80KB and 2 of them or 5 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_implant_may22.yar
-
-rule APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May22_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May22_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lnx_implant_may22.yar
    meta:
       description = "Detects BPFDoor implants used by Chinese actor Red Menshen"
       author = "Florian Roth (Nextron Systems)"
@@ -113,13 +96,8 @@ rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May
       uint16(0) == 0x457f and
       filesize < 100KB and 2 of ($opx*) or 4 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_implant_may22.yar
-
-rule APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May22_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May22_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lnx_implant_may22.yar
    meta:
       description = "Detects BPFDoor implants used by Chinese actor Red Menshen"
       author = "Florian Roth (Nextron Systems)"
@@ -137,13 +115,8 @@ rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_May
       uint16(0) == 0x457f and
       filesize < 200KB and 2 of them or all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_lnx_implant_may22.yar
-
-rule APT_MAL_LNX_RedMenshen_BPFDoor_Controller_Generic_May22_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_lnx_implant_may22_APT_MAL_LNX_RedMenshen_BPFDoor_Controller_Generic_May22_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_lnx_implant_may22.yar
    meta:
       description = "Detects BPFDoor malware"
       author = "Florian Roth (Nextron Systems)"

@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_crypto_miner.yar
-
-rule SUSP_LNX_SH_CryptoMiner_Indicators_Dec20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_crypto_miner_SUSP_LNX_SH_CryptoMiner_Indicators_Dec20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_crypto_miner.yar
    meta:
       description = "Detects helper script used in a crypto miner campaign"
       author = "Florian Roth (Nextron Systems)"
@@ -20,13 +15,8 @@ rule Neo23x0_crime_crypto_miner_SUSP_LNX_SH_CryptoMiner_Indicators_Dec20_1 {
    condition:
       filesize < 20KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/crime_crypto_miner.yar
-
-rule PUA_WIN_XMRIG_CryptoCoin_Miner_Dec20 {
-=======
 //===SUCCESS===
 rule Neo23x0_crime_crypto_miner_PUA_WIN_XMRIG_CryptoCoin_Miner_Dec20 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/crime_crypto_miner.yar
    meta:
       description = "Detects XMRIG crypto coin miners"
       author = "Florian Roth (Nextron Systems)"

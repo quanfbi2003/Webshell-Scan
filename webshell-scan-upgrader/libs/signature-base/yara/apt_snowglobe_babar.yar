@@ -1,14 +1,9 @@
 
 /* SnowGlobe Babar ---------------------------------------------------------- */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_snowglobe_babar.yar
-
-rule SNOWGLOBE_Babar_Malware {
-=======
 
 
 //===SUCCESS===
 rule Neo23x0_apt_snowglobe_babar_SNOWGLOBE_Babar_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_snowglobe_babar.yar
 	meta:
 		description = "Detects the Babar Malware used in the SNOWGLOBE attacks - file babar.exe"
 		license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

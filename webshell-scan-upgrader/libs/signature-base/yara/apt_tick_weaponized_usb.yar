@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-06-23
-   Identifier: Tick Group - Weaponized USB
-   Reference: https://researchcenter.paloaltonetworks.com/2018/06/unit42-tick-group-weaponized-secure-usb-drives-target-air-gapped-critical-systems/
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2018/06/unit42-tick-group-weaponized-secure-usb-drives-target-air-gapped-critical-systems/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tick_weaponized_usb.yar
-rule APT_Tick_Sysmon_Loader_Jun18 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_tick_weaponized_usb_APT_Tick_Sysmon_Loader_Jun18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tick_weaponized_usb.yar
    meta:
       description = "Detects Sysmon Loader from Tick group incident - Weaponized USB"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -52,13 +38,8 @@ rule Neo23x0_apt_tick_weaponized_usb_APT_Tick_Sysmon_Loader_Jun18 {
          $x1 or 6 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tick_weaponized_usb.yar
-
-rule APT_Tick_HomamDownloader_Jun18 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_tick_weaponized_usb_APT_Tick_HomamDownloader_Jun18 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tick_weaponized_usb.yar
    meta:
       description = "Detects HomamDownloader from Tick group incident - Weaponized USB"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

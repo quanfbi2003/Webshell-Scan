@@ -5,20 +5,12 @@
    Identifier: XMRIG
    Reference: https://github.com/xmrig/xmrig/releases
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_xmrig_monero_miner.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_xmrig_monero_miner.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_xmrig_monero_miner.yar
-rule XMRIG_Monero_Miner : HIGHVOL {
-=======
+
 //===SUCCESS===
 rule Neo23x0_pua_xmrig_monero_miner_XMRIG_Monero_Miner : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_xmrig_monero_miner.yar
    meta:
       description = "Detects Monero mining software"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -41,13 +33,8 @@ rule Neo23x0_pua_xmrig_monero_miner_XMRIG_Monero_Miner : HIGHVOL {
    condition:
       ( uint16(0) == 0x5a4d or uint16(0) == 0x457f ) and filesize < 10MB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_xmrig_monero_miner.yar
-
-rule XMRIG_Monero_Miner_Config {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_xmrig_monero_miner_XMRIG_Monero_Miner_Config {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_xmrig_monero_miner.yar
    meta:
       description = "Auto-generated rule - from files config.json, config.json"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -64,13 +51,8 @@ rule Neo23x0_pua_xmrig_monero_miner_XMRIG_Monero_Miner_Config {
    condition:
       ( uint16(0) == 0x0a7b or uint16(0) == 0x0d7b ) and filesize < 5KB and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_xmrig_monero_miner.yar
-
-rule PUA_LNX_XMRIG_CryptoMiner {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_xmrig_monero_miner_PUA_LNX_XMRIG_CryptoMiner {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_xmrig_monero_miner.yar
    meta:
       description = "Detects XMRIG CryptoMiner software"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -88,13 +70,8 @@ rule Neo23x0_pua_xmrig_monero_miner_PUA_LNX_XMRIG_CryptoMiner {
    condition:
       uint16(0) == 0x457f and filesize < 8000KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/pua_xmrig_monero_miner.yar
-
-rule SUSP_XMRIG_String {
-=======
 //===SUCCESS===
 rule Neo23x0_pua_xmrig_monero_miner_SUSP_XMRIG_String {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/pua_xmrig_monero_miner.yar
    meta:
       description = "Detects a suspicious XMRIG crypto miner executable string in filr"
       author = "Florian Roth (Nextron Systems)"

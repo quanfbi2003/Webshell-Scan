@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_file_anomalies.yar
-
-rule SUSP_TINY_PE {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_file_anomalies_SUSP_TINY_PE {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_file_anomalies.yar
    meta:
       description = "Detects Tiny PE file"
       author = "Florian Roth (Nextron Systems)"
@@ -18,13 +13,8 @@ rule Neo23x0_gen_file_anomalies_SUSP_TINY_PE {
    condition:
       uint16(0) == 0x5a4d and uint16(4) == 0x4550 and filesize <= 20KB and $header at 0
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_file_anomalies.yar
-
-rule SUSP_GIF_Anomalies {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_file_anomalies_SUSP_GIF_Anomalies {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_file_anomalies.yar
    meta:
       description = "Detects files with GIF headers and format anomalies - which means that this image could be an obfuscated file of a different type"
       author = "Florian Roth (Nextron Systems)"
@@ -38,13 +28,8 @@ rule Neo23x0_gen_file_anomalies_SUSP_GIF_Anomalies {
       and uint8(12) != 0x00 /* Pixel Aspect Ratio != 0 */
       and uint8(filesize-1) != 0x3b /* Trailer (trailes are often 0x00 byte padded and cannot server as sole indicator) */
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_file_anomalies.yar
-
-rule SUSP_HxD_Icon_Anomaly_May23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_file_anomalies_SUSP_HxD_Icon_Anomaly_May23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_file_anomalies.yar
    meta:
       description = "Detects suspicious use of the the free hex editor HxD's icon in PE files that don't seem to be a legitimate version of HxD"
       author = "Florian Roth"

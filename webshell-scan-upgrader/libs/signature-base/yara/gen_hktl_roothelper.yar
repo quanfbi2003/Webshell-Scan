@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_hktl_roothelper.yar
-
-rule EXT_SUSP_OBFUSC_macOS_RootHelper_Obfuscated {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_hktl_roothelper_EXT_SUSP_OBFUSC_macOS_RootHelper_Obfuscated {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_hktl_roothelper.yar
 	meta:
 		author = "im0prtp3"
 		description = "Yara for the public tool 'roothelper'. Used by XCSSET (https://gist.github.com/NullArray/f39b026b9e0d19f1e17390a244d679ec)"

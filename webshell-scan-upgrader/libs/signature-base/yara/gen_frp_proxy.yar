@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_frp_proxy.yar
-
-rule HKTL_FRP_Apr20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_frp_proxy_HKTL_FRP_Apr20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_frp_proxy.yar
    meta:
       description = "Detects FRP fast reverse proxy tool often used by threat groups"
       author = "Florian Roth (Nextron Systems)"
@@ -25,13 +20,8 @@ rule Neo23x0_gen_frp_proxy_HKTL_FRP_Apr20_1 {
    condition:
       1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_frp_proxy.yar
-
-rule HKTL_FRP_INI_Apr20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_frp_proxy_HKTL_FRP_INI_Apr20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_frp_proxy.yar
    meta:
       description = "Detects FRP fast reverse proxy tool INI file often used by threat groups"
       author = "Florian Roth (Nextron Systems)"

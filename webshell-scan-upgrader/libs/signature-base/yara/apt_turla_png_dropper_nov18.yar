@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_png_dropper_nov18.yar
-
-rule turla_png_dropper {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_png_dropper_nov18_turla_png_dropper {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_png_dropper_nov18.yar
     meta:
         author = "Ben Humphrey"
         description = "Detects the PNG Dropper used by the Turla group"
@@ -52,13 +47,8 @@ rule Neo23x0_apt_turla_png_dropper_nov18_turla_png_dropper {
         all of ($api*) and
         1 of ($code*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_png_dropper_nov18.yar
-
-rule turla_png_reg_enum_payload {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_png_dropper_nov18_turla_png_reg_enum_payload {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_png_dropper_nov18.yar
     meta:
         author = "Ben Humphrey"
         description = "Payload that has most recently been dropped by the Turla PNG Dropper"

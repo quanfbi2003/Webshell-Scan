@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-rule MAL_Driver_Microsoftcorporation_Windbgsys_Microsoftwindowsoperatingsystem_6994 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Windbgsys_Microsoftwindowsoperatingsystem_6994 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - windbg.sys"
 		author = "Florian Roth"
@@ -41,14 +36,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Windbgsys_Mi
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_AAF0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_AAF0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -108,14 +97,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_DDF4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_DDF4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -150,14 +133,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_0F58 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_0F58 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -191,14 +168,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_7662 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_7662 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -241,14 +212,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_14B8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_14B8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -299,14 +264,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_41AD {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_41AD {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -342,14 +301,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Sensecorp_42B2 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Sensecorp_42B2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Sense5Ext.sys"
 		author = "Florian Roth"
@@ -367,14 +320,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Sensecorp_42B2 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Legalcorp_Pciexpressvideocapture_FD22 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Legalcorp_Pciexpressvideocapture_FD22 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - PcieCubed.sys"
 		author = "Florian Roth"
@@ -394,14 +341,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Legalcorp_Pciexpressvideocapture_
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gmer_Gmersys_Gmer_0052 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gmer_Gmersys_Gmer_0052 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - gmer64.sys, superman.sys"
 		author = "Florian Roth"
@@ -423,14 +364,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gmer_Gmersys_Gmer_0052 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Mimidrv_Mimidrvmimikatz_2FAF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Mimidrv_Mimidrvmimikatz_2FAF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -448,14 +383,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Mimidrv_Mimidrvmimikatz_2FAF {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_2FD4 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_2FD4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -478,14 +407,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Ntbiosys_Microsoftrwindowsrntoperatingsystem_C0D8 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Ntbiosys_Microsoftrwindowsrntoperatingsystem_C0D8 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ntbios_2.sys"
 		author = "Florian Roth"
@@ -507,14 +430,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Ntbiosys_Mic
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Wintapixsys_Microsoftwindowsoperatingsystem_8578 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wintapixsys_Microsoftwindowsoperatingsystem_8578 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WinTapix.sys, SRVNET2.SYS"
 		author = "Florian Roth"
@@ -536,14 +453,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wintapixsys_
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Wantdsys_Microsoftwindowsoperatingsystem_E7AF {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wantdsys_Microsoftwindowsoperatingsystem_E7AF {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - wantd_6.sys"
 		author = "Florian Roth"
@@ -567,14 +478,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wantdsys_Mic
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_30E0 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_Mimidrvmimikatz_30E0 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -596,14 +501,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Gentilkiwibenjamindelpy_Mimidrv_M
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Wantdsys_Microsoftwindowsoperatingsystem_6908 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wantdsys_Microsoftwindowsoperatingsystem_6908 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - wantd_2.sys"
 		author = "Florian Roth"
@@ -624,14 +523,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wantdsys_Mic
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Srvnetsys_Microsoftwindowsoperatingsystem_F6C3 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Srvnetsys_Microsoftwindowsoperatingsystem_F6C3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - WinTapix.sys, SRVNET2.SYS"
 		author = "Florian Roth"
@@ -652,14 +545,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Srvnetsys_Mi
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Wantdsys_Microsoftwindowsoperatingsystem_81C7 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wantdsys_Microsoftwindowsoperatingsystem_81C7 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - wantd_3.sys"
 		author = "Florian Roth"
@@ -680,14 +567,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Wantdsys_Mic
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_773B {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_773B {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - mimidrv.sys"
 		author = "Florian Roth"
@@ -703,14 +584,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_773B {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Sensecorp_7F45 {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Sensecorp_7F45 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - Sense5Ext.sys"
 		author = "Florian Roth"
@@ -728,14 +603,8 @@ rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Sensecorp_7F45 {
 	condition:
 		all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/yara-rules_mal_drivers.yar
-
-
-rule MAL_Driver_Microsoftcorporation_Ndislansys_Microsoftwindowsoperatingsystem_B0EB {
-=======
 //===SUCCESS===
 rule Neo23x0_yara_rules_mal_drivers_MAL_Driver_Microsoftcorporation_Ndislansys_Microsoftwindowsoperatingsystem_B0EB {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/yara-rules_mal_drivers.yar
 	meta:
 		description = "Detects malicious driver mentioned in LOLDrivers project using VersionInfo values from the PE header - ndislan.sys"
 		author = "Florian Roth"

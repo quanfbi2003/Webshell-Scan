@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.ChaosRAT.yara
-
-
-rule reversinglabs_Lin_Linux_Backdoor_ChaosRAT : tc_detection malicious
-=======
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_ChaosRAT_Linux_Backdoor_ChaosRAT : tc_detection malicious
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.ChaosRAT.yara
 {
     meta:
 

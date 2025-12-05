@@ -1,10 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-rule APT_MAL_VEILEDSIGNAL_Backdoor_Apr23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects malicious VEILEDSIGNAL backdoor"
       author = "X__Junior"
@@ -20,13 +16,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23 {
     condition:
       uint16(0) == 0x5a4d and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule SUSP_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_SUSP_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects marker found in VEILEDSIGNAL backdoor"
       author = "X__Junior"
@@ -43,13 +34,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_SUSP_APT_MAL_VEILEDSIGNAL_Backdoor_Apr23 {
    condition:
       2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_MAL_M_Hunting_VEILEDSIGNAL_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -68,13 +54,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_1 {
    condition:
       uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and 1 of ($rh*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_MAL_M_Hunting_VEILEDSIGNAL_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -94,13 +75,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_2 {
    condition:
       (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_MAL_M_Hunting_VEILEDSIGNAL_3 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_3 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -119,13 +95,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_3 {
    condition:
       (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_MAL_M_Hunting_VEILEDSIGNAL_4 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_4 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -146,13 +117,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_4 {
    condition:
       (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_MAL_M_Hunting_VEILEDSIGNAL_5 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_5 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -176,13 +142,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_5 {
    condition:
       (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x020B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_MAL_M_Hunting_VEILEDSIGNAL_6 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_6 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -202,13 +163,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_MAL_M_Hunting_VEILEDSIGNAL_6 {
    condition:
       (uint16(0) == 0x5A4D) and (uint32(uint32(0x3C)) == 0x00004550) and (uint16(uint32(0x3C)+0x18) == 0x010B) and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule SUSP_NK_MAL_M_Hunting_POOLRAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_SUSP_NK_MAL_M_Hunting_POOLRAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects VEILEDSIGNAL malware"
       author = "Mandiant"
@@ -245,13 +201,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_SUSP_NK_MAL_M_Hunting_POOLRAT {
    condition:
       any of ($s*) or $str1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule APT_NK_TradingTech_ForensicArtifacts_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_TradingTech_ForensicArtifacts_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Detects forensic artifacts, file names and keywords related the Trading Technologies compromise UNC4736"
       author = "Florian Roth"
@@ -273,13 +224,8 @@ rule Neo23x0_apt_nk_tradingtech_apr23_APT_NK_TradingTech_ForensicArtifacts_Apr23
       not uint16(0) == 0x5025
       and 1 of ($x*) and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
-
-rule SUSP_TH_APT_UNC4736_TradingTech_Cert_Apr23_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_nk_tradingtech_apr23_SUSP_TH_APT_UNC4736_TradingTech_Cert_Apr23_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_nk_tradingtech_apr23.yar
    meta:
       description = "Threat hunting rule that detects samples signed with the compromised Trading Technologies certificate after May 2022"
       author = "Florian Roth"

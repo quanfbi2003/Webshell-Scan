@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_lnk_files.yar
-
-rule SUSP_LNK_lnkfileoverRFC {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_lnk_files_SUSP_LNK_lnkfileoverRFC {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_lnk_files.yar
    meta:
       description = "Detects APT lnk files that run double extraction and launch routines with autoruns"
       author = "@Grotezinfosec, modified by Florian Roth"
@@ -21,13 +16,8 @@ rule Neo23x0_gen_susp_lnk_files_SUSP_LNK_lnkfileoverRFC {
          2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_lnk_files.yar
-
-rule SUSP_LNK_SuspiciousCommands {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_lnk_files_SUSP_LNK_SuspiciousCommands {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_lnk_files.yar
    meta:
       description = "Detects LNK file with suspicious content"
       author = "Florian Roth (Nextron Systems)"
@@ -59,13 +49,8 @@ rule Neo23x0_gen_susp_lnk_files_SUSP_LNK_SuspiciousCommands {
    condition:
       uint16(0) == 0x004c and 1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_lnk_files.yar
-
-rule SUSP_DOC_LNK_in_ZIP {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_lnk_files_SUSP_DOC_LNK_in_ZIP {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_lnk_files.yar
    meta:
       description = "Detects suspicious .doc.lnk file in ZIP archive"
       author = "Florian Roth (Nextron Systems)"

@@ -1,11 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2017-08-31
-   Identifier: KHRAT RAT
-   Reference: https://researchcenter.paloaltonetworks.com/2017/08/unit42-updated-khrat-malware-used-in-cambodia-attacks/
-*/
-
 import "pe"
 /*
    Yara Rule Set
@@ -15,18 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2017/08/unit42-updated-khrat-malware-used-in-cambodia-attacks/
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_khrat.yar
-/* Rule Set ----------------------------------------------------------------- */
-
-rule KHRAT_Malware {
-=======
 
 /* Rule Set ----------------------------------------------------------------- */
 
 
 //===SUCCESS===
 rule Neo23x0_apt_khrat_KHRAT_Malware {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_khrat.yar
    meta:
       description = "Detects an Imphash of KHRAT malware"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -38,13 +24,8 @@ rule Neo23x0_apt_khrat_KHRAT_Malware {
    condition:
       uint16(0) == 0x5a4d and filesize < 100KB and pe.imphash() == "6a8478ad861f98f8428a042f74de1944"
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_khrat.yar
-
-rule MAL_KHRAT_script {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_khrat_MAL_KHRAT_script {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_khrat.yar
    meta:
       description = "Rule derived from KHRAT script but can match on other malicious scripts as well"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -60,13 +41,8 @@ rule Neo23x0_apt_khrat_MAL_KHRAT_script {
    condition:
       1 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_khrat.yar
-
-rule MAL_KHRAT_scritplet {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_khrat_MAL_KHRAT_scritplet {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_khrat.yar
    meta:
       description = "Rule derived from KHRAT scriptlet"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

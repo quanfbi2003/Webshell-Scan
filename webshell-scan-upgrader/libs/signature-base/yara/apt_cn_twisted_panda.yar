@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_twisted_panda.yar
-rule APT_CN_TwistedPanda_loader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_twisted_panda.yar
    meta:
       author = "Check Point Research"
       description = "Detects loader used by TwistedPanda"
@@ -47,13 +43,8 @@ rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_loader {
       uint32(uint32(0x3C)) == 0x00004550 and 
       filesize < 3000KB and all of ($seq*) and $decryption
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_twisted_panda.yar
-
-rule APT_CN_TwistedPanda_SPINNER_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_SPINNER_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_twisted_panda.yar
    meta:
       author = "Check Point Research"
       description = "Detects the obfuscated variant of SPINNER payload used by TwistedPanda"
@@ -88,13 +79,8 @@ rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_SPINNER_1 {
       uint32(uint32(0x3C)) == 0x00004550 and 
       filesize < 3000KB  and #config_init > 10 and 2 of ($c2_cmd_*) and $decryption
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_twisted_panda.yar
-
-rule APT_CN_TwistedPanda_SPINNER_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_SPINNER_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_twisted_panda.yar
    meta:
       author = "Check Point Research"
       description = "Detects an older variant of SPINNER payload used by TwistedPanda"
@@ -131,13 +117,8 @@ rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_SPINNER_2 {
       uint32(uint32(0x3C)) == 0x00004550 and 
       filesize < 3000KB  and #config_init > 10 and 2 of ($c2_cmd_*) and $decryption
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_twisted_panda.yar
-
-rule APT_CN_TwistedPanda_64bit_Loader {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_64bit_Loader {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_twisted_panda.yar
    meta:
       author = "Check Point Research"
       description = "Detects the 64bit Loader DLL used by TwistedPanda"
@@ -173,13 +154,8 @@ rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_64bit_Loader {
       uint32(uint32(0x3C)) == 0x00004550 and 
       filesize < 3000KB  and $path_check and $shellcode_allocate and $shellcode_read
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_cn_twisted_panda.yar
-
-rule APT_CN_TwistedPanda_droppers {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_cn_twisted_panda_APT_CN_TwistedPanda_droppers {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_cn_twisted_panda.yar
    meta:
       author = "Check Point Research"
       description = "Detects droppers used by TwistedPanda"

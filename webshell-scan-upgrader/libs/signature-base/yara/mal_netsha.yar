@@ -1,11 +1,6 @@
 import "pe"
-<<<<<<< Updated upstream:libs/signature-base/yara/mal_netsha.yar
-
-rule MAL_Neshta_Generic : HIGHVOL {
-=======
 //===SUCCESS===
 rule Neo23x0_mal_netsha_MAL_Neshta_Generic : HIGHVOL {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/mal_netsha.yar
    meta:
       description = "Detects Neshta malware"
       author = "Florian Roth (Nextron Systems)"

@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_volttyphoon_versamem.yar
-
-
-rule Neo23x0_apt_WEBSHELL_JAVA_VersaMem_JAR_Aug24_1 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_volttyphoon_versamem.yar
-
-rule WEBSHELL_JAVA_VersaMem_JAR_Aug24_1 {
-========
 //===SUCCESS===
 rule Neo23x0_apt_volttyphoon_versamem_WEBSHELL_JAVA_VersaMem_JAR_Aug24_1 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volttyphoon_versamem.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volttyphoon_versamem.yar
    meta:
       description = "Detects VersaMem Java webshell samples (as used by Volt Typhoon)"
       author = "blacklotuslabs (modified by Florian Roth and X__Junior)"
@@ -33,19 +22,8 @@ rule Neo23x0_apt_volttyphoon_versamem_WEBSHELL_JAVA_VersaMem_JAR_Aug24_1 {
    condition:
       filesize < 5MB and ( 3 of them or all of ($sb*) )
 }
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/apt_volttyphoon_versamem.yar
-
-rule Neo23x0_apt_WEBSHELL_JAVA_VersaMem_JAR_Aug24_2 {
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/apt_volttyphoon_versamem.yar
-
-
-rule WEBSHELL_JAVA_VersaMem_JAR_Aug24_2 {
-========
 //===SUCCESS===
 rule Neo23x0_apt_volttyphoon_versamem_WEBSHELL_JAVA_VersaMem_JAR_Aug24_2 {
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volttyphoon_versamem.yar
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_volttyphoon_versamem.yar
    meta:
       description = "Detects VersaMem Java webshell samples (as used by Volt Typhoon)"
       author = "Florian Roth"

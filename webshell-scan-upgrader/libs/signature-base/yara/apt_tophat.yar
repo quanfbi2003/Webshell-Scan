@@ -1,13 +1,3 @@
-/*
-   Yara Rule Set
-   Author: Florian Roth
-   Date: 2018-01-29
-   Identifier: TopHat
-   Reference: https://researchcenter.paloaltonetworks.com/2018/01/unit42-the-tophat-campaign-attacks-within-the-middle-east-region-using-popular-third-party-services/#appendix
-*/
-
-/* Rule Set ----------------------------------------------------------------- */
-
 import "pe"
 /*
    Yara Rule Set
@@ -17,16 +7,12 @@ import "pe"
    Reference: https://researchcenter.paloaltonetworks.com/2018/01/unit42-the-tophat-campaign-attacks-within-the-middle-east-region-using-popular-third-party-services/#appendix
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tophat.yar
-rule TopHat_Malware_Jan18_1 {
-=======
 /* Rule Set ----------------------------------------------------------------- */
 
 
 
 //===SUCCESS===
 rule Neo23x0_apt_tophat_TopHat_Malware_Jan18_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tophat.yar
    meta:
       description = "Detects malware from TopHat campaign"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -50,13 +36,8 @@ rule Neo23x0_apt_tophat_TopHat_Malware_Jan18_1 {
         6 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tophat.yar
-
-rule TopHat_Malware_Jan18_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_tophat_TopHat_Malware_Jan18_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tophat.yar
    meta:
       description = "Auto-generated rule - file e.exe"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -79,13 +60,8 @@ rule Neo23x0_apt_tophat_TopHat_Malware_Jan18_2 {
         5 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_tophat.yar
-
-rule TopHat_BAT {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_tophat_TopHat_BAT {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_tophat.yar
    meta:
       description = "Auto-generated rule - file cgen.bat"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

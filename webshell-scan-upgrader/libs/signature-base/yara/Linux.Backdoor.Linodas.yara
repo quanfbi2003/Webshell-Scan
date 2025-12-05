@@ -1,15 +1,5 @@
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.Linodas.yara
-
-
-rule reversinglabs_Lin_Linux_Backdoor_Linodas : tc_detection malicious
-=======
-<<<<<<<< Updated upstream:libs/signature-base/yara/Linux.Backdoor.Linodas.yara
-rule Linux_Backdoor_Linodas : tc_detection malicious
-========
 //===SUCCESS===
 rule reversinglabs_Linux_Backdoor_Linodas_Linux_Backdoor_Linodas : tc_detection malicious
->>>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.Linodas.yara
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.Linodas.yara
 {
     meta:
 
@@ -224,8 +214,4 @@ rule reversinglabs_Linux_Backdoor_Linodas_Linux_Backdoor_Linodas : tc_detection 
                 )
             )
         )
-<<<<<<< Updated upstream:centos_7/libs/signature-base/yara/Linux.Backdoor.Linodas.yara
 }
-=======
-}
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/Linux.Backdoor.Linodas.yara

@@ -5,20 +5,12 @@
    Identifier: Leviathan Phishing Attacks
    Reference: https://goo.gl/MZ7dRg
 */
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_leviathan.yar
-=======
-
-/* Rule Set ----------------------------------------------------------------- */
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_leviathan.yar
 
 /* Rule Set ----------------------------------------------------------------- */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_leviathan.yar
-rule SeDLL_Javascript_Decryptor {
-=======
+
 //===SUCCESS===
 rule Neo23x0_apt_leviathan_SeDLL_Javascript_Decryptor {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_leviathan.yar
    meta:
       description = "Detects SeDll - DLL is used for decrypting and executing another JavaScript backdoor such as Orz"
       author = "Florian Roth (Nextron Systems)"
@@ -39,13 +31,8 @@ rule Neo23x0_apt_leviathan_SeDLL_Javascript_Decryptor {
    condition:
       uint16(0) == 0x5a4d and filesize < 40KB and ( 1 of ($x*) or 4 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_leviathan.yar
-
-rule Leviathan_CobaltStrike_Sample_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_leviathan_Leviathan_CobaltStrike_Sample_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_leviathan.yar
    meta:
       description = "Detects Cobalt Strike sample from Leviathan report"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -68,13 +55,8 @@ rule Neo23x0_apt_leviathan_Leviathan_CobaltStrike_Sample_1 {
    condition:
       uint16(0) == 0x5a4d and filesize < 600KB and ( 1 of ($x*) or 3 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_leviathan.yar
-
-rule MockDll_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_leviathan_MockDll_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_leviathan.yar
    meta:
       description = "Detects MockDll - regsvr DLL loader"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"
@@ -93,13 +75,8 @@ rule Neo23x0_apt_leviathan_MockDll_Gen {
    condition:
       uint16(0) == 0x5a4d and filesize < 20KB and ( 1 of ($x*) or 2 of them )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_leviathan.yar
-
-rule VBScript_Favicon_File {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_leviathan_VBScript_Favicon_File {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_leviathan.yar
    meta:
       description = "VBScript cloaked as Favicon file used in Leviathan incident"
       author = "Florian Roth (Nextron Systems)"

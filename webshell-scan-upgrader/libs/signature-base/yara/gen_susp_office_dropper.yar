@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-rule SUSP_Office_Dropper_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_Office_Dropper_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Detects Office droppers that include a notice to enable active content"
       author = "Florian Roth (Nextron Systems)"
@@ -20,13 +16,8 @@ rule Neo23x0_gen_susp_office_dropper_SUSP_Office_Dropper_Strings {
    condition:
       uint16(0) == 0xcfd0 and filesize < 500KB and $a1 and 1 of ($s*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-
-rule SUSP_EnableContent_String_Gen {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_EnableContent_String_Gen {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Detects suspicious string that asks to enable active content in Office Doc"
       author = "Florian Roth (Nextron Systems)"
@@ -48,13 +39,8 @@ rule Neo23x0_gen_susp_office_dropper_SUSP_EnableContent_String_Gen {
             2 of them
       )
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-
-rule SUSP_WordDoc_VBA_Macro_Strings {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_WordDoc_VBA_Macro_Strings {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Detects suspicious strings in Word Doc that indcate malicious use of VBA macros"
       author = "Florian Roth (Nextron Systems)"
@@ -76,13 +62,8 @@ rule Neo23x0_gen_susp_office_dropper_SUSP_WordDoc_VBA_Macro_Strings {
    condition:
       uint16(0) == 0xcfd0 and filesize < 800KB and all of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-
-rule SUSP_OfficeDoc_VBA_Base64Decode {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_OfficeDoc_VBA_Base64Decode {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Detects suspicious VBA code with Base64 decode functions"
       author = "Florian Roth (Nextron Systems)"
@@ -98,13 +79,8 @@ rule Neo23x0_gen_susp_office_dropper_SUSP_OfficeDoc_VBA_Base64Decode {
    condition:
       uint16(0) == 0xcfd0 and filesize < 60KB and 2 of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-
-rule SUSP_VBA_FileSystem_Access {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_VBA_FileSystem_Access {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Detects suspicious VBA that writes to disk and is activated on document open"
       author = "Florian Roth (Nextron Systems)"
@@ -123,13 +99,8 @@ rule Neo23x0_gen_susp_office_dropper_SUSP_VBA_FileSystem_Access {
    condition:
       uint16(0) == 0xcfd0 and filesize < 100KB and all of ($s*) and 1 of ($a*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-
-rule SUSP_Excel_IQY_RemoteURI_Syntax {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_Excel_IQY_RemoteURI_Syntax {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Detects files with Excel IQY RemoteURI syntax"
       author = "Nick Carr"
@@ -148,13 +119,8 @@ rule Neo23x0_gen_susp_office_dropper_SUSP_Excel_IQY_RemoteURI_Syntax {
       and $URL
       and not 1 of ($fp*)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_susp_office_dropper.yar
-
-rule SUSP_Macro_Sheet_Obfuscated_Char {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_susp_office_dropper_SUSP_Macro_Sheet_Obfuscated_Char {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_susp_office_dropper.yar
    meta:
       description = "Finding hidden/very-hidden macros with many CHAR functions"
       author = "DissectMalware"

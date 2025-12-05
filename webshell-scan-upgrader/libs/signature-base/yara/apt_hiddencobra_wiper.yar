@@ -5,13 +5,9 @@
    Reference: https://www.us-cert.gov/sites/default/files/publications/MAR-10135536.11.WHITE.pdf
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hiddencobra_wiper.yar
-rule HiddenCobra_r4_wiper_1 {
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_hiddencobra_wiper_HiddenCobra_r4_wiper_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hiddencobra_wiper.yar
    meta:
       author = "NCCIC Partner"
       date = "2017-12-12"
@@ -24,13 +20,8 @@ rule Neo23x0_apt_hiddencobra_wiper_HiddenCobra_r4_wiper_1 {
    condition:
       uint16(0) == 0x5a4d and uint16(uint32(0x3c)) == 0x4550 and any of them
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_hiddencobra_wiper.yar
-
-rule HiddenCobra_r4_wiper_2 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_hiddencobra_wiper_HiddenCobra_r4_wiper_2 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_hiddencobra_wiper.yar
    meta:
       author = "NCCIC Partner"
       date = "2017-12-12"

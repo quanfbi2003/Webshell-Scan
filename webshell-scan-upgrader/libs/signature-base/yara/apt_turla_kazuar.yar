@@ -12,13 +12,9 @@ import "pe"
 	f34d5f2d4577ed6d9ceec516c1f5a744
 */
 
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_kazuar.yar
-rule apt_RU_Turla_Kazuar_DebugView_peFeatures
-=======
 
 //===SUCCESS===
 rule Neo23x0_apt_turla_kazuar_apt_RU_Turla_Kazuar_DebugView_peFeatures
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_kazuar.yar
 {
 	meta:
 		description = "Turla mimicking SysInternals Tools- peFeatures"
@@ -63,13 +59,8 @@ rule Neo23x0_apt_turla_kazuar_apt_RU_Turla_Kazuar_DebugView_peFeatures
 			)
 		)
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_turla_kazuar.yar
-
-rule APT_MAL_RU_Turla_Kazuar_May20_1 {
-=======
 //===SUCCESS===
 rule Neo23x0_apt_turla_kazuar_APT_MAL_RU_Turla_Kazuar_May20_1 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_turla_kazuar.yar
    meta:
       description = "Detects Turla Kazuar malware"
       author = "Florian Roth (Nextron Systems)"
@@ -90,4 +81,3 @@ rule Neo23x0_apt_turla_kazuar_APT_MAL_RU_Turla_Kazuar_May20_1 {
       filesize < 2000KB and
       all of them
 }
-

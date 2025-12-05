@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_backdoor_antitheftweb.yar
-
-rule VULN_PHP_Hack_Backdoored_Phpass_May21 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_backdoor_antitheftweb_VULN_PHP_Hack_Backdoored_Phpass_May21 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vul_backdoor_antitheftweb.yar
    meta:
       description = "Detects backdoored PHP phpass version"
       author = "Christian Burkard"
@@ -17,13 +12,8 @@ rule Neo23x0_vul_backdoor_antitheftweb_VULN_PHP_Hack_Backdoored_Phpass_May21 {
    condition:
       filesize < 30KB and $x1
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/vul_backdoor_antitheftweb.yar
-
-rule VULN_Python_Hack_Backdoored_Ctx_May21 {
-=======
 //===SUCCESS===
 rule Neo23x0_vul_backdoor_antitheftweb_VULN_Python_Hack_Backdoored_Ctx_May21 {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/vul_backdoor_antitheftweb.yar
    meta:
       description = "Detects backdoored python ctx version"
       author = "Christian Burkard"

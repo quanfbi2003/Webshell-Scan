@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/gen_dropper_pdb.yar
-
-rule Generic_Dropper  {
-=======
 //===SUCCESS===
 rule Neo23x0_gen_dropper_pdb_Generic_Dropper  {
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/gen_dropper_pdb.yar
    meta:
       description = "Detects Dropper PDB string in file"
       license = "Detection Rule License 1.1 https://github.com/Neo23x0/signature-base/blob/master/LICENSE"

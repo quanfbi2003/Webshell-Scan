@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-rule Trojan_Win32_PlaSrv : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_PlaSrv : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -22,13 +18,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_PlaSrv : Platinum
 	condition:
 		$Section_name and $offset_x59
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Platual : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Platual : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -47,13 +38,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Platual : Platinum
 	condition:
 		$class_name and $scrambled_dir
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plaplex : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plaplex : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -72,13 +58,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plaplex : Platinum
 	condition:
 		$class_name1 and $class_name2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Dipsind_B : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Dipsind_B : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -97,13 +78,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Dipsind_B : Platinum
 	condition:
 		$frg1 and $frg2 and $frg3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_PlaKeylog_B : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_PlaKeylog_B : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -122,13 +98,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_PlaKeylog_B : Platinum
 	condition:
 		$hook and $dasm_engine
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Adupib : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Adupib : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -150,13 +121,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Adupib : Platinum
 	condition:
 		$str1 and $str2 and $str3 and $str4 and $str5
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_PlaLsaLog : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_PlaLsaLog : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -175,13 +141,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_PlaLsaLog : Platinum
 	condition:
 		$str1 and $str2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plagon : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plagon : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -202,13 +163,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plagon : Platinum
 	condition:
 		$str1 and $str2 and $str3 and $str4
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plakelog : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plakelog : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -229,13 +185,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plakelog : Platinum
 	condition:
 		$str1 and $str2 and $str3 and $str4
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plainst : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plainst : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -254,13 +205,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plainst : Platinum
 	condition:
 		$str1 and $str2
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plagicom : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plagicom : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -281,13 +227,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plagicom : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plaklog : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plaklog : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -307,13 +248,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plaklog : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plapiio : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plapiio : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -333,13 +269,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plapiio : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plabit : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plabit : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -358,13 +289,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plabit : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Placisc2 : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Placisc2 : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -385,13 +311,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Placisc2 : Platinum
 	condition:
 		$str1 and $str2 and $str3 and $str4
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Placisc3 : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Placisc3 : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -411,13 +332,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Placisc3 : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Placisc4 : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Placisc4 : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -437,13 +353,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Placisc4 : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plakpers : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plakpers : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -463,13 +374,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plakpers : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plainst2 : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plainst2 : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
@@ -489,13 +395,8 @@ rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plainst2 : Platinum
 	condition:
 		$str1 and $str2 and $str3
 }
-<<<<<<< Updated upstream:libs/signature-base/yara/apt_ms_platinum.yara
-
-rule Trojan_Win32_Plakpeer : Platinum
-=======
 //===SUCCESS===
 rule Neo23x0_apt_ms_platinum_Trojan_Win32_Plakpeer : Platinum
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/signature-base/yara/apt_ms_platinum.yara
 {
 	meta:
 		author = "Microsoft"
