@@ -728,6 +728,7 @@ class Updater(object):
                               "DarkenCode_crypto*",
                               "DarkenCode_Cerberus_Cerberus*",
                               "DarkenCode_malware_Cerberus*",
+                              "nsacyber_extended_webshell_detection_obfuscatedFunctionality"
 
                               ]
 

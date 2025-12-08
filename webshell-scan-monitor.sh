@@ -6,8 +6,11 @@ WATCH_DIR="/home/sysadmin/backups"
 # Base directory where files will be extracted
 EXTRACT_BASE="/home/sysadmin/webshell-scan/source"
 
-# Path to the webshell scanning tool
-SCAN_TOOL="/home/sysadmin/webshell-scan/webshell-scan"
+# Base directory for webshell-scan tool
+WEBSHELL_SCAN_DIR="/home/sysadmin/webshell-scan"
+
+# Path to the webshell scanning tool (relative path from WEBSHELL_SCAN_DIR)
+SCAN_TOOL="webshell-scan"
 
 # Log file for the entire process
 LOG_FILE="/home/sysadmin/webshell-scan/logs/webshell-scan-cron.log"
@@ -43,9 +46,15 @@ if [ ! -d "$WATCH_DIR" ]; then
     exit 1
 fi
 
-# Check if scan tool exists and is executable
-if [ ! -x "$SCAN_TOOL" ]; then
-    log_message "ERROR: Scan tool not found or not executable: $SCAN_TOOL"
+# Check if webshell-scan directory exists
+if [ ! -d "$WEBSHELL_SCAN_DIR" ]; then
+    log_message "ERROR: Webshell-scan directory does not exist: $WEBSHELL_SCAN_DIR"
+    exit 1
+fi
+
+# Check if scan tool exists and is executable (check in the webshell-scan directory)
+if [ ! -x "$WEBSHELL_SCAN_DIR/$SCAN_TOOL" ]; then
+    log_message "ERROR: Scan tool not found or not executable: $WEBSHELL_SCAN_DIR/$SCAN_TOOL"
     exit 1
 fi
 
@@ -86,7 +95,10 @@ while IFS= read -r tarfile; do
         # Run webshell scan if the tool is executable
         log_message "Starting webshell scan on $extract_dir"
         scan_exit_code=0
-        if sudo "$SCAN_TOOL" -p "$extract_dir" >>"$LOG_FILE" 2>&1; then
+        # Calculate relative path of extract_dir from WEBSHELL_SCAN_DIR
+        extract_dir_relative="${extract_dir#$WEBSHELL_SCAN_DIR/}"
+        # Change to webshell-scan directory and run with relative paths
+        if (cd "$WEBSHELL_SCAN_DIR" && sudo "./$SCAN_TOOL" -p "$extract_dir_relative" -t 0 >>"$LOG_FILE" 2>&1); then
             scan_exit_code=$?
             log_message "Scan completed successfully (exit code: $scan_exit_code)"
         else
@@ -95,10 +107,10 @@ while IFS= read -r tarfile; do
         fi
 
         # Clean up temporary extraction directory
-        if [ -d "$extract_dir" ]; then
-            rm -rf "$extract_dir"
-            log_message "Temporary directory removed: $extract_dir"
-        fi
+        # if [ -d "$extract_dir" ]; then
+        #     rm -rf "$extract_dir"
+        #     log_message "Temporary directory removed: $extract_dir"
+        # fi
 
         # Mark file as successfully processed
         mark_processed "$tarfile"
