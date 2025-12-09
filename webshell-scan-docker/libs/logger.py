@@ -150,6 +150,16 @@ class Logger:
         df = pd.DataFrame(message)
         df.to_excel(self.log_file + ".xlsx", index=True)
 
+    def log_all_files_to_excel(self, message):
+        """
+        Xuất toàn bộ danh sách file đã quét ra Excel với tiền tố 'all file '.
+        """
+        df = pd.DataFrame(message)
+        log_dir = os.path.dirname(self.log_file)
+        base_name = os.path.basename(self.log_file)
+        output_path = os.path.join(log_dir, f"all file {base_name}.xlsx")
+        df.to_excel(output_path, index=True)
+
     def log_to_file(self, message, mes_type, module):
         """
         Write log message to file with standardized format: [mes_type] module: message

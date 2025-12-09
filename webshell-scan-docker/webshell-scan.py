@@ -69,6 +69,8 @@ else:
 
 # CSV file
 fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": [], "EXTENSION": []}
+# Ghi nhận toàn bộ file đã quét
+all_files_csv = {"FILE": [], "TIME_CREATED": [], "TIME_MODIFIED": [], "TIME_ACCESSED": [], "EXTENSION": []}
 
 
 class Scanner(object):
@@ -591,6 +593,7 @@ class Scanner(object):
             reasons = []
             total_score = 0
             yara_timeout_occurred = False
+            all_file_logged = False
 
             fpath = os.path.split(filePath)[0]
             filePathCleaned = fpath.encode('ascii', errors='replace')
@@ -606,6 +609,24 @@ class Scanner(object):
             except (OSError, IOError) as e:
                 logger.log("DEBUG", "FileScan", f"Cannot stat file {filePath}: {str(e)}")
                 return
+
+            try:
+                created_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(file_stat.st_ctime))
+                modified_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(file_stat.st_mtime))
+                accessed_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(file_stat.st_atime))
+            except Exception:
+                created_time = "not_available"
+                modified_time = "not_available"
+                accessed_time = "not_available"
+
+            # Ghi nhận tất cả file ngay sau khi đọc stat (kể cả file bị bỏ qua sau đó)
+            with self.result_lock:
+                all_files_csv["FILE"].append(filePath)
+                all_files_csv["TIME_CREATED"].append(created_time)
+                all_files_csv["TIME_MODIFIED"].append(modified_time)
+                all_files_csv["TIME_ACCESSED"].append(accessed_time)
+                all_files_csv["EXTENSION"].append(extension)
+                all_file_logged = True
 
             is_archive, archive_ext = self.is_archive_file(filePath)
             if is_archive and file_size <= self.MAX_ARCHIVE_SIZE:
@@ -899,10 +920,12 @@ class Scanner(object):
             traceback.print_exc()
 
     def scan_path(self, path, args=None):
-        global MESSAGE, fileInfo_csv
+        global MESSAGE, fileInfo_csv, all_files_csv
         MESSAGE = []
         # Reset fileInfo_csv for new scan
         fileInfo_csv = {"FILE": [], "SCORE": [], "TIME": [], "DESCRIPTION": [], "EXTENSION": []}
+        # Reset danh sách toàn bộ file đã quét
+        all_files_csv = {"FILE": [], "TIME_CREATED": [], "TIME_MODIFIED": [], "TIME_ACCESSED": [], "EXTENSION": []}
         # Check if path exists
         if not os.path.exists(path):
             logger.log("ERROR", "FileScan", "None Existing Scanning Path %s ...  " % path)
@@ -1778,6 +1801,7 @@ if __name__ == '__main__':
 
     # Result ----------------------------------------------------------
     logger.log_to_csv_file(fileInfo_csv)
+    logger.log_all_files_to_excel(all_files_csv)
 
     logger.log("NOTICE", "Results",
                "Results: {0} alerts, {1} warnings, {2} notices".format(logger.alerts, logger.warnings, logger.notices))
