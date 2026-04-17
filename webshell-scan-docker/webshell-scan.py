@@ -9,6 +9,8 @@ import stat
 import time
 import threading
 import queue
+import multiprocessing
+from multiprocessing import Process, Queue, Manager, Lock
 import traceback
 from bisect import bisect_left
 import zipfile
@@ -118,6 +120,11 @@ class Scanner(object):
         self.progress_lock = threading.Lock()
         self.result_lock = threading.Lock()
         self.processed_files = 0
+        # For multiprocessing
+        self.use_multiprocessing = False
+        self.mp_manager = None
+        self.mp_progress_counter = None
+        self.mp_result_queue = None
 
         # Kiểm tra các thư mục bắt buộc (config, libs)
         config_dir = os.path.join(self.app_path, "config".replace("/", os.sep))
@@ -545,50 +552,116 @@ class Scanner(object):
     def _increment_progress(self, filePath, file_size, total):
         """Thread-safe progress increment and console output."""
         local_logger = logger if 'logger' in globals() else None
-        with self.progress_lock:
-            self.processed_files += 1
-            current = self.processed_files
-            print_progress(current, total, local_logger)
-            try:
-                print(f"{filePath}\t Size: {file_size / 1024 / 1024} MB")
-            except Exception:
-                pass
+        if self.use_multiprocessing:
+            # Use multiprocessing counter
+            with self.mp_progress_counter.get_lock():
+                self.mp_progress_counter.value += 1
+                current = self.mp_progress_counter.value
+        else:
+            # Use threading lock
+            with self.progress_lock:
+                self.processed_files += 1
+                current = self.processed_files
+        
+        print_progress(current, total, local_logger)
+        try:
+            print(f"{filePath}\t Size: {file_size / 1024 / 1024} MB")
+        except Exception:
+            pass
 
-    def _worker_process_file(self, file_queue, args, app_path_lower, total):
-        """Worker thread to process files from queue."""
-        thread_name = threading.current_thread().name
-        thread_id = threading.current_thread().ident
+    def _worker_process_file(self, file_queue, args, app_path_lower, total, result_queue=None, progress_counter=None):
+        """Worker process/thread to process files from queue."""
+        is_multiprocessing = result_queue is not None
+        try:
+            if is_multiprocessing:
+                process_name = multiprocessing.current_process().name
+                process_id = multiprocessing.current_process().pid
+            else:
+                process_name = threading.current_thread().name
+                process_id = threading.current_thread().ident
+        except:
+            process_name = "Unknown"
+            process_id = 0
+            
         files_processed = 0
         
         if 'logger' in globals():
-            logger.log("INFO", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) started and waiting for files")
+            worker_type = "process" if is_multiprocessing else "thread"
+            logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) started and waiting for files")
         
         while True:
-            file_path = file_queue.get()
+            try:
+                file_path = file_queue.get()
+            except Exception as e:
+                if 'logger' in globals():
+                    logger.log("ERROR", "FileScan", f"Error getting file from queue: {str(e)}")
+                break
+                
             if file_path is None:
                 # Shutdown signal received
-                file_queue.task_done()
+                if not is_multiprocessing:
+                    try:
+                        file_queue.task_done()
+                    except:
+                        pass
                 if 'logger' in globals():
-                    logger.log("INFO", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) received shutdown signal. Processed {files_processed} file(s)")
+                    worker_type = "process" if is_multiprocessing else "thread"
+                    logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) received shutdown signal. Processed {files_processed} file(s)")
                 break
             
             try:
                 if 'logger' in globals():
-                    logger.log("DEBUG", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) processing file: {file_path}")
-                self.process_single_file(file_path, args, app_path_lower, total)
+                    logger.log("DEBUG", "FileScan", f"Worker {process_name} (ID: {process_id}) processing file: {file_path}")
+                
+                # Process file and get results
+                result = self.process_single_file_with_result(file_path, args, app_path_lower, total, is_multiprocessing, progress_counter)
+                
+                # Send result back to main process if using multiprocessing
+                if is_multiprocessing and result:
+                    try:
+                        result_queue.put(result)
+                    except Exception as e:
+                        if 'logger' in globals():
+                            logger.log("ERROR", "FileScan", f"Error putting result to queue: {str(e)}")
+                
                 files_processed += 1
             except Exception as e:
                 if 'logger' in globals():
                     logger.log("ERROR", "FileScan", f"Unhandled error scanning file {file_path}: {str(e)}")
                 traceback.print_exc()
             finally:
-                file_queue.task_done()
+                if not is_multiprocessing:
+                    try:
+                        file_queue.task_done()
+                    except:
+                        pass
         
         if 'logger' in globals():
-            logger.log("INFO", "FileScan", f"Worker thread {thread_name} (ID: {thread_id}) finished. Total files processed: {files_processed}")
+            worker_type = "process" if is_multiprocessing else "thread"
+            logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) finished. Total files processed: {files_processed}")
+
+    def process_single_file_with_result(self, filePath, args, app_path_lower, total, is_multiprocessing=False, progress_counter=None):
+        """Process a single file and return result dict for multiprocessing, or None for threading mode."""
+        result = {
+            'all_file_info': None,
+            'findings': []
+        }
+        
+        try:
+            # Call the original function but capture results
+            self._process_single_file_internal(filePath, args, app_path_lower, total, is_multiprocessing, progress_counter, result)
+        except Exception as e:
+            logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
+            traceback.print_exc()
+        
+        return result if (result['all_file_info'] or result['findings']) else None
 
     def process_single_file(self, filePath, args, app_path_lower, total):
-        """Process a single file path (hashing, YARA, etc.)."""
+        """Process a single file path (hashing, YARA, etc.) - threading mode."""
+        self._process_single_file_internal(filePath, args, app_path_lower, total, False, None, None)
+
+    def _process_single_file_internal(self, filePath, args, app_path_lower, total, is_multiprocessing=False, progress_counter=None, result_dict=None):
+        """Internal function to process a single file path (hashing, YARA, etc.)."""
         try:
             reasons = []
             total_score = 0
@@ -610,6 +683,25 @@ class Scanner(object):
                 logger.log("DEBUG", "FileScan", f"Cannot stat file {filePath}: {str(e)}")
                 return
 
+            # Exclude check BEFORE logging/all_files_csv to avoid oversized logs
+            for skip in self.fullExcludes:
+                if skip.search(filePath):
+                    skipIt = True
+                    break
+
+            if os_platform == "linux":
+                for skip in self.LINUX_PATH_SKIPS_END:
+                    if filePath.endswith(skip):
+                        skipIt = True
+                        break
+
+                mode = file_stat.st_mode
+                if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(mode) or stat.S_ISSOCK(mode):
+                    return
+
+            if skipIt:
+                return
+
             try:
                 created_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(file_stat.st_ctime))
                 modified_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(file_stat.st_mtime))
@@ -620,12 +712,26 @@ class Scanner(object):
                 accessed_time = "not_available"
 
             # Ghi nhận tất cả file ngay sau khi đọc stat (kể cả file bị bỏ qua sau đó)
-            with self.result_lock:
-                all_files_csv["FILE"].append(filePath)
-                all_files_csv["TIME_CREATED"].append(created_time)
-                all_files_csv["TIME_MODIFIED"].append(modified_time)
-                all_files_csv["TIME_ACCESSED"].append(accessed_time)
-                all_files_csv["EXTENSION"].append(extension)
+            all_file_info = {
+                'FILE': filePath,
+                'TIME_CREATED': created_time,
+                'TIME_MODIFIED': modified_time,
+                'TIME_ACCESSED': accessed_time,
+                'EXTENSION': extension
+            }
+            
+            if is_multiprocessing:
+                # Store in result dict for multiprocessing
+                if result_dict:
+                    result_dict['all_file_info'] = all_file_info
+            else:
+                # Use lock for threading
+                with self.result_lock:
+                    all_files_csv["FILE"].append(filePath)
+                    all_files_csv["TIME_CREATED"].append(created_time)
+                    all_files_csv["TIME_MODIFIED"].append(modified_time)
+                    all_files_csv["TIME_ACCESSED"].append(accessed_time)
+                    all_files_csv["EXTENSION"].append(extension)
                 all_file_logged = True
 
             is_archive, archive_ext = self.is_archive_file(filePath)
@@ -659,13 +765,26 @@ class Scanner(object):
                             message_body = fileInfo + "".join(reason_lines)
                             message_csv = "".join(reason_csv_lines)
 
-                            with self.result_lock:
-                                MESSAGE.append([finding_score, message_type, message_body])
-                                fileInfo_csv["FILE"].append(f"{finding_file} [ARCHIVE: {filePath}]")
-                                fileInfo_csv["SCORE"].append(finding_score)
-                                fileInfo_csv["TIME"].append(getAgeString(filePath))
-                                fileInfo_csv["DESCRIPTION"].append(message_csv)
-                                fileInfo_csv["EXTENSION"].append(extension)
+                            finding_data = {
+                                'score': finding_score,
+                                'message_type': message_type,
+                                'message_body': message_body,
+                                'file': f"{finding_file} [ARCHIVE: {filePath}]",
+                                'time': getAgeString(filePath),
+                                'description': message_csv,
+                                'extension': extension
+                            }
+                            
+                            if is_multiprocessing and result_dict:
+                                result_dict['findings'].append(finding_data)
+                            else:
+                                with self.result_lock:
+                                    MESSAGE.append([finding_score, message_type, message_body])
+                                    fileInfo_csv["FILE"].append(f"{finding_file} [ARCHIVE: {filePath}]")
+                                    fileInfo_csv["SCORE"].append(finding_score)
+                                    fileInfo_csv["TIME"].append(getAgeString(filePath))
+                                    fileInfo_csv["DESCRIPTION"].append(message_csv)
+                                    fileInfo_csv["EXTENSION"].append(extension)
 
                             logger.log("INFO", "Archive", f"Found webshell in archive: {finding_file} (score: {finding_score}) in archive: {filePath}")
 
@@ -697,7 +816,18 @@ class Scanner(object):
             if skipIt:
                 return
 
-            self._increment_progress(filePath, file_size, total)
+            if is_multiprocessing and progress_counter:
+                # Use multiprocessing counter
+                with progress_counter.get_lock():
+                    progress_counter.value += 1
+                    current = progress_counter.value
+                print_progress(current, total, logger if 'logger' in globals() else None)
+                try:
+                    print(f"{filePath}\t Size: {file_size / 1024 / 1024} MB")
+                except Exception:
+                    pass
+            else:
+                self._increment_progress(filePath, file_size, total)
 
             if app_path_lower in filePath.lower():
                 return
@@ -906,13 +1036,26 @@ class Scanner(object):
                         logger.log("ERROR", "FileScan", f"Cannot move file to quarantine {src} -> {dst}: {e}")
                         message_body += "FILE CAN NOT MOVED TO QUARANTINE!!!\n "
 
-            with self.result_lock:
-                MESSAGE.append([total_score, message_type, message_body])
-                fileInfo_csv["FILE"].append(filePath)
-                fileInfo_csv["SCORE"].append(total_score)
-                fileInfo_csv["TIME"].append(getAgeString(filePath))
-                fileInfo_csv["DESCRIPTION"].append(message_csv)
-                fileInfo_csv["EXTENSION"].append(extension)
+            finding_data = {
+                'score': total_score,
+                'message_type': message_type,
+                'message_body': message_body,
+                'file': filePath,
+                'time': getAgeString(filePath),
+                'description': message_csv,
+                'extension': extension
+            }
+            
+            if is_multiprocessing and result_dict:
+                result_dict['findings'].append(finding_data)
+            else:
+                with self.result_lock:
+                    MESSAGE.append([total_score, message_type, message_body])
+                    fileInfo_csv["FILE"].append(filePath)
+                    fileInfo_csv["SCORE"].append(total_score)
+                    fileInfo_csv["TIME"].append(getAgeString(filePath))
+                    fileInfo_csv["DESCRIPTION"].append(message_csv)
+                    fileInfo_csv["EXTENSION"].append(extension)
             logger.log("DEBUG", "FileScan", f"Added to MESSAGE and CSV: {filePath}, score={total_score}, has_ssdeep={any('SSDeep' in r for r in reasons)}")
 
         except Exception as e:
@@ -943,48 +1086,98 @@ class Scanner(object):
         # Cache app_path.lower() để tránh gọi lại nhiều lần
         app_path_lower = self.app_path.lower()
 
-        # Pre-count total files for accurate progress display
-        try:
-            total = sum(len(filenames) for _, _, filenames in os.walk(path, onerror=self.walk_error, followlinks=False))
-        except Exception as e:
-            logger.log("DEBUG", "FileScan", f"Cannot pre-count files in {path}: {str(e)}")
-            total = 0
+        # Pre-count total files for accurate progress display (exclude paths in excludes.cfg)
+        def _precount_files(scan_path):
+            counted = 0
+            try:
+                for root, directories, files in os.walk(scan_path, onerror=self.walk_error, followlinks=False):
+                    # Filter directories using startExcludes (same as main loop)
+                    newDirectories = []
+                    for directory in directories:
+                        completePath = os.path.join(root, directory).lower() + os.sep
+                        skipDir = any(completePath.startswith(skip) for skip in self.startExcludes)
+                        if not skipDir:
+                            newDirectories.append(directory)
+                    directories[:] = newDirectories
+                    
+                    for filename in files:
+                        filePath = os.path.join(root, filename)
+                        skipIt = False
+                        for skip in self.fullExcludes:
+                            if skip.search(filePath):
+                                skipIt = True
+                                break
+                        if not skipIt and os_platform == "linux":
+                            for skip in self.LINUX_PATH_SKIPS_END:
+                                if filePath.endswith(skip):
+                                    skipIt = True
+                                    break
+                        if not skipIt:
+                            counted += 1
+            except Exception as e:
+                logger.log("DEBUG", "FileScan", f"Cannot pre-count files in {scan_path}: {str(e)}")
+            return counted
+
+        total = _precount_files(path)
         self.processed_files = 0
 
-        num_threads = getattr(args, 'threads', 1) if args else 1
-        if num_threads is None or num_threads < 1:
-            num_threads = 1
+        num_workers = getattr(args, 'threads', 1) if args else 1
+        if num_workers is None or num_workers < 1:
+            num_workers = 1
         
         # Log system information
         cpu_count = get_cpu_count()
         logger.log("INFO", "FileScan", f"System Information: {cpu_count} CPU core(s) detected")
-        logger.log("INFO", "FileScan", f"Configured thread count: {num_threads}")
+        logger.log("INFO", "FileScan", f"Configured worker count: {num_workers}")
         
-        # Show recommendation if using manual thread count
-        if num_threads > 1:
-            optimal_threads, _, recommendation = get_optimal_thread_count(cpu_count)
-            if num_threads != optimal_threads:
-                logger.log("NOTICE", "FileScan", f"Recommendation: Optimal thread count for this system is {optimal_threads} (current: {num_threads})")
+        # Với Windows (spawn), đối tượng Scanner/YARA không pickle được -> fallback threading
+        use_multiprocessing = num_workers > 1 and os_platform != "windows"
+        use_threading = num_workers > 1 and os_platform == "windows"
         
-        use_threads = num_threads > 1
         file_queue = None
+        result_queue = None
+        progress_counter = None
         workers = []
-
-        if use_threads:
-            logger.log("INFO", "FileScan", f"Initializing multi-threaded scanning with {num_threads} worker thread(s)")
-            logger.log("INFO", "FileScan", f"Queue size: {num_threads * 2} files")
-            file_queue = queue.Queue(maxsize=num_threads * 2)
-            for i in range(num_threads):
+        if use_multiprocessing:
+            # Initialize multiprocessing
+            logger.log("INFO", "FileScan", f"Initializing multi-process scanning with {num_workers} worker process(es)")
+            logger.log("INFO", "FileScan", "Using multiprocessing for better CPU utilization (bypasses Python GIL)")
+            
+            # Shared state (avoid Manager to reduce IPC overhead/blocking)
+            progress_counter = multiprocessing.Value('i', 0)
+            result_queue = multiprocessing.Queue()
+            file_queue = multiprocessing.Queue(maxsize=num_workers * 2)
+            
+            self.use_multiprocessing = True
+            self.mp_manager = None
+            self.mp_progress_counter = progress_counter
+            self.mp_result_queue = result_queue
+            
+            # Start worker processes
+            for i in range(num_workers):
+                worker = Process(target=self._worker_process_file,
+                                args=(file_queue, args, app_path_lower, total, result_queue, progress_counter),
+                                name=f"Worker-{i+1}")
+                worker.start()
+                workers.append(worker)
+                logger.log("INFO", "FileScan", f"Worker process {i+1}/{num_workers} started (PID: {worker.pid}, Name: {worker.name})")
+            logger.log("INFO", "FileScan", f"All {num_workers} worker process(es) initialized and ready")
+        elif use_threading:
+            logger.log("NOTICE", "FileScan", f"Windows spawn detected; using multi-threading instead of multiprocessing")
+            logger.log("INFO", "FileScan", f"Initializing multi-threaded scanning with {num_workers} worker thread(s)")
+            file_queue = queue.Queue(maxsize=num_workers * 2)
+            for i in range(num_workers):
                 worker = threading.Thread(target=self._worker_process_file,
-                                           args=(file_queue, args, app_path_lower, total),
+                                           args=(file_queue, args, app_path_lower, total, None, None),
                                            name=f"Worker-{i+1}",
                                            daemon=True)
                 worker.start()
                 workers.append(worker)
-                logger.log("INFO", "FileScan", f"Worker thread {i+1}/{num_threads} started (Thread ID: {worker.ident}, Name: {worker.name})")
-            logger.log("INFO", "FileScan", f"All {num_threads} worker thread(s) initialized and ready")
+                logger.log("INFO", "FileScan", f"Worker thread {i+1}/{num_workers} started (Thread ID: {worker.ident}, Name: {worker.name})")
+            logger.log("INFO", "FileScan", f"All {num_workers} worker thread(s) initialized and ready")
         else:
             logger.log("INFO", "FileScan", "Running in single-threaded mode")
+            self.use_multiprocessing = False
 
         for root, directories, files in os.walk(path, onerror=self.walk_error, followlinks=False):
             # Skip paths that start with ..
@@ -1005,33 +1198,90 @@ class Scanner(object):
             directories[:] = newDirectories
 
             # Loop through files
-            if use_threads and len(files) > 0:
+            if (use_multiprocessing or use_threading) and len(files) > 0:
                 logger.log("DEBUG", "FileScan", f"Queueing {len(files)} file(s) from directory: {root}")
             for filename in files:
                 filePath = os.path.join(root, filename)
                 try:
-                    if use_threads:
+                    if use_multiprocessing or use_threading:
                         # Put file to queue (may block if queue is full, but that's acceptable)
                         file_queue.put(filePath, block=True, timeout=None)
                     else:
+                        # Single-thread fallback
                         self.process_single_file(filePath, args, app_path_lower, total)
-                except queue.Full:
-                    logger.log("ERROR", "FileScan", f"Queue full, cannot schedule file {filePath}")
                 except Exception as e:
                     logger.log("ERROR", "FileScan", f"Error scheduling file {filePath}: {str(e)}")
                     traceback.print_exc()
 
-        if use_threads:
-            logger.log("INFO", "FileScan", f"All files queued. Waiting for {num_threads} worker thread(s) to complete processing...")
+        if use_multiprocessing:
+            logger.log("INFO", "FileScan", f"All files queued. Waiting for {num_workers} worker process(es) to complete processing...")
+            
+            # Start result collector thread
+            def collect_results():
+                results_collected = 0
+                while True:
+                    try:
+                        result = result_queue.get(timeout=1)
+                        if result is None:  # Shutdown signal
+                            break
+                        
+                        # Process result
+                        if result.get('all_file_info'):
+                            all_file_info = result['all_file_info']
+                            with self.result_lock:
+                                all_files_csv["FILE"].append(all_file_info['FILE'])
+                                all_files_csv["TIME_CREATED"].append(all_file_info['TIME_CREATED'])
+                                all_files_csv["TIME_MODIFIED"].append(all_file_info['TIME_MODIFIED'])
+                                all_files_csv["TIME_ACCESSED"].append(all_file_info['TIME_ACCESSED'])
+                                all_files_csv["EXTENSION"].append(all_file_info['EXTENSION'])
+                        
+                        # Process findings
+                        for finding in result.get('findings', []):
+                            with self.result_lock:
+                                MESSAGE.append([finding['score'], finding['message_type'], finding['message_body']])
+                                fileInfo_csv["FILE"].append(finding['file'])
+                                fileInfo_csv["SCORE"].append(finding['score'])
+                                fileInfo_csv["TIME"].append(finding['time'])
+                                fileInfo_csv["DESCRIPTION"].append(finding['description'])
+                                fileInfo_csv["EXTENSION"].append(finding['extension'])
+                        
+                        results_collected += 1
+                    except:
+                        # Timeout or queue empty, continue
+                        continue
+                
+                logger.log("INFO", "FileScan", f"Result collector finished. Collected {results_collected} result(s)")
+            
+            collector_thread = threading.Thread(target=collect_results, daemon=True)
+            collector_thread.start()
+            
+            # Send shutdown signals
+            logger.log("INFO", "FileScan", f"Sending shutdown signals to {num_workers} worker process(es)...")
+            for i in range(num_workers):
+                file_queue.put(None)
+            
+            # Wait for all workers to finish
+            logger.log("INFO", "FileScan", f"Waiting for all worker process(es) to finish...")
+            for i, worker in enumerate(workers, 1):
+                worker.join()
+                logger.log("INFO", "FileScan", f"Worker process {i}/{num_workers} (PID: {worker.pid}, Name: {worker.name}) has finished")
+            
+            # Signal result collector to stop
+            result_queue.put(None)
+            collector_thread.join(timeout=5)
+            
+            logger.log("INFO", "FileScan", f"All {num_workers} worker process(es) have completed successfully")
+        elif use_threading:
+            logger.log("INFO", "FileScan", f"All files queued. Waiting for {num_workers} worker thread(s) to complete processing...")
             file_queue.join()
-            logger.log("INFO", "FileScan", f"All files processed. Sending shutdown signals to {num_threads} worker thread(s)...")
-            for i in range(num_threads):
+            logger.log("INFO", "FileScan", f"All files processed. Sending shutdown signals to {num_workers} worker thread(s)...")
+            for i in range(num_workers):
                 file_queue.put(None)
             logger.log("INFO", "FileScan", f"Waiting for all worker thread(s) to finish...")
             for i, worker in enumerate(workers, 1):
                 worker.join()
-                logger.log("INFO", "FileScan", f"Worker thread {i}/{num_threads} ({worker.name}) has finished")
-            logger.log("INFO", "FileScan", f"All {num_threads} worker thread(s) have completed successfully")
+                logger.log("INFO", "FileScan", f"Worker thread {i}/{num_workers} ({worker.name}) has finished")
+            logger.log("INFO", "FileScan", f"All {num_workers} worker thread(s) have completed successfully")
         
         MESSAGE.sort(key=lambda x: x[0], reverse=True)
         logger.log("INFO", "FileScan", f"Total files to report: {len(MESSAGE)}")
@@ -1615,6 +1865,19 @@ class Scanner(object):
         except Exception:
             logger.log("NOTICE", "Init", "Error reading excludes file: %s" % excludes_file)
 
+    # Multiprocessing pickling helpers to drop/recreate thread locks
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        # Locks are not pickleable; drop and recreate in child
+        state['progress_lock'] = None
+        state['result_lock'] = None
+        return state
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
+        self.progress_lock = threading.Lock()
+        self.result_lock = threading.Lock()
+
     @staticmethod
     def get_application_path():
         try:
@@ -1750,6 +2013,21 @@ def main():
 
 # MAIN ################################################################
 if __name__ == '__main__':
+    # Set multiprocessing start method (required for Windows, optional for Linux)
+    # On Windows, 'spawn' is the only method available
+    # On Linux, 'fork' is faster but 'spawn' is safer
+    try:
+        if os_platform == "windows":
+            multiprocessing.set_start_method('spawn', force=True)
+        else:
+            # Try fork first (faster), fallback to spawn if not available
+            try:
+                multiprocessing.set_start_method('fork', force=True)
+            except (RuntimeError, ValueError):
+                multiprocessing.set_start_method('spawn', force=True)
+    except (RuntimeError, ValueError):
+        # Start method already set, or not available - continue anyway
+        pass
 
     # Signal handler for CTRL+C
     signal_module.signal(signal_module.SIGINT, signal_handler)
