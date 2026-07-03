@@ -29,7 +29,7 @@ rule ANTT_PHP_Static_Command_Enumeration_Webshell {
         ($php_short at 0 or $php_long at 0) and
         
         // At least one command execution function in first 1KB
-        any of ($exec_func) in (0..1024) and
+        $exec_func in (0..1024) and
         
         // Require at least two different enumeration indicators
         (
@@ -42,7 +42,7 @@ rule ANTT_PHP_Static_Command_Enumeration_Webshell {
         
         // At least one recon command appears within ~150 bytes after an exec function
         for any i in (1..#exec_func) : (
-            any of ($cmd_*) in (@exec_func[i] .. @exec_func[i] + 150)
+            for any of ($cmd_*) : ( $ in (@exec_func[i] .. @exec_func[i] + 150) )
         )
 }
 

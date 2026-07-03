@@ -59,11 +59,7 @@ def log_to_stdout(message, mes_type):
                                  re.VERBOSE)
         message = linebreaker.sub(r'\n\1', message)
         # Colorize Key Words
-<<<<<<< Updated upstream:libs/logger.py
-        colorer = re.compile(r'([A-Z_0-9]{2,}:)\s', re.VERBOSE)
-=======
         colorer = re.compile(r'([A-Z_0-9]{2,}):\s', re.VERBOSE)
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/logger.py
         message = colorer.sub(key_color + Style.BRIGHT + r'\1 ' + base_color + Style.NORMAL, message)
 
         # Print to console
@@ -104,11 +100,8 @@ class Logger:
     def __init__(self, hostname, platform,  caller, VERSION=""):
         self.hostname = hostname
         self.caller = caller
-<<<<<<< Updated upstream:libs/logger.py
         self.log_file = "logs/".replace("/", os.sep) + get_server_ip()
-=======
-        self.log_file = "logs/".replace("/", os.sep) + log_file
-        
+
         # Tạo thư mục logs nếu chưa tồn tại
         log_dir = os.path.dirname(self.log_file)
         if log_dir and not os.path.exists(log_dir):
@@ -116,8 +109,6 @@ class Logger:
                 os.makedirs(log_dir, exist_ok=True)
             except Exception as e:
                 print(f"Warning: Cannot create log directory {log_dir}: {e}")
-        
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/logger.py
         if "windows" in platform.lower():
             self.linesep = "\r\n"
 
@@ -159,21 +150,14 @@ class Logger:
         df.to_excel(self.log_file + ".xlsx", index=True)
 
     def log_to_file(self, message, mes_type, module):
-<<<<<<< Updated upstream:libs/logger.py
-        try:
-            # Write to file - Pending
-            with codecs.open(f"{self.log_file}.log", "a", encoding='utf-8') as logfile:
-                logfile.write(Format(f"[{mes_type}]{message}{self.linesep}"))
-=======
         """
         Write log message to file with standardized format: [mes_type] module: message
         """
         try:
             # Format message with [mes_type] prefix and module
             formatted_message = u"[{0}] {1}: {2}".format(mes_type, module, message) if module else u"[{0}] {1}".format(mes_type, message)
-            with codecs.open(self.log_file, "a", encoding='utf-8') as logfile:
-                logfile.write(Format(u"{0}{1}\n", formatted_message, self.linesep))
->>>>>>> Stashed changes:webshell-scan-upgrader/libs/logger.py
+            with codecs.open(f"{self.log_file}.log", "a", encoding='utf-8') as logfile:
+                logfile.write(Format(u"{0}{1}", formatted_message, self.linesep))
         except Exception:
             traceback.print_exc()
             print(f"Cannot print line to log file {0}".format(f"{self.log_file}.log"))

@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: iso-8859-1 -*-
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#
 #
 #  Simple IOC Scanner
 
@@ -13,10 +11,6 @@ import sys
 
 import psutil
 
-try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
 import netaddr
 import platform
 import time
@@ -82,6 +76,18 @@ def generateHashes(filedata, logger=None):
             logger.log("DEBUG", "Helpers", f"Error generating hashes: {str(e)}")
         # Return string "0" instead of integer 0 to avoid TypeError when converting to int with base 16
         return "0", "0", "0"
+
+
+def format_sha256_line(sha256):
+    """Format SHA256 hash for log/report output."""
+    return "SHA256: %s\n " % sha256
+
+
+def virustotal_file_url(file_hash):
+    """VirusTotal GUI lookup URL for a file hash."""
+    if not file_hash or file_hash in ("0", "N/A"):
+        return "N/A"
+    return "https://www.virustotal.com/gui/file/%s" % file_hash
 
 
 def getPlatformFull():
@@ -237,6 +243,10 @@ def print_progress(i, total, logger=None):
     :param logger: optional logger instance for logging milestones
     """
     try:
+        from libs.logger import console_lock
+    except ImportError:
+        console_lock = None
+    try:
         # Get RAM usage with error handling
         ram_percent = None
         try:
@@ -261,8 +271,11 @@ def print_progress(i, total, logger=None):
         # Format progress string
         progress_str = f"{i}/{total} ({percent:.1f}%) {spinner}{sys_inf}"
         
-        # Print with carriage return to overwrite previous line
-        print("\r" + progress_str, end="\t", flush=True)
+        if console_lock is not None:
+            with console_lock():
+                print("\r" + progress_str, end="\t", flush=True)
+        else:
+            print("\r" + progress_str, end="\t", flush=True)
 
     except Exception as e:
         # Log error if logger available

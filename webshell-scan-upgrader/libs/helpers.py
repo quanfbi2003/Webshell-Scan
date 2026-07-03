@@ -84,6 +84,11 @@ def generateHashes(filedata, logger=None):
         return "0", "0", "0"
 
 
+def format_sha256_line(sha256):
+    """Format SHA256 hash for log/report output."""
+    return "SHA256: %s\n " % sha256
+
+
 def getPlatformFull():
     type_info = ""
     try:

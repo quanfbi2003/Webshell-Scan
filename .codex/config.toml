@@ -1,0 +1,17 @@
+# Repository-scoped Codex defaults.
+# Loaded only after this project is trusted by Codex.
+
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+personality = "friendly"
+
+[windows]
+sandbox = "elevated"
+
+[features]
+hooks = true
+multi_agent = true
+shell_snapshot = true

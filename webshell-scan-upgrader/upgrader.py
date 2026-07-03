@@ -732,6 +732,43 @@ class Updater(object):
 
                               ]
 
+    UPDATE_SCOPE_DEFAULT = "webserver-security"
+    WEB_SECURITY_SCOPE_KEYWORDS = [
+        "webshell", "web shell", "web-shell", "memshell", "memory shell",
+        "regeorg", "antsword", "behinder", "rebeyond", "chopper", "caidao",
+        "cknife", "aspxspy", "c99", "c9999", "wso", "b374k", "cmdshell",
+        "php", "phtml", "phar", "jsp", "jspx", "servlet", "aspx", "asp",
+        "iis", "apache", "nginx", "tomcat", "jetty", "jboss", "weblogic",
+        "websphere", "glassfish", "resin", "confluence", "jira", "atlassian",
+        "exchange", "sharepoint", "owa", "f5", "big-ip", "bigip", "fortinet",
+        "paloalto", "palo alto", "pan-os", "citrix", "netscaler", "moveit",
+        "zimbra", "barracuda", "struts", "spring", "shiro", "solr", "jenkins",
+        "wordpress", "drupal", "joomla", "magento", "cve-", "vulnerability",
+        "rce", "remote code execution", "file upload", "upload", "path traversal",
+        "deserialization", "proxy", "tunnel", "backdoor",
+    ]
+    WEB_SECURITY_CODE_PATTERNS = [
+        r"\$_(?:GET|POST|REQUEST|COOKIE|FILES|SERVER)\s*\[",
+        r"php://input|filter_input\s*\(|getallheaders\s*\(",
+        r"request\s*\.\s*(?:getParameter|getInputStream|getReader|getHeader)\s*\(",
+        r"HttpServletRequest|PageContext|ServletInputStream|JspWriter|_jspService",
+        r"Request\s*\.\s*(?:QueryString|Form|Params|Files|InputStream|BinaryRead)",
+        r"Request\s*\(\s*['\"][^'\"]{1,80}['\"]\s*\)",
+        r"<%@?\s*page|<%|runat\s*=\s*['\"]server|<jsp:",
+        r"<\?php[^\\n]{0,800}\b(?:eval|assert|system|shell_exec|passthru|proc_open|popen|exec|base64_decode|gzinflate|gzdecode|str_rot13|strrev|rawurldecode|urldecode|preg_replace)\s*\(",
+        r"(?:\$_(?:GET|POST|REQUEST|COOKIE|FILES)|php://input)[^\\n]{0,800}\b(?:eval|assert|system|shell_exec|passthru|proc_open|popen|exec|base64_decode|gzinflate|gzdecode|str_rot13|strrev)\s*\(",
+        r"(?:request\s*\.\s*(?:getParameter|getInputStream|getReader|getHeader)\s*\(|HttpServletRequest|PageContext)[^\\n]{0,1200}(?:Runtime\s*\.\s*getRuntime\s*\(\s*\)\s*\.\s*exec|new\s+ProcessBuilder|defineClass|ClassLoader)",
+        r"(?:Request\s*\.\s*(?:QueryString|Form|Params|Files|InputStream|BinaryRead)|runat\s*=\s*['\"]server|<%)[^\\n]{0,1200}(?:ProcessStartInfo|Process\s*\.\s*Start|WScript\.Shell|Assembly\.Load|InvokeMember|Eval\s*\(|Execute\s*\()",
+    ]
+    OUT_OF_SCOPE_RULE_PATTERNS = [
+        r'(^|[_\-.])(?:android|ransom|ransomware|miner|coinminer|cryptominer|banker|stealer|keylogger|rootkit|bootkit|worm|botnet|packer|office|vba|macro|malicious_document|pdf|lnk|email|spam|phish)([_\-.]|$)',
+        r'^(?:win32|win64|macos|osx|ios|android)[_.-]',
+        r'^bytecode\.msil',
+        r'^crypto\.',
+        r'^registry\.',
+        r'^traffic[_.-]|^packet[_.-]|^network[_.-]',
+    ]
+
     UPDATE_URL_SIGS = [
         "https://github.com/Neo23x0/signature-base/archive/master.zip",
         "https://github.com/reversinglabs/reversinglabs-yara-rules/archive/develop.zip",
@@ -752,6 +789,9 @@ class Updater(object):
             debug_log = os.path.join(application_path, 'upgrader.log')
         self.log_file = debug_log
         self.log_handle = None
+        self.update_scope = self.UPDATE_SCOPE_DEFAULT
+        self.out_of_scope_files_skipped = 0
+        self.out_of_scope_rules_skipped = 0
 
     def _log(self, level, message, indent=0, console=False):
         """
@@ -956,9 +996,115 @@ class Updater(object):
                 return True
         return False
 
+    def _scope_is_all(self):
+        return getattr(self, "update_scope", self.UPDATE_SCOPE_DEFAULT) == "all"
+
+    def _contains_web_security_scope(self, text):
+        haystack = (text or "").lower()
+        for keyword in self.WEB_SECURITY_SCOPE_KEYWORDS:
+            normalized = keyword.lower()
+            if len(normalized) <= 3 and normalized.isalnum():
+                if re.search(r'(?<![a-z0-9])%s(?![a-z0-9])' % re.escape(normalized), haystack):
+                    return keyword
+                continue
+            if normalized in haystack:
+                return keyword
+        for pattern in self.WEB_SECURITY_CODE_PATTERNS:
+            if re.search(pattern, text or "", re.IGNORECASE | re.DOTALL):
+                return "web-code-pattern"
+        return None
+
+    def _out_of_scope_reason(self, name):
+        target = name or ""
+        for pattern in self.OUT_OF_SCOPE_RULE_PATTERNS:
+            if re.search(pattern, target, re.IGNORECASE):
+                return "broad-malware-or-non-web-pattern"
+        return None
+
+    def _is_signature_file_in_update_scope(self, sig_name, zip_file_path, content):
+        if self._scope_is_all():
+            return True, "scope=all"
+
+        haystack = "%s\n%s\n%s" % (sig_name or "", zip_file_path or "", (content or "")[:20000])
+        keyword = self._contains_web_security_scope(haystack)
+        if keyword:
+            return True, "webserver-security:%s" % keyword
+
+        reason = self._out_of_scope_reason(sig_name or zip_file_path or "")
+        if reason:
+            return False, reason
+        return False, "no-webserver-security-signal"
+
+    def _is_rule_in_update_scope(self, rule_name, sig_name, rule_text):
+        if self._scope_is_all():
+            return True, "scope=all"
+
+        haystack = "%s\n%s\n%s" % (rule_name or "", sig_name or "", (rule_text or "")[:12000])
+        keyword = self._contains_web_security_scope(haystack)
+        if keyword:
+            return True, "webserver-security:%s" % keyword
+
+        reason = self._out_of_scope_reason(rule_name or sig_name or "")
+        if reason:
+            return False, reason
+        return False, "no-webserver-security-signal"
+
+    def _filter_yara_content_by_scope(self, content, sig_name):
+        """
+        Drop marked YARA rule bodies that are outside the updater scope.
+        This keeps imports/additional text and only removes complete rule blocks.
+        """
+        if self._scope_is_all() or not content or '//#########split#########' not in content:
+            return content
+
+        parts = re.split(r'//#########split#########', content)
+        addition_part = parts[0] if parts else ""
+        kept_rules = []
+        skipped = []
+
+        for raw_rule in parts[1:]:
+            rule_text = raw_rule.strip()
+            if not rule_text:
+                continue
+            rule_name = extract_rule_name(rule_text) or "unknown_rule"
+            keep, reason = self._is_rule_in_update_scope(rule_name, sig_name, rule_text)
+            if keep:
+                kept_rules.append(rule_text)
+            else:
+                skipped.append((rule_name, reason))
+
+        for rule_name, reason in skipped:
+            self.out_of_scope_rules_skipped += 1
+            self._debug_log(
+                f"  -> Rule '{rule_name}' skipped by update scope ({reason})",
+                3,
+            )
+            self._log(
+                "NOTICE",
+                f"Skipping rule '{rule_name}' - outside updater scope ({reason})",
+            )
+
+        if skipped:
+            self._log(
+                "NOTICE",
+                f"File {sig_name}: skipped {len(skipped)} out-of-scope rule(s); kept {len(kept_rules)} rule(s)",
+            )
+
+        if not kept_rules:
+            return addition_part.strip()
+
+        filtered = addition_part.rstrip()
+        if filtered:
+            filtered += "\n"
+        filtered += "\n".join("//#########split#########\n%s" % rule for rule in kept_rules)
+        return filtered + "\n"
+
     def update_signatures(self, clean=False, debug_log_file=None):
         # Khởi tạo lại accumulated_rules cho mỗi lần update
         self.accumulated_rules = ""
+        self.out_of_scope_files_skipped = 0
+        self.out_of_scope_rules_skipped = 0
+        self._log_console("INFO", f"Updater scope: {getattr(self, 'update_scope', self.UPDATE_SCOPE_DEFAULT)}")
         
         # Xóa file log cũ nếu tồn tại và mở file log mới
         if self.log_file:
@@ -1079,6 +1225,19 @@ class Updater(object):
 
                             # Replace } thành }\n khi } và rule xuất hiện trên cùng 1 dòng và } đứng trước rule
                             content = re.sub(r'}(?=[^\n]*rule)', r'}\n', content)
+
+                            in_scope, scope_reason = self._is_signature_file_in_update_scope(sigName, zipFilePath, content)
+                            if not in_scope:
+                                self.out_of_scope_files_skipped += 1
+                                self._log(
+                                    "NOTICE",
+                                    f"Skipping file '{sigName}' - outside updater scope ({scope_reason})",
+                                )
+                                self._debug_log(
+                                    f"Skipping file '{sigName}' ({zipFilePath}) - outside updater scope ({scope_reason})",
+                                    1,
+                                )
+                                continue
                             
                             # Tạo file rỗng để đảm bảo nếu quá trình xử lý bị lỗi, file sẽ không còn nội dung cũ
                             try:
@@ -1155,8 +1314,7 @@ class Updater(object):
                                             detected_rules[-1]['in_comment'] = True  # Đánh dấu như đã bị skip
                                             self._debug_log(f"  -> Rule '{old_rule_name}' matches ORIGINAL_RULE_NAME_BLACKLIST pattern, skipping", 3)
                                             self._log("NOTICE", f"Skipping rule '{old_rule_name}' - matches ORIGINAL_RULE_NAME_BLACKLIST pattern (non-webshell rule)")
-                                            # Giữ nguyên dòng gốc (không đổi tên, không thêm marker)
-                                            new_lines.append(line)
+                                            skip_rule_body = True
                                             continue
                                         
                                         # Xử lý đổi tên và thêm marker cho rule
@@ -1299,6 +1457,12 @@ class Updater(object):
 
                                             # Đến đây: không nằm trong string, và đang ở trong phần condition -> có thể thay thế
                                             content = content[:match.start()] + new_name + content[match.end():]
+
+                            content = self._filter_yara_content_by_scope(content, sigName)
+                            if not re.search(r'^\s*(?:private\s+|global\s+)*rule\s+', content, re.MULTILINE):
+                                self._log("NOTICE", f"File {sigName}: no in-scope YARA rules after scope filtering, skipping")
+                                self._debug_log(f"File {sigName}: no active YARA rule after update scope filtering", 1)
+                                continue
 
                             accepted_rules = ""
                             all_failed_rules = []
@@ -1540,6 +1704,8 @@ class Updater(object):
         self._log_console("INFO", f"Total rules detected: {total_rules_detected}")
         self._log_console("INFO", f"Total valid rules: {total_rules_valid}")
         self._log_console("INFO", f"Total invalid rules: {total_rules_invalid}")
+        self._log_console("INFO", f"Out-of-scope files skipped: {self.out_of_scope_files_skipped}")
+        self._log_console("INFO", f"Out-of-scope rules skipped: {self.out_of_scope_rules_skipped}")
         if total_rules_detected > 0:
             valid_percentage = (total_rules_valid / total_rules_detected) * 100
             self._log_console("INFO", f"Valid rules percentage: {valid_percentage:.2f}%")
@@ -1553,6 +1719,8 @@ class Updater(object):
             self._debug_log(f"Total rules detected: {total_rules_detected}", 1)
             self._debug_log(f"Total valid rules: {total_rules_valid}", 1)
             self._debug_log(f"Total invalid rules: {total_rules_invalid}", 1)
+            self._debug_log(f"Out-of-scope files skipped: {self.out_of_scope_files_skipped}", 1)
+            self._debug_log(f"Out-of-scope rules skipped: {self.out_of_scope_rules_skipped}", 1)
             if total_rules_detected > 0:
                 valid_percentage = (total_rules_valid / total_rules_detected) * 100
                 self._debug_log(f"Valid rules percentage: {valid_percentage:.2f}%", 1)
@@ -1607,6 +1775,10 @@ if __name__ == '__main__':
                        help='Path to debug log file (optional, default: upgrader_debug.log in application directory)')
     parser.add_argument('--no-debug-log', action='store_true',
                        help='Disable debug logging (do not create debug log file)')
+    parser.add_argument('--scope', choices=['webserver-security', 'all'], default='webserver-security',
+                       help='Signature update scope. Default keeps webshell/web-server critical security rules only.')
+    parser.add_argument('--allow-broad-malware-rules', action='store_true',
+                       help='Shortcut for --scope all; keeps broad malware/APT rules during update.')
     args = parser.parse_args()
 
     # Logger
@@ -1632,6 +1804,7 @@ if __name__ == '__main__':
 
     # Update
     updater = Updater(True, logger, get_application_path(), debug_log=debug_log_file)
+    updater.update_scope = 'all' if args.allow_broad_malware_rules else args.scope
 
     # Ghi log ra cả logger chung và file log riêng của upgrader
     logger.log("INFO", "Upgrader", "Updating Signatures ...")

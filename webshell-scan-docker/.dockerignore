@@ -1,7 +1,44 @@
-__pycache__
+# Python cache
+__pycache__/
+**/__pycache__/
 *.pyc
-venv
-dist
-build
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# PyInstaller build artifacts
+dist/
+build/
 *.spec
-/output
+
+# Binary output (built inside Docker, không cần gửi lên)
+webshell-scan
+webshell-scan.exe
+_pyssdeep_bundle/
+
+# Runtime output directories (không cần build image)
+output/
+logs/
+quarantine/
+
+# Test samples (không include vào image production)
+tests/samples/
+
+# Scripts không dùng trong build
+copy-file.sh
+build.sh
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

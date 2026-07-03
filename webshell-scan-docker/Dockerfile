@@ -10,7 +10,7 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Cài Python packages
-RUN pip3 install --break-system-packages colorama psutil netaddr pandas pyssdeep yara-python openpyxl pyinstaller requests
+RUN pip3 install --break-system-packages colorama psutil netaddr pandas pyssdeep yara-python openpyxl pyinstaller requests cryptography
 
 # Force rebuild từ đây trở đi mỗi lần build (nếu dùng --build-arg CACHEBUST=...)
 ARG CACHEBUST=1
@@ -18,12 +18,15 @@ ARG CACHEBUST=1
 # 3. Copy chỉ những file cần thiết: webshell-scan.py, libs/ và config/
 COPY webshell-scan.py /app/webshell-scan.py
 COPY libs/ /app/libs/
+COPY config/ /app/config/
 WORKDIR /app
 
 # 4. Tạo __init__.py và kiểm tra cấu trúc
 RUN [ -f /app/webshell-scan.py ] || { echo "[ERROR] Không tìm thấy webshell-scan.py!"; exit 1; } && \
     [ -f /app/libs/logger.py ] || { echo "[ERROR] Không tìm thấy libs/logger.py!"; exit 1; } && \
     [ -f /app/libs/helpers.py ] || { echo "[ERROR] Không tìm thấy libs/helpers.py!"; exit 1; } && \
+    [ -f /app/config/scan-policy.json ] || { echo "[ERROR] Không tìm thấy config/scan-policy.json!"; exit 1; } && \
+    [ -f /app/config/excludes.cfg ] || { echo "[ERROR] Không tìm thấy config/excludes.cfg!"; exit 1; } && \
     [ -d /app/libs/signature-base ] || { echo "[ERROR] Không tìm thấy libs/signature-base/!"; exit 1; } && \
     echo "[OK] Source code đã sẵn sàng, bắt đầu build binary..."
 
@@ -49,12 +52,15 @@ RUN PYSSDEEP_PATH=$(python3 -c "import pyssdeep, os; print(os.path.dirname(pyssd
         --add-data "_pyssdeep_bundle/bin/linux:fuzzy_64.so" \
         --hidden-import libs.helpers \
         --hidden-import libs.logger \
+        --hidden-import libs.review_bundle \
+        --hidden-import cryptography.hazmat.primitives.kdf.pbkdf2 \
+        --hidden-import cryptography.hazmat.primitives.ciphers.aead \
         --hidden-import pyssdeep \
         --runtime-tmpdir ./ \
         webshell-scan.py && \
     cp -f dist/webshell-scan ./webshell-scan && \
     chmod +x webshell-scan && \
-    ./webshell-scan --help >/dev/null 2>&1 && echo "[OK] Binary chạy thử thành công!" || echo "[WARN] Binary tạo xong nhưng chưa test --help"
+    ./webshell-scan --health-check >/dev/null 2>&1 && echo "[OK] Binary health-check thành công!" || { echo "[ERROR] Binary health-check thất bại"; exit 1; }
 
 # 7. Copy binary ra ngoài khi chạy container (giống logic upgrader)
-CMD ["sh", "-c", "cp /app/webshell-scan /output/ && chmod +x /output/webshell-scan && echo '→ Đã copy webshell-scan vào thư mục hiện tại!'"]
+CMD ["sh", "-c", "mkdir -p /output && cp /app/webshell-scan /output/ && cp -a /app/config /output/ && mkdir -p /output/libs && cp -a /app/libs/signature-base /output/libs/ && chmod +x /output/webshell-scan && echo '→ Đã copy webshell-scan, config và signature-base vào thư mục hiện tại!'"]

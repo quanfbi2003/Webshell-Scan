@@ -20,6 +20,8 @@ workspace/
 lib/
 lib64/
 quarantine/
+webshell-scan-docker/review-web/data/
+webshell-scan-docker/config/review-bundle.key
 parts/
 sdist/
 var/
