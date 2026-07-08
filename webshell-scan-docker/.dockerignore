@@ -25,8 +25,11 @@ output/
 logs/
 quarantine/
 
-# Test samples (không include vào image production)
+# Test samples and local AST-DF artifacts (không include vào image production)
 tests/samples/
+dataset/ast-df/
+models/*.pkl
+models/*.joblib
 
 # Scripts không dùng trong build
 copy-file.sh

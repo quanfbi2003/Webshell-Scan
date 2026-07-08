@@ -55,6 +55,7 @@ from libs.logger import *
 
 from libs.scan_policy import load_scan_policy, apply_cli_overrides
 from libs.deobfuscate import iter_deobfuscated_layers, should_deobfuscate
+from libs.ast_df import ast_df_heuristic
 from libs.heuristics import (
     behavior_graph_heuristic,
     entropy_heuristic,
@@ -1268,6 +1269,19 @@ class Scanner(object):
                             file_score += delta
                             file_evidence_groups.add("webshell_capability")
 
+                    ast_score, ast_reason = ast_df_heuristic(
+                        file_data, extension, extracted_file, self.effective_policy,
+                        app_path=self.app_path,
+                    )
+                    if ast_score > 0 and ast_reason:
+                        file_reasons.append(ast_reason)
+                        delta = self._add_group_score(
+                            file_group_scores, "ast_df", ast_score,
+                            cap=int(self.effective_policy.get("ast_df_score_cap", ast_score)))
+                        if delta:
+                            file_score += delta
+                            file_evidence_groups.add("ast_df")
+
                     try:
                         yara_matches, _timed_out = self._collect_yara_matches(
                             file_data, fileType,
@@ -1827,6 +1841,20 @@ class Scanner(object):
                     total_score += delta
                     evidence_groups.add("webshell_capability")
                 local_stats["webshell_capability_hits"] = local_stats.get("webshell_capability_hits", 0) + 1
+
+            ast_score, ast_reason = ast_df_heuristic(
+                fileData, extension, filePath, self.effective_policy,
+                app_path=self.app_path,
+            )
+            if ast_score > 0 and ast_reason:
+                reasons.append(ast_reason)
+                delta = self._add_group_score(
+                    group_scores, "ast_df", ast_score,
+                    cap=int(self.effective_policy.get("ast_df_score_cap", ast_score)))
+                if delta:
+                    total_score += delta
+                    evidence_groups.add("ast_df")
+                local_stats["ast_df_hits"] = local_stats.get("ast_df_hits", 0) + 1
 
             if (self.effective_policy.get("ssdeep_enabled_effective", True)
                     and ssdeep is not None and self.ssdeep_signatures and fileData):

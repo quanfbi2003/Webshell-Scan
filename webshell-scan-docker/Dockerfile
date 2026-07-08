@@ -10,7 +10,7 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Cài Python packages
-RUN pip3 install --break-system-packages colorama psutil netaddr pandas pyssdeep yara-python openpyxl pyinstaller requests cryptography
+RUN pip3 install --break-system-packages colorama psutil netaddr pandas scikit-learn pyssdeep yara-python openpyxl pyinstaller requests cryptography
 
 # Force rebuild từ đây trở đi mỗi lần build (nếu dùng --build-arg CACHEBUST=...)
 ARG CACHEBUST=1

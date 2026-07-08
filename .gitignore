@@ -15,6 +15,9 @@ output/
 downloads/
 eggs/
 workspace/
+webshell-scan-docker/dataset/ast-df/
+webshell-scan-docker/models/*.pkl
+webshell-scan-docker/models/*.joblib
 .eggs/
 .idea/
 lib/
