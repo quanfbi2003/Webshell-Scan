@@ -36,6 +36,9 @@ def validate_case(case, root):
         int(digest, 16)
     except ValueError:
         raise ValueError("sha256 must be hexadecimal")
+    hash_mode = case.get("hash_mode", "raw")
+    if hash_mode not in {"raw", "text_lf"}:
+        raise ValueError("unsupported hash_mode: %s" % hash_mode)
     archive = case.get("archive", False)
     if not isinstance(archive, bool):
         raise ValueError("archive must be boolean")
@@ -45,7 +48,10 @@ def validate_case(case, root):
     if not os.path.isfile(path):
         raise ValueError("case file does not exist: %s" % case["path"])
     with open(path, "rb") as handle:
-        actual = hashlib.sha256(handle.read()).hexdigest()
+        data = handle.read()
+    if hash_mode == "text_lf":
+        data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    actual = hashlib.sha256(data).hexdigest()
     if actual != digest.lower():
         raise ValueError("sha256 mismatch for %s" % case["id"])
     if archive:

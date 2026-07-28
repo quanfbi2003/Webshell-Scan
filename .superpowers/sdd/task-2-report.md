@@ -29,9 +29,19 @@ Status: DONE
 
 No samples were executed, no downloads or secrets were used, and scanner/policy files were not changed.
 
+## Reviewer fix
+
+- Root cause: the original raw SHA-256 values depended on Git's platform-specific text checkout line endings.
+- Added explicit manifest `hash_mode: "text_lf"` and documented validation behavior in `benchmark.py`; hashes now cover canonical LF-normalized text bytes without treating validation errors as clean.
+- Added a regression assertion that all 11 cases validate after LF-normalizing their sample bytes.
+- Corrected provenance to the actual amended commit `e8d778a`.
+- Re-ran manifest, metrics, compile, and diff checks: all passed.
+
 ## Commit
 
-- `ee5a010` — `test: add labeled benchmark manifest and metrics`
+Previous Task 2 commit:
+
+- `e8d778a` — `test: add labeled benchmark manifest and metrics`
 - Commit trailer: `Co-Authored-By: Claude <noreply@anthropic.com>`
 
 ## Concerns

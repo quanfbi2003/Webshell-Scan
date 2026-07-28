@@ -45,6 +45,7 @@ def main():
     assert len(cases) == 11
     assert {case["id"] for case in cases} == EXPECTED_IDS
     assert all(case["archive"] is False for case in cases)
+    assert all(case["hash_mode"] == "text_lf" for case in cases)
 
     rows = _read_rows()
     duplicate_path = _write_rows(rows + [rows[0]])
@@ -90,9 +91,16 @@ def main():
     finally:
         os.unlink(missing_path)
 
-    sample = os.path.join(ROOT, rows[0]["path"])
-    with open(sample, "rb") as handle:
-        assert hashlib.sha256(handle.read()).hexdigest() == rows[0]["sha256"]
+    with tempfile.TemporaryDirectory() as lf_root:
+        for row in rows:
+            source = os.path.join(ROOT, row["path"])
+            target = os.path.join(lf_root, row["path"])
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            with open(source, "rb") as handle:
+                data = handle.read().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+            with open(target, "wb") as handle:
+                handle.write(data)
+        assert len(load_cases(MANIFEST, lf_root)) == 11
     print("benchmark manifest checks passed")
 
 
