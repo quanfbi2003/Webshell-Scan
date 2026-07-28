@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Self-checks for AST-DF artifact compatibility and probability semantics."""
 
+import contextlib
 import importlib.util
 import io
 import os
@@ -34,6 +35,32 @@ def _zip_bytes(*members):
     return stream.getvalue()
 
 
+with contextlib.redirect_stderr(io.StringIO()):
+    try:
+        TRAIN.main(["--threshold", "0.01"])
+    except SystemExit as exc:
+        assert exc.code != 0, "arbitrary CLI threshold must be rejected"
+    else:
+        raise AssertionError("arbitrary CLI threshold must not be accepted")
+
+
+try:
+    TRAIN._redirect_target_is_allowed("https://allowed.example/next.zip", {"allowed.example"}, "https")
+except AttributeError:
+    raise AssertionError("redirect validation helper is required")
+try:
+    TRAIN._redirect_target_is_allowed("https://evil.example/next.zip", {"allowed.example"}, "https")
+except SystemExit:
+    pass
+else:
+    raise AssertionError("redirect to unallowlisted host must be rejected")
+
+try:
+    TRAIN._select_calibration_threshold([(0.9, 1), (0.1, 0)])
+except AttributeError:
+    raise AssertionError("calibration threshold selector is required")
+
+
 with tempfile.TemporaryDirectory() as temp_dir:
     unsafe = os.path.join(temp_dir, "unsafe.zip")
     with open(unsafe, "wb") as handle:
@@ -57,12 +84,6 @@ with tempfile.TemporaryDirectory() as temp_dir:
 
 
 class FakeModel:
-    classes_ = [1, 0]
-
-    def predict_proba(self, rows):
-        return [[0.9, 0.1] for _row in rows]
-
-
     classes_ = [1, 0]
 
     def predict_proba(self, rows):
@@ -97,6 +118,12 @@ with tempfile.TemporaryDirectory() as temp_dir:
 
     with open(model_path, "wb") as handle:
         pickle.dump({"artifact_version": 1, "model": FakeModel(), "metadata": {}}, handle)
+    score, reason = ast_df_heuristic(b"<?php echo $_GET['x'];", ".php", "shell.php", policy)
+    assert (score, reason) == (0, "model_incompatible"), (score, reason)
+
+    malformed = dict(metadata, feature_names=3)
+    with open(model_path, "wb") as handle:
+        pickle.dump({"artifact_version": 1, "model": FakeModel(), "metadata": malformed}, handle)
     score, reason = ast_df_heuristic(b"<?php echo $_GET['x'];", ".php", "shell.php", policy)
     assert (score, reason) == (0, "model_incompatible"), (score, reason)
 

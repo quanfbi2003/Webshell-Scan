@@ -15,3 +15,24 @@ Checks:
 - `git diff --check` — PASS
 
 Concerns: no real dataset was downloaded or trained, per scope; the training command now intentionally fails closed when split directories are absent. No runtime dependencies or secrets were added.
+
+Review fixes:
+- Redirects are checked on every HTTP redirect and must retain the initial scheme and an explicitly allowlisted host.
+- Removed the arbitrary `--threshold` override; artifact thresholds are always selected from calibration scores and locked before test metrics.
+- Non-list/non-tuple feature metadata now returns `(0, "model_incompatible")`; missing model remains `(0, None)`.
+- Existing legacy `benign/webshell` datasets are supported through deterministic family-based materialization into train/calibration/test splits; the help text documents this behavior.
+- Removed duplicate FakeModel attributes and kept no unused legacy loader helpers.
+
+Review regression/results:
+- Redirect allowlist and scheme checks — PASS
+- Arbitrary CLI threshold cannot become artifact threshold — PASS
+- Malformed feature metadata explicit incompatible status — PASS
+- Legacy layout support path and split documentation — PASS (no real training executed)
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_model_metadata.py` — PASS
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_ast_df.py` — PASS
+- `python -m py_compile webshell-scan-docker/libs/ast_df.py webshell-scan-docker/tools/train-ast-df.py webshell-scan-docker/tests/check_model_metadata.py` — PASS
+- `python webshell-scan-docker/tools/train-ast-df.py --help` — PASS
+- `git diff --check` — PASS
+
+No downloads, samples, real training, or secrets used.
+This review fix was committed separately from the original task commit.

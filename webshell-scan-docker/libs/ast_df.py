@@ -138,7 +138,7 @@ def _validate_artifact(artifact, extension):
     if model is None or not isinstance(metadata, dict):
         raise ValueError("AST-DF artifact metadata is missing")
     names = metadata.get("feature_names")
-    if tuple(names or ()) != FEATURE_NAMES:
+    if not isinstance(names, (list, tuple)) or tuple(names) != FEATURE_NAMES:
         raise ValueError("AST-DF model feature_names mismatch")
     if metadata.get("feature_hash") != _feature_hash(FEATURE_NAMES):
         raise ValueError("AST-DF model feature_hash mismatch")

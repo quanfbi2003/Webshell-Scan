@@ -101,6 +101,32 @@ def _sha256_file(path):
     return digest.hexdigest()
 
 
+def _redirect_target_is_allowed(url, allow_hosts, initial_scheme):
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme not in ("http", "https") or parsed.scheme != initial_scheme:
+        raise SystemExit("redirect scheme is not allowed: %s" % url)
+    if parsed.hostname not in allow_hosts:
+        raise SystemExit("redirect host not allowed: %s" % (parsed.hostname or ""))
+    return parsed
+
+
+class _AllowlistedRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def __init__(self, allow_hosts, initial_scheme):
+        self.allow_hosts = set(allow_hosts)
+        self.initial_scheme = initial_scheme
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        _redirect_target_is_allowed(newurl, self.allow_hosts, self.initial_scheme)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+def _select_calibration_threshold(scores_and_labels):
+    candidates = sorted(set([0.5] + [score for score, _label in scores_and_labels]))
+    return max(candidates, key=lambda value: (
+        sum(score >= value and label == 1 for score, label in scores_and_labels),
+        -sum(score >= value and label == 0 for score, label in scores_and_labels),
+        value,
+    ))
+
 def _download_zip(url, allow_hosts, dataset_dir, sha256=None):
     parsed = urllib.parse.urlparse(url)
     if parsed.scheme not in ("http", "https"):
@@ -117,8 +143,9 @@ def _download_zip(url, allow_hosts, dataset_dir, sha256=None):
     filename = os.path.basename(parsed.path) or "dataset.zip"
     zip_path = os.path.join(downloads_dir, filename)
     request = urllib.request.Request(url, headers={"User-Agent": "webshell-scan-training/1"})
+    opener = urllib.request.build_opener(_AllowlistedRedirectHandler(allow_hosts, parsed.scheme))
     try:
-        with urllib.request.urlopen(request, timeout=DOWNLOAD_TIMEOUT_SECONDS) as response, open(zip_path, "wb") as output:
+        with opener.open(request, timeout=DOWNLOAD_TIMEOUT_SECONDS) as response, open(zip_path, "wb") as output:
             length = response.headers.get("Content-Length")
             if length and int(length) > MAX_ARCHIVE_BYTES:
                 raise SystemExit("downloaded ZIP exceeds size limit")
@@ -200,14 +227,53 @@ def _load_split_rows(split_dir):
     return rows, counts
 
 
+def _materialize_legacy_splits(dataset_dir, legacy_dirs):
+    generated_root = os.path.join(dataset_dir, ".ast-df-generated-splits")
+    if os.path.isdir(generated_root):
+        shutil.rmtree(generated_root)
+    split_dirs = {split: os.path.join(generated_root, split) for split in _SPLITS}
+    for split_dir in split_dirs.values():
+        for label in ("benign", "webshell"):
+            os.makedirs(os.path.join(split_dir, label), exist_ok=True)
+
+    for label in ("benign", "webshell"):
+        root = legacy_dirs[label]
+        grouped = {}
+        for dirpath, _dirnames, filenames in os.walk(root):
+            for filename in sorted(filenames):
+                ext = os.path.splitext(filename)[1].lower()
+                if ext not in _SUPPORTED_EXT:
+                    continue
+                path = os.path.join(dirpath, filename)
+                relative = os.path.relpath(path, root).replace(os.sep, "/")
+                parts = relative.split("/")
+                family = "/".join(parts[:-1]) if len(parts) > 1 else os.path.splitext(parts[0])[0].lower()
+                grouped.setdefault(family, []).append((path, relative))
+        families = sorted(grouped)
+        if len(families) < len(_SPLITS):
+            raise SystemExit("legacy dataset needs at least three families per label")
+        for index, family in enumerate(families):
+            split_dir = split_dirs[_SPLITS[index % len(_SPLITS)]]
+            for path, relative in grouped[family]:
+                destination = os.path.join(split_dir, label, relative.replace("/", os.sep))
+                os.makedirs(os.path.dirname(destination), exist_ok=True)
+                shutil.copy2(path, destination)
+    return split_dirs
+
 def _load_splits(dataset_dir):
+    split_dirs = {split: os.path.join(dataset_dir, split) for split in _SPLITS}
+    if not all(os.path.isdir(path) for path in split_dirs.values()):
+        legacy = {label: os.path.join(dataset_dir, label) for label in ("benign", "webshell")}
+        if not all(os.path.isdir(path) for path in legacy.values()):
+            missing = next(path for path in split_dirs.values() if not os.path.isdir(path))
+            raise SystemExit("missing dataset split directory: %s" % missing)
+        split_dirs = _materialize_legacy_splits(dataset_dir, legacy)
+
     samples_by_split = {}
     families = {}
     counts_by_split = {}
     for split in _SPLITS:
-        split_dir = os.path.join(dataset_dir, split)
-        if not os.path.isdir(split_dir):
-            raise SystemExit("missing dataset split directory: %s" % split_dir)
+        split_dir = split_dirs[split]
         rows, counts = _load_split_rows(split_dir)
         samples_by_split[split] = [item + (split_dir,) for item in rows]
         counts_by_split[split] = counts
@@ -262,10 +328,9 @@ def _new_model():
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        description="Train optional AST-DF model from dataset/ast-df/{train,calibration,test}/{benign,webshell}.")
+        description="Train optional AST-DF model from dataset/ast-df/{train,calibration,test}/{benign,webshell}; legacy benign/webshell is split deterministically by family.")
     parser.add_argument("--dataset-dir", default=_default_dataset_dir())
     parser.add_argument("--output", default=_default_output())
-    parser.add_argument("--threshold", type=float, default=None)
     parser.add_argument("--download-url", action="append", default=[])
     parser.add_argument("--download-sha256", action="append", default=[])
     parser.add_argument("--allow-host", action="append", default=[])
@@ -285,19 +350,9 @@ def main(argv=None):
     model, model_name = _new_model()
     model.fit(rows, labels)
 
-    calibration_labels = [item[2] for item in samples["calibration"]]
-    calibration_scores = [_predict_probability(model, item[3]) for item in samples["calibration"]]
-    if args.threshold is None:
-        candidates = sorted(set([0.5] + calibration_scores))
-        threshold = max(candidates, key=lambda value: (
-            sum(score >= value and label == 1 for score, label in zip(calibration_scores, calibration_labels)),
-            -sum(score >= value and label == 0 for score, label in zip(calibration_scores, calibration_labels)),
-            value,
-        ))
-    else:
-        threshold = float(args.threshold)
-        if not 0.0 <= threshold <= 1.0:
-            raise SystemExit("--threshold must be between 0 and 1")
+    calibration_pairs = [
+        (_predict_probability(model, item[3]), item[2]) for item in samples["calibration"]]
+    threshold = _select_calibration_threshold(calibration_pairs)
 
     test_scores = [_predict_probability(model, item[3]) for item in samples["test"]]
     test_labels = [item[2] for item in samples["test"]]
