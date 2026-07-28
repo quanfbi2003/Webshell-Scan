@@ -277,11 +277,12 @@ def _load_splits(dataset_dir):
         rows, counts = _load_split_rows(split_dir)
         samples_by_split[split] = [item + (split_dir,) for item in rows]
         counts_by_split[split] = counts
-        for path, _ext, _label, _vector, _root in samples_by_split[split]:
+        for path, _ext, label, _vector, _root in samples_by_split[split]:
             family = _family_key(path, split_dir)
-            if family in families:
+            family_key = (label, family)
+            if family_key in families:
                 raise SystemExit("dataset family appears in multiple splits: %s" % family)
-            families[family] = split
+            families[family_key] = split
     return samples_by_split, counts_by_split
 
 def _iter_samples(dataset_dir):

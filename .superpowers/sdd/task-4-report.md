@@ -36,3 +36,17 @@ Review regression/results:
 
 No downloads, samples, real training, or secrets used.
 This review fix was committed separately from the original task commit.
+
+Re-review fix:
+- Legacy family leakage validation now keys family identity by `(label, family)`, allowing benign/webshell to share names while still rejecting a same-label family crossing splits.
+- Added a temporary regression fixture with shared benign/webshell families `a`, `b`, and `c`; `_load_splits` succeeds and verifies no same-label family leakage.
+
+Re-review results:
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_model_metadata.py` — PASS
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_ast_df.py` — PASS
+- `python -m py_compile webshell-scan-docker/libs/ast_df.py webshell-scan-docker/tools/train-ast-df.py webshell-scan-docker/tests/check_model_metadata.py` — PASS
+- `python webshell-scan-docker/tools/train-ast-df.py --help` — PASS
+- `git diff --check` — PASS
+
+No downloads, samples, real training, or secrets used.
+This re-review fix was committed separately.

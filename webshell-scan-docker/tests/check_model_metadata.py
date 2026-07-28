@@ -62,6 +62,25 @@ except AttributeError:
 
 
 with tempfile.TemporaryDirectory() as temp_dir:
+    legacy_root = os.path.join(temp_dir, "legacy")
+    for label in ("benign", "webshell"):
+        for family in ("a", "b", "c"):
+            family_dir = os.path.join(legacy_root, label, family)
+            os.makedirs(family_dir, exist_ok=True)
+            with open(os.path.join(family_dir, "sample.php"), "wb") as handle:
+                handle.write(b"<?php echo 1;")
+    legacy_splits, _counts = TRAIN._load_splits(legacy_root)
+    assert all(legacy_splits[split] for split in TRAIN._SPLITS)
+    for label in (0, 1):
+        seen = {}
+        for split in TRAIN._SPLITS:
+            for _path, _ext, row_label, _vector, _root in legacy_splits[split]:
+                if row_label != label:
+                    continue
+                family = TRAIN._family_key(_path, legacy_splits[split][0][4])
+                assert family not in seen, "same-label family leaked across splits"
+                seen[family] = split
+
     unsafe = os.path.join(temp_dir, "unsafe.zip")
     with open(unsafe, "wb") as handle:
         handle.write(_zip_bytes(("../escape.txt", b"no")))
