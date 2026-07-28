@@ -5,6 +5,10 @@ import os
 import pickle
 import re
 
+import hashlib
+import json
+import math
+
 _SUPPORTED_EXT = {
     ".php", ".phtml", ".php5", ".php7", ".phar", ".inc",
     ".jsp", ".jspx",
@@ -77,6 +81,97 @@ FEATURE_NAMES = (
     "is_jsp",
     "is_aspnet",
 )
+
+EXTRACTOR_VERSION = "ast-df-features-v1"
+ARTIFACT_VERSION = 1
+
+
+def _feature_hash(feature_names):
+    payload = json.dumps(list(feature_names), ensure_ascii=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def build_model_metadata(model, feature_names, extractor_version, dataset_hash, threshold, language=None):
+    names = tuple(feature_names)
+    if names != FEATURE_NAMES:
+        raise ValueError("AST-DF model feature_names mismatch")
+    if not isinstance(extractor_version, str) or not extractor_version:
+        raise ValueError("AST-DF extractor_version is required")
+    if not isinstance(dataset_hash, str) or not dataset_hash:
+        raise ValueError("AST-DF dataset_hash is required")
+    threshold = float(threshold)
+    if not math.isfinite(threshold) or not 0.0 <= threshold <= 1.0:
+        raise ValueError("AST-DF threshold must be between 0 and 1")
+    classes = getattr(model, "classes_", None)
+    if classes is not None and 1 not in list(classes):
+        raise ValueError("AST-DF model has no positive class")
+    if language is not None and (not isinstance(language, str) or not language):
+        raise ValueError("AST-DF language must be a non-empty string")
+    model_hash = hashlib.sha256(pickle.dumps(model, protocol=pickle.HIGHEST_PROTOCOL)).hexdigest()
+    return {
+        "feature_names": list(names),
+        "feature_hash": _feature_hash(names),
+        "extractor_version": extractor_version,
+        "dataset_hash": dataset_hash,
+        "model_sha256": model_hash,
+        "positive_label": 1,
+        "threshold": threshold,
+        "language": language,
+    }
+
+
+def _language_for_extension(extension):
+    if extension in _PHP_EXT:
+        return "php"
+    if extension in _JSP_EXT:
+        return "jsp"
+    if extension in _ASPNET_EXT:
+        return "aspnet"
+    return None
+
+
+def _validate_artifact(artifact, extension):
+    if not isinstance(artifact, dict) or artifact.get("artifact_version") != ARTIFACT_VERSION:
+        raise ValueError("AST-DF artifact version is unsupported")
+    model = artifact.get("model")
+    metadata = artifact.get("metadata")
+    if model is None or not isinstance(metadata, dict):
+        raise ValueError("AST-DF artifact metadata is missing")
+    names = metadata.get("feature_names")
+    if tuple(names or ()) != FEATURE_NAMES:
+        raise ValueError("AST-DF model feature_names mismatch")
+    if metadata.get("feature_hash") != _feature_hash(FEATURE_NAMES):
+        raise ValueError("AST-DF model feature_hash mismatch")
+    if metadata.get("extractor_version") != EXTRACTOR_VERSION:
+        raise ValueError("AST-DF extractor_version mismatch")
+    if not isinstance(metadata.get("dataset_hash"), str) or not metadata["dataset_hash"]:
+        raise ValueError("AST-DF dataset_hash is missing")
+    expected_model_hash = metadata.get("model_sha256")
+    if not isinstance(expected_model_hash, str) or len(expected_model_hash) != 64:
+        raise ValueError("AST-DF model hash is missing")
+    actual_model_hash = hashlib.sha256(pickle.dumps(model, protocol=pickle.HIGHEST_PROTOCOL)).hexdigest()
+    if expected_model_hash != actual_model_hash:
+        raise ValueError("AST-DF model hash mismatch")
+    if metadata.get("positive_label") != 1:
+        raise ValueError("AST-DF positive_label is unsupported")
+    try:
+        threshold = float(metadata["threshold"])
+    except (KeyError, TypeError, ValueError):
+        raise ValueError("AST-DF threshold is missing")
+    if not math.isfinite(threshold) or not 0.0 <= threshold <= 1.0:
+        raise ValueError("AST-DF threshold is invalid")
+    language = metadata.get("language")
+    if language is not None and language != _language_for_extension(extension):
+        raise ValueError("AST-DF artifact language is unsupported")
+    classes = getattr(model, "classes_", None)
+    try:
+        valid_classes = set(classes) == {0, 1} and len(classes) == 2
+    except (TypeError, ValueError):
+        valid_classes = False
+    if not valid_classes:
+        raise ValueError("AST-DF model class ordering is unknown")
+    return model, threshold
+
 
 _MODEL_CACHE = {}
 
@@ -178,12 +273,14 @@ def _model_path(path, app_path):
 
 
 def _load_model(path):
+    stat = os.stat(path)
+    cache_key = (stat.st_mtime_ns, stat.st_size)
     cached = _MODEL_CACHE.get(path)
-    if cached is not None:
-        return cached
+    if cached is not None and cached[0] == cache_key:
+        return cached[1]
     with open(path, "rb") as handle:
         model = pickle.load(handle)
-    _MODEL_CACHE[path] = model
+    _MODEL_CACHE[path] = (cache_key, model)
     return model
 
 
@@ -196,17 +293,28 @@ def _unwrap_model(model):
     return model
 
 
-def _predict_probability(model, vector):
+def _predict_probability(model, vector, positive_label=1):
     model = _unwrap_model(model)
     rows = [vector]
     if hasattr(model, "predict_proba"):
         proba = model.predict_proba(rows)
         first = proba[0]
-        if hasattr(first, "__len__") and len(first) > 1:
-            return float(first[1])
-        return float(first[0])
+        if not hasattr(first, "__len__"):
+            return float(first)
+        classes = getattr(model, "classes_", None)
+        if classes is None:
+            if len(first) == 1:
+                return float(first[0])
+            raise ValueError("AST-DF model class ordering is unknown")
+        try:
+            index = list(classes).index(positive_label)
+        except ValueError:
+            raise ValueError("AST-DF model positive class is missing")
+        if index >= len(first):
+            raise ValueError("AST-DF model probability shape is invalid")
+        return float(first[index])
     prediction = model.predict(rows)[0]
-    return float(prediction)
+    return float(prediction == positive_label)
 
 
 def ast_df_heuristic(file_data, extension, file_path, policy, app_path=None):
@@ -228,11 +336,14 @@ def ast_df_heuristic(file_data, extension, file_path, policy, app_path=None):
 
     try:
         features = extract_features(file_data, ext, file_path, policy)
-        probability = _predict_probability(_load_model(model_path), feature_vector(features))
+        artifact = _load_model(model_path)
+        model, threshold = _validate_artifact(artifact, ext)
+        probability = _predict_probability(model, feature_vector(features))
+    except ValueError:
+        return 0, "model_incompatible"
     except Exception:
         return 0, None
 
-    threshold = float(policy.get("ast_df_min_probability", 0.70))
     if probability < threshold:
         return 0, None
 
