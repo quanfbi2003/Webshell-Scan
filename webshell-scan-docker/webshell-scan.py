@@ -68,6 +68,7 @@ from libs.scan_health import (
     STATUS_ERROR,
 )
 from libs import ssdeep_db
+from libs.evidence import canonical_candidate_id, decision_reason, fuse_behavioral_scores, make_evidence
 from libs.vt_browser import prompt_browser_verdict
 from libs.review_bundle import build_review_zip, bundle_passphrase, write_review_bundle
 
@@ -617,6 +618,8 @@ class Scanner(object):
         if os.path.isfile(obfusc_yar):
             logger.log("INFO", "Init", "Obfuscate YARA rules loaded from custom/yara_obfuscate.yar")
 
+        self.benchmark_records = []
+
     def _custom_ioc_file_looks_like_hash(self, ioc_file):
         try:
             with codecs.open(ioc_file, 'r', encoding='utf-8', errors='replace') as handle:
@@ -998,6 +1001,118 @@ class Scanner(object):
         return None
 
     @staticmethod
+    def _new_evidence_record(detector, score=0, reason=None, layer="raw", coverage="full",
+                             truncated=False, status="clean", rule_version=None, model_version=None):
+        return make_evidence(
+            detector, score=score, reason=reason, layer=layer, coverage=coverage,
+            truncated=truncated, status=status, rule_version=rule_version,
+            model_version=model_version,
+        )
+
+    @staticmethod
+    def _append_detector_evidence(evidence, detector, score=0, reason=None, layer="raw",
+                                  coverage="full", truncated=False, status="clean"):
+        evidence.append(make_evidence(
+            detector, score=score, reason=reason, layer=layer, coverage=coverage,
+            truncated=truncated, status=status,
+        ))
+
+    def _finalize_candidate_evidence(self, evidence, group_scores, legacy_score,
+                                     status="clean", coverage="full", min_score=None,
+                                     gray_min=None, yara_timeout=False):
+        evidence = list(evidence or [])
+        detector_names = ("filename_ioc", "hash_ioc", "ssdeep", "entropy", "source_sink",
+                          "behavior_graph", "webshell_capability", "ast_df", "yara")
+        existing = {item.get("detector") for item in evidence}
+        for detector in detector_names:
+            if detector in existing:
+                continue
+            evidence.append(self._new_evidence_record(
+                detector, score=int(group_scores.get(detector, 0)), status=status, coverage=coverage,
+            ))
+        evidence_groups = sorted({item["detector"] for item in evidence if int(item.get("score", 0)) > 0})
+        behavioral = {name: int(group_scores.get(name, 0)) for name in (
+            "source_sink", "behavior_graph", "webshell_capability", "ast_df"
+        ) if int(group_scores.get(name, 0)) > 0}
+        non_behavioral = sum(
+            int(score) for name, score in (group_scores or {}).items() if name not in behavioral
+        )
+        shadow_score = non_behavioral + fuse_behavioral_scores(
+            behavioral,
+            float(self.effective_policy.get("behavioral_corroboration_ratio", 0.25)),
+            int(self.effective_policy.get("behavioral_fusion_cap", 100)),
+        )
+        min_score = self._get_min_score(None) if min_score is None else int(min_score)
+        gray_min = self._get_gray_zone_min() if gray_min is None else int(gray_min)
+        legacy_decision = decision_reason(
+            evidence_groups, legacy_score, min_score, gray_min,
+            yara_timeout=yara_timeout, coverage=coverage,
+        )
+        shadow_decision = decision_reason(
+            evidence_groups, shadow_score, min_score, gray_min,
+            yara_timeout=yara_timeout, coverage=coverage,
+        )
+        positive = [item for item in evidence if int(item.get("score", 0)) > 0]
+        primary = max(positive, key=lambda item: int(item.get("score", 0))) if positive else None
+        return {
+            "legacy_score": int(legacy_score),
+            "shadow_score": int(shadow_score),
+            "evidence": evidence,
+            "evidence_groups": evidence_groups,
+            "primary_evidence": primary,
+            "legacy_decision": legacy_decision,
+            "shadow_decision": shadow_decision,
+            "status": status,
+            "coverage": coverage,
+        }
+
+    @staticmethod
+    def _build_evidence_records(group_scores, reasons, coverage="full", status="clean",
+                                truncated=False, status_by_detector=None):
+        patterns = {
+            "filename_ioc": "File Name IOC",
+            "hash_ioc": "Malware Hash",
+            "ssdeep": "SSDeep",
+            "entropy": "Entropy",
+            "source_sink": "SourceSink",
+            "behavior_graph": "BehaviorGraph",
+            "webshell_capability": "WebshellCapability",
+            "ast_df": "AST-DF",
+            "yara": "Yara Rule",
+        }
+        status_by_detector = status_by_detector or {}
+        records = []
+        for detector, marker in patterns.items():
+            reason = next((item for item in reasons if marker.lower() in item.lower()), None)
+            detector_status = status_by_detector.get(detector, status)
+            detector_coverage = coverage
+            detector_truncated = truncated
+            if detector == "ast_df" and reason == "model_incompatible":
+                detector_status = "model_incompatible"
+                detector_coverage = "partial"
+                detector_truncated = True
+            if reason and "middle bytes omitted" in reason:
+                detector_coverage = "partial"
+                detector_truncated = True
+            records.append(make_evidence(
+                detector,
+                score=int(group_scores.get(detector, 0)),
+                reason=reason,
+                coverage=detector_coverage,
+                truncated=detector_truncated,
+                status=detector_status,
+            ))
+        return records
+
+    def _record_benchmark(self, record, result_dict=None, benchmark_sink=None):
+        if result_dict is not None:
+            result_dict.setdefault("benchmark", []).append(record)
+        elif benchmark_sink is not None:
+            benchmark_sink.append(record)
+        else:
+            self.benchmark_records.append(record)
+
+    @staticmethod
     def _ssdeep_blocksize(digest):
         try:
             return int(str(digest).split(":", 1)[0])
@@ -1077,11 +1192,26 @@ class Scanner(object):
         """Extract archive to temporary directory. Returns list of extracted file paths."""
         return self.archive_extractor.extract(archive_path, temp_dir)
 
-    def scan_archive_recursive(self, archive_path, temp_dir, parent_archive="", args=None, _depth=0):
+    @staticmethod
+    def _archive_member_relative_path(extracted_file):
+        parts = os.path.normpath(extracted_file).split(os.sep)
+        extracted_indexes = [i for i, part in enumerate(parts) if part.endswith("_extracted")]
+        if extracted_indexes:
+            return "/".join(parts[extracted_indexes[-1] + 1:])
+        return os.path.basename(os.path.normpath(extracted_file))
+
+    def scan_archive_recursive(self, archive_path, temp_dir, parent_archive="", args=None,
+                               _depth=0, benchmark_sink=None, root_archive_sha256=None):
         """Scan archive and recursively scan nested archives. Returns list of findings.
-        
+
         _depth: current recursion depth — protected against zip bomb via MAX_ARCHIVE_DEPTH.
         """
+        if benchmark_sink is None:
+            benchmark_sink = self.benchmark_records
+        if root_archive_sha256 is None:
+            archive_bytes = self.get_file_data(archive_path)
+            _, _, root_archive_sha256 = generateHashes(archive_bytes) if archive_bytes else ("0", "0", "N/A")
+
         findings = []  # List of (file_path, score, reasons, archive_path)
 
         # Zip bomb / deeply nested archive protection
@@ -1112,7 +1242,8 @@ class Scanner(object):
                                 # Recursively scan nested archive (pass incremented depth)
                                 nested_parent = f"{parent_archive} -> {os.path.basename(archive_path)}" if parent_archive else os.path.basename(archive_path)
                                 nested_findings = self.scan_archive_recursive(
-                                    extracted_file, temp_dir, nested_parent, args, _depth=_depth + 1)
+                                    extracted_file, temp_dir, nested_parent, args, _depth=_depth + 1,
+                                    benchmark_sink=benchmark_sink, root_archive_sha256=root_archive_sha256)
                                 findings.extend(nested_findings)
                             else:
                                 logger.log("DEBUG", "Archive", f"Skipping nested archive {extracted_file} (size {nested_size} > {self.MAX_ARCHIVE_SIZE})")
@@ -1124,6 +1255,7 @@ class Scanner(object):
                     file_score = 0
                     file_group_scores = {}
                     file_evidence_groups = set()
+                    evidence = []
                     self.scan_stats.inc("archive_files_scanned", 1)
 
                     if self._is_git_metadata_file(extracted_file):
@@ -1282,13 +1414,20 @@ class Scanner(object):
                             file_score += delta
                             file_evidence_groups.add("ast_df")
 
+                    archive_yara_timeout = False
+                    archive_status = "clean"
+                    archive_coverage = "full"
                     try:
-                        yara_matches, _timed_out = self._collect_yara_matches(
+                        yara_matches, archive_yara_timeout = self._collect_yara_matches(
                             file_data, fileType,
                             filename_str,
                             filepath_str,
                             extension, md5, timeout=20.0,
                         )
+                        if archive_yara_timeout:
+                            archive_status = "manual_review"
+                            archive_coverage = "partial"
+                            file_reasons.append("YARA SCAN TIMEOUT: archive member requires manual review")
                         if yara_matches:
                             yara_cap = int(self.effective_policy.get("yara_score_cap", 120))
                             for (layer_name, score, rule, description, reference, matched_strings, author) in yara_matches:
@@ -1309,10 +1448,38 @@ class Scanner(object):
                                 else:
                                     self.scan_stats.inc("yara_matches_deobfuscated", 1)
                     except Exception as exc:
+                        archive_status = "error"
+                        archive_coverage = "partial"
                         logger.log("WARNING", "Archive",
                                    "YARA/deobfuscate scan failed for %s: %s" % (extracted_file, exc))
                         self.scan_stats.inc("files_errors", 1)
-                    
+
+                    member_path = self._archive_member_relative_path(extracted_file)
+                    member_sha256 = sha256
+                    evidence = self._build_evidence_records(
+                        file_group_scores, file_reasons, coverage=archive_coverage,
+                        status=archive_status, truncated=archive_coverage != "full",
+                        status_by_detector={"yara": "timeout" if archive_yara_timeout else archive_status},
+                    )
+                    benchmark = self._finalize_candidate_evidence(
+                        evidence, file_group_scores, file_score, status=archive_status,
+                        coverage=archive_coverage, min_score=self._get_min_score(args),
+                        gray_min=self._get_gray_zone_min(), yara_timeout=archive_yara_timeout,
+                    )
+                    archive_chain = tuple(item.strip() for item in parent_archive.split(" -> ") if item.strip())
+                    benchmark.update({
+                        "path": archive_path,
+                        "sha256": member_sha256,
+                        "archive_sha256": root_archive_sha256,
+                        "member_path": member_path,
+                        "member_sha256": member_sha256,
+                        "candidate_id": canonical_candidate_id(
+                            "scanner", member_sha256, archive_path, root_archive_sha256,
+                            archive_chain, member_path, member_sha256,
+                        ),
+                    })
+                    self._record_benchmark(benchmark, benchmark_sink=benchmark_sink)
+
                     fp_gate_reason = library_fp_gate(
                         extracted_file, extension, file_data, file_evidence_groups, file_reasons,
                         self.effective_policy)
@@ -1327,9 +1494,9 @@ class Scanner(object):
                         file_reasons.append(self._confidence_summary(file_score, file_evidence_groups))
 
                     # If file has findings above report threshold, add to results
-                    if file_score >= self._get_min_score(args) and not self._single_evidence_gray_reason(
+                    if (file_score >= self._get_min_score(args) and not self._single_evidence_gray_reason(
                         file_score, file_evidence_groups
-                    ):
+                    ) and not archive_yara_timeout):
                         archive_info = f" (in archive: {parent_archive} -> {os.path.basename(archive_path)})" if parent_archive else f" (in archive: {os.path.basename(archive_path)})"
                         findings.append((extracted_file + archive_info, file_score, file_reasons, archive_path, sha256))
                         
@@ -1516,16 +1683,24 @@ class Scanner(object):
             'all_file_info': None,
             'findings': [],
             'gray_zone': [],
+            'benchmark': [],
+            'status': 'scheduled',
         }
         
         try:
             # Call the original function but capture results
             self._process_single_file_internal(filePath, args, app_path_lower, total, is_multiprocessing, progress_counter, result)
+            result['status'] = 'completed'
         except Exception as e:
+            result['status'] = 'error'
+            result['error'] = str(e)
             logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
             traceback.print_exc()
-        
-        return result if (result['all_file_info'] or result['findings']) else None
+
+        return result if (
+            result['all_file_info'] or result['findings'] or result['gray_zone'] or result['benchmark']
+            or result['status'] == 'error'
+        ) else None
 
     def process_single_file(self, filePath, args, app_path_lower, total):
         """Process a single file path (hashing, YARA, etc.) - threading mode."""
@@ -1539,6 +1714,9 @@ class Scanner(object):
             total_score = 0
             group_scores = {}
             evidence_groups = set()
+            evidence = []
+            coverage = "full"
+            candidate_status = "clean"
             yara_timeout_occurred = False
             all_file_recorded = [False]
 
@@ -1603,7 +1781,11 @@ class Scanner(object):
                 temp_dir = tempfile.mkdtemp(prefix='webshell_scan_archive_')
                 try:
                     logger.log("INFO", "Archive", f"Scanning archive: {filePath} (size: {file_size} bytes)")
-                    archive_findings = self.scan_archive_recursive(filePath, temp_dir, "", args)
+                    archive_benchmark = []
+                    archive_findings = self.scan_archive_recursive(
+                        filePath, temp_dir, "", args, benchmark_sink=archive_benchmark)
+                    for record in archive_benchmark:
+                        self._record_benchmark(record, result_dict=result_dict)
 
                     if archive_findings:
                         for finding_file, finding_score, finding_reasons, original_archive, f_sha256 in archive_findings:
@@ -1951,6 +2133,31 @@ class Scanner(object):
 
             except Exception as e:
                 logger.log("ERROR", "FileScan", f"Cannot YARA scan file: {filePathCleaned}. Error: {str(e)}")
+
+            if yara_timeout_occurred:
+                coverage = "partial"
+                candidate_status = "manual_review"
+            evidence = self._build_evidence_records(
+                group_scores, reasons, coverage=coverage, status=candidate_status,
+                truncated=coverage != "full",
+                status_by_detector={"yara": "timeout" if yara_timeout_occurred else candidate_status},
+            )
+            benchmark = self._finalize_candidate_evidence(
+                evidence, group_scores, total_score, status=candidate_status,
+                coverage=coverage, min_score=self._get_min_score(args),
+                gray_min=self._get_gray_zone_min(), yara_timeout=yara_timeout_occurred,
+            )
+            benchmark.update({
+                "path": filePath,
+                "sha256": sha256,
+                "archive_sha256": None,
+                "member_path": None,
+                "member_sha256": None,
+                "candidate_id": canonical_candidate_id(
+                    "scanner", sha256, filePath,
+                ),
+            })
+            self._record_benchmark(benchmark, result_dict=result_dict)
 
             fp_gate_reason = library_fp_gate(
                 filePath, extension, fileData, evidence_groups, reasons, self.effective_policy)
