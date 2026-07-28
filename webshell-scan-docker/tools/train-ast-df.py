@@ -270,7 +270,7 @@ def _load_splits(dataset_dir):
         split_dirs = _materialize_legacy_splits(dataset_dir, legacy)
 
     samples_by_split = {}
-    families = {}
+    family_splits = {}
     counts_by_split = {}
     for split in _SPLITS:
         split_dir = split_dirs[split]
@@ -280,37 +280,15 @@ def _load_splits(dataset_dir):
         for path, _ext, label, _vector, _root in samples_by_split[split]:
             family = _family_key(path, split_dir)
             family_key = (label, family)
-            if family_key in families:
+            previous_split = family_splits.setdefault(family_key, split)
+            if previous_split != split:
                 raise SystemExit("dataset family appears in multiple splits: %s" % family)
-            families[family_key] = split
     return samples_by_split, counts_by_split
 
-def _iter_samples(dataset_dir):
-    for label_name, label in (("benign", 0), ("webshell", 1)):
-        root = os.path.join(dataset_dir, label_name)
-        if not os.path.isdir(root):
-            raise SystemExit("missing dataset directory: %s" % root)
-        for dirpath, _dirnames, filenames in os.walk(root):
-            for filename in filenames:
-                ext = os.path.splitext(filename)[1].lower()
-                if ext in _SUPPORTED_EXT:
-                    yield os.path.join(dirpath, filename), ext, label
 
 
-def _load_rows(dataset_dir):
-    rows = []
-    labels = []
-    counts = {0: 0, 1: 0}
-    for path, ext, label in _iter_samples(dataset_dir):
-        with open(path, "rb") as handle:
-            data = handle.read()
-        features = extract_features(data, ext, path, {})
-        rows.append(feature_vector(features))
-        labels.append(label)
-        counts[label] += 1
-    if len(set(labels)) != 2:
-        raise SystemExit("dataset needs at least one benign and one webshell sample")
-    return rows, labels, counts
+
+
 
 
 def _new_model():

@@ -35,6 +35,39 @@ def _zip_bytes(*members):
     return stream.getvalue()
 
 
+with tempfile.TemporaryDirectory() as temp_dir:
+    split_root = os.path.join(temp_dir, "explicit")
+    for split in TRAIN._SPLITS:
+        for label in ("benign", "webshell"):
+            family_dir = os.path.join(split_root, split, label, split + "-family")
+            os.makedirs(family_dir, exist_ok=True)
+            with open(os.path.join(family_dir, "one.php"), "wb") as handle:
+                handle.write(b"<?php echo 1;")
+            if split == "train":
+                with open(os.path.join(family_dir, "two.php"), "wb") as handle:
+                    handle.write(b"<?php echo 2;")
+    explicit_splits, _counts = TRAIN._load_splits(split_root)
+    assert len(explicit_splits["train"]) == 4
+
+    crossing_root = os.path.join(temp_dir, "crossing")
+    for split in ("train", "calibration"):
+        family_dir = os.path.join(crossing_root, split, "benign", "family")
+        os.makedirs(family_dir, exist_ok=True)
+        with open(os.path.join(family_dir, "sample.php"), "wb") as handle:
+            handle.write(b"<?php echo 1;")
+    for split in TRAIN._SPLITS:
+        family_dir = os.path.join(crossing_root, split, "webshell", "other")
+        os.makedirs(family_dir, exist_ok=True)
+        with open(os.path.join(family_dir, "sample.php"), "wb") as handle:
+            handle.write(b"<?php eval($_GET['x']);")
+    try:
+        TRAIN._load_splits(crossing_root)
+    except SystemExit:
+        pass
+    else:
+        raise AssertionError("same-label family crossing splits must be rejected")
+
+
 with contextlib.redirect_stderr(io.StringIO()):
     try:
         TRAIN.main(["--threshold", "0.01"])

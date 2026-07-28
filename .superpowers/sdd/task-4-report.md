@@ -50,3 +50,18 @@ Re-review results:
 
 No downloads, samples, real training, or secrets used.
 This re-review fix was committed separately.
+
+Final review fix:
+- Family tracking now records the first split for each `(label, family)` and permits additional files from that family in the same split; only a later different split is rejected.
+- Added regression coverage for two files sharing one label/family in one split and a same-label family crossing train/calibration that must fail.
+- Removed obsolete `_iter_samples` and `_load_rows` helpers.
+
+Final review results:
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_model_metadata.py` — PASS
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_ast_df.py` — PASS
+- `python -m py_compile webshell-scan-docker/libs/ast_df.py webshell-scan-docker/tools/train-ast-df.py webshell-scan-docker/tests/check_model_metadata.py` — PASS
+- `python webshell-scan-docker/tools/train-ast-df.py --help` — PASS
+- `git diff --check` — PASS
+
+No downloads, samples, real training, or secrets used.
+This final review fix was committed separately.
