@@ -108,6 +108,15 @@ def main():
         assert not normal["findings"] and not normal["gray_zone"]
         assert not os.path.isdir(os.path.join(ROOT, "quarantine", "sample.php"))
 
+        scanner.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
+        scanner._record_terminal_status({"terminal_status": "completed"})
+        scanner._record_terminal_status({"terminal_status": "skipped"})
+        scanner._record_terminal_status({"terminal_status": "unsupported"})
+        scanner._record_terminal_status({"terminal_status": "error"})
+        assert scanner._assert_terminal_accounting(4, scanner.terminal_counts) == {
+            "scheduled": 4, "completed": 1, "skipped": 1, "unsupported": 1, "errors": 1,
+        }
+
         archive_result = scanner.process_single_file_with_result(archive, _args(), ROOT.lower(), 1)
         assert archive_result and archive_result["benchmark"], archive_result
         archive_record = archive_result["benchmark"][0]

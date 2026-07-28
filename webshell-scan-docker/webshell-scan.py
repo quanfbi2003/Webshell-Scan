@@ -620,6 +620,8 @@ class Scanner(object):
 
         self.benchmark_records = []
 
+        self.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
+
     def _custom_ioc_file_looks_like_hash(self, ioc_file):
         try:
             with codecs.open(ioc_file, 'r', encoding='utf-8', errors='replace') as handle:
@@ -1111,6 +1113,38 @@ class Scanner(object):
             benchmark_sink.append(record)
         else:
             self.benchmark_records.append(record)
+
+    def _record_terminal_status(self, result):
+        status = (result or {}).get("terminal_status") or (result or {}).get("status") or "error"
+        key = {
+            "completed": "completed",
+            "skipped": "skipped",
+            "unsupported": "unsupported",
+            "error": "errors",
+            "errors": "errors",
+        }.get(status, "errors")
+        with self.result_lock:
+            self.terminal_counts[key] = self.terminal_counts.get(key, 0) + 1
+
+    @staticmethod
+    def _assert_terminal_accounting(scheduled, terminal_counts):
+        completed = int(terminal_counts.get("completed", 0))
+        skipped = int(terminal_counts.get("skipped", 0))
+        unsupported = int(terminal_counts.get("unsupported", 0))
+        errors = int(terminal_counts.get("errors", 0))
+        accounted = completed + skipped + unsupported + errors
+        if int(scheduled) != accounted:
+            raise AssertionError(
+                "terminal accounting mismatch: scheduled=%s completed=%s skipped=%s unsupported=%s errors=%s"
+                % (scheduled, completed, skipped, unsupported, errors)
+            )
+        return {
+            "scheduled": int(scheduled),
+            "completed": completed,
+            "skipped": skipped,
+            "unsupported": unsupported,
+            "errors": errors,
+        }
 
     @staticmethod
     def _ssdeep_blocksize(digest):
@@ -1633,36 +1667,31 @@ class Scanner(object):
                 if 'logger' in globals():
                     logger.log("ERROR", "FileScan", f"Error getting file from queue: {str(e)}")
                 break
-                
+
             if file_path is None:
-                # Shutdown signal received
                 if not is_multiprocessing:
                     try:
                         file_queue.task_done()
-                    except:
+                    except Exception:
                         pass
                 if 'logger' in globals():
                     worker_type = "process" if is_multiprocessing else "thread"
                     logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) received shutdown signal. Processed {files_processed} file(s)")
                 break
-            
+
+            result = None
             try:
                 if 'logger' in globals():
                     logger.log("DEBUG", "FileScan", f"Worker {process_name} (ID: {process_id}) processing file: {file_path}")
-                
-                # Process file and get results
-                result = self.process_single_file_with_result(file_path, args, app_path_lower, total, is_multiprocessing, progress_counter)
-                
-                # Send result back to main process if using multiprocessing
-                if is_multiprocessing and result:
-                    try:
-                        result_queue.put(result)
-                    except Exception as e:
-                        if 'logger' in globals():
-                            logger.log("ERROR", "FileScan", f"Error putting result to queue: {str(e)}")
-                
+                result = self.process_single_file_with_result(
+                    file_path, args, app_path_lower, total, is_multiprocessing, progress_counter,
+                )
                 files_processed += 1
             except Exception as e:
+                result = {
+                    "status": "error", "terminal_status": "error", "error": str(e),
+                    "all_file_info": None, "findings": [], "gray_zone": [], "benchmark": [],
+                }
                 if 'logger' in globals():
                     logger.log("ERROR", "FileScan", f"Unhandled error scanning file {file_path}: {str(e)}")
                 traceback.print_exc()
@@ -1670,37 +1699,50 @@ class Scanner(object):
                 if not is_multiprocessing:
                     try:
                         file_queue.task_done()
-                    except:
+                    except Exception:
                         pass
-        
+
+            if is_multiprocessing and result is not None:
+                try:
+                    result_queue.put(result)
+                except Exception as e:
+                    if 'logger' in globals():
+                        logger.log("ERROR", "FileScan", f"Error putting result to queue: {str(e)}")
+            elif result is not None:
+                self._record_terminal_status(result)
+
         if 'logger' in globals():
             worker_type = "process" if is_multiprocessing else "thread"
             logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) finished. Total files processed: {files_processed}")
 
     def process_single_file_with_result(self, filePath, args, app_path_lower, total, is_multiprocessing=False, progress_counter=None):
-        """Process a single file and return result dict for multiprocessing, or None for threading mode."""
+        """Process one input and always return a terminal result envelope."""
         result = {
             'all_file_info': None,
             'findings': [],
             'gray_zone': [],
             'benchmark': [],
             'status': 'scheduled',
+            'terminal_status': 'error',
         }
-        
         try:
-            # Call the original function but capture results
-            self._process_single_file_internal(filePath, args, app_path_lower, total, is_multiprocessing, progress_counter, result)
+            self._process_single_file_internal(
+                filePath, args, app_path_lower, total, is_multiprocessing, progress_counter, result,
+            )
             result['status'] = 'completed'
+            result['terminal_status'] = result.get('terminal_status') or 'completed'
         except Exception as e:
             result['status'] = 'error'
+            result['terminal_status'] = 'error'
             result['error'] = str(e)
             logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
             traceback.print_exc()
-
-        return result if (
-            result['all_file_info'] or result['findings'] or result['gray_zone'] or result['benchmark']
-            or result['status'] == 'error'
-        ) else None
+        if result.get("terminal_status") == "completed":
+            if result.get("benchmark") or result.get("findings") or result.get("gray_zone"):
+                result["terminal_status"] = "completed"
+            elif result.get("all_file_info"):
+                result["terminal_status"] = "skipped"
+        return result
 
     def process_single_file(self, filePath, args, app_path_lower, total):
         """Process a single file path (hashing, YARA, etc.) - threading mode."""
@@ -1711,6 +1753,8 @@ class Scanner(object):
         local_stats = {}
         try:
             reasons = []
+            if result_dict is not None:
+                result_dict["terminal_status"] = "completed"
             total_score = 0
             group_scores = {}
             evidence_groups = set()
@@ -1735,6 +1779,8 @@ class Scanner(object):
                 file_size = file_stat.st_size
             except (OSError, IOError) as e:
                 logger.log("DEBUG", "FileScan", f"Cannot stat file {filePath}: {str(e)}")
+                if result_dict is not None:
+                    result_dict["terminal_status"] = "error"
                 return
 
             # Exclude check BEFORE logging/all_files_csv to avoid oversized logs
@@ -2295,6 +2341,8 @@ class Scanner(object):
         gray_zone_csv = new_gray_zone_report()
         self.scan_stats = ScanStats()
         self.scan_stats.set_lock(self.result_lock)
+        self.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
+        scheduled_inputs = 0
         # Check if path exists
         if not os.path.exists(path):
             logger.log("ERROR", "FileScan", "None Existing Scanning Path %s ...  " % path)
@@ -2418,16 +2466,20 @@ class Scanner(object):
             self.use_multiprocessing = False
 
         def _schedule_file(filePath):
+            nonlocal scheduled_inputs
+            scheduled_inputs += 1
             try:
                 if use_multiprocessing or use_threading:
-                    # Put file to queue (may block if queue is full, but that's acceptable)
                     file_queue.put(filePath, block=True, timeout=None)
                 else:
-                    # Single-thread fallback
-                    self.process_single_file(filePath, args, app_path_lower, total)
+                    result = self.process_single_file_with_result(
+                        filePath, args, app_path_lower, total, False, None)
+                    self._record_terminal_status(result)
             except Exception as e:
+                self.terminal_counts["errors"] += 1
                 logger.log("ERROR", "FileScan", f"Error scheduling file {filePath}: {str(e)}")
                 traceback.print_exc()
+
 
         if single_file:
             logger.log("DEBUG", "FileScan", f"Queueing single file: {path}")
@@ -2502,6 +2554,7 @@ class Scanner(object):
                                 gz['file'], gz['sha256'], gz['score'], gz['time'],
                                 gz['description'], gz['extension'])
 
+                        self._record_terminal_status(result)
                         if result.get("stats"):
                             self.scan_stats.merge(result["stats"])
 
@@ -2546,7 +2599,9 @@ class Scanner(object):
                 worker.join()
                 logger.log("INFO", "FileScan", f"Worker thread {i}/{num_workers} ({worker.name}) has finished")
             logger.log("INFO", "FileScan", f"All {num_workers} worker thread(s) have completed successfully")
-        
+
+        terminal_summary = self._assert_terminal_accounting(scheduled_inputs, self.terminal_counts)
+        logger.log("INFO", "FileScan", "Terminal accounting: %s" % terminal_summary)
         log_runtime_summary(
             logger, self.scan_stats,
             findings_count=len(MESSAGE),
