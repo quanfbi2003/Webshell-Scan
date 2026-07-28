@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Load scan policy from config/scan-policy.json."""
 
+import copy
+import hashlib
 import json
 import os
 
@@ -65,12 +67,61 @@ DEFAULT_POLICY = {
     "vt_max_file_bytes": 5 * 1024 * 1024,
     "vt_include_findings": True,
     "vt_include_gray_zone": True,
+    "shadow_mode": True,
+    "behavioral_fusion_enabled": False,
+    "behavioral_corroboration_ratio": 0.25,
+    "behavioral_fusion_cap": 100,
+    "quarantine_requires_confirmed": True,
 }
 
 
+_BOOL_KEYS = {key for key, value in DEFAULT_POLICY.items() if isinstance(value, bool)}
+_INT_KEYS = {
+    key for key, value in DEFAULT_POLICY.items()
+    if type(value) is int and key != "behavioral_corroboration_ratio"
+}
+_FLOAT_KEYS = {"entropy_threshold", "ast_df_min_probability", "behavioral_corroboration_ratio"}
+_LIST_KEYS = {key for key, value in DEFAULT_POLICY.items() if isinstance(value, list)}
+
+
+def validate_scan_policy(policy):
+    """Return validated known policy values merged over safe defaults."""
+    if not isinstance(policy, dict):
+        raise ValueError("scan policy must be an object")
+
+    validated = copy.deepcopy(DEFAULT_POLICY)
+    for key, value in policy.items():
+        if key not in DEFAULT_POLICY:
+            continue
+        if key in _BOOL_KEYS:
+            valid = type(value) is bool
+        elif key in _INT_KEYS:
+            valid = type(value) is int and value >= 0
+        elif key in _FLOAT_KEYS:
+            valid = type(value) in (int, float) and not isinstance(value, bool)
+        elif key in _LIST_KEYS:
+            valid = isinstance(value, list) and all(isinstance(item, str) for item in value)
+        else:
+            valid = type(value) is type(DEFAULT_POLICY[key])
+        if not valid:
+            raise ValueError("invalid scan policy value for %s" % key)
+        if key in ("behavioral_corroboration_ratio", "ast_df_min_probability") and not 0 <= value <= 1:
+            raise ValueError("%s must be between 0 and 1" % key)
+        validated[key] = copy.deepcopy(value)
+    return validated
+
+
+def policy_sha256(policy):
+    """Return the SHA-256 of a canonical JSON policy representation."""
+    if not isinstance(policy, dict):
+        raise TypeError("policy must be a dict")
+    canonical = json.dumps(policy, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
 def load_scan_policy(app_path, logger=None):
-    """Merge config/scan-policy.json over defaults."""
-    policy = dict(DEFAULT_POLICY)
+    """Merge and validate config/scan-policy.json over defaults."""
+    policy = validate_scan_policy(DEFAULT_POLICY)
     config_path = os.path.join(app_path, "config", "scan-policy.json")
     if not os.path.isfile(config_path):
         if logger:
@@ -79,8 +130,7 @@ def load_scan_policy(app_path, logger=None):
     try:
         with open(config_path, "r", encoding="utf-8") as handle:
             user_policy = json.load(handle)
-        if isinstance(user_policy, dict):
-            policy.update(user_policy)
+        policy = validate_scan_policy(user_policy)
         if logger:
             logger.log("INFO", "Init", "Loaded scan policy from %s" % config_path)
     except Exception as exc:

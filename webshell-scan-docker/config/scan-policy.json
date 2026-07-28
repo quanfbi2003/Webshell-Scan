@@ -56,5 +56,10 @@
   "vt_ssdeep_enabled": false,
   "vt_max_file_bytes": 5242880,
   "vt_include_findings": true,
-  "vt_include_gray_zone": true
+  "vt_include_gray_zone": true,
+  "shadow_mode": true,
+  "behavioral_fusion_enabled": false,
+  "behavioral_corroboration_ratio": 0.25,
+  "behavioral_fusion_cap": 100,
+  "quarantine_requires_confirmed": true
 }
