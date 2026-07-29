@@ -1086,6 +1086,8 @@ class Scanner(object):
         records = []
         for detector, marker in patterns.items():
             reason = next((item for item in reasons if marker.lower() in item.lower()), None)
+            if detector == "ast_df" and any(str(item).strip() == "model_incompatible" for item in reasons):
+                reason = "model_incompatible"
             detector_status = status_by_detector.get(detector, status)
             detector_coverage = coverage
             detector_truncated = truncated
@@ -1113,6 +1115,28 @@ class Scanner(object):
             benchmark_sink.append(record)
         else:
             self.benchmark_records.append(record)
+
+    def _error_benchmark(self, path, error, archive_sha256=None, member_path=None,
+                         member_sha256="N/A", archive_chain=()):
+        evidence = self._build_evidence_records(
+            {}, ["read_error: %s" % error], coverage="partial", status="error", truncated=True,
+        )
+        benchmark = self._finalize_candidate_evidence(
+            evidence, {}, 0, status="error", coverage="partial",
+            min_score=self._get_min_score(None), gray_min=self._get_gray_zone_min(),
+        )
+        benchmark.update({
+            "path": path,
+            "sha256": member_sha256 if member_sha256 != "N/A" else "N/A",
+            "archive_sha256": archive_sha256,
+            "member_path": member_path,
+            "member_sha256": member_sha256 if member_path is not None else None,
+            "candidate_id": canonical_candidate_id(
+                "scanner", member_sha256, archive_sha256 or "archive", archive_sha256,
+                archive_chain, member_path, member_sha256 if member_path is not None else None,
+            ),
+        })
+        return benchmark
 
     def _record_terminal_status(self, result):
         status = (result or {}).get("terminal_status") or (result or {}).get("status") or "error"
@@ -1196,15 +1220,12 @@ class Scanner(object):
 
     @staticmethod
     def get_file_data(filePath):
-        fileData = b''
         try:
-            # Read file complete
-            with open(filePath, 'rb') as f:
-                fileData = f.read()
-        except Exception as e:
-            logger.log("DEBUG", "FileScan", f"Cannot open file {filePath}: {str(e)}")
-        finally:
-            return fileData
+            with open(filePath, 'rb') as handle:
+                return handle.read()
+        except Exception as exc:
+            logger.log("ERROR", "FileScan", "Cannot open file %s: %s" % (filePath, exc))
+            raise
     
     def is_archive_file(self, filePath):
         """Check if file is an archive based on extension"""
@@ -1439,6 +1460,11 @@ class Scanner(object):
                         file_data, extension, extracted_file, self.effective_policy,
                         app_path=self.app_path,
                     )
+                    if ast_reason:
+                        file_reasons.append(ast_reason)
+                        if ast_reason == "model_incompatible":
+                            archive_status = "model_incompatible"
+                            archive_coverage = "partial"
                     if ast_score > 0 and ast_reason:
                         file_reasons.append(ast_reason)
                         delta = self._add_group_score(
@@ -1484,6 +1510,7 @@ class Scanner(object):
                     except Exception as exc:
                         archive_status = "error"
                         archive_coverage = "partial"
+                        file_reasons.append("YARA/deobfuscate scan error: %s" % exc)
                         logger.log("WARNING", "Archive",
                                    "YARA/deobfuscate scan failed for %s: %s" % (extracted_file, exc))
                         self.scan_stats.inc("files_errors", 1)
@@ -1495,6 +1522,14 @@ class Scanner(object):
                         status=archive_status, truncated=archive_coverage != "full",
                         status_by_detector={"yara": "timeout" if archive_yara_timeout else archive_status},
                     )
+                    if len(file_data) > int(self.effective_policy.get("behavior_graph_max_file_bytes", 5 * 1024 * 1024)):
+                        for item in evidence:
+                            if item["detector"] == "behavior_graph":
+                                item["coverage"], item["truncated"] = "partial", True
+                    if len(file_data) > int(self.effective_policy.get("webshell_capability_max_file_bytes", 2 * 1024 * 1024)):
+                        for item in evidence:
+                            if item["detector"] == "webshell_capability":
+                                item["coverage"], item["truncated"] = "partial", True
                     benchmark = self._finalize_candidate_evidence(
                         evidence, file_group_scores, file_score, status=archive_status,
                         coverage=archive_coverage, min_score=self._get_min_score(args),
@@ -1709,7 +1744,11 @@ class Scanner(object):
                     if 'logger' in globals():
                         logger.log("ERROR", "FileScan", f"Error putting result to queue: {str(e)}")
             elif result is not None:
+                for record in result.get("benchmark", []):
+                    self._record_benchmark(record)
                 self._record_terminal_status(result)
+                if result.get("terminal_status") == "error":
+                    logger.log("ERROR", "FileScan", "Worker returned terminal error for %s" % file_path)
 
         if 'logger' in globals():
             worker_type = "process" if is_multiprocessing else "thread"
@@ -1735,6 +1774,7 @@ class Scanner(object):
             result['status'] = 'error'
             result['terminal_status'] = 'error'
             result['error'] = str(e)
+            result.setdefault("benchmark", []).append(self._error_benchmark(filePath, e))
             logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
             traceback.print_exc()
         if result.get("terminal_status") == "completed":
@@ -1943,7 +1983,21 @@ class Scanner(object):
 
             fileType = get_file_type(filePath, self.filetype_magics, self.max_filetype_magics, logger)
 
-            fileData = self.get_file_data(filePath)
+            try:
+                fileData = self.get_file_data(filePath)
+            except Exception as exc:
+                error_benchmark = self._error_benchmark(filePath, exc)
+                if result_dict is not None:
+                    result_dict["benchmark"].append(error_benchmark)
+                    result_dict["terminal_status"] = "error"
+                    result_dict["status"] = "error"
+                    result_dict["error"] = str(exc)
+                else:
+                    self._record_benchmark(error_benchmark)
+                self._record_all_file(all_file_info, sha256="N/A",
+                                      is_multiprocessing=is_multiprocessing, result_dict=result_dict,
+                                      recorded_flag=all_file_recorded)
+                return
 
             matchType = None
             matchDesc = None
@@ -2178,7 +2232,15 @@ class Scanner(object):
                         [layer for layer in layers_seen if layer != "raw"])
 
             except Exception as e:
+                candidate_status = "error"
+                coverage = "partial"
                 logger.log("ERROR", "FileScan", f"Cannot YARA scan file: {filePathCleaned}. Error: {str(e)}")
+                local_stats["files_errors"] = local_stats.get("files_errors", 0) + 1
+                reasons.append("YARA/deobfuscate scan error: %s" % e)
+                if result_dict is not None:
+                    result_dict["terminal_status"] = "error"
+                    result_dict["status"] = "error"
+                    result_dict["error"] = str(e)
 
             if yara_timeout_occurred:
                 coverage = "partial"
@@ -2342,6 +2404,7 @@ class Scanner(object):
         self.scan_stats = ScanStats()
         self.scan_stats.set_lock(self.result_lock)
         self.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
+        self.benchmark_records = []
         scheduled_inputs = 0
         # Check if path exists
         if not os.path.exists(path):
@@ -2474,6 +2537,8 @@ class Scanner(object):
                 else:
                     result = self.process_single_file_with_result(
                         filePath, args, app_path_lower, total, False, None)
+                    for record in result.get("benchmark", []):
+                        self._record_benchmark(record)
                     self._record_terminal_status(result)
             except Exception as e:
                 self.terminal_counts["errors"] += 1
@@ -2536,6 +2601,9 @@ class Scanner(object):
                                 all_files_csv["TIME_MODIFIED"].append(all_file_info['TIME_MODIFIED'])
                                 all_files_csv["TIME_ACCESSED"].append(all_file_info['TIME_ACCESSED'])
                                 all_files_csv["EXTENSION"].append(all_file_info['EXTENSION'])
+
+                        for record in result.get("benchmark", []):
+                            self._record_benchmark(record)
 
                         # Process findings
                         for finding in result.get('findings', []):

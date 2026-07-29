@@ -102,20 +102,93 @@ def main():
         normal = scanner.process_single_file_with_result(plain, _args(), ROOT.lower(), 1)
         assert normal and normal["benchmark"], normal
         normal_record = normal["benchmark"][0]
-        assert normal_record["legacy_score"] == normal_record["legacy_score"]
+        assert normal_record["legacy_score"] == 167
         assert {item["detector"] for item in normal_record["evidence"]} >= {"yara", "source_sink"}
-        assert normal_record["shadow_score"] is not None
-        assert not normal["findings"] and not normal["gray_zone"]
-        assert not os.path.isdir(os.path.join(ROOT, "quarantine", "sample.php"))
+
+        incompatible = scanner._build_evidence_records({}, ["model_incompatible"])
+        ast_record = next(item for item in incompatible if item["detector"] == "ast_df")
+        assert ast_record["status"] == "model_incompatible"
+        assert ast_record["coverage"] == "partial"
+        assert ast_record["truncated"] is True
+
+        def yara_error(*args, **kwargs):
+            raise RuntimeError("broken yara")
+
+        scanner._collect_yara_matches = yara_error
+        yara_error_result = scanner.process_single_file_with_result(plain, _args(), ROOT.lower(), 1)
+        assert yara_error_result["terminal_status"] == "error"
+        assert yara_error_result["benchmark"][0]["status"] == "error"
+        assert yara_error_result["benchmark"][0]["coverage"] == "partial"
+
+        def read_error(*args, **kwargs):
+            raise OSError("read denied")
+
+        scanner._collect_yara_matches = lambda *args, **kwargs: ([], False)
+        scanner.get_file_data = read_error
+        read_error_result = scanner.process_single_file_with_result(plain, _args(), ROOT.lower(), 1)
+        assert read_error_result["terminal_status"] == "error"
+        assert read_error_result["benchmark"][0]["status"] == "error"
+        assert read_error_result["benchmark"][0]["coverage"] == "partial"
+
+        scanner = _scanner()
+        scanner.app_path = ROOT
+        scanner.fullExcludes = []
+        scanner.startExcludes = []
+        scanner.LINUX_PATH_SKIPS_END = set()
+        scanner.use_multiprocessing = False
+        scanner.processed_files = 0
+        scanner.progress_lock = __import__("threading").Lock()
+        scanner.result_lock = __import__("threading").Lock()
+        scanner.archive_extractor = webshell_scan.SafeArchiveExtractor()
+        scanner.benign_filter = webshell_scan.BenignFileFilter()
+        scanner.filetype_magics = {}
+        scanner.max_filetype_magics = 0
+        scanner.filename_iocs = []
+        scanner.false_hashes = {}
+        scanner.hashes_md5 = scanner.hashes_sha1 = scanner.hashes_sha256 = {}
+        scanner.hashes_md5_list = scanner.hashes_sha1_list = scanner.hashes_sha256_list = []
+        scanner.ssdeep_signatures = []
+        scanner.ssdeep_index = {}
+        scanner.yara_rules = []
+        scanner.scan_stats = ScanStats()
+        scanner.quarantine_manager = type("NoQuarantine", (), {"move": lambda *args, **kwargs: (None, None)})()
+        scanner._get_min_score = lambda args: int(getattr(args, "min_score", 1000))
+        scanner._get_gray_zone_min = lambda: 25
+        scanner._increment_progress = lambda *args: None
+        scanner._is_scanner_internal_path = lambda path: False
+        scanner._collect_yara_matches = lambda *args, **kwargs: ([], False)
+        scanner.scan_path(plain, _args(threads=1))
+        assert len(scanner.benchmark_records) == 1
+        assert scanner.benchmark_records[0]["path"] == plain
+
+        previous_platform = webshell_scan.os_platform
+        try:
+            webshell_scan.os_platform = "windows"
+            scanner.scan_path(plain, _args(threads=2))
+            assert len(scanner.benchmark_records) == 1
+            assert scanner.benchmark_records[0]["path"] == plain
+        finally:
+            webshell_scan.os_platform = previous_platform
+
+        original_internal = scanner._process_single_file_internal
+        scanner._process_single_file_internal = lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError("worker failure"))
+        internal_error = scanner.process_single_file_with_result(plain, _args(), ROOT.lower(), 1)
+        scanner._process_single_file_internal = original_internal
+        scanner.get_file_data = webshell_scan.Scanner.get_file_data
 
         scanner.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
-        scanner._record_terminal_status({"terminal_status": "completed"})
-        scanner._record_terminal_status({"terminal_status": "skipped"})
-        scanner._record_terminal_status({"terminal_status": "unsupported"})
-        scanner._record_terminal_status({"terminal_status": "error"})
-        assert scanner._assert_terminal_accounting(4, scanner.terminal_counts) == {
-            "scheduled": 4, "completed": 1, "skipped": 1, "unsupported": 1, "errors": 1,
-        }
+        scanner._record_terminal_status(internal_error)
+        assert scanner._assert_terminal_accounting(1, scanner.terminal_counts)["errors"] == 1
+        try:
+            scanner._assert_terminal_accounting(1, {"completed": 1, "skipped": 1, "unsupported": 0, "errors": 0})
+        except AssertionError:
+            pass
+        else:
+            raise AssertionError("terminal accounting accepted missing/extra result")
+
+        scanner._process_single_file_internal = original_internal
+        scanner.get_file_data = webshell_scan.Scanner.get_file_data
+        scanner._collect_yara_matches = lambda *args, **kwargs: ([], False)
 
         archive_result = scanner.process_single_file_with_result(archive, _args(), ROOT.lower(), 1)
         assert archive_result and archive_result["benchmark"], archive_result
@@ -125,8 +198,12 @@ def main():
         assert archive_record["member_sha256"] == hashlib.sha256(data).hexdigest()
         assert os.path.abspath(tmp) not in archive_record["member_path"]
         assert not archive_result["findings"]
+        assert archive_record["candidate_id"]
         assert not os.path.exists(next((p for p in scanner.benchmark_records if False), ""))
         print("scanner evidence checks passed")
+        assert normal_record["shadow_score"] is not None
+        assert not normal["findings"] and not normal["gray_zone"]
+        assert not os.path.isdir(os.path.join(ROOT, "quarantine", "sample.php"))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
