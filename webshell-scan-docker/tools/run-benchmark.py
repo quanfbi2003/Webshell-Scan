@@ -6,6 +6,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import re
 import sys
 import time
 import uuid
@@ -24,6 +25,8 @@ _GRAY_ZONE_COLUMNS = [
     "VIRUSTOTAL_URL", "VT_CHECKED", "VT_RESULT",
 ]
 _TERMINAL = {"completed", "skipped", "unsupported", "error"}
+_HEX_SHA256 = re.compile(r"^[0-9a-fA-F]{64}$")
+_UNKNOWN_TERMINAL = {"skipped", "unsupported", "error"}
 
 
 def _load_scanner_module(app_root):
@@ -68,59 +71,115 @@ def _case_path(root, case):
     return candidate
 
 
-def _status_and_prediction(record):
-    status = record.get("status", "error")
-    score = record.get("legacy_score")
-    if status in {"error", "model_incompatible", "manual_review"}:
-        return status, None, score
-    if record.get("legacy_decision") == "report_threshold_met":
-        return "detected", "webshell", score
-    if status == "clean" and not record.get("evidence_groups"):
-        return status, "benign", score
-    return "gray_zone", None, score
+def _provenance(shadow_only=False, record=None):
+    return {
+        "source": "scanner",
+        "field": "shadow_score",
+        "decision": "shadow_decision" if shadow_only else "legacy_decision",
+        "mode": "shadow" if shadow_only else "legacy",
+    }
 
 
-def _normalize_selected(selected, result, case):
-    status, predicted, score = _status_and_prediction(selected)
-    row = record_result(case, status, predicted, score)
-    row.update(selected)
-    row["id"] = case["id"]
-    row["label"] = case["label"]
-    row["status"] = status
-    row["predicted"] = predicted
-    row["score"] = score
-    row["terminal_status"] = result.get("terminal_status", "error")
+def _unknown_row(case, terminal_status, error=None, shadow_only=False):
+    archive = bool(case.get("archive"))
+    row = record_result(
+        case, "unknown", None, None,
+        legacy_score=None,
+        shadow_score=None,
+        evidence_groups=[],
+        sha256="N/A",
+        archive_sha256=case.get("sha256") if archive else None,
+        member_path=case.get("member_path") if archive else None,
+        member_sha256=case.get("member_sha256") if archive else None,
+    )
+    row["terminal_status"] = terminal_status
+    row["shadow_provenance"] = _provenance(shadow_only)
+    if error:
+        row["error"] = str(error)
     return row
 
 
-def _archive_rows(records, case, result):
-    if not case.get("archive"):
-        return []
-    return [_normalize_selected(record, result, case) for record in records]
+def _status_and_prediction(record, terminal_status, shadow_only=False):
+    if terminal_status in _UNKNOWN_TERMINAL:
+        return "unknown", None, None
+    status = record.get("status", "error")
+    if status in {"error", "model_incompatible", "manual_review"}:
+        return "unknown", None, None
+    score_field = "shadow_score" if shadow_only else "legacy_score"
+    decision_field = "shadow_decision" if shadow_only else "legacy_decision"
+    score = record.get(score_field)
+    if record.get(decision_field) == "report_threshold_met":
+        return "detected", "webshell", score
+    if status == "clean" and not record.get("evidence_groups"):
+        return "clean", "benign", score
+    return "unknown", None, None
 
 
+def _normalize_selected(selected, result, case, shadow_only=False):
+    terminal_status = result.get("terminal_status", "error")
+    status, predicted, score = _status_and_prediction(
+        selected, terminal_status, shadow_only=shadow_only,
+    )
+    row = record_result(case, status, predicted, score)
+    row.update(selected)
+    row.update({
+        "id": case["id"],
+        "label": case["label"],
+        "status": status,
+        "predicted": predicted,
+        "score": score,
+        "legacy_score": selected.get("legacy_score") if status != "unknown" else None,
+        "shadow_score": selected.get("shadow_score") if status != "unknown" else None,
+        "terminal_status": terminal_status,
+        "shadow_provenance": _provenance(shadow_only, selected),
+    })
+    if status == "unknown":
+        row["score"] = None
+    return row
 
-def _select_rows(records, result, case):
+
+def _archive_rows(records, result, case, shadow_only=False):
+    expected_path = case.get("member_path")
+    expected_sha = str(case.get("member_sha256", "")).lower()
+    matches = [
+        record for record in records
+        if record.get("member_path") == expected_path
+        and str(record.get("member_sha256", "")).lower() == expected_sha
+    ]
+    if len(matches) > 1:
+        raise ValueError(
+            "archive case %s has duplicate member %s with SHA-256 %s"
+            % (case["id"], expected_path, expected_sha)
+        )
+    if not matches:
+        return [_unknown_row(
+            case, result.get("terminal_status", "error"), result.get("error"), shadow_only,
+        )]
+    return [_normalize_selected(matches[0], result, case, shadow_only=shadow_only)]
+
+
+def _select_rows(records, result, case, shadow_only=False):
+    if case.get("archive"):
+        return _archive_rows(records, result, case, shadow_only=shadow_only)
     normal = [row for row in records if row.get("member_path") is None]
-    if normal:
-        return [_normalize_selected(normal[0], result, case)]
-    archive = _archive_rows(records, case, result)
-    if archive:
-        return archive
-    return [record_result(case, result.get("terminal_status", "error"), None, None,
-                          sha256="N/A", evidence_groups=[])]
+    if len(normal) == 1:
+        return [_normalize_selected(normal[0], result, case, shadow_only=shadow_only)]
+    if not normal:
+        return [_unknown_row(
+            case, result.get("terminal_status", "error"), result.get("error"), shadow_only,
+        )]
+    raise ValueError("multiple normal benchmark records for case %s" % case["id"])
 
 
-
-def run_case(scanner, case):
+def run_case(scanner, case, shadow_only=False):
     """Scan one manifest case without quarantine and return one result row."""
     path = _case_path(scanner._benchmark_root, case)
     result = scanner.process_single_file_with_result(
         path, scanner._benchmark_args, scanner._benchmark_root.lower(), 1,
     )
-    rows = _select_rows(result.get("benchmark", []), result, case)
-    if not rows:
-        raise ValueError("no benchmark record for case %s" % case["id"])
+    rows = _select_rows(result.get("benchmark", []), result, case, shadow_only=shadow_only)
+    if len(rows) != 1:
+        raise ValueError("expected one benchmark record for case %s" % case["id"])
     return rows[0]
 
 
@@ -134,7 +193,7 @@ def _resolve_benchmark_root(root):
     return root
 
 
-def run_manifest(manifest_path, root, worker_count=1):
+def run_manifest(manifest_path, root, worker_count=1, shadow_only=False):
     """Validate and scan all cases exactly once, failing closed on ID loss."""
     root = _resolve_benchmark_root(root)
     cases = load_cases(manifest_path, root)
@@ -143,7 +202,7 @@ def run_manifest(manifest_path, root, worker_count=1):
     scanner._benchmark_root = root
     scanner._benchmark_args = _args(worker_count)
     scanner.apply_runtime_policy(scanner._benchmark_args)
-    rows = [run_case(scanner, case) for case in cases]
+    rows = [run_case(scanner, case, shadow_only=shadow_only) for case in cases]
     expected = [case["id"] for case in cases]
     actual = [row.get("id") for row in rows]
     if len(actual) != len(set(actual)) or set(actual) != set(expected) or len(actual) != len(expected):
@@ -161,29 +220,55 @@ def _sha256_file(path):
     return digest.hexdigest()
 
 
+def _validate_sha256(value, field, allow_na=False):
+    if allow_na and value == "N/A":
+        return
+    if not isinstance(value, str) or not _HEX_SHA256.fullmatch(value):
+        raise ValueError("%s must be a 64-character hexadecimal digest" % field)
+
+
+def _validate_archive_row(row):
+    archive_sha = row.get("archive_sha256")
+    member_path = row.get("member_path")
+    member_sha = row.get("member_sha256")
+    if member_path is None and member_sha is None and archive_sha is None:
+        return
+    if not isinstance(member_path, str) or not member_path:
+        raise ValueError("archive metadata requires member_path")
+    _validate_sha256(archive_sha, "archive_sha256")
+    _validate_sha256(member_sha, "member_sha256")
+
+
+def _validate_shadow_provenance(value):
+    if not isinstance(value, dict) or value.get("source") != "scanner":
+        raise ValueError("shadow_provenance must identify the scanner")
+    if value.get("field") != "shadow_score":
+        raise ValueError("shadow_provenance must identify shadow_score")
+
+
 def validate_report_schema(run):
     if not isinstance(run, dict) or not isinstance(run.get("run_id"), str) or not run["run_id"]:
         raise ValueError("report requires run_id")
     if not isinstance(run.get("results"), list):
         raise ValueError("report requires results")
     ids = []
-    required = {"id", "legacy_score", "shadow_score", "status", "evidence_groups", "sha256"}
+    required = {
+        "id", "legacy_score", "shadow_score", "status", "terminal_status",
+        "evidence_groups", "sha256", "shadow_provenance",
+    }
     for row in run["results"]:
-        if not required.issubset(row):
+        if not isinstance(row, dict) or not required.issubset(row):
             raise ValueError("benchmark result missing required fields")
         ids.append(row["id"])
+        if row["terminal_status"] not in _TERMINAL:
+            raise ValueError("benchmark result has non-terminal status")
+        if row["status"] == "unknown" and (row["legacy_score"] is not None or row["shadow_score"] is not None):
+            raise ValueError("unknown result scores must be null")
         if not isinstance(row["evidence_groups"], list):
             raise ValueError("evidence_groups must be a list")
-        digest = row["sha256"]
-        if digest != "N/A" and (not isinstance(digest, str) or len(digest) != 64):
-            raise ValueError("sha256 must be a SHA-256 digest or N/A")
-        archive_digest = row.get("archive_sha256")
-        member_path = row.get("member_path")
-        member_digest = row.get("member_sha256")
-        if archive_digest is not None and (not isinstance(archive_digest, str) or len(archive_digest) != 64):
-            raise ValueError("archive_sha256 must be a SHA-256 digest")
-        if member_path is not None and (not isinstance(member_digest, str) or len(member_digest) != 64):
-            raise ValueError("archive member requires member_sha256")
+        _validate_sha256(row["sha256"], "sha256", allow_na=True)
+        _validate_archive_row(row)
+        _validate_shadow_provenance(row["shadow_provenance"])
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate benchmark IDs")
     return True
@@ -199,7 +284,7 @@ def write_benchmark_report(path, run):
         handle.write("\n")
 
 
-def _build_report(rows, manifest_path, root, worker_count):
+def _build_report(rows, manifest_path, root, worker_count, shadow_only=False):
     return {
         "schema": "webshell-benchmark-v1",
         "run_id": str(uuid.uuid4()),
@@ -208,9 +293,11 @@ def _build_report(rows, manifest_path, root, worker_count):
         "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "worker_count": int(worker_count),
         "quarantine": False,
+        "shadow_only": bool(shadow_only),
+        "shadow_provenance": {"source": "scanner", "field": "shadow_score"},
         "results": rows,
         "metrics": compute_metrics(rows),
-        "unknown": [row for row in rows if row.get("status") not in {"detected", "clean"}],
+        "unknown": [row for row in rows if row.get("status") == "unknown"],
         "terminal": {status: sum(row.get("terminal_status") == status for row in rows)
                       for status in sorted(_TERMINAL)},
         "manifest_sha256": _sha256_file(manifest_path),
@@ -223,13 +310,15 @@ def main(argv=None):
     parser.add_argument("--root", required=True)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--shadow-only", action="store_true")
+    parser.add_argument("--shadow-only", action="store_true",
+                        help="classify using shadow_score/shadow_decision while retaining legacy fields")
     args = parser.parse_args(argv)
     if args.workers < 1:
         parser.error("--workers must be >= 1")
     root = _resolve_benchmark_root(args.root)
-    rows = run_manifest(args.manifest, root, args.workers)
-    report = _build_report(rows, args.manifest, root, args.workers)
+    manifest = os.path.realpath(args.manifest)
+    rows = run_manifest(manifest, root, args.workers, shadow_only=args.shadow_only)
+    report = _build_report(rows, manifest, root, args.workers, shadow_only=args.shadow_only)
     write_benchmark_report(args.output, report)
     print(json.dumps(report["metrics"], sort_keys=True))
     return 0
