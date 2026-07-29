@@ -420,6 +420,16 @@ def _build_snippet_layers(
     return stored_layers, evidence, ""
 
 
+def _benchmark_records(benchmark_report):
+    if not isinstance(benchmark_report, dict):
+        return []
+    for key in ("records", "results"):
+        records = benchmark_report.get(key)
+        if isinstance(records, list):
+            return [item for item in records if isinstance(item, dict)]
+    return []
+
+
 def _archive_member_path(report_path: str) -> str:
     raw = str(report_path or '').replace('\\', '/')
     raw = re.sub(r'\s*\(in archive:.*?\)', '', raw, flags=re.IGNORECASE)
@@ -428,22 +438,82 @@ def _archive_member_path(report_path: str) -> str:
     return match.group(1) if match else (raw.rsplit('/', 1)[-1] if raw else '')
 
 
+def _report_archive_chain(report_path):
+    match = re.search(r'\(in archive:\s*(.*?)\)', str(report_path or ''), flags=re.IGNORECASE)
+    if not match:
+        return ()
+    return tuple(item.strip() for item in match.group(1).split(' -> ') if item.strip())
+
+
 def _candidate_id(row, sha256, archive_path, member_path, benchmark_report):
-    rows = benchmark_report.get('results', []) if isinstance(benchmark_report, dict) else []
-    benchmark = next((item for item in rows if isinstance(item, dict) and (
-        (member_path and item.get('member_path') == member_path and
-         str(item.get('member_sha256') or item.get('sha256') or '').lower() == sha256.lower()) or
-        str(item.get('path') or '') == str(row.get('FILE') or '')
-    )), None)
+    records = _benchmark_records(benchmark_report)
+    row_path = str(row.get('FILE') or '')
+    sha256_lower = str(sha256 or '').lower()
+    benchmark = None
+    row_candidate_id = str(row.get('candidate_id') or '')
+    if row_candidate_id:
+        benchmark = next(
+            (item for item in records if str(item.get('candidate_id') or '') == row_candidate_id),
+            None,
+        )
+    if benchmark is None and archive_path:
+        chain_hint = _report_archive_chain(row_path)
+        archive_records = [
+            item for item in records
+            if item.get('member_path')
+            and str(item.get('member_sha256') or item.get('sha256') or '').lower() == sha256_lower
+        ]
+        if member_path:
+            archive_records = [item for item in archive_records if item.get('member_path') == member_path]
+        if chain_hint:
+            hinted = [item for item in archive_records if tuple(item.get('archive_chain') or ()) == chain_hint]
+            archive_records = hinted or archive_records
+        benchmark = archive_records[0] if archive_records else None
+    if benchmark is None:
+        benchmark = next(
+            (item for item in records if not item.get('member_path')
+             and str(item.get('path') or '') == row_path
+             and str(item.get('sha256') or '').lower() == sha256_lower),
+            None,
+        )
     if benchmark and benchmark.get('candidate_id'):
         return str(benchmark['candidate_id']), benchmark
-    archive_sha = (benchmark or {}).get('archive_sha256')
-    chain = tuple((benchmark or {}).get('archive_chain') or ())
     return canonical_candidate_id(
-        'scanner', sha256, 'archive-member' if archive_path else _clean_report_path(row.get('FILE', '')),
-        archive_sha256=archive_sha, archive_chain=chain or ((os.path.basename(archive_path),) if archive_path else ()),
+        'scanner', sha256, 'archive-member' if archive_path else _clean_report_path(row_path),
+        archive_chain=(_report_archive_chain(row_path) or ((os.path.basename(archive_path),) if archive_path else ())),
         member_path=member_path or None, member_sha256=sha256 if member_path else None,
     ), benchmark
+
+def _durable_member_path(report_path):
+    member = _archive_member_path(report_path)
+    if re.search(r'_[0-9a-fA-F]{32}_extracted/', member):
+        return ''
+    return member
+
+
+def _read_archive_member(archive_path, archive_chain, member_path):
+    if not archive_path or not member_path or not os.path.isfile(archive_path):
+        return None
+    try:
+        current = Path(archive_path).read_bytes()
+        chain = tuple(archive_chain or ())
+        for nested_name in chain[1:]:
+            with zipfile.ZipFile(io.BytesIO(current)) as archive:
+                names = archive.namelist()
+                name = next((item for item in names if item == nested_name), None)
+                if name is None:
+                    name = next((item for item in names if os.path.basename(item) == os.path.basename(nested_name)), None)
+                if name is None:
+                    return None
+                current = archive.read(name)
+        with zipfile.ZipFile(io.BytesIO(current)) as archive:
+            try:
+                return archive.read(member_path)
+            except KeyError:
+                name = next((item for item in archive.namelist() if item.endswith('/' + member_path)), None)
+                return archive.read(name) if name else None
+    except Exception:
+        return None
 
 
 def build_review_zip(
@@ -485,10 +555,20 @@ def build_review_zip(
         candidate_id, benchmark = _candidate_id(
             row, sha256, archive_path, member_path, benchmark_report,
         )
+        if benchmark:
+            member_path = str(benchmark.get("member_path") or member_path or "")
+            sha256 = str(
+                benchmark.get("member_sha256") or benchmark.get("sha256") or sha256
+            )
+        if archive_path and not benchmark and len(_report_archive_chain(report_path)) > 1:
+            member_path = ""
         if candidate_id in seen_ids:
             continue
         seen_ids.add(candidate_id)
-        candidates.append((row, candidate_kind, report_path, clean_path, sha256, candidate_id, archive_path, member_path))
+        candidates.append((
+            row, candidate_kind, report_path, clean_path, sha256, candidate_id,
+            archive_path, member_path, benchmark,
+        ))
     source_index = []
     source_count = 0
     full_source_count = 0
@@ -498,11 +578,14 @@ def build_review_zip(
 
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for row, candidate_kind, report_path, source_path, sha256_value, candidate_id, archive_path, member_path in candidates:
+        for row, candidate_kind, report_path, source_path, sha256_value, candidate_id, archive_path, member_path, benchmark in candidates:
+            durable_file = member_path or (
+                _clean_report_path(report_path) if not archive_path else ""
+            )
             entry = {
                 "candidate_id": candidate_id,
                 "candidate_kind": candidate_kind,
-                "file": report_path,
+                "file": durable_file,
                 "sha256": sha256_value,
                 "relpath": "",
                 "size": 0,
@@ -517,19 +600,17 @@ def build_review_zip(
             }
             if archive_path or member_path:
                 entry["archive"] = {
-                    "archive_path": archive_path,
+                    "archive_path": "",
                     "archive_sha256": (benchmark or {}).get("archive_sha256"),
-                    "archive_chain": (benchmark or {}).get("archive_chain", []),
+                    "archive_chain": list((benchmark or {}).get("archive_chain") or _report_archive_chain(report_path)),
                     "member_path": member_path,
                     "member_sha256": (benchmark or {}).get("member_sha256") or (sha256_value if member_path else None),
                 }
-            archive_data = None
-            if archive_path and member_path and os.path.isfile(archive_path):
-                try:
-                    with zipfile.ZipFile(archive_path) as archive:
-                        archive_data = archive.read(member_path)
-                except Exception:
-                    archive_data = None
+            archive_data = _read_archive_member(
+                archive_path,
+                (benchmark or {}).get("archive_chain") or _report_archive_chain(report_path),
+                member_path,
+            )
             if archive_data is not None:
                 source_path = member_path
             if not source_path or (archive_data is None and not os.path.isfile(source_path)):

@@ -886,8 +886,31 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
             gray_zone = []
         if not isinstance(source_index, list):
             source_index = []
-        if not findings and not gray_zone and not source_index:
-            raise RuntimeError("File .enc không có finding hoặc candidate để import.")
+        valid_rows = [row for row in findings + gray_zone if isinstance(row, dict) and (
+            str(row.get("FILE") or row.get("file") or "").strip()
+            and str(row.get("SHA256") or row.get("sha256") or "N/A").strip()
+        )]
+        valid_candidates = [item for item in source_index if isinstance(item, dict) and (
+            str(item.get("candidate_id") or "").strip()
+            and (str(item.get("file") or "").strip() or str(item.get("relpath") or "").strip()
+                 or item.get("source_status") == "omitted")
+        )]
+        if not valid_rows and not valid_candidates:
+            raise RuntimeError("File .enc không có finding hoặc candidate hợp lệ để import.")
+        if not findings and not gray_zone and not valid_candidates:
+            raise RuntimeError("File .enc không có candidate hợp lệ để import.")
+        if not findings and not gray_zone:
+            findings = [{
+                "FILE": str(item.get("file") or item.get("candidate_id")),
+                "SHA256": str(item.get("sha256") or "N/A"),
+                "SCORE": item.get("score"),
+                "TIME": item.get("time", ""),
+                "DESCRIPTION": item.get("description", "candidate-only import"),
+                "EXTENSION": item.get("extension") or Path(str(item.get("file") or "")).suffix,
+                "candidate_id": str(item.get("candidate_id")),
+            } for item in valid_candidates]
+            if not findings:
+                raise RuntimeError("File .enc không có candidate hợp lệ để import.")
 
         default_title = (
             title
