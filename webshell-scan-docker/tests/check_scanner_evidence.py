@@ -240,6 +240,7 @@ def main():
         assert archive_incompatible_record["status"] == "model_incompatible"
         assert archive_incompatible_record["coverage"] == "partial"
         assert archive_incompatible_record["truncated"] is True
+        assert archive_incompatible["terminal_status"] == "completed"
 
         legacy_result = scanner.process_single_file_with_result(plain, _args(), ROOT.lower(), 1)
         assert legacy_result["benchmark"][0]["legacy_score"] == normal_record["legacy_score"]

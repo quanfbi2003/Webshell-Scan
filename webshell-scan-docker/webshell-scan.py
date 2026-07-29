@@ -1531,8 +1531,6 @@ class Scanner(object):
                             file_evidence_groups.add("ast_df")
 
                     archive_yara_timeout = False
-                    archive_status = "clean"
-                    archive_coverage = "full"
                     try:
                         yara_matches, archive_yara_timeout = self._collect_yara_matches(
                             file_data, fileType,
