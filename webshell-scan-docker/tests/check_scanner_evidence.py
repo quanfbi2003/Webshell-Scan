@@ -105,6 +105,24 @@ def main():
         assert normal_record["legacy_score"] == 167
         assert {item["detector"] for item in normal_record["evidence"]} >= {"yara", "source_sink"}
 
+        original_ast_df = webshell_scan.ast_df_heuristic
+        webshell_scan.ast_df_heuristic = lambda *args, **kwargs: (0, "model_incompatible")
+        try:
+            incompatible_result = scanner.process_single_file_with_result(
+                plain, _args(), ROOT.lower(), 1)
+        finally:
+            webshell_scan.ast_df_heuristic = original_ast_df
+        incompatible_record = incompatible_result["benchmark"][0]
+        incompatible_ast = next(item for item in incompatible_record["evidence"]
+                                if item["detector"] == "ast_df")
+        assert incompatible_result["terminal_status"] == "completed"
+        assert incompatible_record["status"] == "model_incompatible"
+        assert incompatible_record["coverage"] == "partial"
+        assert incompatible_record["legacy_decision"] != "report_threshold_met"
+        assert incompatible_ast["reason"] == "model_incompatible"
+        assert incompatible_ast["status"] == "model_incompatible"
+        assert incompatible_ast["truncated"] is True
+
         incompatible = scanner._build_evidence_records({}, ["model_incompatible"])
         ast_record = next(item for item in incompatible if item["detector"] == "ast_df")
         assert ast_record["status"] == "model_incompatible"
@@ -196,11 +214,78 @@ def main():
         assert archive_record["archive_sha256"] == hashlib.sha256(open(archive, "rb").read()).hexdigest()
         assert archive_record["member_path"] == "WEB-INF/sample.php"
         assert archive_record["member_sha256"] == hashlib.sha256(data).hexdigest()
+        assert archive_record["member_extension"] == ".php"
+        assert archive_record["archive_chain"] == ("sample.zip",)
         assert os.path.abspath(tmp) not in archive_record["member_path"]
+        assert "_extracted" not in archive_record["path"]
         assert not archive_result["findings"]
         assert archive_record["candidate_id"]
-        assert not os.path.exists(next((p for p in scanner.benchmark_records if False), ""))
+
+        archive_copy_dir = os.path.join(tmp, "other-extraction-root")
+        os.makedirs(archive_copy_dir)
+        archive_copy = os.path.join(archive_copy_dir, "sample.zip")
+        shutil.copy2(archive, archive_copy)
+        archive_copy_result = scanner.process_single_file_with_result(
+            archive_copy, _args(), ROOT.lower(), 1)
+        assert archive_copy_result["benchmark"][0]["candidate_id"] == archive_record["candidate_id"]
+
+        original_ast_df = webshell_scan.ast_df_heuristic
+        webshell_scan.ast_df_heuristic = lambda *args, **kwargs: (0, "model_incompatible")
+        try:
+            archive_incompatible = scanner.process_single_file_with_result(
+                archive, _args(), ROOT.lower(), 1)
+        finally:
+            webshell_scan.ast_df_heuristic = original_ast_df
+        archive_incompatible_record = archive_incompatible["benchmark"][0]
+        assert archive_incompatible_record["status"] == "model_incompatible"
+        assert archive_incompatible_record["coverage"] == "partial"
+        assert archive_incompatible_record["truncated"] is True
+
+        legacy_result = scanner.process_single_file_with_result(plain, _args(), ROOT.lower(), 1)
+        assert legacy_result["benchmark"][0]["legacy_score"] == normal_record["legacy_score"]
+        assert legacy_result["findings"] == normal["findings"]
+        assert legacy_result["gray_zone"] == normal["gray_zone"]
+        assert not legacy_result["findings"]
+        assert not legacy_result["gray_zone"]
+        assert not os.path.exists(os.path.join(ROOT, "quarantine", "sample.php"))
+
+        original_ast_df = webshell_scan.ast_df_heuristic
+        webshell_scan.ast_df_heuristic = lambda *args, **kwargs: (0, "model_incompatible")
+        try:
+            archive_incompatible_again = scanner.process_single_file_with_result(
+                archive, _args(), ROOT.lower(), 1)
+        finally:
+            webshell_scan.ast_df_heuristic = original_ast_df
+        archive_incompatible_record = archive_incompatible_again["benchmark"][0]
+        assert archive_incompatible_record["legacy_decision"] != "report_threshold_met"
+        assert any(item["reason"] == "model_incompatible" for item in archive_incompatible_record["evidence"])
+
+        original_get_file_data = scanner.get_file_data
+        def member_read_error(path):
+            if str(path).endswith("sample.php"):
+                raise OSError("member read denied")
+            return original_get_file_data(path)
+        scanner.get_file_data = member_read_error
+        try:
+            archive_read_error = scanner.process_single_file_with_result(
+                archive, _args(), ROOT.lower(), 1)
+        finally:
+            scanner.get_file_data = original_get_file_data
+        assert archive_read_error["terminal_status"] == "error"
+        assert archive_read_error["benchmark"]
+        assert any(record["status"] == "error" for record in archive_read_error["benchmark"])
+
+        empty_archive = os.path.join(tmp, "empty.zip")
+        with zipfile.ZipFile(empty_archive, "w"):
+            pass
+        empty_result = scanner.process_single_file_with_result(empty_archive, _args(), ROOT.lower(), 1)
+        assert empty_result["terminal_status"] == "error"
+        assert empty_result["benchmark"]
+        assert empty_result["benchmark"][0]["status"] == "error"
         print("scanner evidence checks passed")
+        assert normal_record["shadow_score"] is not None
+        assert not normal["findings"] and not normal["gray_zone"]
+        assert not os.path.isdir(os.path.join(ROOT, "quarantine", "sample.php"))
         assert normal_record["shadow_score"] is not None
         assert not normal["findings"] and not normal["gray_zone"]
         assert not os.path.isdir(os.path.join(ROOT, "quarantine", "sample.php"))

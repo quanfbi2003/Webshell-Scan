@@ -1033,6 +1033,13 @@ class Scanner(object):
                 detector, score=int(group_scores.get(detector, 0)), status=status, coverage=coverage,
             ))
         evidence_groups = sorted({item["detector"] for item in evidence if int(item.get("score", 0)) > 0})
+        if any(item.get("status") == "error" for item in evidence):
+            status = "error"
+        elif any(item.get("status") == "model_incompatible" for item in evidence):
+            status = "model_incompatible"
+        if any(item.get("coverage") != "full" for item in evidence):
+            coverage = "partial"
+        truncated = any(item.get("truncated") for item in evidence)
         behavioral = {name: int(group_scores.get(name, 0)) for name in (
             "source_sink", "behavior_graph", "webshell_capability", "ast_df"
         ) if int(group_scores.get(name, 0)) > 0}
@@ -1066,7 +1073,23 @@ class Scanner(object):
             "shadow_decision": shadow_decision,
             "status": status,
             "coverage": coverage,
+            "truncated": truncated,
         }
+
+    @staticmethod
+    def _file_scan_is_truncated(file_data, policy):
+        size = len(file_data or b"")
+        limits = (
+            "source_sink_max_file_bytes",
+            "behavior_graph_max_file_bytes",
+            "webshell_capability_max_file_bytes",
+            "ast_df_max_file_bytes",
+            "deobfuscate_max_file_bytes",
+        )
+        return any(
+            int(policy.get(name, 0) or 0) > 0 and size > int(policy.get(name, 0))
+            for name in limits
+        )
 
     @staticmethod
     def _build_evidence_records(group_scores, reasons, coverage="full", status="clean",
@@ -1117,7 +1140,8 @@ class Scanner(object):
             self.benchmark_records.append(record)
 
     def _error_benchmark(self, path, error, archive_sha256=None, member_path=None,
-                         member_sha256="N/A", archive_chain=()):
+                         member_sha256="N/A", archive_chain=(), member_extension=None,
+                         canonical_path=None):
         evidence = self._build_evidence_records(
             {}, ["read_error: %s" % error], coverage="partial", status="error", truncated=True,
         )
@@ -1129,10 +1153,12 @@ class Scanner(object):
             "path": path,
             "sha256": member_sha256 if member_sha256 != "N/A" else "N/A",
             "archive_sha256": archive_sha256,
+            "archive_chain": tuple(archive_chain or ()),
             "member_path": member_path,
             "member_sha256": member_sha256 if member_path is not None else None,
+            "member_extension": member_extension,
             "candidate_id": canonical_candidate_id(
-                "scanner", member_sha256, archive_sha256 or "archive", archive_sha256,
+                "scanner", member_sha256, canonical_path or path, archive_sha256,
                 archive_chain, member_path, member_sha256 if member_path is not None else None,
             ),
         })
@@ -1263,9 +1289,17 @@ class Scanner(object):
         """
         if benchmark_sink is None:
             benchmark_sink = self.benchmark_records
+        archive_chain = tuple(item.strip() for item in parent_archive.split(" -> ") if item.strip())
+        archive_chain += (os.path.basename(archive_path),)
         if root_archive_sha256 is None:
-            archive_bytes = self.get_file_data(archive_path)
-            _, _, root_archive_sha256 = generateHashes(archive_bytes) if archive_bytes else ("0", "0", "N/A")
+            try:
+                archive_bytes = self.get_file_data(archive_path)
+                _, _, root_archive_sha256 = generateHashes(archive_bytes) if archive_bytes else ("0", "0", "N/A")
+            except Exception as exc:
+                self._record_benchmark(self._error_benchmark(
+                    "archive", exc, archive_chain=archive_chain, canonical_path="archive"),
+                    benchmark_sink=benchmark_sink)
+                return []
 
         findings = []  # List of (file_path, score, reasons, archive_path)
 
@@ -1320,9 +1354,26 @@ class Scanner(object):
                         continue
 
                     # Read file data
-                    file_data = self.get_file_data(extracted_file)
+                    try:
+                        file_data = self.get_file_data(extracted_file)
+                    except Exception as exc:
+                        member_path = self._archive_member_relative_path(extracted_file)
+                        member_extension = os.path.splitext(member_path)[1].lower()
+                        self._record_benchmark(self._error_benchmark(
+                            "archive-member", exc, archive_sha256=root_archive_sha256,
+                            member_path=member_path, archive_chain=archive_chain,
+                            member_extension=member_extension,
+                            canonical_path="archive-member"), benchmark_sink=benchmark_sink)
+                        raise
                     if not file_data:
-                        continue
+                        member_path = self._archive_member_relative_path(extracted_file)
+                        self._record_benchmark(self._error_benchmark(
+                            archive_path, "empty archive member", archive_sha256=root_archive_sha256,
+                            member_path=member_path, member_sha256=hashlib.sha256(b"").hexdigest(),
+                            archive_chain=archive_chain,
+                            member_extension=os.path.splitext(member_path)[1].lower(),
+                            canonical_path="archive-member"), benchmark_sink=benchmark_sink)
+                        raise ValueError("empty archive member")
 
                     if self._is_icu_data_file(extracted_file, file_data):
                         continue
@@ -1456,11 +1507,16 @@ class Scanner(object):
                             file_score += delta
                             file_evidence_groups.add("webshell_capability")
 
+                    archive_status = "clean"
+                    archive_coverage = "full"
+                    archive_truncated = False
+                    archive_yara_timeout = False
                     ast_score, ast_reason = ast_df_heuristic(
                         file_data, extension, extracted_file, self.effective_policy,
                         app_path=self.app_path,
                     )
                     if ast_reason:
+
                         file_reasons.append(ast_reason)
                         if ast_reason == "model_incompatible":
                             archive_status = "model_incompatible"
@@ -1510,10 +1566,19 @@ class Scanner(object):
                     except Exception as exc:
                         archive_status = "error"
                         archive_coverage = "partial"
+                        archive_truncated = True
                         file_reasons.append("YARA/deobfuscate scan error: %s" % exc)
                         logger.log("WARNING", "Archive",
                                    "YARA/deobfuscate scan failed for %s: %s" % (extracted_file, exc))
                         self.scan_stats.inc("files_errors", 1)
+                        member_path = self._archive_member_relative_path(extracted_file)
+                        self._record_benchmark(self._error_benchmark(
+                            archive_path, exc, archive_sha256=root_archive_sha256,
+                            member_path=member_path, member_sha256=sha256,
+                            archive_chain=archive_chain,
+                            member_extension=extension, canonical_path="archive-member"),
+                            benchmark_sink=benchmark_sink)
+                        raise
 
                     member_path = self._archive_member_relative_path(extracted_file)
                     member_sha256 = sha256
@@ -1535,15 +1600,16 @@ class Scanner(object):
                         coverage=archive_coverage, min_score=self._get_min_score(args),
                         gray_min=self._get_gray_zone_min(), yara_timeout=archive_yara_timeout,
                     )
-                    archive_chain = tuple(item.strip() for item in parent_archive.split(" -> ") if item.strip())
                     benchmark.update({
-                        "path": archive_path,
+                        "path": "archive-member",
                         "sha256": member_sha256,
                         "archive_sha256": root_archive_sha256,
+                        "archive_chain": archive_chain,
                         "member_path": member_path,
                         "member_sha256": member_sha256,
+                        "member_extension": extension,
                         "candidate_id": canonical_candidate_id(
-                            "scanner", member_sha256, archive_path, root_archive_sha256,
+                            "scanner", member_sha256, "archive-member", root_archive_sha256,
                             archive_chain, member_path, member_sha256,
                         ),
                     })
@@ -1782,6 +1848,14 @@ class Scanner(object):
                 result["terminal_status"] = "completed"
             elif result.get("all_file_info"):
                 result["terminal_status"] = "skipped"
+            else:
+                result["terminal_status"] = "error"
+                result["status"] = "error"
+                result.setdefault("benchmark", []).append(self._error_benchmark(
+                    filePath, "no terminal result"))
+        result["status"] = result.get("terminal_status", "error")
+        result.setdefault("terminal_status", "error")
+        result.setdefault("status", result["terminal_status"])
         return result
 
     def process_single_file(self, filePath, args, app_path_lower, total):
@@ -1821,6 +1895,9 @@ class Scanner(object):
                 logger.log("DEBUG", "FileScan", f"Cannot stat file {filePath}: {str(e)}")
                 if result_dict is not None:
                     result_dict["terminal_status"] = "error"
+                    result_dict["status"] = "error"
+                    result_dict["error"] = str(e)
+                    result_dict.setdefault("benchmark", []).append(self._error_benchmark(filePath, e))
                 return
 
             # Exclude check BEFORE logging/all_files_csv to avoid oversized logs
@@ -1837,9 +1914,15 @@ class Scanner(object):
 
                 mode = file_stat.st_mode
                 if stat.S_ISCHR(mode) or stat.S_ISBLK(mode) or stat.S_ISFIFO(mode) or stat.S_ISLNK(mode) or stat.S_ISSOCK(mode):
+                    if result_dict is not None:
+                        result_dict["terminal_status"] = "unsupported"
+                        result_dict["status"] = "unsupported"
                     return
 
             if skipIt:
+                if result_dict is not None:
+                    result_dict["terminal_status"] = "skipped"
+                    result_dict["status"] = "skipped"
                 return
 
             local_stats["files_processed"] = local_stats.get("files_processed", 0) + 1
@@ -1872,6 +1955,25 @@ class Scanner(object):
                         filePath, temp_dir, "", args, benchmark_sink=archive_benchmark)
                     for record in archive_benchmark:
                         self._record_benchmark(record, result_dict=result_dict)
+                    if any(record.get("status") == "error" for record in archive_benchmark):
+                        result_dict["terminal_status"] = "error" if result_dict is not None else "completed"
+                        if result_dict is not None:
+                            result_dict["status"] = "error"
+                            result_dict["error"] = "archive member scan failed"
+                    if not archive_benchmark:
+                        archive_bytes = self.get_file_data(filePath)
+                        _, _, archive_sha256 = generateHashes(archive_bytes) if archive_bytes else ("0", "0", "N/A")
+                        empty_record = self._error_benchmark(
+                            "archive", "empty or corrupt archive extraction",
+                            archive_sha256=archive_sha256,
+                            archive_chain=(os.path.basename(filePath),),
+                            canonical_path="archive",
+                        )
+                        self._record_benchmark(empty_record, result_dict=result_dict)
+                        if result_dict is not None:
+                            result_dict["terminal_status"] = "error"
+                            result_dict["status"] = "error"
+                            result_dict["error"] = "empty or corrupt archive extraction"
 
                     if archive_findings:
                         for finding_file, finding_score, finding_reasons, original_archive, f_sha256 in archive_findings:
@@ -1922,6 +2024,12 @@ class Scanner(object):
 
                 except Exception as e:
                     logger.log("ERROR", "Archive", f"Error processing archive {filePath}: {str(e)}")
+                    if result_dict is not None:
+                        result_dict["terminal_status"] = "error"
+                        result_dict["status"] = "error"
+                        result_dict["error"] = str(e)
+                    else:
+                        self.scan_stats.inc("files_errors", 1)
                 finally:
                     try:
                         shutil.rmtree(temp_dir, ignore_errors=True)
@@ -2128,8 +2236,12 @@ class Scanner(object):
                 fileData, extension, filePath, self.effective_policy,
                 app_path=self.app_path,
             )
-            if ast_score > 0 and ast_reason:
+            if ast_reason:
                 reasons.append(ast_reason)
+                if ast_reason == "model_incompatible":
+                    candidate_status = "model_incompatible"
+                    coverage = "partial"
+            if ast_score > 0 and ast_reason:
                 delta = self._add_group_score(
                     group_scores, "ast_df", ast_score,
                     cap=int(self.effective_policy.get("ast_df_score_cap", ast_score)))
@@ -2245,6 +2357,8 @@ class Scanner(object):
             if yara_timeout_occurred:
                 coverage = "partial"
                 candidate_status = "manual_review"
+            if self._file_scan_is_truncated(fileData, self.effective_policy):
+                coverage = "partial"
             evidence = self._build_evidence_records(
                 group_scores, reasons, coverage=coverage, status=candidate_status,
                 truncated=coverage != "full",
