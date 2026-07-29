@@ -3682,6 +3682,7 @@ if __name__ == '__main__':
                 scanner_version=VERSION,
                 yara_rules=scanner.yara_rules,
                 scan_policy=scanner.effective_policy,
+                benchmark_report={"records": scanner.benchmark_records},
             )
             enc_path = os.path.join(scanner.get_application_path(), "logs", args.out_file + ".enc")
             write_review_bundle(enc_path, review_zip, passphrase)

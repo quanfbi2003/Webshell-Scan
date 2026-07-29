@@ -876,11 +876,18 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
     with zipfile.ZipFile(io.BytesIO(zip_payload)) as zf, connect_db() as conn:
         manifest = _read_bundle_json(zf, "manifest.json", {})
         findings = _read_bundle_json(zf, "findings.json", [])
+        gray_zone = _read_bundle_json(zf, "gray_zone.json", [])
         source_index = _read_bundle_json(zf, "sources/index.json", [])
         if manifest.get("schema") != "webshell-review-bundle-v1":
             raise RuntimeError("File .enc không đúng schema review bundle.")
-        if not isinstance(findings, list) or not findings:
-            raise RuntimeError("File .enc không có finding để import.")
+        if not isinstance(findings, list):
+            findings = []
+        if not isinstance(gray_zone, list):
+            gray_zone = []
+        if not isinstance(source_index, list):
+            source_index = []
+        if not findings and not gray_zone and not source_index:
+            raise RuntimeError("File .enc không có finding hoặc candidate để import.")
 
         default_title = (
             title
@@ -901,6 +908,7 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
 
         source_by_file = {}
         source_by_sha = {}
+        source_by_candidate = {}
         source_count = 0
         for item in source_index if isinstance(source_index, list) else []:
             if not isinstance(item, dict):
@@ -910,6 +918,7 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
                 "snippet_only": bool(item.get("snippet_only")),
                 "layers": [],
                 "evidence": item.get("evidence") if isinstance(item.get("evidence"), list) else [],
+                "candidate_id": str(item.get("candidate_id") or ""),
             }
             layers = item.get("layers") if isinstance(item.get("layers"), list) else []
             if layers:
@@ -944,6 +953,8 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
             if not meta["local_relpath"] and not meta["layers"]:
                 continue
             source_count += 1
+            if item.get("candidate_id"):
+                source_by_candidate[str(item["candidate_id"])] = meta
             if item.get("file"):
                 source_by_file[str(item["file"])] = meta
             sha = str(item.get("sha256") or "").lower()
@@ -951,14 +962,15 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
                 source_by_sha[sha] = meta
 
         imported = 0
-        for row in findings:
+        for row in findings + [item for item in gray_zone if isinstance(item, dict)]:
             if not isinstance(row, dict):
                 continue
-            file_path = str(row.get("FILE") or "").strip()
+            file_path = str(row.get("FILE") or row.get("file") or "").strip()
             if not file_path:
                 continue
-            sha256 = str(row.get("SHA256") or "N/A").strip()
-            source_meta = source_by_file.get(file_path) or source_by_sha.get(sha256.lower()) or {}
+            sha256 = str(row.get("SHA256") or row.get("sha256") or "N/A").strip()
+            candidate_id = str(row.get("candidate_id") or "")
+            source_meta = source_by_candidate.get(candidate_id) or source_by_file.get(file_path) or source_by_sha.get(sha256.lower()) or {}
             local_rel = source_meta.get("local_relpath") if isinstance(source_meta, dict) else ""
             local_file = DATA_DIR / local_rel if local_rel else None
             bundle_layers = source_meta.get("layers", []) if isinstance(source_meta, dict) else []
@@ -974,10 +986,10 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
                     case_id,
                     file_path,
                     sha256,
-                    safe_int(row.get("SCORE"), None),
-                    str(row.get("TIME") or ""),
-                    str(row.get("DESCRIPTION") or ""),
-                    str(row.get("EXTENSION") or Path(file_path).suffix),
+                    safe_int(row.get("SCORE", row.get("score")), None),
+                    str(row.get("TIME", row.get("time", ""))),
+                    str(row.get("DESCRIPTION", row.get("description", ""))),
+                    str(row.get("EXTENSION", row.get("extension", Path(file_path).suffix))),
                     local_rel,
                     1 if (local_file and local_file.exists()) or bundle_layers else 0,
                     created,

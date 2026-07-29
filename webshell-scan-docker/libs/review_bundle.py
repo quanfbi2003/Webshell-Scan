@@ -27,6 +27,8 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
+from libs.evidence import canonical_candidate_id
+
 try:
     from libs.deobfuscate import iter_deobfuscated_layers, should_deobfuscate
 except Exception:  # pragma: no cover - review bundle can still carry raw files
@@ -418,6 +420,12 @@ def _build_snippet_layers(
     return stored_layers, evidence, ""
 
 
+def _archive_member_path(report_path: str) -> str:
+    raw = str(report_path or '').replace('\\', '/')
+    match = re.search(r'/[^/]+_[0-9a-fA-F]{32}_extracted/(.+)$', raw)
+    return match.group(1) if match else ''
+
+
 def build_review_zip(
     *,
     findings_report: dict,
@@ -438,10 +446,32 @@ def build_review_zip(
     yara_rules=None,
     scan_policy: dict | None = None,
     yara_timeout_seconds: int = DEFAULT_YARA_TIMEOUT_SECONDS,
+    benchmark_report: dict | None = None,
 ) -> tuple[bytes, dict]:
     findings = report_rows(findings_report, findings_columns)
     all_files = report_rows(all_files_report, all_files_columns)
     gray_zone = report_rows(gray_zone_report, gray_zone_columns)
+    candidates = []
+    seen_ids = set()
+    for row, candidate_kind in [(item, "finding") for item in findings] + [(item, "gray") for item in gray_zone]:
+        report_path = str(row.get("FILE") or "")
+        clean_path = _clean_report_path(report_path)
+        sha256 = str(row.get("SHA256") or "N/A")
+        parts = report_path.split(" [ARCHIVE:", 1)
+        archive_path = parts[1].rstrip("]").strip() if len(parts) == 2 else ""
+        member_path = _archive_member_path(clean_path) if archive_path else ""
+        if not member_path and archive_path and len(parts) == 2:
+            member_path = clean_path.replace("\\", "/").rsplit("/", 1)[-1]
+        candidate_id = canonical_candidate_id(
+            "scanner", sha256, "archive-member" if archive_path else clean_path,
+            archive_chain=(os.path.basename(archive_path),) if archive_path else (),
+            member_path=member_path or None,
+            member_sha256=sha256 if member_path else None,
+        )
+        if candidate_id in seen_ids:
+            continue
+        seen_ids.add(candidate_id)
+        candidates.append((row, candidate_kind, report_path, clean_path, sha256, candidate_id, archive_path, member_path))
     source_index = []
     source_count = 0
     full_source_count = 0
@@ -451,12 +481,12 @@ def build_review_zip(
 
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for row in findings:
-            report_path = str(row.get("FILE") or "")
-            source_path = _clean_report_path(report_path)
+        for row, candidate_kind, report_path, source_path, sha256_value, candidate_id, archive_path, member_path in candidates:
             entry = {
+                "candidate_id": candidate_id,
+                "candidate_kind": candidate_kind,
                 "file": report_path,
-                "sha256": str(row.get("SHA256") or "N/A"),
+                "sha256": sha256_value,
                 "relpath": "",
                 "size": 0,
                 "stored_size": 0,
@@ -465,20 +495,42 @@ def build_review_zip(
                 "layers": [],
                 "evidence": [],
                 "omitted_reason": "",
+                "source_status": "omitted",
+                "source_reason": "",
             }
-            if not source_path or not os.path.isfile(source_path):
-                entry["omitted_reason"] = "source_not_found"
+            if archive_path or member_path:
+                entry["archive"] = {
+                    "archive_path": archive_path,
+                    "member_path": member_path,
+                    "member_sha256": sha256_value if member_path else None,
+                }
+            archive_data = None
+            if archive_path and member_path and os.path.isfile(archive_path):
+                try:
+                    with zipfile.ZipFile(archive_path) as archive:
+                        archive_data = archive.read(member_path)
+                except Exception:
+                    archive_data = None
+            if archive_data is not None:
+                source_path = member_path
+            if not source_path or (archive_data is None and not os.path.isfile(source_path)):
+                entry["omitted_reason"] = entry["source_reason"] = "source_not_found"
                 omitted_count += 1
             else:
                 try:
-                    size = os.path.getsize(source_path)
+                    size = len(archive_data) if archive_data is not None else os.path.getsize(source_path)
                     entry["size"] = size
                     if size <= source_limit_bytes and stored_source_bytes + size <= total_source_limit_bytes:
                         relpath = _source_relpath(source_path, entry["sha256"])
-                        zf.write(source_path, relpath)
+                        if archive_data is not None:
+                            zf.writestr(relpath, archive_data)
+                        else:
+                            zf.write(source_path, relpath)
                         entry["relpath"] = relpath
                         entry["stored_size"] = size
                         entry["storage"] = "full"
+                        entry["source_status"] = "stored"
+                        entry["source_reason"] = "full_source"
                         source_count += 1
                         full_source_count += 1
                         stored_source_bytes += size
@@ -487,7 +539,7 @@ def build_review_zip(
                             entry["omitted_reason"] = "source_too_large_for_snippet_scan"
                             omitted_count += 1
                         else:
-                            data = Path(source_path).read_bytes()
+                            data = archive_data if archive_data is not None else Path(source_path).read_bytes()
                             snippet_layers, evidence, snippet_error = _build_snippet_layers(
                                 source_data=data,
                                 source_path=source_path,
@@ -512,6 +564,8 @@ def build_review_zip(
                                 stored_layer_names.add(layer_meta["name"])
                             if stored_layers:
                                 entry["storage"] = "snippet"
+                                entry["source_status"] = "stored"
+                                entry["source_reason"] = "snippet_source"
                                 entry["snippet_only"] = True
                                 entry["relpath"] = stored_layers[0]["relpath"]
                                 entry["layers"] = stored_layers
@@ -528,9 +582,10 @@ def build_review_zip(
                                 snippet_source_count += 1
                             else:
                                 entry["omitted_reason"] = snippet_error or "source_total_limit_reached"
+                                entry["source_reason"] = entry["omitted_reason"]
                                 omitted_count += 1
                 except Exception as exc:
-                    entry["omitted_reason"] = "source_read_error: %s" % exc
+                    entry["omitted_reason"] = entry["source_reason"] = "source_read_error: %s" % exc
                     omitted_count += 1
             source_index.append(entry)
 
@@ -544,6 +599,7 @@ def build_review_zip(
                 "findings": len(findings),
                 "all_files": len(all_files),
                 "gray_zone": len(gray_zone),
+                "candidates": len(candidates),
                 "sources": source_count,
                 "sources_full": full_source_count,
                 "sources_snippet": snippet_source_count,
@@ -561,6 +617,8 @@ def build_review_zip(
         zf.writestr("all_files.json", json.dumps(all_files, ensure_ascii=False, indent=2))
         zf.writestr("gray_zone.json", json.dumps(gray_zone, ensure_ascii=False, indent=2))
         zf.writestr("sources/index.json", json.dumps(source_index, ensure_ascii=False, indent=2))
+        if benchmark_report is not None:
+            zf.writestr("benchmark.json", json.dumps(benchmark_report, ensure_ascii=False, indent=2))
 
     return buffer.getvalue(), {
         "findings": len(findings),
@@ -570,6 +628,7 @@ def build_review_zip(
         "sources_omitted": omitted_count,
         "stored_source_bytes": stored_source_bytes,
         "gray_zone": len(gray_zone),
+        "candidates": len(candidates),
     }
 
 
