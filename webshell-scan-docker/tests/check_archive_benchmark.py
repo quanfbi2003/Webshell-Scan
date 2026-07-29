@@ -35,7 +35,7 @@ def main():
         archive = Path(tmp) / "sample.zip"
         with zipfile.ZipFile(archive, "w") as zf:
             zf.writestr("archive-member.php", b"<?php echo 'member'; ?>")
-        report_path = "archive-member.php [ARCHIVE: %s]" % archive
+        report_path = "archive-member.php (in archive: sample.zip) [ARCHIVE: %s]" % archive
 
         entry, names = read_entry(make_bundle(report_path, source_limit_bytes=1, total_source_limit_bytes=1024)[0])
         assert entry["source_status"] == "omitted"

@@ -422,8 +422,28 @@ def _build_snippet_layers(
 
 def _archive_member_path(report_path: str) -> str:
     raw = str(report_path or '').replace('\\', '/')
+    raw = re.sub(r'\s*\(in archive:.*?\)', '', raw, flags=re.IGNORECASE)
+    raw = raw.split(' [ARCHIVE:', 1)[0].strip()
     match = re.search(r'/[^/]+_[0-9a-fA-F]{32}_extracted/(.+)$', raw)
-    return match.group(1) if match else ''
+    return match.group(1) if match else (raw.rsplit('/', 1)[-1] if raw else '')
+
+
+def _candidate_id(row, sha256, archive_path, member_path, benchmark_report):
+    rows = benchmark_report.get('results', []) if isinstance(benchmark_report, dict) else []
+    benchmark = next((item for item in rows if isinstance(item, dict) and (
+        (member_path and item.get('member_path') == member_path and
+         str(item.get('member_sha256') or item.get('sha256') or '').lower() == sha256.lower()) or
+        str(item.get('path') or '') == str(row.get('FILE') or '')
+    )), None)
+    if benchmark and benchmark.get('candidate_id'):
+        return str(benchmark['candidate_id']), benchmark
+    archive_sha = (benchmark or {}).get('archive_sha256')
+    chain = tuple((benchmark or {}).get('archive_chain') or ())
+    return canonical_candidate_id(
+        'scanner', sha256, 'archive-member' if archive_path else _clean_report_path(row.get('FILE', '')),
+        archive_sha256=archive_sha, archive_chain=chain or ((os.path.basename(archive_path),) if archive_path else ()),
+        member_path=member_path or None, member_sha256=sha256 if member_path else None,
+    ), benchmark
 
 
 def build_review_zip(
@@ -462,11 +482,8 @@ def build_review_zip(
         member_path = _archive_member_path(clean_path) if archive_path else ""
         if not member_path and archive_path and len(parts) == 2:
             member_path = clean_path.replace("\\", "/").rsplit("/", 1)[-1]
-        candidate_id = canonical_candidate_id(
-            "scanner", sha256, "archive-member" if archive_path else clean_path,
-            archive_chain=(os.path.basename(archive_path),) if archive_path else (),
-            member_path=member_path or None,
-            member_sha256=sha256 if member_path else None,
+        candidate_id, benchmark = _candidate_id(
+            row, sha256, archive_path, member_path, benchmark_report,
         )
         if candidate_id in seen_ids:
             continue
@@ -501,8 +518,10 @@ def build_review_zip(
             if archive_path or member_path:
                 entry["archive"] = {
                     "archive_path": archive_path,
+                    "archive_sha256": (benchmark or {}).get("archive_sha256"),
+                    "archive_chain": (benchmark or {}).get("archive_chain", []),
                     "member_path": member_path,
-                    "member_sha256": sha256_value if member_path else None,
+                    "member_sha256": (benchmark or {}).get("member_sha256") or (sha256_value if member_path else None),
                 }
             archive_data = None
             if archive_path and member_path and os.path.isfile(archive_path):
@@ -536,7 +555,7 @@ def build_review_zip(
                         stored_source_bytes += size
                     else:
                         if size > snippet_scan_limit_bytes:
-                            entry["omitted_reason"] = "source_too_large_for_snippet_scan"
+                            entry["omitted_reason"] = entry["source_reason"] = "member_budget_exceeded"
                             omitted_count += 1
                         else:
                             data = archive_data if archive_data is not None else Path(source_path).read_bytes()
@@ -585,7 +604,7 @@ def build_review_zip(
                                 entry["source_reason"] = entry["omitted_reason"]
                                 omitted_count += 1
                 except Exception as exc:
-                    entry["omitted_reason"] = entry["source_reason"] = "source_read_error: %s" % exc
+                    entry["omitted_reason"] = entry["source_reason"] = "source_read_error"
                     omitted_count += 1
             source_index.append(entry)
 

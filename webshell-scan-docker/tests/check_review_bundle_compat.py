@@ -4,7 +4,18 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import importlib.util
+
 from libs.review_bundle import build_review_zip, encrypt_review_bundle_bytes, decrypt_review_bundle_bytes
+
+_app_spec = importlib.util.spec_from_file_location("review_web_app", Path(__file__).parents[1] / "review-web" / "app.py")
+review_web_app = importlib.util.module_from_spec(_app_spec)
+import sys
+sys.modules["review_web_app"] = review_web_app
+_app_spec.loader.exec_module(review_web_app)
+import_enc_case = review_web_app.import_enc_case
+UploadedPart = review_web_app.UploadedPart
+review_web_app.bundle_passphrase = lambda *args, **kwargs: "local-test-key"
 
 
 FINDING_COLUMNS = ["FILE", "SHA256", "SCORE", "TIME", "DESCRIPTION", "EXTENSION"]
