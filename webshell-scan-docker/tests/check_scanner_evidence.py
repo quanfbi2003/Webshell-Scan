@@ -69,7 +69,7 @@ def main():
         with open(plain, "wb") as handle:
             handle.write(data)
         with zipfile.ZipFile(archive, "w") as handle:
-            handle.writestr("WEB-INF/sample.php", data)
+            handle.writestr("foo_extracted/WEB-INF/Shell.php", data)
 
         scanner = _scanner()
         scanner.app_path = ROOT
@@ -212,7 +212,8 @@ def main():
         assert archive_result and archive_result["benchmark"], archive_result
         archive_record = archive_result["benchmark"][0]
         assert archive_record["archive_sha256"] == hashlib.sha256(open(archive, "rb").read()).hexdigest()
-        assert archive_record["member_path"] == "WEB-INF/sample.php"
+        assert archive_record["member_path"] == "foo_extracted/WEB-INF/Shell.php"
+        assert sum("model_incompatible" in (item.get("reason") or "") for item in archive_record["evidence"]) <= 1
         assert archive_record["member_sha256"] == hashlib.sha256(data).hexdigest()
         assert archive_record["member_extension"] == ".php"
         assert archive_record["archive_chain"] == ("sample.zip",)
@@ -220,6 +221,16 @@ def main():
         assert "_extracted" not in archive_record["path"]
         assert not archive_result["findings"]
         assert archive_record["candidate_id"]
+
+        original_ast_df = webshell_scan.ast_df_heuristic
+        webshell_scan.ast_df_heuristic = lambda *args, **kwargs: (7, "AST-DF positive")
+        try:
+            positive_ast_result = scanner.process_single_file_with_result(
+                archive, _args(), ROOT.lower(), 1)
+        finally:
+            webshell_scan.ast_df_heuristic = original_ast_df
+        positive_ast = positive_ast_result["benchmark"][0]
+        assert sum(item.get("reason") == "AST-DF positive" for item in positive_ast["evidence"]) == 1
 
         archive_copy_dir = os.path.join(tmp, "other-extraction-root")
         os.makedirs(archive_copy_dir)
@@ -263,7 +274,7 @@ def main():
 
         original_get_file_data = scanner.get_file_data
         def member_read_error(path):
-            if str(path).endswith("sample.php"):
+            if str(path).endswith("Shell.php"):
                 raise OSError("member read denied")
             return original_get_file_data(path)
         scanner.get_file_data = member_read_error
@@ -276,13 +287,28 @@ def main():
         assert archive_read_error["benchmark"]
         assert any(record["status"] == "error" for record in archive_read_error["benchmark"])
 
+        readme_archive = os.path.join(tmp, "readme-only.zip")
+        with zipfile.ZipFile(readme_archive, "w") as handle:
+            handle.writestr("README.md", "documentation only")
+        readme_result = scanner.process_single_file_with_result(readme_archive, _args(), ROOT.lower(), 1)
+        assert readme_result["terminal_status"] in {"completed", "skipped"}, readme_result
+        assert not any(record["status"] == "error" for record in readme_result["benchmark"])
+        assert not readme_result["findings"] and not readme_result["gray_zone"]
+
         empty_archive = os.path.join(tmp, "empty.zip")
         with zipfile.ZipFile(empty_archive, "w"):
             pass
         empty_result = scanner.process_single_file_with_result(empty_archive, _args(), ROOT.lower(), 1)
-        assert empty_result["terminal_status"] == "error"
-        assert empty_result["benchmark"]
-        assert empty_result["benchmark"][0]["status"] == "error"
+        assert empty_result["terminal_status"] in {"completed", "skipped"}
+        assert not any(record["status"] == "error" for record in empty_result["benchmark"])
+
+        corrupt_archive = os.path.join(tmp, "corrupt.zip")
+        with open(corrupt_archive, "wb") as handle:
+            handle.write(b"not a zip")
+        corrupt_result = scanner.process_single_file_with_result(corrupt_archive, _args(), ROOT.lower(), 1)
+        assert corrupt_result["terminal_status"] == "error"
+        assert corrupt_result["benchmark"]
+        assert corrupt_result["benchmark"][0]["status"] == "error"
         print("scanner evidence checks passed")
         assert normal_record["shadow_score"] is not None
         assert not normal["findings"] and not normal["gray_zone"]

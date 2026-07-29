@@ -153,6 +153,10 @@ class SafeArchiveExtractor(object):
     MAX_FILES = 5000
     MAX_DEPTH = 5
 
+    def __init__(self):
+        self.last_error = None
+        self.last_extraction_succeeded = False
+
     def is_archive_file(self, file_path):
         file_path_lower = file_path.lower()
         for ext in sorted(self.ARCHIVE_EXTENSIONS, key=len, reverse=True):
@@ -249,6 +253,8 @@ class SafeArchiveExtractor(object):
 
     def extract(self, archive_path, temp_dir):
         extracted_files = []
+        self.last_error = None
+        self.last_extraction_succeeded = False
         try:
             is_archive, ext = self.is_archive_file(archive_path)
             if not is_archive:
@@ -281,7 +287,8 @@ class SafeArchiveExtractor(object):
                                 shutil.copyfileobj(src, out_file)
                             if os.path.isfile(extracted_path):
                                 extracted_files.append(extracted_path)
-                except zipfile.BadZipFile:
+                except zipfile.BadZipFile as exc:
+                    self.last_error = "invalid ZIP file: %s" % exc
                     logger.log("WARNING", "Archive", f"Invalid ZIP file: {archive_path}")
                     return extracted_files
 
@@ -316,6 +323,7 @@ class SafeArchiveExtractor(object):
                             if os.path.isfile(extracted_path):
                                 extracted_files.append(extracted_path)
                 except tarfile.TarError as e:
+                    self.last_error = "TAR extraction failed: %s" % e
                     logger.log("WARNING", "Archive", f"Error extracting TAR file {archive_path}: {str(e)}")
                     return extracted_files
 
@@ -326,6 +334,7 @@ class SafeArchiveExtractor(object):
                         if self.copy_stream_limited(gz_ref, output_path, archive_budget, archive_path):
                             extracted_files.append(output_path)
                 except Exception as e:
+                    self.last_error = str(e)
                     logger.log("WARNING", "Archive", f"Error extracting GZ file {archive_path}: {str(e)}")
                     return extracted_files
 
@@ -336,6 +345,7 @@ class SafeArchiveExtractor(object):
                         if self.copy_stream_limited(bz2_ref, output_path, archive_budget, archive_path):
                             extracted_files.append(output_path)
                 except Exception as e:
+                    self.last_error = str(e)
                     logger.log("WARNING", "Archive", f"Error extracting BZ2 file {archive_path}: {str(e)}")
                     return extracted_files
 
@@ -346,6 +356,7 @@ class SafeArchiveExtractor(object):
                         if self.copy_stream_limited(xz_ref, output_path, archive_budget, archive_path):
                             extracted_files.append(output_path)
                 except Exception as e:
+                    self.last_error = str(e)
                     logger.log("WARNING", "Archive", f"Error extracting XZ file {archive_path}: {str(e)}")
                     return extracted_files
 
@@ -359,17 +370,23 @@ class SafeArchiveExtractor(object):
                             extracted_files.extend(
                                 self.collect_extracted_files_with_budget(archive_temp_dir, archive_path))
                         else:
+                            self.last_error = "7z extraction failed"
                             logger.log("WARNING", "Archive", f"7z extraction failed for {archive_path}")
                     else:
+                        self.last_error = "7z tool unavailable"
                         logger.log("WARNING", "Archive",
                                    f"7z tool not available, cannot extract {ext} file: {archive_path}")
                 except (subprocess.TimeoutExpired, FileNotFoundError, subprocess.SubprocessError) as e:
+                    self.last_error = str(e)
                     logger.log("WARNING", "Archive", f"Cannot extract {ext} file {archive_path}: {str(e)}")
 
+            if self.last_error is None:
+                self.last_extraction_succeeded = True
             logger.log("DEBUG", "Archive", f"Extracted {len(extracted_files)} files from {archive_path}")
             return extracted_files
 
         except Exception as e:
+            self.last_error = str(e)
             logger.log("ERROR", "Archive", f"Error extracting archive {archive_path}: {str(e)}")
             return extracted_files
 
@@ -1274,11 +1291,20 @@ class Scanner(object):
         return self.archive_extractor.extract(archive_path, temp_dir)
 
     @staticmethod
-    def _archive_member_relative_path(extracted_file):
+    def _archive_member_relative_path(extracted_file, archive_path=None):
         parts = os.path.normpath(extracted_file).split(os.sep)
-        extracted_indexes = [i for i, part in enumerate(parts) if part.endswith("_extracted")]
-        if extracted_indexes:
-            return "/".join(parts[extracted_indexes[-1] + 1:])
+        archive_name = os.path.basename(os.path.normpath(archive_path)) if archive_path else None
+        if archive_name:
+            prefix = archive_name + "_"
+            matching_indexes = []
+            for index, part in enumerate(parts):
+                if not (part.startswith(prefix) and part.endswith("_extracted")):
+                    continue
+                uuid_part = part[len(prefix):-len("_extracted")]
+                if re.fullmatch(r"[0-9a-fA-F]{32}", uuid_part):
+                    matching_indexes.append(index)
+            if matching_indexes:
+                return "/".join(parts[matching_indexes[-1] + 1:])
         return os.path.basename(os.path.normpath(extracted_file))
 
     def scan_archive_recursive(self, archive_path, temp_dir, parent_archive="", args=None,
@@ -1357,7 +1383,7 @@ class Scanner(object):
                     try:
                         file_data = self.get_file_data(extracted_file)
                     except Exception as exc:
-                        member_path = self._archive_member_relative_path(extracted_file)
+                        member_path = self._archive_member_relative_path(extracted_file, archive_path)
                         member_extension = os.path.splitext(member_path)[1].lower()
                         self._record_benchmark(self._error_benchmark(
                             "archive-member", exc, archive_sha256=root_archive_sha256,
@@ -1366,7 +1392,7 @@ class Scanner(object):
                             canonical_path="archive-member"), benchmark_sink=benchmark_sink)
                         raise
                     if not file_data:
-                        member_path = self._archive_member_relative_path(extracted_file)
+                        member_path = self._archive_member_relative_path(extracted_file, archive_path)
                         self._record_benchmark(self._error_benchmark(
                             archive_path, "empty archive member", archive_sha256=root_archive_sha256,
                             member_path=member_path, member_sha256=hashlib.sha256(b"").hexdigest(),
@@ -1516,13 +1542,11 @@ class Scanner(object):
                         app_path=self.app_path,
                     )
                     if ast_reason:
-
                         file_reasons.append(ast_reason)
                         if ast_reason == "model_incompatible":
                             archive_status = "model_incompatible"
                             archive_coverage = "partial"
                     if ast_score > 0 and ast_reason:
-                        file_reasons.append(ast_reason)
                         delta = self._add_group_score(
                             file_group_scores, "ast_df", ast_score,
                             cap=int(self.effective_policy.get("ast_df_score_cap", ast_score)))
@@ -1569,7 +1593,7 @@ class Scanner(object):
                         logger.log("WARNING", "Archive",
                                    "YARA/deobfuscate scan failed for %s: %s" % (extracted_file, exc))
                         self.scan_stats.inc("files_errors", 1)
-                        member_path = self._archive_member_relative_path(extracted_file)
+                        member_path = self._archive_member_relative_path(extracted_file, archive_path)
                         self._record_benchmark(self._error_benchmark(
                             archive_path, exc, archive_sha256=root_archive_sha256,
                             member_path=member_path, member_sha256=sha256,
@@ -1578,7 +1602,7 @@ class Scanner(object):
                             benchmark_sink=benchmark_sink)
                         raise
 
-                    member_path = self._archive_member_relative_path(extracted_file)
+                    member_path = self._archive_member_relative_path(extracted_file, archive_path)
                     member_sha256 = sha256
                     evidence = self._build_evidence_records(
                         file_group_scores, file_reasons, coverage=archive_coverage,
@@ -1958,11 +1982,16 @@ class Scanner(object):
                         if result_dict is not None:
                             result_dict["status"] = "error"
                             result_dict["error"] = "archive member scan failed"
-                    if not archive_benchmark:
+                    if not archive_benchmark and (
+                            getattr(self.archive_extractor, "last_error", None)
+                            or not getattr(self.archive_extractor, "last_extraction_succeeded", False)):
                         archive_bytes = self.get_file_data(filePath)
                         _, _, archive_sha256 = generateHashes(archive_bytes) if archive_bytes else ("0", "0", "N/A")
+                        extraction_error = getattr(
+                            self.archive_extractor, "last_error", None
+                        ) or "archive extraction did not complete"
                         empty_record = self._error_benchmark(
-                            "archive", "empty or corrupt archive extraction",
+                            "archive", extraction_error,
                             archive_sha256=archive_sha256,
                             archive_chain=(os.path.basename(filePath),),
                             canonical_path="archive",
@@ -1971,7 +2000,10 @@ class Scanner(object):
                         if result_dict is not None:
                             result_dict["terminal_status"] = "error"
                             result_dict["status"] = "error"
-                            result_dict["error"] = "empty or corrupt archive extraction"
+                            result_dict["error"] = extraction_error
+                    elif result_dict is not None and not archive_benchmark:
+                        result_dict["terminal_status"] = "skipped"
+                        result_dict["status"] = "skipped"
 
                     if archive_findings:
                         for finding_file, finding_score, finding_reasons, original_archive, f_sha256 in archive_findings:

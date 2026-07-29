@@ -53,3 +53,18 @@ Follow-up verification:
 - `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/run-regression.py` — PASS
 
 Concern: the focused check intentionally logs synthetic YARA/worker errors to prove they are terminal and non-clean; this is expected test output.
+
+### Task 5 reviewer follow-up — remaining findings
+
+- Valid archives with only filtered members now preserve legacy no-finding behavior; extractor state distinguishes successful zero-candidate extraction from corrupt/unreadable extraction, which remains terminal error with an error benchmark.
+- Archive member paths now match the current archive extraction root (`<archive-basename>_<uuid>_extracted`) and preserve legitimate nested `foo_extracted` directories. Candidate IDs remain stable and contain no temporary paths.
+- Archive AST-DF positive reasons are appended exactly once.
+
+Verification:
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_scanner_evidence.py` — PASS (expected synthetic error logs)
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_fp_guard.py` — PASS
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/run-regression.py` — PASS
+- `python -m py_compile webshell-scan-docker/webshell-scan.py webshell-scan-docker/tests/check_scanner_evidence.py` — PASS
+- `git diff --check` — PASS
+
+Concern: extractor state is instance-local and resets for every extraction; nested archive recursion intentionally retains the current root archive SHA-256 and archive chain.
