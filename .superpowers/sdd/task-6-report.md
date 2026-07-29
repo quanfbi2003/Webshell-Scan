@@ -23,3 +23,10 @@
 
 - The local scanner emits a model-incompatible/unknown fixture outcome, so coverage remains intentionally partial; no automatic download or quarantine is used.
 - Scanner initialization compiles existing local YARA/signature data and uses installed optional dependencies only.
+
+## Final schema/provenance fix verification
+
+- Archive selection now matches archive SHA-256, member path, and member SHA-256.
+- Archive rows require member_extension consistent with member_path; unknown archive rows retain it.
+- Row/report shadow provenance includes actual shadow_mode, behavioral_fusion_enabled, and requested_shadow_only booleans.
+- check_report_schema.py: PASS; py_compile: PASS; git diff --check: PASS.

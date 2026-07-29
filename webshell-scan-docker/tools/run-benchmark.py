@@ -71,16 +71,25 @@ def _case_path(root, case):
     return candidate
 
 
-def _provenance(shadow_only=False, record=None):
+def _provenance(shadow_only=False, policy=None):
+    policy = policy or {}
     return {
         "source": "scanner",
         "field": "shadow_score",
         "decision": "shadow_decision" if shadow_only else "legacy_decision",
         "mode": "shadow" if shadow_only else "legacy",
+        "shadow_mode": policy.get("shadow_mode"),
+        "behavioral_fusion_enabled": policy.get("behavioral_fusion_enabled"),
+        "requested_shadow_only": bool(shadow_only),
     }
 
 
-def _unknown_row(case, terminal_status, error=None, shadow_only=False):
+def _case_member_extension(case):
+    member_path = case.get("member_path") or case.get("path", "")
+    return os.path.splitext(member_path)[1].lower()
+
+
+def _unknown_row(case, terminal_status, error=None, shadow_only=False, policy=None):
     archive = bool(case.get("archive"))
     row = record_result(
         case, "unknown", None, None,
@@ -91,9 +100,10 @@ def _unknown_row(case, terminal_status, error=None, shadow_only=False):
         archive_sha256=case.get("sha256") if archive else None,
         member_path=case.get("member_path") if archive else None,
         member_sha256=case.get("member_sha256") if archive else None,
+        member_extension=_case_member_extension(case),
     )
     row["terminal_status"] = terminal_status
-    row["shadow_provenance"] = _provenance(shadow_only)
+    row["shadow_provenance"] = _provenance(shadow_only, policy)
     if error:
         row["error"] = str(error)
     return row
@@ -115,7 +125,7 @@ def _status_and_prediction(record, terminal_status, shadow_only=False):
     return "unknown", None, None
 
 
-def _normalize_selected(selected, result, case, shadow_only=False):
+def _normalize_selected(selected, result, case, shadow_only=False, policy=None):
     terminal_status = result.get("terminal_status", "error")
     status, predicted, score = _status_and_prediction(
         selected, terminal_status, shadow_only=shadow_only,
@@ -131,19 +141,24 @@ def _normalize_selected(selected, result, case, shadow_only=False):
         "legacy_score": selected.get("legacy_score") if status != "unknown" else None,
         "shadow_score": selected.get("shadow_score") if status != "unknown" else None,
         "terminal_status": terminal_status,
-        "shadow_provenance": _provenance(shadow_only, selected),
+        "shadow_provenance": _provenance(shadow_only, policy),
     })
     if status == "unknown":
         row["score"] = None
+        row.setdefault("member_extension", _case_member_extension(case))
+    if case.get("archive"):
+        row.setdefault("member_extension", _case_member_extension(case))
     return row
 
 
-def _archive_rows(records, result, case, shadow_only=False):
+def _archive_rows(records, result, case, shadow_only=False, policy=None):
+    expected_archive_sha = str(case.get("sha256", "")).lower()
     expected_path = case.get("member_path")
     expected_sha = str(case.get("member_sha256", "")).lower()
     matches = [
         record for record in records
-        if record.get("member_path") == expected_path
+        if str(record.get("archive_sha256", "")).lower() == expected_archive_sha
+        and record.get("member_path") == expected_path
         and str(record.get("member_sha256", "")).lower() == expected_sha
     ]
     if len(matches) > 1:
@@ -153,31 +168,42 @@ def _archive_rows(records, result, case, shadow_only=False):
         )
     if not matches:
         return [_unknown_row(
-            case, result.get("terminal_status", "error"), result.get("error"), shadow_only,
+            case, result.get("terminal_status", "error"), result.get("error"),
+            shadow_only, policy,
         )]
-    return [_normalize_selected(matches[0], result, case, shadow_only=shadow_only)]
+    return [_normalize_selected(
+        matches[0], result, case, shadow_only=shadow_only, policy=policy,
+    )]
 
 
-def _select_rows(records, result, case, shadow_only=False):
+def _select_rows(records, result, case, shadow_only=False, policy=None):
     if case.get("archive"):
-        return _archive_rows(records, result, case, shadow_only=shadow_only)
+        return _archive_rows(
+            records, result, case, shadow_only=shadow_only, policy=policy,
+        )
     normal = [row for row in records if row.get("member_path") is None]
     if len(normal) == 1:
-        return [_normalize_selected(normal[0], result, case, shadow_only=shadow_only)]
+        return [_normalize_selected(
+            normal[0], result, case, shadow_only=shadow_only, policy=policy,
+        )]
     if not normal:
         return [_unknown_row(
-            case, result.get("terminal_status", "error"), result.get("error"), shadow_only,
+            case, result.get("terminal_status", "error"), result.get("error"),
+            shadow_only, policy,
         )]
     raise ValueError("multiple normal benchmark records for case %s" % case["id"])
 
 
-def run_case(scanner, case, shadow_only=False):
+def run_case(scanner, case, shadow_only=False, policy=None):
     """Scan one manifest case without quarantine and return one result row."""
     path = _case_path(scanner._benchmark_root, case)
     result = scanner.process_single_file_with_result(
         path, scanner._benchmark_args, scanner._benchmark_root.lower(), 1,
     )
-    rows = _select_rows(result.get("benchmark", []), result, case, shadow_only=shadow_only)
+    rows = _select_rows(
+        result.get("benchmark", []), result, case,
+        shadow_only=shadow_only, policy=scanner.effective_policy,
+    )
     if len(rows) != 1:
         raise ValueError("expected one benchmark record for case %s" % case["id"])
     return rows[0]
@@ -202,7 +228,9 @@ def run_manifest(manifest_path, root, worker_count=1, shadow_only=False):
     scanner._benchmark_root = root
     scanner._benchmark_args = _args(worker_count)
     scanner.apply_runtime_policy(scanner._benchmark_args)
-    rows = [run_case(scanner, case, shadow_only=shadow_only) for case in cases]
+    rows = [run_case(
+        scanner, case, shadow_only=shadow_only, policy=scanner.effective_policy,
+    ) for case in cases]
     expected = [case["id"] for case in cases]
     actual = [row.get("id") for row in rows]
     if len(actual) != len(set(actual)) or set(actual) != set(expected) or len(actual) != len(expected):
@@ -235,15 +263,32 @@ def _validate_archive_row(row):
         return
     if not isinstance(member_path, str) or not member_path:
         raise ValueError("archive metadata requires member_path")
+    if "member_extension" not in row or not isinstance(row["member_extension"], str):
+        raise ValueError("archive metadata requires member_extension")
+    expected_extension = os.path.splitext(member_path)[1].lower()
+    if expected_extension and row["member_extension"].lower() != expected_extension:
+        raise ValueError("member_extension does not match member_path")
     _validate_sha256(archive_sha, "archive_sha256")
     _validate_sha256(member_sha, "member_sha256")
 
 
 def _validate_shadow_provenance(value):
-    if not isinstance(value, dict) or value.get("source") != "scanner":
+    required = {"source", "field", "decision", "mode", "shadow_mode",
+                "behavioral_fusion_enabled", "requested_shadow_only"}
+    if not isinstance(value, dict) or not required.issubset(value):
+        raise ValueError("shadow_provenance is incomplete")
+    if value.get("source") != "scanner":
         raise ValueError("shadow_provenance must identify the scanner")
     if value.get("field") != "shadow_score":
         raise ValueError("shadow_provenance must identify shadow_score")
+    for field in ("shadow_mode", "behavioral_fusion_enabled", "requested_shadow_only"):
+        if type(value.get(field)) is not bool:
+            raise ValueError("shadow_provenance.%s must be boolean" % field)
+    shadow_only = value["requested_shadow_only"]
+    if value.get("decision") != ("shadow_decision" if shadow_only else "legacy_decision"):
+        raise ValueError("shadow_provenance decision does not match requested mode")
+    if value.get("mode") != ("shadow" if shadow_only else "legacy"):
+        raise ValueError("shadow_provenance mode does not match requested mode")
 
 
 def validate_report_schema(run):
@@ -251,6 +296,11 @@ def validate_report_schema(run):
         raise ValueError("report requires run_id")
     if not isinstance(run.get("results"), list):
         raise ValueError("report requires results")
+    if type(run.get("shadow_only")) is not bool:
+        raise ValueError("report requires shadow_only boolean")
+    _validate_shadow_provenance(run.get("shadow_provenance"))
+    if run["shadow_provenance"]["requested_shadow_only"] != run["shadow_only"]:
+        raise ValueError("report provenance does not match shadow_only")
     ids = []
     required = {
         "id", "legacy_score", "shadow_score", "status", "terminal_status",
@@ -262,8 +312,11 @@ def validate_report_schema(run):
         ids.append(row["id"])
         if row["terminal_status"] not in _TERMINAL:
             raise ValueError("benchmark result has non-terminal status")
-        if row["status"] == "unknown" and (row["legacy_score"] is not None or row["shadow_score"] is not None):
-            raise ValueError("unknown result scores must be null")
+        if row["status"] == "unknown":
+            if row["legacy_score"] is not None or row["shadow_score"] is not None:
+                raise ValueError("unknown result scores must be null")
+            if not isinstance(row.get("member_extension"), str):
+                raise ValueError("unknown result requires member_extension")
         if not isinstance(row["evidence_groups"], list):
             raise ValueError("evidence_groups must be a list")
         _validate_sha256(row["sha256"], "sha256", allow_na=True)
@@ -284,7 +337,7 @@ def write_benchmark_report(path, run):
         handle.write("\n")
 
 
-def _build_report(rows, manifest_path, root, worker_count, shadow_only=False):
+def _build_report(rows, manifest_path, root, worker_count, shadow_only=False, policy=None):
     return {
         "schema": "webshell-benchmark-v1",
         "run_id": str(uuid.uuid4()),
@@ -294,7 +347,7 @@ def _build_report(rows, manifest_path, root, worker_count, shadow_only=False):
         "worker_count": int(worker_count),
         "quarantine": False,
         "shadow_only": bool(shadow_only),
-        "shadow_provenance": {"source": "scanner", "field": "shadow_score"},
+        "shadow_provenance": _provenance(shadow_only, policy),
         "results": rows,
         "metrics": compute_metrics(rows),
         "unknown": [row for row in rows if row.get("status") == "unknown"],
@@ -318,7 +371,14 @@ def main(argv=None):
     root = _resolve_benchmark_root(args.root)
     manifest = os.path.realpath(args.manifest)
     rows = run_manifest(manifest, root, args.workers, shadow_only=args.shadow_only)
-    report = _build_report(rows, manifest, root, args.workers, shadow_only=args.shadow_only)
+    policy = {
+        "shadow_mode": rows[0]["shadow_provenance"]["shadow_mode"],
+        "behavioral_fusion_enabled": rows[0]["shadow_provenance"]["behavioral_fusion_enabled"],
+    }
+    report = _build_report(
+        rows, manifest, root, args.workers, shadow_only=args.shadow_only,
+        policy=policy,
+    )
     write_benchmark_report(args.output, report)
     print(json.dumps(report["metrics"], sort_keys=True))
     return 0

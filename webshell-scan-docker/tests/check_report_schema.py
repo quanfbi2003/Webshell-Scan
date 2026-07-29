@@ -30,9 +30,20 @@ def main():
     }
     assert runner.legacy_report_columns() == expected_columns
 
+    provenance = {
+        "source": "scanner",
+        "field": "shadow_score",
+        "decision": "legacy_decision",
+        "mode": "legacy",
+        "shadow_mode": True,
+        "behavioral_fusion_enabled": False,
+        "requested_shadow_only": False,
+    }
     report = {
         "schema": "webshell-benchmark-v1",
         "run_id": "run-test",
+        "shadow_only": False,
+        "shadow_provenance": provenance,
         "results": [{
             "id": "sample",
             "legacy_score": 90,
@@ -44,7 +55,8 @@ def main():
             "archive_sha256": None,
             "member_path": None,
             "member_sha256": None,
-            "shadow_provenance": {"source": "scanner", "field": "shadow_score"},
+            "member_extension": "",
+            "shadow_provenance": provenance,
         }],
     }
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -56,7 +68,8 @@ def main():
 
         archive = dict(report)
         archive["results"] = [dict(report["results"][0], archive_sha256="b" * 64,
-                                   member_path="nested/shell.php", member_sha256="c" * 64)]
+                                   member_path="nested/shell.php", member_sha256="c" * 64,
+                                   member_extension=".php")]
         runner.validate_report_schema(archive)
 
     for missing in (
@@ -82,6 +95,7 @@ def main():
             invalid["results"][0]["archive_sha256"] = "b" * 64
             invalid["results"][0]["member_path"] = "nested/shell.php"
             invalid["results"][0]["member_sha256"] = "c" * 64
+            invalid["results"][0]["member_extension"] = ".php"
             invalid["results"][0][field] = "g" * 64
         try:
             runner.validate_report_schema(invalid)
@@ -93,6 +107,7 @@ def main():
     invalid_archive = json.loads(json.dumps(report))
     invalid_archive["results"][0]["member_path"] = "nested/shell.php"
     invalid_archive["results"][0]["member_sha256"] = "c" * 64
+    invalid_archive["results"][0]["member_extension"] = ".php"
     try:
         runner.validate_report_schema(invalid_archive)
     except ValueError:
@@ -114,9 +129,11 @@ def main():
     }
     archive_records = [
         dict(report["results"][0], archive_sha256="b" * 64,
-             member_path="other.php", member_sha256="d" * 64),
+             member_path="other.php", member_sha256="d" * 64,
+             member_extension=".php"),
         dict(report["results"][0], archive_sha256="b" * 64,
-             member_path="nested/shell.php", member_sha256="c" * 64),
+             member_path="nested/shell.php", member_sha256="c" * 64,
+             member_extension=".php"),
     ]
     selected = runner._select_rows(archive_records, {"terminal_status": "completed"}, archive_case)
     assert len(selected) == 1
@@ -127,13 +144,56 @@ def main():
                          shadow_decision="report_threshold_met")
     shadow = runner._normalize_selected(
         shadow_record, {"terminal_status": "completed"}, case, shadow_only=True,
+        policy={"shadow_mode": True, "behavioral_fusion_enabled": False},
     )
+    assert shadow["shadow_provenance"]["requested_shadow_only"] is True
+    assert shadow["shadow_provenance"]["shadow_mode"] is True
+    assert shadow["shadow_provenance"]["behavioral_fusion_enabled"] is False
+    assert shadow["member_extension"] == ""
     assert shadow["status"] == "detected"
     assert shadow["predicted"] == "webshell"
     assert shadow["score"] == shadow["shadow_score"]
     assert shadow["shadow_provenance"]["source"] == "scanner"
 
+    invalid_provenance = json.loads(json.dumps(report))
+    invalid_provenance["shadow_provenance"]["shadow_mode"] = "true"
+    try:
+        runner.validate_report_schema(invalid_provenance)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("schema accepted non-boolean policy provenance")
+
+    invalid_archive_row = json.loads(json.dumps(archive))
+    del invalid_archive_row["results"][0]["member_extension"]
+    try:
+        runner.validate_report_schema(invalid_archive_row)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("schema accepted archive row without member_extension")
+
+    archive_sha_mismatch = runner._select_rows(
+        [dict(archive_records[1], archive_sha256="d" * 64)],
+        {"terminal_status": "completed"}, archive_case,
+    )[0]
+    assert archive_sha_mismatch["status"] == "unknown"
+    assert archive_sha_mismatch["member_extension"] == ".php"
+
+    manifest_path = os.path.join(APP_ROOT, "tests", "fixtures", "benchmark", "cases.jsonl")
+    built = runner._build_report(
+        [shadow], manifest_path, APP_ROOT, 1, shadow_only=True,
+        policy={"shadow_mode": True, "behavioral_fusion_enabled": True},
+    )
+    assert built["shadow_provenance"]["shadow_mode"] is True
+    assert built["shadow_provenance"]["behavioral_fusion_enabled"] is True
+    assert built["shadow_provenance"]["requested_shadow_only"] is True
+
     print("report schema checks passed")
+
+
+if __name__ == "__main__":
+    main()
 
 
 if __name__ == "__main__":
