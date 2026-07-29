@@ -1308,23 +1308,42 @@ class Scanner(object):
         return os.path.basename(os.path.normpath(extracted_file))
 
     def scan_archive_recursive(self, archive_path, temp_dir, parent_archive="", args=None,
-                               _depth=0, benchmark_sink=None, root_archive_sha256=None):
+                               _depth=0, benchmark_sink=None, root_archive_sha256=None,
+                               error_state=None):
         """Scan archive and recursively scan nested archives. Returns list of findings.
 
         _depth: current recursion depth — protected against zip bomb via MAX_ARCHIVE_DEPTH.
         """
         if benchmark_sink is None:
             benchmark_sink = self.benchmark_records
+        if error_state is None:
+            error_state = {}
         archive_chain = tuple(item.strip() for item in parent_archive.split(" -> ") if item.strip())
         archive_chain += (os.path.basename(archive_path),)
+        error_state.setdefault("benchmark_recorded", False)
+        error_state.setdefault("error", None)
+
+        def record_archive_error(error):
+            error_state["error"] = error
+            if not error_state["benchmark_recorded"]:
+                self._record_benchmark(self._error_benchmark(
+                    "archive", error, archive_sha256=root_archive_sha256,
+                    archive_chain=archive_chain, canonical_path="archive",
+                ), benchmark_sink=benchmark_sink)
+                error_state["benchmark_recorded"] = True
+            return []
+
+        def archive_failed():
+            extraction_error = getattr(self.archive_extractor, "last_error", None)
+            if extraction_error:
+                return record_archive_error(extraction_error)
+            return None
         if root_archive_sha256 is None:
             try:
                 archive_bytes = self.get_file_data(archive_path)
                 _, _, root_archive_sha256 = generateHashes(archive_bytes) if archive_bytes else ("0", "0", "N/A")
             except Exception as exc:
-                self._record_benchmark(self._error_benchmark(
-                    "archive", exc, archive_chain=archive_chain, canonical_path="archive"),
-                    benchmark_sink=benchmark_sink)
+                record_archive_error(exc)
                 return []
 
         findings = []  # List of (file_path, score, reasons, archive_path)
@@ -1339,7 +1358,9 @@ class Scanner(object):
         try:
             # Extract archive
             extracted_files = self.extract_archive(archive_path, temp_dir)
-            
+            if archive_failed() is not None:
+                return findings
+
             if not extracted_files:
                 return findings
             
@@ -1358,8 +1379,11 @@ class Scanner(object):
                                 nested_parent = f"{parent_archive} -> {os.path.basename(archive_path)}" if parent_archive else os.path.basename(archive_path)
                                 nested_findings = self.scan_archive_recursive(
                                     extracted_file, temp_dir, nested_parent, args, _depth=_depth + 1,
-                                    benchmark_sink=benchmark_sink, root_archive_sha256=root_archive_sha256)
+                                    benchmark_sink=benchmark_sink, root_archive_sha256=root_archive_sha256,
+                                    error_state=error_state)
                                 findings.extend(nested_findings)
+                                if error_state.get("error"):
+                                    return findings
                             else:
                                 logger.log("DEBUG", "Archive", f"Skipping nested archive {extracted_file} (size {nested_size} > {self.MAX_ARCHIVE_SIZE})")
                         except Exception as e:
@@ -1665,6 +1689,7 @@ class Scanner(object):
             
         except Exception as e:
             logger.log("ERROR", "Archive", f"Error in scan_archive_recursive for {archive_path}: {str(e)}")
+            record_archive_error(e)
             return findings
 
     def _increment_progress(self, filePath, file_size, total):
@@ -1866,7 +1891,8 @@ class Scanner(object):
             logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
             traceback.print_exc()
         if result.get("terminal_status") == "completed":
-            if result.get("benchmark") or result.get("findings") or result.get("gray_zone"):
+            if (result.get("benchmark") or result.get("findings") or result.get("gray_zone")
+                    or result.get("archive_scan_completed")):
                 result["terminal_status"] = "completed"
             elif result.get("all_file_info"):
                 result["terminal_status"] = "skipped"
@@ -1982,6 +2008,12 @@ class Scanner(object):
                         if result_dict is not None:
                             result_dict["status"] = "error"
                             result_dict["error"] = "archive member scan failed"
+                    if getattr(self.archive_extractor, "last_error", None):
+                        extraction_error = self.archive_extractor.last_error
+                        if result_dict is not None:
+                            result_dict["terminal_status"] = "error"
+                            result_dict["status"] = "error"
+                            result_dict["error"] = extraction_error
                     if not archive_benchmark and (
                             getattr(self.archive_extractor, "last_error", None)
                             or not getattr(self.archive_extractor, "last_extraction_succeeded", False)):
@@ -2002,8 +2034,9 @@ class Scanner(object):
                             result_dict["status"] = "error"
                             result_dict["error"] = extraction_error
                     elif result_dict is not None and not archive_benchmark:
-                        result_dict["terminal_status"] = "skipped"
-                        result_dict["status"] = "skipped"
+                        result_dict["terminal_status"] = "completed"
+                        result_dict["status"] = "completed"
+                        result_dict["archive_scan_completed"] = True
 
                     if archive_findings:
                         for finding_file, finding_score, finding_reasons, original_archive, f_sha256 in archive_findings:

@@ -68,3 +68,18 @@ Verification:
 - `git diff --check` — PASS
 
 Concern: extractor state is instance-local and resets for every extraction; nested archive recursion intentionally retains the current root archive SHA-256 and archive chain.
+
+### Task 5 reviewer follow-up — nested archive fail-closed fix
+
+- Added a focused regression covering an outer ZIP with a valid member plus an invalid nested ZIP. It requires terminal `error`, an error benchmark, and no clean benchmark for the invalid nested member.
+- Propagated a per-scan archive error state through nested `scan_archive_recursive` calls. A nested extractor error stops further archive processing and records one partial error benchmark rather than returning partial members as completed.
+- Kept successful zero-candidate extraction non-error, including README-only archives. Preserved stable archive candidate IDs, legacy findings/scores/CSV/quarantine behavior, and temporary extraction cleanup.
+
+Verification:
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_scanner_evidence.py` — PASS (expected synthetic error logs)
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/check_fp_guard.py` — PASS
+- `PYTHONPATH=webshell-scan-docker python webshell-scan-docker/tests/run-regression.py` — PASS
+- `python -m py_compile webshell-scan-docker/webshell-scan.py webshell-scan-docker/tests/check_scanner_evidence.py` — PASS
+- `git diff --check` — PASS
+
+Concern: focused checks intentionally emit synthetic YARA/worker/member-read errors to prove terminal fail-closed behavior; this is expected output.

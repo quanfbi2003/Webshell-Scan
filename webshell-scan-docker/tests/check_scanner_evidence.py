@@ -295,6 +295,19 @@ def main():
         assert not any(record["status"] == "error" for record in readme_result["benchmark"])
         assert not readme_result["findings"] and not readme_result["gray_zone"]
 
+        nested_invalid_archive = os.path.join(tmp, "nested-invalid.zip")
+        with zipfile.ZipFile(nested_invalid_archive, "w") as handle:
+            handle.writestr("valid.php", data)
+            handle.writestr("nested.zip", b"not a zip")
+        nested_invalid_result = scanner.process_single_file_with_result(
+            nested_invalid_archive, _args(), ROOT.lower(), 1)
+        assert nested_invalid_result["terminal_status"] == "error", nested_invalid_result
+        assert any(record["status"] == "error" for record in nested_invalid_result["benchmark"])
+        assert not any(
+            record["status"] == "clean" and record.get("member_path") == "nested.zip"
+            for record in nested_invalid_result["benchmark"]
+        )
+
         empty_archive = os.path.join(tmp, "empty.zip")
         with zipfile.ZipFile(empty_archive, "w"):
             pass
