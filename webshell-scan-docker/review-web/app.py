@@ -1338,6 +1338,7 @@ def case_dashboard(case_id: int, query: dict[str, list[str]]) -> bytes:
         filters.append(f"<a class=\"pill status-{st}\" href=\"?status={st}\">{status_label(st)}: {counts.get(st, 0)}</a>")
     rows = []
     for item in findings:
+        has_source_label = 'Có' if item['has_source'] else 'Thiếu'
         rows.append(
             "<tr>"
             f"<td><a href=\"/case/{case['id']}/finding/{item['id']}\">#{item['id']}</a></td>"
@@ -1345,7 +1346,7 @@ def case_dashboard(case_id: int, query: dict[str, list[str]]) -> bytes:
             f"<td><span class=\"pill status-{item['status']}\">{status_label(item['status'])}</span></td>"
             f"<td class=\"path\">{html.escape(item['file_path'])}<br><span class=\"muted\">{html.escape(item['sha256'] or 'N/A')}</span></td>"
             f"<td>{item['evidence_count']}</td>"
-            f"<td>{'Có' if item['has_source'] else '<span class=\"muted\">Thiếu</span>'}</td>"
+            f"<td>{has_source_label}</td>"
             f"</tr>"
         )
     body = f"""

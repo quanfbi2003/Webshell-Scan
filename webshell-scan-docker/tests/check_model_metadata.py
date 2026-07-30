@@ -16,6 +16,7 @@ sys.path.insert(0, APP_ROOT)
 from libs.ast_df import (  # noqa: E402
     EXTRACTOR_VERSION,
     FEATURE_NAMES,
+    _MODEL_CACHE,
     _predict_probability,
     ast_df_heuristic,
     build_model_metadata,
@@ -162,17 +163,20 @@ with tempfile.TemporaryDirectory() as temp_dir:
     score, reason = ast_df_heuristic(b"<?php echo $_GET['x'];", ".php", "shell.php", policy)
     assert score > 0 and reason
 
+    _MODEL_CACHE.clear()
     metadata["feature_hash"] = "b" * 64
     with open(model_path, "wb") as handle:
         pickle.dump({"artifact_version": 1, "model": FakeModel(), "metadata": metadata}, handle)
     score, reason = ast_df_heuristic(b"<?php echo $_GET['x'];", ".php", "shell.php", policy)
     assert (score, reason) == (0, "model_incompatible"), (score, reason)
 
+    _MODEL_CACHE.clear()
     with open(model_path, "wb") as handle:
         pickle.dump({"artifact_version": 1, "model": FakeModel(), "metadata": {}}, handle)
     score, reason = ast_df_heuristic(b"<?php echo $_GET['x'];", ".php", "shell.php", policy)
     assert (score, reason) == (0, "model_incompatible"), (score, reason)
 
+    _MODEL_CACHE.clear()
     malformed = dict(metadata, feature_names=3)
     with open(model_path, "wb") as handle:
         pickle.dump({"artifact_version": 1, "model": FakeModel(), "metadata": malformed}, handle)
