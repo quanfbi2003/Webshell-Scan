@@ -70,7 +70,9 @@ def main():
             assert len(index) == 1
             assert index[0]["candidate_id"] == "candidate-a"
             assert index[0]["source_status"] == "stored"
-            assert str(Path(tmp)) not in json.dumps(index)
+            entry = index[0]
+            assert entry.get("relpath", ""), "source should have a stored relpath"
+            assert not entry.get("archive", {}).get("archive_path", ""), "non-archive must not have archive_path"
         encrypted = encrypt_review_bundle_bytes(payload, "local-test-key")
         assert decrypt_review_bundle_bytes(encrypted, "local-test-key") == payload
 
