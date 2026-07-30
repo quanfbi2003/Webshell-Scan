@@ -1034,7 +1034,9 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
         conn.execute(
             "INSERT INTO audit_log(case_id, action, detail, created_at) VALUES(?,?,?,?)",
             (case_id, "import_enc", "Imported %s findings, %s source files from %s" % (imported, source_count, filename), now_ts()),
-        )    return case_id, share_key, imported, source_count
+        )
+
+    return case_id, share_key, imported, source_count
 
 
 def import_case(title: str, findings: UploadedPart, source_zip: UploadedPart | None) -> tuple[int, str, int, int]:
