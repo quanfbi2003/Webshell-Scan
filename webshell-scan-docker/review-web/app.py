@@ -942,42 +942,30 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
                 "layers": [],
                 "evidence": item.get("evidence") if isinstance(item.get("evidence"), list) else [],
                 "candidate_id": str(item.get("candidate_id") or ""),
+                "source_status": str(item.get("source_status") or "stored"),
+                "source_reason": str(item.get("source_reason") or item.get("omitted_reason") or ""),
+                "archive": item.get("archive") if isinstance(item.get("archive"), dict) else {},
             }
             layers = item.get("layers") if isinstance(item.get("layers"), list) else []
-            if layers:
-                for layer in layers:
-                    if not isinstance(layer, dict):
-                        continue
-                    local_layer_rel = _extract_bundle_member(
-                        zf,
-                        str(layer.get("relpath") or ""),
-                        source_root,
-                        source_root_resolved,
-                        data_root,
-                    )
-                    if not local_layer_rel:
-                        continue
+            for layer in layers:
+                if not isinstance(layer, dict):
+                    continue
+                local_layer_rel = _extract_bundle_member(zf, str(layer.get("relpath") or ""), source_root, source_root_resolved, data_root)
+                if local_layer_rel:
                     layer_meta = dict(layer)
                     layer_meta["local_relpath"] = local_layer_rel
                     meta["layers"].append(layer_meta)
                     if not meta["local_relpath"]:
                         meta["local_relpath"] = local_layer_rel
-            else:
-                local_rel = _extract_bundle_member(
-                    zf,
-                    str(item.get("relpath") or ""),
-                    source_root,
-                    source_root_resolved,
-                    data_root,
-                )
+            if not layers:
+                local_rel = _extract_bundle_member(zf, str(item.get("relpath") or ""), source_root, source_root_resolved, data_root)
                 if local_rel:
                     meta["local_relpath"] = local_rel
 
-            if not meta["local_relpath"] and not meta["layers"]:
-                continue
-            source_count += 1
-            if item.get("candidate_id"):
-                source_by_candidate[str(item["candidate_id"])] = meta
+            if meta["local_relpath"] or meta["layers"]:
+                source_count += 1
+            if meta["candidate_id"]:
+                source_by_candidate[meta["candidate_id"]] = meta
             if item.get("file"):
                 source_by_file[str(item["file"])] = meta
             sha = str(item.get("sha256") or "").lower()
@@ -985,7 +973,9 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
                 source_by_sha[sha] = meta
 
         imported = 0
-        for row in findings + [item for item in gray_zone if isinstance(item, dict)]:
+        rows = list(findings) + [row for row in gray_zone if isinstance(row, dict)]
+        seen = set()
+        for row in rows:
             if not isinstance(row, dict):
                 continue
             file_path = str(row.get("FILE") or row.get("file") or "").strip()
@@ -994,29 +984,17 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
             sha256 = str(row.get("SHA256") or row.get("sha256") or "N/A").strip()
             candidate_id = str(row.get("candidate_id") or "")
             source_meta = source_by_candidate.get(candidate_id) or source_by_file.get(file_path) or source_by_sha.get(sha256.lower()) or {}
+            dedupe_key = candidate_id or "%s:%s" % (file_path, sha256)
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
             local_rel = source_meta.get("local_relpath") if isinstance(source_meta, dict) else ""
             local_file = DATA_DIR / local_rel if local_rel else None
             bundle_layers = source_meta.get("layers", []) if isinstance(source_meta, dict) else []
             bundle_evidence = source_meta.get("evidence", []) if isinstance(source_meta, dict) else []
             cur = conn.execute(
-                """
-                INSERT INTO findings(
-                    case_id, file_path, sha256, score, scan_time, description, extension,
-                    local_relpath, has_source, created_at
-                ) VALUES(?,?,?,?,?,?,?,?,?,?)
-                """,
-                (
-                    case_id,
-                    file_path,
-                    sha256,
-                    safe_int(row.get("SCORE", row.get("score")), None),
-                    str(row.get("TIME", row.get("time", ""))),
-                    str(row.get("DESCRIPTION", row.get("description", ""))),
-                    str(row.get("EXTENSION", row.get("extension", Path(file_path).suffix))),
-                    local_rel,
-                    1 if (local_file and local_file.exists()) or bundle_layers else 0,
-                    created,
-                ),
+                "INSERT INTO findings(case_id, file_path, sha256, score, scan_time, description, extension, local_relpath, has_source, created_at) VALUES(?,?,?,?,?,?,?,?,?,?)",
+                (case_id, file_path, sha256, safe_int(row.get("SCORE", row.get("score")), None), str(row.get("TIME", row.get("time", ""))), str(row.get("DESCRIPTION", row.get("description", ""))), str(row.get("EXTENSION", row.get("extension", Path(file_path).suffix))), local_rel, 1 if (local_file and local_file.exists()) or bundle_layers else 0, created),
             )
             finding_id = int(cur.lastrowid)
             if bundle_layers:
@@ -1030,40 +1008,14 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
                     stored_layer_names.add(name)
                     conn.execute(
                         "INSERT OR IGNORE INTO layers(finding_id, name, relpath, size, sha256) VALUES(?,?,?,?,?)",
-                        (
-                            finding_id,
-                            name,
-                            rel,
-                            safe_int(layer.get("size"), path.stat().st_size),
-                            str(layer.get("sha256") or file_sha256(path)),
-                        ),
+                        (finding_id, name, rel, safe_int(layer.get("size"), path.stat().st_size), str(layer.get("sha256") or file_sha256(path))),
                     )
                 for ev in bundle_evidence:
-                    if not isinstance(ev, dict):
-                        continue
-                    layer_name = str(ev.get("layer_name") or "")
-                    if layer_name not in stored_layer_names:
+                    if not isinstance(ev, dict) or str(ev.get("layer_name") or "") not in stored_layer_names:
                         continue
                     conn.execute(
-                        """
-                        INSERT INTO evidence(
-                            finding_id, layer_name, rule_name, string_id, start_offset, end_offset,
-                            matched_text, score, description, reference, author
-                        ) VALUES(?,?,?,?,?,?,?,?,?,?,?)
-                        """,
-                        (
-                            finding_id,
-                            layer_name,
-                            str(ev.get("rule_name") or ""),
-                            str(ev.get("string_id") or ""),
-                            safe_int(ev.get("start_offset"), None) if ev.get("start_offset") is not None else None,
-                            safe_int(ev.get("end_offset"), None) if ev.get("end_offset") is not None else None,
-                            str(ev.get("matched_text") or ""),
-                            safe_int(ev.get("score"), 70),
-                            str(ev.get("description") or ""),
-                            str(ev.get("reference") or "-"),
-                            str(ev.get("author") or "-"),
-                        ),
+                        "INSERT INTO evidence(finding_id, layer_name, rule_name, string_id, start_offset, end_offset, matched_text, score, description, reference, author) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+                        (finding_id, str(ev.get("layer_name") or ""), str(ev.get("rule_name") or ""), str(ev.get("string_id") or ""), safe_int(ev.get("start_offset"), None) if ev.get("start_offset") is not None else None, safe_int(ev.get("end_offset"), None) if ev.get("end_offset") is not None else None, str(ev.get("matched_text") or ""), safe_int(ev.get("score"), 70), str(ev.get("description") or ""), str(ev.get("reference") or "-"), str(ev.get("author") or "-")),
                     )
             elif local_file and local_file.exists():
                 try:
@@ -1082,9 +1034,7 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
         conn.execute(
             "INSERT INTO audit_log(case_id, action, detail, created_at) VALUES(?,?,?,?)",
             (case_id, "import_enc", "Imported %s findings, %s source files from %s" % (imported, source_count, filename), now_ts()),
-        )
-
-    return case_id, share_key, imported, source_count
+        )    return case_id, share_key, imported, source_count
 
 
 def import_case(title: str, findings: UploadedPart, source_zip: UploadedPart | None) -> tuple[int, str, int, int]:
