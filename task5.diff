@@ -1,0 +1,253 @@
+diff --git a/webshell-scan-docker/webshell-scan.py b/webshell-scan-docker/webshell-scan.py
+index e2fb231..49117ce 100644
+--- a/webshell-scan-docker/webshell-scan.py
++++ b/webshell-scan-docker/webshell-scan.py
+@@ -23,6 +23,7 @@ import bz2
+ import lzma
+ import tempfile
+ import subprocess
++import hashlib
+ 
+ from sys import platform as _platform
+ import yara  # install 'yara-python' module not the outdated 'yara' module
+@@ -115,6 +116,13 @@ def new_gray_zone_report():
+     return {col: [] for col in GRAY_ZONE_REPORT_COLUMNS}
+ 
+ 
++from libs.evidence import (
++    canonical_candidate_id,
++    decision_reason,
++    fuse_behavioral_scores,
++    make_evidence,
++)
++
+ class BenignFileFilter(object):
+     METADATA_FILENAMES = {".ds_store", ".gitattributes", ".gitignore", "authors"}
+     NON_WEBSHELL_EXTENSIONS = {
+@@ -997,6 +1005,95 @@ class Scanner(object):
+                 return "single_behavior_graph_below_main_threshold=%s" % threshold
+         return None
+ 
++    def _new_evidence_record(self, detector, score=0, reason=None, layer="raw",
++                             coverage="full", truncated=False, status="clean",
++                             rule_version=None, model_version=None):
++        return make_evidence(
++            detector=detector, score=score, reason=reason, layer=layer,
++            coverage=coverage, truncated=truncated, status=status,
++            rule_version=rule_version, model_version=model_version,
++        )
++
++    def _finalize_candidate_evidence(self, evidence, legacy_score=0,
++                                     legacy_decision=None, coverage="full",
++                                     status="complete", min_score=None,
++                                     gray_min=None):
++        records = list(evidence or [])
++        groups = {record.get("detector") for record in records if int(record.get("score", 0)) > 0}
++        behavioral_scores = {
++            record.get("detector"): int(record.get("score", 0))
++            for record in records
++            if record.get("detector") in {"source_sink", "behavior_graph", "webshell_capability", "ast_df"}
++        }
++        min_score = self._get_min_score(None) if min_score is None else int(min_score)
++        gray_min = self._get_gray_zone_min() if gray_min is None else int(gray_min)
++        legacy_score = int(legacy_score)
++        shadow_score = legacy_score
++        if self.effective_policy.get("behavioral_fusion_enabled", False):
++            shadow_score = max(shadow_score, fuse_behavioral_scores(
++                behavioral_scores,
++                float(self.effective_policy.get("behavioral_corroboration_ratio", 0.25)),
++                int(self.effective_policy.get("behavioral_fusion_cap", 100)),
++            ))
++        if legacy_decision is None:
++            legacy_decision = (
++                "finding" if legacy_score >= min_score else
++                "gray_zone" if legacy_score >= gray_min else "clean"
++            )
++        shadow_decision = (
++            "finding" if shadow_score >= min_score else
++            "gray_zone" if shadow_score >= gray_min else "clean"
++        )
++        primary = max(records, key=lambda item: int(item.get("score", 0)), default=None)
++        if any(record.get("status") not in (None, "clean") for record in records):
++            status = status if status != "complete" else "partial"
++        if coverage != "full" and status == "complete":
++            status = "partial"
++        return {
++            "legacy_score": legacy_score,
++            "shadow_score": shadow_score,
++            "evidence_groups": sorted(group for group in groups if group),
++            "primary_evidence": primary,
++            "legacy_decision": legacy_decision,
++            "shadow_decision": shadow_decision,
++            "status": status,
++            "coverage": coverage,
++            "evidence": records,
++            "decision_reason": decision_reason(
++                groups, legacy_score, min_score, gray_min,
++                yara_timeout=any(record.get("status") == "timeout" for record in records),
++                coverage=coverage,
++            ),
++        }
++
++    @staticmethod
++    def _sha256_path(path):
++        digest = hashlib.sha256()
++        with open(path, "rb") as handle:
++            for chunk in iter(lambda: handle.read(1024 * 1024), b""):
++                digest.update(chunk)
++        return digest.hexdigest()
++
++    def _archive_benchmark_metadata(self, archive_path, member_path, member_data,
++                                    archive_chain=()):
++        member_path = os.path.normpath(str(member_path or "")).replace("\\", "/")
++        if member_path == "." or member_path.startswith("../") or member_path.startswith("/"):
++            raise ValueError("unsafe archive member path")
++        archive_sha256 = self._sha256_path(archive_path)
++        member_sha256 = hashlib.sha256(member_data).hexdigest()
++        chain = tuple(str(item).replace("\\", "/") for item in (archive_chain or ()))
++        return {
++            "archive_sha256": archive_sha256,
++            "member_path": member_path,
++            "member_sha256": member_sha256,
++            "archive_chain": list(chain),
++            "candidate_id": canonical_candidate_id(
++                getattr(self, "run_id", ""), member_sha256, member_path,
++                archive_sha256=archive_sha256, archive_chain=chain,
++                member_path=member_path, member_sha256=member_sha256,
++            ),
++        }
++
+     @staticmethod
+     def _ssdeep_blocksize(digest):
+         try:
+@@ -1462,75 +1559,85 @@ class Scanner(object):
+         while True:
+             try:
+                 file_path = file_queue.get()
+-            except Exception as e:
+-                if 'logger' in globals():
+-                    logger.log("ERROR", "FileScan", f"Error getting file from queue: {str(e)}")
++            except Exception as exc:
++                if "logger" in globals():
++                    logger.log("ERROR", "FileScan", "Error getting file from queue: %s" % exc)
+                 break
+-                
+             if file_path is None:
+-                # Shutdown signal received
+                 if not is_multiprocessing:
+                     try:
+                         file_queue.task_done()
+-                    except:
++                    except Exception:
+                         pass
+-                if 'logger' in globals():
+-                    worker_type = "process" if is_multiprocessing else "thread"
+-                    logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) received shutdown signal. Processed {files_processed} file(s)")
+                 break
+-            
+             try:
+-                if 'logger' in globals():
+-                    logger.log("DEBUG", "FileScan", f"Worker {process_name} (ID: {process_id}) processing file: {file_path}")
+-                
+-                # Process file and get results
+-                result = self.process_single_file_with_result(file_path, args, app_path_lower, total, is_multiprocessing, progress_counter)
+-                
+-                # Send result back to main process if using multiprocessing
++                result = self.process_single_file_with_result(
++                    file_path, args, app_path_lower, total, is_multiprocessing, progress_counter,
++                )
+                 if is_multiprocessing and result:
+-                    try:
+-                        result_queue.put(result)
+-                    except Exception as e:
+-                        if 'logger' in globals():
+-                            logger.log("ERROR", "FileScan", f"Error putting result to queue: {str(e)}")
+-                
++                    result_queue.put(result)
+                 files_processed += 1
+-            except Exception as e:
+-                if 'logger' in globals():
+-                    logger.log("ERROR", "FileScan", f"Unhandled error scanning file {file_path}: {str(e)}")
+-                traceback.print_exc()
++            except Exception as exc:
++                terminal = {
++                    "input": file_path,
++                    "status": "error",
++                    "terminal_status": "error",
++                    "error": str(exc),
++                    "all_file_info": None,
++                    "findings": [],
++                    "gray_zone": [],
++                    "benchmark": [],
++                    "stats": {},
++                    "quarantined": False,
++                }
++                if is_multiprocessing:
++                    result_queue.put(terminal)
++                if "logger" in globals():
++                    logger.log("ERROR", "FileScan", "Unhandled error scanning file %s: %s" % (file_path, exc))
+             finally:
+                 if not is_multiprocessing:
+                     try:
+                         file_queue.task_done()
+-                    except:
++                    except Exception:
+                         pass
+-        
+-        if 'logger' in globals():
+-            worker_type = "process" if is_multiprocessing else "thread"
+-            logger.log("INFO", "FileScan", f"Worker {worker_type} {process_name} (ID: {process_id}) finished. Total files processed: {files_processed}")
+ 
+-    def process_single_file_with_result(self, filePath, args, app_path_lower, total, is_multiprocessing=False, progress_counter=None):
+-        """Process a single file and return result dict for multiprocessing, or None for threading mode."""
++    def process_single_file_with_result(self, filePath, args, app_path_lower, total,
++                                        is_multiprocessing=False, progress_counter=None):
++        """Process one input and return a terminal result envelope."""
+         result = {
+-            'all_file_info': None,
+-            'findings': [],
+-            'gray_zone': [],
++            "input": filePath,
++            "all_file_info": None,
++            "findings": [],
++            "gray_zone": [],
++            "benchmark": [],
++            "stats": {},
++            "status": "completed",
++            "terminal_status": "completed",
++            "error": None,
++            "quarantined": False,
+         }
+-        
+         try:
+-            # Call the original function but capture results
+-            self._process_single_file_internal(filePath, args, app_path_lower, total, is_multiprocessing, progress_counter, result)
+-        except Exception as e:
+-            logger.log("ERROR", "FileScan", f"Error processing file {filePath}: {str(e)}")
+-            traceback.print_exc()
+-        
+-        return result if (result['all_file_info'] or result['findings']) else None
++            self._process_single_file_internal(
++                filePath, args, app_path_lower, total, is_multiprocessing,
++                progress_counter, result,
++            )
++            if not result["all_file_info"] and not result["findings"] and not result["benchmark"]:
++                result["status"] = result["terminal_status"] = "skipped"
++        except Exception as exc:
++            result["status"] = result["terminal_status"] = "error"
++            result["error"] = str(exc)
++            if "logger" in globals():
++                logger.log("ERROR", "FileScan", "Error processing file %s: %s" % (filePath, exc))
++        return result
+ 
+     def process_single_file(self, filePath, args, app_path_lower, total):
+         """Process a single file path (hashing, YARA, etc.) - threading mode."""
+         self._process_single_file_internal(filePath, args, app_path_lower, total, False, None, None)
+ 
++    def _append_benchmark(self, result_dict, benchmark):
++        if result_dict is not None:
++            result_dict.setdefault("benchmark", []).append(benchmark)
++
+     def _process_single_file_internal(self, filePath, args, app_path_lower, total, is_multiprocessing=False, progress_counter=None, result_dict=None):
+         """Internal function to process a single file path (hashing, YARA, etc.)."""
+         local_stats = {}

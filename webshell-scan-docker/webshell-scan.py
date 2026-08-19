@@ -636,6 +636,7 @@ class Scanner(object):
             logger.log("INFO", "Init", "Obfuscate YARA rules loaded from custom/yara_obfuscate.yar")
 
         self.benchmark_records = []
+        self.gray_zone_records = []
 
         self.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
 
@@ -1309,13 +1310,15 @@ class Scanner(object):
 
     def scan_archive_recursive(self, archive_path, temp_dir, parent_archive="", args=None,
                                _depth=0, benchmark_sink=None, root_archive_sha256=None,
-                               error_state=None):
+                               error_state=None, gray_zone_sink=None):
         """Scan archive and recursively scan nested archives. Returns list of findings.
 
         _depth: current recursion depth — protected against zip bomb via MAX_ARCHIVE_DEPTH.
         """
         if benchmark_sink is None:
             benchmark_sink = self.benchmark_records
+        if gray_zone_sink is None:
+            gray_zone_sink = self.gray_zone_records
         if error_state is None:
             error_state = {}
         archive_chain = tuple(item.strip() for item in parent_archive.split(" -> ") if item.strip())
@@ -1380,7 +1383,7 @@ class Scanner(object):
                                 nested_findings = self.scan_archive_recursive(
                                     extracted_file, temp_dir, nested_parent, args, _depth=_depth + 1,
                                     benchmark_sink=benchmark_sink, root_archive_sha256=root_archive_sha256,
-                                    error_state=error_state)
+                                    error_state=error_state, gray_zone_sink=gray_zone_sink)
                                 findings.extend(nested_findings)
                                 if error_state.get("error"):
                                     return findings
@@ -1674,13 +1677,30 @@ class Scanner(object):
                     if file_reasons:
                         file_reasons.append(self._confidence_summary(file_score, file_evidence_groups))
 
+                    member_display = self._archive_member_relative_path(extracted_file, archive_path)
+                    archive_info = f" (in archive: {parent_archive} -> {os.path.basename(archive_path)})" if parent_archive else f" (in archive: {os.path.basename(archive_path)})"
+
                     # If file has findings above report threshold, add to results
                     if (file_score >= self._get_min_score(args) and not self._single_evidence_gray_reason(
                         file_score, file_evidence_groups
                     ) and not archive_yara_timeout):
-                        archive_info = f" (in archive: {parent_archive} -> {os.path.basename(archive_path)})" if parent_archive else f" (in archive: {os.path.basename(archive_path)})"
-                        findings.append((extracted_file + archive_info, file_score, file_reasons, archive_path, sha256))
-                        
+                        findings.append((member_display + archive_info, file_score, file_reasons, archive_path, sha256))
+                    # Mirror normal-file gray-zone sink so archive members in the gray band
+                    # (or caught by the single-evidence gate) are not dropped from gray_zone output.
+                    elif not archive_yara_timeout:
+                        gray_min = self._get_gray_zone_min()
+                        single_evidence_reason = self._single_evidence_gray_reason(file_score, file_evidence_groups)
+                        if file_score >= gray_min and file_reasons:
+                            message_csv = "".join(
+                                "REASON_%s: %s\n " % (i + 1, r) for i, r in enumerate(file_reasons))
+                            if single_evidence_reason:
+                                message_csv += "REASON_%s: FP_GATE: %s\n " % (
+                                    len(file_reasons) + 1, single_evidence_reason)
+                            gray_zone_sink.append(
+                                (member_display + archive_info, file_score, message_csv, sha256, extension))
+                            logger.log("NOTICE", "Archive",
+                                       "Gray zone: %s (score %s)" % (member_display, file_score))
+
                 except Exception as e:
                     logger.log("WARNING", "Archive", f"Error scanning extracted file {extracted_file}: {str(e)}")
                     continue
@@ -1999,8 +2019,10 @@ class Scanner(object):
                 try:
                     logger.log("INFO", "Archive", f"Scanning archive: {filePath} (size: {file_size} bytes)")
                     archive_benchmark = []
+                    archive_gray_zone = []
                     archive_findings = self.scan_archive_recursive(
-                        filePath, temp_dir, "", args, benchmark_sink=archive_benchmark)
+                        filePath, temp_dir, "", args, benchmark_sink=archive_benchmark,
+                        gray_zone_sink=archive_gray_zone)
                     for record in archive_benchmark:
                         self._record_benchmark(record, result_dict=result_dict)
                     if any(record.get("status") == "error" for record in archive_benchmark):
@@ -2084,6 +2106,22 @@ class Scanner(object):
                                     f_sha256, finding_score, getAgeString(filePath), message_csv, extension)
 
                             logger.log("INFO", "Archive", f"Found webshell in archive: {finding_file} (score: {finding_score}) in archive: {filePath}")
+
+                    for gray_file, gray_score, gray_description, gray_sha256, gray_extension in archive_gray_zone:
+                        if is_multiprocessing and result_dict:
+                            result_dict['gray_zone'].append({
+                                'file': f"{gray_file} [ARCHIVE: {filePath}]",
+                                'sha256': gray_sha256 or 'N/A',
+                                'score': gray_score,
+                                'time': getAgeString(filePath),
+                                'description': gray_description,
+                                'extension': gray_extension,
+                                'virustotal': virustotal_file_url(gray_sha256),
+                            })
+                        else:
+                            self._append_gray_zone_row(
+                                f"{gray_file} [ARCHIVE: {filePath}]", gray_sha256, gray_score,
+                                getAgeString(filePath), gray_description, gray_extension)
 
                 except Exception as e:
                     logger.log("ERROR", "Archive", f"Error processing archive {filePath}: {str(e)}")
@@ -2582,6 +2620,7 @@ class Scanner(object):
         self.scan_stats.set_lock(self.result_lock)
         self.terminal_counts = {"completed": 0, "skipped": 0, "unsupported": 0, "errors": 0}
         self.benchmark_records = []
+        self.gray_zone_records = []
         scheduled_inputs = 0
         # Check if path exists
         if not os.path.exists(path):

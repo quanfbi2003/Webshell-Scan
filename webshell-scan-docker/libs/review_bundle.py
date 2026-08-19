@@ -435,7 +435,7 @@ def _archive_member_path(report_path: str) -> str:
     raw = re.sub(r'\s*\(in archive:.*?\)', '', raw, flags=re.IGNORECASE)
     raw = raw.split(' [ARCHIVE:', 1)[0].strip()
     match = re.search(r'/[^/]+_[0-9a-fA-F]{32}_extracted/(.+)$', raw)
-    return match.group(1) if match else (raw.rsplit('/', 1)[-1] if raw else '')
+    return match.group(1) if match else (raw if raw else '')
 
 
 def _report_archive_chain(report_path):
