@@ -47,7 +47,7 @@ admin_html = module.admin_page_for_context("http://localhost", admin_context_val
 assert "admin-header" in admin_html
 assert "kpi-row" in admin_html
 assert "action-bar" in admin_html
-assert "Manage upload key" in admin_html
+assert "Import .enc" in admin_html
 assert "Assignment" in admin_html
 print("check_review_web_ui: admin console contract passed")
 
@@ -125,3 +125,13 @@ def check_task4_finding_detail():
     print("check_review_web_ui: Task 4 static contract passed")
 
 check_task4_finding_detail()
+
+def check_task5_admin_auth():
+    with open(APP, "r", encoding="utf-8") as f:
+        code = f.read()
+    assert 'login-shell' in code or 'login-card' in code, "Missing login layout classes"
+    assert 'id="import"' in code, "Missing import section id"
+    assert 'id="users"' in code, "Missing users section id"
+    print("check_review_web_ui: Task 5 static contract passed")
+
+check_task5_admin_auth()
