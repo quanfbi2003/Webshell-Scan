@@ -105,3 +105,13 @@ def check_task2_shell():
     print("check_review_web_ui: Task 2 static contract passed")
 
 check_task2_shell()
+
+def check_task3_dashboard():
+    with open(APP, "r", encoding="utf-8") as f:
+        code = f.read()
+    assert 'id="bulk-form"' in code, "Missing id attribute for bulk form"
+    assert 'form="bulk-form"' in code, "Missing form attribute on checkboxes"
+    assert 'class="table-card"' in code or 'tablewrap' in code, "Missing queue row/table styling"
+    print("check_review_web_ui: Task 3 static contract passed")
+
+check_task3_dashboard()

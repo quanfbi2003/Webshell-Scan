@@ -1430,17 +1430,17 @@ def case_dashboard(case_id: int, query: dict[str, list[str]], context=None) -> b
         kind_label = "Gray zone" if item["candidate_kind"] == "gray" else "Phát hiện chính"
         source_class = "source-ok" if item["has_source"] else "source-missing"
         source_label = "Có source" if item["has_source"] else "Thiếu source"
-        check = "<input type='checkbox' name='finding_ids' value='%s'>" % item["id"] if process else ""
+        check = '<input type="checkbox" name="finding_ids" value="%s" form="bulk-form">' % item["id"] if process else ""
         rows.append(
-            "<tr class='table-card'><td data-label='Chọn'>%s</td><td data-label='ID'><a href='/case/%s/finding/%s'>#%s</a></td>"
+            "<tr class='table-card'><td data-label='Chọn'>%s</td><td data-label='ID'><a href='/case/%s/finding/%s' class='finding-link'>#%s</a></td>"
             "<td data-label='Loại'><span class='%s'>%s</span></td><td data-label='Score' class='%s'>%s</td>"
-            "<td data-label='Trạng thái'><span class='pill status-%s'>%s</span></td><td data-label='File' class='path'>%s<br><span class='muted'>%s</span></td>"
+            "<td data-label='Trạng thái'><span class='pill status-%s'>%s</span></td><td data-label='File' class='path'><a href='/case/%s/finding/%s' class='path-link'>%s</a><br><span class='muted'>%s</span></td>"
             "<td data-label='Evidence'>%s</td><td data-label='Source'><span class='%s'>%s</span></td></tr>"
-            % (check, case_id, item["id"], item["id"], kind_class, kind_label, score_class(item["score"]), item["score"] or "", item["status"], status_label(item["status"]), html.escape(item["file_path"]), html.escape(item["sha256"] or "N/A"), item["evidence_count"], source_class, source_label)
+            % (check, case_id, item["id"], item["id"], kind_class, kind_label, score_class(item["score"]), item["score"] or "", item["status"], status_label(item["status"]), case_id, item["id"], html.escape(item["file_path"]), html.escape(item["sha256"] or "N/A"), item["evidence_count"], source_class, source_label)
         )
     bulk = ""
     if process:
-        bulk = "<form method='post' action='/case/%s/findings/bulk' class='band filters'><input type='hidden' name='csrf_token' value='%s'><select name='status'><option value='reviewing'>Đang xem</option><option value='confirmed'>Xác nhận</option><option value='remediated'>Đã xử lý</option><option value='benign'>Bỏ qua</option></select><input name='note' placeholder='Ghi chú bắt buộc khi bỏ qua'><button type='submit'>Cập nhật mục đã chọn</button></form>" % (case_id, csrf)
+        bulk = '<form method="post" action="/case/%s/findings/bulk" id="bulk-form" class="band filters"><input type="hidden" name="csrf_token" value="%s"><select name="status"><option value="reviewing">Đang xem</option><option value="confirmed">Xác nhận webshell</option><option value="remediated">Đã xử lý</option><option value="benign">Bỏ qua</option></select><input name="note" placeholder="Ghi chú bắt buộc khi bỏ qua"><button type="submit">Cập nhật mục đã chọn</button></form>' % (case_id, csrf)
     shell_marker = "<!-- soc-admin -->" if admin else ""
     body = shell_marker + """
     <section class="band page-head hero"><div class="eyebrow">Tổng quan kết quả rà quét</div><h1>Dashboard: %s</h1><p class="muted">Main findings và gray zone được tách riêng.</p>%s</section>
