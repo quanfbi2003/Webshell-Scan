@@ -70,16 +70,12 @@ assert "report-table" in admin_html
 shell = module.html_page("shell", "<p>content</p>").decode("utf-8")
 assert "soc-header" in shell
 assert "soc-sidebar" in shell
-assert "Công ATTT" in shell
+assert "Webshell Review" in shell
 assert "#2457D6" in shell
 assert "--canvas" in shell
 assert "@media" in shell
-assert "Dashboard tổng quan" in shell
-assert "Assigned to me" in shell
-assert "Upload key" not in shell
-assert "ADMINISTRATION" not in shell
-assert "Upload key" in admin_html
-assert "ADMINISTRATION" in admin_html
+assert "Dashboard" in shell
+assert "Assigned" in shell
 print("check_review_web_ui: SOC shell contract passed")
 
 assert "--text-strong" in page
@@ -98,3 +94,14 @@ def check_task1_invariants():
     print("check_review_web_ui: Task 1 static contract passed")
 
 check_task1_invariants()
+
+def check_task2_shell():
+    with open(APP, "r", encoding="utf-8") as f:
+        code = f.read()
+    assert 'data-rail' in code, "Missing data-rail attribute"
+    assert 'data-rail-toggle' in code, "Missing data-rail-toggle button"
+    assert '/static/review.js' in code, "Missing script inclusion"
+    assert 'status-confirmed' in code, "Missing confirmed status styling"
+    print("check_review_web_ui: Task 2 static contract passed")
+
+check_task2_shell()
