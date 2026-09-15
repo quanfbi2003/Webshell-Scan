@@ -9,8 +9,11 @@ openpyxl/yara support when they are installed in the scanner environment.
 from __future__ import annotations
 
 import argparse
+import base64
+import binascii
 import csv
 import hashlib
+import hmac
 import html
 import io
 import json
@@ -81,6 +84,35 @@ except Exception:  # pragma: no cover - scanner tree may be incomplete
     decrypt_review_bundle_bytes = None
 
 
+REVIEW_JS = b"""(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var toggle = document.querySelector('[data-rail-toggle]');
+    var rail = document.querySelector('[data-rail]');
+    if (toggle && rail) {
+      var saved = localStorage.getItem('rail_expanded');
+      if (saved === 'true') { rail.classList.add('expanded'); toggle.setAttribute('aria-expanded', 'true'); }
+      toggle.addEventListener('click', function(){
+        var exp = rail.classList.toggle('expanded');
+        toggle.setAttribute('aria-expanded', exp ? 'true' : 'false');
+        localStorage.setItem('rail_expanded', exp ? 'true' : 'false');
+      });
+    }
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest('[data-copy-value]');
+      if (!btn) return;
+      var val = btn.getAttribute('data-copy-value');
+      if (val && navigator.clipboard) {
+        navigator.clipboard.writeText(val).then(function(){
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function(){ btn.textContent = orig; }, 2000);
+        }).catch(function(){});
+      }
+    });
+  });
+})();"""
+
+
 @dataclass
 class UploadedPart:
     name: str
@@ -117,6 +149,64 @@ def get_admin_key() -> str:
     return str(read_json(CONFIG_PATH, {}).get("admin_key", ""))
 
 
+
+USER_COOKIE = "review_user"
+
+
+def login_page(message: str = "") -> bytes:
+    notice = f'<div class="warn">{html.escape(message)}</div>' if message else ""
+    body = f"""
+    <section class="login-shell analyst-shell">
+      <div class="login-brand">
+        <div class="eyebrow">STAGING · Authorized access only</div>
+        <h1>Webshell Review</h1>
+        <p>Evidence-led triage for webshell findings, gray-zone candidates, and remediation status.</p>
+        <div class="muted">Only provisioned accounts may enter this workspace.</div>
+      </div>
+      <div class="login-card">
+        <h2>Đăng nhập tài khoản</h2>
+        {notice}
+        <form method="post" action="/login" class="stack">
+          <label>Tên đăng nhập<br><input name="username" autocomplete="username" required style="width:100%"></label>
+          <label>Mật khẩu<br><input name="password" type="password" autocomplete="current-password" required style="width:100%"></label>
+          <button type="submit">Đăng nhập</button>
+        </form>
+      </div>
+    </section>
+    """
+    return html_page("Đăng nhập", body)
+
+def normalize_username(value: str) -> str:
+    return " ".join(str(value or "").strip().lower().split())
+
+
+def hash_password(password: str, minimum_length: int = 12) -> str:
+    if not isinstance(password, str) or len(password) < int(minimum_length):
+        raise ValueError("Password is shorter than the configured minimum")
+    salt = secrets.token_bytes(16)
+    digest = hashlib.scrypt(
+        password.encode("utf-8"), salt=salt, n=2**14, r=8, p=1, dklen=32,
+    )
+    encode = lambda value: base64.urlsafe_b64encode(value).decode("ascii").rstrip("=")
+    return "scrypt$v1$%s$%s" % (encode(salt), encode(digest))
+
+
+def verify_password(password: str, encoded: str) -> bool:
+    try:
+        version, marker, salt_text, digest_text = str(encoded or "").split("$", 3)
+        if version != "scrypt" or marker != "v1":
+            return False
+        pad = lambda value: value + "=" * (-len(value) % 4)
+        salt = base64.urlsafe_b64decode(pad(salt_text))
+        expected = base64.urlsafe_b64decode(pad(digest_text))
+        actual = hashlib.scrypt(
+            str(password).encode("utf-8"), salt=salt, n=2**14, r=8, p=1, dklen=len(expected),
+        )
+        return hmac.compare_digest(actual, expected)
+    except (TypeError, ValueError, binascii.Error):
+        return False
+
+
 @contextmanager
 def connect_db() -> Iterator[sqlite3.Connection]:
     conn = sqlite3.connect(DB_PATH)
@@ -130,6 +220,30 @@ def connect_db() -> Iterator[sqlite3.Connection]:
     finally:
         conn.close()
 
+
+def ensure_audit_log_schema(conn: sqlite3.Connection) -> None:
+    columns = {row["name"]: row for row in conn.execute("PRAGMA table_info(audit_log)")}
+    case_column = columns.get("case_id")
+    if not case_column or not case_column["notnull"]:
+        return
+    conn.execute("ALTER TABLE audit_log RENAME TO audit_log_legacy")
+    conn.execute(
+        """
+        CREATE TABLE audit_log (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            case_id INTEGER,
+            finding_id INTEGER,
+            action TEXT NOT NULL,
+            detail TEXT,
+            created_at INTEGER NOT NULL
+        )
+        """
+    )
+    conn.execute(
+        "INSERT INTO audit_log(id,case_id,finding_id,action,detail,created_at) "
+        "SELECT id,case_id,finding_id,action,detail,created_at FROM audit_log_legacy"
+    )
+    conn.execute("DROP TABLE audit_log_legacy")
 
 def init_db() -> None:
     with connect_db() as conn:
@@ -155,6 +269,7 @@ def init_db() -> None:
                 scan_time TEXT,
                 description TEXT,
                 extension TEXT,
+                candidate_kind TEXT NOT NULL DEFAULT 'finding',
                 status TEXT NOT NULL DEFAULT 'pending',
                 reviewer_note TEXT NOT NULL DEFAULT '',
                 local_relpath TEXT,
@@ -192,7 +307,7 @@ def init_db() -> None:
             CREATE INDEX IF NOT EXISTS idx_evidence_finding ON evidence(finding_id);
             CREATE TABLE IF NOT EXISTS audit_log (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                case_id INTEGER NOT NULL,
+                case_id INTEGER,
                 finding_id INTEGER,
                 action TEXT NOT NULL,
                 detail TEXT,
@@ -209,16 +324,87 @@ def init_db() -> None:
             CREATE INDEX IF NOT EXISTS idx_sessions_case ON sessions(case_id);
             CREATE TABLE IF NOT EXISTS admin_sessions (
                 token TEXT PRIMARY KEY,
+                csrf_token TEXT NOT NULL,
+                user_id INTEGER,
                 created_at INTEGER NOT NULL,
-                expires_at INTEGER NOT NULL
+                expires_at INTEGER NOT NULL,
+                FOREIGN KEY(user_id) REFERENCES users(id)
+            );
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT UNIQUE NOT NULL,
+                password_hash TEXT NOT NULL,
+                role TEXT NOT NULL DEFAULT 'user' CHECK(role IN ('admin', 'user')),
+                active INTEGER NOT NULL DEFAULT 1,
+                must_change_password INTEGER NOT NULL DEFAULT 0,
+                created_at INTEGER NOT NULL,
+                updated_at INTEGER NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS user_sessions (
+                token TEXT PRIMARY KEY,
+                user_id INTEGER NOT NULL,
+                csrf_token TEXT NOT NULL,
+                created_at INTEGER NOT NULL,
+                expires_at INTEGER NOT NULL,
+                FOREIGN KEY(user_id) REFERENCES users(id)
+            );
+            CREATE TABLE IF NOT EXISTS case_assignments (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                case_id INTEGER NOT NULL,
+                user_id INTEGER NOT NULL,
+                active INTEGER NOT NULL DEFAULT 1,
+                assigned_by_user_id INTEGER,
+                created_at INTEGER NOT NULL,
+                revoked_at INTEGER,
+                FOREIGN KEY(case_id) REFERENCES cases(id),
+                FOREIGN KEY(user_id) REFERENCES users(id)
+            );
+            CREATE INDEX IF NOT EXISTS idx_case_assignments_active ON case_assignments(case_id, user_id, active);
+            CREATE TABLE IF NOT EXISTS upload_credentials (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                key_hash TEXT NOT NULL,
+                active INTEGER NOT NULL DEFAULT 1,
+                created_at INTEGER NOT NULL,
+                rotated_at INTEGER,
+                created_by_user_id INTEGER,
+                FOREIGN KEY(created_by_user_id) REFERENCES users(id)
             );
             """
         )
+        ensure_admin_session_schema(conn)
+        ensure_column(conn, "admin_sessions", "user_id", "INTEGER")
         ensure_column(conn, "cases", "viewer_key", "TEXT")
+        ensure_column(conn, "cases", "uploaded_by_user_id", "INTEGER")
+        ensure_column(conn, "cases", "upload_origin", "TEXT NOT NULL DEFAULT 'admin_web'")
         ensure_column(conn, "sessions", "role", "TEXT NOT NULL DEFAULT 'reviewer'")
+        ensure_column(conn, "findings", "candidate_kind", "TEXT NOT NULL DEFAULT 'finding'")
+        ensure_column(conn, "users", "must_change_password", "INTEGER NOT NULL DEFAULT 0")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_findings_kind ON findings(case_id, candidate_kind)")
+        conn.execute(
+            "UPDATE findings SET candidate_kind='finding' "
+            "WHERE candidate_kind IS NULL OR candidate_kind NOT IN ('finding', 'gray')"
+        )
+        conn.execute(
+            "UPDATE cases SET upload_origin='admin_web' "
+            "WHERE upload_origin IS NULL OR upload_origin NOT IN ('admin_web', 'remote_upload')"
+        )
         for row in conn.execute("SELECT id FROM cases WHERE viewer_key IS NULL OR viewer_key=''", ()):
             conn.execute("UPDATE cases SET viewer_key=? WHERE id=?", (secrets.token_urlsafe(24), row["id"]))
         conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_cases_viewer_key ON cases(viewer_key)")
+        if conn.execute("SELECT 1 FROM users LIMIT 1").fetchone() is None:
+            bootstrap_password = os.environ.get("REVIEW_BOOTSTRAP_PASSWORD", "")
+            if bootstrap_password:
+                created = now_ts()
+                conn.execute(
+                    "INSERT INTO users(username,password_hash,role,active,must_change_password,created_at,updated_at) "
+                    "VALUES(?,?,?,?,?,?,?)",
+                    ("antt", hash_password(bootstrap_password, minimum_length=8), "admin", 1, 1, created, created),
+                )
+            else:
+                # No default password is created without explicit out-of-band bootstrap secret.
+                pass
+
+        ensure_audit_log_schema(conn)
 
 
 def ensure_column(conn: sqlite3.Connection, table: str, column: str, definition: str) -> None:
@@ -227,263 +413,50 @@ def ensure_column(conn: sqlite3.Connection, table: str, column: str, definition:
         conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
 
 
+
+def ensure_admin_session_schema(conn: sqlite3.Connection) -> None:
+    ensure_column(conn, "admin_sessions", "csrf_token", "TEXT NOT NULL DEFAULT ''")
+
+
 def scanner_policy() -> dict:
     return read_json(SCANNER_DIR / "config" / "scan-policy.json", {})
 
 
 def html_page(title: str, body: str, *, refresh: bool = False) -> bytes:
     refresh_tag = '<meta http-equiv="refresh" content="5">' if refresh else ""
+    admin_shell = body.startswith("<!-- soc-admin -->")
+    body = body.removeprefix("<!-- soc-admin -->")
+    workspace_links = (
+        '<a class="soc-nav-item active" href="/">▦ Dashboard tổng quan</a><a class="soc-nav-item" href="/admin">▣ All reports</a><a class="soc-nav-item" href="/user">◈ Assigned to me</a><a class="soc-nav-item" href="/">♢ Gray zone</a>'
+        if admin_shell
+        else '<a class="soc-nav-item active" href="/">▦ Dashboard tổng quan</a><a class="soc-nav-item" href="/user">◈ Assigned to me</a>'
+    )
+    admin_links = (
+        '<div class="soc-sidebar-label" style="margin-top:18px">ADMINISTRATION</div><a class="soc-nav-item" href="/admin#users">♙ Users</a><a class="soc-nav-item" href="/admin#upload-key">⚙ Upload key</a><a class="soc-nav-item" href="/admin#audit">≋ Audit log</a>'
+        if admin_shell
+        else ""
+    )
+    sidebar = f'<aside class="soc-sidebar"><div class="soc-sidebar-label">WORKSPACE</div>{workspace_links}{admin_links}</aside>'
     page = f"""<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {refresh_tag}
-  <title>{html.escape(title)}</title>
-  <style>
-    :root {{
-      color-scheme: light;
-      --bg: #eef2f6;
-      --panel: #ffffff;
-      --panel-soft: #f8fafc;
-      --line: #dde3eb;
-      --line-strong: #b7c0cc;
-      --text: #17202a;
-      --muted: #667085;
-      --brand: #17324d;
-      --accent: #166534;
-      --accent-soft: #dcfce7;
-      --amber-soft: #fff7d6;
-      --warn: #92400e;
-      --danger: #991b1b;
-      --danger-soft: #fee2e2;
-      --info: #075985;
-      --info-soft: #e0f2fe;
-      --mark: #fff2a8;
-      --mark2: #b8f2e6;
-      --mark3: #ffd6a5;
-      --code-bg: #111827;
-      --code-text: #e5e7eb;
-    }}
-    * {{ box-sizing: border-box; }}
-    body {{
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }}
-    a {{ color: #075985; text-decoration: none; }}
-    a:hover {{ text-decoration: underline; }}
-    header {{
-      background: rgba(255,255,255,.94);
-      color: var(--brand);
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      backdrop-filter: blur(8px);
-    }}
-    header .bar, main {{ max-width: 1500px; margin: 0 auto; }}
-    header .bar {{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 13px 18px;
-    }}
-    .brand {{ display: inline-flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: 0; }}
-    .brand::before {{
-      content: "";
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
-      background: #0f766e;
-      box-shadow: 0 0 0 4px #ccfbf1;
-    }}
-    .system-badge {{
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: #475467;
-      background: #f8fafc;
-      padding: 3px 10px;
-      font-size: 12px;
-      font-weight: 650;
-    }}
-    .toplinks a {{ color: #075985; margin-left: 14px; }}
-    main {{ padding: 22px 18px; }}
-    h1, h2 {{ margin: 0 0 12px; line-height: 1.22; letter-spacing: 0; }}
-    h1 {{ font-size: 26px; color: #111827; }}
-    h2 {{ font-size: 16px; color: #253044; }}
-    .eyebrow {{
-      color: #475467;
-      font-size: 12px;
-      font-weight: 750;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }}
-    .band {{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      min-width: 0;
-      box-shadow: 0 1px 2px rgba(16,24,40,.04);
-    }}
-    .page-head {{
-      padding: 20px;
-      border-color: #cfd8e3;
-    }}
-    .grid {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }}
-    .metric {{
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px 13px;
-      background: var(--panel-soft);
-      min-height: 86px;
-      position: relative;
-      overflow: hidden;
-    }}
-    .metric::before {{
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      height: 3px;
-      background: #64748b;
-    }}
-    .metric:nth-child(2)::before, .metric:nth-child(3)::before {{ background: #dc2626; }}
-    .metric:nth-child(4)::before {{ background: #0f766e; }}
-    .metric:nth-child(7)::before {{ background: #d97706; }}
-    .metric:nth-child(8)::before {{ background: #166534; }}
-    .metric b {{ display: block; font-size: 30px; line-height: 1.1; margin-bottom: 6px; }}
-    .metric span {{ color: var(--muted); font-size: 13px; }}
-    .tablewrap {{ width: 100%; overflow-x: auto; }}
-    table {{ width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: var(--panel); }}
-    th, td {{ border-bottom: 1px solid var(--line); padding: 10px 9px; vertical-align: top; }}
-    th {{
-      text-align: left;
-      color: #475467;
-      background: #f8fafc;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      font-size: 12px;
-      font-weight: 750;
-      text-transform: uppercase;
-    }}
-    tbody tr:nth-child(even) td {{ background: #fcfdff; }}
-    tr:hover td {{ background: #f1f7ff; }}
-    .path {{ font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; overflow-wrap: anywhere; }}
-    .muted {{ color: var(--muted); overflow-wrap: anywhere; }}
-    .pill {{
-      display: inline-block;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      padding: 2px 9px;
-      background: #fff;
-      white-space: nowrap;
-      font-size: 12px;
-      font-weight: 650;
-    }}
-    .score-high {{ color: var(--danger); font-weight: 700; }}
-    .score-mid {{ color: var(--warn); font-weight: 700; }}
-    .score-low {{ color: var(--info); font-weight: 700; }}
-    .status-pending {{ background: #f2f4f7; color: #344054; border-color: #d0d5dd; }}
-    .status-reviewing {{ background: var(--info-soft); color: #075985; border-color: #7dd3fc; }}
-    .status-confirmed {{ background: var(--danger-soft); color: #991b1b; border-color: #fca5a5; }}
-    .status-benign {{ background: var(--accent-soft); color: #166534; border-color: #86efac; }}
-    .status-remediated {{ background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }}
-    .split {{ display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 14px; align-items: start; min-width: 0; }}
-    .split > * {{ min-width: 0; }}
-    .stack > * + * {{ margin-top: 10px; }}
-    .stack > label {{ display: block; font-weight: 650; color: #344054; }}
-    .stack select, .stack textarea {{ width: 100%; margin-top: 4px; }}
-    input, select, textarea, button {{
-      font: inherit;
-      border: 1px solid var(--line-strong);
-      border-radius: 7px;
-      padding: 8px 10px;
-      background: #fff;
-    }}
-    input:focus, select:focus, textarea:focus {{
-      outline: 3px solid #bfdbfe;
-      border-color: #2563eb;
-    }}
-    textarea {{ width: 100%; min-height: 120px; resize: vertical; }}
-    button, .button {{
-      cursor: pointer;
-      background: #0f172a;
-      color: #fff;
-      border-color: #0f172a;
-      display: inline-block;
-      font-weight: 700;
-    }}
-    button:hover, .button:hover {{ background: #1f2937; text-decoration: none; }}
-    button.secondary, .button.secondary {{ background: #fff; color: #0f172a; border-color: var(--line-strong); }}
-    .filters {{ display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }}
-    .codewrap {{
-      background: var(--code-bg);
-      color: var(--code-text);
-      border-radius: 8px;
-      overflow: auto;
-      max-width: 100%;
-      max-height: 72vh;
-      border: 1px solid #020617;
-    }}
-    pre.code {{
-      margin: 0;
-      padding: 12px 0;
-      min-width: 100%;
-      font: 12px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace;
-      white-space: pre;
-    }}
-    .ln {{ display: inline-block; width: 58px; padding-right: 12px; text-align: right; color: #94a3b8; user-select: none; }}
-    mark {{ color: #111827; padding: 0 1px; border-radius: 2px; }}
-    mark.m0 {{ background: var(--mark); }}
-    mark.m1 {{ background: var(--mark2); }}
-    mark.m2 {{ background: var(--mark3); }}
-    .rule-list {{ max-height: 40vh; overflow: auto; border-top: 1px solid var(--line); }}
-    .rule-hit {{ border-bottom: 1px solid var(--line); padding: 10px 0; overflow-wrap: anywhere; }}
-    .rule-hit code {{ background: #eef2f7; padding: 2px 5px; border-radius: 4px; color: #111827; }}
-    details.details {{
-      margin-top: 10px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #f8fafc;
-      padding: 8px 10px;
-    }}
-    details.details summary {{
-      cursor: pointer;
-      color: #253044;
-      font-weight: 700;
-    }}
-    .detail-text {{
-      margin: 8px 0 0;
-      max-height: 180px;
-      overflow: auto;
-      font-size: 12px;
-    }}
-    .notice {{ border-left: 4px solid #075985; background: var(--info-soft); padding: 10px 12px; border-radius: 6px; }}
-    .warn {{ border-left: 4px solid #92400e; background: #fffbeb; padding: 10px 12px; border-radius: 6px; }}
-    @media (max-width: 980px) {{
-      .grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
-      .split {{ grid-template-columns: 1fr; }}
-      header .bar {{ align-items: flex-start; flex-direction: column; }}
-      main {{ padding: 12px; }}
-      h1 {{ font-size: 22px; }}
-      .filters input {{ min-width: 0 !important; width: 100%; }}
-      .pill {{ white-space: normal; overflow-wrap: anywhere; }}
-    }}
-  </style>
-</head>
-<body>
-  <header><div class="bar"><div class="brand">Webshell Scan Review</div><div class="toplinks"><span class="system-badge">ATTT review</span></div></div></header>
-  <main>{body}</main>
-</body>
-</html>"""
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{refresh_tag}<title>{html.escape(title)}</title>
+<style>
+:root {{ color-scheme:light; --canvas:#F5F7FB; --surface:#fff; --surface-muted:#F7F9FC; --primary:#2457D6; --primary-soft:#E8F0FF; --navy:#183B70; --text:#24324A; --text-strong:#18243A; --muted:#718096; --muted-readable:#52657C; --line:#E5EAF2; --line-strong:#C9D3E2; --danger:#D64545; --danger-soft:#FDECEC; --warning:#B7791F; --warning-soft:#FFF6D8; --success:#25855A; --success-soft:#E7F6EE; --code:#111827; --code-text:#E6EDF7; --code-muted:#AFC0D6; --code-line:#24324A; --focus:#2563EB; --mark:#fff2a8; --mark2:#b8f2e6; --mark3:#ffd6a5; }}
+*{{box-sizing:border-box}} body{{margin:0;background:var(--canvas);color:var(--text-strong);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}} a{{color:var(--primary);text-decoration:none}}a:hover{{text-decoration:underline}} .muted,.eyebrow{{color:var(--muted-readable)}} .detail-meta .path{{color:var(--text-strong);font-size:16px;line-height:1.45;overflow-wrap:anywhere;word-break:break-word}} .detail-meta{{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:16px}} .detail-meta .filters{{gap:8px;margin:12px 0}} .detail-meta .meta-actions{{display:flex;align-items:center;gap:10px;flex-wrap:wrap}} .detail-meta .meta-actions .path{{flex:1 1 420px;min-width:0;font-size:12px}} .detail-sidebar{{position:sticky;top:18px;max-height:calc(100vh - 36px);overflow:auto}} .detail-sidebar h2{{color:var(--text-strong);font-size:16px;margin-top:4px}} .detail-sidebar label{{font-size:14px}} .detail-sidebar textarea{{min-height:110px;resize:vertical;width:100%}} .detail-viewer{{min-width:0;padding:14px}} .finding-actions,.action-group{{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}} .finding-actions button,.action-group button{{min-height:40px}} .action-confirm{{background:var(--primary)}} .action-remediate{{background:var(--success);border-color:var(--success)}} .action-benign{{background:#fff;color:var(--warning);border-color:#D6A84A}}
+.soc-header{{background:var(--primary);color:#fff;min-height:64px;box-shadow:0 2px 8px #c8d3e5}}.soc-header-inner{{max-width:1440px;margin:auto;padding:0 28px;min-height:64px;display:flex;justify-content:space-between;align-items:center;gap:16px}}.soc-brand{{display:flex;align-items:center;gap:12px;color:#fff}}.soc-brand-mark{{width:34px;height:34px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800}}.soc-brand-title{{font-size:16px;font-weight:800;line-height:1.1;display:block}}.soc-brand-subtitle{{font-size:11px;opacity:.84;display:block}}.soc-context{{display:flex;align-items:center;gap:10px}}.soc-env{{background:#1748bb;border:1px solid #80a5ff;border-radius:6px;padding:6px 10px;font-size:11px;font-weight:800}}.soc-user{{width:30px;height:30px;border-radius:50%;background:#7ea5ff;color:#fff;display:grid;place-items:center;font-weight:800}}
+.soc-layout{{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 64px);max-width:1440px;margin:auto}}.soc-sidebar{{background:#fff;border-right:1px solid var(--line);padding:22px 12px}}.soc-sidebar-label{{padding:0 12px 9px;color:#8a99ad;font-size:10px;font-weight:800;letter-spacing:.12em}}.soc-nav-item{{display:block;padding:10px 12px;margin-bottom:3px;border-radius:7px;color:#52657c;font-size:12px}}.soc-nav-item:hover,.soc-nav-item.active{{background:var(--primary-soft);color:var(--primary);text-decoration:none;font-weight:750}}.soc-content{{min-width:0;padding:26px 30px}}
+.band,.card{{background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 2px 8px rgba(31,55,86,.04)}}.band{{padding:20px;margin-bottom:16px}}h1,h2{{margin:0 0 12px;line-height:1.2}}h1{{font-size:25px;color:var(--text)}}h2{{font-size:17px;color:var(--navy)}}.eyebrow{{color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}}.muted{{color:var(--muted)}}
+.hero{{background:var(--navy);color:#fff;border:0;box-shadow:0 7px 18px rgba(16,42,67,.14)}}.hero h1,.hero h2,.hero a{{color:#fff}}.hero .muted,.hero .eyebrow{{color:#d7e6fb}}.grid,.kpi-row{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}}.metric,.kpi{{background:var(--surface-muted);border:1px solid var(--line);border-radius:8px;padding:13px;min-height:82px;position:relative}}.metric::before,.kpi::before{{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:var(--primary)}}.metric-main::before,.kpi.danger::before{{background:var(--danger)}}.metric-gray::before,.kpi.warn::before{{background:var(--warning)}}.metric-ok::before,.kpi.ok::before{{background:var(--success)}}.metric b,.kpi b{{display:block;color:var(--navy);font-size:27px;line-height:1.1;margin-bottom:5px}}.metric span,.kpi span{{color:var(--muted);font-size:12px}}
+input,select,textarea,button{{font:inherit;border:1px solid var(--line-strong);border-radius:6px;background:#fff;padding:9px 11px;color:var(--text)}}label{{color:var(--text);font-weight:700}}button,.button{{background:var(--primary);border-color:var(--primary);color:#fff;cursor:pointer;font-weight:800}}button:hover,.button:hover{{background:#1D4ED8;text-decoration:none}}button.secondary,.button.secondary{{background:#fff;color:var(--primary);border-color:var(--line-strong)}}input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{{outline:3px solid #9cc2ff;outline-offset:2px}}
+.filters{{display:flex;flex-wrap:wrap;gap:7px;align-items:center}}.tablewrap{{overflow-x:auto}}table{{width:100%;border-collapse:separate;border-spacing:0;min-width:720px}}th,td{{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}}th{{text-align:left;background:var(--surface-muted);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}}tbody tr:hover td{{background:#F3F7FF}}.path{{font:12px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}}.pill,.kind-finding,.kind-gray,.source-ok,.source-missing{{display:inline-flex;align-items:center;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:800}}.kind-finding{{color:var(--danger);background:var(--danger-soft)}}.kind-gray,.source-missing{{color:var(--warning);background:var(--warning-soft)}}.source-ok{{color:var(--success);background:var(--success-soft)}}.pill{{color:var(--navy);background:#fff;border:1px solid var(--line-strong)}}.assignment-panel{{margin-top:6px;padding:7px 0}}.assignment-panel summary{{color:var(--primary);cursor:pointer;font-weight:800;font-size:12px}}.admin-header{{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:8px 0 18px}}.admin-identity{{display:flex;align-items:center;gap:9px}}.action-bar{{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}}.admin-header+ .action-bar{{margin-top:0}}.eyebrow{{color:var(--muted-readable)}}.muted{{color:var(--muted-readable)}}
+.login-shell{{max-width:1050px;margin:58px auto;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:stretch}}.login-brand{{background:var(--navy);color:#fff;border-radius:10px;padding:40px;display:flex;flex-direction:column;justify-content:center;min-height:420px}}.login-brand h1{{color:#fff;font-size:36px;margin-top:10px}}.login-brand p{{color:#d7e6fb;max-width:430px}}.login-card{{background:#fff;border:1px solid var(--line);border-radius:10px;padding:32px;box-shadow:0 8px 24px rgba(16,42,67,.08);align-self:center}}.login-card h2{{font-size:22px;margin-bottom:20px}}.login-card button{{width:100%;margin-top:6px}}
+.split{{display:grid;grid-template-columns:350px minmax(0,1fr);gap:16px;align-items:start}}.codewrap{{background:var(--code);border-radius:8px;overflow:auto;max-height:74vh}}.code-toolbar{{background:#0b1220;color:var(--code-text);padding:9px 12px;border-bottom:1px solid #34495e;font:13px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace}}.code{{margin:0;color:var(--code-text);font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}}.ln{{display:inline-block;width:58px;padding-right:12px;text-align:right;color:var(--code-muted);user-select:none}}mark{{color:#111827;padding:0 1px;border-radius:2px}}mark.m0{{background:var(--mark)}}mark.m1{{background:var(--mark2)}}mark.m2{{background:var(--mark3)}}.evidence-viewer{{min-width:0}}.detail-section{{border-top:1px solid var(--line);padding-top:12px;margin-top:14px}}.detail-section h2{{margin-bottom:8px}}.rule-list{{color:var(--text-strong);font-size:14px}}.rule-hit code{{overflow-wrap:anywhere;word-break:break-word}}.details summary{{cursor:pointer;color:var(--primary);font-weight:700}}.details .detail-text{{color:var(--muted-readable);overflow-wrap:anywhere}}
+@media(max-width:980px){{.soc-layout{{grid-template-columns:1fr}}.soc-sidebar{{border-right:0;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow:auto;padding:10px}}.soc-sidebar-label{{display:none}}.soc-nav-item{{white-space:nowrap}}.soc-content{{padding:18px 14px}}.grid,.kpi-row{{grid-template-columns:repeat(2,minmax(0,1fr))}}.split{{grid-template-columns:1fr}}.detail-sidebar{{position:static;max-height:none;overflow:visible}}.detail-meta .meta-actions .path{{flex-basis:100%}}.admin-header{{align-items:flex-start;flex-direction:column}}.login-shell{{grid-template-columns:1fr;margin:24px auto}}.login-brand{{min-height:260px}}}}@media(max-width:620px){{body{{font-size:15px}}.soc-header-inner{{padding:0 14px}}.soc-brand-subtitle{{display:none}}.grid,.kpi-row{{grid-template-columns:1fr}}.soc-content{{padding:14px 10px}}.login-shell{{margin:12px auto;gap:12px}}.login-brand,.login-card{{padding:24px}}.login-brand h1{{font-size:29px}}.detail-meta{{padding:16px}}.detail-meta .path{{font-size:14px}}.detail-viewer{{padding:8px}}.code{{font-size:12px;line-height:1.6}}.finding-actions button,.action-group button{{flex:1 1 145px}}table{{min-width:0}}thead{{display:none}}table,tbody,tr,td{{display:block;width:100%}}tbody tr{{margin-bottom:10px;border:1px solid var(--line);border-radius:8px;overflow:hidden}}td{{display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px}}td::before{{content:attr(data-label);color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase}}}}
+</style>
+</head><body>
+<header class="soc-header"><div class="soc-header-inner"><a class="soc-brand" href="/"><span class="soc-brand-mark">ATTT</span><span><b class="soc-brand-title">Công ATTT – VNPT MEDIA</b><small class="soc-brand-subtitle">Security Operations Center · SOC Dashboard</small></span></a><div class="soc-context"><span class="soc-env">STAGING</span><span class="soc-user">A</span></div></div></header>
+<div class="soc-layout">{sidebar}<main class="soc-content">{body}</main></div>
+</body></html>"""
     return page.encode("utf-8")
 
 
@@ -858,18 +831,18 @@ def _extract_bundle_member(
     return target.relative_to(data_root).as_posix()
 
 
-def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int, int]:
+def import_enc_case(title: str, enc_bundle: UploadedPart, uploaded_by_user_id=None, upload_origin="admin_web") -> tuple[int, str, int, int]:
     filename = enc_bundle.filename or "review.enc"
     if Path(filename).suffix.lower() != ".enc":
         raise RuntimeError("Chỉ chấp nhận file .enc được tạo bởi webshell-scan.")
+    if upload_origin not in ("admin_web", "remote_upload"):
+        raise RuntimeError("Upload origin không hợp lệ.")
     if decrypt_review_bundle_bytes is None or bundle_passphrase is None:
         raise RuntimeError("Thiếu module đọc .enc trong libs/review_bundle.py.")
-
     passphrase = bundle_passphrase(SCANNER_DIR, create_if_missing=False)
     zip_payload = decrypt_review_bundle_bytes(enc_bundle.data, passphrase)
     if not zipfile.is_zipfile(io.BytesIO(zip_payload)):
         raise RuntimeError("Payload .enc không chứa review bundle hợp lệ.")
-
     share_key = secrets.token_urlsafe(32)
     viewer_key = secrets.token_urlsafe(24)
     created = now_ts()
@@ -880,162 +853,65 @@ def import_enc_case(title: str, enc_bundle: UploadedPart) -> tuple[int, str, int
         source_index = _read_bundle_json(zf, "sources/index.json", [])
         if manifest.get("schema") != "webshell-review-bundle-v1":
             raise RuntimeError("File .enc không đúng schema review bundle.")
-        if not isinstance(findings, list):
-            findings = []
-        if not isinstance(gray_zone, list):
-            gray_zone = []
-        if not isinstance(source_index, list):
-            source_index = []
-        valid_rows = [row for row in findings + gray_zone if isinstance(row, dict) and (
-            str(row.get("FILE") or row.get("file") or "").strip()
-            and str(row.get("SHA256") or row.get("sha256") or "N/A").strip()
-        )]
-        valid_candidates = [item for item in source_index if isinstance(item, dict) and (
-            str(item.get("candidate_id") or "").strip()
-            and (str(item.get("file") or "").strip() or str(item.get("relpath") or "").strip()
-                 or item.get("source_status") == "omitted")
-        )]
+        if not isinstance(findings, list): findings = []
+        if not isinstance(gray_zone, list): gray_zone = []
+        if not isinstance(source_index, list): source_index = []
+        valid_rows = [row for row in findings + gray_zone if isinstance(row, dict) and str(row.get("FILE") or row.get("file") or "").strip()]
+        valid_candidates = [item for item in source_index if isinstance(item, dict) and str(item.get("candidate_id") or "").strip()]
         if not valid_rows and not valid_candidates:
             raise RuntimeError("File .enc không có finding hoặc candidate hợp lệ để import.")
-        if not findings and not gray_zone and not valid_candidates:
-            raise RuntimeError("File .enc không có candidate hợp lệ để import.")
         if not findings and not gray_zone:
-            findings = [{
-                "FILE": str(item.get("file") or item.get("candidate_id")),
-                "SHA256": str(item.get("sha256") or "N/A"),
-                "SCORE": item.get("score"),
-                "TIME": item.get("time", ""),
-                "DESCRIPTION": item.get("description", "candidate-only import"),
-                "EXTENSION": item.get("extension") or Path(str(item.get("file") or "")).suffix,
-                "candidate_id": str(item.get("candidate_id")),
-            } for item in valid_candidates]
-            if not findings:
-                raise RuntimeError("File .enc không có candidate hợp lệ để import.")
-
-        default_title = (
-            title
-            or Path(str(manifest.get("scan_path") or "")).name
-            or str(manifest.get("out_file") or "")
-            or f"Scan import {time.strftime('%Y-%m-%d %H:%M')}"
-        )
+            findings = [{"FILE": str(item.get("file") or item.get("candidate_id")), "SHA256": str(item.get("sha256") or "N/A"), "SCORE": item.get("score"), "TIME": item.get("time", ""), "DESCRIPTION": item.get("description", "candidate-only import"), "EXTENSION": item.get("extension") or Path(str(item.get("file") or "")).suffix, "candidate_id": str(item.get("candidate_id")), "candidate_kind": str(item.get("candidate_kind") or "finding")} for item in valid_candidates]
+        default_title = title or Path(str(manifest.get("scan_path") or "")).name or str(manifest.get("out_file") or "") or f"Scan import {time.strftime('%Y-%m-%d %H:%M')}"
         cur = conn.execute(
-            "INSERT INTO cases(title, share_key, viewer_key, created_at, source_zip_name) VALUES(?,?,?,?,?)",
-            (default_title, share_key, viewer_key, created, filename),
+            "INSERT INTO cases(title, share_key, viewer_key, created_at, source_zip_name, uploaded_by_user_id, upload_origin) VALUES(?,?,?,?,?,?,?)",
+            (default_title, share_key, viewer_key, created, filename, uploaded_by_user_id, upload_origin),
         )
         case_id = int(cur.lastrowid)
-        data_root = DATA_DIR.resolve()
-        case_dir = data_root / "cases" / str(case_id)
-        source_root = case_dir / "source"
-        source_root.mkdir(parents=True, exist_ok=True)
-        source_root_resolved = source_root.resolve()
-
-        source_by_file = {}
-        source_by_sha = {}
-        source_by_candidate = {}
-        source_count = 0
-        for item in source_index if isinstance(source_index, list) else []:
-            if not isinstance(item, dict):
-                continue
-            meta = {
-                "local_relpath": "",
-                "snippet_only": bool(item.get("snippet_only")),
-                "layers": [],
-                "evidence": item.get("evidence") if isinstance(item.get("evidence"), list) else [],
-                "candidate_id": str(item.get("candidate_id") or ""),
-                "source_status": str(item.get("source_status") or "stored"),
-                "source_reason": str(item.get("source_reason") or item.get("omitted_reason") or ""),
-                "archive": item.get("archive") if isinstance(item.get("archive"), dict) else {},
-            }
+        data_root = DATA_DIR.resolve(); case_dir = data_root / "cases" / str(case_id); source_root = case_dir / "source"; source_root.mkdir(parents=True, exist_ok=True); source_root_resolved = source_root.resolve()
+        source_by_file = {}; source_by_sha = {}; source_by_candidate = {}; source_count = 0
+        for item in source_index:
+            if not isinstance(item, dict): continue
+            meta = {"local_relpath":"", "snippet_only":bool(item.get("snippet_only")), "layers":[], "evidence":item.get("evidence") if isinstance(item.get("evidence"), list) else [], "candidate_id":str(item.get("candidate_id") or ""), "candidate_kind":str(item.get("candidate_kind") or "finding"), "source_status":str(item.get("source_status") or "stored"), "source_reason":str(item.get("source_reason") or item.get("omitted_reason") or ""), "archive":item.get("archive") if isinstance(item.get("archive"), dict) else {}}
+            if meta["candidate_kind"] not in ("finding", "gray"): meta["candidate_kind"] = "finding"
             layers = item.get("layers") if isinstance(item.get("layers"), list) else []
             for layer in layers:
-                if not isinstance(layer, dict):
-                    continue
+                if not isinstance(layer, dict): continue
                 local_layer_rel = _extract_bundle_member(zf, str(layer.get("relpath") or ""), source_root, source_root_resolved, data_root)
                 if local_layer_rel:
-                    layer_meta = dict(layer)
-                    layer_meta["local_relpath"] = local_layer_rel
-                    meta["layers"].append(layer_meta)
-                    if not meta["local_relpath"]:
-                        meta["local_relpath"] = local_layer_rel
+                    layer_meta = dict(layer); layer_meta["local_relpath"] = local_layer_rel; meta["layers"].append(layer_meta); meta["local_relpath"] = meta["local_relpath"] or local_layer_rel
             if not layers:
                 local_rel = _extract_bundle_member(zf, str(item.get("relpath") or ""), source_root, source_root_resolved, data_root)
-                if local_rel:
-                    meta["local_relpath"] = local_rel
-
-            if meta["local_relpath"] or meta["layers"]:
-                source_count += 1
-            if meta["candidate_id"]:
-                source_by_candidate[meta["candidate_id"]] = meta
-            if item.get("file"):
-                source_by_file[str(item["file"])] = meta
+                if local_rel: meta["local_relpath"] = local_rel
+            if meta["local_relpath"] or meta["layers"]: source_count += 1
+            if meta["candidate_id"]: source_by_candidate[meta["candidate_id"]] = meta
+            if item.get("file"): source_by_file[str(item["file"])] = meta
             sha = str(item.get("sha256") or "").lower()
-            if sha and sha != "n/a":
-                source_by_sha[sha] = meta
-
-        imported = 0
-        rows = list(findings) + [row for row in gray_zone if isinstance(row, dict)]
-        seen = set()
-        for row in rows:
-            if not isinstance(row, dict):
-                continue
+            if sha and sha != "n/a": source_by_sha[sha] = meta
+        imported = 0; rows = [(row, str(row.get("candidate_kind") or "finding")) for row in findings if isinstance(row, dict)]; rows.extend((row, "gray") for row in gray_zone if isinstance(row, dict)); seen = set()
+        for row, candidate_kind in rows:
             file_path = str(row.get("FILE") or row.get("file") or "").strip()
-            if not file_path:
-                continue
-            sha256 = str(row.get("SHA256") or row.get("sha256") or "N/A").strip()
-            candidate_id = str(row.get("candidate_id") or "")
-            source_meta = source_by_candidate.get(candidate_id) or source_by_file.get(file_path) or source_by_sha.get(sha256.lower()) or {}
-            dedupe_key = candidate_id or "%s:%s" % (file_path, sha256)
-            if dedupe_key in seen:
-                continue
-            seen.add(dedupe_key)
-            local_rel = source_meta.get("local_relpath") if isinstance(source_meta, dict) else ""
-            local_file = DATA_DIR / local_rel if local_rel else None
-            bundle_layers = source_meta.get("layers", []) if isinstance(source_meta, dict) else []
-            bundle_evidence = source_meta.get("evidence", []) if isinstance(source_meta, dict) else []
-            cur = conn.execute(
-                "INSERT INTO findings(case_id, file_path, sha256, score, scan_time, description, extension, local_relpath, has_source, created_at) VALUES(?,?,?,?,?,?,?,?,?,?)",
-                (case_id, file_path, sha256, safe_int(row.get("SCORE", row.get("score")), None), str(row.get("TIME", row.get("time", ""))), str(row.get("DESCRIPTION", row.get("description", ""))), str(row.get("EXTENSION", row.get("extension", Path(file_path).suffix))), local_rel, 1 if (local_file and local_file.exists()) or bundle_layers else 0, created),
-            )
+            if not file_path: continue
+            if candidate_kind not in ("finding", "gray"): candidate_kind = "finding"
+            sha256 = str(row.get("SHA256") or row.get("sha256") or "N/A").strip(); candidate_id = str(row.get("candidate_id") or ""); source_meta = source_by_candidate.get(candidate_id) or source_by_file.get(file_path) or source_by_sha.get(sha256.lower()) or {}; dedupe_key = candidate_id or "%s:%s:%s" % (candidate_kind, file_path, sha256)
+            if dedupe_key in seen: continue
+            seen.add(dedupe_key); local_rel = source_meta.get("local_relpath") if isinstance(source_meta, dict) else ""; local_file = DATA_DIR / local_rel if local_rel else None; bundle_layers = source_meta.get("layers", []) if isinstance(source_meta, dict) else []; bundle_evidence = source_meta.get("evidence", []) if isinstance(source_meta, dict) else []
+            cur = conn.execute("INSERT INTO findings(case_id,file_path,sha256,score,scan_time,description,extension,candidate_kind,local_relpath,has_source,created_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)", (case_id,file_path,sha256,safe_int(row.get("SCORE",row.get("score")),None),str(row.get("TIME",row.get("time",""))),str(row.get("DESCRIPTION",row.get("description",""))),str(row.get("EXTENSION",row.get("extension",Path(file_path).suffix))),candidate_kind,local_rel,1 if (local_file and local_file.exists()) or bundle_layers else 0,created))
             finding_id = int(cur.lastrowid)
             if bundle_layers:
-                stored_layer_names = set()
+                stored_layer_names=set()
                 for layer in bundle_layers:
-                    name = str(layer.get("name") or "snippet")
-                    rel = str(layer.get("local_relpath") or "")
-                    path = DATA_DIR / rel
-                    if not rel or not path.exists():
-                        continue
-                    stored_layer_names.add(name)
-                    conn.execute(
-                        "INSERT OR IGNORE INTO layers(finding_id, name, relpath, size, sha256) VALUES(?,?,?,?,?)",
-                        (finding_id, name, rel, safe_int(layer.get("size"), path.stat().st_size), str(layer.get("sha256") or file_sha256(path))),
-                    )
+                    name=str(layer.get("name") or "snippet"); rel=str(layer.get("local_relpath") or ""); path=DATA_DIR/rel
+                    if not rel or not path.exists(): continue
+                    stored_layer_names.add(name); conn.execute("INSERT OR IGNORE INTO layers(finding_id,name,relpath,size,sha256) VALUES(?,?,?,?,?)",(finding_id,name,rel,safe_int(layer.get("size"),path.stat().st_size),str(layer.get("sha256") or file_sha256(path))))
                 for ev in bundle_evidence:
-                    if not isinstance(ev, dict) or str(ev.get("layer_name") or "") not in stored_layer_names:
-                        continue
-                    conn.execute(
-                        "INSERT INTO evidence(finding_id, layer_name, rule_name, string_id, start_offset, end_offset, matched_text, score, description, reference, author) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
-                        (finding_id, str(ev.get("layer_name") or ""), str(ev.get("rule_name") or ""), str(ev.get("string_id") or ""), safe_int(ev.get("start_offset"), None) if ev.get("start_offset") is not None else None, safe_int(ev.get("end_offset"), None) if ev.get("end_offset") is not None else None, str(ev.get("matched_text") or ""), safe_int(ev.get("score"), 70), str(ev.get("description") or ""), str(ev.get("reference") or "-"), str(ev.get("author") or "-")),
-                    )
+                    if not isinstance(ev,dict) or str(ev.get("layer_name") or "") not in stored_layer_names: continue
+                    conn.execute("INSERT INTO evidence(finding_id,layer_name,rule_name,string_id,start_offset,end_offset,matched_text,score,description,reference,author) VALUES(?,?,?,?,?,?,?,?,?,?,?)",(finding_id,str(ev.get("layer_name") or ""),str(ev.get("rule_name") or ""),str(ev.get("string_id") or ""),safe_int(ev.get("start_offset"),None) if ev.get("start_offset") is not None else None,safe_int(ev.get("end_offset"),None) if ev.get("end_offset") is not None else None,str(ev.get("matched_text") or ""),safe_int(ev.get("score"),70),str(ev.get("description") or ""),str(ev.get("reference") or "-"),str(ev.get("author") or "-")))
             elif local_file and local_file.exists():
-                try:
-                    extract_evidence(conn, case_id, finding_id, file_path, local_file)
-                except Exception as exc:
-                    conn.execute(
-                        "INSERT INTO audit_log(case_id, finding_id, action, detail, created_at) VALUES(?,?,?,?,?)",
-                        (case_id, finding_id, "evidence_error", str(exc), now_ts()),
-                    )
+                try: extract_evidence(conn,case_id,finding_id,file_path,local_file)
+                except Exception as exc: conn.execute("INSERT INTO audit_log(case_id,finding_id,action,detail,created_at) VALUES(?,?,?,?,?)",(case_id,finding_id,"evidence_error",str(exc),now_ts()))
             imported += 1
-
-        conn.execute(
-            "UPDATE cases SET finding_count=?, source_count=? WHERE id=?",
-            (imported, source_count, case_id),
-        )
-        conn.execute(
-            "INSERT INTO audit_log(case_id, action, detail, created_at) VALUES(?,?,?,?)",
-            (case_id, "import_enc", "Imported %s findings, %s source files from %s" % (imported, source_count, filename), now_ts()),
-        )
-
+        conn.execute("UPDATE cases SET finding_count=?,source_count=? WHERE id=?",(imported,source_count,case_id)); conn.execute("INSERT INTO audit_log(case_id,action,detail,created_at) VALUES(?,?,?,?)",(case_id,"import_enc","Imported %s findings, %s source files from %s origin=%s"%(imported,source_count,filename,upload_origin),now_ts()))
     return case_id, share_key, imported, source_count
 
 
@@ -1141,6 +1017,19 @@ def status_label(status: str) -> str:
     return labels.get(status, status)
 
 
+
+def dashboard_filter_url(q: str = "", kind: str = "", status: str = "") -> str:
+    values = {}
+    if q:
+        values["q"] = q
+    if kind in ("finding", "gray"):
+        values["kind"] = kind
+    if status in VALID_STATUSES:
+        values["status"] = status
+    encoded = urllib.parse.urlencode(values)
+    return "?%s" % encoded if encoded else "?"
+
+
 def case_from_id(case_id: int):
     return query_one("SELECT * FROM cases WHERE id=?", (case_id,))
 
@@ -1170,16 +1059,32 @@ def create_session(case_id: int, role: str) -> str:
     return token
 
 
-def create_admin_session() -> str:
+def create_admin_session(user_id: int | None = None) -> tuple[str, str]:
     token = secrets.token_urlsafe(32)
+    csrf_token = secrets.token_urlsafe(24)
     created = now_ts()
     with connect_db() as conn:
         conn.execute("DELETE FROM admin_sessions WHERE expires_at < ?", (created,))
         conn.execute(
-            "INSERT INTO admin_sessions(token, created_at, expires_at) VALUES(?,?,?)",
-            (token, created, created + SESSION_TTL_SECONDS),
+            "INSERT INTO admin_sessions(token, csrf_token, user_id, created_at, expires_at) VALUES(?,?,?,?,?)",
+            (token, csrf_token, user_id, created, created + SESSION_TTL_SECONDS),
         )
-    return token
+    return token, csrf_token
+
+
+def admin_context(headers):
+    token = parse_cookie(headers.get("Cookie")).get(ADMIN_COOKIE, "")
+    if not token:
+        return None
+    row = query_one(
+        "SELECT s.token, s.csrf_token, s.user_id, u.username "
+        "FROM admin_sessions s LEFT JOIN users u ON u.id=s.user_id "
+        "WHERE s.token=? AND s.expires_at>=?",
+        (token, now_ts()),
+    )
+    if not row:
+        return None
+    return {"role": "admin", "user_id": row["user_id"], "username": row["username"] or "legacy-admin", "session_token": row["token"], "csrf_token": row["csrf_token"]}
 
 
 def parse_cookie(header_value: str | None) -> dict[str, str]:
@@ -1196,6 +1101,17 @@ def session_case_id(headers) -> int | None:
     return info[0] if info else None
 
 
+def revoke_sessions(headers) -> None:
+    tokens = {SESSION_COOKIE: set(), ADMIN_COOKIE: set(), USER_COOKIE: set()}
+    for part in (headers.get("Cookie") or "").split(";"):
+        name, separator, value = part.strip().partition("=")
+        if separator and name in tokens and value:
+            tokens[name].add(value.strip())
+    with connect_db() as conn:
+        for table, cookie_name in (("sessions", SESSION_COOKIE), ("admin_sessions", ADMIN_COOKIE), ("user_sessions", USER_COOKIE)):
+            for token in tokens[cookie_name]:
+                conn.execute(f"DELETE FROM {table} WHERE token=?", (token,))
+
 def session_info(headers) -> tuple[int, str] | None:
     token = parse_cookie(headers.get("Cookie")).get(SESSION_COOKIE, "")
     if not token:
@@ -1205,6 +1121,190 @@ def session_info(headers) -> tuple[int, str] | None:
     if not row:
         return None
     return int(row["case_id"]), str(row["role"] or "viewer")
+
+
+
+def create_user_session(user_id: int) -> tuple[str, str]:
+    token = secrets.token_urlsafe(32)
+    csrf_token = secrets.token_urlsafe(24)
+    created = now_ts()
+    with connect_db() as conn:
+        conn.execute("DELETE FROM user_sessions WHERE expires_at < ?", (created,))
+        conn.execute(
+            "INSERT INTO user_sessions(token,user_id,csrf_token,created_at,expires_at) VALUES(?,?,?,?,?)",
+            (token, user_id, csrf_token, created, created + SESSION_TTL_SECONDS),
+        )
+    return token, csrf_token
+
+
+def user_context(headers):
+    token = parse_cookie(headers.get("Cookie")).get("review_user", "")
+    if not token:
+        return None
+    row = query_one(
+        "SELECT s.token, s.user_id, s.csrf_token, u.username, u.role, u.active "
+        "FROM user_sessions s JOIN users u ON u.id=s.user_id "
+        "WHERE s.token=? AND s.expires_at>=?",
+        (token, now_ts()),
+    )
+    if not row or not row["active"]:
+        return None
+    return dict(row)
+
+
+def csrf_valid(context, supplied: str) -> bool:
+    return bool(context and supplied and hmac.compare_digest(str(context.get("csrf_token", "")), str(supplied)))
+
+
+def report_permission(case, context, required="view") -> bool:
+    if not context:
+        return False
+    if context.get("role") == "admin":
+        return True
+    if context.get("role") != "user" or required not in ("view", "process"):
+        return False
+    return query_one(
+        "SELECT 1 FROM case_assignments WHERE case_id=? AND user_id=? AND active=1",
+        (case["id"], context["user_id"]),
+    ) is not None
+
+
+def case_visible_to_user(case_id: int, user_id: int) -> bool:
+    return query_one(
+        "SELECT 1 FROM case_assignments WHERE case_id=? AND user_id=? AND active=1",
+        (case_id, user_id),
+    ) is not None
+
+
+
+def assign_report(case_id: int, user_id: int, admin_user_id: int) -> None:
+    user = query_one("SELECT id FROM users WHERE id=? AND role='user' AND active=1", (user_id,))
+    if not user:
+        raise ValueError("Only active user accounts can be assigned")
+    with connect_db() as conn:
+        existing = conn.execute("SELECT id FROM case_assignments WHERE case_id=? AND user_id=? AND active=1", (case_id, user_id)).fetchone()
+        if not existing:
+            conn.execute("INSERT INTO case_assignments(case_id,user_id,active,assigned_by_user_id,created_at) VALUES(?,?,?,?,?)", (case_id, user_id, 1, admin_user_id, now_ts()))
+        conn.execute("INSERT INTO audit_log(case_id,action,detail,created_at) VALUES(?,?,?,?)", (case_id, "report_assign", "actor=%s user=%s" % (admin_user_id, user_id), now_ts()))
+
+
+def revoke_report(case_id: int, user_id: int, admin_user_id: int) -> None:
+    with connect_db() as conn:
+        conn.execute("UPDATE case_assignments SET active=0, revoked_at=? WHERE case_id=? AND user_id=? AND active=1", (now_ts(), case_id, user_id))
+        conn.execute("INSERT INTO audit_log(case_id,action,detail,created_at) VALUES(?,?,?,?)", (case_id, "report_revoke", "actor=%s user=%s" % (admin_user_id, user_id), now_ts()))
+
+
+def assigned_users(case_id: int):
+    return query_all("SELECT u.id,u.username FROM case_assignments a JOIN users u ON u.id=a.user_id WHERE a.case_id=? AND a.active=1 AND u.active=1 ORDER BY u.username", (case_id,))
+
+
+
+def rotate_upload_key(actor_user_id: int) -> str:
+    value = secrets.token_urlsafe(48)
+    now = now_ts()
+    with connect_db() as conn:
+        conn.execute("UPDATE upload_credentials SET active=0, rotated_at=? WHERE active=1", (now,))
+        conn.execute(
+            "INSERT INTO upload_credentials(key_hash,active,created_at,created_by_user_id) VALUES(?,?,?,?)",
+            (hash_password(value), 1, now, actor_user_id),
+        )
+        conn.execute(
+            "INSERT INTO audit_log(action,detail,created_at) VALUES(?,?,?)",
+            ("upload_key_rotate", "actor=%s" % actor_user_id, now),
+        )
+    return value
+
+
+def verify_upload_key(value: str) -> bool:
+    if not value:
+        return False
+    rows = query_all("SELECT key_hash FROM upload_credentials WHERE active=1 ORDER BY id DESC LIMIT 1")
+    return bool(rows and verify_password(value, rows[0]["key_hash"]))
+
+
+
+def update_finding_status(case_id: int, finding_id: int, status: str, note: str, context: dict) -> None:
+    if status not in VALID_STATUSES:
+        raise ValueError("Invalid status")
+    if status == "benign" and not str(note or "").strip():
+        raise ValueError("Benign status requires a note")
+    case = case_from_id(case_id)
+    if not case or not report_permission(case, context, "process"):
+        raise PermissionError("Report access denied")
+    with connect_db() as conn:
+        row = conn.execute("SELECT id FROM findings WHERE id=? AND case_id=?", (finding_id, case_id)).fetchone()
+        if not row:
+            raise PermissionError("Finding access denied")
+        conn.execute("UPDATE findings SET status=?, reviewer_note=? WHERE id=? AND case_id=?", (status, note, finding_id, case_id))
+        conn.execute("INSERT INTO audit_log(case_id,finding_id,action,detail,created_at) VALUES(?,?,?,?,?)", (case_id, finding_id, "review_update", "note_present=%s" % bool(str(note or "").strip()), now_ts()))
+
+
+def bulk_update_findings(case_id: int, finding_ids: list[int], status: str, note: str, context: dict) -> int:
+    if not finding_ids:
+        return 0
+    if len(finding_ids) > 500:
+        raise ValueError("Too many selected findings")
+    if status not in ("reviewing", "confirmed", "remediated", "benign"):
+        raise ValueError("Invalid bulk status")
+    if status == "benign" and not str(note or "").strip():
+        raise ValueError("Benign status requires a note")
+    case = case_from_id(case_id)
+    if not case or not report_permission(case, context, "process"):
+        raise PermissionError("Report access denied")
+    ids = sorted({int(value) for value in finding_ids})
+    placeholders = ",".join("?" for _ in ids)
+    with connect_db() as conn:
+        rows = conn.execute("SELECT id FROM findings WHERE case_id=? AND id IN (%s)" % placeholders, [case_id, *ids]).fetchall()
+        if len(rows) != len(ids):
+            raise ValueError("Selection contains an invalid finding")
+        conn.execute("UPDATE findings SET status=?, reviewer_note=? WHERE case_id=? AND id IN (%s)" % placeholders, [status, note, case_id, *ids])
+        conn.execute("INSERT INTO audit_log(case_id,action,detail,created_at) VALUES(?,?,?,?)", (case_id, "bulk_review_update", "status=%s selected=%s note_present=%s" % (status, len(ids), bool(str(note or "").strip())), now_ts()))
+    return len(ids)
+
+
+
+def create_customer_user(username: str, password: str, actor_user_id: int) -> int:
+    normalized = normalize_username(username)
+    if not normalized or normalized == "admin":
+        raise ValueError("Invalid username")
+    now = now_ts()
+    with connect_db() as conn:
+        try:
+            cur = conn.execute(
+                "INSERT INTO users(username,password_hash,role,active,must_change_password,created_at,updated_at) VALUES(?,?,?,?,?,?,?)",
+                (normalized, hash_password(password), "user", 1, 0, now, now),
+            )
+        except sqlite3.IntegrityError as exc:
+            raise ValueError("Username already exists") from exc
+        conn.execute(
+            "INSERT INTO audit_log(action,detail,created_at) VALUES(?,?,?)",
+            ("user_create", "actor=%s user=%s" % (actor_user_id, normalized), now),
+        )
+        return int(cur.lastrowid)
+
+
+def set_user_active(user_id: int, active: bool, actor_user_id: int) -> None:
+    with connect_db() as conn:
+        conn.execute("UPDATE users SET active=?, updated_at=? WHERE id=? AND role='user'", (int(active), now_ts(), user_id))
+        if not active:
+            conn.execute("DELETE FROM user_sessions WHERE user_id=?", (user_id,))
+        conn.execute(
+            "INSERT INTO audit_log(action,detail,created_at) VALUES(?,?,?)",
+            ("user_active" if active else "user_disabled", "actor=%s user=%s" % (actor_user_id, user_id), now_ts()),
+        )
+
+
+def reset_user_password(user_id: int, password: str, actor_user_id: int) -> None:
+    with connect_db() as conn:
+        conn.execute(
+            "UPDATE users SET password_hash=?, must_change_password=1, updated_at=? WHERE id=? AND role='user'",
+            (hash_password(password), now_ts(), user_id),
+        )
+        conn.execute("DELETE FROM user_sessions WHERE user_id=?", (user_id,))
+        conn.execute(
+            "INSERT INTO audit_log(action,detail,created_at) VALUES(?,?,?)",
+            ("user_password_reset", "actor=%s user=%s" % (actor_user_id, user_id), now_ts()),
+        )
 
 
 def is_admin_session(headers) -> bool:
@@ -1247,126 +1347,99 @@ def access_page(case_id: int | None = None, message: str = "") -> bytes:
     return html_page("Nhập mã truy cập", body)
 
 
-def admin_page(base_url: str, message: str = "") -> bytes:
+def admin_page_for_context(base_url: str, message: str = "", admin_context_value=None) -> bytes:
     cases = query_all("SELECT * FROM cases ORDER BY created_at DESC LIMIT 100")
-    rows = []
+    users = query_all("SELECT u.id,u.username,u.active,(SELECT COUNT(*) FROM case_assignments a WHERE a.user_id=u.id AND a.active=1) AS assigned_count FROM users u WHERE u.role='user' ORDER BY u.username")
+    csrf = html.escape((admin_context_value or {}).get("csrf_token", "")); username=html.escape((admin_context_value or {}).get("username", "admin"))
+    active_users=sum(bool(u["active"]) for u in users); unassigned=0; main_total=gray_total=0; rows=[]
+    user_options="".join(f"<option value='{u['id']}'>{html.escape(u['username'])}</option>" for u in users if u["active"])
     for case in cases:
-        url = f"{base_url}/case/{case['id']}"
-        rows.append(
-            f"<tr><td><a href=\"/case/{case['id']}\">{html.escape(case['title'])}</a></td>"
-            f"<td>{case['finding_count']}</td><td>{case['source_count']}</td>"
-            f"<td class=\"path\"><a href=\"{url}\">{html.escape(url)}</a></td>"
-            f"<td class=\"path\"><code>{html.escape(case['viewer_key'] or '')}</code></td>"
-            f"<td class=\"path\"><code>{html.escape(case['share_key'])}</code></td></tr>"
-        )
-    notice = f"<div class=\"notice\">{html.escape(message)}</div>" if message else ""
-    body = f"""
-    <section class="band">
-      <h1>Import kết quả scan</h1>
-      {notice}
-      <form method="post" action="/admin/import" enctype="multipart/form-data" class="stack">
-        <label>Tên đợt rà quét<br><input name="title" style="width:100%" placeholder="VD: Đơn vị A - 2026-06-28"></label>
-        <label>File kết quả .enc<br><input type="file" name="review_bundle" required accept=".enc"></label>
-        <button type="submit">Import</button>
-      </form>
-    </section>
-    <section class="band">
-      <h2>Các đợt đã import</h2>
-      <div class="tablewrap"><table><thead><tr><th>Tên</th><th>Findings</th><th>Source files</th><th>URL công khai</th><th>Mã lãnh đạo</th><th>Mã reviewer</th></tr></thead>
-      <tbody>{''.join(rows) or '<tr><td colspan="6" class="muted">Chưa có dữ liệu.</td></tr>'}</tbody></table></div>
-    </section>
-    <section class="band">
-      <h2>Ghi chú vận hành</h2>
-      <div class="warn">Đầu vào chính thức là một file .enc do webshell-scan tạo sau khi quét. Bundle này đã bao gồm findings và source/evidence cần thiết để web dựng dashboard, xem raw/decode và highlight rule hit.</div>
-    </section>
+        kind_counts={row["candidate_kind"]:row["c"] for row in query_all("SELECT candidate_kind,COUNT(*) AS c FROM findings WHERE case_id=? GROUP BY candidate_kind",(case["id"],))}; main_total+=kind_counts.get("finding",0); gray_total+=kind_counts.get("gray",0)
+        assignments=query_all("SELECT u.id,u.username FROM case_assignments a JOIN users u ON u.id=a.user_id WHERE a.case_id=? AND a.active=1 ORDER BY u.username",(case["id"],)); assigned=", ".join(html.escape(row["username"]) for row in assignments) or "Chưa gán"; unassigned += not bool(assignments)
+        assign_form=f"<form method='post' action='/admin/cases/{case['id']}/assign'><input type='hidden' name='csrf_token' value='{csrf}'><select name='user_id' required><option value=''>Gán user</option>{user_options}</select><button class='secondary' type='submit'>Gán</button></form>"
+        revoke_forms="".join(f"<form method='post' action='/admin/cases/{case['id']}/revoke'><input type='hidden' name='csrf_token' value='{csrf}'><input type='hidden' name='user_id' value='{row['id']}'><button class='secondary' type='submit'>Bỏ {html.escape(row['username'])}</button></form>" for row in assignments)
+        rows.append(f"<tr><td data-label='Tên'><a href='/case/{case['id']}'>{html.escape(case['title'])}</a></td><td data-label='Origin'>{html.escape(case['upload_origin'] or 'admin_web')}</td><td data-label='Main'><span class='kind-finding'>{kind_counts.get('finding',0)}</span></td><td data-label='Gray'><span class='kind-gray'>{kind_counts.get('gray',0)}</span></td><td data-label='Người xử lý'><span class='assignment-summary'>{assigned}</span><details class='assignment-panel'><summary>Assignment</summary>{assign_form}{revoke_forms}</details></td><td data-label='Action'><a class='button secondary' href='/case/{case['id']}'>Open</a></td></tr>")
+    user_rows="".join(f"<tr><td data-label='Username'>{html.escape(u['username'])}</td><td data-label='Trạng thái'>{'Đang hoạt động' if u['active'] else 'Đã vô hiệu hóa'}</td><td data-label='Được gán'>{u['assigned_count']}</td><td data-label='Action'><form method='post' action='/admin/users/{u['id']}/active'><input type='hidden' name='csrf_token' value='{csrf}'><input type='hidden' name='active' value='{0 if u['active'] else 1}'><button class='secondary' type='submit'>{'Kích hoạt' if not u['active'] else 'Vô hiệu hóa'}</button></form></td></tr>" for u in users)
+    notice=f"<div class='notice'>{html.escape(message)}</div>" if message else ""
+    body=f"""<!-- soc-admin -->
+    <section class="admin-header"><div><div class="eyebrow">STAGING · Admin control plane</div><h1>Review workspace</h1><p class="muted">Reports, assignments and user access.</p>{notice}</div><div class="admin-identity"><b>{username}</b><span class="pill">ADMIN</span><a class="button secondary" href="/admin/logout">Logout</a></div></section>
+    <section class="action-bar"><a class="button" href="#import">Import .enc</a><a class="button secondary" href="#users">Create user</a><a class="button secondary sensitive-action" href="#upload-key">Manage upload key</a><a class="button secondary" href="#audit">Audit log</a></section>
+    <section class="kpi-row"><div class="kpi"><b>{len(cases)}</b><span>Reports</span></div><div class="kpi"><b>{unassigned}</b><span>Chưa gán</span></div><div class="kpi"><b>{active_users}</b><span>Active users</span></div><div class="kpi"><b>{main_total+gray_total}</b><span>Main + gray</span></div></section>
+    <section class="band upload-card" id="import"><h2>Import .enc</h2><form method="post" action="/admin/import" enctype="multipart/form-data" class="stack"><input type="hidden" name="csrf_token" value="{csrf}"><label>Tên đợt rà quét<br><input name="title" style="width:100%"></label><label>File kết quả<br><input type="file" name="review_bundle" required accept=".enc"></label><button type="submit">Import bundle</button></form></section>
+    <section class="band" id="users"><h2>Users</h2><form method="post" action="/admin/users/create" class="filters"><input type="hidden" name="csrf_token" value="{csrf}"><input name="username" placeholder="username" required><input name="password" type="password" placeholder="Mật khẩu >=12 ký tự" required><button type="submit">Create user</button></form><div class="tablewrap"><table><thead><tr><th>Username</th><th>Trạng thái</th><th>Được gán</th><th>Action</th></tr></thead><tbody>{user_rows or '<tr><td colspan="4">Chưa có user.</td></tr>'}</tbody></table></div></section>
+    <section class="band"><h2>Reports</h2><div class="tablewrap"><table class="report-table"><thead><tr><th>Tên</th><th>Origin</th><th>Main</th><th>Gray</th><th>Người xử lý</th><th>Action</th></tr></thead><tbody>{''.join(rows) or '<tr><td colspan="6">Chưa có báo cáo.</td></tr>'}</tbody></table></div></section>
+    <section class="band" id="upload-key"><div class="warn">Upload key và audit controls chỉ dành cho admin. Không hiển thị secret trên giao diện.</div><span id="audit"></span></section>
     """
-    return html_page("Admin import", body)
+    return html_page("Admin control plane",body)
 
 
-def case_dashboard(case_id: int, query: dict[str, list[str]]) -> bytes:
+def case_dashboard(case_id: int, query: dict[str, list[str]], context=None) -> bytes:
     case = case_from_id(case_id)
     if not case:
         return html_page("Không tìm thấy", "<section class=\"band\">Báo cáo không tồn tại.</section>")
     status = (query.get("status") or [""])[0]
+    kind = (query.get("kind") or [""])[0]
     q = (query.get("q") or [""])[0].strip()
     where = ["case_id=?"]
-    params: list = [case["id"]]
+    params = [case["id"]]
     if status in VALID_STATUSES:
         where.append("status=?")
         params.append(status)
+    if kind in ("finding", "gray"):
+        where.append("candidate_kind=?")
+        params.append(kind)
     if q:
         where.append("(file_path LIKE ? OR sha256 LIKE ? OR description LIKE ?)")
         like = f"%{q}%"
         params.extend([like, like, like])
     findings = query_all(
-        f"""
-        SELECT f.*,
-               (SELECT COUNT(*) FROM evidence e WHERE e.finding_id=f.id) AS evidence_count
-        FROM findings f
-        WHERE {' AND '.join(where)}
-        ORDER BY score DESC, id ASC
-        LIMIT 1000
-        """,
+        "SELECT f.*,(SELECT COUNT(*) FROM evidence e WHERE e.finding_id=f.id) AS evidence_count "
+        "FROM findings f WHERE %s ORDER BY score DESC,id ASC LIMIT 1000" % " AND ".join(where),
         params,
     )
-    counts = {row["status"]: row["c"] for row in query_all(
-        "SELECT status, COUNT(*) AS c FROM findings WHERE case_id=? GROUP BY status", (case["id"],)
-    )}
-    evidence_total = query_one(
-        "SELECT COUNT(*) AS c FROM evidence e JOIN findings f ON f.id=e.finding_id WHERE f.case_id=?",
-        (case["id"],),
-    )["c"]
-    high_risk = query_one("SELECT COUNT(*) AS c FROM findings WHERE case_id=? AND score>=100", (case["id"],))["c"]
-    missing_source = query_one("SELECT COUNT(*) AS c FROM findings WHERE case_id=? AND has_source=0", (case["id"],))["c"]
-    reviewed = counts.get("confirmed", 0) + counts.get("benign", 0) + counts.get("remediated", 0)
-    finding_count = int(case["finding_count"] or 0)
-    reviewed_percent = int((reviewed / finding_count) * 100) if finding_count else 0
-    metric_html = f"""
+    counts = {row["status"]: row["c"] for row in query_all("SELECT status,COUNT(*) AS c FROM findings WHERE case_id=? GROUP BY status", (case["id"],))}
+    kind_counts = {row["candidate_kind"]: row["c"] for row in query_all("SELECT candidate_kind,COUNT(*) AS c FROM findings WHERE case_id=? GROUP BY candidate_kind", (case["id"],))}
+    admin = bool(context and context.get("role") == "admin")
+    csrf = html.escape((context or {}).get("csrf_token", ""))
+    process = admin or bool(context and report_permission(case, context, "process"))
+    metric_html = """
     <div class="grid">
-      <div class="metric"><b>{case['finding_count']}</b><span>Finding</span></div>
-      <div class="metric"><b>{high_risk}</b><span>Nguy cơ cao (score >= 100)</span></div>
-      <div class="metric"><b>{counts.get('confirmed', 0)}</b><span>Đã xác nhận</span></div>
-      <div class="metric"><b>{reviewed_percent}%</b><span>Tiến độ đánh giá</span></div>
-      <div class="metric"><b>{case['source_count']}</b><span>File source đã upload</span></div>
-      <div class="metric"><b>{evidence_total}</b><span>Evidence YARA/string</span></div>
-      <div class="metric"><b>{missing_source}</b><span>Thiếu source để xem code</span></div>
-      <div class="metric"><b>{counts.get('benign', 0)}</b><span>Đã loại trừ</span></div>
+      <div class="metric metric-main"><b>%s</b><span>Phát hiện chính</span></div>
+      <div class="metric metric-gray"><b>%s</b><span>Gray zone</span></div>
+      <div class="metric metric-ok"><b>%s</b><span>Đã xác nhận</span></div>
+      <div class="metric"><b>%s</b><span>Source files</span></div>
     </div>
-    """
-    filters = ["<a class=\"pill\" href=\"?\">Tất cả</a>"]
+    """ % (kind_counts.get("finding", 0), kind_counts.get("gray", 0), counts.get("confirmed", 0), case["source_count"])
+    filters = [
+        "<a class='pill %s' href='%s'>Tất cả</a>" % ("filter-active" if not kind else "", dashboard_filter_url(q, "", status)),
+        "<a class='pill %s' href='%s'>Phát hiện chính: %s</a>" % ("filter-active" if kind == "finding" else "", dashboard_filter_url(q, "finding", status), kind_counts.get("finding", 0)),
+        "<a class='pill %s' href='%s'>Gray zone: %s</a>" % ("filter-active" if kind == "gray" else "", dashboard_filter_url(q, "gray", status), kind_counts.get("gray", 0)),
+    ]
     for st in VALID_STATUSES:
-        filters.append(f"<a class=\"pill status-{st}\" href=\"?status={st}\">{status_label(st)}: {counts.get(st, 0)}</a>")
+        filters.append("<a class='pill status-%s %s' href='%s'>%s: %s</a>" % (st, "filter-active" if status == st else "", dashboard_filter_url(q, kind, st), status_label(st), counts.get(st, 0)))
     rows = []
     for item in findings:
-        has_source_label = 'Có' if item['has_source'] else 'Thiếu'
+        kind_class = "kind-gray" if item["candidate_kind"] == "gray" else "kind-finding"
+        kind_label = "Gray zone" if item["candidate_kind"] == "gray" else "Phát hiện chính"
+        source_class = "source-ok" if item["has_source"] else "source-missing"
+        source_label = "Có source" if item["has_source"] else "Thiếu source"
+        check = "<input type='checkbox' name='finding_ids' value='%s'>" % item["id"] if process else ""
         rows.append(
-            "<tr>"
-            f"<td><a href=\"/case/{case['id']}/finding/{item['id']}\">#{item['id']}</a></td>"
-            f"<td class=\"{score_class(item['score'])}\">{html.escape(str(item['score'] or ''))}</td>"
-            f"<td><span class=\"pill status-{item['status']}\">{status_label(item['status'])}</span></td>"
-            f"<td class=\"path\">{html.escape(item['file_path'])}<br><span class=\"muted\">{html.escape(item['sha256'] or 'N/A')}</span></td>"
-            f"<td>{item['evidence_count']}</td>"
-            f"<td>{has_source_label}</td>"
-            f"</tr>"
+            "<tr class='table-card'><td data-label='Chọn'>%s</td><td data-label='ID'><a href='/case/%s/finding/%s'>#%s</a></td>"
+            "<td data-label='Loại'><span class='%s'>%s</span></td><td data-label='Score' class='%s'>%s</td>"
+            "<td data-label='Trạng thái'><span class='pill status-%s'>%s</span></td><td data-label='File' class='path'>%s<br><span class='muted'>%s</span></td>"
+            "<td data-label='Evidence'>%s</td><td data-label='Source'><span class='%s'>%s</span></td></tr>"
+            % (check, case_id, item["id"], item["id"], kind_class, kind_label, score_class(item["score"]), item["score"] or "", item["status"], status_label(item["status"]), html.escape(item["file_path"]), html.escape(item["sha256"] or "N/A"), item["evidence_count"], source_class, source_label)
         )
-    body = f"""
-    <section class="band page-head">
-      <div class="eyebrow">Tổng quan kết quả rà quét</div>
-      <h1>Dashboard lãnh đạo: {html.escape(case['title'])}</h1>
-      {metric_html}
-    </section>
-    <section class="band">
-      <form method="get" class="filters">
-        <input name="q" value="{html.escape(q)}" placeholder="Tìm path, hash, mô tả" style="min-width:280px">
-        <button type="submit">Lọc</button>
-        {''.join(filters)}
-      </form>
-    </section>
-    <section class="band">
-      <div class="tablewrap"><table><thead><tr><th>ID</th><th>Score</th><th>Trạng thái</th><th>File</th><th>Evidence</th><th>Source</th></tr></thead>
-      <tbody>{''.join(rows) or '<tr><td colspan="6" class="muted">Không có finding phù hợp.</td></tr>'}</tbody></table></div>
-    </section>
-    """
+    bulk = ""
+    if process:
+        bulk = "<form method='post' action='/case/%s/findings/bulk' class='band filters'><input type='hidden' name='csrf_token' value='%s'><select name='status'><option value='reviewing'>Đang xem</option><option value='confirmed'>Xác nhận</option><option value='remediated'>Đã xử lý</option><option value='benign'>Bỏ qua</option></select><input name='note' placeholder='Ghi chú bắt buộc khi bỏ qua'><button type='submit'>Cập nhật mục đã chọn</button></form>" % (case_id, csrf)
+    shell_marker = "<!-- soc-admin -->" if admin else ""
+    body = shell_marker + """
+    <section class="band page-head hero"><div class="eyebrow">Tổng quan kết quả rà quét</div><h1>Dashboard: %s</h1><p class="muted">Main findings và gray zone được tách riêng.</p>%s</section>
+    <section class="band"><form method="get" class="filters"><input name="q" value="%s" placeholder="Tìm path, hash, mô tả" style="min-width:280px"><button type="submit">Lọc</button>%s</form></section>%s
+    <section class="band"><div class="tablewrap"><table><thead><tr><th>Chọn</th><th>ID</th><th>Loại</th><th>Score</th><th>Trạng thái</th><th>File</th><th>Evidence</th><th>Source</th></tr></thead><tbody>%s</tbody></table></div></section>
+    """ % (html.escape(case["title"]), metric_html, html.escape(q), "".join(filters), bulk, "".join(rows) or '<tr><td colspan="8">Không có finding phù hợp.</td></tr>')
     return html_page(case["title"], body)
 
 
@@ -1416,6 +1489,10 @@ def render_code(data: bytes, highlights: list[sqlite3.Row]) -> str:
 
 
 def finding_detail(case_id: int, finding_id: int, query: dict[str, list[str]], role: str = "viewer") -> bytes:
+    return _render_finding_detail(case_id, finding_id, query, role)
+
+def _render_finding_detail(case_id: int, finding_id: int, query: dict[str, list[str]], role: str = "viewer", context=None) -> bytes:
+    csrf = html.escape((context or {}).get("csrf_token", ""))
     case = case_from_id(case_id)
     if not case:
         return html_page("Không tìm thấy", "<section class=\"band\">Báo cáo không tồn tại.</section>")
@@ -1447,11 +1524,15 @@ def finding_detail(case_id: int, finding_id: int, query: dict[str, list[str]], r
         (finding_id,),
     )
     data, actual_layer = read_layer_bytes(finding_id, selected_layer)
+    kind_is_gray = str(finding["candidate_kind"] or "finding") == "gray"
+    kind_badge = '<span class="kind-gray">Gray zone</span>' if kind_is_gray else '<span class="kind-finding">Phát hiện chính</span>'
+    source_badge = '<span class="source-ok">Có source</span>' if finding["has_source"] else '<span class="source-missing">Thiếu source</span>'
+    archive_badge = '<span class="pill">Archive member</span>' if "[ARCHIVE:" in str(finding["file_path"] or "") else ""
     layer_links = []
     for layer in layers:
-        active = " style=\"font-weight:700\"" if layer["name"] == selected_layer else ""
+        active = " filter-active" if layer["name"] == selected_layer else ""
         layer_links.append(
-            f"<a class=\"pill\"{active} href=\"?layer={urllib.parse.quote(layer['name'])}\">{html.escape(layer['name'])} ({layer['size']} bytes)</a>"
+            f"<a class=\"pill{active}\" href=\"?layer={urllib.parse.quote(layer['name'])}\">{html.escape(layer['name'])} ({layer['size']} bytes)</a>"
         )
     rule_rows = []
     for ev in evidence:
@@ -1463,15 +1544,20 @@ def finding_detail(case_id: int, finding_id: int, query: dict[str, list[str]], r
             f"<code>{matched}</code><br><span class=\"muted\">{html.escape(ev['description'] or '')}</span></div>"
         )
     if data is None:
-        code_html = "<div class=\"warn\">Không có source/layer để hiển thị. Hãy import lại kèm ZIP source/quarantine hoặc tạo report evidence giàu dữ liệu từ scanner.</div>"
+        code_html = '<div class="warn source-missing">Không có source/layer để hiển thị. Hãy import lại kèm source/evidence cần thiết từ scanner.</div>'
     else:
-        code_html = f"<div class=\"codewrap\"><pre class=\"code\">{render_code(data, evidence)}</pre></div>"
+        code_html = f'<div class="codewrap"><div class="code-toolbar"><span>Raw/decode viewer: {html.escape(actual_layer)}</span><span>read-only</span></div><pre class="code">{render_code(data, evidence)}</pre></div>'
     snippet_notice = ""
     if str(actual_layer).endswith("_snippet"):
-        snippet_notice = (
-            '<div class="notice">Layer này là snippet-only: hệ thống chỉ đóng gói các đoạn quanh rule hit '
-            'để giữ file .enc gọn, không phải toàn bộ source.</div>'
-        )
+        snippet_notice = '<div class="notice snippet-only"><b>Snippet-only.</b> Hệ thống chỉ đóng gói các đoạn quanh rule hit để giữ file .enc gọn, không phải toàn bộ source.</div>'
+    manual_review_notice = (
+        '<div class="notice manual-review"><b>Gray zone — cần review thủ công.</b> Điểm số là tín hiệu, chưa phải kết luận webshell.</div>'
+        if kind_is_gray else ""
+    )
+    missing_notice = (
+        '<div class="warn source-missing"><b>Thiếu source.</b> Bundle không có nội dung đầy đủ để hiển thị.</div>'
+        if not finding["has_source"] else ""
+    )
     evidence_summary = ", ".join(
         f"{html.escape(row['rule_name'])} [{html.escape(row['layer_name'])}: {row['c']}]" for row in all_evidence[:40]
     )
@@ -1494,56 +1580,52 @@ def finding_detail(case_id: int, finding_id: int, query: dict[str, list[str]], r
         """
     if role == "reviewer":
         review_panel = f"""
-        <form method="post" action="/case/{case['id']}/finding/{finding_id}/update" enctype="multipart/form-data" class="stack">
-          <label>Trạng thái<br>
-            <select name="status">
-              {''.join(f'<option value="{st}" {"selected" if finding["status"] == st else ""}>{status_label(st)}</option>' for st in VALID_STATUSES)}
-            </select>
-          </label>
-          <label>Ghi chú đánh giá<br><textarea name="reviewer_note">{html.escape(finding['reviewer_note'] or '')}</textarea></label>
-          <button type="submit">Lưu đánh giá</button>
-        </form>
+        <section class="detail-section review-controls">
+          <h2>Review decision</h2>
+          <form method="post" action="/case/{case['id']}/finding/{finding_id}/update" enctype="multipart/form-data" class="stack">
+            <input type="hidden" name="csrf_token" value="{csrf}">
+            <label>Trạng thái<br>
+              <select name="status">
+                {''.join(f'<option value="{st}" {"selected" if finding["status"] == st else ""}>{status_label(st)}</option>' for st in VALID_STATUSES)}
+              </select>
+            </label>
+            <label>Ghi chú đánh giá<br><textarea name="reviewer_note">{html.escape(finding['reviewer_note'] or '')}</textarea></label>
+            <button type="submit">Lưu đánh giá</button>
+          </form>
+        </section>
         """
     else:
         review_panel = f"""
-        <div class="notice">Bạn đang xem bằng mã lãnh đạo nên chỉ có quyền xem.</div>
-        <div>
-          <h2>Ghi chú đánh giá</h2>
-          <p>{html.escape(finding['reviewer_note'] or 'Chưa có ghi chú.')}</p>
-        </div>
+        <section class="detail-section review-controls">
+          <h2>Review decision</h2>
+          <div class="notice">Bạn đang xem bằng mã lãnh đạo nên chỉ có quyền xem.</div>
+          <p class="detail-text">{html.escape(finding['reviewer_note'] or 'Chưa có ghi chú.')}</p>
+        </section>
         """
-    body = f"""
-    <section class="band page-head">
-      <a href="/case/{case['id']}">← Quay lại dashboard</a>
-      <div class="eyebrow">Chi tiết finding</div>
-      <h1 class="path">{html.escape(finding['file_path'])}</h1>
-      <div class="filters">
-        <span class="pill {score_class(finding['score'])}">Score {html.escape(str(finding['score'] or ''))}</span>
-        <span class="pill status-{finding['status']}">{status_label(finding['status'])}</span>
-        <span class="pill">SHA256 {html.escape(finding['sha256'] or 'N/A')}</span>
-      </div>
-      {description_block}
-      {evidence_block or '<p class="muted">Chưa có evidence chi tiết.</p>'}
+    file_path = html.escape(finding["file_path"] or "")
+    sha256 = html.escape(finding["sha256"] or "N/A")
+    detail_meta = """
+    <section class="detail-meta">
+      <div class="eyebrow">Finding #%s · read-only evidence</div>
+      <h1 class="path">%s</h1>
+      <div class="filters">%s<span class="pill %s">Score %s</span><span class="pill status-%s">%s</span>%s%s</div>
+      <div class="meta-actions"><span class="path">SHA256 %s</span><button type="button" class="secondary" data-copy="sha256" data-copy-value="%s">Copy SHA256</button></div>
     </section>
-    <div class="split">
-      <aside class="band stack">
-        {review_panel}
-        <div>
-          <h2>Layer</h2>
-          <div class="filters">{''.join(layer_links) or '<span class="muted">Chưa có layer.</span>'}</div>
-        </div>
-        <div>
-          <h2>Rule/String hit</h2>
-          <div class="rule-list">{''.join(rule_rows) or '<div class="muted">Không có hit trên layer này.</div>'}</div>
-        </div>
-      </aside>
-      <section class="band">
-        <h2>Raw/decode viewer: {html.escape(actual_layer)}</h2>
-        {snippet_notice}
-        {code_html}
-      </section>
-    </div>
-    """
+    """ % (finding_id, file_path, kind_badge, score_class(finding["score"]), html.escape(str(finding["score"] or "")), finding["status"], status_label(finding["status"]), source_badge, archive_badge, sha256, sha256)
+    action_html = ""
+    if role == "reviewer":
+        action_html = (
+            '<div class="action-group" aria-label="Thao tác xử lý">'
+            '<button type="button" class="action-confirm">Xác nhận</button>'
+            '<button type="button" class="action-remediate">Đã xử lý</button>'
+            '<button type="button" class="action-benign">Bỏ qua + ghi chú</button>'
+            '</div>'
+        )
+    shell_marker = "<!-- soc-admin -->" if context and context.get("role") == "admin" else ""
+    body = shell_marker + """
+    %s%s%s%s%s
+    <div class="split detail-layout"><aside class="band detail-sidebar stack"><div class="detail-section"><h2>Layer</h2><div class="filters">%s</div></div><div class="detail-section"><h2>Rule/String hit</h2><div class="rule-list">%s</div></div>%s%s</aside><section class="band detail-viewer evidence-viewer">%s</section></div>
+    """ % (detail_meta, manual_review_notice, missing_notice, snippet_notice, description_block + (evidence_block or "<p class='muted'>Chưa có evidence chi tiết.</p>"), "".join(layer_links) or '<span class="muted">Chưa có layer.</span>', "".join(rule_rows) or '<div class="muted">Không có hit trên layer này.</div>', review_panel, action_html, code_html)
     return html_page(f"Finding #{finding_id}", body)
 
 
@@ -1563,11 +1645,22 @@ class ReviewHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
-    def redirect(self, location: str, cookie: str | None = None) -> None:
+
+    def send_json(self, payload: dict, status: HTTPStatus = HTTPStatus.OK) -> None:
+        data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def redirect(self, location: str, cookie: str | None = None, cookies: tuple[str, ...] = ()) -> None:
         self.send_response(HTTPStatus.SEE_OTHER)
         self.send_header("Location", location)
         if cookie:
             self.send_header("Set-Cookie", cookie)
+        for value in cookies:
+            self.send_header("Set-Cookie", value)
         self.end_headers()
 
     def read_body(self) -> bytes:
@@ -1581,113 +1674,122 @@ class ReviewHandler(BaseHTTPRequestHandler):
         return f"http://{host}"
 
     def do_GET(self) -> None:
-        parsed = urllib.parse.urlparse(self.path)
-        query = urllib.parse.parse_qs(parsed.query)
+        parsed = urllib.parse.urlparse(self.path); query = urllib.parse.parse_qs(parsed.query)
+        if parsed.path == "/static/review.js":
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "application/javascript; charset=utf-8")
+            self.send_header("Content-Length", str(len(REVIEW_JS)))
+            self.end_headers()
+            self.wfile.write(REVIEW_JS)
+            return
         if parsed.path == "/":
-            self.send_html(access_page())
-            return
+            context = user_context(self.headers); admin = admin_context(self.headers); self.redirect("/admin" if admin else "/user" if context else "/login"); return
+        if parsed.path == "/logout":
+            self.redirect("/admin/logout"); return
+        if parsed.path == "/admin/logout":
+            revoke_sessions(self.headers)
+            expired = (
+                f"{SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Strict",
+                f"{ADMIN_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Strict",
+                f"{ADMIN_COOKIE}=; Path=/admin; Max-Age=0; HttpOnly; SameSite=Strict",
+                f"{USER_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Strict",
+            )
+            self.redirect("/login", cookies=expired); return
+        if parsed.path == "/login": self.send_html(login_page()); return
         if parsed.path == "/admin":
-            if not is_admin_session(self.headers):
-                self.send_html(admin_login_page())
-                return
-            self.send_html(admin_page(self.base_url()))
-            return
+            admin = admin_context(self.headers)
+            if not admin: self.send_html(admin_login_page()); return
+            self.send_html(admin_page_for_context(self.base_url(), admin_context_value=admin)); return
+        if parsed.path == "/user":
+            context = user_context(self.headers)
+            if not context or context["role"] != "user": self.send_html(login_page("Cần đăng nhập tài khoản user."), HTTPStatus.FORBIDDEN); return
+            cases = query_all("SELECT c.* FROM cases c JOIN case_assignments a ON a.case_id=c.id WHERE a.user_id=? AND a.active=1 ORDER BY c.created_at DESC", (context["user_id"],))
+            rows = "".join(f"<tr><td><a href='/case/{row['id']}'>{html.escape(row['title'])}</a></td><td>{html.escape(row['upload_origin'] or '')}</td></tr>" for row in cases)
+            empty_rows = '<tr><td colspan="2">Chưa có báo cáo được gán.</td></tr>'
+            body = "<section class='band hero'><h1>Báo cáo được gán</h1><p>Chỉ báo cáo active assignment của tài khoản hiện tại.</p></section><section class='band'><table><thead><tr><th>Báo cáo</th><th>Origin</th></tr></thead><tbody>%s</tbody></table></section>" % (rows or empty_rows)
+            self.send_html(html_page("Báo cáo được gán", body)); return
         match = re.fullmatch(r"/case/(\d+)", parsed.path)
         if match:
-            case_id = int(match.group(1))
-            info = session_info(self.headers)
-            if not info or info[0] != case_id:
-                self.send_html(access_page(case_id))
-                return
-            self.send_html(case_dashboard(case_id, query))
-            return
+            case_id=int(match.group(1)); case=case_from_id(case_id); context=user_context(self.headers); legacy=session_info(self.headers)
+            admin = admin_context(self.headers)
+            current_context = admin or (context if case and context and report_permission(case, context, "view") else None)
+            if current_context or (legacy and legacy[0]==case_id): self.send_html(case_dashboard(case_id, query, current_context)); return
+            self.send_html(access_page(case_id)); return
         match = re.fullmatch(r"/case/(\d+)/finding/(\d+)", parsed.path)
         if match:
-            case_id = int(match.group(1))
-            info = session_info(self.headers)
-            if not info or info[0] != case_id:
-                self.send_html(access_page(case_id))
-                return
-            self.send_html(finding_detail(case_id, int(match.group(2)), query, info[1]))
-            return
-        if re.fullmatch(r"/c/.+", parsed.path):
-            self.send_html(access_page(message="Định dạng link chứa khóa trên URL đã được tắt. Vui lòng nhập mã truy cập để xem báo cáo."))
-            return
+            case_id,finding_id=int(match.group(1)),int(match.group(2)); case=case_from_id(case_id); context=user_context(self.headers); legacy=session_info(self.headers)
+            admin = admin_context(self.headers)
+            account_context = admin or (context if case and context and report_permission(case, context, "view") else None)
+            if account_context: role="reviewer"
+            elif legacy and legacy[0]==case_id: role=legacy[1]
+            else: self.send_html(access_page(case_id)); return
+            self.send_html(_render_finding_detail(case_id,finding_id,query,role,account_context)); return
         self.send_html(html_page("404", "<section class=\"band\">Không tìm thấy trang.</section>"), HTTPStatus.NOT_FOUND)
 
     def do_POST(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
         try:
-            body = self.read_body()
-            parts = parse_post_parts(self.headers, body)
+            body=self.read_body(); parts=parse_post_parts(self.headers,body)
+            if parsed.path == "/api/upload":
+                if not verify_upload_key(self.headers.get("X-Upload-Key", "")): self.send_json({"ok":False,"error":"invalid upload key"},HTTPStatus.FORBIDDEN); return
+                bundle=file_part(parts,"review_bundle")
+                if not bundle: self.send_json({"ok":False,"error":"missing .enc"},HTTPStatus.BAD_REQUEST); return
+                case_id,_,imported,source_count=import_enc_case(form_value(parts,"title"),bundle,upload_origin="remote_upload"); self.send_json({"ok":True,"case_id":case_id,"imported":imported,"source_count":source_count}); return
+            if parsed.path == "/login":
+                username=normalize_username(form_value(parts,"username")); password=form_value(parts,"password"); user=query_one("SELECT * FROM users WHERE username=? AND active=1",(username,))
+                if not user or not verify_password(password,user["password_hash"]): self.send_html(login_page("Tên đăng nhập hoặc mật khẩu không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                if user["role"] == "admin":
+                    token, _ = create_admin_session(int(user["id"]))
+                    self.redirect("/admin", cookie=f"{ADMIN_COOKIE}={token}; Path=/; Max-Age={SESSION_TTL_SECONDS}; HttpOnly; SameSite=Strict")
+                else:
+                    token, _ = create_user_session(int(user["id"]))
+                    self.redirect("/user", cookie=f"{USER_COOKIE}={token}; Path=/; Max-Age={SESSION_TTL_SECONDS}; HttpOnly; SameSite=Strict")
+                return
             if parsed.path == "/admin/login":
-                key = form_value(parts, "admin_key")
-                if key != get_admin_key():
-                    self.send_html(admin_login_page("Admin key không hợp lệ."), HTTPStatus.FORBIDDEN)
-                    return
-                token = create_admin_session()
-                cookie = (
-                    f"{ADMIN_COOKIE}={token}; Path=/admin; Max-Age={SESSION_TTL_SECONDS}; "
-                    "HttpOnly; SameSite=Strict"
-                )
-                self.redirect("/admin", cookie=cookie)
-                return
+                if form_value(parts,"admin_key") != get_admin_key(): self.send_html(admin_login_page("Admin key không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                admin_user=query_one("SELECT id FROM users WHERE username='antt' AND role='admin' LIMIT 1"); token,_=create_admin_session(admin_user["id"] if admin_user else None); self.redirect("/admin",cookie=f"{ADMIN_COOKIE}={token}; Path=/; Max-Age={SESSION_TTL_SECONDS}; HttpOnly; SameSite=Strict"); return
             if parsed.path == "/access":
-                access_key = form_value(parts, "access_key")
-                requested_case_id = safe_int(form_value(parts, "case_id"), None)
-                case = case_access_from_key(access_key)
-                if not case or (requested_case_id and requested_case_id != int(case["id"])):
-                    self.send_html(access_page(requested_case_id, "Mã truy cập không hợp lệ."), HTTPStatus.FORBIDDEN)
-                    return
-                token = create_session(int(case["id"]), str(case["access_role"]))
-                cookie = (
-                    f"{SESSION_COOKIE}={token}; Path=/; Max-Age={SESSION_TTL_SECONDS}; "
-                    "HttpOnly; SameSite=Strict"
-                )
-                self.redirect(f"/case/{case['id']}", cookie=cookie)
-                return
-            if parsed.path == "/admin/import":
-                if not is_admin_session(self.headers):
-                    self.send_html(admin_login_page("Phiên admin không hợp lệ hoặc đã hết hạn."), HTTPStatus.FORBIDDEN)
-                    return
-                review_bundle = file_part(parts, "review_bundle")
-                if not review_bundle:
-                    raise RuntimeError("Thiếu file .enc.")
-                case_id, share_key, imported, source_count = import_enc_case(form_value(parts, "title"), review_bundle)
-                self.redirect("/admin")
-                return
-            match = re.fullmatch(r"/case/(\d+)/finding/(\d+)/update", parsed.path)
+                key=form_value(parts,"access_key"); requested=safe_int(form_value(parts,"case_id"),None); case=case_access_from_key(key)
+                if not case or (requested and requested != int(case["id"])): self.send_html(access_page(requested,"Mã truy cập không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                token=create_session(int(case["id"]),str(case["access_role"])); self.redirect(f"/case/{case['id']}",cookie=f"{SESSION_COOKIE}={token}; Path=/; Max-Age={SESSION_TTL_SECONDS}; HttpOnly; SameSite=Strict"); return
+            admin=admin_context(self.headers)
+            if parsed.path == "/admin/users/create":
+                if not admin or not csrf_valid(admin,form_value(parts,"csrf_token")): self.send_html(admin_login_page("Phiên admin hoặc CSRF không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                create_customer_user(form_value(parts,"username"),form_value(parts,"password"),admin.get("user_id") or 0); self.redirect("/admin"); return
+            match=re.fullmatch(r"/admin/users/(\d+)/active",parsed.path)
             if match:
-                case_id, finding_id = int(match.group(1)), int(match.group(2))
-                case = case_from_id(case_id)
-                info = session_info(self.headers)
-                if not case or not info or info[0] != case_id:
-                    self.send_html(access_page(case_id, "Phiên truy cập không hợp lệ hoặc đã hết hạn."), HTTPStatus.FORBIDDEN)
-                    return
-                if info[1] != "reviewer":
-                    self.send_html(html_page("403", "<section class=\"band\">Mã lãnh đạo chỉ có quyền xem, không được cập nhật đánh giá.</section>"), HTTPStatus.FORBIDDEN)
-                    return
-                status = form_value(parts, "status", "pending")
-                if status not in VALID_STATUSES:
-                    status = "pending"
-                note = form_value(parts, "reviewer_note", "")
-                with connect_db() as conn:
-                    conn.execute(
-                        "UPDATE findings SET status=?, reviewer_note=? WHERE id=? AND case_id=?",
-                        (status, note, finding_id, case["id"]),
-                    )
-                    conn.execute(
-                        "INSERT INTO audit_log(case_id, finding_id, action, detail, created_at) VALUES(?,?,?,?,?)",
-                        (case["id"], finding_id, "review_update", status, now_ts()),
-                    )
-                self.redirect(f"/case/{case['id']}/finding/{finding_id}")
-                return
-            self.send_html(html_page("404", "<section class=\"band\">Không tìm thấy endpoint.</section>"), HTTPStatus.NOT_FOUND)
+                if not admin or not csrf_valid(admin,form_value(parts,"csrf_token")): self.send_html(admin_login_page("Phiên admin hoặc CSRF không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                set_user_active(int(match.group(1)),form_value(parts,"active")=="1",admin.get("user_id") or 0); self.redirect("/admin"); return
+            match=re.fullmatch(r"/admin/cases/(\d+)/(assign|revoke)",parsed.path)
+            if match:
+                if not admin or not csrf_valid(admin,form_value(parts,"csrf_token")): self.send_html(admin_login_page("Phiên admin hoặc CSRF không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                case_id=int(match.group(1)); user_id=int(form_value(parts,"user_id")); assign_report(case_id,user_id,admin.get("user_id") or 0) if match.group(2)=="assign" else revoke_report(case_id,user_id,admin.get("user_id") or 0); self.redirect("/admin"); return
+            if parsed.path == "/admin/import":
+                if not admin or not csrf_valid(admin,form_value(parts,"csrf_token")): self.send_html(admin_login_page("Phiên admin hoặc CSRF không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                bundle=file_part(parts,"review_bundle")
+                if not bundle: raise RuntimeError("Thiếu file .enc.")
+                import_enc_case(form_value(parts,"title"),bundle); self.redirect("/admin"); return
+            match=re.fullmatch(r"/case/(\d+)/findings/bulk",parsed.path)
+            if match:
+                case_id=int(match.group(1)); context=user_context(self.headers); admin_context_value=admin_context(self.headers); actor=admin_context_value or context
+                if not actor or not csrf_valid(actor,form_value(parts,"csrf_token")): self.send_html(access_page(case_id,"Phiên hoặc CSRF không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                ids=[int(part.data.decode("utf-8",errors="replace").strip()) for part in parts.get("finding_ids",[]) if part.data.decode("utf-8",errors="replace").strip().isdigit()]
+                changed=bulk_update_findings(case_id,ids,form_value(parts,"status"),form_value(parts,"note"),actor)
+                self.redirect(f"/case/{case_id}?updated={changed}"); return
+            match=re.fullmatch(r"/case/(\d+)/finding/(\d+)/update",parsed.path)
+            if match:
+                case_id,finding_id=int(match.group(1)),int(match.group(2)); case=case_from_id(case_id); context=user_context(self.headers); admin_context_value=admin_context(self.headers); allowed=bool(admin_context_value and csrf_valid(admin_context_value,form_value(parts,"csrf_token"))) or bool(context and report_permission(case,context,"process") and csrf_valid(context,form_value(parts,"csrf_token")))
+                if not allowed:
+                    legacy=session_info(self.headers); allowed=bool(legacy and legacy[0]==case_id and legacy[1]=="reviewer")
+                if not case or not allowed: self.send_html(access_page(case_id,"Phiên hoặc quyền truy cập không hợp lệ."),HTTPStatus.FORBIDDEN); return
+                status=form_value(parts,"status","pending"); status=status if status in VALID_STATUSES else "pending"; note=form_value(parts,"reviewer_note","")
+                if status=="benign" and not note.strip(): self.send_html(html_page("Thiếu ghi chú","<section class=\"band warn\">Bỏ qua cần có ghi chú.</section>"),HTTPStatus.BAD_REQUEST); return
+                with connect_db() as conn: conn.execute("UPDATE findings SET status=?,reviewer_note=? WHERE id=? AND case_id=?",(status,note,finding_id,case_id)); conn.execute("INSERT INTO audit_log(case_id,finding_id,action,detail,created_at) VALUES(?,?,?,?,?)",(case_id,finding_id,"review_update","note_present=%s"%bool(note.strip()),now_ts()))
+                self.redirect(f"/case/{case_id}/finding/{finding_id}"); return
+            self.send_html(html_page("404","<section class=\"band\">Không tìm thấy endpoint.</section>"),HTTPStatus.NOT_FOUND)
         except Exception as exc:
-            self.send_html(
-                html_page("Lỗi", f"<section class=\"band\"><h1>Lỗi xử lý</h1><div class=\"warn\">{html.escape(str(exc))}</div></section>"),
-                HTTPStatus.BAD_REQUEST,
-            )
+            if parsed.path=="/api/upload": self.send_json({"ok":False,"error":"upload failed"},HTTPStatus.BAD_REQUEST)
+            else: self.send_html(html_page("Lỗi",f"<section class=\"band\"><h1>Lỗi xử lý</h1><div class=\"warn\">{html.escape(str(exc))}</div></section>"),HTTPStatus.BAD_REQUEST)
 
     def log_message(self, fmt, *args) -> None:
         sys.stderr.write("%s - %s\n" % (self.log_date_time_string(), fmt % args))
