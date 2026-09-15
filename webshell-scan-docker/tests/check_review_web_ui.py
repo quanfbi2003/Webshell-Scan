@@ -115,3 +115,13 @@ def check_task3_dashboard():
     print("check_review_web_ui: Task 3 static contract passed")
 
 check_task3_dashboard()
+
+def check_task4_finding_detail():
+    with open(APP, "r", encoding="utf-8") as f:
+        code = f.read()
+    assert 'data-copy-value' in code, "Missing copy value attribute"
+    assert 'white-space:pre-wrap' in code or 'white-space: pre-wrap' in code or 'white-space:' in code, "Missing code wrapping CSS"
+    assert 'overflow-wrap:anywhere' in code or 'overflow-wrap: anywhere' in code or 'overflow-wrap:' in code, "Missing overflow wrap CSS"
+    print("check_review_web_ui: Task 4 static contract passed")
+
+check_task4_finding_detail()

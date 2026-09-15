@@ -1616,7 +1616,7 @@ def _render_finding_detail(case_id: int, finding_id: int, query: dict[str, list[
       <div class="eyebrow">Finding #%s · read-only evidence</div>
       <h1 class="path">%s</h1>
       <div class="filters">%s<span class="pill %s">Score %s</span><span class="pill status-%s">%s</span>%s%s</div>
-      <div class="meta-actions"><span class="path">SHA256 %s</span><button type="button" class="secondary" data-copy="sha256" data-copy-value="%s">Copy SHA256</button></div>
+      <div class="meta-actions"><span class="path">SHA256 %s</span><button type="button" class="secondary" data-copy-value="%s">Copy SHA256</button></div>
     </section>
     """ % (finding_id, file_path, kind_badge, score_class(finding["score"]), html.escape(str(finding["score"] or "")), finding["status"], status_label(finding["status"]), source_badge, archive_badge, sha256, sha256)
     action_html = ""
